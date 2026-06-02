@@ -41,6 +41,8 @@ task route, then returns ranked chunk paths, token counts, scores, source URLs,
 and snippets. Agents should open only the returned chunks that fit the task
 context budget. Use `--full-snippet`, `--snippet-chars N`, or
 `--json --include-content` when the caller needs more returned text.
+Use repeated `--query` flags for batch retrieval; each query is routed and
+ranked independently.
 
 Ranking combines deterministic hashed embeddings with raw lexical matches,
 route-hint matches, and title/path overlap. Short queries heavily prefer exact

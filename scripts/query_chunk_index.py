@@ -214,9 +214,31 @@ def print_text(route: str, results: list[dict[str, object]]) -> None:
         print(f"   snippet: {item['snippet']}")
 
 
+def query_payload(
+    index: Path,
+    query: str,
+    top: int,
+    snippet_chars: int | None,
+    include_content: bool,
+) -> dict[str, object]:
+    route = infer_route(query)
+    results = search(index, query, route, top, snippet_chars, include_content)
+    return {"query": query, "route": route, "results": results}
+
+
+def collect_queries(positional_query: str | None, repeated_queries: list[str] | None) -> list[str]:
+    queries = []
+    if positional_query:
+        queries.append(positional_query)
+    if repeated_queries:
+        queries.extend(repeated_queries)
+    return [query.strip() for query in queries if query.strip()]
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("query", help="Natural-language query or review finding text")
+    parser.add_argument("query", nargs="?", help="Natural-language query or review finding text")
+    parser.add_argument("--query", dest="queries", action="append", help="Repeatable query for batch retrieval")
     parser.add_argument("--index", type=Path, default=Path("sources/index/chunks.sqlite"))
     parser.add_argument("--top", type=int, default=6)
     parser.add_argument("--snippet-chars", type=int, default=320, help="Snippet character budget per result")
@@ -225,13 +247,25 @@ def main() -> int:
     parser.add_argument("--json", action="store_true")
     args = parser.parse_args()
 
-    route = infer_route(args.query)
+    queries = collect_queries(args.query, args.queries)
+    if not queries:
+        parser.error("provide a positional query or at least one --query value")
+
     snippet_chars = None if args.full_snippet else args.snippet_chars
-    results = search(args.index, args.query, route, args.top, snippet_chars, args.include_content)
+    payloads = [
+        query_payload(args.index, query, args.top, snippet_chars, args.include_content)
+        for query in queries
+    ]
     if args.json:
-        print(json.dumps({"query": args.query, "route": route, "results": results}, indent=2, sort_keys=True))
+        payload: dict[str, object] = payloads[0] if len(payloads) == 1 else {"queries": payloads}
+        print(json.dumps(payload, indent=2, sort_keys=True))
     else:
-        print_text(route, results)
+        for index, payload in enumerate(payloads):
+            if len(payloads) > 1:
+                if index:
+                    print("\n---")
+                print(f"query: {payload['query']}")
+            print_text(str(payload["route"]), list(payload["results"]))
     return 0
 
 

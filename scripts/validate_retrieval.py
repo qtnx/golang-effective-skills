@@ -4,6 +4,8 @@
 from __future__ import annotations
 
 import argparse
+import json
+import subprocess
 import sys
 from pathlib import Path
 
@@ -95,6 +97,38 @@ def validate_check(index: Path, check: dict[str, object]) -> list[str]:
     return errors
 
 
+def validate_multi_query_cli(index: Path) -> list[str]:
+    script = Path(__file__).resolve().parent / "query_chunk_index.py"
+    command = [
+        sys.executable,
+        str(script),
+        "--index",
+        str(index),
+        "--query",
+        "concurrency",
+        "--query",
+        "error wrapping",
+        "--json",
+        "--top",
+        "1",
+    ]
+    completed = subprocess.run(command, capture_output=True, text=True, check=False)
+    if completed.returncode != 0:
+        return [f"multi-query CLI failed: {completed.stderr.strip()}"]
+
+    payload = json.loads(completed.stdout)
+    queries = payload.get("queries")
+    if not isinstance(queries, list) or len(queries) != 2:
+        return [f"multi-query CLI did not return two query payloads: {payload!r}"]
+
+    expected_routes = ["go-concurrency-context", "go-errors-panics"]
+    actual_routes = [item.get("route") for item in queries]
+    if actual_routes != expected_routes:
+        return [f"multi-query CLI routes {actual_routes!r} != {expected_routes!r}"]
+
+    return []
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--index", type=Path, default=Path("sources/index/chunks.sqlite"))
@@ -103,6 +137,7 @@ def main() -> int:
     errors = []
     for check in CHECKS:
         errors.extend(validate_check(args.index, check))
+    errors.extend(validate_multi_query_cli(args.index))
 
     if errors:
         for error in errors:

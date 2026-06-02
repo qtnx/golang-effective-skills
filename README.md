@@ -107,6 +107,7 @@ Query source chunks by task:
 ```bash
 python3 scripts/query_chunk_index.py "when should Go code wrap errors with %w"
 python3 scripts/query_chunk_index.py "concurrency"
+python3 scripts/query_chunk_index.py --query "concurrency" --query "error wrapping"
 ```
 
 The command is a universal router: it prints the inferred `route`, ranked chunk
@@ -121,7 +122,12 @@ Useful output controls:
 python3 scripts/query_chunk_index.py "error wrapping" --full-snippet
 python3 scripts/query_chunk_index.py "error wrapping" --snippet-chars 1000
 python3 scripts/query_chunk_index.py "error wrapping" --json --include-content
+python3 scripts/query_chunk_index.py --query "concurrency" --query "table driven tests" --json
 ```
+
+Single-query JSON keeps the compact `query`/`route`/`results` shape. Multiple
+queries return `{"queries": [...]}` with a separate inferred route and ranked
+result set for each query.
 
 Validate retrieval quality:
 
