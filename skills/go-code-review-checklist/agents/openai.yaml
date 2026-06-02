@@ -1,0 +1,6 @@
+interface:
+  display_name: "Go Code Review"
+  short_description: "Findings-first Go PR review checklist"
+  default_prompt: "Use $go-code-review-checklist to review this Go change for correctness, tests, and style."
+policy:
+  allow_implicit_invocation: true

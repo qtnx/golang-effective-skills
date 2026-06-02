@@ -1,0 +1,6 @@
+interface:
+  display_name: "Go Naming API"
+  short_description: "Package, identifier, and public API naming"
+  default_prompt: "Use $go-naming-api-design to review this Go API naming and call-site readability."
+policy:
+  allow_implicit_invocation: true

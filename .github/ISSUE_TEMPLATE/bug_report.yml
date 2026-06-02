@@ -1,0 +1,37 @@
+name: Bug report
+description: Report a problem with a skill, script, or source mapping.
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: input
+    id: skill
+    attributes:
+      label: Skill or script
+      description: Which skill or script is affected?
+      placeholder: go-testing
+    validations:
+      required: true
+  - type: textarea
+    id: prompt
+    attributes:
+      label: Prompt or task
+      description: What did you ask the agent to do?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Relevant source anchor
+      placeholder: sources/chunks/google-go-styleguide-decisions-errors.md

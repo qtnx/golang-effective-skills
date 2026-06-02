@@ -1,0 +1,30 @@
+name: Skill request
+description: Propose a new Go task skill or an expansion to an existing skill.
+title: "[Skill]: "
+labels: ["skill-request"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Proposed skill name
+      placeholder: go-concurrency-context
+    validations:
+      required: true
+  - type: textarea
+    id: task
+    attributes:
+      label: Task type
+      description: What agent task should this skill support?
+    validations:
+      required: true
+  - type: textarea
+    id: gap
+    attributes:
+      label: Why existing skills are insufficient
+    validations:
+      required: true
+  - type: textarea
+    id: sources
+    attributes:
+      label: Candidate sources
+      description: Link or name the source sections that should ground the skill.

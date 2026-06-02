@@ -1,0 +1,2400 @@
+{
+  "chunk_count": 464,
+  "chunks": [
+    {
+      "chunk_path": "sources/chunks/effective-go-effective-go-html-001-overview.md",
+      "source_path": "sources/raw/effective-go/effective_go.html",
+      "title": "overview"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-001-overview.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "overview"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-002-styleguide.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "styleguide"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-003-go-style-best-practices.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Go Style Best Practices"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-004-about.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "About"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-005-naming.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Naming"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-006-function-and-method-names.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Function and method names"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-007-avoid-repetition.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Avoid repetition"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-008-naming-conventions.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Naming conventions"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-009-test-double-and-helper-packages.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Test double and helper packages"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-010-creating-test-helper-packages.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Creating test helper packages"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-011-simple-case.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Simple case"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-012-good.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Good:"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-013-multiple-test-double-behaviors.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Multiple test double behaviors"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-014-multiple-doubles-for-multiple-types.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Multiple doubles for multiple types"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-015-local-variables-in-tests.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Local variables in tests"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-016-shadowing.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Shadowing"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-017-util-packages.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Util packages"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-018-package-size.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Package size"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-019-imports.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Imports"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-020-protocol-buffer-messages-and-stubs.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Protocol Buffer Messages and Stubs"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-021-import-ordering.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Import ordering"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-022-error-handling.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Error handling"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-023-error-structure.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Error structure"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-024-adding-information-to-errors.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Adding information to errors"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-025-placement-of-w-in-errors.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Placement of %w in errors"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-026-sentinel-error-placement.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Sentinel error placement"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-027-logging-errors.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Logging errors"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-028-custom-verbosity-levels.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Custom verbosity levels"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-029-program-initialization.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Program initialization"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-030-program-checks-and-panics.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Program checks and panics"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-031-when-to-panic.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "When to panic"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-032-documentation.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Documentation"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-033-conventions.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Conventions"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-034-parameters-and-configuration.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Parameters and configuration"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-035-contexts.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Contexts"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-036-concurrency.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Concurrency"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-037-cleanup.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Cleanup"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-038-errors.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Errors"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-039-preview.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Preview"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-040-godoc-formatting.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Godoc formatting"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-041-signal-boosting.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Signal boosting"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-042-variable-declarations.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Variable declarations"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-043-initialization.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Initialization"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-044-declaring-variables-with-zero-values.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Declaring variables with zero values"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-045-composite-literals.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Composite literals"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-046-size-hints.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Size hints"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-047-channel-direction.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Channel direction"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-048-function-argument-lists.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Function argument lists"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-049-option-structure.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Option structure"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-050-variadic-options.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Variadic options"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-051-complex-command-line-interfaces.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Complex command-line interfaces"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-052-tests.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Tests"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-053-leave-testing-to-the-test-function.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Leave testing to the `Test` function"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-054-designing-extensible-validation-apis.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Designing extensible validation APIs"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-055-acceptance-testing.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Acceptance testing"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-056-writing-an-acceptance-test.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Writing an acceptance test"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-057-use-real-transports.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Use real transports"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-058-t-error-vs-t-fatal.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "`t.Error` vs. `t.Fatal`"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-059-error-handling-in-test-helpers.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Error handling in test helpers"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-060-don-t-call-t-fatal-from-separate-goroutines.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Don\u2019t call `t.Fatal` from separate goroutines"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-061-use-field-names-in-struct-literals.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Use field names in struct literals"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-062-keep-setup-code-scoped-to-specific-tests.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Keep setup code scoped to specific tests"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-063-no-reason-for-this-to-perform-the-expensive-initialization.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "No reason for this to perform the expensive initialization."
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-064-when-to-use-a-custom-testmain-entrypoint.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "When to use a custom `TestMain` entrypoint"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-065-amortizing-common-test-setup.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Amortizing common test setup"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-066-string-concatenation.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "String concatenation"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-067-prefer-for-simple-cases.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Prefer \u201c+\u201d for simple cases"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-068-prefer-fmt-sprintf-when-formatting.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Prefer `fmt.Sprintf` when formatting"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-069-prefer-strings-builder-for-constructing-a-string-piecemeal.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Prefer `strings.Builder` for constructing a string piecemeal"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-070-constant-strings.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Constant strings"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-071-global-state.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Global state"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-072-major-forms-of-package-state-apis.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Major forms of package state APIs"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-073-litmus-tests.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Litmus tests"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-074-providing-a-default-instance.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Providing a default instance"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-075-interfaces.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Interfaces"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-076-avoid-unnecessary-interfaces.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Avoid unnecessary interfaces"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-077-interface-ownership-and-visibility.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Interface ownership and visibility"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-html-078-designing-effective-interfaces.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "title": "Designing effective interfaces"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-001-overview.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "overview"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-002-go-style-best-practices.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Go Style Best Practices"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-003-about.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "About"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-004-naming.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Naming"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-005-function-and-method-names.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Function and method names"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-006-avoid-repetition.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Avoid repetition"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-007-naming-conventions.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Naming conventions"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-008-test-double-and-helper-packages.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Test double and helper packages"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-009-creating-test-helper-packages.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Creating test helper packages"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-010-simple-case.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Simple case"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-011-good.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Good:"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-012-multiple-test-double-behaviors.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Multiple test double behaviors"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-013-multiple-doubles-for-multiple-types.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Multiple doubles for multiple types"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-014-local-variables-in-tests.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Local variables in tests"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-015-shadowing.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Shadowing"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-016-util-packages.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Util packages"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-017-package-size.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Package size"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-018-imports.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Imports"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-019-protocol-buffer-messages-and-stubs.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Protocol Buffer Messages and Stubs"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-020-import-ordering.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Import ordering"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-021-error-handling.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Error handling"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-022-error-structure.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Error structure"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-023-adding-information-to-errors.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Adding information to errors"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-024-placement-of-w-in-errors.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Placement of %w in errors"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-025-sentinel-error-placement.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Sentinel error placement"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-026-logging-errors.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Logging errors"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-027-custom-verbosity-levels.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Custom verbosity levels"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-028-program-initialization.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Program initialization"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-029-program-checks-and-panics.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Program checks and panics"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-030-when-to-panic.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "When to panic"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-031-documentation.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Documentation"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-032-conventions.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Conventions"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-033-parameters-and-configuration.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Parameters and configuration"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-034-contexts.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Contexts"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-035-concurrency.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Concurrency"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-036-cleanup.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Cleanup"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-037-errors.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Errors"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-038-preview.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Preview"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-039-godoc-formatting.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Godoc formatting"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-040-signal-boosting.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Signal boosting"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-041-variable-declarations.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Variable declarations"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-042-initialization.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Initialization"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-043-declaring-variables-with-zero-values.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Declaring variables with zero values"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-044-composite-literals.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Composite literals"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-045-size-hints.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Size hints"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-046-channel-direction.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Channel direction"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-047-function-argument-lists.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Function argument lists"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-048-option-structure.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Option structure"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-049-variadic-options.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Variadic options"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-050-complex-command-line-interfaces.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Complex command-line interfaces"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-051-tests.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Tests"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-052-leave-testing-to-the-test-function.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Leave testing to the `Test` function"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-053-designing-extensible-validation-apis.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Designing extensible validation APIs"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-054-acceptance-testing.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Acceptance testing"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-055-writing-an-acceptance-test.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Writing an acceptance test"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-056-use-real-transports.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Use real transports"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-057-t-error-vs-t-fatal.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "`t.Error` vs. `t.Fatal`"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-058-error-handling-in-test-helpers.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Error handling in test helpers"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-059-don-t-call-t-fatal-from-separate-goroutines.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Don't call `t.Fatal` from separate goroutines"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-060-use-field-names-in-struct-literals.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Use field names in struct literals"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-061-keep-setup-code-scoped-to-specific-tests.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Keep setup code scoped to specific tests"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-062-no-reason-for-this-to-perform-the-expensive-initialization.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "No reason for this to perform the expensive initialization."
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-063-when-to-use-a-custom-testmain-entrypoint.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "When to use a custom `TestMain` entrypoint"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-064-amortizing-common-test-setup.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Amortizing common test setup"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-065-string-concatenation.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "String concatenation"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-066-prefer-for-simple-cases.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Prefer \"+\" for simple cases"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-067-prefer-fmt-sprintf-when-formatting.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Prefer `fmt.Sprintf` when formatting"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-068-prefer-strings-builder-for-constructing-a-string-piecemeal.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Prefer `strings.Builder` for constructing a string piecemeal"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-069-constant-strings.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Constant strings"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-070-global-state.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Global state"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-071-major-forms-of-package-state-apis.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Major forms of package state APIs"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-072-litmus-tests.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Litmus tests"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-073-providing-a-default-instance.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Providing a default instance"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-074-interfaces.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Interfaces"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-075-avoid-unnecessary-interfaces.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Avoid unnecessary interfaces"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-076-interface-ownership-and-visibility.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Interface ownership and visibility"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-best-practices-md-077-designing-effective-interfaces.md",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "title": "Designing effective interfaces"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-001-overview.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "overview"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-002-styleguide.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "styleguide"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-003-go-style-decisions.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Go Style Decisions"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-004-about.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "About"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-005-naming.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Naming"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-006-underscores.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Underscores"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-007-package-names.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Package names"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-008-receiver-names.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Receiver names"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-009-constant-names.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Constant names"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-010-initialisms.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Initialisms"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-011-getters.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Getters"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-012-variable-names.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Variable names"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-013-single-letter-variable-names.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Single-letter variable names"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-014-repetition.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Repetition"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-015-package-vs-exported-symbol-name.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Package vs. exported symbol name"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-016-variable-name-vs-type.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Variable name vs. type"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-017-external-context-vs-local-names.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "External context vs. local names"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-018-commentary.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Commentary"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-019-comment-line-length.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Comment line length"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-020-good.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Good:"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-021-bad.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Bad:"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-022-doc-comments.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Doc comments"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-023-comment-sentences.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Comment sentences"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-024-examples.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Examples"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-025-named-result-parameters.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Named result parameters"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-026-package-comments.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Package comments"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-027-imports.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Imports"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-028-import-renaming.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Import renaming"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-029-import-grouping.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Import grouping"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-030-import-blank-import.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Import \u201cblank\u201d (`import _`)"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-031-import-dot-import.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Import \u201cdot\u201d (`import .`)"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-032-errors.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Errors"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-033-returning-errors.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Returning errors"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-034-error-strings.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Error strings"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-035-handle-errors.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Handle errors"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-036-in-band-errors.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "In-band errors"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-037-indent-error-flow.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Indent error flow"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-038-language.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Language"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-039-literal-formatting.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Literal formatting"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-040-field-names.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Field names"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-041-matching-braces.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Matching braces"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-042-cuddled-braces.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Cuddled braces"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-043-repeated-type-names.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Repeated type names"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-044-zero-value-fields.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Zero-value fields"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-045-nil-slices.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Nil slices"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-046-indentation-confusion.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Indentation confusion"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-047-function-formatting.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Function formatting"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-048-conditionals-and-loops.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Conditionals and loops"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-049-copying.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Copying"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-050-don-t-panic.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Don\u2019t panic"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-051-must-functions.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Must functions"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-052-goroutine-lifetimes.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Goroutine lifetimes"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-053-interfaces.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Interfaces"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-054-generics.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Generics"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-055-pass-values.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Pass values"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-056-receiver-type.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Receiver type"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-057-switch-and-break.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "`switch` and `break`"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-058-synchronous-functions.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Synchronous functions"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-059-type-aliases.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Type aliases"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-060-use-q.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Use %q"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-061-use-any.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Use any"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-062-common-libraries.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Common libraries"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-063-flags.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Flags"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-064-logging.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Logging"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-065-contexts.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Contexts"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-066-custom-contexts.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Custom contexts"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-067-crypto-rand.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "crypto/rand"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-068-useful-test-failures.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Useful test failures"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-069-assertion-libraries.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Assertion libraries"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-070-identify-the-function.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Identify the function"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-071-identify-the-input.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Identify the input"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-072-got-before-want.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Got before want"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-073-full-structure-comparisons.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Full structure comparisons"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-074-compare-stable-results.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Compare stable results"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-075-keep-going.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Keep going"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-076-equality-comparison-and-diffs.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Equality comparison and diffs"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-077-level-of-detail.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Level of detail"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-078-print-diffs.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Print diffs"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-079-test-error-semantics.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Test error semantics"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-080-test-structure.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Test structure"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-081-subtests.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Subtests"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-082-subtest-names.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Subtest names"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-083-bad.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Bad:"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-084-assuming-testtime-and-t-run-america-new-york.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Assuming TestTime and t.Run(\"America/New_York\", ...)"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-085-table-driven-tests.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Table-driven tests"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-086-data-driven-test-cases.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Data-driven test cases"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-087-identifying-the-row.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Identifying the row"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-088-test-helpers.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Test helpers"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-089-test-package.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Test package"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-090-tests-in-the-same-package.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Tests in the same package"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-091-good.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Good:"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-092-tests-in-a-different-package.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Tests in a different package"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-093-use-package-testing.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Use package `testing`"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-html-094-non-decisions.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "title": "Non-decisions"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-001-overview.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "overview"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-002-go-style-decisions.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Go Style Decisions"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-003-about.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "About"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-004-naming.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Naming"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-005-underscores.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Underscores"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-006-package-names.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Package names"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-007-receiver-names.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Receiver names"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-008-constant-names.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Constant names"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-009-initialisms.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Initialisms"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-010-getters.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Getters"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-011-variable-names.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Variable names"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-012-single-letter-variable-names.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Single-letter variable names"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-013-repetition.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Repetition"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-014-package-vs-exported-symbol-name.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Package vs. exported symbol name"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-015-variable-name-vs-type.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Variable name vs. type"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-016-external-context-vs-local-names.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "External context vs. local names"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-017-commentary.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Commentary"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-018-comment-line-length.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Comment line length"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-019-good.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Good:"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-020-bad.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Bad:"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-021-doc-comments.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Doc comments"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-022-comment-sentences.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Comment sentences"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-023-examples.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Examples"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-024-named-result-parameters.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Named result parameters"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-025-package-comments.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Package comments"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-026-imports.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Imports"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-027-import-renaming.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Import renaming"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-028-import-grouping.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Import grouping"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-029-import-blank-import.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Import \"blank\" (`import _`)"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-030-import-dot-import.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Import \"dot\" (`import .`)"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-031-errors.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Errors"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-032-returning-errors.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Returning errors"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-033-error-strings.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Error strings"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-034-handle-errors.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Handle errors"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-035-in-band-errors.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "In-band errors"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-036-indent-error-flow.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Indent error flow"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-037-language.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Language"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-038-literal-formatting.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Literal formatting"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-039-field-names.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Field names"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-040-matching-braces.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Matching braces"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-041-cuddled-braces.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Cuddled braces"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-042-repeated-type-names.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Repeated type names"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-043-zero-value-fields.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Zero-value fields"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-044-nil-slices.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Nil slices"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-045-indentation-confusion.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Indentation confusion"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-046-function-formatting.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Function formatting"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-047-conditionals-and-loops.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Conditionals and loops"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-048-copying.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Copying"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-049-don-t-panic.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Don't panic"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-050-must-functions.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Must functions"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-051-goroutine-lifetimes.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Goroutine lifetimes"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-052-interfaces.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Interfaces"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-053-generics.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Generics"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-054-pass-values.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Pass values"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-055-receiver-type.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Receiver type"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-056-switch-and-break.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "`switch` and `break`"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-057-synchronous-functions.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Synchronous functions"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-058-type-aliases.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Type aliases"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-059-use-q.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Use %q"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-060-use-any.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Use any"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-061-common-libraries.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Common libraries"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-062-flags.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Flags"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-063-logging.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Logging"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-064-contexts.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Contexts"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-065-custom-contexts.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Custom contexts"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-066-crypto-rand.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "crypto/rand"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-067-useful-test-failures.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Useful test failures"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-068-assertion-libraries.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Assertion libraries"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-069-identify-the-function.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Identify the function"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-070-identify-the-input.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Identify the input"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-071-got-before-want.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Got before want"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-072-full-structure-comparisons.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Full structure comparisons"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-073-compare-stable-results.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Compare stable results"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-074-keep-going.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Keep going"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-075-equality-comparison-and-diffs.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Equality comparison and diffs"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-076-level-of-detail.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Level of detail"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-077-print-diffs.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Print diffs"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-078-test-error-semantics.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Test error semantics"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-079-test-structure.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Test structure"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-080-subtests.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Subtests"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-081-subtest-names.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Subtest names"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-082-table-driven-tests.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Table-driven tests"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-083-data-driven-test-cases.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Data-driven test cases"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-084-identifying-the-row.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Identifying the row"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-085-test-helpers.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Test helpers"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-086-test-package.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Test package"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-087-tests-in-the-same-package.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Tests in the same package"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-088-good.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Good:"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-089-tests-in-a-different-package.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Tests in a different package"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-090-use-package-testing.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Use package `testing`"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-decisions-md-091-non-decisions.md",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "title": "Non-decisions"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-guide-html-001-overview.md",
+      "source_path": "sources/raw/google-go-styleguide/guide.html",
+      "title": "overview"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-guide-html-002-styleguide.md",
+      "source_path": "sources/raw/google-go-styleguide/guide.html",
+      "title": "styleguide"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-guide-html-003-go-style-guide.md",
+      "source_path": "sources/raw/google-go-styleguide/guide.html",
+      "title": "Go Style Guide"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-guide-html-004-style-principles.md",
+      "source_path": "sources/raw/google-go-styleguide/guide.html",
+      "title": "Style principles"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-guide-html-005-clarity.md",
+      "source_path": "sources/raw/google-go-styleguide/guide.html",
+      "title": "Clarity"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-guide-html-006-what-is-the-code-actually-doing.md",
+      "source_path": "sources/raw/google-go-styleguide/guide.html",
+      "title": "What is the code actually doing?"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-guide-html-007-why-is-the-code-doing-what-it-does.md",
+      "source_path": "sources/raw/google-go-styleguide/guide.html",
+      "title": "Why is the code doing what it does?"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-guide-html-008-simplicity.md",
+      "source_path": "sources/raw/google-go-styleguide/guide.html",
+      "title": "Simplicity"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-guide-html-009-least-mechanism.md",
+      "source_path": "sources/raw/google-go-styleguide/guide.html",
+      "title": "Least mechanism"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-guide-html-010-concision.md",
+      "source_path": "sources/raw/google-go-styleguide/guide.html",
+      "title": "Concision"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-guide-html-011-maintainability.md",
+      "source_path": "sources/raw/google-go-styleguide/guide.html",
+      "title": "Maintainability"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-guide-html-012-consistency.md",
+      "source_path": "sources/raw/google-go-styleguide/guide.html",
+      "title": "Consistency"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-guide-html-013-core-guidelines.md",
+      "source_path": "sources/raw/google-go-styleguide/guide.html",
+      "title": "Core guidelines"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-guide-html-014-formatting.md",
+      "source_path": "sources/raw/google-go-styleguide/guide.html",
+      "title": "Formatting"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-guide-html-015-mixedcaps.md",
+      "source_path": "sources/raw/google-go-styleguide/guide.html",
+      "title": "MixedCaps"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-guide-html-016-line-length.md",
+      "source_path": "sources/raw/google-go-styleguide/guide.html",
+      "title": "Line length"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-guide-html-017-naming.md",
+      "source_path": "sources/raw/google-go-styleguide/guide.html",
+      "title": "Naming"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-guide-html-018-local-consistency.md",
+      "source_path": "sources/raw/google-go-styleguide/guide.html",
+      "title": "Local consistency"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-guide-md-001-overview.md",
+      "source_path": "sources/raw/google-go-styleguide/guide.md",
+      "title": "overview"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-guide-md-002-go-style-guide.md",
+      "source_path": "sources/raw/google-go-styleguide/guide.md",
+      "title": "Go Style Guide"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-guide-md-003-style-principles.md",
+      "source_path": "sources/raw/google-go-styleguide/guide.md",
+      "title": "Style principles"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-guide-md-004-clarity.md",
+      "source_path": "sources/raw/google-go-styleguide/guide.md",
+      "title": "Clarity"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-guide-md-005-what-is-the-code-actually-doing.md",
+      "source_path": "sources/raw/google-go-styleguide/guide.md",
+      "title": "What is the code actually doing?"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-guide-md-006-why-is-the-code-doing-what-it-does.md",
+      "source_path": "sources/raw/google-go-styleguide/guide.md",
+      "title": "Why is the code doing what it does?"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-guide-md-007-simplicity.md",
+      "source_path": "sources/raw/google-go-styleguide/guide.md",
+      "title": "Simplicity"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-guide-md-008-least-mechanism.md",
+      "source_path": "sources/raw/google-go-styleguide/guide.md",
+      "title": "Least mechanism"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-guide-md-009-concision.md",
+      "source_path": "sources/raw/google-go-styleguide/guide.md",
+      "title": "Concision"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-guide-md-010-maintainability.md",
+      "source_path": "sources/raw/google-go-styleguide/guide.md",
+      "title": "Maintainability"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-guide-md-011-consistency.md",
+      "source_path": "sources/raw/google-go-styleguide/guide.md",
+      "title": "Consistency"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-guide-md-012-core-guidelines.md",
+      "source_path": "sources/raw/google-go-styleguide/guide.md",
+      "title": "Core guidelines"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-guide-md-013-formatting.md",
+      "source_path": "sources/raw/google-go-styleguide/guide.md",
+      "title": "Formatting"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-guide-md-014-mixedcaps.md",
+      "source_path": "sources/raw/google-go-styleguide/guide.md",
+      "title": "MixedCaps"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-guide-md-015-line-length.md",
+      "source_path": "sources/raw/google-go-styleguide/guide.md",
+      "title": "Line length"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-guide-md-016-naming.md",
+      "source_path": "sources/raw/google-go-styleguide/guide.md",
+      "title": "Naming"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-guide-md-017-local-consistency.md",
+      "source_path": "sources/raw/google-go-styleguide/guide.md",
+      "title": "Local consistency"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-index-html-001-overview.md",
+      "source_path": "sources/raw/google-go-styleguide/index.html",
+      "title": "overview"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-index-html-002-styleguide.md",
+      "source_path": "sources/raw/google-go-styleguide/index.html",
+      "title": "styleguide"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-index-html-003-go-style.md",
+      "source_path": "sources/raw/google-go-styleguide/index.html",
+      "title": "Go Style"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-index-html-004-about.md",
+      "source_path": "sources/raw/google-go-styleguide/index.html",
+      "title": "About"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-index-html-005-documents.md",
+      "source_path": "sources/raw/google-go-styleguide/index.html",
+      "title": "Documents"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-index-html-006-definitions.md",
+      "source_path": "sources/raw/google-go-styleguide/index.html",
+      "title": "Definitions"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-index-html-007-additional-references.md",
+      "source_path": "sources/raw/google-go-styleguide/index.html",
+      "title": "Additional references"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-index-md-001-go-style.md",
+      "source_path": "sources/raw/google-go-styleguide/index.md",
+      "title": "Go Style"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-index-md-002-about.md",
+      "source_path": "sources/raw/google-go-styleguide/index.md",
+      "title": "About"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-index-md-003-documents.md",
+      "source_path": "sources/raw/google-go-styleguide/index.md",
+      "title": "Documents"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-index-md-004-definitions.md",
+      "source_path": "sources/raw/google-go-styleguide/index.md",
+      "title": "Definitions"
+    },
+    {
+      "chunk_path": "sources/chunks/google-go-styleguide-index-md-005-additional-references.md",
+      "source_path": "sources/raw/google-go-styleguide/index.md",
+      "title": "Additional references"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-001-overview.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "overview"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-002-uber-go-style-guide.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Uber Go Style Guide"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-003-introduction.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Introduction"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-004-guidelines.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Guidelines"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-005-pointers-to-interfaces.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Pointers to Interfaces"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-006-verify-interface-compliance.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Verify Interface Compliance"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-007-receivers-and-interfaces.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Receivers and Interfaces"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-008-zero-value-mutexes-are-valid.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Zero-value Mutexes are Valid"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-009-copy-slices-and-maps-at-boundaries.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Copy Slices and Maps at Boundaries"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-010-receiving-slices-and-maps.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Receiving Slices and Maps"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-011-returning-slices-and-maps.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Returning Slices and Maps"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-012-defer-to-clean-up.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Defer to Clean Up"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-013-channel-size-is-one-or-none.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Channel Size is One or None"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-014-start-enums-at-one.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Start Enums at One"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-015-use-time-to-handle-time.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Use `\"time\"` to handle time"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-016-use-time-time-for-instants-of-time.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Use `time.Time` for instants of time"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-017-use-time-duration-for-periods-of-time.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Use `time.Duration` for periods of time"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-018-use-time-time-and-time-duration-with-external-systems.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Use `time.Time` and `time.Duration` with external systems"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-019-errors.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Errors"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-020-error-types.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Error Types"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-021-error-wrapping.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Error Wrapping"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-022-error-naming.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Error Naming"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-023-handle-errors-once.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Handle Errors Once"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-024-handle-type-assertion-failures.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Handle Type Assertion Failures"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-025-don-t-panic.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Don't Panic"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-026-use-go-uber-org-atomic.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Use go.uber.org/atomic"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-027-avoid-mutable-globals.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Avoid Mutable Globals"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-028-avoid-embedding-types-in-public-structs.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Avoid Embedding Types in Public Structs"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-029-avoid-using-built-in-names.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Avoid Using Built-In Names"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-030-avoid-init.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Avoid `init()`"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-031-exit-in-main.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Exit in Main"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-032-exit-once.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Exit Once"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-033-use-field-tags-in-marshaled-structs.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Use field tags in marshaled structs"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-034-don-t-fire-and-forget-goroutines.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Don't fire-and-forget goroutines"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-035-wait-for-goroutines-to-exit.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Wait for goroutines to exit"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-036-no-goroutines-in-init.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "No goroutines in `init()`"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-037-performance.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Performance"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-038-prefer-strconv-over-fmt.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Prefer strconv over fmt"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-039-avoid-repeated-string-to-byte-conversions.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Avoid repeated string-to-byte conversions"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-040-prefer-specifying-container-capacity.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Prefer Specifying Container Capacity"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-041-specifying-map-capacity-hints.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Specifying Map Capacity Hints"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-042-specifying-slice-capacity.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Specifying Slice Capacity"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-043-style.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Style"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-044-avoid-overly-long-lines.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Avoid overly long lines"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-045-be-consistent.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Be Consistent"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-046-group-similar-declarations.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Group Similar Declarations"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-047-import-group-ordering.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Import Group Ordering"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-048-package-names.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Package Names"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-049-function-names.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Function Names"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-050-import-aliasing.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Import Aliasing"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-051-function-grouping-and-ordering.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Function Grouping and Ordering"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-052-reduce-nesting.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Reduce Nesting"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-053-unnecessary-else.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Unnecessary Else"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-054-top-level-variable-declarations.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Top-level Variable Declarations"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-055-prefix-unexported-globals-with.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Prefix Unexported Globals with _"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-056-embedding-in-structs.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Embedding in Structs"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-057-local-variable-declarations.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Local Variable Declarations"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-058-nil-is-a-valid-slice.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "nil is a valid slice"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-059-reduce-scope-of-variables.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Reduce Scope of Variables"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-060-avoid-naked-parameters.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Avoid Naked Parameters"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-061-use-raw-string-literals-to-avoid-escaping.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Use Raw String Literals to Avoid Escaping"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-062-initializing-structs.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Initializing Structs"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-063-use-field-names-to-initialize-structs.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Use Field Names to Initialize Structs"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-064-omit-zero-value-fields-in-structs.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Omit Zero Value Fields in Structs"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-065-use-var-for-zero-value-structs.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Use `var` for Zero Value Structs"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-066-initializing-struct-references.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Initializing Struct References"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-067-initializing-maps.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Initializing Maps"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-068-format-strings-outside-printf.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Format Strings outside Printf"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-069-naming-printf-style-functions.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Naming Printf-style Functions"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-070-patterns.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Patterns"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-071-test-tables.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Test Tables"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-072-avoid-unnecessary-complexity-in-table-tests.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Avoid Unnecessary Complexity in Table Tests"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-073-parallel-tests.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Parallel Tests"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-074-functional-options.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Functional Options"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-075-linting.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Linting"
+    },
+    {
+      "chunk_path": "sources/chunks/uber-go-guide-style-md-076-lint-runners.md",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "title": "Lint Runners"
+    }
+  ],
+  "generated_at": "2026-06-02T06:11:34.169261+00:00",
+  "raw_root": "sources/raw",
+  "source_count": 10,
+  "sources": [
+    {
+      "normalized_path": "sources/normalized/effective-go-effective-go-html.md",
+      "sha256": "1a78b6cf089e3d2d16851453c9b8c248e0b57ea3376facfc09d41d8840daade6",
+      "source_name": "Effective Go",
+      "source_path": "sources/raw/effective-go/effective_go.html",
+      "source_url": "https://go.dev/doc/effective_go"
+    },
+    {
+      "normalized_path": "sources/normalized/google-go-styleguide-best-practices-html.md",
+      "sha256": "75aea4592add852b20535c7ecc3e8b9294dd6fbd792ec321c47793a0fb3c9ac3",
+      "source_name": "Google Go Style Guide",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.html",
+      "source_url": "https://google.github.io/styleguide/go/"
+    },
+    {
+      "normalized_path": "sources/normalized/google-go-styleguide-best-practices-md.md",
+      "sha256": "e44180b492c3585b4a20bd44e7cb277a55a9f264ad352f33f287b639e9e75b56",
+      "source_name": "Google Go Style Guide",
+      "source_path": "sources/raw/google-go-styleguide/best-practices.md",
+      "source_url": "https://google.github.io/styleguide/go/"
+    },
+    {
+      "normalized_path": "sources/normalized/google-go-styleguide-decisions-html.md",
+      "sha256": "cc7a237e0ab1d6cddd556d7d22be8dbaf446be31816aba0f615561001c82de08",
+      "source_name": "Google Go Style Guide",
+      "source_path": "sources/raw/google-go-styleguide/decisions.html",
+      "source_url": "https://google.github.io/styleguide/go/"
+    },
+    {
+      "normalized_path": "sources/normalized/google-go-styleguide-decisions-md.md",
+      "sha256": "3a0b54ef41aca49f8bf0a4d4ce2d0b4662721b52197256d121b6cc95616f4850",
+      "source_name": "Google Go Style Guide",
+      "source_path": "sources/raw/google-go-styleguide/decisions.md",
+      "source_url": "https://google.github.io/styleguide/go/"
+    },
+    {
+      "normalized_path": "sources/normalized/google-go-styleguide-guide-html.md",
+      "sha256": "8108cfa43e013a016b92d7c9b56d0989b363da74c4884ab43fee3670967cb256",
+      "source_name": "Google Go Style Guide",
+      "source_path": "sources/raw/google-go-styleguide/guide.html",
+      "source_url": "https://google.github.io/styleguide/go/"
+    },
+    {
+      "normalized_path": "sources/normalized/google-go-styleguide-guide-md.md",
+      "sha256": "f12051c22045953c3688a85f9eba94f7cf61b6a769762671cdbf1ca4d2b3aa1b",
+      "source_name": "Google Go Style Guide",
+      "source_path": "sources/raw/google-go-styleguide/guide.md",
+      "source_url": "https://google.github.io/styleguide/go/"
+    },
+    {
+      "normalized_path": "sources/normalized/google-go-styleguide-index-html.md",
+      "sha256": "068a2413887825020965c368963f7d903fe311b14e392ccf9e313319dbbc57b1",
+      "source_name": "Google Go Style Guide",
+      "source_path": "sources/raw/google-go-styleguide/index.html",
+      "source_url": "https://google.github.io/styleguide/go/"
+    },
+    {
+      "normalized_path": "sources/normalized/google-go-styleguide-index-md.md",
+      "sha256": "95f228a13481ffefab9da3303446484e2b22c6cffa34a273169c844ad33a3435",
+      "source_name": "Google Go Style Guide",
+      "source_path": "sources/raw/google-go-styleguide/index.md",
+      "source_url": "https://google.github.io/styleguide/go/"
+    },
+    {
+      "normalized_path": "sources/normalized/uber-go-guide-style-md.md",
+      "sha256": "9f29ffce482b9c31a6cd7aa82ec7e4333972ddaed10ffa8344e8bcb5348cc09a",
+      "source_name": "Uber Go Style Guide",
+      "source_path": "sources/raw/uber-go-guide/style.md",
+      "source_url": "https://github.com/uber-go/guide/blob/master/style.md"
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+---
+source_name: "Google Go Style Guide"
+source_url: "https://google.github.io/styleguide/go/"
+source_path: "sources/raw/google-go-styleguide/guide.html"
+license_ref: "sources/licenses/google-styleguide-LICENSE.txt"
+---
+
+styleguide | Style guides for Google-originated open-source projects

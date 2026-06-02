@@ -1,0 +1,10 @@
+.DS_Store
+.worktrees/
+worktrees/
+__pycache__/
+*.pyc
+.pytest_cache/
+dist/
+build/
+*.zip
+*.tar.gz

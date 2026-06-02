@@ -1,0 +1,6 @@
+interface:
+  display_name: "Go Style Core"
+  short_description: "Idiomatic Go readability and formatting"
+  default_prompt: "Use $go-style-core to make this Go code clearer and more idiomatic."
+policy:
+  allow_implicit_invocation: true

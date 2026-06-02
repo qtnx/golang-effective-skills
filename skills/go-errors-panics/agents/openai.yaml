@@ -1,0 +1,6 @@
+interface:
+  display_name: "Go Errors Panics"
+  short_description: "Error wrapping, panic policy, and logging"
+  default_prompt: "Use $go-errors-panics to audit this Go error handling and panic policy."
+policy:
+  allow_implicit_invocation: true

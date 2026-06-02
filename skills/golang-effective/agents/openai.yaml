@@ -1,0 +1,6 @@
+interface:
+  display_name: "Golang Effective"
+  short_description: "Route Go tasks to concise source-backed skills"
+  default_prompt: "Use $golang-effective to choose the right Go skill for this implementation or review task."
+policy:
+  allow_implicit_invocation: true

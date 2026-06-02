@@ -1,0 +1,25 @@
+---
+source_name: "Google Go Style Guide"
+source_url: "https://google.github.io/styleguide/go/"
+source_path: "sources/raw/google-go-styleguide/guide.html"
+license_ref: "sources/licenses/google-styleguide-LICENSE.txt"
+---
+
+#### Why is the code doing what it does?
+
+The code’s rationale is often sufficiently communicated by the names of variables, functions, methods, or packages. Where it is not, it is important to add commentary. The “Why?” is especially important when the code contains nuances that a reader may not be familiar with, such as:
+
+- A nuance in the language, e.g., a closure will be capturing a loop variable, but the closure is many lines away
+- A nuance of the business logic, e.g., an access control check that needs to distinguish between the actual user and someone impersonating a user
+
+An API might require care to use correctly. For example, a piece of code may be intricate and difficult to follow for performance reasons, or a complex sequence of mathematical operations may use type conversions in an unexpected way. In these cases and many more, it is important that accompanying commentary and documentation explain these aspects so that future maintainers don’t make a mistake and so that readers can understand the code without needing to reverse-engineer it.
+
+It is also important to be aware that some attempts to provide clarity (such as adding extra commentary) can actually obscure the code’s purpose by adding clutter, restating what the code already says, contradicting the code, or adding maintenance burden to keep the comments up-to-date. Allow the code to speak for itself (e.g., by making the symbol names themselves self-describing) rather than adding redundant comments. It is often better for comments to explain why something is done, not what the code is doing.
+
+The Google codebase is largely uniform and consistent. It is often the case that code that stands out (e.g., by using an unfamiliar pattern) is doing so for a good reason, typically for performance. Maintaining this property is important to make it clear to readers where they should focus their attention when reading a new piece of code.
+
+The standard library contains many examples of this principle in action. Among them:
+
+- Maintainer comments in `package sort`.
+- Good runnable examples in the same package, which benefit both users (they show up in godoc) and maintainers (they run as part of tests).
+- `strings.Cut` is only four lines of code, but they improve the clarity and correctness of callsites.

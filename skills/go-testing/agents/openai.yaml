@@ -1,0 +1,6 @@
+interface:
+  display_name: "Go Testing"
+  short_description: "Table tests, helpers, failures, benchmarks"
+  default_prompt: "Use $go-testing to improve these Go tests and their failure messages."
+policy:
+  allow_implicit_invocation: true
