@@ -106,12 +106,14 @@ Query source chunks by task:
 
 ```bash
 python3 scripts/query_chunk_index.py "when should Go code wrap errors with %w"
+python3 scripts/query_chunk_index.py "concurrency"
 ```
 
 The command is a universal router: it prints the inferred `route`, ranked chunk
 paths, token counts, scores, source URLs, and snippets. The index is SQLite and
 uses deterministic local hashed n-gram embeddings, so it does not require an API
-key.
+key. Routes can point to implemented MVP skills or roadmap domains such as
+`go-concurrency-context`; roadmap routes still retrieve source chunks directly.
 
 Useful output controls:
 
@@ -119,6 +121,12 @@ Useful output controls:
 python3 scripts/query_chunk_index.py "error wrapping" --full-snippet
 python3 scripts/query_chunk_index.py "error wrapping" --snippet-chars 1000
 python3 scripts/query_chunk_index.py "error wrapping" --json --include-content
+```
+
+Validate retrieval quality:
+
+```bash
+python3 scripts/validate_retrieval.py
 ```
 
 ## Source Provenance

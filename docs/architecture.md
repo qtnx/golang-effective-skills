@@ -24,6 +24,11 @@ not load full source documents. Task skills load examples for calibration and
 run `scripts/query_chunk_index.py` to retrieve source chunks that match the
 issue. `source-map.md` remains a deterministic fallback and routing aid.
 
+The universal router may return either an implemented MVP skill route or a
+roadmap domain route such as `go-concurrency-context`. Roadmap routes still use
+the chunk index for grounding even when there is not yet a dedicated skill
+folder.
+
 ## Retrieval
 
 `scripts/build_chunk_index.py` builds `sources/index/chunks.sqlite` from
@@ -36,6 +41,11 @@ task route, then returns ranked chunk paths, token counts, scores, source URLs,
 and snippets. Agents should open only the returned chunks that fit the task
 context budget. Use `--full-snippet`, `--snippet-chars N`, or
 `--json --include-content` when the caller needs more returned text.
+
+Ranking combines deterministic hashed embeddings with raw lexical matches,
+route-hint matches, and title/path overlap. Short queries heavily prefer exact
+query terms and title matches so a query such as `concurrency` returns
+concurrency chunks instead of generic style chunks.
 
 ## Source Priority
 
