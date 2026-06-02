@@ -95,7 +95,14 @@ def lexical_scores(connection: sqlite3.Connection, query_terms: list[str], total
     return {chunk_id: score / max_score for chunk_id, score in scores.items()}
 
 
-def search(index: Path, query: str, route: str, top: int) -> list[dict[str, object]]:
+def search(
+    index: Path,
+    query: str,
+    route: str,
+    top: int,
+    snippet_chars: int | None,
+    include_content: bool,
+) -> list[dict[str, object]]:
     expanded_query = f"{query}\n{SKILL_HINTS.get(route, route)}"
     query_terms = tokenize(expanded_query)
     query_vector = hashed_embedding(expanded_query)
@@ -113,19 +120,20 @@ def search(index: Path, query: str, route: str, top: int) -> list[dict[str, obje
         vector_score = dot(query_vector, chunk["vector"])
         lexical_score = lexical.get(chunk["id"], 0.0)
         score = 0.68 * vector_score + 0.32 * lexical_score
-        results.append(
-            {
-                "score": round(score, 6),
-                "vector_score": round(vector_score, 6),
-                "lexical_score": round(lexical_score, 6),
-                "path": chunk["path"],
-                "title": chunk["title"],
-                "source_name": chunk["source_name"],
-                "source_url": chunk["source_url"],
-                "token_count": chunk["token_count"],
-                "snippet": snippet_for_query(str(chunk["content"]), query_term_set),
-            }
-        )
+        result = {
+            "score": round(score, 6),
+            "vector_score": round(vector_score, 6),
+            "lexical_score": round(lexical_score, 6),
+            "path": chunk["path"],
+            "title": chunk["title"],
+            "source_name": chunk["source_name"],
+            "source_url": chunk["source_url"],
+            "token_count": chunk["token_count"],
+            "snippet": snippet_for_query(str(chunk["content"]), query_term_set, snippet_chars),
+        }
+        if include_content:
+            result["content"] = chunk["content"]
+        results.append(result)
     results.sort(key=lambda item: item["score"], reverse=True)
     return results[:top]
 
@@ -148,11 +156,15 @@ def main() -> int:
     parser.add_argument("query", help="Natural-language query or review finding text")
     parser.add_argument("--index", type=Path, default=Path("sources/index/chunks.sqlite"))
     parser.add_argument("--top", type=int, default=6)
+    parser.add_argument("--snippet-chars", type=int, default=320, help="Snippet character budget per result")
+    parser.add_argument("--full-snippet", action="store_true", help="Return the full chunk body as the snippet")
+    parser.add_argument("--include-content", action="store_true", help="Include full chunk body in JSON output")
     parser.add_argument("--json", action="store_true")
     args = parser.parse_args()
 
     route = infer_route(args.query)
-    results = search(args.index, args.query, route, args.top)
+    snippet_chars = None if args.full_snippet else args.snippet_chars
+    results = search(args.index, args.query, route, args.top, snippet_chars, args.include_content)
     if args.json:
         print(json.dumps({"query": args.query, "route": route, "results": results}, indent=2, sort_keys=True))
     else:

@@ -143,7 +143,9 @@ def dot(left: array, right: array) -> float:
     return float(sum(a * b for a, b in zip(left, right)))
 
 
-def snippet_for_query(content: str, query_terms: set[str], limit: int = 320) -> str:
+def snippet_for_query(content: str, query_terms: set[str], limit: int | None = 320) -> str:
+    if limit is None:
+        return content.strip()
     clean = re.sub(r"\s+", " ", content).strip()
     if not clean:
         return ""

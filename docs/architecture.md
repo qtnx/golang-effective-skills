@@ -34,7 +34,8 @@ model is needed for source retrieval.
 `scripts/query_chunk_index.py` accepts a natural-language query, infers the Go
 task route, then returns ranked chunk paths, token counts, scores, source URLs,
 and snippets. Agents should open only the returned chunks that fit the task
-context budget.
+context budget. Use `--full-snippet`, `--snippet-chars N`, or
+`--json --include-content` when the caller needs more returned text.
 
 ## Source Priority
 

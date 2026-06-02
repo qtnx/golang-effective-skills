@@ -113,6 +113,14 @@ paths, token counts, scores, source URLs, and snippets. The index is SQLite and
 uses deterministic local hashed n-gram embeddings, so it does not require an API
 key.
 
+Useful output controls:
+
+```bash
+python3 scripts/query_chunk_index.py "error wrapping" --full-snippet
+python3 scripts/query_chunk_index.py "error wrapping" --snippet-chars 1000
+python3 scripts/query_chunk_index.py "error wrapping" --json --include-content
+```
+
 ## Source Provenance
 
 The pack is grounded in:
