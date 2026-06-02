@@ -34,8 +34,9 @@ Load these only when relevant, then follow each skill's Load Protocol:
 1. Inspect repo status and touched files.
 2. Identify the smallest implementation that satisfies the request.
 3. Load the primary skill's checklist/examples before designing Go changes.
-4. Load source chunks through `references/source-map.md` when the change depends
-   on published Go guidance rather than local code alone.
+4. Run `scripts/query_chunk_index.py` with the primary skill when the change
+   depends on published Go guidance rather than local code alone, then open
+   only the returned chunks needed for the edit.
 5. Add or update tests when the behavior is testable.
 6. Implement the change.
 7. Run `gofmt` on edited Go files.

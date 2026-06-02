@@ -11,9 +11,11 @@ Use this for general Go readability and idiom work.
 
 1. Read `references/checklist.md` before reviewing or editing style.
 2. Read `references/examples.md` when changing code or calibrating findings.
-3. Read `references/source-map.md`, then the relevant `sources/chunks/...`
-   files, before making a source-backed rule claim.
-4. If the issue is mainly API naming, error behavior, or test quality, load the
+3. Before making a source-backed rule claim, run:
+   `python3 scripts/query_chunk_index.py --skill go-style-core "<query>"`
+4. Open only the returned `sources/chunks/...` files that fit the task budget.
+5. Use `references/source-map.md` as fallback when retrieval is too broad.
+6. If the issue is mainly API naming, error behavior, or test quality, load the
    adjacent skill instead of stretching this one.
 
 ## Apply This First

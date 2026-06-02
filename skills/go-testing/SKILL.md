@@ -12,10 +12,12 @@ Use this for Go tests and test review.
 1. Read `references/checklist.md` before writing or reviewing tests.
 2. Read `references/examples.md` before rewriting table tests, helpers, or
    failure messages.
-3. Read `references/source-map.md`, then the relevant `sources/chunks/...`
-   files, before citing table-test, subtest, helper, `t.Fatal`, or failure
-   output guidance.
-4. For error semantics or API design under test, load `go-errors-panics` or
+3. Before citing table-test, subtest, helper, `t.Fatal`, or failure output
+   guidance, run:
+   `python3 scripts/query_chunk_index.py --skill go-testing "<query>"`
+4. Open only the returned `sources/chunks/...` files that fit the task budget.
+5. Use `references/source-map.md` as fallback when retrieval is too broad.
+6. For error semantics or API design under test, load `go-errors-panics` or
    `go-naming-api-design` as an adjacent skill.
 
 ## Apply This First

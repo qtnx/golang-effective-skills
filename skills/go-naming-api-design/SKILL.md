@@ -11,10 +11,12 @@ Use this when names or exported API shape affect the caller.
 
 1. Read `references/checklist.md` before reviewing exported names or APIs.
 2. Read `references/examples.md` before proposing renames or API reshapes.
-3. Read `references/source-map.md`, then the relevant `sources/chunks/...`
-   files, before citing package naming, getters, receivers, comments, or
-   interface guidance.
-4. For tests or error APIs, load `go-testing` or `go-errors-panics` as an
+3. Before citing package naming, getters, receivers, comments, or interface
+   guidance, run:
+   `python3 scripts/query_chunk_index.py --skill go-naming-api-design "<query>"`
+4. Open only the returned `sources/chunks/...` files that fit the task budget.
+5. Use `references/source-map.md` as fallback when retrieval is too broad.
+6. For tests or error APIs, load `go-testing` or `go-errors-panics` as an
    adjacent skill.
 
 ## Apply This First

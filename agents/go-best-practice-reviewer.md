@@ -35,8 +35,8 @@ Load these only when relevant, then follow each skill's Load Protocol:
 - For every non-trivial finding, load the relevant task skill and its
   checklist/examples before finalizing the finding.
 - If the finding cites best-practice guidance, load that task skill's
-  `references/source-map.md` and the exact `sources/chunks/...` files that
-  ground the claim.
+  chunk retrieval command first, then open the exact returned
+  `sources/chunks/...` files that ground the claim.
 - Lead with findings, ordered by severity.
 - Include file and line references.
 - Explain why each issue matters and what to change.

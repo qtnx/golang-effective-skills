@@ -17,7 +17,8 @@ Expected:
   checks.
 - All special agent profiles pass frontmatter and role-body checks.
 - Source chunks stay within the configured word-count budget, source maps point
-  at existing chunks, and the external-doc manifest has no failed URLs.
+  at existing chunks, the local chunk index is fresh, and the external-doc
+  manifest has no failed URLs.
 - Each task skill links its checklist, examples, and source map from
   `SKILL.md` so agents know what to load and when.
 
@@ -31,6 +32,8 @@ Current generated corpus:
 - Maximum chunk body size: 1600 words
 - External docs fetched: 121
 - External URL failures: 0
+- Chunk index: `sources/index/chunks.sqlite`
+- Indexed token estimate: 654449
 
 Useful audit:
 
@@ -38,6 +41,7 @@ Useful audit:
 python3 scripts/chunk_sources.py sources/raw sources
 python3 scripts/fetch_external_docs.py sources/chunks sources/raw/external --limit 180 --prune
 python3 scripts/chunk_sources.py sources/raw sources
+python3 scripts/build_chunk_index.py
 ```
 
 After regeneration, verify that source-code viewer pages are skipped and that

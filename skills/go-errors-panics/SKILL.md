@@ -12,10 +12,12 @@ Use this for error behavior and panic policy.
 1. Read `references/checklist.md` before writing or reviewing error handling.
 2. Read `references/examples.md` before changing wrapping, logging, sentinels,
    or panic behavior.
-3. Read `references/source-map.md`, then the relevant `sources/chunks/...`
-   files, before citing error strings, `%w`, panic/recover, logging, or
-   sentinel guidance.
-4. For tests that assert errors, load `go-testing` as an adjacent skill.
+3. Before citing error strings, `%w`, panic/recover, logging, or sentinel
+   guidance, run:
+   `python3 scripts/query_chunk_index.py --skill go-errors-panics "<query>"`
+4. Open only the returned `sources/chunks/...` files that fit the task budget.
+5. Use `references/source-map.md` as fallback when retrieval is too broad.
+6. For tests that assert errors, load `go-testing` as an adjacent skill.
 
 ## Apply This First
 

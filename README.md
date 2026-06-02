@@ -12,7 +12,8 @@ an agent context for every task. This repo turns Effective Go, the Google Go
 Style Guide, and the Uber Go Style Guide into small task-routed skills.
 
 Agents load one primary skill, optionally load one or two adjacent skills, and
-only open source chunks when they need detailed grounding.
+query the local chunk index before opening source chunks for detailed
+grounding.
 
 Keywords this project is built around: Go agent skills, Golang best practices,
 Codex skills, AI coding agents, Go code review, Effective Go, Google Go Style
@@ -85,11 +86,30 @@ Use $go-testing to rewrite these tests as clear table-driven tests with useful f
 ```text
 skills/      Codex skill folders
 sources/     Raw, normalized, and chunked source corpus
+sources/index/
+             Local SQLite chunk index with token counts and hashed embeddings
 scripts/     Install, validation, and source-processing scripts
 agents/      Reusable implementation and review subagent profiles
 fixtures/    Small intentionally flawed Go snippets for validation
 docs/        Architecture, provenance, roadmap, and validation notes
 ```
+
+## Chunk Retrieval
+
+Build or refresh the local embedding index:
+
+```bash
+python3 scripts/build_chunk_index.py
+```
+
+Query source chunks by task:
+
+```bash
+python3 scripts/query_chunk_index.py --skill go-errors-panics "when should Go code wrap errors with %w"
+```
+
+The index is SQLite and uses deterministic local hashed n-gram embeddings, so
+it does not require an API key.
 
 ## Source Provenance
 

@@ -16,8 +16,8 @@ Use this as the router for broad Go work.
 5. Prefer local repository conventions unless they harm correctness,
    readability, or testability.
 6. When editing Go code, run `gofmt` and the narrowest useful test command.
-7. Open source chunks through the selected skill's `source-map.md` when
-   grounding a claim, resolving conflicting guidance, or updating a skill.
+7. For source-backed grounding, run `scripts/query_chunk_index.py` with the
+   selected skill and open only the returned `sources/chunks/...` files.
 
 ## Routing
 
@@ -30,6 +30,7 @@ Use this as the router for broad Go work.
 ## Guardrails
 
 - Do not load full raw or normalized source docs during ordinary coding tasks.
+- Do not browse chunk directories manually before trying the chunk index.
 - Do not treat Effective Go as a complete modern guide for modules or generics.
 - Do not invent style rules when a repository has a clear local pattern.
 - Do not optimize Go code without evidence when the task is not performance work.

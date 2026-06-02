@@ -4,8 +4,10 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import re
+import sqlite3
 import sys
 from pathlib import Path
 
@@ -71,6 +73,52 @@ def validate_external_cache(root: Path, errors: list[str]) -> None:
             errors.append(f"{manifest_path}: failed_count is {failed_count}")
 
 
+def validate_index(root: Path, errors: list[str]) -> None:
+    index_path = root / "sources" / "index" / "chunks.sqlite"
+    if not index_path.exists():
+        errors.append(f"{index_path}: missing chunk index; run scripts/build_chunk_index.py")
+        return
+
+    chunk_paths = sorted((root / "sources" / "chunks").glob("*.md"))
+    expected_hashes = {
+        path.relative_to(root).as_posix(): path.read_text(encoding="utf-8", errors="replace")
+        for path in chunk_paths
+    }
+    expected_hashes = {
+        path: hashlib.sha256(text.encode("utf-8")).hexdigest()
+        for path, text in expected_hashes.items()
+    }
+
+    connection = sqlite3.connect(index_path)
+    try:
+        chunk_count = connection.execute("SELECT COUNT(*) FROM chunks").fetchone()[0]
+        embedding_count = connection.execute("SELECT COUNT(*) FROM embeddings").fetchone()[0]
+        if chunk_count != len(expected_hashes):
+            errors.append(f"{index_path}: chunk_count {chunk_count} != {len(expected_hashes)}")
+        if embedding_count != len(expected_hashes):
+            errors.append(f"{index_path}: embedding_count {embedding_count} != {len(expected_hashes)}")
+
+        rows = connection.execute("SELECT path, sha256, token_count FROM chunks").fetchall()
+        indexed_paths = {path for path, _, _ in rows}
+        missing = sorted(set(expected_hashes) - indexed_paths)
+        extra = sorted(indexed_paths - set(expected_hashes))
+        for path in missing[:20]:
+            errors.append(f"{index_path}: missing indexed chunk {path}")
+        for path in extra[:20]:
+            errors.append(f"{index_path}: stale indexed chunk {path}")
+        for path, sha256, token_count in rows:
+            if path in expected_hashes and expected_hashes[path] != sha256:
+                errors.append(f"{index_path}: stale hash for {path}")
+            if token_count <= 0:
+                errors.append(f"{index_path}: non-positive token_count for {path}")
+
+        dimensions = connection.execute("SELECT DISTINCT dimensions FROM embeddings").fetchall()
+        if len(dimensions) != 1 or dimensions[0][0] <= 0:
+            errors.append(f"{index_path}: invalid embedding dimensions {dimensions!r}")
+    finally:
+        connection.close()
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("root", type=Path, nargs="?", default=Path("."))
@@ -81,6 +129,7 @@ def main() -> int:
     validate_chunks(root, errors)
     validate_source_maps(root, errors)
     validate_external_cache(root, errors)
+    validate_index(root, errors)
 
     if errors:
         for error in errors:
