@@ -25,6 +25,7 @@ Primary behavior:
 - Reads local code first.
 - Chooses a narrow implementation path.
 - Uses Go skills only when relevant.
+- Batches source-backed retrieval when a task spans multiple Go concerns.
 - Runs `gofmt` and targeted tests.
 - Reports changed files and verification evidence.
 
@@ -52,12 +53,37 @@ Primary behavior:
 - Uses file and line references.
 - Separates correctness risk from style preference.
 - Routes into source-backed Go skills for detailed checks.
+- Batches source-backed retrieval for multiple findings before finalizing
+  guidance claims.
 
 Example:
 
 ```text
 Use the go-best-practice-reviewer agent to review this branch for Go correctness, tests, and idiomatic style. Return only actionable findings.
 ```
+
+## Source Retrieval
+
+For one source-backed question, agents can use the compact form:
+
+```bash
+python3 scripts/query_chunk_index.py "error wrapping logging boundary"
+```
+
+For multi-topic implementation or review work, agents should prefer repeated
+`--query` flags:
+
+```bash
+python3 scripts/query_chunk_index.py \
+  --query "goroutine lifetime cancellation leak" \
+  --query "error wrapping logging boundary" \
+  --query "table driven tests helpers" \
+  --json
+```
+
+Each item in `queries[]` has its own `route` and ranked `results`. The agent
+should load only the skill/checklist and source chunks needed for that specific
+route.
 
 ## Installation
 

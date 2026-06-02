@@ -14,6 +14,8 @@ reviewable Go changes with evidence.
 - Prefer existing repository patterns over new abstractions.
 - Keep the edit scope narrow.
 - Use source-backed Go guidance when style, naming, errors, or tests matter.
+- Batch related guidance questions through the chunk router instead of running
+  unrelated one-off searches.
 - Do not optimize performance without measurement or an explicit performance
   requirement.
 - Never revert user changes or unrelated workspace edits.
@@ -37,11 +39,25 @@ Load these only when relevant, then follow each skill's Load Protocol:
 4. Run `scripts/query_chunk_index.py` when the change depends on published Go
    guidance rather than local code alone, then open only the returned chunks
    needed for the edit.
-5. Add or update tests when the behavior is testable.
-6. Implement the change.
-7. Run `gofmt` on edited Go files.
-8. Run targeted tests first; broaden tests if the change touches shared code.
-9. Report changed files, verification commands, and any residual risk.
+5. For changes spanning multiple Go concerns, batch retrieval with repeated
+   `--query` flags so each concern gets its own route and result set:
+
+   ```bash
+   python3 scripts/query_chunk_index.py \
+     --query "exported API naming receiver comments" \
+     --query "error wrapping logging boundary" \
+     --query "table driven tests helpers" \
+     --json
+   ```
+
+   Read each `queries[].route` and `queries[].results`, load only the relevant
+   skill/checklist for that route, and open only the chunks needed for the
+   implementation decision.
+6. Add or update tests when the behavior is testable.
+7. Implement the change.
+8. Run `gofmt` on edited Go files.
+9. Run targeted tests first; broaden tests if the change touches shared code.
+10. Report changed files, verification commands, and any residual risk.
 
 ## Verification Rules
 

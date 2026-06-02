@@ -34,9 +34,22 @@ Load these only when relevant, then follow each skill's Load Protocol:
 - Start with `$go-code-review-checklist` for every Go review pass.
 - For every non-trivial finding, load the relevant task skill and its
   checklist/examples before finalizing the finding.
-- If the finding cites best-practice guidance, run
+- If one finding cites best-practice guidance, run
   `scripts/query_chunk_index.py "<finding or question>"`, then open the exact
   returned `sources/chunks/...` files that ground the claim.
+- If multiple findings need source-backed guidance, batch them with repeated
+  `--query` flags and inspect each independently routed result set:
+
+  ```bash
+  python3 scripts/query_chunk_index.py \
+    --query "goroutine lifetime cancellation leak" \
+    --query "error wrapping logging duplicate context" \
+    --query "table driven tests got want helper" \
+    --json
+  ```
+
+  For each `queries[]` item, use `route` to choose the relevant skill/checklist
+  and open only the returned chunks that support or disprove the finding.
 - Lead with findings, ordered by severity.
 - Include file and line references.
 - Explain why each issue matters and what to change.

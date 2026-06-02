@@ -65,6 +65,18 @@ roles.
 | `go-implementer` | Implement a Go feature, bug fix, refactor, or test update end to end |
 | `go-best-practice-reviewer` | Review Go code against best practices before merge or after agent-generated code |
 
+Both profiles know how to use batch chunk retrieval for multi-topic Go work.
+For example, an implementation or review pass can retrieve concurrency, error,
+and test guidance in one command while keeping separate routes and result sets:
+
+```bash
+python3 scripts/query_chunk_index.py \
+  --query "goroutine lifetime cancellation leak" \
+  --query "error wrapping logging boundary" \
+  --query "table driven tests helpers" \
+  --json
+```
+
 See [docs/agents.md](docs/agents.md).
 
 ## Example Prompts
@@ -79,6 +91,10 @@ Use $go-errors-panics to audit this error handling path and tell me where wrappi
 
 ```text
 Use $go-testing to rewrite these tests as clear table-driven tests with useful failure messages.
+```
+
+```text
+Use the go-best-practice-reviewer agent to review this branch. Batch source-backed queries for concurrency, errors, APIs, and tests before finalizing findings.
 ```
 
 ## Repository Layout
