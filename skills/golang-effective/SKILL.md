@@ -16,8 +16,8 @@ Use this as the router for broad Go work.
 5. Prefer local repository conventions unless they harm correctness,
    readability, or testability.
 6. When editing Go code, run `gofmt` and the narrowest useful test command.
-7. For source-backed grounding, run `scripts/query_chunk_index.py` with the
-   selected skill and open only the returned `sources/chunks/...` files.
+7. For source-backed grounding, run `scripts/query_chunk_index.py "<query>"`
+   and open only the returned `sources/chunks/...` files.
 
 ## Routing
 

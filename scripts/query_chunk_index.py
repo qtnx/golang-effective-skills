@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Query the local chunk vector index and return source chunks to load."""
+"""Universal router for querying the local chunk vector index."""
 
 from __future__ import annotations
 
@@ -14,13 +14,33 @@ from chunk_index_lib import blob_to_vector, dot, hashed_embedding, snippet_for_q
 
 
 SKILL_HINTS = {
-    "go-style-core": "clarity simplicity concision maintainability comments formatting gofmt readable idiomatic",
-    "go-naming-api-design": "package names receiver names getters initialisms exported comments interface api call site",
-    "go-errors-panics": "errors error wrapping sentinel errors.Is errors.As panic recover logging error strings",
-    "go-testing": "unit tests table driven subtests test helpers t.Helper got want failure messages benchmark",
+    "go-style-core": "clarity clear simple simplicity concision maintainability comments formatting gofmt readable idiomatic style nesting control flow",
+    "go-naming-api-design": "package names naming receiver getters get initialisms exported comments interface api call site stutter constructor",
+    "go-errors-panics": "errors error wrap wrapping w sentinel errors.Is errors.As panic recover log logging error strings handle failure",
+    "go-testing": "unit tests test table driven subtests test helpers helper t.Helper got want failure messages benchmark assert",
     "go-code-review-checklist": "review correctness api errors tests cancellation style findings",
     "golang-effective": "go effective style api errors testing review idiomatic",
 }
+
+
+def infer_route(query: str) -> str:
+    query_terms = set(tokenize(query))
+    query_vector = hashed_embedding(query)
+    best_route = "golang-effective"
+    best_score = -1.0
+
+    for route, hint in SKILL_HINTS.items():
+        if route == "golang-effective":
+            continue
+        hint_terms = set(tokenize(hint))
+        lexical_overlap = len(query_terms & hint_terms) / max(1, len(query_terms))
+        vector_score = dot(query_vector, hashed_embedding(hint))
+        score = (0.65 * lexical_overlap) + (0.35 * vector_score)
+        if score > best_score:
+            best_route = route
+            best_score = score
+
+    return best_route if best_score >= 0.05 else "golang-effective"
 
 
 def load_chunks(connection: sqlite3.Connection) -> list[dict[str, object]]:
@@ -75,10 +95,8 @@ def lexical_scores(connection: sqlite3.Connection, query_terms: list[str], total
     return {chunk_id: score / max_score for chunk_id, score in scores.items()}
 
 
-def search(index: Path, query: str, skill: str | None, top: int) -> list[dict[str, object]]:
-    expanded_query = query
-    if skill:
-        expanded_query = f"{query}\n{SKILL_HINTS.get(skill, skill)}"
+def search(index: Path, query: str, route: str, top: int) -> list[dict[str, object]]:
+    expanded_query = f"{query}\n{SKILL_HINTS.get(route, route)}"
     query_terms = tokenize(expanded_query)
     query_vector = hashed_embedding(expanded_query)
 
@@ -112,8 +130,9 @@ def search(index: Path, query: str, skill: str | None, top: int) -> list[dict[st
     return results[:top]
 
 
-def print_text(results: list[dict[str, object]]) -> None:
+def print_text(route: str, results: list[dict[str, object]]) -> None:
     total_tokens = sum(int(item["token_count"]) for item in results)
+    print(f"route: {route}")
     print(f"total_result_tokens: {total_tokens}")
     for index, item in enumerate(results, 1):
         print(f"\n{index}. {item['path']}")
@@ -128,16 +147,16 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("query", help="Natural-language query or review finding text")
     parser.add_argument("--index", type=Path, default=Path("sources/index/chunks.sqlite"))
-    parser.add_argument("--skill", choices=sorted(SKILL_HINTS), help="Bias retrieval toward a Go skill")
     parser.add_argument("--top", type=int, default=6)
     parser.add_argument("--json", action="store_true")
     args = parser.parse_args()
 
-    results = search(args.index, args.query, args.skill, args.top)
+    route = infer_route(args.query)
+    results = search(args.index, args.query, route, args.top)
     if args.json:
-        print(json.dumps(results, indent=2, sort_keys=True))
+        print(json.dumps({"query": args.query, "route": route, "results": results}, indent=2, sort_keys=True))
     else:
-        print_text(results)
+        print_text(route, results)
     return 0
 
 

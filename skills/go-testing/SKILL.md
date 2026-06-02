@@ -14,7 +14,7 @@ Use this for Go tests and test review.
    failure messages.
 3. Before citing table-test, subtest, helper, `t.Fatal`, or failure output
    guidance, run:
-   `python3 scripts/query_chunk_index.py --skill go-testing "<query>"`
+   `python3 scripts/query_chunk_index.py "<query>"`
 4. Open only the returned `sources/chunks/...` files that fit the task budget.
 5. Use `references/source-map.md` as fallback when retrieval is too broad.
 6. For error semantics or API design under test, load `go-errors-panics` or

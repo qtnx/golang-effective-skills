@@ -12,7 +12,7 @@ Use this for Go review passes.
 1. Read `references/checklist.md` before producing review findings.
 2. Read `references/examples.md` to calibrate severity and finding shape.
 3. For broad review grounding, run:
-   `python3 scripts/query_chunk_index.py --skill go-code-review-checklist "<query>"`
+   `python3 scripts/query_chunk_index.py "<query>"`
 4. Read `references/source-map.md` to route each source-backed finding to the
    right task skill.
 5. For each non-trivial finding, load the relevant task skill and follow its

@@ -14,7 +14,7 @@ Use this for error behavior and panic policy.
    or panic behavior.
 3. Before citing error strings, `%w`, panic/recover, logging, or sentinel
    guidance, run:
-   `python3 scripts/query_chunk_index.py --skill go-errors-panics "<query>"`
+   `python3 scripts/query_chunk_index.py "<query>"`
 4. Open only the returned `sources/chunks/...` files that fit the task budget.
 5. Use `references/source-map.md` as fallback when retrieval is too broad.
 6. For tests that assert errors, load `go-testing` as an adjacent skill.

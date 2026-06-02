@@ -34,9 +34,9 @@ Load these only when relevant, then follow each skill's Load Protocol:
 - Start with `$go-code-review-checklist` for every Go review pass.
 - For every non-trivial finding, load the relevant task skill and its
   checklist/examples before finalizing the finding.
-- If the finding cites best-practice guidance, load that task skill's
-  chunk retrieval command first, then open the exact returned
-  `sources/chunks/...` files that ground the claim.
+- If the finding cites best-practice guidance, run
+  `scripts/query_chunk_index.py "<finding or question>"`, then open the exact
+  returned `sources/chunks/...` files that ground the claim.
 - Lead with findings, ordered by severity.
 - Include file and line references.
 - Explain why each issue matters and what to change.

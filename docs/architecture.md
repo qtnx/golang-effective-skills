@@ -31,10 +31,10 @@ issue. `source-map.md` remains a deterministic fallback and routing aid.
 n-gram embeddings. This keeps the repo self-contained: no API key or external
 model is needed for source retrieval.
 
-`scripts/query_chunk_index.py` accepts a natural-language query and optional
-`--skill` bias, then returns ranked chunk paths, token counts, scores, source
-URLs, and snippets. Agents should open only the returned chunks that fit the
-task context budget.
+`scripts/query_chunk_index.py` accepts a natural-language query, infers the Go
+task route, then returns ranked chunk paths, token counts, scores, source URLs,
+and snippets. Agents should open only the returned chunks that fit the task
+context budget.
 
 ## Source Priority
 

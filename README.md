@@ -105,11 +105,13 @@ python3 scripts/build_chunk_index.py
 Query source chunks by task:
 
 ```bash
-python3 scripts/query_chunk_index.py --skill go-errors-panics "when should Go code wrap errors with %w"
+python3 scripts/query_chunk_index.py "when should Go code wrap errors with %w"
 ```
 
-The index is SQLite and uses deterministic local hashed n-gram embeddings, so
-it does not require an API key.
+The command is a universal router: it prints the inferred `route`, ranked chunk
+paths, token counts, scores, source URLs, and snippets. The index is SQLite and
+uses deterministic local hashed n-gram embeddings, so it does not require an API
+key.
 
 ## Source Provenance
 
