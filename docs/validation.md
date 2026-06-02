@@ -18,6 +18,8 @@ Expected:
 - All special agent profiles pass frontmatter and role-body checks.
 - Source chunks stay within the configured word-count budget, source maps point
   at existing chunks, and the external-doc manifest has no failed URLs.
+- Each task skill links its checklist, examples, and source map from
+  `SKILL.md` so agents know what to load and when.
 
 ## Source Corpus Validation
 

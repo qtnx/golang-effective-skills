@@ -7,6 +7,16 @@ description: Source-backed Go naming and API design guidance. Use when Codex is 
 
 Use this when names or exported API shape affect the caller.
 
+## Load Protocol
+
+1. Read `references/checklist.md` before reviewing exported names or APIs.
+2. Read `references/examples.md` before proposing renames or API reshapes.
+3. Read `references/source-map.md`, then the relevant `sources/chunks/...`
+   files, before citing package naming, getters, receivers, comments, or
+   interface guidance.
+4. For tests or error APIs, load `go-testing` or `go-errors-panics` as an
+   adjacent skill.
+
 ## Apply This First
 
 - Read names from the call site.
@@ -33,8 +43,8 @@ Use this when names or exported API shape affect the caller.
 
 ## Review Checklist
 
-Read `references/checklist.md`.
+Use `references/checklist.md`.
 
 ## Source Anchors
 
-Read `references/source-map.md` for source-backed naming and API rules.
+Use `references/source-map.md` to choose exact naming and API chunks.

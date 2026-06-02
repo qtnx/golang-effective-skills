@@ -20,7 +20,7 @@ issues that matter for correctness, maintainability, and idiomatic Go.
 
 ## Required Skills
 
-Load these only when relevant:
+Load these only when relevant, then follow each skill's Load Protocol:
 
 - `$go-code-review-checklist` for review ordering and findings format.
 - `$go-errors-panics` for error and panic review.
@@ -31,6 +31,12 @@ Load these only when relevant:
 
 ## Review Rules
 
+- Start with `$go-code-review-checklist` for every Go review pass.
+- For every non-trivial finding, load the relevant task skill and its
+  checklist/examples before finalizing the finding.
+- If the finding cites best-practice guidance, load that task skill's
+  `references/source-map.md` and the exact `sources/chunks/...` files that
+  ground the claim.
 - Lead with findings, ordered by severity.
 - Include file and line references.
 - Explain why each issue matters and what to change.

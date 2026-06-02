@@ -10,3 +10,10 @@ Route findings to task skills:
 
 Use source chunks only when a finding relies on source-backed style guidance or
 when local code style conflicts with generic guidance.
+
+When using this router:
+
+1. Load the task skill listed above.
+2. Read that skill's `references/checklist.md` and `references/examples.md`.
+3. Read that skill's `references/source-map.md`.
+4. Open only the source chunks that match the specific finding.

@@ -7,6 +7,15 @@ description: Source-backed Go style guidance. Use when Codex is writing, rewriti
 
 Use this for general Go readability and idiom work.
 
+## Load Protocol
+
+1. Read `references/checklist.md` before reviewing or editing style.
+2. Read `references/examples.md` when changing code or calibrating findings.
+3. Read `references/source-map.md`, then the relevant `sources/chunks/...`
+   files, before making a source-backed rule claim.
+4. If the issue is mainly API naming, error behavior, or test quality, load the
+   adjacent skill instead of stretching this one.
+
 ## Apply This First
 
 - Prefer clarity over cleverness.
@@ -32,9 +41,8 @@ Use this for general Go readability and idiom work.
 
 ## Review Checklist
 
-Read `references/checklist.md` for a compact style review checklist.
+Use `references/checklist.md` for a compact style review checklist.
 
 ## Source Anchors
 
-Read `references/source-map.md` only when grounding a rule or updating this
-skill.
+Use `references/source-map.md` to choose exact source chunks.

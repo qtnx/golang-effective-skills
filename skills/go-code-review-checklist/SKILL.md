@@ -7,6 +7,15 @@ description: Source-backed Go code review checklist. Use when Codex is reviewing
 
 Use this for Go review passes.
 
+## Load Protocol
+
+1. Read `references/checklist.md` before producing review findings.
+2. Read `references/examples.md` to calibrate severity and finding shape.
+3. Read `references/source-map.md` to route each source-backed finding to the
+   right task skill.
+4. For each non-trivial finding, load the relevant task skill and follow its
+   Load Protocol before finalizing the claim.
+
 ## Review Order
 
 1. Behavior and API correctness.
@@ -34,9 +43,9 @@ Use this for Go review passes.
 
 ## Checklist
 
-Read `references/checklist.md`.
+Use `references/checklist.md`.
 
 ## Source Anchors
 
-Read `references/source-map.md` to route review findings to source-backed
-skills.
+Use `references/source-map.md` to route review findings to source-backed
+skills and chunks.

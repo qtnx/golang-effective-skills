@@ -7,6 +7,17 @@ description: Source-backed Go testing guidance. Use when Codex is writing or rev
 
 Use this for Go tests and test review.
 
+## Load Protocol
+
+1. Read `references/checklist.md` before writing or reviewing tests.
+2. Read `references/examples.md` before rewriting table tests, helpers, or
+   failure messages.
+3. Read `references/source-map.md`, then the relevant `sources/chunks/...`
+   files, before citing table-test, subtest, helper, `t.Fatal`, or failure
+   output guidance.
+4. For error semantics or API design under test, load `go-errors-panics` or
+   `go-naming-api-design` as an adjacent skill.
+
 ## Apply This First
 
 - Test behavior, not implementation details.
@@ -33,8 +44,8 @@ Use this for Go tests and test review.
 
 ## Review Checklist
 
-Read `references/checklist.md`.
+Use `references/checklist.md`.
 
 ## Source Anchors
 
-Read `references/source-map.md` when grounding test guidance.
+Use `references/source-map.md` to choose exact testing chunks.

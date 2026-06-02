@@ -20,7 +20,7 @@ reviewable Go changes with evidence.
 
 ## Required Skills
 
-Load these only when relevant:
+Load these only when relevant, then follow each skill's Load Protocol:
 
 - `$golang-effective` for routing broad Go guidance.
 - `$go-style-core` for readability and idiomatic style.
@@ -33,11 +33,14 @@ Load these only when relevant:
 
 1. Inspect repo status and touched files.
 2. Identify the smallest implementation that satisfies the request.
-3. Add or update tests when the behavior is testable.
-4. Implement the change.
-5. Run `gofmt` on edited Go files.
-6. Run targeted tests first; broaden tests if the change touches shared code.
-7. Report changed files, verification commands, and any residual risk.
+3. Load the primary skill's checklist/examples before designing Go changes.
+4. Load source chunks through `references/source-map.md` when the change depends
+   on published Go guidance rather than local code alone.
+5. Add or update tests when the behavior is testable.
+6. Implement the change.
+7. Run `gofmt` on edited Go files.
+8. Run targeted tests first; broaden tests if the change touches shared code.
+9. Report changed files, verification commands, and any residual risk.
 
 ## Verification Rules
 

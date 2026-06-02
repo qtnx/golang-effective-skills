@@ -10,17 +10,16 @@ Use this as the router for broad Go work.
 ## Workflow
 
 1. Identify the task type from the prompt and touched code.
-2. Load one primary adjacent skill.
-3. Load at most two secondary adjacent skills when the task crosses domains.
-4. Prefer local repository conventions unless they harm correctness,
+2. Read `references/routing.md`, then load one primary adjacent skill.
+3. Follow that skill's Load Protocol before giving advice or editing code.
+4. Load at most two secondary adjacent skills when the task crosses domains.
+5. Prefer local repository conventions unless they harm correctness,
    readability, or testability.
-5. When editing Go code, run `gofmt` and the narrowest useful test command.
-6. Open source chunks only when grounding a claim, resolving conflicting
-   guidance, or updating a skill.
+6. When editing Go code, run `gofmt` and the narrowest useful test command.
+7. Open source chunks through the selected skill's `source-map.md` when
+   grounding a claim, resolving conflicting guidance, or updating a skill.
 
 ## Routing
-
-Read `references/routing.md` when the correct skill is not obvious.
 
 - Style/readability/formatting: `go-style-core`
 - Package names, exported API, comments, receiver names: `go-naming-api-design`
