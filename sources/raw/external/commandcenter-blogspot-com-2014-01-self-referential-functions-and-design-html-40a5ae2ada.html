@@ -1,0 +1,1781 @@
+---
+source_name: "External Linked Documentation"
+source_url: "http://commandcenter.blogspot.com/2014/01/self-referential-functions-and-design.html"
+retrieved_at: "2026-06-02T06:41:18.831416+00:00"
+content_type: "text/html; charset=UTF-8"
+truncated: false
+insecure_tls_fallback: true
+---
+
+<!DOCTYPE html>
+<html class='v2' dir='ltr' lang='en'>
+<head>
+<link href='https://www.blogger.com/static/v1/widgets/2872013778-css_bundle_v2.css' rel='stylesheet' type='text/css'/>
+<meta content='width=1100' name='viewport'/>
+<meta content='text/html; charset=UTF-8' http-equiv='Content-Type'/>
+<meta content='blogger' name='generator'/>
+<link href='https://commandcenter.blogspot.com/favicon.ico' rel='icon' type='image/x-icon'/>
+<link href='https://commandcenter.blogspot.com/2014/01/self-referential-functions-and-design.html' rel='canonical'/>
+<link rel="alternate" type="application/atom+xml" title="command center - Atom" href="https://commandcenter.blogspot.com/feeds/posts/default" />
+<link rel="alternate" type="application/rss+xml" title="command center - RSS" href="https://commandcenter.blogspot.com/feeds/posts/default?alt=rss" />
+<link rel="service.post" type="application/atom+xml" title="command center - Atom" href="https://www.blogger.com/feeds/6983287/posts/default" />
+
+<link rel="alternate" type="application/atom+xml" title="command center - Atom" href="https://commandcenter.blogspot.com/feeds/4420940212897630400/comments/default" />
+<!--Can't find substitution for tag [blog.ieCssRetrofitLinks]-->
+<meta content='https://commandcenter.blogspot.com/2014/01/self-referential-functions-and-design.html' property='og:url'/>
+<meta content='Self-referential functions and the design of options' property='og:title'/>
+<meta content='I&#39;ve been trying on and off to find a nice way to deal with setting options in a Go  package I am writing. Options on a type, that is. The p...' property='og:description'/>
+<title>command center: Self-referential functions and the design of options</title>
+<style id='page-skin-1' type='text/css'><!--
+/*
+-----------------------------------------------
+Blogger Template Style
+Name:     Simple
+Designer: Blogger
+URL:      www.blogger.com
+----------------------------------------------- */
+/* Content
+----------------------------------------------- */
+body {
+font: normal normal 12px Arial, Tahoma, Helvetica, FreeSans, sans-serif;
+color: #222222;
+background: #66bbdd none repeat scroll top left;
+padding: 0 40px 40px 40px;
+}
+html body .region-inner {
+min-width: 0;
+max-width: 100%;
+width: auto;
+}
+h2 {
+font-size: 22px;
+}
+a:link {
+text-decoration:none;
+color: #2288bb;
+}
+a:visited {
+text-decoration:none;
+color: #888888;
+}
+a:hover {
+text-decoration:underline;
+color: #33aaff;
+}
+.body-fauxcolumn-outer .fauxcolumn-inner {
+background: transparent url(https://resources.blogblog.com/blogblog/data/1kt/simple/body_gradient_tile_light.png) repeat scroll top left;
+_background-image: none;
+}
+.body-fauxcolumn-outer .cap-top {
+position: absolute;
+z-index: 1;
+height: 400px;
+width: 100%;
+}
+.body-fauxcolumn-outer .cap-top .cap-left {
+width: 100%;
+background: transparent url(https://resources.blogblog.com/blogblog/data/1kt/simple/gradients_light.png) repeat-x scroll top left;
+_background-image: none;
+}
+.content-outer {
+-moz-box-shadow: 0 0 40px rgba(0, 0, 0, .15);
+-webkit-box-shadow: 0 0 5px rgba(0, 0, 0, .15);
+-goog-ms-box-shadow: 0 0 10px #333333;
+box-shadow: 0 0 40px rgba(0, 0, 0, .15);
+margin-bottom: 1px;
+}
+.content-inner {
+padding: 10px 10px;
+}
+.content-inner {
+background-color: #ffffff;
+}
+/* Header
+----------------------------------------------- */
+.header-outer {
+background: transparent none repeat-x scroll 0 -400px;
+_background-image: none;
+}
+.Header h1 {
+font: normal normal 60px Arial, Tahoma, Helvetica, FreeSans, sans-serif;
+color: #3399bb;
+text-shadow: -1px -1px 1px rgba(0, 0, 0, .2);
+}
+.Header h1 a {
+color: #3399bb;
+}
+.Header .description {
+font-size: 140%;
+color: #777777;
+}
+.header-inner .Header .titlewrapper {
+padding: 22px 30px;
+}
+.header-inner .Header .descriptionwrapper {
+padding: 0 30px;
+}
+/* Tabs
+----------------------------------------------- */
+.tabs-inner .section:first-child {
+border-top: 1px solid #eeeeee;
+}
+.tabs-inner .section:first-child ul {
+margin-top: -1px;
+border-top: 1px solid #eeeeee;
+border-left: 0 solid #eeeeee;
+border-right: 0 solid #eeeeee;
+}
+.tabs-inner .widget ul {
+background: #f5f5f5 url(https://resources.blogblog.com/blogblog/data/1kt/simple/gradients_light.png) repeat-x scroll 0 -800px;
+_background-image: none;
+border-bottom: 1px solid #eeeeee;
+margin-top: 0;
+margin-left: -30px;
+margin-right: -30px;
+}
+.tabs-inner .widget li a {
+display: inline-block;
+padding: .6em 1em;
+font: normal normal 14px Arial, Tahoma, Helvetica, FreeSans, sans-serif;
+color: #999999;
+border-left: 1px solid #ffffff;
+border-right: 1px solid #eeeeee;
+}
+.tabs-inner .widget li:first-child a {
+border-left: none;
+}
+.tabs-inner .widget li.selected a, .tabs-inner .widget li a:hover {
+color: #000000;
+background-color: #eeeeee;
+text-decoration: none;
+}
+/* Columns
+----------------------------------------------- */
+.main-outer {
+border-top: 0 solid #eeeeee;
+}
+.fauxcolumn-left-outer .fauxcolumn-inner {
+border-right: 1px solid #eeeeee;
+}
+.fauxcolumn-right-outer .fauxcolumn-inner {
+border-left: 1px solid #eeeeee;
+}
+/* Headings
+----------------------------------------------- */
+div.widget > h2,
+div.widget h2.title {
+margin: 0 0 1em 0;
+font: normal bold 11px Arial, Tahoma, Helvetica, FreeSans, sans-serif;
+color: #000000;
+}
+/* Widgets
+----------------------------------------------- */
+.widget .zippy {
+color: #999999;
+text-shadow: 2px 2px 1px rgba(0, 0, 0, .1);
+}
+.widget .popular-posts ul {
+list-style: none;
+}
+/* Posts
+----------------------------------------------- */
+h2.date-header {
+font: normal bold 11px Arial, Tahoma, Helvetica, FreeSans, sans-serif;
+}
+.date-header span {
+background-color: transparent;
+color: #222222;
+padding: inherit;
+letter-spacing: inherit;
+margin: inherit;
+}
+.main-inner {
+padding-top: 30px;
+padding-bottom: 30px;
+}
+.main-inner .column-center-inner {
+padding: 0 15px;
+}
+.main-inner .column-center-inner .section {
+margin: 0 15px;
+}
+.post {
+margin: 0 0 25px 0;
+}
+h3.post-title, .comments h4 {
+font: normal normal 22px Arial, Tahoma, Helvetica, FreeSans, sans-serif;
+margin: .75em 0 0;
+}
+.post-body {
+font-size: 110%;
+line-height: 1.4;
+position: relative;
+}
+.post-body img, .post-body .tr-caption-container, .Profile img, .Image img,
+.BlogList .item-thumbnail img {
+padding: 2px;
+background: #ffffff;
+border: 1px solid #eeeeee;
+-moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, .1);
+-webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, .1);
+box-shadow: 1px 1px 5px rgba(0, 0, 0, .1);
+}
+.post-body img, .post-body .tr-caption-container {
+padding: 5px;
+}
+.post-body .tr-caption-container {
+color: #222222;
+}
+.post-body .tr-caption-container img {
+padding: 0;
+background: transparent;
+border: none;
+-moz-box-shadow: 0 0 0 rgba(0, 0, 0, .1);
+-webkit-box-shadow: 0 0 0 rgba(0, 0, 0, .1);
+box-shadow: 0 0 0 rgba(0, 0, 0, .1);
+}
+.post-header {
+margin: 0 0 1.5em;
+line-height: 1.6;
+font-size: 90%;
+}
+.post-footer {
+margin: 20px -2px 0;
+padding: 5px 10px;
+color: #666666;
+background-color: #f9f9f9;
+border-bottom: 1px solid #eeeeee;
+line-height: 1.6;
+font-size: 90%;
+}
+#comments .comment-author {
+padding-top: 1.5em;
+border-top: 1px solid #eeeeee;
+background-position: 0 1.5em;
+}
+#comments .comment-author:first-child {
+padding-top: 0;
+border-top: none;
+}
+.avatar-image-container {
+margin: .2em 0 0;
+}
+#comments .avatar-image-container img {
+border: 1px solid #eeeeee;
+}
+/* Comments
+----------------------------------------------- */
+.comments .comments-content .icon.blog-author {
+background-repeat: no-repeat;
+background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAASCAYAAABWzo5XAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEgAACxIB0t1+/AAAAAd0SU1FB9sLFwMeCjjhcOMAAAD+SURBVDjLtZSvTgNBEIe/WRRnm3U8RC1neQdsm1zSBIU9VVF1FkUguQQsD9ITmD7ECZIJSE4OZo9stoVjC/zc7ky+zH9hXwVwDpTAWWLrgS3QAe8AZgaAJI5zYAmc8r0G4AHYHQKVwII8PZrZFsBFkeRCABYiMh9BRUhnSkPTNCtVXYXURi1FpBDgArj8QU1eVXUzfnjv7yP7kwu1mYrkWlU33vs1QNu2qU8pwN0UpKoqokjWwCztrMuBhEhmh8bD5UDqur75asbcX0BGUB9/HAMB+r32hznJgXy2v0sGLBcyAJ1EK3LFcbo1s91JeLwAbwGYu7TP/3ZGfnXYPgAVNngtqatUNgAAAABJRU5ErkJggg==);
+}
+.comments .comments-content .loadmore a {
+border-top: 1px solid #999999;
+border-bottom: 1px solid #999999;
+}
+.comments .comment-thread.inline-thread {
+background-color: #f9f9f9;
+}
+.comments .continue {
+border-top: 2px solid #999999;
+}
+/* Accents
+---------------------------------------------- */
+.section-columns td.columns-cell {
+border-left: 1px solid #eeeeee;
+}
+.blog-pager {
+background: transparent none no-repeat scroll top center;
+}
+.blog-pager-older-link, .home-link,
+.blog-pager-newer-link {
+background-color: #ffffff;
+padding: 5px;
+}
+.footer-outer {
+border-top: 0 dashed #bbbbbb;
+}
+/* Mobile
+----------------------------------------------- */
+body.mobile  {
+background-size: auto;
+}
+.mobile .body-fauxcolumn-outer {
+background: transparent none repeat scroll top left;
+}
+.mobile .body-fauxcolumn-outer .cap-top {
+background-size: 100% auto;
+}
+.mobile .content-outer {
+-webkit-box-shadow: 0 0 3px rgba(0, 0, 0, .15);
+box-shadow: 0 0 3px rgba(0, 0, 0, .15);
+}
+.mobile .tabs-inner .widget ul {
+margin-left: 0;
+margin-right: 0;
+}
+.mobile .post {
+margin: 0;
+}
+.mobile .main-inner .column-center-inner .section {
+margin: 0;
+}
+.mobile .date-header span {
+padding: 0.1em 10px;
+margin: 0 -10px;
+}
+.mobile h3.post-title {
+margin: 0;
+}
+.mobile .blog-pager {
+background: transparent none no-repeat scroll top center;
+}
+.mobile .footer-outer {
+border-top: none;
+}
+.mobile .main-inner, .mobile .footer-inner {
+background-color: #ffffff;
+}
+.mobile-index-contents {
+color: #222222;
+}
+.mobile-link-button {
+background-color: #2288bb;
+}
+.mobile-link-button a:link, .mobile-link-button a:visited {
+color: #ffffff;
+}
+.mobile .tabs-inner .section:first-child {
+border-top: none;
+}
+.mobile .tabs-inner .PageList .widget-content {
+background-color: #eeeeee;
+color: #000000;
+border-top: 1px solid #eeeeee;
+border-bottom: 1px solid #eeeeee;
+}
+.mobile .tabs-inner .PageList .widget-content .pagelist-arrow {
+border-left: 1px solid #eeeeee;
+}
+
+--></style>
+<style id='template-skin-1' type='text/css'><!--
+body {
+min-width: 960px;
+}
+.content-outer, .content-fauxcolumn-outer, .region-inner {
+min-width: 960px;
+max-width: 960px;
+_width: 960px;
+}
+.main-inner .columns {
+padding-left: 0;
+padding-right: 310px;
+}
+.main-inner .fauxcolumn-center-outer {
+left: 0;
+right: 310px;
+/* IE6 does not respect left and right together */
+_width: expression(this.parentNode.offsetWidth -
+parseInt("0") -
+parseInt("310px") + 'px');
+}
+.main-inner .fauxcolumn-left-outer {
+width: 0;
+}
+.main-inner .fauxcolumn-right-outer {
+width: 310px;
+}
+.main-inner .column-left-outer {
+width: 0;
+right: 100%;
+margin-left: -0;
+}
+.main-inner .column-right-outer {
+width: 310px;
+margin-right: -310px;
+}
+#layout {
+min-width: 0;
+}
+#layout .content-outer {
+min-width: 0;
+width: 800px;
+}
+#layout .region-inner {
+min-width: 0;
+width: auto;
+}
+body#layout div.add_widget {
+padding: 8px;
+}
+body#layout div.add_widget a {
+margin-left: 32px;
+}
+--></style>
+<link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=6983287&amp;zx=4531ed03-a735-406c-9254-abe4419c4eca' media='none' onload='if(media!=&#39;all&#39;)media=&#39;all&#39;' rel='stylesheet'/><noscript><link href='https://www.blogger.com/dyn-css/authorization.css?targetBlogID=6983287&amp;zx=4531ed03-a735-406c-9254-abe4419c4eca' rel='stylesheet'/></noscript>
+<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
+<meta name='google-adsense-platform-domain' content='blogspot.com'/>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?display=swap&family=Inconsolata"></head>
+<body class='loading variant-pale'>
+<div class='navbar section' id='navbar' name='Navbar'><div class='widget Navbar' data-version='1' id='Navbar1'><script type="text/javascript">
+    function setAttributeOnload(object, attribute, val) {
+      if(window.addEventListener) {
+        window.addEventListener('load',
+          function(){ object[attribute] = val; }, false);
+      } else {
+        window.attachEvent('onload', function(){ object[attribute] = val; });
+      }
+    }
+  </script>
+<div id="navbar-iframe-container"></div>
+<script type="text/javascript" src="https://apis.google.com/js/platform.js"></script>
+<script type="text/javascript">
+      gapi.load("gapi.iframes:gapi.iframes.style.bubble", function() {
+        if (gapi.iframes && gapi.iframes.getContext) {
+          gapi.iframes.getContext().openChild({
+              url: 'https://www.blogger.com/navbar/6983287?po\x3d4420940212897630400\x26origin\x3dhttps://commandcenter.blogspot.com',
+              where: document.getElementById("navbar-iframe-container"),
+              id: "navbar-iframe"
+          });
+        }
+      });
+    </script><script type="text/javascript">
+(function() {
+var script = document.createElement('script');
+script.type = 'text/javascript';
+script.src = '//pagead2.googlesyndication.com/pagead/js/google_top_exp.js';
+var head = document.getElementsByTagName('head')[0];
+if (head) {
+head.appendChild(script);
+}})();
+</script>
+</div></div>
+<div class='body-fauxcolumns'>
+<div class='fauxcolumn-outer body-fauxcolumn-outer'>
+<div class='cap-top'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+<div class='fauxborder-left'>
+<div class='fauxborder-right'></div>
+<div class='fauxcolumn-inner'>
+</div>
+</div>
+<div class='cap-bottom'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+</div>
+</div>
+<div class='content'>
+<div class='content-fauxcolumns'>
+<div class='fauxcolumn-outer content-fauxcolumn-outer'>
+<div class='cap-top'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+<div class='fauxborder-left'>
+<div class='fauxborder-right'></div>
+<div class='fauxcolumn-inner'>
+</div>
+</div>
+<div class='cap-bottom'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+</div>
+</div>
+<div class='content-outer'>
+<div class='content-cap-top cap-top'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+<div class='fauxborder-left content-fauxborder-left'>
+<div class='fauxborder-right content-fauxborder-right'></div>
+<div class='content-inner'>
+<header>
+<div class='header-outer'>
+<div class='header-cap-top cap-top'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+<div class='fauxborder-left header-fauxborder-left'>
+<div class='fauxborder-right header-fauxborder-right'></div>
+<div class='region-inner header-inner'>
+<div class='header section' id='header' name='Header'><div class='widget Header' data-version='1' id='Header1'>
+<div id='header-inner'>
+<div class='titlewrapper'>
+<h1 class='title'>
+<a href='https://commandcenter.blogspot.com/'>
+command center
+</a>
+</h1>
+</div>
+<div class='descriptionwrapper'>
+<p class='description'><span>
+</span></p>
+</div>
+</div>
+</div></div>
+</div>
+</div>
+<div class='header-cap-bottom cap-bottom'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+</div>
+</header>
+<div class='tabs-outer'>
+<div class='tabs-cap-top cap-top'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+<div class='fauxborder-left tabs-fauxborder-left'>
+<div class='fauxborder-right tabs-fauxborder-right'></div>
+<div class='region-inner tabs-inner'>
+<div class='tabs no-items section' id='crosscol' name='Cross-Column'></div>
+<div class='tabs no-items section' id='crosscol-overflow' name='Cross-Column 2'></div>
+</div>
+</div>
+<div class='tabs-cap-bottom cap-bottom'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+</div>
+<div class='main-outer'>
+<div class='main-cap-top cap-top'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+<div class='fauxborder-left main-fauxborder-left'>
+<div class='fauxborder-right main-fauxborder-right'></div>
+<div class='region-inner main-inner'>
+<div class='columns fauxcolumns'>
+<div class='fauxcolumn-outer fauxcolumn-center-outer'>
+<div class='cap-top'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+<div class='fauxborder-left'>
+<div class='fauxborder-right'></div>
+<div class='fauxcolumn-inner'>
+</div>
+</div>
+<div class='cap-bottom'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+</div>
+<div class='fauxcolumn-outer fauxcolumn-left-outer'>
+<div class='cap-top'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+<div class='fauxborder-left'>
+<div class='fauxborder-right'></div>
+<div class='fauxcolumn-inner'>
+</div>
+</div>
+<div class='cap-bottom'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+</div>
+<div class='fauxcolumn-outer fauxcolumn-right-outer'>
+<div class='cap-top'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+<div class='fauxborder-left'>
+<div class='fauxborder-right'></div>
+<div class='fauxcolumn-inner'>
+</div>
+</div>
+<div class='cap-bottom'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+</div>
+<!-- corrects IE6 width calculation -->
+<div class='columns-inner'>
+<div class='column-center-outer'>
+<div class='column-center-inner'>
+<div class='main section' id='main' name='Main'><div class='widget Blog' data-version='1' id='Blog1'>
+<div class='blog-posts hfeed'>
+
+          <div class="date-outer">
+        
+<h2 class='date-header'><span>Friday, January 24, 2014</span></h2>
+
+          <div class="date-posts">
+        
+<div class='post-outer'>
+<div class='post hentry uncustomized-post-template' itemprop='blogPost' itemscope='itemscope' itemtype='http://schema.org/BlogPosting'>
+<meta content='6983287' itemprop='blogId'/>
+<meta content='4420940212897630400' itemprop='postId'/>
+<a name='4420940212897630400'></a>
+<h3 class='post-title entry-title' itemprop='name'>
+Self-referential functions and the design of options
+</h3>
+<div class='post-header'>
+<div class='post-header-line-1'></div>
+</div>
+<div class='post-body entry-content' id='post-body-4420940212897630400' itemprop='description articleBody'>
+I've been trying on and off to find a nice way to deal with setting options in a <a href="http://golang.org/" target="_blank">Go</a> package I am writing. Options on a type, that is. The package is intricate and there will probably end up being dozens of options. There are many ways to do this kind of thing, but I wanted one that felt nice to use, didn't require too much API (or at least not too much for the user to absorb), and could grow as needed without bloat.<br />
+<br />
+I've tried most of the obvious ways: option structs, lots of methods, variant constructors, and more, and found them all unsatisfactory. After a bunch of trial versions over the past year or so, and a lot of conversations with other Gophers making suggestions, I've finally found one I like. You might like it too. Or you might not, but either way it does show an interesting use of self-referential functions.<br />
+<br />
+I hope I have your attention now.<br />
+<br />
+Let's start with a simple version. We'll refine it to get to the final version.<br />
+<br />
+First, we define an <span style="font-family: Trebuchet MS, sans-serif;">option</span> type. It is a function that takes one argument, the <span style="font-family: Trebuchet MS, sans-serif;">Foo</span> we are operating on.<br />
+<br />
+<span style="font-family: Trebuchet MS, sans-serif;">type option func(*Foo)</span><br />
+<br />
+The idea is that an option is implemented as a function we call to set the state of that option. That may seem odd, but there's a method in the madness.<br />
+<br />
+Given the option type, we next define an <span style="font-family: Trebuchet MS, sans-serif;">Option</span> method on <span style="font-family: Trebuchet MS, sans-serif;">*Foo</span> that applies the options it's passed by calling them as functions. That method is defined in the same package, say <span style="font-family: Trebuchet MS, sans-serif;">pkg</span>, in which <span style="font-family: Trebuchet MS, sans-serif;">Foo</span> is defined.<br />
+<br />
+This is Go, so we can make the method variadic and set lots of options in a given call:<br />
+<br />
+<span style="font-family: Trebuchet MS, sans-serif;">// Option sets the options specified.</span><br />
+<span style="font-family: Trebuchet MS, sans-serif;">func (f *Foo) Option(opts ...option) {</span><br />
+<span style="font-family: 'Trebuchet MS', sans-serif; white-space: pre;">&nbsp;   </span><span style="font-family: Trebuchet MS, sans-serif;">for _, opt := range opts {</span><br />
+<span style="font-family: 'Trebuchet MS', sans-serif; white-space: pre;">&nbsp;  &nbsp;</span><span style="font-family: 'Trebuchet MS', sans-serif; white-space: pre;">&nbsp;   </span><span style="font-family: 'Trebuchet MS', sans-serif;">opt(f)</span><br />
+<span style="font-family: 'Trebuchet MS', sans-serif; white-space: pre;">&nbsp;   </span><span style="font-family: Trebuchet MS, sans-serif;">}</span><br />
+<span style="font-family: Trebuchet MS, sans-serif;">}</span><br />
+<br />
+Now to provide an option, we define in <span style="font-family: Trebuchet MS, sans-serif;">pkg</span>&nbsp;a function with the appropriate name and signature. Let's say we want to control verbosity by setting an integer value stored in a field of a <span style="font-family: Trebuchet MS, sans-serif;">Foo</span>. We provide the verbosity option by writing a function with the obvious name and have it return an <span style="font-family: Trebuchet MS, sans-serif;">option</span>, which means a closure; inside that closure we set the field:<br />
+<br />
+<span style="font-family: Trebuchet MS, sans-serif;">// Verbosity sets Foo's verbosity level to v.</span><br />
+<span style="font-family: Trebuchet MS, sans-serif;">func Verbosity(v int) option {</span><br />
+<span style="font-family: 'Trebuchet MS', sans-serif; white-space: pre;">&nbsp;   </span><span style="font-family: Trebuchet MS, sans-serif;">return func(f *Foo) {</span><br />
+<span style="font-family: 'Trebuchet MS', sans-serif; white-space: pre;">&nbsp;  &nbsp;</span><span style="font-family: 'Trebuchet MS', sans-serif; white-space: pre;">&nbsp;   </span><span style="font-family: 'Trebuchet MS', sans-serif;">f.verbosity = v</span><br />
+<span style="font-family: 'Trebuchet MS', sans-serif; white-space: pre;">&nbsp;   </span><span style="font-family: Trebuchet MS, sans-serif;">}</span><br />
+<span style="font-family: Trebuchet MS, sans-serif;">}</span><br />
+<br />
+Why return a closure instead of just doing the setting? Because we don't want the user to have to write the closure and we want the <span style="font-family: Trebuchet MS, sans-serif;">Option</span> method to be nice to use. (Plus there's more to come....)<br />
+<br />
+In the client of the package, we can set this option on a <span style="font-family: Trebuchet MS, sans-serif;">Foo</span> object by writing:<br />
+<br />
+<span style="font-family: Trebuchet MS, sans-serif;">foo.Option(pkg.Verbosity(3))</span><br />
+<br />
+That's easy and probably good enough for most purposes, but for the package I'm writing, I want to be able to use the option mechanism to set temporary values, which means it would be nice if the <span style="font-family: Trebuchet MS, sans-serif;">Option</span> method could return the previous state. That's easy: just save it in an empty interface value that is returned by the <span style="font-family: Trebuchet MS, sans-serif;">Option</span> method and the underlying function type. That value flows through the code:<br />
+<br />
+<span style="font-family: Trebuchet MS, sans-serif;">type option func(*Foo) interface{}</span><br />
+<span style="font-family: Trebuchet MS, sans-serif;"><br /></span>
+<span style="font-family: Trebuchet MS, sans-serif;">// Verbosity sets Foo's verbosity level to v.</span><br />
+<span style="font-family: Trebuchet MS, sans-serif;">func Verbosity(v int) option {</span><br />
+<span style="font-family: 'Trebuchet MS', sans-serif; white-space: pre;">&nbsp;   </span><span style="font-family: Trebuchet MS, sans-serif;">return func(f *Foo) interface{} {</span><br />
+<span style="font-family: 'Trebuchet MS', sans-serif; white-space: pre;">&nbsp;  &nbsp;</span><span style="font-family: 'Trebuchet MS', sans-serif; white-space: pre;">&nbsp;   </span><span style="font-family: 'Trebuchet MS', sans-serif;">previous := f.verbosity</span><br />
+<span style="font-family: 'Trebuchet MS', sans-serif; white-space: pre;">&nbsp;  &nbsp;</span><span style="font-family: 'Trebuchet MS', sans-serif; white-space: pre;">&nbsp;  &nbsp;</span><span style="font-family: 'Trebuchet MS', sans-serif;">f.verbosity = v</span><br />
+<span style="font-family: 'Trebuchet MS', sans-serif; white-space: pre;">&nbsp;  &nbsp;</span><span style="font-family: 'Trebuchet MS', sans-serif; white-space: pre;">&nbsp;   </span><span style="font-family: 'Trebuchet MS', sans-serif;">return previous</span><br />
+<span style="font-family: 'Trebuchet MS', sans-serif; white-space: pre;">&nbsp;   </span><span style="font-family: Trebuchet MS, sans-serif;">}</span><br />
+<span style="font-family: Trebuchet MS, sans-serif;">}</span><br />
+<br />
+<span style="font-family: Trebuchet MS, sans-serif;">// Option sets the options specified.</span><br />
+<span style="font-family: Trebuchet MS, sans-serif;">// It returns the previous value of the last argument.</span><br />
+<span style="font-family: Trebuchet MS, sans-serif;">func (f *Foo) Option(opts ...option) (previous interface{}) {</span><br />
+<span style="font-family: 'Trebuchet MS', sans-serif; white-space: pre;">&nbsp;   </span><span style="font-family: Trebuchet MS, sans-serif;">for _, opt := range opts {</span><br />
+<span style="font-family: 'Trebuchet MS', sans-serif; white-space: pre;">&nbsp;  &nbsp;</span><span style="font-family: 'Trebuchet MS', sans-serif; white-space: pre;">&nbsp;   </span><span style="font-family: 'Trebuchet MS', sans-serif;">previous = opt(f)</span><br />
+<span style="font-family: 'Trebuchet MS', sans-serif; white-space: pre;">&nbsp;   </span><span style="font-family: Trebuchet MS, sans-serif;">}</span><br />
+<span style="font-family: 'Trebuchet MS', sans-serif; white-space: pre;">&nbsp;   </span><span style="font-family: Trebuchet MS, sans-serif;">return previous</span><br />
+<span style="font-family: Trebuchet MS, sans-serif;">}</span><br />
+<br />
+The client can use this the same as before, but if the client also wants to restore a previous value, all that's needed is to save the return value from the first call, and then restore it.<br />
+<br />
+<span style="font-family: Trebuchet MS, sans-serif;">prevVerbosity := foo.Option(pkg.Verbosity(3))</span><br />
+<span style="font-family: Trebuchet MS, sans-serif;">foo.DoSomeDebugging()</span><br />
+<span style="font-family: Trebuchet MS, sans-serif;">foo.Option(pkg.Verbosity(prevVerbosity.(int)))</span><br />
+<br />
+The type assertion in the restoring call to <span style="font-family: Trebuchet MS, sans-serif;">Option</span> is clumsy. We can do better if we push a little harder on our design.<br />
+<br />
+First, redefine an option to be a function that sets a value and returns <i>another option</i> to restore the previous value.<br />
+<br />
+<span style="font-family: Trebuchet MS, sans-serif;">type option func(f *Foo) option</span><br />
+<br />
+This self-referential function definition is reminiscent of a <a href="//www.youtube.com/watch?v=HxaD_trXwRE" target="_blank">state machine</a>. Here we're using it a little differently: it's a function that returns its <i>inverse</i>.<br />
+<br />
+Then change the return type (and meaning) of the <span style="font-family: Trebuchet MS, sans-serif;">Option</span>&nbsp;method of <span style="font-family: Trebuchet MS, sans-serif;">*Foo</span><span style="font-family: Times, Times New Roman, serif;">&nbsp;to </span><span style="font-family: Trebuchet MS, sans-serif;">option</span><span style="font-family: Times, Times New Roman, serif;"> from </span><span style="font-family: Trebuchet MS, sans-serif;">interface{}</span><span style="font-family: Times, Times New Roman, serif;">:</span><br />
+<br />
+<span style="font-family: Trebuchet MS, sans-serif;">// Option sets the options specified.</span><br />
+<span style="font-family: Trebuchet MS, sans-serif;">// It returns an option to restore the last arg's previous value.</span><br />
+<span style="font-family: Trebuchet MS, sans-serif;">func (f *Foo) Option(opts ...option) (previous option) {</span><br />
+<span style="font-family: 'Trebuchet MS', sans-serif; white-space: pre;">&nbsp;   </span><span style="font-family: Trebuchet MS, sans-serif;">for _, opt := range opts {</span><br />
+<span style="font-family: 'Trebuchet MS', sans-serif; white-space: pre;">&nbsp;  &nbsp;</span><span style="font-family: 'Trebuchet MS', sans-serif; white-space: pre;">&nbsp;  &nbsp;</span><span style="font-family: 'Trebuchet MS', sans-serif;">previous = opt(f)</span><br />
+<span style="font-family: 'Trebuchet MS', sans-serif; white-space: pre;">&nbsp;   </span><span style="font-family: Trebuchet MS, sans-serif;">}</span><br />
+<span style="font-family: 'Trebuchet MS', sans-serif; white-space: pre;">&nbsp;   </span><span style="font-family: Trebuchet MS, sans-serif;">return previous</span><br />
+<span style="font-family: Trebuchet MS, sans-serif;">}</span><br />
+<br />
+The final piece is the implementation of the actual option functions. Their inner closure must now return an option, not an interface value, and that means it must return a closure to undo itself. But that's easy: it can just recur to prepare the closure to undo the original! It looks like this:<br />
+<br />
+<span style="font-family: Trebuchet MS, sans-serif;">// Verbosity sets Foo's verbosity level to v.</span><br />
+<span style="font-family: Trebuchet MS, sans-serif;">func Verbosity(v int) option {</span><br />
+<span style="font-family: 'Trebuchet MS', sans-serif; white-space: pre;">&nbsp;   </span><span style="font-family: Trebuchet MS, sans-serif;">return func(f *Foo) option {</span><br />
+<span style="font-family: 'Trebuchet MS', sans-serif; white-space: pre;">&nbsp;  &nbsp;</span><span style="font-family: 'Trebuchet MS', sans-serif; white-space: pre;">&nbsp;   </span><span style="font-family: 'Trebuchet MS', sans-serif;">previous := f.verbosity</span><br />
+<span style="font-family: 'Trebuchet MS', sans-serif; white-space: pre;">&nbsp;  &nbsp;</span><span style="font-family: 'Trebuchet MS', sans-serif; white-space: pre;">&nbsp;   </span><span style="font-family: 'Trebuchet MS', sans-serif;">f.verbosity = v</span><br />
+<span style="font-family: 'Trebuchet MS', sans-serif; white-space: pre;">&nbsp;  &nbsp;</span><span style="font-family: 'Trebuchet MS', sans-serif; white-space: pre;">&nbsp;   </span><span style="font-family: 'Trebuchet MS', sans-serif;">return Verbosity(previous)</span><br />
+<span style="font-family: 'Trebuchet MS', sans-serif; white-space: pre;">&nbsp;   </span><span style="font-family: Trebuchet MS, sans-serif;">}</span><br />
+<span style="font-family: Trebuchet MS, sans-serif;">}</span><br />
+<br />
+Note the last line of the inner closure changed from<br />
+<span style="font-family: 'Trebuchet MS', sans-serif; white-space: pre;">&nbsp;  &nbsp;</span><span style="font-family: 'Trebuchet MS', sans-serif; white-space: pre;">&nbsp;   </span><span style="font-family: 'Trebuchet MS', sans-serif;">return previous</span><br />
+to<br />
+<span style="font-family: 'Trebuchet MS', sans-serif; white-space: pre;">&nbsp;  &nbsp;</span><span style="font-family: 'Trebuchet MS', sans-serif; white-space: pre;">&nbsp;   </span><span style="font-family: 'Trebuchet MS', sans-serif;">return Verbosity(previous)</span><br />
+Instead of just returning the old value, it now calls the surrounding function (<span style="font-family: Trebuchet MS, sans-serif;">Verbosity</span>) to create the undo closure, and returns that <i>closure</i>.<br />
+<br />
+Now from the client's view this is all very nice:<br />
+<br />
+<span style="font-family: Trebuchet MS, sans-serif;">prevVerbosity := foo.Option(pkg.Verbosity(3))</span><br />
+<span style="font-family: Trebuchet MS, sans-serif;">foo.DoSomeDebugging()</span><br />
+<span style="font-family: Trebuchet MS, sans-serif;">foo.Option(prevVerbosity)</span><br />
+<br />
+And finally we take it up one more level, using Go's <a href="http://blog.golang.org/defer-panic-and-recover" target="_blank">defer</a> mechanism to tidy it all up in the client:<br />
+<br />
+<span style="font-family: Trebuchet MS, sans-serif;">func DoSomethingVerbosely(foo *Foo, verbosity int) {</span><br />
+<span style="font-family: 'Trebuchet MS', sans-serif; white-space: pre;">&nbsp;   </span><span style="font-family: Trebuchet MS, sans-serif;">// Could combine the next two lines,</span><br />
+<span style="font-family: 'Trebuchet MS', sans-serif; white-space: pre;">&nbsp;   </span><span style="font-family: Trebuchet MS, sans-serif;">// with some loss of readability.</span><br />
+<span style="font-family: 'Trebuchet MS', sans-serif; white-space: pre;">&nbsp;   </span><span style="font-family: Trebuchet MS, sans-serif;">prev := foo.Option(pkg.Verbosity(verbosity))</span><br />
+<span style="font-family: 'Trebuchet MS', sans-serif; white-space: pre;">&nbsp;   </span><span style="font-family: Trebuchet MS, sans-serif;">defer foo.Option(prev)</span><br />
+<span style="font-family: 'Trebuchet MS', sans-serif; white-space: pre;">&nbsp;   </span><span style="font-family: Trebuchet MS, sans-serif;">// ... do some stuff with foo under high verbosity.</span><br />
+<span style="font-family: Trebuchet MS, sans-serif;">}</span><br />
+<div>
+<br /></div>
+<div>
+It's worth noting that since the "verbosity" returned is now a closure, not a verbosity value, the actual previous value is hidden. If you want that value you need a little more magic, but there's enough magic for now.</div>
+<br />
+The implementation of all this may seem like overkill but it's actually just a few lines for each option, and has great generality. Most important, it's really nice to use from the point of view of the package's client. I'm finally happy with the design. I'm also happy at the way this uses Go's closures to achieve its goals with grace.<br />
+<br />
+<div style='clear: both;'></div>
+</div>
+<div class='post-footer'>
+<div class='post-footer-line post-footer-line-1'>
+<span class='post-author vcard'>
+</span>
+<span class='post-timestamp'>
+at
+<meta content='https://commandcenter.blogspot.com/2014/01/self-referential-functions-and-design.html' itemprop='url'/>
+<a class='timestamp-link' href='https://commandcenter.blogspot.com/2014/01/self-referential-functions-and-design.html' rel='bookmark' title='permanent link'><abbr class='published' itemprop='datePublished' title='2014-01-24T16:35:00-08:00'>January 24, 2014</abbr></a>
+</span>
+<span class='post-comment-link'>
+</span>
+<span class='post-icons'>
+</span>
+<div class='post-share-buttons goog-inline-block'>
+<a class='goog-inline-block share-button sb-email' href='https://www.blogger.com/share-post.g?blogID=6983287&postID=4420940212897630400&target=email' target='_blank' title='Email This'><span class='share-button-link-text'>Email This</span></a><a class='goog-inline-block share-button sb-blog' href='https://www.blogger.com/share-post.g?blogID=6983287&postID=4420940212897630400&target=blog' onclick='window.open(this.href, "_blank", "height=270,width=475"); return false;' target='_blank' title='BlogThis!'><span class='share-button-link-text'>BlogThis!</span></a><a class='goog-inline-block share-button sb-twitter' href='https://www.blogger.com/share-post.g?blogID=6983287&postID=4420940212897630400&target=twitter' target='_blank' title='Share to X'><span class='share-button-link-text'>Share to X</span></a><a class='goog-inline-block share-button sb-facebook' href='https://www.blogger.com/share-post.g?blogID=6983287&postID=4420940212897630400&target=facebook' onclick='window.open(this.href, "_blank", "height=430,width=640"); return false;' target='_blank' title='Share to Facebook'><span class='share-button-link-text'>Share to Facebook</span></a><a class='goog-inline-block share-button sb-pinterest' href='https://www.blogger.com/share-post.g?blogID=6983287&postID=4420940212897630400&target=pinterest' target='_blank' title='Share to Pinterest'><span class='share-button-link-text'>Share to Pinterest</span></a>
+</div>
+</div>
+<div class='post-footer-line post-footer-line-2'>
+<span class='post-labels'>
+</span>
+</div>
+<div class='post-footer-line post-footer-line-3'>
+<span class='post-location'>
+</span>
+</div>
+</div>
+</div>
+<div class='comments' id='comments'>
+<a name='comments'></a>
+</div>
+</div>
+
+        </div></div>
+      
+</div>
+<div class='blog-pager' id='blog-pager'>
+<span id='blog-pager-newer-link'>
+<a class='blog-pager-newer-link' href='https://commandcenter.blogspot.com/2014/08/prints.html' id='Blog1_blog-pager-newer-link' title='Newer Post'>Newer Post</a>
+</span>
+<span id='blog-pager-older-link'>
+<a class='blog-pager-older-link' href='https://commandcenter.blogspot.com/2013/05/eisenbahnnet-bohrs-trip-about-spin.html' id='Blog1_blog-pager-older-link' title='Older Post'>Older Post</a>
+</span>
+<a class='home-link' href='https://commandcenter.blogspot.com/'>Home</a>
+</div>
+<div class='clear'></div>
+<div class='post-feeds'>
+</div>
+</div><div class='widget FeaturedPost' data-version='1' id='FeaturedPost1'>
+<div class='post-summary'>
+<h3><a href='https://commandcenter.blogspot.com/2026/01/implementing-transcendental-functions.html'>Implementing the transcendental functions in Ivy</a></h3>
+<p>
+Towards the end of 2014, in need of pleasant distraction, I began writing, in Go, my second pseudo-APL, called Ivy. Over the years, Ivy&#39;...
+</p>
+<img class='image' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEiWHgu70DgZsV6u1Hu9KpffcilaCmUaVFDQexaYUO8_HpCO67u2Xdrh0gAyiTWAJKSeolKaDx_R26A4Q-RZLT2nIOuplSznZE-lhthY1uvEEuo7M-Ird-IXhXHYXG1KlTVIIBuapaE01A5ayg9mVdpvPQztwNR354dvYbnUofNaZ5QMIathie1FIA/w200-h82/exp.png'/>
+</div>
+<style type='text/css'>
+    .image {
+      width: 100%;
+    }
+  </style>
+<div class='clear'></div>
+</div><div class='widget PopularPosts' data-version='1' id='PopularPosts1'>
+<div class='widget-content popular-posts'>
+<ul>
+<li>
+<div class='item-content'>
+<div class='item-thumbnail'>
+<a href='https://commandcenter.blogspot.com/2024/01/what-we-got-right-what-we-got-wrong.html' target='_blank'>
+<img alt='' border='0' src='https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjQvTZvSIAYokvx00Scs3gCg8rR2X74iruzto6wDM1Tth-ZeUPrEH01XM3NPwhLa62ga6pQlMMMzKXrsh3rP_BzOSL4eahGtRZw1LaESnDhmHFmot1OcEqsKsMr84KED9HO4m2F7VJcksZrE-U7WtacxMmXeRTeaveAIEvmHwvs36TOfSnbizPzzw/w72-h72-p-k-no-nu/golang.org-2009.png'/>
+</a>
+</div>
+<div class='item-title'><a href='https://commandcenter.blogspot.com/2024/01/what-we-got-right-what-we-got-wrong.html'>What We Got Right, What We Got Wrong</a></div>
+<div class='item-snippet'>&#160; This is my closing talk ( video ) from the GopherConAU conference in Sydney, given November 10, 2023, the 14th anniversary of Go being lau...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li>
+<div class='item-content'>
+<div class='item-title'><a href='https://commandcenter.blogspot.com/2012/06/less-is-exponentially-more.html'>Less is exponentially more</a></div>
+<div class='item-snippet'> Here is the text of the talk I gave at the Go SF meeting in June, 2012.   This is a personal talk. I do not speak for anyone else on the Go...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+<li>
+<div class='item-content'>
+<div class='item-title'><a href='https://commandcenter.blogspot.com/2014/01/self-referential-functions-and-design.html'>Self-referential functions and the design of options</a></div>
+<div class='item-snippet'>I&#39;ve been trying on and off to find a nice way to deal with setting options in a Go  package I am writing. Options on a type, that is. T...</div>
+</div>
+<div style='clear: both;'></div>
+</li>
+</ul>
+<div class='clear'></div>
+</div>
+</div></div>
+</div>
+</div>
+<div class='column-left-outer'>
+<div class='column-left-inner'>
+<aside>
+</aside>
+</div>
+</div>
+<div class='column-right-outer'>
+<div class='column-right-inner'>
+<aside>
+<div class='sidebar section' id='sidebar-right-1'><div class='widget BlogSearch' data-version='1' id='BlogSearch1'>
+<h2 class='title'>Search This Blog</h2>
+<div class='widget-content'>
+<div id='BlogSearch1_form'>
+<form action='https://commandcenter.blogspot.com/search' class='gsc-search-box' target='_top'>
+<table cellpadding='0' cellspacing='0' class='gsc-search-box'>
+<tbody>
+<tr>
+<td class='gsc-input'>
+<input autocomplete='off' class='gsc-input' name='q' size='10' title='search' type='text' value=''/>
+</td>
+<td class='gsc-search-button'>
+<input class='gsc-search-button' title='search' type='submit' value='Search'/>
+</td>
+</tr>
+</tbody>
+</table>
+</form>
+</div>
+</div>
+<div class='clear'></div>
+</div><div class='widget PageList' data-version='1' id='PageList1'>
+<div class='widget-content'>
+<ul>
+<li>
+<a href='https://commandcenter.blogspot.com/'>Home</a>
+</li>
+</ul>
+<div class='clear'></div>
+</div>
+</div>
+<div class='widget Text' data-version='1' id='Text1'>
+<div class='widget-content'>
+<span style="text-align: center;font-family:&quot;;font-size:8px;color:#666666;">Except as noted, the content of this page is licensed under the Creative Commons Attribution 3.0 License.</span>
+</div>
+<div class='clear'></div>
+</div><div class='widget Profile' data-version='1' id='Profile1'>
+<h2>About Me</h2>
+<div class='widget-content'>
+<dl class='profile-datablock'>
+<dt class='profile-data'>
+<a class='profile-name-link g-profile' href='https://www.blogger.com/profile/18259238879445421354' rel='author' style='background-image: url(//www.blogger.com/img/logo-16.png);'>
+rob
+</a>
+</dt>
+</dl>
+<a class='profile-link' href='https://www.blogger.com/profile/18259238879445421354' rel='author'>View my complete profile</a>
+<div class='clear'></div>
+</div>
+</div><div class='widget BlogArchive' data-version='1' id='BlogArchive1'>
+<h2>Blog Archive</h2>
+<div class='widget-content'>
+<div id='ArchiveList'>
+<div id='BlogArchive1_ArchiveList'>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://commandcenter.blogspot.com/2026/'>
+2026
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://commandcenter.blogspot.com/2026/01/'>
+January
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://commandcenter.blogspot.com/2025/'>
+2025
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://commandcenter.blogspot.com/2025/02/'>
+February
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://commandcenter.blogspot.com/2024/'>
+2024
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://commandcenter.blogspot.com/2024/01/'>
+January
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://commandcenter.blogspot.com/2023/'>
+2023
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://commandcenter.blogspot.com/2023/12/'>
+December
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://commandcenter.blogspot.com/2022/'>
+2022
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://commandcenter.blogspot.com/2022/08/'>
+August
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://commandcenter.blogspot.com/2020/'>
+2020
+</a>
+<span class='post-count' dir='ltr'>(6)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://commandcenter.blogspot.com/2020/09/'>
+September
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://commandcenter.blogspot.com/2020/04/'>
+April
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://commandcenter.blogspot.com/2020/01/'>
+January
+</a>
+<span class='post-count' dir='ltr'>(4)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://commandcenter.blogspot.com/2019/'>
+2019
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://commandcenter.blogspot.com/2019/11/'>
+November
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://commandcenter.blogspot.com/2019/01/'>
+January
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://commandcenter.blogspot.com/2018/'>
+2018
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://commandcenter.blogspot.com/2018/02/'>
+February
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://commandcenter.blogspot.com/2017/'>
+2017
+</a>
+<span class='post-count' dir='ltr'>(4)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://commandcenter.blogspot.com/2017/12/'>
+December
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://commandcenter.blogspot.com/2017/10/'>
+October
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://commandcenter.blogspot.com/2017/09/'>
+September
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://commandcenter.blogspot.com/2017/02/'>
+February
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate expanded'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy toggle-open'>
+
+        &#9660;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://commandcenter.blogspot.com/2014/'>
+2014
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://commandcenter.blogspot.com/2014/08/'>
+August
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate expanded'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy toggle-open'>
+
+        &#9660;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://commandcenter.blogspot.com/2014/01/'>
+January
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+<ul class='posts'>
+<li><a href='https://commandcenter.blogspot.com/2014/01/self-referential-functions-and-design.html'>Self-referential functions and the design of options</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://commandcenter.blogspot.com/2013/'>
+2013
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://commandcenter.blogspot.com/2013/05/'>
+May
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://commandcenter.blogspot.com/2012/'>
+2012
+</a>
+<span class='post-count' dir='ltr'>(3)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://commandcenter.blogspot.com/2012/09/'>
+September
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://commandcenter.blogspot.com/2012/06/'>
+June
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://commandcenter.blogspot.com/2012/04/'>
+April
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://commandcenter.blogspot.com/2011/'>
+2011
+</a>
+<span class='post-count' dir='ltr'>(3)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://commandcenter.blogspot.com/2011/12/'>
+December
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://commandcenter.blogspot.com/2011/09/'>
+September
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://commandcenter.blogspot.com/2011/08/'>
+August
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://commandcenter.blogspot.com/2010/'>
+2010
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://commandcenter.blogspot.com/2010/08/'>
+August
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://commandcenter.blogspot.com/2008/'>
+2008
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://commandcenter.blogspot.com/2008/04/'>
+April
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://commandcenter.blogspot.com/2006/'>
+2006
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://commandcenter.blogspot.com/2006/06/'>
+June
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://commandcenter.blogspot.com/2006/04/'>
+April
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://commandcenter.blogspot.com/2004/'>
+2004
+</a>
+<span class='post-count' dir='ltr'>(2)</span>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://commandcenter.blogspot.com/2004/06/'>
+June
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+<ul class='hierarchy'>
+<li class='archivedate collapsed'>
+<a class='toggle' href='javascript:void(0)'>
+<span class='zippy'>
+
+        &#9658;&#160;
+      
+</span>
+</a>
+<a class='post-count-link' href='https://commandcenter.blogspot.com/2004/05/'>
+May
+</a>
+<span class='post-count' dir='ltr'>(1)</span>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class='clear'></div>
+</div>
+</div>
+</div>
+<table border='0' cellpadding='0' cellspacing='0' class='section-columns columns-2'>
+<tbody>
+<tr>
+<td class='first columns-cell'>
+<div class='sidebar section' id='sidebar-right-2-1'><div class='widget Followers' data-version='1' id='Followers1'>
+<h2 class='title'>Followers</h2>
+<div class='widget-content'>
+<div id='Followers1-wrapper'>
+<div style='margin-right:2px;'>
+<div><script type="text/javascript" src="https://apis.google.com/js/platform.js"></script>
+<div id="followers-iframe-container"></div>
+<script type="text/javascript">
+    window.followersIframe = null;
+    function followersIframeOpen(url) {
+      gapi.load("gapi.iframes", function() {
+        if (gapi.iframes && gapi.iframes.getContext) {
+          window.followersIframe = gapi.iframes.getContext().openChild({
+            url: url,
+            where: document.getElementById("followers-iframe-container"),
+            messageHandlersFilter: gapi.iframes.CROSS_ORIGIN_IFRAMES_FILTER,
+            messageHandlers: {
+              '_ready': function(obj) {
+                window.followersIframe.getIframeEl().height = obj.height;
+              },
+              'reset': function() {
+                window.followersIframe.close();
+                followersIframeOpen("https://www.blogger.com/followers/frame/6983287?colors\x3dCgt0cmFuc3BhcmVudBILdHJhbnNwYXJlbnQaByMyMjIyMjIiByMyMjg4YmIqByNmZmZmZmYyByMwMDAwMDA6ByMyMjIyMjJCByMyMjg4YmJKByM5OTk5OTlSByMyMjg4YmJaC3RyYW5zcGFyZW50\x26pageSize\x3d21\x26hl\x3den\x26origin\x3dhttps://commandcenter.blogspot.com");
+              },
+              'open': function(url) {
+                window.followersIframe.close();
+                followersIframeOpen(url);
+              }
+            }
+          });
+        }
+      });
+    }
+    followersIframeOpen("https://www.blogger.com/followers/frame/6983287?colors\x3dCgt0cmFuc3BhcmVudBILdHJhbnNwYXJlbnQaByMyMjIyMjIiByMyMjg4YmIqByNmZmZmZmYyByMwMDAwMDA6ByMyMjIyMjJCByMyMjg4YmJKByM5OTk5OTlSByMyMjg4YmJaC3RyYW5zcGFyZW50\x26pageSize\x3d21\x26hl\x3den\x26origin\x3dhttps://commandcenter.blogspot.com");
+  </script></div>
+</div>
+</div>
+<div class='clear'></div>
+</div>
+</div></div>
+</td>
+<td class='columns-cell'>
+<div class='sidebar section' id='sidebar-right-2-2'><div class='widget LinkList' data-version='1' id='LinkList1'>
+<h2>Links</h2>
+<div class='widget-content'>
+<ul>
+<li><a href='http://reneefrench.io'>Renee French</a></li>
+<li><a href='http://robpike.blogspot.com/'>Rob Pike</a></li>
+</ul>
+<div class='clear'></div>
+</div>
+</div></div>
+</td>
+</tr>
+</tbody>
+</table>
+<div class='sidebar section' id='sidebar-right-3'><div class='widget ReportAbuse' data-version='1' id='ReportAbuse1'>
+<h3 class='title'>
+<a class='report_abuse' href='https://www.blogger.com/go/report-abuse' rel='noopener nofollow' target='_blank'>
+Report Abuse
+</a>
+</h3>
+</div></div>
+</aside>
+</div>
+</div>
+</div>
+<div style='clear: both'></div>
+<!-- columns -->
+</div>
+<!-- main -->
+</div>
+</div>
+<div class='main-cap-bottom cap-bottom'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+</div>
+<footer>
+<div class='footer-outer'>
+<div class='footer-cap-top cap-top'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+<div class='fauxborder-left footer-fauxborder-left'>
+<div class='fauxborder-right footer-fauxborder-right'></div>
+<div class='region-inner footer-inner'>
+<div class='foot no-items section' id='footer-1'></div>
+<table border='0' cellpadding='0' cellspacing='0' class='section-columns columns-2'>
+<tbody>
+<tr>
+<td class='first columns-cell'>
+<div class='foot no-items section' id='footer-2-1'></div>
+</td>
+<td class='columns-cell'>
+<div class='foot no-items section' id='footer-2-2'></div>
+</td>
+</tr>
+</tbody>
+</table>
+<!-- outside of the include in order to lock Attribution widget -->
+<div class='foot section' id='footer-3' name='Footer'><div class='widget Attribution' data-version='1' id='Attribution1'>
+<div class='widget-content' style='text-align: center;'>
+Simple theme. Powered by <a href='https://www.blogger.com' target='_blank'>Blogger</a>.
+</div>
+<div class='clear'></div>
+</div></div>
+</div>
+</div>
+<div class='footer-cap-bottom cap-bottom'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+</div>
+</footer>
+<!-- content -->
+</div>
+</div>
+<div class='content-cap-bottom cap-bottom'>
+<div class='cap-left'></div>
+<div class='cap-right'></div>
+</div>
+</div>
+</div>
+<script type='text/javascript'>
+    window.setTimeout(function() {
+        document.body.className = document.body.className.replace('loading', '');
+      }, 10);
+  </script>
+
+<script type="text/javascript" src="https://www.blogger.com/static/v1/widgets/654365252-widgets.js"></script>
+<script type='text/javascript'>
+window['__wavt'] = 'AAVkm1u70h2lhXRiIq7RP6A4EspG:1780318852668';_WidgetManager._Init('//www.blogger.com/rearrange?blogID\x3d6983287','//commandcenter.blogspot.com/2014/01/self-referential-functions-and-design.html','6983287');
+_WidgetManager._SetDataContext([{'name': 'blog', 'data': {'blogId': '6983287', 'title': 'command center', 'url': 'https://commandcenter.blogspot.com/2014/01/self-referential-functions-and-design.html', 'canonicalUrl': 'https://commandcenter.blogspot.com/2014/01/self-referential-functions-and-design.html', 'homepageUrl': 'https://commandcenter.blogspot.com/', 'searchUrl': 'https://commandcenter.blogspot.com/search', 'canonicalHomepageUrl': 'https://commandcenter.blogspot.com/', 'blogspotFaviconUrl': 'https://commandcenter.blogspot.com/favicon.ico', 'bloggerUrl': 'https://www.blogger.com', 'hasCustomDomain': false, 'httpsEnabled': true, 'enabledCommentProfileImages': true, 'gPlusViewType': 'FILTERED_POSTMOD', 'adultContent': false, 'analyticsAccountNumber': '', 'encoding': 'UTF-8', 'locale': 'en', 'localeUnderscoreDelimited': 'en', 'languageDirection': 'ltr', 'isPrivate': false, 'isMobile': false, 'isMobileRequest': false, 'mobileClass': '', 'isPrivateBlog': false, 'isDynamicViewsAvailable': true, 'feedLinks': '\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22command center - Atom\x22 href\x3d\x22https://commandcenter.blogspot.com/feeds/posts/default\x22 /\x3e\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/rss+xml\x22 title\x3d\x22command center - RSS\x22 href\x3d\x22https://commandcenter.blogspot.com/feeds/posts/default?alt\x3drss\x22 /\x3e\n\x3clink rel\x3d\x22service.post\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22command center - Atom\x22 href\x3d\x22https://www.blogger.com/feeds/6983287/posts/default\x22 /\x3e\n\n\x3clink rel\x3d\x22alternate\x22 type\x3d\x22application/atom+xml\x22 title\x3d\x22command center - Atom\x22 href\x3d\x22https://commandcenter.blogspot.com/feeds/4420940212897630400/comments/default\x22 /\x3e\n', 'meTag': '', 'adsenseHostId': 'ca-host-pub-1556223355139109', 'adsenseHasAds': false, 'adsenseAutoAds': false, 'boqCommentIframeForm': true, 'loginRedirectParam': '', 'view': '', 'dynamicViewsCommentsSrc': '//www.blogblog.com/dynamicviews/4224c15c4e7c9321/js/comments.js', 'dynamicViewsScriptSrc': '//www.blogblog.com/dynamicviews/9e84dfdf60ff6521', 'plusOneApiSrc': 'https://apis.google.com/js/platform.js', 'disableGComments': true, 'interstitialAccepted': false, 'sharing': {'platforms': [{'name': 'Get link', 'key': 'link', 'shareMessage': 'Get link', 'target': ''}, {'name': 'Facebook', 'key': 'facebook', 'shareMessage': 'Share to Facebook', 'target': 'facebook'}, {'name': 'BlogThis!', 'key': 'blogThis', 'shareMessage': 'BlogThis!', 'target': 'blog'}, {'name': 'X', 'key': 'twitter', 'shareMessage': 'Share to X', 'target': 'twitter'}, {'name': 'Pinterest', 'key': 'pinterest', 'shareMessage': 'Share to Pinterest', 'target': 'pinterest'}, {'name': 'Email', 'key': 'email', 'shareMessage': 'Email', 'target': 'email'}], 'disableGooglePlus': true, 'googlePlusShareButtonWidth': 0, 'googlePlusBootstrap': '\x3cscript type\x3d\x22text/javascript\x22\x3ewindow.___gcfg \x3d {\x27lang\x27: \x27en\x27};\x3c/script\x3e'}, 'hasCustomJumpLinkMessage': false, 'jumpLinkMessage': 'Read more', 'pageType': 'item', 'postId': '4420940212897630400', 'pageName': 'Self-referential functions and the design of options', 'pageTitle': 'command center: Self-referential functions and the design of options'}}, {'name': 'features', 'data': {}}, {'name': 'messages', 'data': {'edit': 'Edit', 'linkCopiedToClipboard': 'Link copied to clipboard!', 'ok': 'Ok', 'postLink': 'Post Link'}}, {'name': 'template', 'data': {'name': 'Simple', 'localizedName': 'Simple', 'isResponsive': false, 'isAlternateRendering': false, 'isCustom': false, 'variant': 'pale', 'variantId': 'pale'}}, {'name': 'view', 'data': {'classic': {'name': 'classic', 'url': '?view\x3dclassic'}, 'flipcard': {'name': 'flipcard', 'url': '?view\x3dflipcard'}, 'magazine': {'name': 'magazine', 'url': '?view\x3dmagazine'}, 'mosaic': {'name': 'mosaic', 'url': '?view\x3dmosaic'}, 'sidebar': {'name': 'sidebar', 'url': '?view\x3dsidebar'}, 'snapshot': {'name': 'snapshot', 'url': '?view\x3dsnapshot'}, 'timeslide': {'name': 'timeslide', 'url': '?view\x3dtimeslide'}, 'isMobile': false, 'title': 'Self-referential functions and the design of options', 'description': 'I\x27ve been trying on and off to find a nice way to deal with setting options in a Go  package I am writing. Options on a type, that is. The p...', 'url': 'https://commandcenter.blogspot.com/2014/01/self-referential-functions-and-design.html', 'type': 'item', 'isSingleItem': true, 'isMultipleItems': false, 'isError': false, 'isPage': false, 'isPost': true, 'isHomepage': false, 'isArchive': false, 'isLabelSearch': false, 'postId': 4420940212897630400}}]);
+_WidgetManager._RegisterWidget('_NavbarView', new _WidgetInfo('Navbar1', 'navbar', document.getElementById('Navbar1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_HeaderView', new _WidgetInfo('Header1', 'header', document.getElementById('Header1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogView', new _WidgetInfo('Blog1', 'main', document.getElementById('Blog1'), {'cmtInteractionsEnabled': false, 'lightboxEnabled': true, 'lightboxModuleUrl': 'https://www.blogger.com/static/v1/jsbin/1053750561-lbx.js', 'lightboxCssUrl': 'https://www.blogger.com/static/v1/v-css/828616780-lightbox_bundle.css'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_FeaturedPostView', new _WidgetInfo('FeaturedPost1', 'main', document.getElementById('FeaturedPost1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_PopularPostsView', new _WidgetInfo('PopularPosts1', 'main', document.getElementById('PopularPosts1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogSearchView', new _WidgetInfo('BlogSearch1', 'sidebar-right-1', document.getElementById('BlogSearch1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_PageListView', new _WidgetInfo('PageList1', 'sidebar-right-1', document.getElementById('PageList1'), {'title': '', 'links': [{'isCurrentPage': false, 'href': 'https://commandcenter.blogspot.com/', 'title': 'Home'}], 'mobile': false, 'showPlaceholder': true, 'hasCurrentPage': false}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_TextView', new _WidgetInfo('Text1', 'sidebar-right-1', document.getElementById('Text1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_ProfileView', new _WidgetInfo('Profile1', 'sidebar-right-1', document.getElementById('Profile1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_BlogArchiveView', new _WidgetInfo('BlogArchive1', 'sidebar-right-1', document.getElementById('BlogArchive1'), {'languageDirection': 'ltr', 'loadingMessage': 'Loading\x26hellip;'}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_FollowersView', new _WidgetInfo('Followers1', 'sidebar-right-2-1', document.getElementById('Followers1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_LinkListView', new _WidgetInfo('LinkList1', 'sidebar-right-2-2', document.getElementById('LinkList1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_ReportAbuseView', new _WidgetInfo('ReportAbuse1', 'sidebar-right-3', document.getElementById('ReportAbuse1'), {}, 'displayModeFull'));
+_WidgetManager._RegisterWidget('_AttributionView', new _WidgetInfo('Attribution1', 'footer-3', document.getElementById('Attribution1'), {}, 'displayModeFull'));
+</script>
+</body>
+</html>

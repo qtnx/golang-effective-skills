@@ -29,6 +29,15 @@ Uber, or Uber Go.
 - Local license file: `sources/licenses/uber-go-guide-LICENSE.txt`
 - Retrieved: 2026-06-02
 
+## External Linked Documentation
+
+- Source set: documentation links referenced by generated source chunks
+- Local source paths: `sources/raw/external/`
+- Manifest: `sources/raw/external-docs-manifest.json`
+- Retrieved: 2026-06-02
+- Notes: each cached external document retains its original site license and
+  source URL. Source-code viewer pages are intentionally skipped.
+
 ## Original Project Content
 
 The skill text, scripts, fixtures, generated routing metadata, and repository

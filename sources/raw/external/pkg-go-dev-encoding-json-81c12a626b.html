@@ -1,0 +1,4017 @@
+---
+source_name: "External Linked Documentation"
+source_url: "https://pkg.go.dev/encoding/json"
+retrieved_at: "2026-06-02T06:42:18.757045+00:00"
+content_type: "text/html; charset=utf-8"
+truncated: false
+insecure_tls_fallback: true
+---
+
+
+
+<!DOCTYPE html>
+<html lang="en" data-layout="responsive" data-local="">
+  <head>
+    
+    <script>
+      window.addEventListener('error', window.__err=function f(e){f.p=f.p||[];f.p.push(e)});
+    </script>
+    <script>
+      (function() {
+        const theme = document.cookie.match(/prefers-color-scheme=(light|dark|auto)/)?.[1]
+        if (theme) {
+          document.querySelector('html').setAttribute('data-theme', theme);
+        }
+      }())
+    </script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Package json implements encoding and decoding of JSON as defined in RFC 7159.">
+    
+    <meta class="js-gtmID" data-gtmid="GTM-W8MVQXG">
+    <link rel="shortcut icon" href="/static/shared/icon/favicon.ico">
+    
+  
+    <link rel="canonical" href="https://pkg.go.dev/encoding/json">
+  
+
+    <link href="/static/frontend/frontend.min.css?version=prod-frontend-00193-fdr" rel="stylesheet">
+    
+    <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="Go Packages">
+    
+    
+  <title>json package - encoding/json - Go Packages</title>
+
+    
+  <link href="/static/frontend/unit/unit.min.css?version=prod-frontend-00193-fdr" rel="stylesheet">
+  
+  <link href="/static/frontend/unit/main/main.min.css?version=prod-frontend-00193-fdr" rel="stylesheet">
+
+
+  </head>
+  <body>
+    
+    <script>
+      function loadScript(src, mod = true) {
+        let s = document.createElement('script');
+        s.src = src;
+        if (mod) {
+          s.type = 'module';
+          s.async = true;
+          s.defer = true
+        }
+        document.head.appendChild(s);
+      }
+      loadScript("/third_party/dialog-polyfill/dialog-polyfill.js", false)
+      loadScript("/static/frontend/frontend.js");
+    </script>
+    
+  <header class="go-Header go-Header--full js-siteHeader">
+    <div class="go-Header-inner go-Header-inner--dark">
+      <nav class="go-Header-nav">
+        <a href="https://go.dev/" class="js-headerLogo" data-gtmc="nav link"
+            data-test-id="go-header-logo-link" role="heading" aria-level="1">
+          <img class="go-Header-logo" src="/static/shared/logo/go-white.svg" alt="Go">
+        </a>
+         <div class="skip-navigation-wrapper">
+            <a class="skip-to-content-link" aria-label="Skip to main content" href="#main-content"> Skip to Main Content </a>
+          </div>
+        <div class="go-Header-rightContent">
+          
+<div class="go-SearchForm js-searchForm">
+  <form
+    class="go-InputGroup go-ShortcutKey go-SearchForm-form"
+    action="/search"
+    data-shortcut="/"
+    data-shortcut-alt="search"
+    data-gtmc="search form"
+    aria-label="Search for a package"
+    role="search"
+  >
+    <input name="q" class="go-Input js-searchFocus" aria-label="Search for a package" type="search"
+        autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false"
+        placeholder="Search packages or symbols"
+        value="" />
+    <input name="m" value="" hidden>
+    <button class="go-Button go-Button--inverted" aria-label="Submit search">
+      <img
+        class="go-Icon"
+        height="24"
+        width="24"
+        src="/static/shared/icon/search_gm_grey_24dp.svg"
+        alt=""
+      />
+    </button>
+  </form>
+  <button class="go-SearchForm-expandSearch js-expandSearch" data-gtmc="nav button"
+      aria-label="Open search" data-test-id="expand-search">
+    <img class="go-Icon go-Icon--inverted" height="24" width="24"
+        src="/static/shared/icon/search_gm_grey_24dp.svg" alt="">
+
+  </button>
+</div>
+
+          <ul class="go-Header-menu">
+            <li class="go-Header-menuItem">
+              <a class="js-desktop-menu-hover" href="#" data-gtmc="nav link">
+                Why Go
+                <img class="go-Icon" height="24" width="24" src="/static/shared/icon/arrow_drop_down_gm_grey_24dp.svg" alt="submenu dropdown icon">
+              </a>
+              <ul class="go-Header-submenu go-Header-submenu--why js-desktop-submenu-hover" aria-label="submenu">
+                  <li class="go-Header-submenuItem">
+                    <div>
+                      <a href="https://go.dev/solutions#case-studies">
+                        <span>Case Studies</span>
+                      </a>
+                    </div>
+                    <p>Common problems companies solve with Go</p>
+                  </li>
+                  <li class="go-Header-submenuItem">
+                    <div>
+                      <a href="https://go.dev/solutions#use-cases">
+                        <span>Use Cases</span>
+                      </a>
+                    </div>
+                    <p>Stories about how and why companies use Go</p>
+                  </li>
+                  <li class="go-Header-submenuItem">
+                    <div>
+                      <a href="https://go.dev/security/">
+                        <span>Security</span>
+                      </a>
+                    </div>
+                    <p>How Go can help keep you secure by default</p>
+                  </li>
+              </ul>
+            </li>
+            <li class="go-Header-menuItem">
+              <a href="https://go.dev/learn/" data-gtmc="nav link">Learn</a>
+            </li>
+            <li class="go-Header-menuItem">
+              <a class="js-desktop-menu-hover" href="#" data-gtmc="nav link">
+                Docs
+                <img class="go-Icon" height="24" width="24" src="/static/shared/icon/arrow_drop_down_gm_grey_24dp.svg" alt="submenu dropdown icon">
+              </a>
+              <ul class="go-Header-submenu go-Header-submenu--docs js-desktop-submenu-hover" aria-label="submenu">
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/doc/effective_go">
+                      <span>Effective Go</span>
+                    </a>
+                  </div>
+                  <p>Tips for writing clear, performant, and idiomatic Go code</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/doc/">
+                      <span>Go User Manual</span>
+                    </a>
+                  </div>
+                  <p>A complete introduction to building software with Go</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://pkg.go.dev/std">
+                      <span>Standard library</span>
+                    </a>
+                  </div>
+                  <p>Reference documentation for Go's standard library</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/doc/devel/release">
+                      <span>Release Notes</span>
+                    </a>
+                  </div>
+                  <p>Learn what's new in each Go release</p>
+                </li>
+              </ul>
+            </li>
+            <li class="go-Header-menuItem go-Header-menuItem--active">
+              <a href="/" data-gtmc="nav link">Packages</a>
+            </li>
+            <li class="go-Header-menuItem">
+              <a class="js-desktop-menu-hover" href="#" data-gtmc="nav link">
+                Community
+                <img class="go-Icon" height="24" width="24" src="/static/shared/icon/arrow_drop_down_gm_grey_24dp.svg" alt="submenu dropdown icon">
+              </a>
+              <ul class="go-Header-submenu go-Header-submenu--community js-desktop-submenu-hover" aria-label="submenu">
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/talks/">
+                      <span>Recorded Talks</span>
+                    </a>
+                  </div>
+                  <p>Videos from prior events</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://www.meetup.com/pro/go">
+                      <span>Meetups</span>
+                      <i class="material-icons">
+                        <img class="go-Icon" height="24" width="24"
+                            src="/static/shared/icon/launch_gm_grey_24dp.svg" alt="">
+                      </i>
+                    </a>
+                  </div>
+                  <p>Meet other local Go developers</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://github.com/golang/go/wiki/Conferences">
+                      <span>Conferences</span>
+                      <i class="material-icons">
+                        <img class="go-Icon" height="24" width="24"
+                            src="/static/shared/icon/launch_gm_grey_24dp.svg" alt="">
+                      </i>
+                    </a>
+                  </div>
+                  <p>Learn and network with Go developers from around the world</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/blog">
+                      <span>Go blog</span>
+                    </a>
+                  </div>
+                  <p>The Go project's official blog.</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/help">
+                      <span>Go project</span>
+                    </a>
+                  </div>
+                  <p>Get help and stay informed from Go</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    Get connected
+                  </div>
+                  <p></p>
+                  <div class="go-Header-socialIcons">
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with google-groups (Opens in new window)"
+                        title="Get connected with google-groups (Opens in new window)"
+                        href="https://groups.google.com/g/golang-nuts">
+                        <img src="/static/shared/logo/social/google-groups.svg" />
+                      </a>
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with github (Opens in new window)"
+                        title="Get connected with github (Opens in new window)"
+                        href="https://github.com/golang">
+                        <img src="/static/shared/logo/social/github.svg" />
+                      </a>
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with twitter (Opens in new window)"
+                        title="Get connected with twitter (Opens in new window)"
+                        href="https://twitter.com/golang">
+                        <img src="/static/shared/logo/social/twitter.svg" />
+                      </a>
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with reddit (Opens in new window)"
+                        title="Get connected with reddit (Opens in new window)"
+                        href="https://www.reddit.com/r/golang/">
+                        <img src="/static/shared/logo/social/reddit.svg" />
+                      </a>
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with slack (Opens in new window)"
+                        title="Get connected with slack (Opens in new window)"
+                        href="https://invite.slack.golangbridge.org/">
+                        <img src="/static/shared/logo/social/slack.svg" />
+                      </a>
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with stack-overflow (Opens in new window)"
+                        title=""
+                        href="https://stackoverflow.com/collectives/go">
+                        <img src="/static/shared/logo/social/stack-overflow.svg" />
+                      </a>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <button class="go-Header-navOpen js-headerMenuButton go-Header-navOpen--white" data-gtmc="nav button" aria-label="Open navigation">
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <aside class="go-NavigationDrawer js-header">
+    <nav class="go-NavigationDrawer-nav">
+      <div class="go-NavigationDrawer-header">
+        <a href="https://go.dev/">
+          <img class="go-NavigationDrawer-logo" src="/static/shared/logo/go-blue.svg" alt="Go.">
+        </a>
+      </div>
+      <ul class="go-NavigationDrawer-list">
+          <li class="go-NavigationDrawer-listItem js-mobile-subnav-trigger go-NavigationDrawer-hasSubnav">
+            <a href="#">
+              <span>Why Go</span>
+              <i class="material-icons">
+                <img class="go-Icon" height="24" width="24"
+                  src="/static/shared/icon/navigate_next_gm_grey_24dp.svg" alt="">
+              </i>
+            </a>
+
+            <div class="go-NavigationDrawer go-NavigationDrawer-submenuItem">
+              <div class="go-NavigationDrawer-nav">
+                <div class="go-NavigationDrawer-header">
+                  <a href="#">
+                    <i class="material-icons">
+                      <img class="go-Icon" height="24" width="24"
+                        src="/static/shared/icon/navigate_before_gm_grey_24dp.svg" alt="">
+                      </i>
+                      Why Go
+                  </a>
+                </div>
+                <ul class="go-NavigationDrawer-list">
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/solutions#case-studies">
+                      Case Studies
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/solutions#use-cases">
+                      Use Cases
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/security/">
+                      Security
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="go-NavigationDrawer-listItem">
+            <a href="https://go.dev/learn/">Learn</a>
+          </li>
+          <li class="go-NavigationDrawer-listItem js-mobile-subnav-trigger go-NavigationDrawer-hasSubnav">
+            <a href="#">
+              <span>Docs</span>
+              <i class="material-icons">
+                <img class="go-Icon" height="24" width="24"
+                  src="/static/shared/icon/navigate_next_gm_grey_24dp.svg" alt="">
+              </i>
+            </a>
+
+            <div class="go-NavigationDrawer go-NavigationDrawer-submenuItem">
+              <div class="go-NavigationDrawer-nav">
+                <div class="go-NavigationDrawer-header">
+                  <a href="#"><i class="material-icons">
+                    <img class="go-Icon" height="24" width="24"
+                      src="/static/shared/icon/navigate_before_gm_grey_24dp.svg" alt="">
+                    </i>
+                    Docs
+                  </a>
+                </div>
+                <ul class="go-NavigationDrawer-list">
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/doc/effective_go">
+                      Effective Go
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/doc/">
+                      Go User Manual
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://pkg.go.dev/std">
+                      Standard library
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/doc/devel/release">
+                      Release Notes
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="go-NavigationDrawer-listItem go-NavigationDrawer-listItem--active">
+            <a href="/">Packages</a>
+          </li>
+          <li class="go-NavigationDrawer-listItem js-mobile-subnav-trigger go-NavigationDrawer-hasSubnav">
+            <a href="#">
+              <span>Community</span>
+              <i class="material-icons">
+                <img class="go-Icon" height="24" width="24"
+                  src="/static/shared/icon/navigate_next_gm_grey_24dp.svg" alt="">
+              </i>
+            </a>
+            <div class="go-NavigationDrawer go-NavigationDrawer-submenuItem">
+              <div class="go-NavigationDrawer-nav">
+                <div class="go-NavigationDrawer-header">
+                  <a href="#">
+                    <i class="material-icons">
+                      <img class="go-Icon" height="24" width="24"
+                        src="/static/shared/icon/navigate_before_gm_grey_24dp.svg" alt="">
+                    </i>
+                    Community
+                  </a>
+                </div>
+                <ul class="go-NavigationDrawer-list">
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/talks/">
+                      Recorded Talks
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://www.meetup.com/pro/go">
+                      Meetups
+                      <i class="material-icons">
+                      <img class="go-Icon" height="24" width="24"
+                          src="/static/shared/icon/launch_gm_grey_24dp.svg" alt="">
+                      </i>
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://github.com/golang/go/wiki/Conferences">
+                      Conferences
+                      <i class="material-icons">
+                        <img class="go-Icon" height="24" width="24" src="/static/shared/icon/launch_gm_grey_24dp.svg" alt="">
+                      </i>
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/blog">
+                      Go blog
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/help">
+                      Go project
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <div>Get connected</div>
+                    <div class="go-Header-socialIcons">
+                        <a class="go-Header-socialIcon" href="https://groups.google.com/g/golang-nuts"><img src="/static/shared/logo/social/google-groups.svg" /></a>
+                        <a class="go-Header-socialIcon" href="https://github.com/golang"><img src="/static/shared/logo/social/github.svg" /></a>
+                        <a class="go-Header-socialIcon" href="https://twitter.com/golang"><img src="/static/shared/logo/social/twitter.svg" /></a>
+                        <a class="go-Header-socialIcon" href="https://www.reddit.com/r/golang/"><img src="/static/shared/logo/social/reddit.svg" /></a>
+                        <a class="go-Header-socialIcon" href="https://invite.slack.golangbridge.org/"><img src="/static/shared/logo/social/slack.svg" /></a>
+                        <a class="go-Header-socialIcon" href="https://stackoverflow.com/collectives/go"><img src="/static/shared/logo/social/stack-overflow.svg" /></a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+      </ul>
+    </nav>
+  </aside>
+  <div class="go-NavigationDrawer-scrim js-scrim" role="presentation"></div>
+
+    
+  <main class="go-Main" id="main-content">
+    <div class="go-Main-banner" role="alert"></div>
+    <header class="go-Main-header js-mainHeader">
+  
+  
+  <nav class="go-Main-headerBreadcrumb go-Breadcrumb" aria-label="Breadcrumb" data-test-id="UnitHeader-breadcrumb">
+    <ol>
+      
+        
+          <li data-test-id="UnitHeader-breadcrumbItem">
+            <a href="/" data-gtmc="breadcrumb link">Discover Packages</a>
+          </li>
+        
+          <li data-test-id="UnitHeader-breadcrumbItem">
+            <a href="/std" data-gtmc="breadcrumb link">Standard library</a>
+          </li>
+        
+          <li data-test-id="UnitHeader-breadcrumbItem">
+            <a href="/encoding" data-gtmc="breadcrumb link">encoding</a>
+          </li>
+        
+        <li>
+          <a href="/encoding/json@go1.26.3" data-gtmc="breadcrumb link" aria-current="location"
+              data-test-id="UnitHeader-breadcrumbCurrent">
+            json
+          </a>
+          
+            <button
+              class="go-Button go-Button--inline go-Clipboard js-clipboard"
+              title="Copy path to clipboard.&#10;&#10;encoding/json"
+              aria-label="Copy Path to Clipboard"
+              data-to-copy="encoding/json"
+              data-gtmc="breadcrumbs button"
+            >
+              <img
+                class="go-Icon go-Icon--accented"
+                height="24"
+                width="24"
+                src="/static/shared/icon/content_copy_gm_grey_24dp.svg"
+                alt=""
+              >
+            </button>
+          
+        
+      </li>
+    </ol>
+  </nav>
+
+  <div class="go-Main-headerContent">
+    
+  <div class="go-Main-headerTitle js-stickyHeader">
+    <a class="go-Main-headerLogo" href="https://go.dev/" aria-hidden="true" tabindex="-1" data-gtmc="header link" aria-label="Link to Go Homepage">
+      <img height="78" width="207" src="/static/shared/logo/go-blue.svg" alt="Go">
+    </a>
+    <h1 class="UnitHeader-titleHeading" data-test-id="UnitHeader-title">json</h1>
+    
+      <span class="go-Chip go-Chip--inverted">package</span>
+    
+      <span class="go-Chip go-Chip--inverted">standard library</span>
+    
+    
+      
+        <button
+          class="go-Button go-Button--inline go-Clipboard js-clipboard"
+          title="Copy path to clipboard.&#10;&#10;encoding/json"
+          aria-label="Copy Path to Clipboard"
+          data-to-copy="encoding/json"
+          data-gtmc="title button"
+          tabindex="-1"
+        >
+          <img
+            class="go-Icon go-Icon--accented"
+            height="24"
+            width="24"
+            src="/static/shared/icon/content_copy_gm_grey_24dp.svg"
+            alt=""
+          />
+        </button>
+      
+    
+  </div>
+
+    
+      
+  <div class="go-Main-headerDetails">
+    
+      
+  <span class="go-Main-headerDetailItem" data-test-id="UnitHeader-version">
+    <a href="?tab=versions" aria-label="Version: go1.26.3" 
+    data-gtmc="header link" aria-describedby="version-description">
+      <span class="go-textSubtle" aria-hidden="true">Version: </span>
+        go1.26.3
+    </a>
+    <div class="screen-reader-only" id="version-description" hidden>
+      Opens a new window with list of versions in this module.
+    </div>
+    
+    <span class="DetailsHeader-badge--latest" data-test-id="UnitHeader-minorVersionBanner">
+      <span class="go-Chip DetailsHeader-span--latest">Latest</span>
+      <span class="go-Chip DetailsHeader-span--notAtLatest">
+        Latest
+        
+  <details class="go-Tooltip js-tooltip" data-gtmc="tooltip">
+    <summary>
+      <img class="go-Icon go-Icon--inverted" height="24" width="24" src="/static/shared/icon/alert_gm_grey_24dp.svg" alt="Warning">
+    </summary>
+    <p>This package is not in the latest version of its module.</p>
+  </details>
+
+      </span>
+      <a href="/encoding/json" aria-label="Go to Latest Version" data-gtmc="header link">
+        <span class="go-Chip go-Chip--alert DetailsHeader-span--goToLatest">Go to latest</span>
+      </a>
+    </span>
+  </span>
+
+      
+  <span class="go-Main-headerDetailItem" data-test-id="UnitHeader-commitTime">
+    Published: May  7, 2026
+  </span>
+
+      
+  <span class="go-Main-headerDetailItem" data-test-id="UnitHeader-licenses">
+    License: <a href="/encoding/json?tab=licenses" data-test-id="UnitHeader-license" 
+        data-gtmc="header link" aria-describedby="license-description">BSD-3-Clause</a>
+      
+    
+  </span>
+  <div class="screen-reader-only" id="license-description" hidden>
+    Opens a new window with license information.
+  </div>
+
+      
+        
+  <span class="go-Main-headerDetailItem" data-test-id="UnitHeader-imports">
+    <a href="/encoding/json?tab=imports" aria-label="Imports: 17"
+        data-gtmc="header link" aria-describedby="imports-description">
+      <span class="go-textSubtle">Imports: </span>17
+    </a>
+  </span>
+  <div class="screen-reader-only" id="imports-description" hidden>
+    Opens a new window with list of imports.
+  </div>
+
+        
+  <span class="go-Main-headerDetailItem" data-test-id="UnitHeader-importedby">
+    <a href="/encoding/json?tab=importedby" aria-label="Imported By: 1,523,261"
+        data-gtmc="header link" aria-describedby="importedby-description">
+       <span class="go-textSubtle">Imported by: </span>1,523,261
+    </a>
+  </span>
+  <div class="screen-reader-only" id="importedby-description" hidden>
+    Opens a new window with list of known importers.
+  </div>
+
+      
+    
+  </div>
+  
+  <div class="UnitHeader-overflowContainer">
+    <svg class="UnitHeader-overflowImage" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+      <path d="M0 0h24v24H0z" fill="none"/>
+      <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+    </svg>
+    <select class="UnitHeader-overflowSelect js-selectNav" tabindex="-1">
+      <option value="/">Main</option>
+      <option value="/encoding/json?tab=versions">
+        Versions
+      </option>
+      <option value="/encoding/json?tab=licenses">
+        Licenses
+      </option>
+      
+        <option value="/encoding/json?tab=imports">
+          Imports
+        </option>
+        <option value="/encoding/json?tab=importedby">
+          Imported By
+        </option>
+      
+    </select>
+  </div>
+
+
+    
+  </div>
+
+</header>
+    
+      <aside class="go-Main-aside  js-mainAside">
+  
+  <div class="UnitMeta">
+    <h2 class="go-textLabel">Details</h2>
+    
+  <ul class="UnitMeta-details">
+    <li>
+      <details class="go-Tooltip js-tooltip" data-gtmc="tooltip">
+        <summary class="go-textSubtle">
+          
+  <img class="go-Icon go-Icon--accented"
+    tabindex="0"
+    role="button"src="/static/shared/icon/check_circle_gm_grey_24dp.svg" alt="checked" aria-label="Valid file, toggle tooltip"height="24" width="24">
+
+          Valid <a href="https://cs.opensource.google/go/go/+/go1.26.3:src/go.mod" target="_blank" rel="noopener">go.mod</a> file
+          <img class="go-Icon" role="button" tabindex="0" src="/static/shared/icon/help_gm_grey_24dp.svg" alt="" aria-label="Toggle go.mod validity tooltip" height="24" width="24">
+        </summary>
+        <p aria-live="polite" role="tooltip">
+          The Go module system was introduced in Go 1.11 and is the official dependency management
+          solution for Go.
+        </p>
+      </details>
+    </li>
+    <li>
+      <details class="go-Tooltip js-tooltip" data-gtmc="tooltip">
+        <summary class="go-textSubtle">
+          
+  <img class="go-Icon go-Icon--accented"
+    tabindex="0"
+    role="button"src="/static/shared/icon/check_circle_gm_grey_24dp.svg" alt="checked" aria-label="Valid file, toggle tooltip"height="24" width="24">
+
+          Redistributable license
+          <img class="go-Icon" role="button" tabindex="0" src="/static/shared/icon/help_gm_grey_24dp.svg" alt="" aria-label="Toggle redistributable help tooltip" height="24" width="24">
+        </summary>
+        <p aria-live="polite" role="tooltip">
+          Redistributable licenses place minimal restrictions on how software can be used,
+          modified, and redistributed.
+        </p>
+      </details>
+    </li>
+    <li>
+      <details class="go-Tooltip js-tooltip" data-gtmc="tooltip">
+        <summary class="go-textSubtle">
+          
+  <img class="go-Icon go-Icon--accented"
+    tabindex="0"
+    role="button"src="/static/shared/icon/check_circle_gm_grey_24dp.svg" alt="checked" aria-label="Valid file, toggle tooltip"height="24" width="24">
+
+          Tagged version
+          <img class="go-Icon" role="button" tabindex="0" src="/static/shared/icon/help_gm_grey_24dp.svg" alt="" aria-label="Toggle tagged version tooltip" height="24" width="24">
+        </summary>
+        <p aria-live="polite" role="tooltip">Modules with tagged versions give importers more predictable builds.</p>
+      </details>
+    </li>
+    <li>
+      <details class="go-Tooltip js-tooltip" data-gtmc="tooltip">
+        <summary class="go-textSubtle">
+          
+  <img class="go-Icon go-Icon--accented"
+    tabindex="0"
+    role="button"src="/static/shared/icon/check_circle_gm_grey_24dp.svg" alt="checked" aria-label="Valid file, toggle tooltip"height="24" width="24">
+
+          Stable version
+          <img class="go-Icon" role="button" tabindex="0" aria-label="Toggle stable version tooltip" src="/static/shared/icon/help_gm_grey_24dp.svg" alt="" height="24" width="24">
+        </summary>
+        <p aria-live="polite" role="tooltip">When a project reaches major version v1 it is considered stable.</p>
+      </details>
+    </li>
+    <li class="UnitMeta-detailsLearn">
+      <a href="/about#best-practices" data-gtmc="meta link">Learn more about best practices</a>
+    </li>
+  </ul>
+
+    <h2 class="go-textLabel">Repository</h2>
+    <div class="UnitMeta-repo">
+      
+        <a href="https://cs.opensource.google/go/go" title="https://cs.opensource.google/go/go" target="_blank" rel="noopener">
+          cs.opensource.google/go/go
+        </a>
+      
+    </div>
+    
+      <h2 class="go-textLabel" data-test-id="links-heading">Links</h2>
+      <ul class="UnitMeta-links">
+        
+          <li>
+            <a href="https://go.dev/security/policy"
+                title="Report security issues in the Go standard library and sub-repositories">
+              <img class="go-Icon" height="24" width="24" src="/static/shared/icon/security_grey_24dp.svg" alt="">
+              Report a Vulnerability
+            </a>
+          </li>
+        
+        
+        
+        
+  
+
+        
+  
+
+        
+  
+
+      </ul>
+    
+  </div>
+
+</aside>
+    
+    <nav class="go-Main-nav go-Main-nav--sticky js-mainNav" aria-label="Outline">
+  <div class="go-Main-navDesktop">
+    
+  <div class="UnitOutline-jumpTo">
+    <button class="UnitOutline-jumpToInput go-ShortcutKey js-jumpToInput"
+        aria-controls="jump-to-modal"
+        aria-label="Open Jump to Identifier"
+        data-shortcut="f"
+        data-shortcut-alt="find"
+        data-test-id="jump-to-button" data-gtmc="outline button">
+      Jump to ...
+    </button>
+  </div>
+  <ul class="go-Tree js-tree" role="tree" aria-label="Outline">
+    
+    
+      <li>
+        <a href="#section-documentation" data-gtmc="outline link">
+          Documentation
+        </a>
+        
+<ul>
+  
+    <li>
+      <a href="#pkg-overview" data-gtmc="doc outline link">Overview</a>
+    </li>
+  <li class="DocNav-overview">
+      <a href="#pkg-index" data-gtmc="doc outline link">
+        Index
+      </a>
+    </li>
+      <li>
+        <a href="#pkg-examples" data-gtmc="doc outline link">
+          Examples
+        </a>
+        <ul>
+            <li>
+              <a href="#example-package-CustomMarshalJSON" title="Package (CustomMarshalJSON)" data-gtmc="doc outline link">
+                Package (CustomMarshalJSON)
+              </a>
+            </li>
+            <li>
+              <a href="#example-package-TextMarshalJSON" title="Package (TextMarshalJSON)" data-gtmc="doc outline link">
+                Package (TextMarshalJSON)
+              </a>
+            </li>
+            <li>
+              <a href="#example-Decoder" title="Decoder" data-gtmc="doc outline link">
+                Decoder
+              </a>
+            </li>
+            <li>
+              <a href="#example-Decoder.Decode-Stream" title="Decoder.Decode (Stream)" data-gtmc="doc outline link">
+                Decoder.Decode (Stream)
+              </a>
+            </li>
+            <li>
+              <a href="#example-Decoder.Token" title="Decoder.Token" data-gtmc="doc outline link">
+                Decoder.Token
+              </a>
+            </li>
+            <li>
+              <a href="#example-HTMLEscape" title="HTMLEscape" data-gtmc="doc outline link">
+                HTMLEscape
+              </a>
+            </li>
+            <li>
+              <a href="#example-Indent" title="Indent" data-gtmc="doc outline link">
+                Indent
+              </a>
+            </li>
+            <li>
+              <a href="#example-Marshal" title="Marshal" data-gtmc="doc outline link">
+                Marshal
+              </a>
+            </li>
+            <li>
+              <a href="#example-MarshalIndent" title="MarshalIndent" data-gtmc="doc outline link">
+                MarshalIndent
+              </a>
+            </li>
+            <li>
+              <a href="#example-RawMessage-Marshal" title="RawMessage (Marshal)" data-gtmc="doc outline link">
+                RawMessage (Marshal)
+              </a>
+            </li>
+            <li>
+              <a href="#example-RawMessage-Unmarshal" title="RawMessage (Unmarshal)" data-gtmc="doc outline link">
+                RawMessage (Unmarshal)
+              </a>
+            </li>
+            <li>
+              <a href="#example-Unmarshal" title="Unmarshal" data-gtmc="doc outline link">
+                Unmarshal
+              </a>
+            </li>
+            <li>
+              <a href="#example-Valid" title="Valid" data-gtmc="doc outline link">
+                Valid
+              </a>
+            </li>
+        </ul>
+      </li>
+    <li class="DocNav-constants">
+      <a href="#pkg-constants" data-gtmc="doc outline link">
+        Constants
+      </a>
+    </li>
+    <li class="DocNav-variables">
+      <a href="#pkg-variables" data-gtmc="doc outline link">
+        Variables
+      </a>
+    </li>
+    <li class="DocNav-functions">
+      <a href="#pkg-functions" data-gtmc="doc outline link">
+        Functions
+      </a>
+      
+        <ul>
+          
+            <li>
+              <a href="#Compact" title="Compact(dst, src)" data-gtmc="doc outline link">
+                Compact(dst, src)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#HTMLEscape" title="HTMLEscape(dst, src)" data-gtmc="doc outline link">
+                HTMLEscape(dst, src)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Indent" title="Indent(dst, src, prefix, indent)" data-gtmc="doc outline link">
+                Indent(dst, src, prefix, indent)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Marshal" title="Marshal(v)" data-gtmc="doc outline link">
+                Marshal(v)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#MarshalIndent" title="MarshalIndent(v, prefix, indent)" data-gtmc="doc outline link">
+                MarshalIndent(v, prefix, indent)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Unmarshal" title="Unmarshal(data, v)" data-gtmc="doc outline link">
+                Unmarshal(data, v)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Valid" title="Valid(data)" data-gtmc="doc outline link">
+                Valid(data)
+              </a>
+            </li>
+          
+        </ul>
+      
+    </li>
+    <li class="DocNav-types">
+      <a href="#pkg-types" data-gtmc="doc outline link">
+        Types
+      </a>
+      <ul>
+        
+          
+          <li>
+            <a href="#Decoder" title="type Decoder" data-gtmc="doc outline link">
+              type Decoder
+            </a>
+            
+              <ul>
+                
+                  <li>
+                    <a href="#NewDecoder" title="NewDecoder(r)"
+                        data-gtmc="doc outline link">
+                      NewDecoder(r)
+                    </a>
+                  </li>
+                
+                
+                  <li>
+                    <a href="#Decoder.Buffered" title="(dec) Buffered()"
+                        data-gtmc="doc outline link">
+                      (dec) Buffered()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Decoder.Decode" title="(dec) Decode(v)"
+                        data-gtmc="doc outline link">
+                      (dec) Decode(v)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Decoder.DisallowUnknownFields" title="(dec) DisallowUnknownFields()"
+                        data-gtmc="doc outline link">
+                      (dec) DisallowUnknownFields()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Decoder.InputOffset" title="(dec) InputOffset()"
+                        data-gtmc="doc outline link">
+                      (dec) InputOffset()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Decoder.More" title="(dec) More()"
+                        data-gtmc="doc outline link">
+                      (dec) More()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Decoder.Token" title="(dec) Token()"
+                        data-gtmc="doc outline link">
+                      (dec) Token()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Decoder.UseNumber" title="(dec) UseNumber()"
+                        data-gtmc="doc outline link">
+                      (dec) UseNumber()
+                    </a>
+                  </li>
+                
+              </ul>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#Delim" title="type Delim" data-gtmc="doc outline link">
+              type Delim
+            </a>
+            
+              <ul>
+                
+                
+                  <li>
+                    <a href="#Delim.String" title="(d) String()"
+                        data-gtmc="doc outline link">
+                      (d) String()
+                    </a>
+                  </li>
+                
+              </ul>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#Encoder" title="type Encoder" data-gtmc="doc outline link">
+              type Encoder
+            </a>
+            
+              <ul>
+                
+                  <li>
+                    <a href="#NewEncoder" title="NewEncoder(w)"
+                        data-gtmc="doc outline link">
+                      NewEncoder(w)
+                    </a>
+                  </li>
+                
+                
+                  <li>
+                    <a href="#Encoder.Encode" title="(enc) Encode(v)"
+                        data-gtmc="doc outline link">
+                      (enc) Encode(v)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Encoder.SetEscapeHTML" title="(enc) SetEscapeHTML(on)"
+                        data-gtmc="doc outline link">
+                      (enc) SetEscapeHTML(on)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Encoder.SetIndent" title="(enc) SetIndent(prefix, indent)"
+                        data-gtmc="doc outline link">
+                      (enc) SetIndent(prefix, indent)
+                    </a>
+                  </li>
+                
+              </ul>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#InvalidUTF8Error" title="type InvalidUTF8Error" data-gtmc="doc outline link">
+              type InvalidUTF8Error
+            </a>
+            
+              <ul>
+                
+                
+                  <li>
+                    <a href="#InvalidUTF8Error.Error" title="(e) Error()"
+                        data-gtmc="doc outline link">
+                      (e) Error()
+                    </a>
+                  </li>
+                
+              </ul>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#InvalidUnmarshalError" title="type InvalidUnmarshalError" data-gtmc="doc outline link">
+              type InvalidUnmarshalError
+            </a>
+            
+              <ul>
+                
+                
+                  <li>
+                    <a href="#InvalidUnmarshalError.Error" title="(e) Error()"
+                        data-gtmc="doc outline link">
+                      (e) Error()
+                    </a>
+                  </li>
+                
+              </ul>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#Marshaler" title="type Marshaler" data-gtmc="doc outline link">
+              type Marshaler
+            </a>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#MarshalerError" title="type MarshalerError" data-gtmc="doc outline link">
+              type MarshalerError
+            </a>
+            
+              <ul>
+                
+                
+                  <li>
+                    <a href="#MarshalerError.Error" title="(e) Error()"
+                        data-gtmc="doc outline link">
+                      (e) Error()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#MarshalerError.Unwrap" title="(e) Unwrap()"
+                        data-gtmc="doc outline link">
+                      (e) Unwrap()
+                    </a>
+                  </li>
+                
+              </ul>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#Number" title="type Number" data-gtmc="doc outline link">
+              type Number
+            </a>
+            
+              <ul>
+                
+                
+                  <li>
+                    <a href="#Number.Float64" title="(n) Float64()"
+                        data-gtmc="doc outline link">
+                      (n) Float64()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Number.Int64" title="(n) Int64()"
+                        data-gtmc="doc outline link">
+                      (n) Int64()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Number.String" title="(n) String()"
+                        data-gtmc="doc outline link">
+                      (n) String()
+                    </a>
+                  </li>
+                
+              </ul>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#RawMessage" title="type RawMessage" data-gtmc="doc outline link">
+              type RawMessage
+            </a>
+            
+              <ul>
+                
+                
+                  <li>
+                    <a href="#RawMessage.MarshalJSON" title="(m) MarshalJSON()"
+                        data-gtmc="doc outline link">
+                      (m) MarshalJSON()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#RawMessage.UnmarshalJSON" title="(m) UnmarshalJSON(data)"
+                        data-gtmc="doc outline link">
+                      (m) UnmarshalJSON(data)
+                    </a>
+                  </li>
+                
+              </ul>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#SyntaxError" title="type SyntaxError" data-gtmc="doc outline link">
+              type SyntaxError
+            </a>
+            
+              <ul>
+                
+                
+                  <li>
+                    <a href="#SyntaxError.Error" title="(e) Error()"
+                        data-gtmc="doc outline link">
+                      (e) Error()
+                    </a>
+                  </li>
+                
+              </ul>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#Token" title="type Token" data-gtmc="doc outline link">
+              type Token
+            </a>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#UnmarshalFieldError" title="type UnmarshalFieldError" data-gtmc="doc outline link">
+              type UnmarshalFieldError
+            </a>
+            
+              <ul>
+                
+                
+                  <li>
+                    <a href="#UnmarshalFieldError.Error" title="(e) Error()"
+                        data-gtmc="doc outline link">
+                      (e) Error()
+                    </a>
+                  </li>
+                
+              </ul>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#UnmarshalTypeError" title="type UnmarshalTypeError" data-gtmc="doc outline link">
+              type UnmarshalTypeError
+            </a>
+            
+              <ul>
+                
+                
+                  <li>
+                    <a href="#UnmarshalTypeError.Error" title="(e) Error()"
+                        data-gtmc="doc outline link">
+                      (e) Error()
+                    </a>
+                  </li>
+                
+              </ul>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#Unmarshaler" title="type Unmarshaler" data-gtmc="doc outline link">
+              type Unmarshaler
+            </a>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#UnsupportedTypeError" title="type UnsupportedTypeError" data-gtmc="doc outline link">
+              type UnsupportedTypeError
+            </a>
+            
+              <ul>
+                
+                
+                  <li>
+                    <a href="#UnsupportedTypeError.Error" title="(e) Error()"
+                        data-gtmc="doc outline link">
+                      (e) Error()
+                    </a>
+                  </li>
+                
+              </ul>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#UnsupportedValueError" title="type UnsupportedValueError" data-gtmc="doc outline link">
+              type UnsupportedValueError
+            </a>
+            
+              <ul>
+                
+                
+                  <li>
+                    <a href="#UnsupportedValueError.Error" title="(e) Error()"
+                        data-gtmc="doc outline link">
+                      (e) Error()
+                    </a>
+                  </li>
+                
+              </ul>
+             
+          </li>
+         
+      </ul>
+    </li>
+  
+  
+</ul>
+
+      </li>
+    
+    
+      <li>
+        <a href="#section-sourcefiles" data-gtmc="outline link">
+          Source Files
+        </a>
+      </li>
+    
+    
+      <li>
+        <a href="#section-directories" data-gtmc="outline link">
+          Directories
+        </a>
+      </li>
+    
+  </ul>
+
+  </div>
+  <div class="go-Main-navMobile js-mainNavMobile">
+    <label class="go-Label">
+      <select class="go-Select">
+        
+          <option selected disabled>Documentation</option>
+        
+      </select>
+    </label>
+  </div>
+</nav>
+    <article class="go-Main-article js-mainContent">
+  <div class="UnitDetails" data-test-id="UnitDetails" style="display: block;">
+    <div class="UnitDetails-content js-unitDetailsContent" data-test-id="UnitDetails-content">
+      
+      
+        
+          
+  <div class="UnitDoc">
+    <h2 class="UnitDoc-title" id="section-documentation">
+      <img class="go-Icon" height="24" width="24" src="/static/shared/icon/code_gm_grey_24dp.svg" alt="">
+      Documentation
+      <a class="UnitDoc-idLink" href="#section-documentation" title="Go to Documentation" aria-label="Go to Documentation">¶</a>
+    </h2>
+    
+  
+    
+  
+
+    <div class="Documentation js-documentation">
+      
+        
+
+<div class="Documentation-content js-docContent"> <section class="Documentation-overview">
+    <h3 tabindex="-1" id="pkg-overview" class="Documentation-overviewHeader">Overview <a href="#pkg-overview" title="Go to Overview" aria-label="Go to Overview">¶</a></h3>
+
+<div role="navigation" aria-label="Table of Contents">
+  <ul class="Documentation-toc">
+      <li class="Documentation-tocItem"><a href="#hdr-Security_Considerations">Security Considerations</a></li>
+  </ul>
+</div>
+<p>Package json implements encoding and decoding of JSON as defined in <a href="https://rfc-editor.org/rfc/rfc7159.html">RFC 7159</a>.
+The mapping between JSON and Go values is described in the documentation for
+the Marshal and Unmarshal functions.
+</p><p>See &#34;JSON and Go&#34; for an introduction to this package:
+<a href="https://golang.org/doc/articles/json_and_go.html">https://golang.org/doc/articles/json_and_go.html</a>
+</p><h4 id="hdr-Security_Considerations">Security Considerations <a class="Documentation-idLink" href="#hdr-Security_Considerations" title="Go to Security Considerations" aria-label="Go to Security Considerations">¶</a></h4><p>The JSON standard (<a href="https://rfc-editor.org/rfc/rfc7159.html">RFC 7159</a>) is lax in its definition of a number of parser
+behaviors. As such, many JSON parsers behave differently in various
+scenarios. These differences in parsers mean that systems that use multiple
+independent JSON parser implementations may parse the same JSON object in
+differing ways.
+</p><p>Systems that rely on a JSON object being parsed consistently for security
+purposes should be careful to understand the behaviors of this parser, as
+well as how these behaviors may cause interoperability issues with other
+parser implementations.
+</p><p>Due to the Go Backwards Compatibility promise (<a href="https://go.dev/doc/go1compat">https://go.dev/doc/go1compat</a>)
+there are a number of behaviors this package exhibits that may cause
+interopability issues, but cannot be changed. In particular the following
+parsing behaviors may cause issues:
+</p><ul class="Documentation-bulletList">
+  <li>If a JSON object contains duplicate keys, keys are processed in the order
+they are observed, meaning later values will replace or be merged into
+prior values, depending on the field type (in particular maps and structs
+will have values merged, while other types have values replaced).</li>
+  <li>When parsing a JSON object into a Go struct, keys are considered in a
+case-insensitive fashion.</li>
+  <li>When parsing a JSON object into a Go struct, unknown keys in the JSON
+object are ignored (unless a <a href="#Decoder">Decoder</a> is used and
+<a href="#Decoder.DisallowUnknownFields">Decoder.DisallowUnknownFields</a> has been called).</li>
+  <li>Invalid UTF-8 bytes in JSON strings are replaced by the Unicode
+replacement character.</li>
+  <li>Large JSON number integers will lose precision when unmarshaled into
+floating-point types.</li>
+</ul>
+<details tabindex="-1" id="example-package-CustomMarshalJSON" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example (CustomMarshalJSON) <a href="#example-package-CustomMarshalJSON" title="Go to Example (CustomMarshalJSON)" aria-label="Go to Example (CustomMarshalJSON)">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+//go:build !goexperiment.jsonv2
+
+package main
+
+import (
+	&#34;encoding/json&#34;
+	&#34;fmt&#34;
+	&#34;log&#34;
+	&#34;strings&#34;
+)
+
+type Animal int
+
+const (
+	Unknown Animal = iota
+	Gopher
+	Zebra
+)
+
+func (a *Animal) UnmarshalJSON(b []byte) error {
+	var s string
+	if err := json.Unmarshal(b, &amp;s); err != nil {
+		return err
+	}
+	switch strings.ToLower(s) {
+	default:
+		*a = Unknown
+	case &#34;gopher&#34;:
+		*a = Gopher
+	case &#34;zebra&#34;:
+		*a = Zebra
+	}
+
+	return nil
+}
+
+func (a Animal) MarshalJSON() ([]byte, error) {
+	var s string
+	switch a {
+	default:
+		s = &#34;unknown&#34;
+	case Gopher:
+		s = &#34;gopher&#34;
+	case Zebra:
+		s = &#34;zebra&#34;
+	}
+
+	return json.Marshal(s)
+}
+
+func main() {
+	blob := `[&#34;gopher&#34;,&#34;armadillo&#34;,&#34;zebra&#34;,&#34;unknown&#34;,&#34;gopher&#34;,&#34;bee&#34;,&#34;gopher&#34;,&#34;zebra&#34;]`
+	var zoo []Animal
+	if err := json.Unmarshal([]byte(blob), &amp;zoo); err != nil {
+		log.Fatal(err)
+	}
+
+	census := make(map[Animal]int)
+	for _, animal := range zoo {
+		census[animal] += 1
+	}
+
+	fmt.Printf(&#34;Zoo Census:\n* Gophers: %d\n* Zebras:  %d\n* Unknown: %d\n&#34;,
+		census[Gopher], census[Zebra], census[Unknown])
+
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">Zoo Census:
+* Gophers: 3
+* Zebras:  2
+* Unknown: 3
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+<details tabindex="-1" id="example-package-TextMarshalJSON" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example (TextMarshalJSON) <a href="#example-package-TextMarshalJSON" title="Go to Example (TextMarshalJSON)" aria-label="Go to Example (TextMarshalJSON)">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+//go:build !goexperiment.jsonv2
+
+package main
+
+import (
+	&#34;encoding/json&#34;
+	&#34;fmt&#34;
+	&#34;log&#34;
+	&#34;strings&#34;
+)
+
+type Size int
+
+const (
+	Unrecognized Size = iota
+	Small
+	Large
+)
+
+func (s *Size) UnmarshalText(text []byte) error {
+	switch strings.ToLower(string(text)) {
+	default:
+		*s = Unrecognized
+	case &#34;small&#34;:
+		*s = Small
+	case &#34;large&#34;:
+		*s = Large
+	}
+	return nil
+}
+
+func (s Size) MarshalText() ([]byte, error) {
+	var name string
+	switch s {
+	default:
+		name = &#34;unrecognized&#34;
+	case Small:
+		name = &#34;small&#34;
+	case Large:
+		name = &#34;large&#34;
+	}
+	return []byte(name), nil
+}
+
+func main() {
+	blob := `[&#34;small&#34;,&#34;regular&#34;,&#34;large&#34;,&#34;unrecognized&#34;,&#34;small&#34;,&#34;normal&#34;,&#34;small&#34;,&#34;large&#34;]`
+	var inventory []Size
+	if err := json.Unmarshal([]byte(blob), &amp;inventory); err != nil {
+		log.Fatal(err)
+	}
+
+	counts := make(map[Size]int)
+	for _, size := range inventory {
+		counts[size] += 1
+	}
+
+	fmt.Printf(&#34;Inventory Counts:\n* Small:        %d\n* Large:        %d\n* Unrecognized: %d\n&#34;,
+		counts[Small], counts[Large], counts[Unrecognized])
+
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">Inventory Counts:
+* Small:        3
+* Large:        2
+* Unrecognized: 3
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+</section><section class="Documentation-index">
+    <h3 id="pkg-index" class="Documentation-indexHeader">Index <a href="#pkg-index" title="Go to Index" aria-label="Go to Index">¶</a></h3>
+
+<ul class="Documentation-indexList">
+<li class="Documentation-indexFunction">
+        <a href="#Compact">func Compact(dst *bytes.Buffer, src []byte) error</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#HTMLEscape">func HTMLEscape(dst *bytes.Buffer, src []byte)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Indent">func Indent(dst *bytes.Buffer, src []byte, prefix, indent string) error</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Marshal">func Marshal(v any) ([]byte, error)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#MarshalIndent">func MarshalIndent(v any, prefix, indent string) ([]byte, error)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Unmarshal">func Unmarshal(data []byte, v any) error</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Valid">func Valid(data []byte) bool</a></li>
+<li class="Documentation-indexType">
+          <a href="#Decoder">type Decoder</a></li>
+<li><ul class="Documentation-indexTypeFunctions">
+<li>
+            <a href="#NewDecoder">func NewDecoder(r io.Reader) *Decoder</a></li>
+</ul></li>
+<li><ul class="Documentation-indexTypeMethods">
+<li>
+            <a href="#Decoder.Buffered">func (dec *Decoder) Buffered() io.Reader</a></li>
+<li>
+            <a href="#Decoder.Decode">func (dec *Decoder) Decode(v any) error</a></li>
+<li>
+            <a href="#Decoder.DisallowUnknownFields">func (dec *Decoder) DisallowUnknownFields()</a></li>
+<li>
+            <a href="#Decoder.InputOffset">func (dec *Decoder) InputOffset() int64</a></li>
+<li>
+            <a href="#Decoder.More">func (dec *Decoder) More() bool</a></li>
+<li>
+            <a href="#Decoder.Token">func (dec *Decoder) Token() (Token, error)</a></li>
+<li>
+            <a href="#Decoder.UseNumber">func (dec *Decoder) UseNumber()</a></li>
+</ul></li>
+<li class="Documentation-indexType">
+          <a href="#Delim">type Delim</a></li>
+<li><ul class="Documentation-indexTypeMethods">
+<li>
+            <a href="#Delim.String">func (d Delim) String() string</a></li>
+</ul></li>
+<li class="Documentation-indexType">
+          <a href="#Encoder">type Encoder</a></li>
+<li><ul class="Documentation-indexTypeFunctions">
+<li>
+            <a href="#NewEncoder">func NewEncoder(w io.Writer) *Encoder</a></li>
+</ul></li>
+<li><ul class="Documentation-indexTypeMethods">
+<li>
+            <a href="#Encoder.Encode">func (enc *Encoder) Encode(v any) error</a></li>
+<li>
+            <a href="#Encoder.SetEscapeHTML">func (enc *Encoder) SetEscapeHTML(on bool)</a></li>
+<li>
+            <a href="#Encoder.SetIndent">func (enc *Encoder) SetIndent(prefix, indent string)</a></li>
+</ul></li>
+<li class="Documentation-indexType">
+          <a class="js-deprecatedTagLink" href="#InvalidUTF8Error">type InvalidUTF8Error</a><span class="Documentation-indexDeprecated Documentation-deprecatedTag">deprecated</span></li>
+<li><ul class="Documentation-indexTypeMethods">
+<li>
+            <a href="#InvalidUTF8Error.Error">func (e *InvalidUTF8Error) Error() string</a></li>
+</ul></li>
+<li class="Documentation-indexType">
+          <a href="#InvalidUnmarshalError">type InvalidUnmarshalError</a></li>
+<li><ul class="Documentation-indexTypeMethods">
+<li>
+            <a href="#InvalidUnmarshalError.Error">func (e *InvalidUnmarshalError) Error() string</a></li>
+</ul></li>
+<li class="Documentation-indexType">
+          <a href="#Marshaler">type Marshaler</a></li>
+<li class="Documentation-indexType">
+          <a href="#MarshalerError">type MarshalerError</a></li>
+<li><ul class="Documentation-indexTypeMethods">
+<li>
+            <a href="#MarshalerError.Error">func (e *MarshalerError) Error() string</a></li>
+<li>
+            <a href="#MarshalerError.Unwrap">func (e *MarshalerError) Unwrap() error</a></li>
+</ul></li>
+<li class="Documentation-indexType">
+          <a href="#Number">type Number</a></li>
+<li><ul class="Documentation-indexTypeMethods">
+<li>
+            <a href="#Number.Float64">func (n Number) Float64() (float64, error)</a></li>
+<li>
+            <a href="#Number.Int64">func (n Number) Int64() (int64, error)</a></li>
+<li>
+            <a href="#Number.String">func (n Number) String() string</a></li>
+</ul></li>
+<li class="Documentation-indexType">
+          <a href="#RawMessage">type RawMessage</a></li>
+<li><ul class="Documentation-indexTypeMethods">
+<li>
+            <a href="#RawMessage.MarshalJSON">func (m RawMessage) MarshalJSON() ([]byte, error)</a></li>
+<li>
+            <a href="#RawMessage.UnmarshalJSON">func (m *RawMessage) UnmarshalJSON(data []byte) error</a></li>
+</ul></li>
+<li class="Documentation-indexType">
+          <a href="#SyntaxError">type SyntaxError</a></li>
+<li><ul class="Documentation-indexTypeMethods">
+<li>
+            <a href="#SyntaxError.Error">func (e *SyntaxError) Error() string</a></li>
+</ul></li>
+<li class="Documentation-indexType">
+          <a href="#Token">type Token</a></li>
+<li class="Documentation-indexType">
+          <a class="js-deprecatedTagLink" href="#UnmarshalFieldError">type UnmarshalFieldError</a><span class="Documentation-indexDeprecated Documentation-deprecatedTag">deprecated</span></li>
+<li><ul class="Documentation-indexTypeMethods">
+<li>
+            <a href="#UnmarshalFieldError.Error">func (e *UnmarshalFieldError) Error() string</a></li>
+</ul></li>
+<li class="Documentation-indexType">
+          <a href="#UnmarshalTypeError">type UnmarshalTypeError</a></li>
+<li><ul class="Documentation-indexTypeMethods">
+<li>
+            <a href="#UnmarshalTypeError.Error">func (e *UnmarshalTypeError) Error() string</a></li>
+</ul></li>
+<li class="Documentation-indexType">
+          <a href="#Unmarshaler">type Unmarshaler</a></li>
+<li class="Documentation-indexType">
+          <a href="#UnsupportedTypeError">type UnsupportedTypeError</a></li>
+<li><ul class="Documentation-indexTypeMethods">
+<li>
+            <a href="#UnsupportedTypeError.Error">func (e *UnsupportedTypeError) Error() string</a></li>
+</ul></li>
+<li class="Documentation-indexType">
+          <a href="#UnsupportedValueError">type UnsupportedValueError</a></li>
+<li><ul class="Documentation-indexTypeMethods">
+<li>
+            <a href="#UnsupportedValueError.Error">func (e *UnsupportedValueError) Error() string</a></li>
+</ul></li>
+</ul>
+</section><section class="Documentation-examples">
+    <h3 tabindex="-1" id="pkg-examples" class="Documentation-examplesHeader">Examples <a class="Documentation-idLink" href="#pkg-examples" title="Go to Examples" aria-label="Go to Examples">¶</a></h3>
+<ul class="Documentation-examplesList">
+<li><a href="#example-package-CustomMarshalJSON" class="js-exampleHref">Package (CustomMarshalJSON)</a></li>
+<li><a href="#example-package-TextMarshalJSON" class="js-exampleHref">Package (TextMarshalJSON)</a></li>
+<li><a href="#example-Decoder" class="js-exampleHref">Decoder</a></li>
+<li><a href="#example-Decoder.Decode-Stream" class="js-exampleHref">Decoder.Decode (Stream)</a></li>
+<li><a href="#example-Decoder.Token" class="js-exampleHref">Decoder.Token</a></li>
+<li><a href="#example-HTMLEscape" class="js-exampleHref">HTMLEscape</a></li>
+<li><a href="#example-Indent" class="js-exampleHref">Indent</a></li>
+<li><a href="#example-Marshal" class="js-exampleHref">Marshal</a></li>
+<li><a href="#example-MarshalIndent" class="js-exampleHref">MarshalIndent</a></li>
+<li><a href="#example-RawMessage-Marshal" class="js-exampleHref">RawMessage (Marshal)</a></li>
+<li><a href="#example-RawMessage-Unmarshal" class="js-exampleHref">RawMessage (Unmarshal)</a></li>
+<li><a href="#example-Unmarshal" class="js-exampleHref">Unmarshal</a></li>
+<li><a href="#example-Valid" class="js-exampleHref">Valid</a></li>
+</ul>
+</section><h3 tabindex="-1" id="pkg-constants" class="Documentation-constantsHeader">Constants <a href="#pkg-constants" title="Go to Constants" aria-label="Go to Constants">¶</a></h3>
+
+  <section class="Documentation-constants"><p class="Documentation-empty">This section is empty.</p></section>
+
+  <h3 tabindex="-1" id="pkg-variables" class="Documentation-variablesHeader">Variables <a href="#pkg-variables" title="Go to Variables" aria-label="Go to Variables">¶</a></h3>
+
+  <section class="Documentation-variables"><p class="Documentation-empty">This section is empty.</p></section>
+
+  <h3 tabindex="-1" id="pkg-functions" class="Documentation-functionsHeader">Functions <a href="#pkg-functions" title="Go to Functions" aria-label="Go to Functions">¶</a></h3>
+
+  <section class="Documentation-functions"><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Compact" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/indent.go;l=43">Compact</a> <a class="Documentation-idLink" href="#Compact" title="Go to Compact" aria-label="Go to Compact">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Compact(dst *<a href="/bytes">bytes</a>.<a href="/bytes#Buffer">Buffer</a>, src []<a href="/builtin#byte">byte</a>) <a href="/builtin#error">error</a></pre>
+    </div>
+  <p>Compact appends to dst the JSON-encoded src with
+insignificant space characters elided.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="HTMLEscape" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/indent.go;l=16">HTMLEscape</a> <a class="Documentation-idLink" href="#HTMLEscape" title="Go to HTMLEscape" aria-label="Go to HTMLEscape">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func HTMLEscape(dst *<a href="/bytes">bytes</a>.<a href="/bytes#Buffer">Buffer</a>, src []<a href="/builtin#byte">byte</a>)</pre>
+    </div>
+  <p>HTMLEscape appends to dst the JSON-encoded src with &lt;, &gt;, &amp;, U+2028 and U+2029
+characters inside string literals changed to \u003c, \u003e, \u0026, \u2028, \u2029
+so that the JSON will be safe to embed inside HTML &lt;script&gt; tags.
+For historical reasons, web browsers don&#39;t honor standard HTML
+escaping within &lt;script&gt; tags, so an alternative JSON encoding must be used.
+</p>
+<details tabindex="-1" id="example-HTMLEscape" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-HTMLEscape" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;bytes&#34;
+	&#34;encoding/json&#34;
+	&#34;os&#34;
+)
+
+func main() {
+	var out bytes.Buffer
+	json.HTMLEscape(&amp;out, []byte(`{&#34;Name&#34;:&#34;&lt;b&gt;HTML content&lt;/b&gt;&#34;}`))
+	out.WriteTo(os.Stdout)
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">{&#34;Name&#34;:&#34;\u003cb\u003eHTML content\u003c/b\u003e&#34;}
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Indent" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/indent.go;l=120">Indent</a> <a class="Documentation-idLink" href="#Indent" title="Go to Indent" aria-label="Go to Indent">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Indent(dst *<a href="/bytes">bytes</a>.<a href="/bytes#Buffer">Buffer</a>, src []<a href="/builtin#byte">byte</a>, prefix, indent <a href="/builtin#string">string</a>) <a href="/builtin#error">error</a></pre>
+    </div>
+  <p>Indent appends to dst an indented form of the JSON-encoded src.
+Each element in a JSON object or array begins on a new,
+indented line beginning with prefix followed by one or more
+copies of indent according to the indentation nesting.
+The data appended to dst does not begin with the prefix nor
+any indentation, to make it easier to embed inside other formatted JSON data.
+Although leading space characters (space, tab, carriage return, newline)
+at the beginning of src are dropped, trailing space characters
+at the end of src are preserved and copied to dst.
+For example, if src has no trailing spaces, neither will dst;
+if src ends in a trailing newline, so will dst.
+</p>
+<details tabindex="-1" id="example-Indent" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-Indent" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;bytes&#34;
+	&#34;encoding/json&#34;
+	&#34;log&#34;
+	&#34;os&#34;
+)
+
+func main() {
+	type Road struct {
+		Name   string
+		Number int
+	}
+	roads := []Road{
+		{&#34;Diamond Fork&#34;, 29},
+		{&#34;Sheep Creek&#34;, 51},
+	}
+
+	b, err := json.Marshal(roads)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	var out bytes.Buffer
+	json.Indent(&amp;out, b, &#34;=&#34;, &#34;\t&#34;)
+	out.WriteTo(os.Stdout)
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">[
+=	{
+=		&#34;Name&#34;: &#34;Diamond Fork&#34;,
+=		&#34;Number&#34;: 29
+=	},
+=	{
+=		&#34;Name&#34;: &#34;Sheep Creek&#34;,
+=		&#34;Number&#34;: 51
+=	}
+=]
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Marshal" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/encode.go;l=205">Marshal</a> <a class="Documentation-idLink" href="#Marshal" title="Go to Marshal" aria-label="Go to Marshal">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Marshal(v <a href="/builtin#any">any</a>) ([]<a href="/builtin#byte">byte</a>, <a href="/builtin#error">error</a>)</pre>
+    </div>
+  <p>Marshal returns the JSON encoding of v.
+</p><p>Marshal traverses the value v recursively.
+If an encountered value implements <a href="#Marshaler">Marshaler</a>
+and is not a nil pointer, Marshal calls [Marshaler.MarshalJSON]
+to produce JSON. If no [Marshaler.MarshalJSON] method is present but the
+value implements <a href="/encoding#TextMarshaler">encoding.TextMarshaler</a> instead, Marshal calls
+<a href="/encoding#TextMarshaler.MarshalText">encoding.TextMarshaler.MarshalText</a> and encodes the result as a JSON string.
+The nil pointer exception is not strictly necessary
+but mimics a similar, necessary exception in the behavior of
+[Unmarshaler.UnmarshalJSON].
+</p><p>Otherwise, Marshal uses the following type-dependent default encodings:
+</p><p>Boolean values encode as JSON booleans.
+</p><p>Floating point, integer, and <a href="#Number">Number</a> values encode as JSON numbers.
+NaN and +/-Inf values will return an <a href="#UnsupportedValueError">UnsupportedValueError</a>.
+</p><p>String values encode as JSON strings coerced to valid UTF-8,
+replacing invalid bytes with the Unicode replacement rune.
+So that the JSON will be safe to embed inside HTML &lt;script&gt; tags,
+the string is encoded using <a href="#HTMLEscape">HTMLEscape</a>,
+which replaces &#34;&lt;&#34;, &#34;&gt;&#34;, &#34;&amp;&#34;, U+2028, and U+2029 are escaped
+to &#34;\u003c&#34;,&#34;\u003e&#34;, &#34;\u0026&#34;, &#34;\u2028&#34;, and &#34;\u2029&#34;.
+This replacement can be disabled when using an <a href="#Encoder">Encoder</a>,
+by calling <a href="#Encoder.SetEscapeHTML">Encoder.SetEscapeHTML</a>(false).
+</p><p>Array and slice values encode as JSON arrays, except that
+[]byte encodes as a base64-encoded string, and a nil slice
+encodes as the null JSON value.
+</p><p>Struct values encode as JSON objects.
+Each exported struct field becomes a member of the object, using the
+field name as the object key, unless the field is omitted for one of the
+reasons given below.
+</p><p>The encoding of each struct field can be customized by the format string
+stored under the &#34;json&#34; key in the struct field&#39;s tag.
+The format string gives the name of the field, possibly followed by a
+comma-separated list of options. The name may be empty in order to
+specify options without overriding the default field name.
+</p><p>The &#34;omitempty&#34; option specifies that the field should be omitted
+from the encoding if the field has an empty value, defined as
+false, 0, a nil pointer, a nil interface value, and any array,
+slice, map, or string of length zero.
+</p><p>As a special case, if the field tag is &#34;-&#34;, the field is always omitted.
+Note that a field with name &#34;-&#34; can still be generated using the tag &#34;-,&#34;.
+</p><p>Examples of struct field tags and their meanings:
+</p><pre>// Field appears in JSON as key &#34;myName&#34;.
+Field int `json:&#34;myName&#34;`
+
+// Field appears in JSON as key &#34;myName&#34; and
+// the field is omitted from the object if its value is empty,
+// as defined above.
+Field int `json:&#34;myName,omitempty&#34;`
+
+// Field appears in JSON as key &#34;Field&#34; (the default), but
+// the field is skipped if empty.
+// Note the leading comma.
+Field int `json:&#34;,omitempty&#34;`
+
+// Field is ignored by this package.
+Field int `json:&#34;-&#34;`
+
+// Field appears in JSON as key &#34;-&#34;.
+Field int `json:&#34;-,&#34;`
+</pre><p>The &#34;omitzero&#34; option specifies that the field should be omitted
+from the encoding if the field has a zero value, according to rules:
+</p><p>1) If the field type has an &#34;IsZero() bool&#34; method, that will be used to
+determine whether the value is zero.
+</p><p>2) Otherwise, the value is zero if it is the zero value for its type.
+</p><p>If both &#34;omitempty&#34; and &#34;omitzero&#34; are specified, the field will be omitted
+if the value is either empty or zero (or both).
+</p><p>The &#34;string&#34; option signals that a field is stored as JSON inside a
+JSON-encoded string. It applies only to fields of string, floating point,
+integer, or boolean types. This extra level of encoding is sometimes used
+when communicating with JavaScript programs:
+</p><pre>Int64String int64 `json:&#34;,string&#34;`
+</pre><p>The key name will be used if it&#39;s a non-empty string consisting of
+only Unicode letters, digits, and ASCII punctuation except quotation
+marks, backslash, and comma.
+</p><p>Embedded struct fields are usually marshaled as if their inner exported fields
+were fields in the outer struct, subject to the usual Go visibility rules amended
+as described in the next paragraph.
+An anonymous struct field with a name given in its JSON tag is treated as
+having that name, rather than being anonymous.
+An anonymous struct field of interface type is treated the same as having
+that type as its name, rather than being anonymous.
+</p><p>The Go visibility rules for struct fields are amended for JSON when
+deciding which field to marshal or unmarshal. If there are
+multiple fields at the same level, and that level is the least
+nested (and would therefore be the nesting level selected by the
+usual Go rules), the following extra rules apply:
+</p><p>1) Of those fields, if any are JSON-tagged, only tagged fields are considered,
+even if there are multiple untagged fields that would otherwise conflict.
+</p><p>2) If there is exactly one field (tagged or not according to the first rule), that is selected.
+</p><p>3) Otherwise there are multiple fields, and all are ignored; no error occurs.
+</p><p>Handling of anonymous struct fields is new in Go 1.1.
+Prior to Go 1.1, anonymous struct fields were ignored. To force ignoring of
+an anonymous struct field in both current and earlier versions, give the field
+a JSON tag of &#34;-&#34;.
+</p><p>Map values encode as JSON objects. The map&#39;s key type must either be a
+string, an integer type, or implement <a href="/encoding#TextMarshaler">encoding.TextMarshaler</a>. The map keys
+are sorted and used as JSON object keys by applying the following rules,
+subject to the UTF-8 coercion described for string values above:
+</p><ul class="Documentation-bulletList">
+  <li>keys of any string type are used directly</li>
+  <li>keys that implement <a href="/encoding#TextMarshaler">encoding.TextMarshaler</a> are marshaled</li>
+  <li>integer keys are converted to strings</li>
+</ul><p>Pointer values encode as the value pointed to.
+A nil pointer encodes as the null JSON value.
+</p><p>Interface values encode as the value contained in the interface.
+A nil interface value encodes as the null JSON value.
+</p><p>Channel, complex, and function values cannot be encoded in JSON.
+Attempting to encode such a value causes Marshal to return
+an <a href="#UnsupportedTypeError">UnsupportedTypeError</a>.
+</p><p>JSON cannot represent cyclic data structures and Marshal does not
+handle them. Passing cyclic structures to Marshal will result in
+an error.
+</p>
+<details tabindex="-1" id="example-Marshal" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-Marshal" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;encoding/json&#34;
+	&#34;fmt&#34;
+	&#34;os&#34;
+)
+
+func main() {
+	type ColorGroup struct {
+		ID     int
+		Name   string
+		Colors []string
+	}
+	group := ColorGroup{
+		ID:     1,
+		Name:   &#34;Reds&#34;,
+		Colors: []string{&#34;Crimson&#34;, &#34;Red&#34;, &#34;Ruby&#34;, &#34;Maroon&#34;},
+	}
+	b, err := json.Marshal(group)
+	if err != nil {
+		fmt.Println(&#34;error:&#34;, err)
+	}
+	os.Stdout.Write(b)
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">{&#34;ID&#34;:1,&#34;Name&#34;:&#34;Reds&#34;,&#34;Colors&#34;:[&#34;Crimson&#34;,&#34;Red&#34;,&#34;Ruby&#34;,&#34;Maroon&#34;]}
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="MarshalIndent" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/encode.go;l=221">MarshalIndent</a> <a class="Documentation-idLink" href="#MarshalIndent" title="Go to MarshalIndent" aria-label="Go to MarshalIndent">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func MarshalIndent(v <a href="/builtin#any">any</a>, prefix, indent <a href="/builtin#string">string</a>) ([]<a href="/builtin#byte">byte</a>, <a href="/builtin#error">error</a>)</pre>
+    </div>
+  <p>MarshalIndent is like <a href="#Marshal">Marshal</a> but applies <a href="#Indent">Indent</a> to format the output.
+Each JSON element in the output will begin on a new line beginning with prefix
+followed by one or more copies of indent according to the indentation nesting.
+</p>
+<details tabindex="-1" id="example-MarshalIndent" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-MarshalIndent" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;encoding/json&#34;
+	&#34;fmt&#34;
+	&#34;log&#34;
+)
+
+func main() {
+	data := map[string]int{
+		&#34;a&#34;: 1,
+		&#34;b&#34;: 2,
+	}
+
+	b, err := json.MarshalIndent(data, &#34;&lt;prefix&gt;&#34;, &#34;&lt;indent&gt;&#34;)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Println(string(b))
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">{
+&lt;prefix&gt;&lt;indent&gt;&#34;a&#34;: 1,
+&lt;prefix&gt;&lt;indent&gt;&#34;b&#34;: 2
+&lt;prefix&gt;}
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Unmarshal" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/decode.go;l=102">Unmarshal</a> <a class="Documentation-idLink" href="#Unmarshal" title="Go to Unmarshal" aria-label="Go to Unmarshal">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Unmarshal(data []<a href="/builtin#byte">byte</a>, v <a href="/builtin#any">any</a>) <a href="/builtin#error">error</a></pre>
+    </div>
+  <p>Unmarshal parses the JSON-encoded data and stores the result
+in the value pointed to by v. If v is nil or not a pointer,
+Unmarshal returns an <a href="#InvalidUnmarshalError">InvalidUnmarshalError</a>.
+</p><p>Unmarshal uses the inverse of the encodings that
+<a href="#Marshal">Marshal</a> uses, allocating maps, slices, and pointers as necessary,
+with the following additional rules:
+</p><p>To unmarshal JSON into a pointer, Unmarshal first handles the case of
+the JSON being the JSON literal null. In that case, Unmarshal sets
+the pointer to nil. Otherwise, Unmarshal unmarshals the JSON into
+the value pointed at by the pointer. If the pointer is nil, Unmarshal
+allocates a new value for it to point to.
+</p><p>To unmarshal JSON into a value implementing <a href="#Unmarshaler">Unmarshaler</a>,
+Unmarshal calls that value&#39;s [Unmarshaler.UnmarshalJSON] method, including
+when the input is a JSON null.
+Otherwise, if the value implements <a href="/encoding#TextUnmarshaler">encoding.TextUnmarshaler</a>
+and the input is a JSON quoted string, Unmarshal calls
+<a href="/encoding#TextUnmarshaler.UnmarshalText">encoding.TextUnmarshaler.UnmarshalText</a> with the unquoted form of the string.
+</p><p>To unmarshal JSON into a struct, Unmarshal matches incoming object keys to
+the keys used by <a href="#Marshal">Marshal</a> (either the struct field name or its tag),
+ignoring case. If multiple struct fields match an object key, an exact case
+match is preferred over a case-insensitive one.
+</p><p>Incoming object members are processed in the order observed. If an object
+includes duplicate keys, later duplicates will replace or be merged into
+prior values.
+</p><p>To unmarshal JSON into an interface value,
+Unmarshal stores one of these in the interface value:
+</p><ul class="Documentation-bulletList">
+  <li>bool, for JSON booleans</li>
+  <li>float64, for JSON numbers</li>
+  <li>string, for JSON strings</li>
+  <li>[]any, for JSON arrays</li>
+  <li>map[string]any, for JSON objects</li>
+  <li>nil for JSON null</li>
+</ul><p>To unmarshal a JSON array into a slice, Unmarshal resets the slice length
+to zero and then appends each element to the slice.
+As a special case, to unmarshal an empty JSON array into a slice,
+Unmarshal replaces the slice with a new empty slice.
+</p><p>To unmarshal a JSON array into a Go array, Unmarshal decodes
+JSON array elements into corresponding Go array elements.
+If the Go array is smaller than the JSON array,
+the additional JSON array elements are discarded.
+If the JSON array is smaller than the Go array,
+the additional Go array elements are set to zero values.
+</p><p>To unmarshal a JSON object into a map, Unmarshal first establishes a map to
+use. If the map is nil, Unmarshal allocates a new map. Otherwise Unmarshal
+reuses the existing map, keeping existing entries. Unmarshal then stores
+key-value pairs from the JSON object into the map. The map&#39;s key type must
+either be any string type, an integer, or implement <a href="/encoding#TextUnmarshaler">encoding.TextUnmarshaler</a>.
+</p><p>If the JSON-encoded data contain a syntax error, Unmarshal returns a <a href="#SyntaxError">SyntaxError</a>.
+</p><p>If a JSON value is not appropriate for a given target type,
+or if a JSON number overflows the target type, Unmarshal
+skips that field and completes the unmarshaling as best it can.
+If no more serious errors are encountered, Unmarshal returns
+an <a href="#UnmarshalTypeError">UnmarshalTypeError</a> describing the earliest such error. In any
+case, it&#39;s not guaranteed that all the remaining fields following
+the problematic one will be unmarshaled into the target object.
+</p><p>The JSON null value unmarshals into an interface, map, pointer, or slice
+by setting that Go value to nil. Because null is often used in JSON to mean
+“not present,” unmarshaling a JSON null into any other Go type has no effect
+on the value and produces no error.
+</p><p>When unmarshaling quoted strings, invalid UTF-8 or
+invalid UTF-16 surrogate pairs are not treated as an error.
+Instead, they are replaced by the Unicode replacement
+character U+FFFD.
+</p>
+<details tabindex="-1" id="example-Unmarshal" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-Unmarshal" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;encoding/json&#34;
+	&#34;fmt&#34;
+)
+
+func main() {
+	var jsonBlob = []byte(`[
+	{&#34;Name&#34;: &#34;Platypus&#34;, &#34;Order&#34;: &#34;Monotremata&#34;},
+	{&#34;Name&#34;: &#34;Quoll&#34;,    &#34;Order&#34;: &#34;Dasyuromorphia&#34;}
+]`)
+	type Animal struct {
+		Name  string
+		Order string
+	}
+	var animals []Animal
+	err := json.Unmarshal(jsonBlob, &amp;animals)
+	if err != nil {
+		fmt.Println(&#34;error:&#34;, err)
+	}
+	fmt.Printf(&#34;%+v&#34;, animals)
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">[{Name:Platypus Order:Monotremata} {Name:Quoll Order:Dasyuromorphia}]
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Valid" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/scanner.go;l=24">Valid</a> <a class="Documentation-idLink" href="#Valid" title="Go to Valid" aria-label="Go to Valid">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.9</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Valid(data []<a href="/builtin#byte">byte</a>) <a href="/builtin#bool">bool</a></pre>
+    </div>
+  <p>Valid reports whether data is a valid JSON encoding.
+</p>
+<details tabindex="-1" id="example-Valid" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-Valid" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;encoding/json&#34;
+	&#34;fmt&#34;
+)
+
+func main() {
+	goodJSON := `{&#34;example&#34;: 1}`
+	badJSON := `{&#34;example&#34;:2:]}}`
+
+	fmt.Println(json.Valid([]byte(goodJSON)), json.Valid([]byte(badJSON)))
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">true false
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+        </div></section>
+
+  <h3 tabindex="-1" id="pkg-types" class="Documentation-typesHeader">Types <a href="#pkg-types" title="Go to Types" aria-label="Go to Types">¶</a></h3>
+
+  <section class="Documentation-types"><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="Decoder" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/stream.go;l=16">Decoder</a> <a class="Documentation-idLink" href="#Decoder" title="Go to Decoder" aria-label="Go to Decoder">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type Decoder struct {
+	<span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+    </div>
+  <p>A Decoder reads and decodes JSON values from an input stream.
+</p>
+<details tabindex="-1" id="example-Decoder" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-Decoder" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+<p>This example uses a Decoder to decode a stream of distinct JSON values.
+</p>
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;encoding/json&#34;
+	&#34;fmt&#34;
+	&#34;io&#34;
+	&#34;log&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	const jsonStream = `
+	{&#34;Name&#34;: &#34;Ed&#34;, &#34;Text&#34;: &#34;Knock knock.&#34;}
+	{&#34;Name&#34;: &#34;Sam&#34;, &#34;Text&#34;: &#34;Who&#39;s there?&#34;}
+	{&#34;Name&#34;: &#34;Ed&#34;, &#34;Text&#34;: &#34;Go fmt.&#34;}
+	{&#34;Name&#34;: &#34;Sam&#34;, &#34;Text&#34;: &#34;Go fmt who?&#34;}
+	{&#34;Name&#34;: &#34;Ed&#34;, &#34;Text&#34;: &#34;Go fmt yourself!&#34;}
+`
+	type Message struct {
+		Name, Text string
+	}
+	dec := json.NewDecoder(strings.NewReader(jsonStream))
+	for {
+		var m Message
+		if err := dec.Decode(&amp;m); err == io.EOF {
+			break
+		} else if err != nil {
+			log.Fatal(err)
+		}
+		fmt.Printf(&#34;%s: %s\n&#34;, m.Name, m.Text)
+	}
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">Ed: Knock knock.
+Sam: Who&#39;s there?
+Ed: Go fmt.
+Sam: Go fmt who?
+Ed: Go fmt yourself!
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+<div class="Documentation-typeFunc">
+    
+  
+  
+    <h4 tabindex="-1" id="NewDecoder" data-kind="function" class="Documentation-typeFuncHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/stream.go;l=33">NewDecoder</a> <a class="Documentation-idLink" href="#NewDecoder" title="Go to NewDecoder" aria-label="Go to NewDecoder">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func NewDecoder(r <a href="/io">io</a>.<a href="/io#Reader">Reader</a>) *<a href="#Decoder">Decoder</a></pre>
+    </div>
+  <p>NewDecoder returns a new decoder that reads from r.
+</p><p>The decoder introduces its own buffering and may
+read data from r beyond the JSON values requested.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Decoder.Buffered" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Decoder) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/stream.go;l=85">Buffered</a> <a class="Documentation-idLink" href="#Decoder.Buffered" title="Go to Decoder.Buffered" aria-label="Go to Decoder.Buffered">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.1</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (dec *<a href="#Decoder">Decoder</a>) Buffered() <a href="/io">io</a>.<a href="/io#Reader">Reader</a></pre>
+    </div>
+  <p>Buffered returns a reader of the data remaining in the Decoder&#39;s
+buffer. The reader is valid until the next call to <a href="#Decoder.Decode">Decoder.Decode</a>.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Decoder.Decode" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Decoder) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/stream.go;l=51">Decode</a> <a class="Documentation-idLink" href="#Decoder.Decode" title="Go to Decoder.Decode" aria-label="Go to Decoder.Decode">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (dec *<a href="#Decoder">Decoder</a>) Decode(v <a href="/builtin#any">any</a>) <a href="/builtin#error">error</a></pre>
+    </div>
+  <p>Decode reads the next JSON-encoded value from its
+input and stores it in the value pointed to by v.
+</p><p>See the documentation for <a href="#Unmarshal">Unmarshal</a> for details about
+the conversion of JSON into a Go value.
+</p>
+<details tabindex="-1" id="example-Decoder.Decode-Stream" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example (Stream) <a href="#example-Decoder.Decode-Stream" title="Go to Example (Stream)" aria-label="Go to Example (Stream)">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+<p>This example uses a Decoder to decode a streaming array of JSON objects.
+</p>
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;encoding/json&#34;
+	&#34;fmt&#34;
+	&#34;log&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	const jsonStream = `
+	[
+		{&#34;Name&#34;: &#34;Ed&#34;, &#34;Text&#34;: &#34;Knock knock.&#34;},
+		{&#34;Name&#34;: &#34;Sam&#34;, &#34;Text&#34;: &#34;Who&#39;s there?&#34;},
+		{&#34;Name&#34;: &#34;Ed&#34;, &#34;Text&#34;: &#34;Go fmt.&#34;},
+		{&#34;Name&#34;: &#34;Sam&#34;, &#34;Text&#34;: &#34;Go fmt who?&#34;},
+		{&#34;Name&#34;: &#34;Ed&#34;, &#34;Text&#34;: &#34;Go fmt yourself!&#34;}
+	]
+`
+	type Message struct {
+		Name, Text string
+	}
+	dec := json.NewDecoder(strings.NewReader(jsonStream))
+
+	// read open bracket
+	t, err := dec.Token()
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Printf(&#34;%T: %v\n&#34;, t, t)
+
+	// while the array contains values
+	for dec.More() {
+		var m Message
+		// decode an array value (Message)
+		err := dec.Decode(&amp;m)
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		fmt.Printf(&#34;%v: %v\n&#34;, m.Name, m.Text)
+	}
+
+	// read closing bracket
+	t, err = dec.Token()
+	if err != nil {
+		log.Fatal(err)
+	}
+	fmt.Printf(&#34;%T: %v\n&#34;, t, t)
+
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">json.Delim: [
+Ed: Knock knock.
+Sam: Who&#39;s there?
+Ed: Go fmt.
+Sam: Go fmt who?
+Ed: Go fmt yourself!
+json.Delim: ]
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Decoder.DisallowUnknownFields" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Decoder) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/stream.go;l=44">DisallowUnknownFields</a> <a class="Documentation-idLink" href="#Decoder.DisallowUnknownFields" title="Go to Decoder.DisallowUnknownFields" aria-label="Go to Decoder.DisallowUnknownFields">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.10</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (dec *<a href="#Decoder">Decoder</a>) DisallowUnknownFields()</pre>
+    </div>
+  <p>DisallowUnknownFields causes the Decoder to return an error when the destination
+is a struct and the input contains object keys which do not match any
+non-ignored, exported fields in the destination.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Decoder.InputOffset" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Decoder) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/stream.go;l=512">InputOffset</a> <a class="Documentation-idLink" href="#Decoder.InputOffset" title="Go to Decoder.InputOffset" aria-label="Go to Decoder.InputOffset">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.14</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (dec *<a href="#Decoder">Decoder</a>) InputOffset() <a href="/builtin#int64">int64</a></pre>
+    </div>
+  <p>InputOffset returns the input stream byte offset of the current decoder position.
+The offset gives the location of the end of the most recently returned token
+and the beginning of the next token.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Decoder.More" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Decoder) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/stream.go;l=485">More</a> <a class="Documentation-idLink" href="#Decoder.More" title="Go to Decoder.More" aria-label="Go to Decoder.More">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.5</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (dec *<a href="#Decoder">Decoder</a>) More() <a href="/builtin#bool">bool</a></pre>
+    </div>
+  <p>More reports whether there is another element in the
+current array or object being parsed.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Decoder.Token" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Decoder) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/stream.go;l=370">Token</a> <a class="Documentation-idLink" href="#Decoder.Token" title="Go to Decoder.Token" aria-label="Go to Decoder.Token">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.5</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (dec *<a href="#Decoder">Decoder</a>) Token() (<a href="#Token">Token</a>, <a href="/builtin#error">error</a>)</pre>
+    </div>
+  <p>Token returns the next JSON token in the input stream.
+At the end of the input stream, Token returns nil, <a href="/io#EOF">io.EOF</a>.
+</p><p>Token guarantees that the delimiters [ ] { } it returns are
+properly nested and matched: if Token encounters an unexpected
+delimiter in the input, it will return an error.
+</p><p>The input stream consists of basic JSON values—bool, string,
+number, and null—along with delimiters [ ] { } of type <a href="#Delim">Delim</a>
+to mark the start and end of arrays and objects.
+Commas and colons are elided.
+</p>
+<details tabindex="-1" id="example-Decoder.Token" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-Decoder.Token" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+<p>This example uses a Decoder to decode a stream of distinct JSON values.
+</p>
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;encoding/json&#34;
+	&#34;fmt&#34;
+	&#34;io&#34;
+	&#34;log&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	const jsonStream = `
+	{&#34;Message&#34;: &#34;Hello&#34;, &#34;Array&#34;: [1, 2, 3], &#34;Null&#34;: null, &#34;Number&#34;: 1.234}
+`
+	dec := json.NewDecoder(strings.NewReader(jsonStream))
+	for {
+		t, err := dec.Token()
+		if err == io.EOF {
+			break
+		}
+		if err != nil {
+			log.Fatal(err)
+		}
+		fmt.Printf(&#34;%T: %v&#34;, t, t)
+		if dec.More() {
+			fmt.Printf(&#34; (more)&#34;)
+		}
+		fmt.Printf(&#34;\n&#34;)
+	}
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">json.Delim: { (more)
+string: Message (more)
+string: Hello (more)
+string: Array (more)
+json.Delim: [ (more)
+float64: 1 (more)
+float64: 2 (more)
+float64: 3
+json.Delim: ] (more)
+string: Null (more)
+&lt;nil&gt;: &lt;nil&gt; (more)
+string: Number (more)
+float64: 1.234
+json.Delim: }
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Decoder.UseNumber" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Decoder) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/stream.go;l=39">UseNumber</a> <a class="Documentation-idLink" href="#Decoder.UseNumber" title="Go to Decoder.UseNumber" aria-label="Go to Decoder.UseNumber">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.1</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (dec *<a href="#Decoder">Decoder</a>) UseNumber()</pre>
+    </div>
+  <p>UseNumber causes the Decoder to unmarshal a number into an
+interface value as a <a href="#Number">Number</a> instead of as a float64.
+</p>
+
+  
+
+  </div>
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="Delim" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/stream.go;l=353">Delim</a> <a class="Documentation-idLink" href="#Delim" title="Go to Delim" aria-label="Go to Delim">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.5</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type Delim <a href="/builtin#rune">rune</a></pre>
+    </div>
+  <p>A Delim is a JSON array or object delimiter, one of [ ] { or }.
+</p>
+<div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Delim.String" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (Delim) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/stream.go;l=355">String</a> <a class="Documentation-idLink" href="#Delim.String" title="Go to Delim.String" aria-label="Go to Delim.String">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.5</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (d <a href="#Delim">Delim</a>) String() <a href="/builtin#string">string</a></pre>
+    </div>
+  
+
+  
+
+  </div>
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="Encoder" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/stream.go;l=183">Encoder</a> <a class="Documentation-idLink" href="#Encoder" title="Go to Encoder" aria-label="Go to Encoder">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type Encoder struct {
+	<span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+    </div>
+  <p>An Encoder writes JSON values to an output stream.
+</p>
+<div class="Documentation-typeFunc">
+    
+  
+  
+    <h4 tabindex="-1" id="NewEncoder" data-kind="function" class="Documentation-typeFuncHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/stream.go;l=194">NewEncoder</a> <a class="Documentation-idLink" href="#NewEncoder" title="Go to NewEncoder" aria-label="Go to NewEncoder">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func NewEncoder(w <a href="/io">io</a>.<a href="/io#Writer">Writer</a>) *<a href="#Encoder">Encoder</a></pre>
+    </div>
+  <p>NewEncoder returns a new encoder that writes to w.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Encoder.Encode" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Encoder) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/stream.go;l=204">Encode</a> <a class="Documentation-idLink" href="#Encoder.Encode" title="Go to Encoder.Encode" aria-label="Go to Encoder.Encode">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (enc *<a href="#Encoder">Encoder</a>) Encode(v <a href="/builtin#any">any</a>) <a href="/builtin#error">error</a></pre>
+    </div>
+  <p>Encode writes the JSON encoding of v to the stream,
+with insignificant space characters elided,
+followed by a newline character.
+</p><p>See the documentation for <a href="#Marshal">Marshal</a> for details about the
+conversion of Go values to JSON.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Encoder.SetEscapeHTML" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Encoder) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/stream.go;l=254">SetEscapeHTML</a> <a class="Documentation-idLink" href="#Encoder.SetEscapeHTML" title="Go to Encoder.SetEscapeHTML" aria-label="Go to Encoder.SetEscapeHTML">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.7</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (enc *<a href="#Encoder">Encoder</a>) SetEscapeHTML(on <a href="/builtin#bool">bool</a>)</pre>
+    </div>
+  <p>SetEscapeHTML specifies whether problematic HTML characters
+should be escaped inside JSON quoted strings.
+The default behavior is to escape &amp;, &lt;, and &gt; to \u0026, \u003c, and \u003e
+to avoid certain safety problems that can arise when embedding JSON in HTML.
+</p><p>In non-HTML settings where the escaping interferes with the readability
+of the output, SetEscapeHTML(false) disables this behavior.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Encoder.SetIndent" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Encoder) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/stream.go;l=242">SetIndent</a> <a class="Documentation-idLink" href="#Encoder.SetIndent" title="Go to Encoder.SetIndent" aria-label="Go to Encoder.SetIndent">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.7</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (enc *<a href="#Encoder">Encoder</a>) SetIndent(prefix, indent <a href="/builtin#string">string</a>)</pre>
+    </div>
+  <p>SetIndent instructs the encoder to format each subsequent encoded
+value as if indented by the package-level function Indent(dst, src, prefix, indent).
+Calling SetIndent(&#34;&#34;, &#34;&#34;) disables indentation.
+</p>
+
+  
+
+  </div>
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <details class="Documentation-deprecatedDetails js-deprecatedDetails">
+      <summary>
+        <h4 tabindex="-1" id="InvalidUTF8Error" data-kind="type" class="Documentation-typeHeader">
+          <span class="Documentation-deprecatedTitle">
+            type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/encode.go;l=267">InvalidUTF8Error</a>
+            <span class="Documentation-deprecatedTag">deprecated</span>
+            <span class="Documentation-deprecatedBody"></span>
+          </span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+      </summary>
+      <div class="go-Message go-Message--warning Documentation-deprecatedItemBody">
+        
+    <div class="Documentation-declaration">
+      <pre>type InvalidUTF8Error struct {
+<span id="InvalidUTF8Error.S" data-kind="field">	S <a href="/builtin#string">string</a> <span class="comment">// the whole string value that caused the error</span>
+</span>}</pre>
+    </div>
+  <p>Before Go 1.2, an InvalidUTF8Error was returned by <a href="#Marshal">Marshal</a> when
+attempting to encode a string value with invalid UTF-8 sequences.
+As of Go 1.2, <a href="#Marshal">Marshal</a> instead coerces the string to valid UTF-8 by
+replacing invalid bytes with the Unicode replacement rune U+FFFD.
+</p><p>Deprecated: No longer used; kept for compatibility.
+</p>
+<div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="InvalidUTF8Error.Error" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*InvalidUTF8Error) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/encode.go;l=271">Error</a> <a class="Documentation-idLink" href="#InvalidUTF8Error.Error" title="Go to InvalidUTF8Error.Error" aria-label="Go to InvalidUTF8Error.Error">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (e *<a href="#InvalidUTF8Error">InvalidUTF8Error</a>) Error() <a href="/builtin#string">string</a></pre>
+    </div>
+  
+
+  
+
+  </div>
+      </div>
+    </details>
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="InvalidUnmarshalError" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/decode.go;l=158">InvalidUnmarshalError</a> <a class="Documentation-idLink" href="#InvalidUnmarshalError" title="Go to InvalidUnmarshalError" aria-label="Go to InvalidUnmarshalError">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type InvalidUnmarshalError struct {
+<span id="InvalidUnmarshalError.Type" data-kind="field">	Type <a href="/reflect">reflect</a>.<a href="/reflect#Type">Type</a>
+</span>}</pre>
+    </div>
+  <p>An InvalidUnmarshalError describes an invalid argument passed to <a href="#Unmarshal">Unmarshal</a>.
+(The argument to <a href="#Unmarshal">Unmarshal</a> must be a non-nil pointer.)
+</p>
+<div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="InvalidUnmarshalError.Error" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*InvalidUnmarshalError) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/decode.go;l=162">Error</a> <a class="Documentation-idLink" href="#InvalidUnmarshalError.Error" title="Go to InvalidUnmarshalError.Error" aria-label="Go to InvalidUnmarshalError.Error">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (e *<a href="#InvalidUnmarshalError">InvalidUnmarshalError</a>) Error() <a href="/builtin#string">string</a></pre>
+    </div>
+  
+
+  
+
+  </div>
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="Marshaler" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/encode.go;l=236">Marshaler</a> <a class="Documentation-idLink" href="#Marshaler" title="Go to Marshaler" aria-label="Go to Marshaler">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type Marshaler interface {
+<span id="Marshaler.MarshalJSON" data-kind="method">	MarshalJSON() ([]<a href="/builtin#byte">byte</a>, <a href="/builtin#error">error</a>)
+</span>}</pre>
+    </div>
+  <p>Marshaler is the interface implemented by types that
+can marshal themselves into valid JSON.
+</p>
+
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="MarshalerError" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/encode.go;l=277">MarshalerError</a> <a class="Documentation-idLink" href="#MarshalerError" title="Go to MarshalerError" aria-label="Go to MarshalerError">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type MarshalerError struct {
+<span id="MarshalerError.Type" data-kind="field">	Type <a href="/reflect">reflect</a>.<a href="/reflect#Type">Type</a>
+</span><span id="MarshalerError.Err" data-kind="field">	Err  <a href="/builtin#error">error</a>
+</span>	<span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+    </div>
+  <p>A MarshalerError represents an error from calling a
+[Marshaler.MarshalJSON] or <a href="/encoding#TextMarshaler.MarshalText">encoding.TextMarshaler.MarshalText</a> method.
+</p>
+<div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="MarshalerError.Error" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*MarshalerError) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/encode.go;l=283">Error</a> <a class="Documentation-idLink" href="#MarshalerError.Error" title="Go to MarshalerError.Error" aria-label="Go to MarshalerError.Error">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (e *<a href="#MarshalerError">MarshalerError</a>) Error() <a href="/builtin#string">string</a></pre>
+    </div>
+  
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="MarshalerError.Unwrap" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*MarshalerError) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/encode.go;l=294">Unwrap</a> <a class="Documentation-idLink" href="#MarshalerError.Unwrap" title="Go to MarshalerError.Unwrap" aria-label="Go to MarshalerError.Unwrap">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.13</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (e *<a href="#MarshalerError">MarshalerError</a>) Unwrap() <a href="/builtin#error">error</a></pre>
+    </div>
+  <p>Unwrap returns the underlying error.
+</p>
+
+  
+
+  </div>
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="Number" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/decode.go;l=191">Number</a> <a class="Documentation-idLink" href="#Number" title="Go to Number" aria-label="Go to Number">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.1</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type Number <a href="/builtin#string">string</a></pre>
+    </div>
+  <p>A Number represents a JSON number literal.
+</p>
+<div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Number.Float64" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (Number) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/decode.go;l=197">Float64</a> <a class="Documentation-idLink" href="#Number.Float64" title="Go to Number.Float64" aria-label="Go to Number.Float64">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.1</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (n <a href="#Number">Number</a>) Float64() (<a href="/builtin#float64">float64</a>, <a href="/builtin#error">error</a>)</pre>
+    </div>
+  <p>Float64 returns the number as a float64.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Number.Int64" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (Number) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/decode.go;l=202">Int64</a> <a class="Documentation-idLink" href="#Number.Int64" title="Go to Number.Int64" aria-label="Go to Number.Int64">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.1</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (n <a href="#Number">Number</a>) Int64() (<a href="/builtin#int64">int64</a>, <a href="/builtin#error">error</a>)</pre>
+    </div>
+  <p>Int64 returns the number as an int64.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Number.String" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (Number) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/decode.go;l=194">String</a> <a class="Documentation-idLink" href="#Number.String" title="Go to Number.String" aria-label="Go to Number.String">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.1</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (n <a href="#Number">Number</a>) String() <a href="/builtin#string">string</a></pre>
+    </div>
+  <p>String returns the literal text of the number.
+</p>
+
+  
+
+  </div>
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="RawMessage" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/stream.go;l=261">RawMessage</a> <a class="Documentation-idLink" href="#RawMessage" title="Go to RawMessage" aria-label="Go to RawMessage">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type RawMessage []<a href="/builtin#byte">byte</a></pre>
+    </div>
+  <p>RawMessage is a raw encoded JSON value.
+It implements <a href="#Marshaler">Marshaler</a> and <a href="#Unmarshaler">Unmarshaler</a> and can
+be used to delay JSON decoding or precompute a JSON encoding.
+</p>
+<details tabindex="-1" id="example-RawMessage-Marshal" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example (Marshal) <a href="#example-RawMessage-Marshal" title="Go to Example (Marshal)" aria-label="Go to Example (Marshal)">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+<p>This example uses RawMessage to use a precomputed JSON during marshal.
+</p>
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;encoding/json&#34;
+	&#34;fmt&#34;
+	&#34;os&#34;
+)
+
+func main() {
+	h := json.RawMessage(`{&#34;precomputed&#34;: true}`)
+
+	c := struct {
+		Header *json.RawMessage `json:&#34;header&#34;`
+		Body   string           `json:&#34;body&#34;`
+	}{Header: &amp;h, Body: &#34;Hello Gophers!&#34;}
+
+	b, err := json.MarshalIndent(&amp;c, &#34;&#34;, &#34;\t&#34;)
+	if err != nil {
+		fmt.Println(&#34;error:&#34;, err)
+	}
+	os.Stdout.Write(b)
+
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">{
+	&#34;header&#34;: {
+		&#34;precomputed&#34;: true
+	},
+	&#34;body&#34;: &#34;Hello Gophers!&#34;
+}
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+<details tabindex="-1" id="example-RawMessage-Unmarshal" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example (Unmarshal) <a href="#example-RawMessage-Unmarshal" title="Go to Example (Unmarshal)" aria-label="Go to Example (Unmarshal)">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+<p>This example uses RawMessage to delay parsing part of a JSON message.
+</p>
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;encoding/json&#34;
+	&#34;fmt&#34;
+	&#34;log&#34;
+)
+
+func main() {
+	type Color struct {
+		Space string
+		Point json.RawMessage // delay parsing until we know the color space
+	}
+	type RGB struct {
+		R uint8
+		G uint8
+		B uint8
+	}
+	type YCbCr struct {
+		Y  uint8
+		Cb int8
+		Cr int8
+	}
+
+	var j = []byte(`[
+	{&#34;Space&#34;: &#34;YCbCr&#34;, &#34;Point&#34;: {&#34;Y&#34;: 255, &#34;Cb&#34;: 0, &#34;Cr&#34;: -10}},
+	{&#34;Space&#34;: &#34;RGB&#34;,   &#34;Point&#34;: {&#34;R&#34;: 98, &#34;G&#34;: 218, &#34;B&#34;: 255}}
+]`)
+	var colors []Color
+	err := json.Unmarshal(j, &amp;colors)
+	if err != nil {
+		log.Fatalln(&#34;error:&#34;, err)
+	}
+
+	for _, c := range colors {
+		var dst any
+		switch c.Space {
+		case &#34;RGB&#34;:
+			dst = new(RGB)
+		case &#34;YCbCr&#34;:
+			dst = new(YCbCr)
+		}
+		err := json.Unmarshal(c.Point, dst)
+		if err != nil {
+			log.Fatalln(&#34;error:&#34;, err)
+		}
+		fmt.Println(c.Space, dst)
+	}
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">YCbCr &amp;{255 0 -10}
+RGB &amp;{98 218 255}
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+<div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="RawMessage.MarshalJSON" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (RawMessage) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/stream.go;l=264">MarshalJSON</a> <a class="Documentation-idLink" href="#RawMessage.MarshalJSON" title="Go to RawMessage.MarshalJSON" aria-label="Go to RawMessage.MarshalJSON">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (m <a href="#RawMessage">RawMessage</a>) MarshalJSON() ([]<a href="/builtin#byte">byte</a>, <a href="/builtin#error">error</a>)</pre>
+    </div>
+  <p>MarshalJSON returns m as the JSON encoding of m.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="RawMessage.UnmarshalJSON" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*RawMessage) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/stream.go;l=272">UnmarshalJSON</a> <a class="Documentation-idLink" href="#RawMessage.UnmarshalJSON" title="Go to RawMessage.UnmarshalJSON" aria-label="Go to RawMessage.UnmarshalJSON">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (m *<a href="#RawMessage">RawMessage</a>) UnmarshalJSON(data []<a href="/builtin#byte">byte</a>) <a href="/builtin#error">error</a></pre>
+    </div>
+  <p>UnmarshalJSON sets *m to a copy of data.
+</p>
+
+  
+
+  </div>
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="SyntaxError" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/scanner.go;l=49">SyntaxError</a> <a class="Documentation-idLink" href="#SyntaxError" title="Go to SyntaxError" aria-label="Go to SyntaxError">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type SyntaxError struct {
+<span id="SyntaxError.Offset" data-kind="field">	Offset <a href="/builtin#int64">int64</a> <span class="comment">// error occurred after reading Offset bytes</span>
+</span>	<span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+    </div>
+  <p>A SyntaxError is a description of a JSON syntax error.
+<a href="#Unmarshal">Unmarshal</a> will return a SyntaxError if the JSON can&#39;t be parsed.
+</p>
+<div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="SyntaxError.Error" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*SyntaxError) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/scanner.go;l=54">Error</a> <a class="Documentation-idLink" href="#SyntaxError.Error" title="Go to SyntaxError.Error" aria-label="Go to SyntaxError.Error">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (e *<a href="#SyntaxError">SyntaxError</a>) Error() <a href="/builtin#string">string</a></pre>
+    </div>
+  
+
+  
+
+  </div>
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="Token" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/stream.go;l=291">Token</a> <a class="Documentation-idLink" href="#Token" title="Go to Token" aria-label="Go to Token">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.5</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type Token <a href="/builtin#any">any</a></pre>
+    </div>
+  <p>A Token holds a value of one of these types:
+</p><ul class="Documentation-bulletList">
+  <li><a href="#Delim">Delim</a>, for the four JSON delimiters [ ] { }</li>
+  <li>bool, for JSON booleans</li>
+  <li>float64, for JSON numbers</li>
+  <li><a href="#Number">Number</a>, for JSON numbers</li>
+  <li>string, for JSON string literals</li>
+  <li>nil, for JSON null</li>
+</ul>
+
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <details class="Documentation-deprecatedDetails js-deprecatedDetails">
+      <summary>
+        <h4 tabindex="-1" id="UnmarshalFieldError" data-kind="type" class="Documentation-typeHeader">
+          <span class="Documentation-deprecatedTitle">
+            type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/decode.go;l=146">UnmarshalFieldError</a>
+            <span class="Documentation-deprecatedTag">deprecated</span>
+            <span class="Documentation-deprecatedBody"></span>
+          </span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+      </summary>
+      <div class="go-Message go-Message--warning Documentation-deprecatedItemBody">
+        
+    <div class="Documentation-declaration">
+      <pre>type UnmarshalFieldError struct {
+<span id="UnmarshalFieldError.Key" data-kind="field">	Key   <a href="/builtin#string">string</a>
+</span><span id="UnmarshalFieldError.Type" data-kind="field">	Type  <a href="/reflect">reflect</a>.<a href="/reflect#Type">Type</a>
+</span><span id="UnmarshalFieldError.Field" data-kind="field">	Field <a href="/reflect">reflect</a>.<a href="/reflect#StructField">StructField</a>
+</span>}</pre>
+    </div>
+  <p>An UnmarshalFieldError describes a JSON object key that
+led to an unexported (and therefore unwritable) struct field.
+</p><p>Deprecated: No longer used; kept for compatibility.
+</p>
+<div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="UnmarshalFieldError.Error" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*UnmarshalFieldError) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/decode.go;l=152">Error</a> <a class="Documentation-idLink" href="#UnmarshalFieldError.Error" title="Go to UnmarshalFieldError.Error" aria-label="Go to UnmarshalFieldError.Error">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (e *<a href="#UnmarshalFieldError">UnmarshalFieldError</a>) Error() <a href="/builtin#string">string</a></pre>
+    </div>
+  
+
+  
+
+  </div>
+      </div>
+    </details>
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="UnmarshalTypeError" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/decode.go;l=127">UnmarshalTypeError</a> <a class="Documentation-idLink" href="#UnmarshalTypeError" title="Go to UnmarshalTypeError" aria-label="Go to UnmarshalTypeError">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type UnmarshalTypeError struct {
+<span id="UnmarshalTypeError.Value" data-kind="field">	Value  <a href="/builtin#string">string</a>       <span class="comment">// description of JSON value - &#34;bool&#34;, &#34;array&#34;, &#34;number -5&#34;</span>
+</span><span id="UnmarshalTypeError.Type" data-kind="field">	Type   <a href="/reflect">reflect</a>.<a href="/reflect#Type">Type</a> <span class="comment">// type of Go value it could not be assigned to</span>
+</span><span id="UnmarshalTypeError.Offset" data-kind="field">	Offset <a href="/builtin#int64">int64</a>        <span class="comment">// error occurred after reading Offset bytes</span>
+</span><span id="UnmarshalTypeError.Struct" data-kind="field">	Struct <a href="/builtin#string">string</a>       <span class="comment">// name of the struct type containing the field</span>
+</span><span id="UnmarshalTypeError.Field" data-kind="field">	Field  <a href="/builtin#string">string</a>       <span class="comment">// the full path from root node to the field, include embedded struct</span>
+</span>}</pre>
+    </div>
+  <p>An UnmarshalTypeError describes a JSON value that was
+not appropriate for a value of a specific Go type.
+</p>
+<div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="UnmarshalTypeError.Error" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*UnmarshalTypeError) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/decode.go;l=135">Error</a> <a class="Documentation-idLink" href="#UnmarshalTypeError.Error" title="Go to UnmarshalTypeError.Error" aria-label="Go to UnmarshalTypeError.Error">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (e *<a href="#UnmarshalTypeError">UnmarshalTypeError</a>) Error() <a href="/builtin#string">string</a></pre>
+    </div>
+  
+
+  
+
+  </div>
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="Unmarshaler" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/decode.go;l=121">Unmarshaler</a> <a class="Documentation-idLink" href="#Unmarshaler" title="Go to Unmarshaler" aria-label="Go to Unmarshaler">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type Unmarshaler interface {
+<span id="Unmarshaler.UnmarshalJSON" data-kind="method">	UnmarshalJSON([]<a href="/builtin#byte">byte</a>) <a href="/builtin#error">error</a>
+</span>}</pre>
+    </div>
+  <p>Unmarshaler is the interface implemented by types
+that can unmarshal a JSON description of themselves.
+The input can be assumed to be a valid encoding of
+a JSON value. UnmarshalJSON must copy the JSON data
+if it wishes to retain the data after returning.
+</p>
+
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="UnsupportedTypeError" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/encode.go;l=242">UnsupportedTypeError</a> <a class="Documentation-idLink" href="#UnsupportedTypeError" title="Go to UnsupportedTypeError" aria-label="Go to UnsupportedTypeError">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type UnsupportedTypeError struct {
+<span id="UnsupportedTypeError.Type" data-kind="field">	Type <a href="/reflect">reflect</a>.<a href="/reflect#Type">Type</a>
+</span>}</pre>
+    </div>
+  <p>An UnsupportedTypeError is returned by <a href="#Marshal">Marshal</a> when attempting
+to encode an unsupported value type.
+</p>
+<div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="UnsupportedTypeError.Error" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*UnsupportedTypeError) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/encode.go;l=246">Error</a> <a class="Documentation-idLink" href="#UnsupportedTypeError.Error" title="Go to UnsupportedTypeError.Error" aria-label="Go to UnsupportedTypeError.Error">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (e *<a href="#UnsupportedTypeError">UnsupportedTypeError</a>) Error() <a href="/builtin#string">string</a></pre>
+    </div>
+  
+
+  
+
+  </div>
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="UnsupportedValueError" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/encode.go;l=252">UnsupportedValueError</a> <a class="Documentation-idLink" href="#UnsupportedValueError" title="Go to UnsupportedValueError" aria-label="Go to UnsupportedValueError">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type UnsupportedValueError struct {
+<span id="UnsupportedValueError.Value" data-kind="field">	Value <a href="/reflect">reflect</a>.<a href="/reflect#Value">Value</a>
+</span><span id="UnsupportedValueError.Str" data-kind="field">	Str   <a href="/builtin#string">string</a>
+</span>}</pre>
+    </div>
+  <p>An UnsupportedValueError is returned by <a href="#Marshal">Marshal</a> when attempting
+to encode an unsupported value.
+</p>
+<div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="UnsupportedValueError.Error" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*UnsupportedValueError) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/encode.go;l=257">Error</a> <a class="Documentation-idLink" href="#UnsupportedValueError.Error" title="Go to UnsupportedValueError.Error" aria-label="Go to UnsupportedValueError.Error">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (e *<a href="#UnsupportedValueError">UnsupportedValueError</a>) Error() <a href="/builtin#string">string</a></pre>
+    </div>
+  
+
+  
+
+  </div>
+  
+
+    </div></section></div> 
+
+
+
+
+
+
+
+      
+    </div>
+  </div>
+
+        
+      
+      
+        
+  <div class="UnitFiles js-unitFiles">
+    <h2 class="UnitFiles-title" id="section-sourcefiles">
+      <img class="go-Icon" height="24" width="24" src="/static/shared/icon/insert_drive_file_gm_grey_24dp.svg" alt="">
+      Source Files
+      <a class="UnitFiles-idLink" href="#section-sourcefiles" title="Go to Source Files" aria-label="Go to Source Files">¶</a>
+    </h2><div class="UnitFiles-titleLink">
+      <a href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json" target="_blank" rel="noopener">View all Source files</a>
+    </div><div>
+      <ul class="UnitFiles-fileList"><li><a href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/decode.go" target="_blank" rel="noopener" title="decode.go">decode.go</a></li><li><a href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/encode.go" target="_blank" rel="noopener" title="encode.go">encode.go</a></li><li><a href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/fold.go" target="_blank" rel="noopener" title="fold.go">fold.go</a></li><li><a href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/indent.go" target="_blank" rel="noopener" title="indent.go">indent.go</a></li><li><a href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/scanner.go" target="_blank" rel="noopener" title="scanner.go">scanner.go</a></li><li><a href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/stream.go" target="_blank" rel="noopener" title="stream.go">stream.go</a></li><li><a href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/tables.go" target="_blank" rel="noopener" title="tables.go">tables.go</a></li><li><a href="https://cs.opensource.google/go/go/+/go1.26.3:src/encoding/json/tags.go" target="_blank" rel="noopener" title="tags.go">tags.go</a></li></ul>
+    </div>
+  </div>
+
+      
+      
+        
+  <div class="UnitDirectories js-unitDirectories">
+    <h2 class="UnitDirectories-title" id="section-directories">
+      <img class="go-Icon" height="24" width="24" src="/static/shared/icon/folder_gm_grey_24dp.svg" alt="">
+      Directories
+      <a class="UnitDirectories-idLink" href="#section-directories" title="Go to Directories" aria-label="Go to Directories">¶</a>
+    </h2>
+    <div class="UnitDirectories-toggles">
+      <div class="UnitDirectories-toggleButtons">
+        <button class="js-showInternalDirectories" data-test-id="internal-directories-toggle"
+            data-gtmc="directories button" aria-label="Show Internal Directories">
+          Show internal
+        </button>
+        <button class="js-expandAllDirectories" data-test-id="directories-toggle"
+            data-gtmc="directories button" aria-label="Expand All Directories">
+          Expand all
+        </button>
+      </div>
+    </div>
+    <table class="UnitDirectories-table UnitDirectories-table--tree js-expandableTable"
+          data-test-id="UnitDirectories-table">
+      <tr class="UnitDirectories-tableHeader UnitDirectories-tableHeader--tree">
+        <th>Path</th>
+        <th class="UnitDirectories-desktopSynopsis">Synopsis</th>
+      </tr>
+      
+          
+  
+  <tr
+      class="">
+    <td data-id="jsontext" data-aria-owns="">
+      <div class="UnitDirectories-pathCell">
+        <div><a href="/encoding/json/jsontext@go1.26.3">jsontext</a>
+            
+          </div>
+          <div class="UnitDirectories-mobileSynopsis">Package jsontext implements syntactic processing of JSON as specified in RFC 4627, RFC 7159, RFC 7493, RFC 8259, and RFC 8785.</div>
+        </div>
+      </td>
+      <td class="UnitDirectories-desktopSynopsis">Package jsontext implements syntactic processing of JSON as specified in RFC 4627, RFC 7159, RFC 7493, RFC 8259, and RFC 8785.</td></tr></tr>
+
+      
+          
+  
+  <tr
+      class="">
+    <td data-id="v2" data-aria-owns="">
+      <div class="UnitDirectories-pathCell">
+        <div><a href="/encoding/json/v2@go1.26.3">v2</a>
+            
+          </div>
+          <div class="UnitDirectories-mobileSynopsis">Package json implements semantic processing of JSON as specified in RFC 8259.</div>
+        </div>
+      </td>
+      <td class="UnitDirectories-desktopSynopsis">Package json implements semantic processing of JSON as specified in RFC 8259.</td></tr></tr>
+
+      
+    </table>
+  </div>
+
+      
+    </div>
+  </div>
+  <div id="showInternal-description" hidden> Click to show internal directories. </div>
+  <div id="hideInternal-description" hidden> Click to hide internal directories. </div>
+</article>
+    <footer class="go-Main-footer"></footer>
+  </main>
+
+    
+  <footer class="go-Footer">
+    
+    <div class="go-Footer-links">
+      <div class="go-Footer-linkColumn">
+        <a href="https://go.dev/solutions" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          Why Go
+        </a>
+        <a href="https://go.dev/solutions#use-cases" class="go-Footer-link"
+            data-gtmc="footer link">
+          Use Cases
+        </a>
+        <a href="https://go.dev/solutions#case-studies" class="go-Footer-link"
+            data-gtmc="footer link">
+          Case Studies
+        </a>
+      </div>
+      <div class="go-Footer-linkColumn">
+        <a href="https://learn.go.dev/" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          Get Started
+        </a>
+        <a href="https://play.golang.org" class="go-Footer-link" data-gtmc="footer link">
+          Playground
+        </a>
+        <a href="https://tour.golang.org" class="go-Footer-link" data-gtmc="footer link">
+          Tour
+        </a>
+        <a href="https://stackoverflow.com/questions/tagged/go?tab=Newest" class="go-Footer-link"
+            data-gtmc="footer link">
+          Stack Overflow
+        </a>
+        <a href="https://go.dev/help" class="go-Footer-link"
+            data-gtmc="footer link">
+          Help
+        </a>
+      </div>
+      <div class="go-Footer-linkColumn">
+        <a href="https://pkg.go.dev" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          Packages
+        </a>
+        <a href="/std" class="go-Footer-link" data-gtmc="footer link">
+          Standard Library
+        </a>
+        <a href="/golang.org/x" class="go-Footer-link" data-gtmc="footer link">
+          Sub-repositories
+        </a>
+        <a href="https://pkg.go.dev/about" class="go-Footer-link" data-gtmc="footer link">
+          About Go Packages
+        </a>
+      </div>
+      <div class="go-Footer-linkColumn">
+        <a href="https://go.dev/project" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          About
+        </a>
+        <a href="https://go.dev/dl/" class="go-Footer-link" data-gtmc="footer link">Download</a>
+        <a href="https://go.dev/blog" class="go-Footer-link" data-gtmc="footer link">Blog</a>
+        <a href="https://github.com/golang/go/issues" class="go-Footer-link" data-gtmc="footer link">
+          Issue Tracker
+        </a>
+        <a href="https://go.dev/doc/devel/release.html" class="go-Footer-link"
+            data-gtmc="footer link">
+          Release Notes
+        </a>
+        <a href="https://go.dev/brand" class="go-Footer-link" data-gtmc="footer link">
+          Brand Guidelines
+        </a>
+        <a href="https://go.dev/conduct" class="go-Footer-link" data-gtmc="footer link">
+          Code of Conduct
+        </a>
+      </div>
+      <div class="go-Footer-linkColumn">
+        <a href="https://www.twitter.com/golang" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          Connect
+        </a>
+        <a href="https://www.twitter.com/golang" class="go-Footer-link" data-gtmc="footer link">
+          Twitter
+        </a>
+        <a href="https://github.com/golang" class="go-Footer-link" data-gtmc="footer link">GitHub</a>
+        <a href="https://invite.slack.golangbridge.org/" class="go-Footer-link"
+            data-gtmc="footer link">
+          Slack
+        </a>
+        <a href="https://reddit.com/r/golang" class="go-Footer-link" data-gtmc="footer link">
+          r/golang
+        </a>
+        <a href="https://www.meetup.com/pro/go" class="go-Footer-link" data-gtmc="footer link">
+          Meetup
+        </a>
+        <a href="https://golangweekly.com/" class="go-Footer-link" data-gtmc="footer link">
+          Golang Weekly
+        </a>
+      </div>
+    </div>
+    <div class="go-Footer-bottom">
+      <img class="go-Footer-gopher"  width="1431" height="901"
+          src="/static/shared/gopher/pilot-bust-1431x901.svg" alt="Gopher in flight goggles">
+      <ul class="go-Footer-listRow">
+        <li class="go-Footer-listItem">
+          <a href="https://go.dev/copyright" data-gtmc="footer link">Copyright</a>
+        </li>
+        <li class="go-Footer-listItem">
+          <a href="https://go.dev/tos" data-gtmc="footer link">Terms of Service</a>
+        </li>
+        <li class="go-Footer-listItem">
+          <a href="http://www.google.com/intl/en/policies/privacy/" data-gtmc="footer link"
+              target="_blank" rel="noopener">
+            Privacy Policy
+          </a>
+        </li>
+        <li class="go-Footer-listItem">
+          <a href="https://go.dev/s/pkgsite-feedback" target="_blank" rel="noopener"
+              data-gtmc="footer link">
+            Report an Issue
+          </a>
+        </li>
+        <li class="go-Footer-listItem">
+          <button class="go-Button go-Button--text go-Footer-toggleTheme js-toggleTheme" aria-label="Theme Toggle">
+            <img data-value="auto" class="go-Icon go-Icon--inverted" height="24" width="24" src="/static/shared/icon/brightness_6_gm_grey_24dp.svg" alt="System theme">
+            <img data-value="dark" class="go-Icon go-Icon--inverted" height="24" width="24" src="/static/shared/icon/brightness_2_gm_grey_24dp.svg" alt="Dark theme">
+            <img data-value="light" class="go-Icon go-Icon--inverted" height="24" width="24" src="/static/shared/icon/light_mode_gm_grey_24dp.svg" alt="Light theme">
+            <p> Theme Toggle </p>
+          </button>
+        </li>
+        <li class="go-Footer-listItem">
+          <button class="go-Button go-Button--text go-Footer-keyboard js-openShortcuts" aria-label="Shorcuts Modal">
+            <img class="go-Icon go-Icon--inverted" height="24" width="24" src="/static/shared/icon/keyboard_grey_24dp.svg" alt="">
+            <p> Shortcuts Modal </p>
+          </button>
+        </li>
+      </ul>
+      <a class="go-Footer-googleLogo" href="https://google.com" target="_blank"rel="noopener"
+          data-gtmc="footer link">
+        <img class="go-Footer-googleLogoImg" height="24" width="72"
+            src="/static/shared/logo/google-white.svg" alt="Google logo">
+      </a>
+    </div>
+  </footer>
+
+    
+  <dialog id="jump-to-modal" class="JumpDialog go-Modal go-Modal--md js-modal">
+    <form method="dialog" data-gmtc="jump to form" aria-label="Jump to Identifier">
+      <div class="Dialog-title go-Modal-header">
+        <h2>Jump to</h2>
+        <button
+          class="go-Button go-Button--inline"
+          type="button"
+          data-modal-close
+          data-gtmc="modal button"
+          aria-label="Close"
+        >
+          <img
+            class="go-Icon"
+            height="24"
+            width="24"
+            src="/static/shared/icon/close_gm_grey_24dp.svg"
+            alt=""
+          />
+        </button>
+      </div>
+      <div class="JumpDialog-filter">
+        <input class="JumpDialog-input go-Input" autocomplete="off" type="text">
+      </div>
+      <div class="JumpDialog-body go-Modal-body">
+        <div class="JumpDialog-list"></div>
+      </div>
+      <div class="go-Modal-actions">
+        <button class="go-Button" data-test-id="close-dialog">Close</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog class="ShortcutsDialog go-Modal go-Modal--sm js-modal">
+    <form method="dialog">
+      <div class="go-Modal-header">
+        <h2>Keyboard shortcuts</h2>
+        <button
+          class="go-Button go-Button--inline"
+          type="button"
+          data-modal-close
+          data-gtmc="modal button"
+          aria-label="Close"
+        >
+          <img
+            class="go-Icon"
+            height="24"
+            width="24"
+            src="/static/shared/icon/close_gm_grey_24dp.svg"
+            alt=""
+          />
+        </button>
+      </div>
+      <div class="go-Modal-body">
+        <table>
+          <tbody>
+            <tr><td class="ShortcutsDialog-key">
+              <strong>?</strong></td><td> : This menu</td>
+            </tr>
+            <tr><td class="ShortcutsDialog-key">
+              <strong>/</strong></td><td> : Search site</td>
+            </tr>
+            <tr><td class="ShortcutsDialog-key">
+              <strong>f</strong> or <strong>F</strong></td><td> : Jump to</td>
+            </tr>
+            <tr>
+              <td class="ShortcutsDialog-key"><strong>y</strong> or <strong>Y</strong></td>
+              <td> : Canonical URL</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="go-Modal-actions">
+        <button class="go-Button" data-test-id="close-dialog">Close</button>
+      </div>
+    </form>
+  </dialog>
+
+    
+      <section class="Cookie-notice js-cookieNotice">
+        <div>go.dev uses cookies from Google to deliver and enhance the quality of its services and to
+        analyze traffic. <a target=_blank href="https://policies.google.com/technologies/cookies">Learn more.</a></div>
+        <div><button class="go-Button">Okay</button></div>
+      </section>
+    
+    
+      <script>
+        // this will throw if the querySelector can’t find the element
+        const gtmId = document.querySelector('.js-gtmID').dataset.gtmid;
+        if (!gtmId) {
+          throw new Error('Google Tag Manager ID not found');
+        }
+        loadScript(`https://www.googletagmanager.com/gtm.js?id=${gtmId}`);
+      </script>
+      <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W8MVQXG"
+                height="0" width="0" style="display:none;visibility:hidden">
+        </iframe>
+      </noscript>
+    
+    
+  
+  <div class="js-canonicalURLPath" data-canonical-url-path="/encoding/json@go1.26.3" hidden></div>
+  <div class="js-playgroundVars" data-modulepath="std" data-version="v1.26.3" hidden></div>
+  <script>
+    loadScript('/static/frontend/unit/main/main.js')
+  </script>
+
+  <script>
+    loadScript('/static/frontend/unit/unit.js')
+  </script>
+
+  </body>
+</html>

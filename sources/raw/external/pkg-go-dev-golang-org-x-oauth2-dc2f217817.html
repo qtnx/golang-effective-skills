@@ -1,0 +1,3508 @@
+---
+source_name: "External Linked Documentation"
+source_url: "https://pkg.go.dev/golang.org/x/oauth2"
+retrieved_at: "2026-06-02T06:42:32.697758+00:00"
+content_type: "text/html; charset=utf-8"
+truncated: false
+insecure_tls_fallback: true
+---
+
+
+
+<!DOCTYPE html>
+<html lang="en" data-layout="responsive" data-local="">
+  <head>
+    
+    <script>
+      window.addEventListener('error', window.__err=function f(e){f.p=f.p||[];f.p.push(e)});
+    </script>
+    <script>
+      (function() {
+        const theme = document.cookie.match(/prefers-color-scheme=(light|dark|auto)/)?.[1]
+        if (theme) {
+          document.querySelector('html').setAttribute('data-theme', theme);
+        }
+      }())
+    </script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Package oauth2 provides support for making OAuth2 authorized and authenticated HTTP requests, as specified in RFC 6749.">
+    
+    <meta class="js-gtmID" data-gtmid="GTM-W8MVQXG">
+    <link rel="shortcut icon" href="/static/shared/icon/favicon.ico">
+    
+  
+    <link rel="canonical" href="https://pkg.go.dev/golang.org/x/oauth2">
+  
+
+    <link href="/static/frontend/frontend.min.css?version=prod-frontend-00193-fdr" rel="stylesheet">
+    
+    <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="Go Packages">
+    
+    
+  <title>oauth2 package - golang.org/x/oauth2 - Go Packages</title>
+
+    
+  <link href="/static/frontend/unit/unit.min.css?version=prod-frontend-00193-fdr" rel="stylesheet">
+  
+  <link href="/static/frontend/unit/main/main.min.css?version=prod-frontend-00193-fdr" rel="stylesheet">
+
+
+  </head>
+  <body>
+    
+    <script>
+      function loadScript(src, mod = true) {
+        let s = document.createElement('script');
+        s.src = src;
+        if (mod) {
+          s.type = 'module';
+          s.async = true;
+          s.defer = true
+        }
+        document.head.appendChild(s);
+      }
+      loadScript("/third_party/dialog-polyfill/dialog-polyfill.js", false)
+      loadScript("/static/frontend/frontend.js");
+    </script>
+    
+  <header class="go-Header go-Header--full js-siteHeader">
+    <div class="go-Header-inner go-Header-inner--dark">
+      <nav class="go-Header-nav">
+        <a href="https://go.dev/" class="js-headerLogo" data-gtmc="nav link"
+            data-test-id="go-header-logo-link" role="heading" aria-level="1">
+          <img class="go-Header-logo" src="/static/shared/logo/go-white.svg" alt="Go">
+        </a>
+         <div class="skip-navigation-wrapper">
+            <a class="skip-to-content-link" aria-label="Skip to main content" href="#main-content"> Skip to Main Content </a>
+          </div>
+        <div class="go-Header-rightContent">
+          
+<div class="go-SearchForm js-searchForm">
+  <form
+    class="go-InputGroup go-ShortcutKey go-SearchForm-form"
+    action="/search"
+    data-shortcut="/"
+    data-shortcut-alt="search"
+    data-gtmc="search form"
+    aria-label="Search for a package"
+    role="search"
+  >
+    <input name="q" class="go-Input js-searchFocus" aria-label="Search for a package" type="search"
+        autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false"
+        placeholder="Search packages or symbols"
+        value="" />
+    <input name="m" value="" hidden>
+    <button class="go-Button go-Button--inverted" aria-label="Submit search">
+      <img
+        class="go-Icon"
+        height="24"
+        width="24"
+        src="/static/shared/icon/search_gm_grey_24dp.svg"
+        alt=""
+      />
+    </button>
+  </form>
+  <button class="go-SearchForm-expandSearch js-expandSearch" data-gtmc="nav button"
+      aria-label="Open search" data-test-id="expand-search">
+    <img class="go-Icon go-Icon--inverted" height="24" width="24"
+        src="/static/shared/icon/search_gm_grey_24dp.svg" alt="">
+
+  </button>
+</div>
+
+          <ul class="go-Header-menu">
+            <li class="go-Header-menuItem">
+              <a class="js-desktop-menu-hover" href="#" data-gtmc="nav link">
+                Why Go
+                <img class="go-Icon" height="24" width="24" src="/static/shared/icon/arrow_drop_down_gm_grey_24dp.svg" alt="submenu dropdown icon">
+              </a>
+              <ul class="go-Header-submenu go-Header-submenu--why js-desktop-submenu-hover" aria-label="submenu">
+                  <li class="go-Header-submenuItem">
+                    <div>
+                      <a href="https://go.dev/solutions#case-studies">
+                        <span>Case Studies</span>
+                      </a>
+                    </div>
+                    <p>Common problems companies solve with Go</p>
+                  </li>
+                  <li class="go-Header-submenuItem">
+                    <div>
+                      <a href="https://go.dev/solutions#use-cases">
+                        <span>Use Cases</span>
+                      </a>
+                    </div>
+                    <p>Stories about how and why companies use Go</p>
+                  </li>
+                  <li class="go-Header-submenuItem">
+                    <div>
+                      <a href="https://go.dev/security/">
+                        <span>Security</span>
+                      </a>
+                    </div>
+                    <p>How Go can help keep you secure by default</p>
+                  </li>
+              </ul>
+            </li>
+            <li class="go-Header-menuItem">
+              <a href="https://go.dev/learn/" data-gtmc="nav link">Learn</a>
+            </li>
+            <li class="go-Header-menuItem">
+              <a class="js-desktop-menu-hover" href="#" data-gtmc="nav link">
+                Docs
+                <img class="go-Icon" height="24" width="24" src="/static/shared/icon/arrow_drop_down_gm_grey_24dp.svg" alt="submenu dropdown icon">
+              </a>
+              <ul class="go-Header-submenu go-Header-submenu--docs js-desktop-submenu-hover" aria-label="submenu">
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/doc/effective_go">
+                      <span>Effective Go</span>
+                    </a>
+                  </div>
+                  <p>Tips for writing clear, performant, and idiomatic Go code</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/doc/">
+                      <span>Go User Manual</span>
+                    </a>
+                  </div>
+                  <p>A complete introduction to building software with Go</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://pkg.go.dev/std">
+                      <span>Standard library</span>
+                    </a>
+                  </div>
+                  <p>Reference documentation for Go's standard library</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/doc/devel/release">
+                      <span>Release Notes</span>
+                    </a>
+                  </div>
+                  <p>Learn what's new in each Go release</p>
+                </li>
+              </ul>
+            </li>
+            <li class="go-Header-menuItem go-Header-menuItem--active">
+              <a href="/" data-gtmc="nav link">Packages</a>
+            </li>
+            <li class="go-Header-menuItem">
+              <a class="js-desktop-menu-hover" href="#" data-gtmc="nav link">
+                Community
+                <img class="go-Icon" height="24" width="24" src="/static/shared/icon/arrow_drop_down_gm_grey_24dp.svg" alt="submenu dropdown icon">
+              </a>
+              <ul class="go-Header-submenu go-Header-submenu--community js-desktop-submenu-hover" aria-label="submenu">
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/talks/">
+                      <span>Recorded Talks</span>
+                    </a>
+                  </div>
+                  <p>Videos from prior events</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://www.meetup.com/pro/go">
+                      <span>Meetups</span>
+                      <i class="material-icons">
+                        <img class="go-Icon" height="24" width="24"
+                            src="/static/shared/icon/launch_gm_grey_24dp.svg" alt="">
+                      </i>
+                    </a>
+                  </div>
+                  <p>Meet other local Go developers</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://github.com/golang/go/wiki/Conferences">
+                      <span>Conferences</span>
+                      <i class="material-icons">
+                        <img class="go-Icon" height="24" width="24"
+                            src="/static/shared/icon/launch_gm_grey_24dp.svg" alt="">
+                      </i>
+                    </a>
+                  </div>
+                  <p>Learn and network with Go developers from around the world</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/blog">
+                      <span>Go blog</span>
+                    </a>
+                  </div>
+                  <p>The Go project's official blog.</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/help">
+                      <span>Go project</span>
+                    </a>
+                  </div>
+                  <p>Get help and stay informed from Go</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    Get connected
+                  </div>
+                  <p></p>
+                  <div class="go-Header-socialIcons">
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with google-groups (Opens in new window)"
+                        title="Get connected with google-groups (Opens in new window)"
+                        href="https://groups.google.com/g/golang-nuts">
+                        <img src="/static/shared/logo/social/google-groups.svg" />
+                      </a>
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with github (Opens in new window)"
+                        title="Get connected with github (Opens in new window)"
+                        href="https://github.com/golang">
+                        <img src="/static/shared/logo/social/github.svg" />
+                      </a>
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with twitter (Opens in new window)"
+                        title="Get connected with twitter (Opens in new window)"
+                        href="https://twitter.com/golang">
+                        <img src="/static/shared/logo/social/twitter.svg" />
+                      </a>
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with reddit (Opens in new window)"
+                        title="Get connected with reddit (Opens in new window)"
+                        href="https://www.reddit.com/r/golang/">
+                        <img src="/static/shared/logo/social/reddit.svg" />
+                      </a>
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with slack (Opens in new window)"
+                        title="Get connected with slack (Opens in new window)"
+                        href="https://invite.slack.golangbridge.org/">
+                        <img src="/static/shared/logo/social/slack.svg" />
+                      </a>
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with stack-overflow (Opens in new window)"
+                        title=""
+                        href="https://stackoverflow.com/collectives/go">
+                        <img src="/static/shared/logo/social/stack-overflow.svg" />
+                      </a>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <button class="go-Header-navOpen js-headerMenuButton go-Header-navOpen--white" data-gtmc="nav button" aria-label="Open navigation">
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <aside class="go-NavigationDrawer js-header">
+    <nav class="go-NavigationDrawer-nav">
+      <div class="go-NavigationDrawer-header">
+        <a href="https://go.dev/">
+          <img class="go-NavigationDrawer-logo" src="/static/shared/logo/go-blue.svg" alt="Go.">
+        </a>
+      </div>
+      <ul class="go-NavigationDrawer-list">
+          <li class="go-NavigationDrawer-listItem js-mobile-subnav-trigger go-NavigationDrawer-hasSubnav">
+            <a href="#">
+              <span>Why Go</span>
+              <i class="material-icons">
+                <img class="go-Icon" height="24" width="24"
+                  src="/static/shared/icon/navigate_next_gm_grey_24dp.svg" alt="">
+              </i>
+            </a>
+
+            <div class="go-NavigationDrawer go-NavigationDrawer-submenuItem">
+              <div class="go-NavigationDrawer-nav">
+                <div class="go-NavigationDrawer-header">
+                  <a href="#">
+                    <i class="material-icons">
+                      <img class="go-Icon" height="24" width="24"
+                        src="/static/shared/icon/navigate_before_gm_grey_24dp.svg" alt="">
+                      </i>
+                      Why Go
+                  </a>
+                </div>
+                <ul class="go-NavigationDrawer-list">
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/solutions#case-studies">
+                      Case Studies
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/solutions#use-cases">
+                      Use Cases
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/security/">
+                      Security
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="go-NavigationDrawer-listItem">
+            <a href="https://go.dev/learn/">Learn</a>
+          </li>
+          <li class="go-NavigationDrawer-listItem js-mobile-subnav-trigger go-NavigationDrawer-hasSubnav">
+            <a href="#">
+              <span>Docs</span>
+              <i class="material-icons">
+                <img class="go-Icon" height="24" width="24"
+                  src="/static/shared/icon/navigate_next_gm_grey_24dp.svg" alt="">
+              </i>
+            </a>
+
+            <div class="go-NavigationDrawer go-NavigationDrawer-submenuItem">
+              <div class="go-NavigationDrawer-nav">
+                <div class="go-NavigationDrawer-header">
+                  <a href="#"><i class="material-icons">
+                    <img class="go-Icon" height="24" width="24"
+                      src="/static/shared/icon/navigate_before_gm_grey_24dp.svg" alt="">
+                    </i>
+                    Docs
+                  </a>
+                </div>
+                <ul class="go-NavigationDrawer-list">
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/doc/effective_go">
+                      Effective Go
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/doc/">
+                      Go User Manual
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://pkg.go.dev/std">
+                      Standard library
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/doc/devel/release">
+                      Release Notes
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="go-NavigationDrawer-listItem go-NavigationDrawer-listItem--active">
+            <a href="/">Packages</a>
+          </li>
+          <li class="go-NavigationDrawer-listItem js-mobile-subnav-trigger go-NavigationDrawer-hasSubnav">
+            <a href="#">
+              <span>Community</span>
+              <i class="material-icons">
+                <img class="go-Icon" height="24" width="24"
+                  src="/static/shared/icon/navigate_next_gm_grey_24dp.svg" alt="">
+              </i>
+            </a>
+            <div class="go-NavigationDrawer go-NavigationDrawer-submenuItem">
+              <div class="go-NavigationDrawer-nav">
+                <div class="go-NavigationDrawer-header">
+                  <a href="#">
+                    <i class="material-icons">
+                      <img class="go-Icon" height="24" width="24"
+                        src="/static/shared/icon/navigate_before_gm_grey_24dp.svg" alt="">
+                    </i>
+                    Community
+                  </a>
+                </div>
+                <ul class="go-NavigationDrawer-list">
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/talks/">
+                      Recorded Talks
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://www.meetup.com/pro/go">
+                      Meetups
+                      <i class="material-icons">
+                      <img class="go-Icon" height="24" width="24"
+                          src="/static/shared/icon/launch_gm_grey_24dp.svg" alt="">
+                      </i>
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://github.com/golang/go/wiki/Conferences">
+                      Conferences
+                      <i class="material-icons">
+                        <img class="go-Icon" height="24" width="24" src="/static/shared/icon/launch_gm_grey_24dp.svg" alt="">
+                      </i>
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/blog">
+                      Go blog
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/help">
+                      Go project
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <div>Get connected</div>
+                    <div class="go-Header-socialIcons">
+                        <a class="go-Header-socialIcon" href="https://groups.google.com/g/golang-nuts"><img src="/static/shared/logo/social/google-groups.svg" /></a>
+                        <a class="go-Header-socialIcon" href="https://github.com/golang"><img src="/static/shared/logo/social/github.svg" /></a>
+                        <a class="go-Header-socialIcon" href="https://twitter.com/golang"><img src="/static/shared/logo/social/twitter.svg" /></a>
+                        <a class="go-Header-socialIcon" href="https://www.reddit.com/r/golang/"><img src="/static/shared/logo/social/reddit.svg" /></a>
+                        <a class="go-Header-socialIcon" href="https://invite.slack.golangbridge.org/"><img src="/static/shared/logo/social/slack.svg" /></a>
+                        <a class="go-Header-socialIcon" href="https://stackoverflow.com/collectives/go"><img src="/static/shared/logo/social/stack-overflow.svg" /></a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+      </ul>
+    </nav>
+  </aside>
+  <div class="go-NavigationDrawer-scrim js-scrim" role="presentation"></div>
+
+    
+  <main class="go-Main" id="main-content">
+    <div class="go-Main-banner" role="alert"></div>
+    <header class="go-Main-header js-mainHeader">
+  
+  
+  <nav class="go-Main-headerBreadcrumb go-Breadcrumb" aria-label="Breadcrumb" data-test-id="UnitHeader-breadcrumb">
+    <ol>
+      
+        
+          <li data-test-id="UnitHeader-breadcrumbItem">
+            <a href="/" data-gtmc="breadcrumb link">Discover Packages</a>
+          </li>
+        
+        <li>
+          <a href="/golang.org/x/oauth2@v0.36.0" data-gtmc="breadcrumb link" aria-current="location"
+              data-test-id="UnitHeader-breadcrumbCurrent">
+            golang.org/x/oauth2
+          </a>
+          
+            <button
+              class="go-Button go-Button--inline go-Clipboard js-clipboard"
+              title="Copy path to clipboard.&#10;&#10;golang.org/x/oauth2"
+              aria-label="Copy Path to Clipboard"
+              data-to-copy="golang.org/x/oauth2"
+              data-gtmc="breadcrumbs button"
+            >
+              <img
+                class="go-Icon go-Icon--accented"
+                height="24"
+                width="24"
+                src="/static/shared/icon/content_copy_gm_grey_24dp.svg"
+                alt=""
+              >
+            </button>
+          
+        
+      </li>
+    </ol>
+  </nav>
+
+  <div class="go-Main-headerContent">
+    
+  <div class="go-Main-headerTitle js-stickyHeader">
+    <a class="go-Main-headerLogo" href="https://go.dev/" aria-hidden="true" tabindex="-1" data-gtmc="header link" aria-label="Link to Go Homepage">
+      <img height="78" width="207" src="/static/shared/logo/go-blue.svg" alt="Go">
+    </a>
+    <h1 class="UnitHeader-titleHeading" data-test-id="UnitHeader-title">oauth2</h1>
+    
+      <span class="go-Chip go-Chip--inverted">package</span>
+    
+      <span class="go-Chip go-Chip--inverted">module</span>
+    
+    
+      
+        <button
+          class="go-Button go-Button--inline go-Clipboard js-clipboard"
+          title="Copy path to clipboard.&#10;&#10;golang.org/x/oauth2"
+          aria-label="Copy Path to Clipboard"
+          data-to-copy="golang.org/x/oauth2"
+          data-gtmc="title button"
+          tabindex="-1"
+        >
+          <img
+            class="go-Icon go-Icon--accented"
+            height="24"
+            width="24"
+            src="/static/shared/icon/content_copy_gm_grey_24dp.svg"
+            alt=""
+          />
+        </button>
+      
+    
+  </div>
+
+    
+      
+  <div class="go-Main-headerDetails">
+    
+      
+  <span class="go-Main-headerDetailItem" data-test-id="UnitHeader-version">
+    <a href="?tab=versions" aria-label="Version: v0.36.0" 
+    data-gtmc="header link" aria-describedby="version-description">
+      <span class="go-textSubtle" aria-hidden="true">Version: </span>
+        v0.36.0
+    </a>
+    <div class="screen-reader-only" id="version-description" hidden>
+      Opens a new window with list of versions in this module.
+    </div>
+    
+    <span class="DetailsHeader-badge--latest" data-test-id="UnitHeader-minorVersionBanner">
+      <span class="go-Chip DetailsHeader-span--latest">Latest</span>
+      <span class="go-Chip DetailsHeader-span--notAtLatest">
+        Latest
+        
+  <details class="go-Tooltip js-tooltip" data-gtmc="tooltip">
+    <summary>
+      <img class="go-Icon go-Icon--inverted" height="24" width="24" src="/static/shared/icon/alert_gm_grey_24dp.svg" alt="Warning">
+    </summary>
+    <p>This package is not in the latest version of its module.</p>
+  </details>
+
+      </span>
+      <a href="/golang.org/x/oauth2" aria-label="Go to Latest Version" data-gtmc="header link">
+        <span class="go-Chip go-Chip--alert DetailsHeader-span--goToLatest">Go to latest</span>
+      </a>
+    </span>
+  </span>
+
+      
+  <span class="go-Main-headerDetailItem" data-test-id="UnitHeader-commitTime">
+    Published: Feb 11, 2026
+  </span>
+
+      
+  <span class="go-Main-headerDetailItem" data-test-id="UnitHeader-licenses">
+    License: <a href="/golang.org/x/oauth2?tab=licenses" data-test-id="UnitHeader-license" 
+        data-gtmc="header link" aria-describedby="license-description">BSD-3-Clause</a>
+      
+    
+  </span>
+  <div class="screen-reader-only" id="license-description" hidden>
+    Opens a new window with license information.
+  </div>
+
+      
+        
+  <span class="go-Main-headerDetailItem" data-test-id="UnitHeader-imports">
+    <a href="/golang.org/x/oauth2?tab=imports" aria-label="Imports: 17"
+        data-gtmc="header link" aria-describedby="imports-description">
+      <span class="go-textSubtle">Imports: </span>17
+    </a>
+  </span>
+  <div class="screen-reader-only" id="imports-description" hidden>
+    Opens a new window with list of imports.
+  </div>
+
+        
+  <span class="go-Main-headerDetailItem" data-test-id="UnitHeader-importedby">
+    <a href="/golang.org/x/oauth2?tab=importedby" aria-label="Imported By: 48,088"
+        data-gtmc="header link" aria-describedby="importedby-description">
+       <span class="go-textSubtle">Imported by: </span>48,088
+    </a>
+  </span>
+  <div class="screen-reader-only" id="importedby-description" hidden>
+    Opens a new window with list of known importers.
+  </div>
+
+      
+    
+  </div>
+  
+  <div class="UnitHeader-overflowContainer">
+    <svg class="UnitHeader-overflowImage" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+      <path d="M0 0h24v24H0z" fill="none"/>
+      <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+    </svg>
+    <select class="UnitHeader-overflowSelect js-selectNav" tabindex="-1">
+      <option value="/">Main</option>
+      <option value="/golang.org/x/oauth2?tab=versions">
+        Versions
+      </option>
+      <option value="/golang.org/x/oauth2?tab=licenses">
+        Licenses
+      </option>
+      
+        <option value="/golang.org/x/oauth2?tab=imports">
+          Imports
+        </option>
+        <option value="/golang.org/x/oauth2?tab=importedby">
+          Imported By
+        </option>
+      
+    </select>
+  </div>
+
+
+    
+  </div>
+
+</header>
+    
+      <aside class="go-Main-aside  js-mainAside">
+  
+  <div class="UnitMeta">
+    <h2 class="go-textLabel">Details</h2>
+    
+  <ul class="UnitMeta-details">
+    <li>
+      <details class="go-Tooltip js-tooltip" data-gtmc="tooltip">
+        <summary class="go-textSubtle">
+          
+  <img class="go-Icon go-Icon--accented"
+    tabindex="0"
+    role="button"src="/static/shared/icon/check_circle_gm_grey_24dp.svg" alt="checked" aria-label="Valid file, toggle tooltip"height="24" width="24">
+
+          Valid <a href="https://cs.opensource.google/go/x/oauth2/+/v0.36.0:/go.mod" target="_blank" rel="noopener">go.mod</a> file
+          <img class="go-Icon" role="button" tabindex="0" src="/static/shared/icon/help_gm_grey_24dp.svg" alt="" aria-label="Toggle go.mod validity tooltip" height="24" width="24">
+        </summary>
+        <p aria-live="polite" role="tooltip">
+          The Go module system was introduced in Go 1.11 and is the official dependency management
+          solution for Go.
+        </p>
+      </details>
+    </li>
+    <li>
+      <details class="go-Tooltip js-tooltip" data-gtmc="tooltip">
+        <summary class="go-textSubtle">
+          
+  <img class="go-Icon go-Icon--accented"
+    tabindex="0"
+    role="button"src="/static/shared/icon/check_circle_gm_grey_24dp.svg" alt="checked" aria-label="Valid file, toggle tooltip"height="24" width="24">
+
+          Redistributable license
+          <img class="go-Icon" role="button" tabindex="0" src="/static/shared/icon/help_gm_grey_24dp.svg" alt="" aria-label="Toggle redistributable help tooltip" height="24" width="24">
+        </summary>
+        <p aria-live="polite" role="tooltip">
+          Redistributable licenses place minimal restrictions on how software can be used,
+          modified, and redistributed.
+        </p>
+      </details>
+    </li>
+    <li>
+      <details class="go-Tooltip js-tooltip" data-gtmc="tooltip">
+        <summary class="go-textSubtle">
+          
+  <img class="go-Icon go-Icon--accented"
+    tabindex="0"
+    role="button"src="/static/shared/icon/check_circle_gm_grey_24dp.svg" alt="checked" aria-label="Valid file, toggle tooltip"height="24" width="24">
+
+          Tagged version
+          <img class="go-Icon" role="button" tabindex="0" src="/static/shared/icon/help_gm_grey_24dp.svg" alt="" aria-label="Toggle tagged version tooltip" height="24" width="24">
+        </summary>
+        <p aria-live="polite" role="tooltip">Modules with tagged versions give importers more predictable builds.</p>
+      </details>
+    </li>
+    <li>
+      <details class="go-Tooltip js-tooltip" data-gtmc="tooltip">
+        <summary class="go-textSubtle">
+          
+  <img class="go-Icon"
+    tabindex="0"
+    role="button"src="/static/shared/icon/cancel_gm_grey_24dp.svg" alt="unchecked" aria-label="Missing or invalid file, toggle tooltip"height="24" width="24">
+
+          Stable version
+          <img class="go-Icon" role="button" tabindex="0" aria-label="Toggle stable version tooltip" src="/static/shared/icon/help_gm_grey_24dp.svg" alt="" height="24" width="24">
+        </summary>
+        <p aria-live="polite" role="tooltip">When a project reaches major version v1 it is considered stable.</p>
+      </details>
+    </li>
+    <li class="UnitMeta-detailsLearn">
+      <a href="/about#best-practices" data-gtmc="meta link">Learn more about best practices</a>
+    </li>
+  </ul>
+
+    <h2 class="go-textLabel">Repository</h2>
+    <div class="UnitMeta-repo">
+      
+        <a href="https://cs.opensource.google/go/x/oauth2" title="https://cs.opensource.google/go/x/oauth2" target="_blank" rel="noopener">
+          cs.opensource.google/go/x/oauth2
+        </a>
+      
+    </div>
+    
+      <h2 class="go-textLabel" data-test-id="links-heading">Links</h2>
+      <ul class="UnitMeta-links">
+        
+          <li>
+            <a href="https://go.dev/security/policy"
+                title="Report security issues in the Go standard library and sub-repositories">
+              <img class="go-Icon" height="24" width="24" src="/static/shared/icon/security_grey_24dp.svg" alt="">
+              Report a Vulnerability
+            </a>
+          </li>
+        
+        
+          <li>
+            <a href="https://deps.dev/go/golang.org%2Fx%2Foauth2/v0.36.0" title="View this module on Open Source Insights"
+              target="_blank" rel="noopener" data-test-id="meta-link-depsdev">
+              <img class="link-Icon" src="/static/shared/icon/depsdev-logo.svg"
+                alt="Open Source Insights Logo" />
+              Open Source Insights
+            </a>
+          </li>
+        
+        
+          <li>
+            <a href="/codewiki?module=golang.org%2Fx%2Foauth2&amp;package=golang.org%2Fx%2Foauth2&amp;url=https%3A%2F%2Fcodewiki.google%2Fgithub.com%2Fgolang%2Foauth2%3Futm_source%3Dfirst_party_link%26utm_medium%3Dgo_pkg_web%26utm_campaign%3Dgithub.com%2Fgolang%2Foauth2" title="View this repo on Code Wiki"
+              target="_blank" rel="noopener" data-test-id="meta-link-codewiki">
+              <img class="link-Icon" src="/static/shared/icon/codewiki-logo.svg"
+                alt="Code Wiki Logo" />
+              Code Wiki
+            </a>
+          </li>
+        
+        
+  
+
+        
+  
+
+        
+  
+
+      </ul>
+    
+  </div>
+
+</aside>
+    
+    <nav class="go-Main-nav go-Main-nav--sticky js-mainNav" aria-label="Outline">
+  <div class="go-Main-navDesktop">
+    
+  <div class="UnitOutline-jumpTo">
+    <button class="UnitOutline-jumpToInput go-ShortcutKey js-jumpToInput"
+        aria-controls="jump-to-modal"
+        aria-label="Open Jump to Identifier"
+        data-shortcut="f"
+        data-shortcut-alt="find"
+        data-test-id="jump-to-button" data-gtmc="outline button">
+      Jump to ...
+    </button>
+  </div>
+  <ul class="go-Tree js-tree" role="tree" aria-label="Outline">
+    
+      <li class="js-readmeOutline">
+        <a href="#section-readme" data-gtmc="outline link">
+          README
+        </a>
+        
+  <ul id="readme-outline">
+    
+      <li>
+        <a href="#readme-policy-for-new-endpoints" data-gtmc="readme outline link">
+          Policy for new endpoints
+        </a>
+         
+      </li>
+    
+      <li>
+        <a href="#readme-report-issues-send-patches" data-gtmc="readme outline link">
+          Report Issues / Send Patches
+        </a>
+         
+      </li>
+     
+  </ul>
+
+      </li>
+    
+    
+      <li>
+        <a href="#section-documentation" data-gtmc="outline link">
+          Documentation
+        </a>
+        
+<ul>
+  
+    <li>
+      <a href="#pkg-overview" data-gtmc="doc outline link">Overview</a>
+    </li>
+  <li class="DocNav-overview">
+      <a href="#pkg-index" data-gtmc="doc outline link">
+        Index
+      </a>
+    </li>
+      <li>
+        <a href="#pkg-examples" data-gtmc="doc outline link">
+          Examples
+        </a>
+        <ul>
+            <li>
+              <a href="#example-Config" title="Config" data-gtmc="doc outline link">
+                Config
+              </a>
+            </li>
+            <li>
+              <a href="#example-Config-CustomHTTP" title="Config (CustomHTTP)" data-gtmc="doc outline link">
+                Config (CustomHTTP)
+              </a>
+            </li>
+            <li>
+              <a href="#example-Config.DeviceAuth" title="Config.DeviceAuth" data-gtmc="doc outline link">
+                Config.DeviceAuth
+              </a>
+            </li>
+        </ul>
+      </li>
+    <li class="DocNav-constants">
+      <a href="#pkg-constants" data-gtmc="doc outline link">
+        Constants
+      </a>
+    </li>
+    <li class="DocNav-variables">
+      <a href="#pkg-variables" data-gtmc="doc outline link">
+        Variables
+      </a>
+    </li>
+    <li class="DocNav-functions">
+      <a href="#pkg-functions" data-gtmc="doc outline link">
+        Functions
+      </a>
+      
+        <ul>
+          
+            <li>
+              <a href="#GenerateVerifier" title="GenerateVerifier()" data-gtmc="doc outline link">
+                GenerateVerifier()
+              </a>
+            </li>
+          
+            <li>
+              <a href="#NewClient" title="NewClient(ctx, src)" data-gtmc="doc outline link">
+                NewClient(ctx, src)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#RegisterBrokenAuthHeaderProvider" title="RegisterBrokenAuthHeaderProvider(tokenURL)" data-gtmc="doc outline link">
+                RegisterBrokenAuthHeaderProvider(tokenURL)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#S256ChallengeFromVerifier" title="S256ChallengeFromVerifier(verifier)" data-gtmc="doc outline link">
+                S256ChallengeFromVerifier(verifier)
+              </a>
+            </li>
+          
+        </ul>
+      
+    </li>
+    <li class="DocNav-types">
+      <a href="#pkg-types" data-gtmc="doc outline link">
+        Types
+      </a>
+      <ul>
+        
+          
+          <li>
+            <a href="#AuthCodeOption" title="type AuthCodeOption" data-gtmc="doc outline link">
+              type AuthCodeOption
+            </a>
+            
+              <ul>
+                
+                  <li>
+                    <a href="#S256ChallengeOption" title="S256ChallengeOption(verifier)"
+                        data-gtmc="doc outline link">
+                      S256ChallengeOption(verifier)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#SetAuthURLParam" title="SetAuthURLParam(key, value)"
+                        data-gtmc="doc outline link">
+                      SetAuthURLParam(key, value)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#VerifierOption" title="VerifierOption(verifier)"
+                        data-gtmc="doc outline link">
+                      VerifierOption(verifier)
+                    </a>
+                  </li>
+                
+                
+              </ul>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#AuthStyle" title="type AuthStyle" data-gtmc="doc outline link">
+              type AuthStyle
+            </a>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#Config" title="type Config" data-gtmc="doc outline link">
+              type Config
+            </a>
+            
+              <ul>
+                
+                
+                  <li>
+                    <a href="#Config.AuthCodeURL" title="(c) AuthCodeURL(state, opts)"
+                        data-gtmc="doc outline link">
+                      (c) AuthCodeURL(state, opts)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Config.Client" title="(c) Client(ctx, t)"
+                        data-gtmc="doc outline link">
+                      (c) Client(ctx, t)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Config.DeviceAccessToken" title="(c) DeviceAccessToken(ctx, da, opts)"
+                        data-gtmc="doc outline link">
+                      (c) DeviceAccessToken(ctx, da, opts)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Config.DeviceAuth" title="(c) DeviceAuth(ctx, opts)"
+                        data-gtmc="doc outline link">
+                      (c) DeviceAuth(ctx, opts)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Config.Exchange" title="(c) Exchange(ctx, code, opts)"
+                        data-gtmc="doc outline link">
+                      (c) Exchange(ctx, code, opts)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Config.PasswordCredentialsToken" title="(c) PasswordCredentialsToken(ctx, username, password)"
+                        data-gtmc="doc outline link">
+                      (c) PasswordCredentialsToken(ctx, username, password)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Config.TokenSource" title="(c) TokenSource(ctx, t)"
+                        data-gtmc="doc outline link">
+                      (c) TokenSource(ctx, t)
+                    </a>
+                  </li>
+                
+              </ul>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#DeviceAuthResponse" title="type DeviceAuthResponse" data-gtmc="doc outline link">
+              type DeviceAuthResponse
+            </a>
+            
+              <ul>
+                
+                
+                  <li>
+                    <a href="#DeviceAuthResponse.MarshalJSON" title="(d) MarshalJSON()"
+                        data-gtmc="doc outline link">
+                      (d) MarshalJSON()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#DeviceAuthResponse.UnmarshalJSON" title="(c) UnmarshalJSON(data)"
+                        data-gtmc="doc outline link">
+                      (c) UnmarshalJSON(data)
+                    </a>
+                  </li>
+                
+              </ul>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#Endpoint" title="type Endpoint" data-gtmc="doc outline link">
+              type Endpoint
+            </a>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#RetrieveError" title="type RetrieveError" data-gtmc="doc outline link">
+              type RetrieveError
+            </a>
+            
+              <ul>
+                
+                
+                  <li>
+                    <a href="#RetrieveError.Error" title="(r) Error()"
+                        data-gtmc="doc outline link">
+                      (r) Error()
+                    </a>
+                  </li>
+                
+              </ul>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#Token" title="type Token" data-gtmc="doc outline link">
+              type Token
+            </a>
+            
+              <ul>
+                
+                
+                  <li>
+                    <a href="#Token.Extra" title="(t) Extra(key)"
+                        data-gtmc="doc outline link">
+                      (t) Extra(key)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Token.SetAuthHeader" title="(t) SetAuthHeader(r)"
+                        data-gtmc="doc outline link">
+                      (t) SetAuthHeader(r)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Token.Type" title="(t) Type()"
+                        data-gtmc="doc outline link">
+                      (t) Type()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Token.Valid" title="(t) Valid()"
+                        data-gtmc="doc outline link">
+                      (t) Valid()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Token.WithExtra" title="(t) WithExtra(extra)"
+                        data-gtmc="doc outline link">
+                      (t) WithExtra(extra)
+                    </a>
+                  </li>
+                
+              </ul>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#TokenSource" title="type TokenSource" data-gtmc="doc outline link">
+              type TokenSource
+            </a>
+            
+              <ul>
+                
+                  <li>
+                    <a href="#ReuseTokenSource" title="ReuseTokenSource(t, src)"
+                        data-gtmc="doc outline link">
+                      ReuseTokenSource(t, src)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#ReuseTokenSourceWithExpiry" title="ReuseTokenSourceWithExpiry(t, src, earlyExpiry)"
+                        data-gtmc="doc outline link">
+                      ReuseTokenSourceWithExpiry(t, src, earlyExpiry)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#StaticTokenSource" title="StaticTokenSource(t)"
+                        data-gtmc="doc outline link">
+                      StaticTokenSource(t)
+                    </a>
+                  </li>
+                
+                
+              </ul>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#Transport" title="type Transport" data-gtmc="doc outline link">
+              type Transport
+            </a>
+            
+              <ul>
+                
+                
+                  <li>
+                    <a href="#Transport.CancelRequest" title="(t) CancelRequest(req)"
+                        data-gtmc="doc outline link">
+                      (t) CancelRequest(req)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Transport.RoundTrip" title="(t) RoundTrip(req)"
+                        data-gtmc="doc outline link">
+                      (t) RoundTrip(req)
+                    </a>
+                  </li>
+                
+              </ul>
+             
+          </li>
+         
+      </ul>
+    </li>
+  
+  
+</ul>
+
+      </li>
+    
+    
+      <li>
+        <a href="#section-sourcefiles" data-gtmc="outline link">
+          Source Files
+        </a>
+      </li>
+    
+    
+      <li>
+        <a href="#section-directories" data-gtmc="outline link">
+          Directories
+        </a>
+      </li>
+    
+  </ul>
+
+  </div>
+  <div class="go-Main-navMobile js-mainNavMobile">
+    <label class="go-Label">
+      <select class="go-Select">
+        
+          <option selected disabled>README</option>
+        
+      </select>
+    </label>
+  </div>
+</nav>
+    <article class="go-Main-article js-mainContent">
+  <div class="UnitDetails" data-test-id="UnitDetails" style="display: block;">
+    <div class="UnitDetails-content js-unitDetailsContent" data-test-id="UnitDetails-content">
+      
+        
+  <div class="UnitReadme UnitReadme--expanded js-readme">
+    <h2 class="UnitReadme-title" id="section-readme">
+      <img class="go-Icon" height="24" width="24" src="/static/shared/icon/chrome_reader_mode_gm_grey_24dp.svg" alt="">
+      README
+      <a class="UnitReadme-idLink" href="#section-readme" title="Go to Readme" aria-label="Go to Readme">¶</a>
+    </h2>
+    
+      <div class="UnitReadme-content" data-test-id="Unit-readmeContent">
+        <div class="Overview-readmeContent js-readmeContent"><h3 class="h1" id="readme-oauth2-for-go">OAuth2 for Go</h3>
+<p><a href="https://pkg.go.dev/golang.org/x/oauth2" rel="nofollow"><img src="https://pkg.go.dev/badge/golang.org/x/oauth2.svg" alt="Go Reference"/></a>
+<a href="https://travis-ci.org/golang/oauth2" rel="nofollow"><img src="https://travis-ci.org/golang/oauth2.svg?branch=master" alt="Build Status"/></a></p>
+<p>oauth2 package contains a client implementation for OAuth 2.0 spec.</p>
+<p>See pkg.go.dev for further documentation and examples.</p>
+<ul>
+<li><a href="https://pkg.go.dev/golang.org/x/oauth2" rel="nofollow">pkg.go.dev/golang.org/x/oauth2</a></li>
+<li><a href="https://pkg.go.dev/golang.org/x/oauth2/google" rel="nofollow">pkg.go.dev/golang.org/x/oauth2/google</a></li>
+</ul>
+<h4 class="h2" id="readme-policy-for-new-endpoints">Policy for new endpoints</h4>
+<p>We no longer accept new provider-specific packages in this repo if all
+they do is add a single endpoint variable. If you just want to add a
+single endpoint, add it to the
+<a href="https://pkg.go.dev/golang.org/x/oauth2/endpoints" rel="nofollow">pkg.go.dev/golang.org/x/oauth2/endpoints</a>
+package.</p>
+<h4 class="h2" id="readme-report-issues-send-patches">Report Issues / Send Patches</h4>
+<p>The main issue tracker for the oauth2 repository is located at
+<a href="https://github.com/golang/oauth2/issues" rel="nofollow">https://github.com/golang/oauth2/issues</a>.</p>
+<p>This repository uses Gerrit for code changes. To learn how to submit changes to
+this repository, see <a href="https://go.dev/doc/contribute" rel="nofollow">https://go.dev/doc/contribute</a>.</p>
+<p>The git repository is <a href="https://go.googlesource.com/oauth2" rel="nofollow">https://go.googlesource.com/oauth2</a>.</p>
+<p>Note:</p>
+<ul>
+<li>Excluding trivial changes, all contributions should be connected to an existing issue.</li>
+<li>API changes must go through the <a href="https://go.dev/s/proposal-process" rel="nofollow">change proposal process</a> before they can be accepted.</li>
+<li>The code owners are listed at <a href="https://dev.golang.org/owners#:~:text=x/oauth2" rel="nofollow">dev.golang.org/owners</a>.</li>
+</ul>
+</div>
+      </div>
+      <button class="UnitReadme-expandLink js-readmeExpand"
+          data-test-id="readme-expand" data-gtmc="readme button"
+          aria-label="Expand Readme">Expand ▾</button>
+      <button class="UnitReadme-collapseLink js-readmeCollapse"
+          data-test-id="readme-collapse" data-gtmc="readme button"
+          aria-label="Expand Readme">Collapse ▴</button>
+    
+  </div>
+
+      
+      
+        
+          
+  <div class="UnitDoc">
+    <h2 class="UnitDoc-title" id="section-documentation">
+      <img class="go-Icon" height="24" width="24" src="/static/shared/icon/code_gm_grey_24dp.svg" alt="">
+      Documentation
+      <a class="UnitDoc-idLink" href="#section-documentation" title="Go to Documentation" aria-label="Go to Documentation">¶</a>
+    </h2>
+    
+  
+    
+  
+
+    <div class="Documentation js-documentation">
+      
+        
+
+<div class="Documentation-content js-docContent"> <section class="Documentation-overview">
+    <h3 tabindex="-1" id="pkg-overview" class="Documentation-overviewHeader">Overview <a href="#pkg-overview" title="Go to Overview" aria-label="Go to Overview">¶</a></h3>
+
+<p>Package oauth2 provides support for making
+OAuth2 authorized and authenticated HTTP requests,
+as specified in <a href="https://rfc-editor.org/rfc/rfc6749.html">RFC 6749</a>.
+It can additionally grant authorization with Bearer JWT.
+</p>
+</section><section class="Documentation-index">
+    <h3 id="pkg-index" class="Documentation-indexHeader">Index <a href="#pkg-index" title="Go to Index" aria-label="Go to Index">¶</a></h3>
+
+<ul class="Documentation-indexList">
+<li class="Documentation-indexVariables"><a href="#pkg-variables">Variables</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#GenerateVerifier">func GenerateVerifier() string</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#NewClient">func NewClient(ctx context.Context, src TokenSource) *http.Client</a></li>
+<li class="Documentation-indexFunction">
+        <a class="js-deprecatedTagLink" href="#RegisterBrokenAuthHeaderProvider">func RegisterBrokenAuthHeaderProvider(tokenURL string)</a><span class="Documentation-indexDeprecated Documentation-deprecatedTag">deprecated</span></li>
+<li class="Documentation-indexFunction">
+        <a href="#S256ChallengeFromVerifier">func S256ChallengeFromVerifier(verifier string) string</a></li>
+<li class="Documentation-indexType">
+          <a href="#AuthCodeOption">type AuthCodeOption</a></li>
+<li><ul class="Documentation-indexTypeFunctions">
+<li>
+            <a href="#S256ChallengeOption">func S256ChallengeOption(verifier string) AuthCodeOption</a></li>
+<li>
+            <a href="#SetAuthURLParam">func SetAuthURLParam(key, value string) AuthCodeOption</a></li>
+<li>
+            <a href="#VerifierOption">func VerifierOption(verifier string) AuthCodeOption</a></li>
+</ul></li>
+<li class="Documentation-indexType">
+          <a href="#AuthStyle">type AuthStyle</a></li>
+<li class="Documentation-indexType">
+          <a href="#Config">type Config</a></li>
+<li><ul class="Documentation-indexTypeMethods">
+<li>
+            <a href="#Config.AuthCodeURL">func (c *Config) AuthCodeURL(state string, opts ...AuthCodeOption) string</a></li>
+<li>
+            <a href="#Config.Client">func (c *Config) Client(ctx context.Context, t *Token) *http.Client</a></li>
+<li>
+            <a href="#Config.DeviceAccessToken">func (c *Config) DeviceAccessToken(ctx context.Context, da *DeviceAuthResponse, opts ...AuthCodeOption) (*Token, error)</a></li>
+<li>
+            <a href="#Config.DeviceAuth">func (c *Config) DeviceAuth(ctx context.Context, opts ...AuthCodeOption) (*DeviceAuthResponse, error)</a></li>
+<li>
+            <a href="#Config.Exchange">func (c *Config) Exchange(ctx context.Context, code string, opts ...AuthCodeOption) (*Token, error)</a></li>
+<li>
+            <a href="#Config.PasswordCredentialsToken">func (c *Config) PasswordCredentialsToken(ctx context.Context, username, password string) (*Token, error)</a></li>
+<li>
+            <a href="#Config.TokenSource">func (c *Config) TokenSource(ctx context.Context, t *Token) TokenSource</a></li>
+</ul></li>
+<li class="Documentation-indexType">
+          <a href="#DeviceAuthResponse">type DeviceAuthResponse</a></li>
+<li><ul class="Documentation-indexTypeMethods">
+<li>
+            <a href="#DeviceAuthResponse.MarshalJSON">func (d DeviceAuthResponse) MarshalJSON() ([]byte, error)</a></li>
+<li>
+            <a href="#DeviceAuthResponse.UnmarshalJSON">func (c *DeviceAuthResponse) UnmarshalJSON(data []byte) error</a></li>
+</ul></li>
+<li class="Documentation-indexType">
+          <a href="#Endpoint">type Endpoint</a></li>
+<li class="Documentation-indexType">
+          <a href="#RetrieveError">type RetrieveError</a></li>
+<li><ul class="Documentation-indexTypeMethods">
+<li>
+            <a href="#RetrieveError.Error">func (r *RetrieveError) Error() string</a></li>
+</ul></li>
+<li class="Documentation-indexType">
+          <a href="#Token">type Token</a></li>
+<li><ul class="Documentation-indexTypeMethods">
+<li>
+            <a href="#Token.Extra">func (t *Token) Extra(key string) any</a></li>
+<li>
+            <a href="#Token.SetAuthHeader">func (t *Token) SetAuthHeader(r *http.Request)</a></li>
+<li>
+            <a href="#Token.Type">func (t *Token) Type() string</a></li>
+<li>
+            <a href="#Token.Valid">func (t *Token) Valid() bool</a></li>
+<li>
+            <a href="#Token.WithExtra">func (t *Token) WithExtra(extra any) *Token</a></li>
+</ul></li>
+<li class="Documentation-indexType">
+          <a href="#TokenSource">type TokenSource</a></li>
+<li><ul class="Documentation-indexTypeFunctions">
+<li>
+            <a href="#ReuseTokenSource">func ReuseTokenSource(t *Token, src TokenSource) TokenSource</a></li>
+<li>
+            <a href="#ReuseTokenSourceWithExpiry">func ReuseTokenSourceWithExpiry(t *Token, src TokenSource, earlyExpiry time.Duration) TokenSource</a></li>
+<li>
+            <a href="#StaticTokenSource">func StaticTokenSource(t *Token) TokenSource</a></li>
+</ul></li>
+<li class="Documentation-indexType">
+          <a href="#Transport">type Transport</a></li>
+<li><ul class="Documentation-indexTypeMethods">
+<li>
+            <a class="js-deprecatedTagLink" href="#Transport.CancelRequest">func (t *Transport) CancelRequest(req *http.Request)</a><span class="Documentation-indexDeprecated Documentation-deprecatedTag">deprecated</span></li>
+<li>
+            <a href="#Transport.RoundTrip">func (t *Transport) RoundTrip(req *http.Request) (*http.Response, error)</a></li>
+</ul></li>
+</ul>
+</section><section class="Documentation-examples">
+    <h3 tabindex="-1" id="pkg-examples" class="Documentation-examplesHeader">Examples <a class="Documentation-idLink" href="#pkg-examples" title="Go to Examples" aria-label="Go to Examples">¶</a></h3>
+<ul class="Documentation-examplesList">
+<li><a href="#example-Config" class="js-exampleHref">Config</a></li>
+<li><a href="#example-Config-CustomHTTP" class="js-exampleHref">Config (CustomHTTP)</a></li>
+<li><a href="#example-Config.DeviceAuth" class="js-exampleHref">Config.DeviceAuth</a></li>
+</ul>
+</section><h3 tabindex="-1" id="pkg-constants" class="Documentation-constantsHeader">Constants <a href="#pkg-constants" title="Go to Constants" aria-label="Go to Constants">¶</a></h3>
+
+  <section class="Documentation-constants"><p class="Documentation-empty">This section is empty.</p></section>
+
+  <h3 tabindex="-1" id="pkg-variables" class="Documentation-variablesHeader">Variables <a href="#pkg-variables" title="Go to Variables" aria-label="Go to Variables">¶</a></h3>
+
+  <section class="Documentation-variables">
+    <div class="Documentation-declaration">
+      <span class="Documentation-declarationLink"><a class="Documentation-source" href="https://cs.opensource.google/go/x/oauth2/+/v0.36.0:oauth2.go;l=341">View Source</a></span>
+      <pre><span id="HTTPClient" data-kind="variable">var HTTPClient <a href="/golang.org/x/oauth2@v0.36.0/internal">internal</a>.<a href="/golang.org/x/oauth2@v0.36.0/internal#ContextKey">ContextKey</a></span></pre>
+    </div>
+  <p>HTTPClient is the context key to use with <a href="/context#WithValue">context.WithValue</a>
+to associate a <a href="/net/http#Client">*http.Client</a> value with a context.
+</p>
+
+    <div class="Documentation-declaration">
+      <span class="Documentation-declarationLink"><a class="Documentation-source" href="https://cs.opensource.google/go/x/oauth2/+/v0.36.0:oauth2.go;l=27">View Source</a></span>
+      <pre><span id="NoContext" data-kind="variable">var NoContext = <a href="/context">context</a>.<a href="/context#TODO">TODO</a>()</span></pre>
+    </div>
+  <p>NoContext is the default context you should supply if not using
+your own <a href="/context#Context">context.Context</a>.
+</p><p>Deprecated: Use <a href="/context#Background">context.Background</a> or <a href="/context#TODO">context.TODO</a> instead.
+</p>
+</section>
+
+  <h3 tabindex="-1" id="pkg-functions" class="Documentation-functionsHeader">Functions <a href="#pkg-functions" title="Go to Functions" aria-label="Go to Functions">¶</a></h3>
+
+  <section class="Documentation-functions"><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="GenerateVerifier" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/x/oauth2/+/v0.36.0:pkce.go;l=27">GenerateVerifier</a> <a class="Documentation-idLink" href="#GenerateVerifier" title="Go to GenerateVerifier" aria-label="Go to GenerateVerifier">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">v0.13.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func GenerateVerifier() <a href="/builtin#string">string</a></pre>
+    </div>
+  <p>GenerateVerifier generates a PKCE code verifier with 32 octets of randomness.
+This follows recommendations in <a href="https://rfc-editor.org/rfc/rfc7636.html">RFC 7636</a>.
+</p><p>A fresh verifier should be generated for each authorization.
+The resulting verifier should be passed to <a href="#Config.AuthCodeURL">Config.AuthCodeURL</a> or <a href="#Config.DeviceAuth">Config.DeviceAuth</a>
+with <a href="#S256ChallengeOption">S256ChallengeOption</a>, and to <a href="#Config.Exchange">Config.Exchange</a> or <a href="#Config.DeviceAccessToken">Config.DeviceAccessToken</a>
+with <a href="#VerifierOption">VerifierOption</a>.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="NewClient" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/x/oauth2/+/v0.36.0:oauth2.go;l=353">NewClient</a> <a class="Documentation-idLink" href="#NewClient" title="Go to NewClient" aria-label="Go to NewClient">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func NewClient(ctx <a href="/context">context</a>.<a href="/context#Context">Context</a>, src <a href="#TokenSource">TokenSource</a>) *<a href="/net/http">http</a>.<a href="/net/http#Client">Client</a></pre>
+    </div>
+  <p>NewClient creates an <a href="/net/http#Client">*http.Client</a> from a <a href="/context#Context">context.Context</a> and <a href="#TokenSource">TokenSource</a>.
+The returned client is not valid beyond the lifetime of the context.
+</p><p>Note that if a custom <a href="/net/http#Client">*http.Client</a> is provided via the <a href="/context#Context">context.Context</a> it
+is used only for token acquisition and is not used to configure the
+<a href="/net/http#Client">*http.Client</a> returned from NewClient.
+</p><p>As a special case, if src is nil, a non-OAuth2 client is returned
+using the provided context. This exists to support related OAuth2
+packages.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <details class="Documentation-deprecatedDetails js-deprecatedDetails">
+      <summary>
+        <h4 tabindex="-1" id="RegisterBrokenAuthHeaderProvider" data-kind="function" class="Documentation-functionHeader">
+          <span class="Documentation-deprecatedTitle">
+            func <a class="Documentation-source" href="https://cs.opensource.google/go/x/oauth2/+/v0.36.0:oauth2.go;l=35">RegisterBrokenAuthHeaderProvider</a>
+            <span class="Documentation-deprecatedTag">deprecated</span>
+            <span class="Documentation-deprecatedBody"></span>
+          </span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+      </summary>
+      <div class="go-Message go-Message--warning Documentation-deprecatedItemBody">
+        
+    <div class="Documentation-declaration">
+      <pre>func RegisterBrokenAuthHeaderProvider(tokenURL <a href="/builtin#string">string</a>)</pre>
+    </div>
+  <p>RegisterBrokenAuthHeaderProvider previously did something. It is now a no-op.
+</p><p>Deprecated: this function no longer does anything. Caller code that
+wants to avoid potential extra HTTP requests made during
+auto-probing of the provider&#39;s auth style should set
+Endpoint.AuthStyle.
+</p>
+
+      </div>
+    </details>
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="S256ChallengeFromVerifier" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/x/oauth2/+/v0.36.0:pkce.go;l=49">S256ChallengeFromVerifier</a> <a class="Documentation-idLink" href="#S256ChallengeFromVerifier" title="Go to S256ChallengeFromVerifier" aria-label="Go to S256ChallengeFromVerifier">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">v0.13.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func S256ChallengeFromVerifier(verifier <a href="/builtin#string">string</a>) <a href="/builtin#string">string</a></pre>
+    </div>
+  <p>S256ChallengeFromVerifier returns a PKCE code challenge derived from verifier with method S256.
+</p><p>Prefer to use <a href="#S256ChallengeOption">S256ChallengeOption</a> where possible.
+</p>
+
+  
+
+        </div></section>
+
+  <h3 tabindex="-1" id="pkg-types" class="Documentation-typesHeader">Types <a href="#pkg-types" title="Go to Types" aria-label="Go to Types">¶</a></h3>
+
+  <section class="Documentation-types"><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="AuthCodeOption" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/x/oauth2/+/v0.36.0:oauth2.go;l=129">AuthCodeOption</a> <a class="Documentation-idLink" href="#AuthCodeOption" title="Go to AuthCodeOption" aria-label="Go to AuthCodeOption">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type AuthCodeOption interface {
+	<span class="comment">// contains filtered or unexported methods</span>
+}</pre>
+    </div>
+  <p>An AuthCodeOption is passed to Config.AuthCodeURL.
+</p>
+<div class="Documentation-typeVariable">
+    <div class="Documentation-declaration">
+      <pre>var (
+	<span class="comment">// AccessTypeOnline and AccessTypeOffline are options passed</span>
+	<span class="comment">// to the Options.AuthCodeURL method. They modify the</span>
+	<span class="comment">// &#34;access_type&#34; field that gets sent in the URL returned by</span>
+	<span class="comment">// AuthCodeURL.</span>
+	<span class="comment">//</span>
+	<span class="comment">// Online is the default if neither is specified. If your</span>
+	<span class="comment">// application needs to refresh access tokens when the user</span>
+	<span class="comment">// is not present at the browser, then use offline. This will</span>
+	<span class="comment">// result in your application obtaining a refresh token the</span>
+	<span class="comment">// first time your application exchanges an authorization</span>
+	<span class="comment">// code for a user.</span>
+<span id="AccessTypeOnline" data-kind="variable">	AccessTypeOnline  <a href="#AuthCodeOption">AuthCodeOption</a> = <a href="#SetAuthURLParam">SetAuthURLParam</a>(&#34;access_type&#34;, &#34;online&#34;)
+</span><span id="AccessTypeOffline" data-kind="variable">	AccessTypeOffline <a href="#AuthCodeOption">AuthCodeOption</a> = <a href="#SetAuthURLParam">SetAuthURLParam</a>(&#34;access_type&#34;, &#34;offline&#34;)
+</span>
+<span id="ApprovalForce" data-kind="variable">	<span class="comment">// ApprovalForce forces the users to view the consent dialog</span>
+</span>	<span class="comment">// and confirm the permissions request at the URL returned</span>
+	<span class="comment">// from AuthCodeURL, even if they&#39;ve already done so.</span>
+	ApprovalForce <a href="#AuthCodeOption">AuthCodeOption</a> = <a href="#SetAuthURLParam">SetAuthURLParam</a>(&#34;prompt&#34;, &#34;consent&#34;)
+)</pre>
+    </div>
+  
+</div><div class="Documentation-typeFunc">
+    
+  
+  
+    <h4 tabindex="-1" id="S256ChallengeOption" data-kind="function" class="Documentation-typeFuncHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/x/oauth2/+/v0.36.0:pkce.go;l=57">S256ChallengeOption</a> <a class="Documentation-idLink" href="#S256ChallengeOption" title="Go to S256ChallengeOption" aria-label="Go to S256ChallengeOption">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">v0.13.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func S256ChallengeOption(verifier <a href="/builtin#string">string</a>) <a href="#AuthCodeOption">AuthCodeOption</a></pre>
+    </div>
+  <p>S256ChallengeOption derives a PKCE code challenge from the verifier with
+method S256. It should be passed to <a href="#Config.AuthCodeURL">Config.AuthCodeURL</a> or <a href="#Config.DeviceAuth">Config.DeviceAuth</a>
+only.
+</p>
+
+  
+
+  </div><div class="Documentation-typeFunc">
+    
+  
+  
+    <h4 tabindex="-1" id="SetAuthURLParam" data-kind="function" class="Documentation-typeFuncHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/x/oauth2/+/v0.36.0:oauth2.go;l=139">SetAuthURLParam</a> <a class="Documentation-idLink" href="#SetAuthURLParam" title="Go to SetAuthURLParam" aria-label="Go to SetAuthURLParam">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func SetAuthURLParam(key, value <a href="/builtin#string">string</a>) <a href="#AuthCodeOption">AuthCodeOption</a></pre>
+    </div>
+  <p>SetAuthURLParam builds an <a href="#AuthCodeOption">AuthCodeOption</a> which passes key/value parameters
+to a provider&#39;s authorization endpoint.
+</p>
+
+  
+
+  </div><div class="Documentation-typeFunc">
+    
+  
+  
+    <h4 tabindex="-1" id="VerifierOption" data-kind="function" class="Documentation-typeFuncHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/x/oauth2/+/v0.36.0:pkce.go;l=42">VerifierOption</a> <a class="Documentation-idLink" href="#VerifierOption" title="Go to VerifierOption" aria-label="Go to VerifierOption">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">v0.13.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func VerifierOption(verifier <a href="/builtin#string">string</a>) <a href="#AuthCodeOption">AuthCodeOption</a></pre>
+    </div>
+  <p>VerifierOption returns a PKCE code verifier <a href="#AuthCodeOption">AuthCodeOption</a>. It should only be
+passed to <a href="#Config.Exchange">Config.Exchange</a> or <a href="#Config.DeviceAccessToken">Config.DeviceAccessToken</a>.
+</p>
+
+  
+
+  </div>
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="AuthStyle" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/x/oauth2/+/v0.36.0:oauth2.go;l=89">AuthStyle</a> <a class="Documentation-idLink" href="#AuthStyle" title="Go to AuthStyle" aria-label="Go to AuthStyle">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type AuthStyle <a href="/builtin#int">int</a></pre>
+    </div>
+  <p>AuthStyle represents how requests for tokens are authenticated
+to the server.
+</p>
+<div class="Documentation-typeConstant">
+    <div class="Documentation-declaration">
+      <pre>const (
+<span id="AuthStyleAutoDetect" data-kind="constant">	<span class="comment">// AuthStyleAutoDetect means to auto-detect which authentication</span>
+</span>	<span class="comment">// style the provider wants by trying both ways and caching</span>
+	<span class="comment">// the successful way for the future.</span>
+	AuthStyleAutoDetect <a href="#AuthStyle">AuthStyle</a> = 0
+
+<span id="AuthStyleInParams" data-kind="constant">	<span class="comment">// AuthStyleInParams sends the &#34;client_id&#34; and &#34;client_secret&#34;</span>
+</span>	<span class="comment">// in the POST body as application/x-www-form-urlencoded parameters.</span>
+	AuthStyleInParams <a href="#AuthStyle">AuthStyle</a> = 1
+
+<span id="AuthStyleInHeader" data-kind="constant">	<span class="comment">// AuthStyleInHeader sends the client_id and client_secret</span>
+</span>	<span class="comment">// using HTTP Basic Authorization. This is an optional style</span>
+	<span class="comment">// described in the OAuth2 <a href="https://rfc-editor.org/rfc/rfc6749.html#section-2.3.1">RFC 6749 section 2.3.1</a>.</span>
+	AuthStyleInHeader <a href="#AuthStyle">AuthStyle</a> = 2
+)</pre>
+    </div>
+  
+</div>
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="Config" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/x/oauth2/+/v0.36.0:oauth2.go;l=41">Config</a> <a class="Documentation-idLink" href="#Config" title="Go to Config" aria-label="Go to Config">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type Config struct {
+<span id="Config.ClientID" data-kind="field">	<span class="comment">// ClientID is the application&#39;s ID.</span>
+</span>	ClientID <a href="/builtin#string">string</a>
+
+<span id="Config.ClientSecret" data-kind="field">	<span class="comment">// ClientSecret is the application&#39;s secret.</span>
+</span>	ClientSecret <a href="/builtin#string">string</a>
+
+<span id="Config.Endpoint" data-kind="field">	<span class="comment">// Endpoint contains the authorization server&#39;s token endpoint</span>
+</span>	<span class="comment">// URLs. These are constants specific to each server and are</span>
+	<span class="comment">// often available via site-specific packages, such as</span>
+	<span class="comment">// google.Endpoint or github.Endpoint.</span>
+	Endpoint <a href="#Endpoint">Endpoint</a>
+
+<span id="Config.RedirectURL" data-kind="field">	<span class="comment">// RedirectURL is the URL to redirect users going through</span>
+</span>	<span class="comment">// the OAuth flow, after the resource owner&#39;s URLs.</span>
+	RedirectURL <a href="/builtin#string">string</a>
+
+<span id="Config.Scopes" data-kind="field">	<span class="comment">// Scopes specifies optional requested permissions.</span>
+</span>	Scopes []<a href="/builtin#string">string</a>
+	<span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+    </div>
+  <p>Config describes a typical 3-legged OAuth2 flow, with both the
+client application information and the server&#39;s endpoint URLs.
+For the client credentials 2-legged OAuth2 flow, see the
+<a href="/golang.org/x/oauth2@v0.36.0/clientcredentials">golang.org/x/oauth2/clientcredentials</a> package.
+</p>
+<details tabindex="-1" id="example-Config" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-Config" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;context&#34;
+	&#34;fmt&#34;
+	&#34;log&#34;
+
+	&#34;golang.org/x/oauth2&#34;
+)
+
+func main() {
+	ctx := context.Background()
+	conf := &amp;oauth2.Config{
+		ClientID:     &#34;YOUR_CLIENT_ID&#34;,
+		ClientSecret: &#34;YOUR_CLIENT_SECRET&#34;,
+		Scopes:       []string{&#34;SCOPE1&#34;, &#34;SCOPE2&#34;},
+		Endpoint: oauth2.Endpoint{
+			AuthURL:  &#34;https://provider.com/o/oauth2/auth&#34;,
+			TokenURL: &#34;https://provider.com/o/oauth2/token&#34;,
+		},
+	}
+
+	// use PKCE to protect against CSRF attacks
+	// https://www.ietf.org/archive/id/draft-ietf-oauth-security-topics-22.html#name-countermeasures-6
+	verifier := oauth2.GenerateVerifier()
+
+	// Redirect user to consent page to ask for permission
+	// for the scopes specified above.
+	url := conf.AuthCodeURL(&#34;state&#34;, oauth2.AccessTypeOffline, oauth2.S256ChallengeOption(verifier))
+	fmt.Printf(&#34;Visit the URL for the auth dialog: %v&#34;, url)
+
+	// Use the authorization code that is pushed to the redirect
+	// URL. Exchange will do the handshake to retrieve the
+	// initial access token. The HTTP Client returned by
+	// conf.Client will refresh the token as necessary.
+	var code string
+	if _, err := fmt.Scan(&amp;code); err != nil {
+		log.Fatal(err)
+	}
+	tok, err := conf.Exchange(ctx, code, oauth2.VerifierOption(verifier))
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	client := conf.Client(ctx, tok)
+	client.Get(&#34;...&#34;)
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer" hidden><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput"></span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+<details tabindex="-1" id="example-Config-CustomHTTP" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example (CustomHTTP) <a href="#example-Config-CustomHTTP" title="Go to Example (CustomHTTP)" aria-label="Go to Example (CustomHTTP)">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;context&#34;
+	&#34;fmt&#34;
+	&#34;log&#34;
+	&#34;net/http&#34;
+	&#34;time&#34;
+
+	&#34;golang.org/x/oauth2&#34;
+)
+
+func main() {
+	ctx := context.Background()
+
+	conf := &amp;oauth2.Config{
+		ClientID:     &#34;YOUR_CLIENT_ID&#34;,
+		ClientSecret: &#34;YOUR_CLIENT_SECRET&#34;,
+		Scopes:       []string{&#34;SCOPE1&#34;, &#34;SCOPE2&#34;},
+		Endpoint: oauth2.Endpoint{
+			TokenURL: &#34;https://provider.com/o/oauth2/token&#34;,
+			AuthURL:  &#34;https://provider.com/o/oauth2/auth&#34;,
+		},
+	}
+
+	// Redirect user to consent page to ask for permission
+	// for the scopes specified above.
+	url := conf.AuthCodeURL(&#34;state&#34;, oauth2.AccessTypeOffline)
+	fmt.Printf(&#34;Visit the URL for the auth dialog: %v&#34;, url)
+
+	// Use the authorization code that is pushed to the redirect
+	// URL. Exchange will do the handshake to retrieve the
+	// initial access token. The HTTP Client returned by
+	// conf.Client will refresh the token as necessary.
+	var code string
+	if _, err := fmt.Scan(&amp;code); err != nil {
+		log.Fatal(err)
+	}
+
+	// Use the custom HTTP client when requesting a token.
+	httpClient := &amp;http.Client{Timeout: 2 * time.Second}
+	ctx = context.WithValue(ctx, oauth2.HTTPClient, httpClient)
+
+	tok, err := conf.Exchange(ctx, code)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	client := conf.Client(ctx, tok)
+	_ = client
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer" hidden><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput"></span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+<div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Config.AuthCodeURL" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Config) <a class="Documentation-source" href="https://cs.opensource.google/go/x/oauth2/+/v0.36.0:oauth2.go;l=159">AuthCodeURL</a> <a class="Documentation-idLink" href="#Config.AuthCodeURL" title="Go to Config.AuthCodeURL" aria-label="Go to Config.AuthCodeURL">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (c *<a href="#Config">Config</a>) AuthCodeURL(state <a href="/builtin#string">string</a>, opts ...<a href="#AuthCodeOption">AuthCodeOption</a>) <a href="/builtin#string">string</a></pre>
+    </div>
+  <p>AuthCodeURL returns a URL to OAuth 2.0 provider&#39;s consent page
+that asks for permissions for the required scopes explicitly.
+</p><p>State is an opaque value used by the client to maintain state between the
+request and callback. The authorization server includes this value when
+redirecting the user agent back to the client.
+</p><p>Opts may include <a href="#AccessTypeOnline">AccessTypeOnline</a> or <a href="#AccessTypeOffline">AccessTypeOffline</a>, as well
+as <a href="#ApprovalForce">ApprovalForce</a>.
+</p><p>To protect against CSRF attacks, opts should include a PKCE challenge
+(S256ChallengeOption). Not all servers support PKCE. An alternative is to
+generate a random state parameter and verify it after exchange.
+See <a href="https://datatracker.ietf.org/doc/html/rfc6749#section-10.12">https://datatracker.ietf.org/doc/html/rfc6749#section-10.12</a> (predating
+PKCE), <a href="https://www.oauth.com/oauth2-servers/pkce/">https://www.oauth.com/oauth2-servers/pkce/</a> and
+<a href="https://www.ietf.org/archive/id/draft-ietf-oauth-v2-1-09.html#name-cross-site-request-forgery">https://www.ietf.org/archive/id/draft-ietf-oauth-v2-1-09.html#name-cross-site-request-forgery</a> (describing both approaches)
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Config.Client" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Config) <a class="Documentation-source" href="https://cs.opensource.google/go/x/oauth2/+/v0.36.0:oauth2.go;l=240">Client</a> <a class="Documentation-idLink" href="#Config.Client" title="Go to Config.Client" aria-label="Go to Config.Client">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (c *<a href="#Config">Config</a>) Client(ctx <a href="/context">context</a>.<a href="/context#Context">Context</a>, t *<a href="#Token">Token</a>) *<a href="/net/http">http</a>.<a href="/net/http#Client">Client</a></pre>
+    </div>
+  <p>Client returns an HTTP client using the provided token.
+The token will auto-refresh as necessary. The underlying
+HTTP transport will be obtained using the provided context.
+The returned client and its Transport should not be modified.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Config.DeviceAccessToken" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Config) <a class="Documentation-source" href="https://cs.opensource.google/go/x/oauth2/+/v0.36.0:deviceauth.go;l=169">DeviceAccessToken</a> <a class="Documentation-idLink" href="#Config.DeviceAccessToken" title="Go to Config.DeviceAccessToken" aria-label="Go to Config.DeviceAccessToken">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">v0.13.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (c *<a href="#Config">Config</a>) DeviceAccessToken(ctx <a href="/context">context</a>.<a href="/context#Context">Context</a>, da *<a href="#DeviceAuthResponse">DeviceAuthResponse</a>, opts ...<a href="#AuthCodeOption">AuthCodeOption</a>) (*<a href="#Token">Token</a>, <a href="/builtin#error">error</a>)</pre>
+    </div>
+  <p>DeviceAccessToken polls the server to exchange a device code for a token.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Config.DeviceAuth" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Config) <a class="Documentation-source" href="https://cs.opensource.google/go/x/oauth2/+/v0.36.0:deviceauth.go;l=83">DeviceAuth</a> <a class="Documentation-idLink" href="#Config.DeviceAuth" title="Go to Config.DeviceAuth" aria-label="Go to Config.DeviceAuth">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">v0.13.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (c *<a href="#Config">Config</a>) DeviceAuth(ctx <a href="/context">context</a>.<a href="/context#Context">Context</a>, opts ...<a href="#AuthCodeOption">AuthCodeOption</a>) (*<a href="#DeviceAuthResponse">DeviceAuthResponse</a>, <a href="/builtin#error">error</a>)</pre>
+    </div>
+  <p>DeviceAuth returns a device auth struct which contains a device code
+and authorization information provided for users to enter on another device.
+</p>
+<details tabindex="-1" id="example-Config.DeviceAuth" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-Config.DeviceAuth" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+var config Config
+ctx := context.Background()
+response, err := config.DeviceAuth(ctx)
+if err != nil {
+	panic(err)
+}
+fmt.Printf(&#34;please enter code %s at %s\n&#34;, response.UserCode, response.VerificationURI)
+token, err := config.DeviceAccessToken(ctx, response)
+if err != nil {
+	panic(err)
+}
+fmt.Println(token)
+</pre>
+
+</div>
+</details>
+
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Config.Exchange" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Config) <a class="Documentation-source" href="https://cs.opensource.google/go/x/oauth2/+/v0.36.0:oauth2.go;l=222">Exchange</a> <a class="Documentation-idLink" href="#Config.Exchange" title="Go to Config.Exchange" aria-label="Go to Config.Exchange">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (c *<a href="#Config">Config</a>) Exchange(ctx <a href="/context">context</a>.<a href="/context#Context">Context</a>, code <a href="/builtin#string">string</a>, opts ...<a href="#AuthCodeOption">AuthCodeOption</a>) (*<a href="#Token">Token</a>, <a href="/builtin#error">error</a>)</pre>
+    </div>
+  <p>Exchange converts an authorization code into a token.
+</p><p>It is used after a resource provider redirects the user back
+to the Redirect URI (the URL obtained from AuthCodeURL).
+</p><p>The provided context optionally controls which HTTP client is used. See the <a href="#HTTPClient">HTTPClient</a> variable.
+</p><p>The code will be in the <a href="/net/http#Request.FormValue">http.Request.FormValue</a>(&#34;code&#34;). Before
+calling Exchange, be sure to validate <a href="/net/http#Request.FormValue">http.Request.FormValue</a>(&#34;state&#34;) if you are
+using it to protect against CSRF attacks.
+</p><p>If using PKCE to protect against CSRF attacks, opts should include a
+VerifierOption.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Config.PasswordCredentialsToken" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Config) <a class="Documentation-source" href="https://cs.opensource.google/go/x/oauth2/+/v0.36.0:oauth2.go;l=197">PasswordCredentialsToken</a> <a class="Documentation-idLink" href="#Config.PasswordCredentialsToken" title="Go to Config.PasswordCredentialsToken" aria-label="Go to Config.PasswordCredentialsToken">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (c *<a href="#Config">Config</a>) PasswordCredentialsToken(ctx <a href="/context">context</a>.<a href="/context#Context">Context</a>, username, password <a href="/builtin#string">string</a>) (*<a href="#Token">Token</a>, <a href="/builtin#error">error</a>)</pre>
+    </div>
+  <p>PasswordCredentialsToken converts a resource owner username and password
+pair into a token.
+</p><p>Per the RFC, this grant type should only be used &#34;when there is a high
+degree of trust between the resource owner and the client (e.g., the client
+is part of the device operating system or a highly privileged application),
+and when other authorization grant types are not available.&#34;
+See <a href="https://tools.ietf.org/html/rfc6749#section-4.3">https://tools.ietf.org/html/rfc6749#section-4.3</a> for more info.
+</p><p>The provided context optionally controls which HTTP client is used. See the <a href="#HTTPClient">HTTPClient</a> variable.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Config.TokenSource" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Config) <a class="Documentation-source" href="https://cs.opensource.google/go/x/oauth2/+/v0.36.0:oauth2.go;l=248">TokenSource</a> <a class="Documentation-idLink" href="#Config.TokenSource" title="Go to Config.TokenSource" aria-label="Go to Config.TokenSource">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (c *<a href="#Config">Config</a>) TokenSource(ctx <a href="/context">context</a>.<a href="/context#Context">Context</a>, t *<a href="#Token">Token</a>) <a href="#TokenSource">TokenSource</a></pre>
+    </div>
+  <p>TokenSource returns a <a href="#TokenSource">TokenSource</a> that returns t until t expires,
+automatically refreshing it as necessary using the provided context.
+</p><p>Most users will use <a href="#Config.Client">Config.Client</a> instead.
+</p>
+
+  
+
+  </div>
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="DeviceAuthResponse" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/x/oauth2/+/v0.36.0:deviceauth.go;l=28">DeviceAuthResponse</a> <a class="Documentation-idLink" href="#DeviceAuthResponse" title="Go to DeviceAuthResponse" aria-label="Go to DeviceAuthResponse">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">v0.13.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type DeviceAuthResponse struct {
+<span id="DeviceAuthResponse.DeviceCode" data-kind="field">	<span class="comment">// DeviceCode</span>
+</span>	DeviceCode <a href="/builtin#string">string</a> `json:&#34;device_code&#34;`
+<span id="DeviceAuthResponse.UserCode" data-kind="field">	<span class="comment">// UserCode is the code the user should enter at the verification uri</span>
+</span>	UserCode <a href="/builtin#string">string</a> `json:&#34;user_code&#34;`
+<span id="DeviceAuthResponse.VerificationURI" data-kind="field">	<span class="comment">// VerificationURI is where user should enter the user code</span>
+</span>	VerificationURI <a href="/builtin#string">string</a> `json:&#34;verification_uri&#34;`
+<span id="DeviceAuthResponse.VerificationURIComplete" data-kind="field">	<span class="comment">// VerificationURIComplete (if populated) includes the user code in the verification URI. This is typically shown to the user in non-textual form, such as a QR code.</span>
+</span>	VerificationURIComplete <a href="/builtin#string">string</a> `json:&#34;verification_uri_complete,omitempty&#34;`
+<span id="DeviceAuthResponse.Expiry" data-kind="field">	<span class="comment">// Expiry is when the device code and user code expire</span>
+</span>	Expiry <a href="/time">time</a>.<a href="/time#Time">Time</a> `json:&#34;expires_in,omitempty&#34;`
+<span id="DeviceAuthResponse.Interval" data-kind="field">	<span class="comment">// Interval is the duration in seconds that Poll should wait between requests</span>
+</span>	Interval <a href="/builtin#int64">int64</a> `json:&#34;interval,omitempty&#34;`
+}</pre>
+    </div>
+  <p>DeviceAuthResponse describes a successful <a href="https://rfc-editor.org/rfc/rfc8628.html">RFC 8628</a> Device Authorization Response
+<a href="https://datatracker.ietf.org/doc/html/rfc8628#section-3.2">https://datatracker.ietf.org/doc/html/rfc8628#section-3.2</a>
+</p>
+<div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="DeviceAuthResponse.MarshalJSON" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (DeviceAuthResponse) <a class="Documentation-source" href="https://cs.opensource.google/go/x/oauth2/+/v0.36.0:deviceauth.go;l=43">MarshalJSON</a> <a class="Documentation-idLink" href="#DeviceAuthResponse.MarshalJSON" title="Go to DeviceAuthResponse.MarshalJSON" aria-label="Go to DeviceAuthResponse.MarshalJSON">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">v0.13.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (d <a href="#DeviceAuthResponse">DeviceAuthResponse</a>) MarshalJSON() ([]<a href="/builtin#byte">byte</a>, <a href="/builtin#error">error</a>)</pre>
+    </div>
+  
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="DeviceAuthResponse.UnmarshalJSON" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*DeviceAuthResponse) <a class="Documentation-source" href="https://cs.opensource.google/go/x/oauth2/+/v0.36.0:deviceauth.go;l=59">UnmarshalJSON</a> <a class="Documentation-idLink" href="#DeviceAuthResponse.UnmarshalJSON" title="Go to DeviceAuthResponse.UnmarshalJSON" aria-label="Go to DeviceAuthResponse.UnmarshalJSON">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">v0.13.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (c *<a href="#DeviceAuthResponse">DeviceAuthResponse</a>) UnmarshalJSON(data []<a href="/builtin#byte">byte</a>) <a href="/builtin#error">error</a></pre>
+    </div>
+  
+
+  
+
+  </div>
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="Endpoint" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/x/oauth2/+/v0.36.0:oauth2.go;l=76">Endpoint</a> <a class="Documentation-idLink" href="#Endpoint" title="Go to Endpoint" aria-label="Go to Endpoint">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type Endpoint struct {
+<span id="Endpoint.AuthURL" data-kind="field">	AuthURL       <a href="/builtin#string">string</a>
+</span><span id="Endpoint.DeviceAuthURL" data-kind="field">	DeviceAuthURL <a href="/builtin#string">string</a>
+</span><span id="Endpoint.TokenURL" data-kind="field">	TokenURL      <a href="/builtin#string">string</a>
+</span>
+<span id="Endpoint.AuthStyle" data-kind="field">	<span class="comment">// AuthStyle optionally specifies how the endpoint wants the</span>
+</span>	<span class="comment">// client ID &amp; client secret sent. The zero value means to</span>
+	<span class="comment">// auto-detect.</span>
+	AuthStyle <a href="#AuthStyle">AuthStyle</a>
+}</pre>
+    </div>
+  <p>Endpoint represents an OAuth 2.0 provider&#39;s authorization and token
+endpoint URLs.
+</p>
+
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="RetrieveError" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/x/oauth2/+/v0.36.0:token.go;l=188">RetrieveError</a> <a class="Documentation-idLink" href="#RetrieveError" title="Go to RetrieveError" aria-label="Go to RetrieveError">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type RetrieveError struct {
+<span id="RetrieveError.Response" data-kind="field">	Response *<a href="/net/http">http</a>.<a href="/net/http#Response">Response</a>
+</span><span id="RetrieveError.Body" data-kind="field">	<span class="comment">// Body is the body that was consumed by reading Response.Body.</span>
+</span>	<span class="comment">// It may be truncated.</span>
+	Body []<a href="/builtin#byte">byte</a>
+<span id="RetrieveError.ErrorCode" data-kind="field">	<span class="comment">// ErrorCode is <a href="https://rfc-editor.org/rfc/rfc6749.html">RFC 6749</a>&#39;s &#39;error&#39; parameter.</span>
+</span>	ErrorCode <a href="/builtin#string">string</a>
+<span id="RetrieveError.ErrorDescription" data-kind="field">	<span class="comment">// ErrorDescription is <a href="https://rfc-editor.org/rfc/rfc6749.html">RFC 6749</a>&#39;s &#39;error_description&#39; parameter.</span>
+</span>	ErrorDescription <a href="/builtin#string">string</a>
+<span id="RetrieveError.ErrorURI" data-kind="field">	<span class="comment">// ErrorURI is <a href="https://rfc-editor.org/rfc/rfc6749.html">RFC 6749</a>&#39;s &#39;error_uri&#39; parameter.</span>
+</span>	ErrorURI <a href="/builtin#string">string</a>
+}</pre>
+    </div>
+  <p>RetrieveError is the error returned when the token endpoint returns a
+non-2XX HTTP status code or populates <a href="https://rfc-editor.org/rfc/rfc6749.html">RFC 6749</a>&#39;s &#39;error&#39; parameter.
+<a href="https://datatracker.ietf.org/doc/html/rfc6749#section-5.2">https://datatracker.ietf.org/doc/html/rfc6749#section-5.2</a>
+</p>
+<div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="RetrieveError.Error" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*RetrieveError) <a class="Documentation-source" href="https://cs.opensource.google/go/x/oauth2/+/v0.36.0:token.go;l=201">Error</a> <a class="Documentation-idLink" href="#RetrieveError.Error" title="Go to RetrieveError.Error" aria-label="Go to RetrieveError.Error">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (r *<a href="#RetrieveError">RetrieveError</a>) Error() <a href="/builtin#string">string</a></pre>
+    </div>
+  
+
+  
+
+  </div>
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="Token" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/x/oauth2/+/v0.36.0:token.go;l=31">Token</a> <a class="Documentation-idLink" href="#Token" title="Go to Token" aria-label="Go to Token">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type Token struct {
+<span id="Token.AccessToken" data-kind="field">	<span class="comment">// AccessToken is the token that authorizes and authenticates</span>
+</span>	<span class="comment">// the requests.</span>
+	AccessToken <a href="/builtin#string">string</a> `json:&#34;access_token&#34;`
+
+<span id="Token.TokenType" data-kind="field">	<span class="comment">// TokenType is the type of token.</span>
+</span>	<span class="comment">// The Type method returns either this or &#34;Bearer&#34;, the default.</span>
+	TokenType <a href="/builtin#string">string</a> `json:&#34;token_type,omitempty&#34;`
+
+<span id="Token.RefreshToken" data-kind="field">	<span class="comment">// RefreshToken is a token that&#39;s used by the application</span>
+</span>	<span class="comment">// (as opposed to the user) to refresh the access token</span>
+	<span class="comment">// if it expires.</span>
+	RefreshToken <a href="/builtin#string">string</a> `json:&#34;refresh_token,omitempty&#34;`
+
+<span id="Token.Expiry" data-kind="field">	<span class="comment">// Expiry is the optional expiration time of the access token.</span>
+</span>	<span class="comment">//</span>
+	<span class="comment">// If zero, [TokenSource] implementations will reuse the same</span>
+	<span class="comment">// token forever and RefreshToken or equivalent</span>
+	<span class="comment">// mechanisms for that TokenSource will not be used.</span>
+	Expiry <a href="/time">time</a>.<a href="/time#Time">Time</a> `json:&#34;expiry,omitempty&#34;`
+
+<span id="Token.ExpiresIn" data-kind="field">	<span class="comment">// ExpiresIn is the OAuth2 wire format &#34;expires_in&#34; field,</span>
+</span>	<span class="comment">// which specifies how many seconds later the token expires,</span>
+	<span class="comment">// relative to an unknown time base approximately around &#34;now&#34;.</span>
+	<span class="comment">// It is the application&#39;s responsibility to populate</span>
+	<span class="comment">// `Expiry` from `ExpiresIn` when required.</span>
+	ExpiresIn <a href="/builtin#int64">int64</a> `json:&#34;expires_in,omitempty&#34;`
+	<span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+    </div>
+  <p>Token represents the credentials used to authorize
+the requests to access protected resources on the OAuth 2.0
+provider&#39;s backend.
+</p><p>Most users of this package should not access fields of Token
+directly. They&#39;re exported mostly for use by related packages
+implementing derivative OAuth2 flows.
+</p>
+<div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Token.Extra" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Token) <a class="Documentation-source" href="https://cs.opensource.google/go/x/oauth2/+/v0.36.0:token.go;l=108">Extra</a> <a class="Documentation-idLink" href="#Token.Extra" title="Go to Token.Extra" aria-label="Go to Token.Extra">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (t *<a href="#Token">Token</a>) Extra(key <a href="/builtin#string">string</a>) <a href="/builtin#any">any</a></pre>
+    </div>
+  <p>Extra returns an extra field.
+Extra fields are key-value pairs returned by the server as
+part of the token retrieval response.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Token.SetAuthHeader" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Token) <a class="Documentation-source" href="https://cs.opensource.google/go/x/oauth2/+/v0.36.0:token.go;l=91">SetAuthHeader</a> <a class="Documentation-idLink" href="#Token.SetAuthHeader" title="Go to Token.SetAuthHeader" aria-label="Go to Token.SetAuthHeader">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (t *<a href="#Token">Token</a>) SetAuthHeader(r *<a href="/net/http">http</a>.<a href="/net/http#Request">Request</a>)</pre>
+    </div>
+  <p>SetAuthHeader sets the Authorization header to r using the access
+token in t.
+</p><p>This method is unnecessary when using <a href="#Transport">Transport</a> or an HTTP Client
+returned by this package.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Token.Type" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Token) <a class="Documentation-source" href="https://cs.opensource.google/go/x/oauth2/+/v0.36.0:token.go;l=70">Type</a> <a class="Documentation-idLink" href="#Token.Type" title="Go to Token.Type" aria-label="Go to Token.Type">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (t *<a href="#Token">Token</a>) Type() <a href="/builtin#string">string</a></pre>
+    </div>
+  <p>Type returns t.TokenType if non-empty, else &#34;Bearer&#34;.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Token.Valid" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Token) <a class="Documentation-source" href="https://cs.opensource.google/go/x/oauth2/+/v0.36.0:token.go;l=151">Valid</a> <a class="Documentation-idLink" href="#Token.Valid" title="Go to Token.Valid" aria-label="Go to Token.Valid">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (t *<a href="#Token">Token</a>) Valid() <a href="/builtin#bool">bool</a></pre>
+    </div>
+  <p>Valid reports whether t is non-nil, has an AccessToken, and is not expired.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Token.WithExtra" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Token) <a class="Documentation-source" href="https://cs.opensource.google/go/x/oauth2/+/v0.36.0:token.go;l=98">WithExtra</a> <a class="Documentation-idLink" href="#Token.WithExtra" title="Go to Token.WithExtra" aria-label="Go to Token.WithExtra">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (t *<a href="#Token">Token</a>) WithExtra(extra <a href="/builtin#any">any</a>) *<a href="#Token">Token</a></pre>
+    </div>
+  <p>WithExtra returns a new <a href="#Token">Token</a> that&#39;s a clone of t, but using the
+provided raw extra map. This is only intended for use by packages
+implementing derivative OAuth2 flows.
+</p>
+
+  
+
+  </div>
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="TokenSource" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/x/oauth2/+/v0.36.0:oauth2.go;l=67">TokenSource</a> <a class="Documentation-idLink" href="#TokenSource" title="Go to TokenSource" aria-label="Go to TokenSource">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type TokenSource interface {
+<span id="TokenSource.Token" data-kind="method">	<span class="comment">// Token returns a token or an error.</span>
+</span>	<span class="comment">// Token must be safe for concurrent use by multiple goroutines.</span>
+	<span class="comment">// The returned Token must not be modified.</span>
+	Token() (*<a href="#Token">Token</a>, <a href="/builtin#error">error</a>)
+}</pre>
+    </div>
+  <p>A TokenSource is anything that can return a token.
+</p>
+<div class="Documentation-typeFunc">
+    
+  
+  
+    <h4 tabindex="-1" id="ReuseTokenSource" data-kind="function" class="Documentation-typeFuncHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/x/oauth2/+/v0.36.0:oauth2.go;l=381">ReuseTokenSource</a> <a class="Documentation-idLink" href="#ReuseTokenSource" title="Go to ReuseTokenSource" aria-label="Go to ReuseTokenSource">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func ReuseTokenSource(t *<a href="#Token">Token</a>, src <a href="#TokenSource">TokenSource</a>) <a href="#TokenSource">TokenSource</a></pre>
+    </div>
+  <p>ReuseTokenSource returns a <a href="#TokenSource">TokenSource</a> which repeatedly returns the
+same token as long as it&#39;s valid, starting with t.
+When its cached token is invalid, a new token is obtained from src.
+</p><p>ReuseTokenSource is typically used to reuse tokens from a cache
+(such as a file on disk) between runs of a program, rather than
+obtaining new tokens unnecessarily.
+</p><p>The initial token t may be nil, in which case the <a href="#TokenSource">TokenSource</a> is
+wrapped in a caching version if it isn&#39;t one already. This also
+means it&#39;s always safe to wrap ReuseTokenSource around any other
+<a href="#TokenSource">TokenSource</a> without adverse effects.
+</p>
+
+  
+
+  </div><div class="Documentation-typeFunc">
+    
+  
+  
+    <h4 tabindex="-1" id="ReuseTokenSourceWithExpiry" data-kind="function" class="Documentation-typeFuncHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/x/oauth2/+/v0.36.0:oauth2.go;l=402">ReuseTokenSourceWithExpiry</a> <a class="Documentation-idLink" href="#ReuseTokenSourceWithExpiry" title="Go to ReuseTokenSourceWithExpiry" aria-label="Go to ReuseTokenSourceWithExpiry">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">v0.7.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func ReuseTokenSourceWithExpiry(t *<a href="#Token">Token</a>, src <a href="#TokenSource">TokenSource</a>, earlyExpiry <a href="/time">time</a>.<a href="/time#Duration">Duration</a>) <a href="#TokenSource">TokenSource</a></pre>
+    </div>
+  <p>ReuseTokenSourceWithExpiry returns a <a href="#TokenSource">TokenSource</a> that acts in the same manner as the
+<a href="#TokenSource">TokenSource</a> returned by <a href="#ReuseTokenSource">ReuseTokenSource</a>, except the expiry buffer is
+configurable. The expiration time of a token is calculated as
+t.Expiry.Add(-earlyExpiry).
+</p>
+
+  
+
+  </div><div class="Documentation-typeFunc">
+    
+  
+  
+    <h4 tabindex="-1" id="StaticTokenSource" data-kind="function" class="Documentation-typeFuncHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/x/oauth2/+/v0.36.0:oauth2.go;l=326">StaticTokenSource</a> <a class="Documentation-idLink" href="#StaticTokenSource" title="Go to StaticTokenSource" aria-label="Go to StaticTokenSource">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func StaticTokenSource(t *<a href="#Token">Token</a>) <a href="#TokenSource">TokenSource</a></pre>
+    </div>
+  <p>StaticTokenSource returns a <a href="#TokenSource">TokenSource</a> that always returns the same token.
+Because the provided token t is never refreshed, StaticTokenSource is only
+useful for tokens that never expire.
+</p>
+
+  
+
+  </div>
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="Transport" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/x/oauth2/+/v0.36.0:transport.go;l=20">Transport</a> <a class="Documentation-idLink" href="#Transport" title="Go to Transport" aria-label="Go to Transport">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type Transport struct {
+<span id="Transport.Source" data-kind="field">	<span class="comment">// Source supplies the token to add to outgoing requests&#39;</span>
+</span>	<span class="comment">// Authorization headers.</span>
+	Source <a href="#TokenSource">TokenSource</a>
+
+<span id="Transport.Base" data-kind="field">	<span class="comment">// Base is the base RoundTripper used to make HTTP requests.</span>
+</span>	<span class="comment">// If nil, http.DefaultTransport is used.</span>
+	Base <a href="/net/http">http</a>.<a href="/net/http#RoundTripper">RoundTripper</a>
+}</pre>
+    </div>
+  <p>Transport is an <a href="/net/http#RoundTripper">http.RoundTripper</a> that makes OAuth 2.0 HTTP requests,
+wrapping a base <a href="/net/http#RoundTripper">http.RoundTripper</a> and adding an Authorization header
+with a token from the supplied <a href="#TokenSource">TokenSource</a>.
+</p><p>Transport is a low-level mechanism. Most code will use the
+higher-level <a href="#Config.Client">Config.Client</a> method instead.
+</p>
+<div class="Documentation-typeMethod">
+    
+  
+  
+    <details class="Documentation-deprecatedDetails js-deprecatedDetails">
+      <summary>
+        <h4 tabindex="-1" id="Transport.CancelRequest" data-kind="method" class="Documentation-typeMethodHeader">
+          <span class="Documentation-deprecatedTitle">
+            func (*Transport) <a class="Documentation-source" href="https://cs.opensource.google/go/x/oauth2/+/v0.36.0:transport.go;l=64">CancelRequest</a>
+            <span class="Documentation-deprecatedTag">deprecated</span>
+            <span class="Documentation-deprecatedBody"></span>
+          </span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+      </summary>
+      <div class="go-Message go-Message--warning Documentation-deprecatedItemBody">
+        
+    <div class="Documentation-declaration">
+      <pre>func (t *<a href="#Transport">Transport</a>) CancelRequest(req *<a href="/net/http">http</a>.<a href="/net/http#Request">Request</a>)</pre>
+    </div>
+  <p>CancelRequest does nothing. It used to be a legacy cancellation mechanism
+but now only logs on first use to warn that it&#39;s deprecated.
+</p><p>Deprecated: use contexts for cancellation instead.
+</p>
+
+      </div>
+    </details>
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Transport.RoundTrip" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Transport) <a class="Documentation-source" href="https://cs.opensource.google/go/x/oauth2/+/v0.36.0:transport.go;l=32">RoundTrip</a> <a class="Documentation-idLink" href="#Transport.RoundTrip" title="Go to Transport.RoundTrip" aria-label="Go to Transport.RoundTrip">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (t *<a href="#Transport">Transport</a>) RoundTrip(req *<a href="/net/http">http</a>.<a href="/net/http#Request">Request</a>) (*<a href="/net/http">http</a>.<a href="/net/http#Response">Response</a>, <a href="/builtin#error">error</a>)</pre>
+    </div>
+  <p>RoundTrip authorizes and authenticates the request with an
+access token from Transport&#39;s Source.
+</p>
+
+  
+
+  </div>
+  
+
+    </div></section></div> 
+
+
+
+
+
+
+
+      
+    </div>
+  </div>
+
+        
+      
+      
+        
+  <div class="UnitFiles js-unitFiles">
+    <h2 class="UnitFiles-title" id="section-sourcefiles">
+      <img class="go-Icon" height="24" width="24" src="/static/shared/icon/insert_drive_file_gm_grey_24dp.svg" alt="">
+      Source Files
+      <a class="UnitFiles-idLink" href="#section-sourcefiles" title="Go to Source Files" aria-label="Go to Source Files">¶</a>
+    </h2><div class="UnitFiles-titleLink">
+      <a href="https://cs.opensource.google/go/x/oauth2/+/v0.36.0:" target="_blank" rel="noopener">View all Source files</a>
+    </div><div>
+      <ul class="UnitFiles-fileList"><li><a href="https://cs.opensource.google/go/x/oauth2/+/v0.36.0:deviceauth.go" target="_blank" rel="noopener" title="deviceauth.go">deviceauth.go</a></li><li><a href="https://cs.opensource.google/go/x/oauth2/+/v0.36.0:oauth2.go" target="_blank" rel="noopener" title="oauth2.go">oauth2.go</a></li><li><a href="https://cs.opensource.google/go/x/oauth2/+/v0.36.0:pkce.go" target="_blank" rel="noopener" title="pkce.go">pkce.go</a></li><li><a href="https://cs.opensource.google/go/x/oauth2/+/v0.36.0:token.go" target="_blank" rel="noopener" title="token.go">token.go</a></li><li><a href="https://cs.opensource.google/go/x/oauth2/+/v0.36.0:transport.go" target="_blank" rel="noopener" title="transport.go">transport.go</a></li></ul>
+    </div>
+  </div>
+
+      
+      
+        
+  <div class="UnitDirectories js-unitDirectories">
+    <h2 class="UnitDirectories-title" id="section-directories">
+      <img class="go-Icon" height="24" width="24" src="/static/shared/icon/folder_gm_grey_24dp.svg" alt="">
+      Directories
+      <a class="UnitDirectories-idLink" href="#section-directories" title="Go to Directories" aria-label="Go to Directories">¶</a>
+    </h2>
+    <div class="UnitDirectories-toggles">
+      <div class="UnitDirectories-toggleButtons">
+        <button class="js-showInternalDirectories" data-test-id="internal-directories-toggle"
+            data-gtmc="directories button" aria-label="Show Internal Directories">
+          Show internal
+        </button>
+        <button class="js-expandAllDirectories" data-test-id="directories-toggle"
+            data-gtmc="directories button" aria-label="Expand All Directories">
+          Expand all
+        </button>
+      </div>
+    </div>
+    <table class="UnitDirectories-table UnitDirectories-table--tree js-expandableTable"
+          data-test-id="UnitDirectories-table">
+      <tr class="UnitDirectories-tableHeader UnitDirectories-tableHeader--tree">
+        <th>Path</th>
+        <th class="UnitDirectories-desktopSynopsis">Synopsis</th>
+      </tr>
+      
+          
+  
+  <tr
+      class="">
+    <td data-id="amazon" data-aria-owns="">
+      <div class="UnitDirectories-pathCell">
+        <div><a href="/golang.org/x/oauth2@v0.36.0/amazon">amazon</a>
+            
+          </div>
+          <div class="UnitDirectories-mobileSynopsis">Package amazon provides constants for using OAuth2 to access Amazon.</div>
+        </div>
+      </td>
+      <td class="UnitDirectories-desktopSynopsis">Package amazon provides constants for using OAuth2 to access Amazon.</td></tr></tr>
+
+      
+          
+  
+  <tr
+      class="">
+    <td data-id="authhandler" data-aria-owns="">
+      <div class="UnitDirectories-pathCell">
+        <div><a href="/golang.org/x/oauth2@v0.36.0/authhandler">authhandler</a>
+            
+          </div>
+          <div class="UnitDirectories-mobileSynopsis">Package authhandler implements a TokenSource to support &#34;three-legged OAuth 2.0&#34; via a custom AuthorizationHandler.</div>
+        </div>
+      </td>
+      <td class="UnitDirectories-desktopSynopsis">Package authhandler implements a TokenSource to support &#34;three-legged OAuth 2.0&#34; via a custom AuthorizationHandler.</td></tr></tr>
+
+      
+          
+  
+  <tr
+      class="">
+    <td data-id="bitbucket" data-aria-owns="">
+      <div class="UnitDirectories-pathCell">
+        <div><a href="/golang.org/x/oauth2@v0.36.0/bitbucket">bitbucket</a>
+            
+          </div>
+          <div class="UnitDirectories-mobileSynopsis">Package bitbucket provides constants for using OAuth2 to access Bitbucket.</div>
+        </div>
+      </td>
+      <td class="UnitDirectories-desktopSynopsis">Package bitbucket provides constants for using OAuth2 to access Bitbucket.</td></tr></tr>
+
+      
+          
+  
+  <tr
+      class="">
+    <td data-id="cern" data-aria-owns="">
+      <div class="UnitDirectories-pathCell">
+        <div><a href="/golang.org/x/oauth2@v0.36.0/cern">cern</a>
+            
+          </div>
+          <div class="UnitDirectories-mobileSynopsis">Package cern provides constants for using OAuth2 to access CERN services.</div>
+        </div>
+      </td>
+      <td class="UnitDirectories-desktopSynopsis">Package cern provides constants for using OAuth2 to access CERN services.</td></tr></tr>
+
+      
+          
+  
+  <tr
+      class="">
+    <td data-id="clientcredentials" data-aria-owns="">
+      <div class="UnitDirectories-pathCell">
+        <div><a href="/golang.org/x/oauth2@v0.36.0/clientcredentials">clientcredentials</a>
+            
+          </div>
+          <div class="UnitDirectories-mobileSynopsis">Package clientcredentials implements the OAuth2.0 &#34;client credentials&#34; token flow, also known as &#34;two-legged OAuth 2.0&#34;.</div>
+        </div>
+      </td>
+      <td class="UnitDirectories-desktopSynopsis">Package clientcredentials implements the OAuth2.0 &#34;client credentials&#34; token flow, also known as &#34;two-legged OAuth 2.0&#34;.</td></tr></tr>
+
+      
+          
+  
+  <tr
+      class="">
+    <td data-id="endpoints" data-aria-owns="">
+      <div class="UnitDirectories-pathCell">
+        <div><a href="/golang.org/x/oauth2@v0.36.0/endpoints">endpoints</a>
+            
+          </div>
+          <div class="UnitDirectories-mobileSynopsis">Package endpoints provides constants for using OAuth2 to access various services.</div>
+        </div>
+      </td>
+      <td class="UnitDirectories-desktopSynopsis">Package endpoints provides constants for using OAuth2 to access various services.</td></tr></tr>
+
+      
+          
+  
+  <tr
+      class="">
+    <td data-id="facebook" data-aria-owns="">
+      <div class="UnitDirectories-pathCell">
+        <div><a href="/golang.org/x/oauth2@v0.36.0/facebook">facebook</a>
+            
+          </div>
+          <div class="UnitDirectories-mobileSynopsis">Package facebook provides constants for using OAuth2 to access Facebook.</div>
+        </div>
+      </td>
+      <td class="UnitDirectories-desktopSynopsis">Package facebook provides constants for using OAuth2 to access Facebook.</td></tr></tr>
+
+      
+          
+  
+  <tr
+      class="">
+    <td data-id="fitbit" data-aria-owns="">
+      <div class="UnitDirectories-pathCell">
+        <div><a href="/golang.org/x/oauth2@v0.36.0/fitbit">fitbit</a>
+            
+          </div>
+          <div class="UnitDirectories-mobileSynopsis">Package fitbit provides constants for using OAuth2 to access the Fitbit API.</div>
+        </div>
+      </td>
+      <td class="UnitDirectories-desktopSynopsis">Package fitbit provides constants for using OAuth2 to access the Fitbit API.</td></tr></tr>
+
+      
+          
+  
+  <tr
+      class="">
+    <td data-id="foursquare" data-aria-owns="">
+      <div class="UnitDirectories-pathCell">
+        <div><a href="/golang.org/x/oauth2@v0.36.0/foursquare">foursquare</a>
+            
+          </div>
+          <div class="UnitDirectories-mobileSynopsis">Package foursquare provides constants for using OAuth2 to access Foursquare.</div>
+        </div>
+      </td>
+      <td class="UnitDirectories-desktopSynopsis">Package foursquare provides constants for using OAuth2 to access Foursquare.</td></tr></tr>
+
+      
+          
+  
+  <tr
+      class="">
+    <td data-id="github" data-aria-owns="">
+      <div class="UnitDirectories-pathCell">
+        <div><a href="/golang.org/x/oauth2@v0.36.0/github">github</a>
+            
+          </div>
+          <div class="UnitDirectories-mobileSynopsis">Package github provides constants for using OAuth2 to access Github.</div>
+        </div>
+      </td>
+      <td class="UnitDirectories-desktopSynopsis">Package github provides constants for using OAuth2 to access Github.</td></tr></tr>
+
+      
+          
+  
+  <tr
+      class="">
+    <td data-id="gitlab" data-aria-owns="">
+      <div class="UnitDirectories-pathCell">
+        <div><a href="/golang.org/x/oauth2@v0.36.0/gitlab">gitlab</a>
+            
+          </div>
+          <div class="UnitDirectories-mobileSynopsis">Package gitlab provides constants for using OAuth2 to access GitLab.</div>
+        </div>
+      </td>
+      <td class="UnitDirectories-desktopSynopsis">Package gitlab provides constants for using OAuth2 to access GitLab.</td></tr></tr>
+
+      
+          
+  
+  <tr data-aria-controls="google-downscope google-externalaccount google-internal/externalaccountauthorizeduser google-internal/impersonate google-internal/stsexchange "
+      class="">
+    <td data-id="google" data-aria-owns="google-downscope google-externalaccount google-internal/externalaccountauthorizeduser google-internal/impersonate google-internal/stsexchange ">
+      <div class="UnitDirectories-pathCell">
+        <div><button type="button" class="go-Button go-Button--inline UnitDirectories-toggleButton"
+                aria-expanded="false"
+                aria-label="5 more from"
+                data-aria-controls="google-downscope google-externalaccount google-internal/externalaccountauthorizeduser google-internal/impersonate google-internal/stsexchange "
+                data-aria-labelledby="google-button google"
+                data-id="google-button">
+              <img class="go-Icon" height="24" width="24" src="/static/shared/icon/arrow_right_gm_grey_24dp.svg"
+                  alt="">
+            </button><a href="/golang.org/x/oauth2@v0.36.0/google">google</a>
+            
+          </div>
+          <div class="UnitDirectories-mobileSynopsis">Package google provides support for making OAuth2 authorized and authenticated HTTP requests to Google APIs.</div>
+        </div>
+      </td>
+      <td class="UnitDirectories-desktopSynopsis">Package google provides support for making OAuth2 authorized and authenticated HTTP requests to Google APIs.</td></tr><tr data-id="google-downscope" class="">
+      <td>
+        <div class="UnitDirectories-subdirectory">
+          <span>
+            <a href="/golang.org/x/oauth2@v0.36.0/google/downscope">downscope</a>
+            
+            
+          </span>
+          <div class="UnitDirectories-mobileSynopsis">Package downscope implements the ability to downscope, or restrict, the Identity and Access Management permissions that a short-lived Token can use.</div>
+        </div>
+      </td>
+      <td class="UnitDirectories-desktopSynopsis">Package downscope implements the ability to downscope, or restrict, the Identity and Access Management permissions that a short-lived Token can use.</td><tr data-id="google-externalaccount" class="">
+      <td>
+        <div class="UnitDirectories-subdirectory">
+          <span>
+            <a href="/golang.org/x/oauth2@v0.36.0/google/externalaccount">externalaccount</a>
+            
+            
+          </span>
+          <div class="UnitDirectories-mobileSynopsis">Package externalaccount provides support for creating workload identity federation and workforce identity federation token sources that can be used to access Google Cloud resources from external identity providers.</div>
+        </div>
+      </td>
+      <td class="UnitDirectories-desktopSynopsis">Package externalaccount provides support for creating workload identity federation and workforce identity federation token sources that can be used to access Google Cloud resources from external identity providers.</td><tr data-id="google-internal/externalaccountauthorizeduser" class="UnitDirectories-internal">
+      <td>
+        <div class="UnitDirectories-subdirectory">
+          <span>
+            <a href="/golang.org/x/oauth2@v0.36.0/google/internal/externalaccountauthorizeduser">internal/externalaccountauthorizeduser</a>
+            
+            
+          </span>
+          <div class="UnitDirectories-mobileSynopsis"></div>
+        </div>
+      </td>
+      <td class="UnitDirectories-desktopSynopsis"></td><tr data-id="google-internal/impersonate" class="UnitDirectories-internal">
+      <td>
+        <div class="UnitDirectories-subdirectory">
+          <span>
+            <a href="/golang.org/x/oauth2@v0.36.0/google/internal/impersonate">internal/impersonate</a>
+            
+            
+          </span>
+          <div class="UnitDirectories-mobileSynopsis"></div>
+        </div>
+      </td>
+      <td class="UnitDirectories-desktopSynopsis"></td><tr data-id="google-internal/stsexchange" class="UnitDirectories-internal">
+      <td>
+        <div class="UnitDirectories-subdirectory">
+          <span>
+            <a href="/golang.org/x/oauth2@v0.36.0/google/internal/stsexchange">internal/stsexchange</a>
+            
+            
+          </span>
+          <div class="UnitDirectories-mobileSynopsis"></div>
+        </div>
+      </td>
+      <td class="UnitDirectories-desktopSynopsis"></td></tr>
+
+      
+          
+  
+  <tr
+      class="">
+    <td data-id="heroku" data-aria-owns="">
+      <div class="UnitDirectories-pathCell">
+        <div><a href="/golang.org/x/oauth2@v0.36.0/heroku">heroku</a>
+            
+          </div>
+          <div class="UnitDirectories-mobileSynopsis">Package heroku provides constants for using OAuth2 to access Heroku.</div>
+        </div>
+      </td>
+      <td class="UnitDirectories-desktopSynopsis">Package heroku provides constants for using OAuth2 to access Heroku.</td></tr></tr>
+
+      
+          
+  
+  <tr
+      class="">
+    <td data-id="hipchat" data-aria-owns="">
+      <div class="UnitDirectories-pathCell">
+        <div><a href="/golang.org/x/oauth2@v0.36.0/hipchat">hipchat</a>
+            
+          </div>
+          <div class="UnitDirectories-mobileSynopsis">Package hipchat provides constants for using OAuth2 to access HipChat.</div>
+        </div>
+      </td>
+      <td class="UnitDirectories-desktopSynopsis">Package hipchat provides constants for using OAuth2 to access HipChat.</td></tr></tr>
+
+      
+          
+  
+  <tr
+      class="">
+    <td data-id="instagram" data-aria-owns="">
+      <div class="UnitDirectories-pathCell">
+        <div><a href="/golang.org/x/oauth2@v0.36.0/instagram">instagram</a>
+            
+          </div>
+          <div class="UnitDirectories-mobileSynopsis">Package instagram provides constants for using OAuth2 to access Instagram.</div>
+        </div>
+      </td>
+      <td class="UnitDirectories-desktopSynopsis">Package instagram provides constants for using OAuth2 to access Instagram.</td></tr></tr>
+
+      
+          
+  
+  <tr
+      class="UnitDirectories-internal">
+    <td data-id="internal" data-aria-owns="">
+      <div class="UnitDirectories-pathCell">
+        <div><a href="/golang.org/x/oauth2@v0.36.0/internal">internal</a>
+            
+          </div>
+          <div class="UnitDirectories-mobileSynopsis">Package internal contains support packages for golang.org/x/oauth2.</div>
+        </div>
+      </td>
+      <td class="UnitDirectories-desktopSynopsis">Package internal contains support packages for golang.org/x/oauth2.</td></tr></tr>
+
+      
+          
+  
+  <tr
+      class="">
+    <td data-id="jira" data-aria-owns="">
+      <div class="UnitDirectories-pathCell">
+        <div><a href="/golang.org/x/oauth2@v0.36.0/jira">jira</a>
+            
+          </div>
+          <div class="UnitDirectories-mobileSynopsis">Package jira provides claims and JWT signing for OAuth2 to access JIRA/Confluence.</div>
+        </div>
+      </td>
+      <td class="UnitDirectories-desktopSynopsis">Package jira provides claims and JWT signing for OAuth2 to access JIRA/Confluence.</td></tr></tr>
+
+      
+          
+  
+  <tr
+      class="">
+    <td data-id="jws" data-aria-owns="">
+      <div class="UnitDirectories-pathCell">
+        <div><a href="/golang.org/x/oauth2@v0.36.0/jws">jws</a>
+            
+          </div>
+          <div class="UnitDirectories-mobileSynopsis">Package jws provides a partial implementation of JSON Web Signature encoding and decoding.</div>
+        </div>
+      </td>
+      <td class="UnitDirectories-desktopSynopsis">Package jws provides a partial implementation of JSON Web Signature encoding and decoding.</td></tr></tr>
+
+      
+          
+  
+  <tr
+      class="">
+    <td data-id="jwt" data-aria-owns="">
+      <div class="UnitDirectories-pathCell">
+        <div><a href="/golang.org/x/oauth2@v0.36.0/jwt">jwt</a>
+            
+          </div>
+          <div class="UnitDirectories-mobileSynopsis">Package jwt implements the OAuth 2.0 JSON Web Token flow, commonly known as &#34;two-legged OAuth 2.0&#34;.</div>
+        </div>
+      </td>
+      <td class="UnitDirectories-desktopSynopsis">Package jwt implements the OAuth 2.0 JSON Web Token flow, commonly known as &#34;two-legged OAuth 2.0&#34;.</td></tr></tr>
+
+      
+          
+  
+  <tr
+      class="">
+    <td data-id="kakao" data-aria-owns="">
+      <div class="UnitDirectories-pathCell">
+        <div><a href="/golang.org/x/oauth2@v0.36.0/kakao">kakao</a>
+            
+          </div>
+          <div class="UnitDirectories-mobileSynopsis">Package kakao provides constants for using OAuth2 to access Kakao.</div>
+        </div>
+      </td>
+      <td class="UnitDirectories-desktopSynopsis">Package kakao provides constants for using OAuth2 to access Kakao.</td></tr></tr>
+
+      
+          
+  
+  <tr
+      class="">
+    <td data-id="linkedin" data-aria-owns="">
+      <div class="UnitDirectories-pathCell">
+        <div><a href="/golang.org/x/oauth2@v0.36.0/linkedin">linkedin</a>
+            
+          </div>
+          <div class="UnitDirectories-mobileSynopsis">Package linkedin provides constants for using OAuth2 to access LinkedIn.</div>
+        </div>
+      </td>
+      <td class="UnitDirectories-desktopSynopsis">Package linkedin provides constants for using OAuth2 to access LinkedIn.</td></tr></tr>
+
+      
+          
+  
+  <tr
+      class="">
+    <td data-id="mailchimp" data-aria-owns="">
+      <div class="UnitDirectories-pathCell">
+        <div><a href="/golang.org/x/oauth2@v0.36.0/mailchimp">mailchimp</a>
+            
+          </div>
+          <div class="UnitDirectories-mobileSynopsis">Package mailchimp provides constants for using OAuth2 to access MailChimp.</div>
+        </div>
+      </td>
+      <td class="UnitDirectories-desktopSynopsis">Package mailchimp provides constants for using OAuth2 to access MailChimp.</td></tr></tr>
+
+      
+          
+  
+  <tr
+      class="">
+    <td data-id="mailru" data-aria-owns="">
+      <div class="UnitDirectories-pathCell">
+        <div><a href="/golang.org/x/oauth2@v0.36.0/mailru">mailru</a>
+            
+          </div>
+          <div class="UnitDirectories-mobileSynopsis">Package mailru provides constants for using OAuth2 to access Mail.Ru.</div>
+        </div>
+      </td>
+      <td class="UnitDirectories-desktopSynopsis">Package mailru provides constants for using OAuth2 to access Mail.Ru.</td></tr></tr>
+
+      
+          
+  
+  <tr
+      class="">
+    <td data-id="mediamath" data-aria-owns="">
+      <div class="UnitDirectories-pathCell">
+        <div><a href="/golang.org/x/oauth2@v0.36.0/mediamath">mediamath</a>
+            
+          </div>
+          <div class="UnitDirectories-mobileSynopsis">Package mediamath provides constants for using OAuth2 to access MediaMath.</div>
+        </div>
+      </td>
+      <td class="UnitDirectories-desktopSynopsis">Package mediamath provides constants for using OAuth2 to access MediaMath.</td></tr></tr>
+
+      
+          
+  
+  <tr
+      class="">
+    <td data-id="microsoft" data-aria-owns="">
+      <div class="UnitDirectories-pathCell">
+        <div><a href="/golang.org/x/oauth2@v0.36.0/microsoft">microsoft</a>
+            
+          </div>
+          <div class="UnitDirectories-mobileSynopsis">Package microsoft provides constants for using OAuth2 to access Windows Live ID.</div>
+        </div>
+      </td>
+      <td class="UnitDirectories-desktopSynopsis">Package microsoft provides constants for using OAuth2 to access Windows Live ID.</td></tr></tr>
+
+      
+          
+  
+  <tr
+      class="">
+    <td data-id="nokiahealth" data-aria-owns="">
+      <div class="UnitDirectories-pathCell">
+        <div><a href="/golang.org/x/oauth2@v0.36.0/nokiahealth">nokiahealth</a>
+            
+          </div>
+          <div class="UnitDirectories-mobileSynopsis">Package nokiahealth provides constants for using OAuth2 to access the Nokia Health Mate API.</div>
+        </div>
+      </td>
+      <td class="UnitDirectories-desktopSynopsis">Package nokiahealth provides constants for using OAuth2 to access the Nokia Health Mate API.</td></tr></tr>
+
+      
+          
+  
+  <tr
+      class="">
+    <td data-id="odnoklassniki" data-aria-owns="">
+      <div class="UnitDirectories-pathCell">
+        <div><a href="/golang.org/x/oauth2@v0.36.0/odnoklassniki">odnoklassniki</a>
+            
+          </div>
+          <div class="UnitDirectories-mobileSynopsis">Package odnoklassniki provides constants for using OAuth2 to access Odnoklassniki.</div>
+        </div>
+      </td>
+      <td class="UnitDirectories-desktopSynopsis">Package odnoklassniki provides constants for using OAuth2 to access Odnoklassniki.</td></tr></tr>
+
+      
+          
+  
+  <tr
+      class="">
+    <td data-id="paypal" data-aria-owns="">
+      <div class="UnitDirectories-pathCell">
+        <div><a href="/golang.org/x/oauth2@v0.36.0/paypal">paypal</a>
+            
+          </div>
+          <div class="UnitDirectories-mobileSynopsis">Package paypal provides constants for using OAuth2 to access PayPal.</div>
+        </div>
+      </td>
+      <td class="UnitDirectories-desktopSynopsis">Package paypal provides constants for using OAuth2 to access PayPal.</td></tr></tr>
+
+      
+          
+  
+  <tr
+      class="">
+    <td data-id="slack" data-aria-owns="">
+      <div class="UnitDirectories-pathCell">
+        <div><a href="/golang.org/x/oauth2@v0.36.0/slack">slack</a>
+            
+          </div>
+          <div class="UnitDirectories-mobileSynopsis">Package slack provides constants for using OAuth2 to access Slack.</div>
+        </div>
+      </td>
+      <td class="UnitDirectories-desktopSynopsis">Package slack provides constants for using OAuth2 to access Slack.</td></tr></tr>
+
+      
+          
+  
+  <tr
+      class="">
+    <td data-id="spotify" data-aria-owns="">
+      <div class="UnitDirectories-pathCell">
+        <div><a href="/golang.org/x/oauth2@v0.36.0/spotify">spotify</a>
+            
+          </div>
+          <div class="UnitDirectories-mobileSynopsis">Package spotify provides constants for using OAuth2 to access Spotify.</div>
+        </div>
+      </td>
+      <td class="UnitDirectories-desktopSynopsis">Package spotify provides constants for using OAuth2 to access Spotify.</td></tr></tr>
+
+      
+          
+  
+  <tr
+      class="">
+    <td data-id="stackoverflow" data-aria-owns="">
+      <div class="UnitDirectories-pathCell">
+        <div><a href="/golang.org/x/oauth2@v0.36.0/stackoverflow">stackoverflow</a>
+            
+          </div>
+          <div class="UnitDirectories-mobileSynopsis">Package stackoverflow provides constants for using OAuth2 to access Stack Overflow.</div>
+        </div>
+      </td>
+      <td class="UnitDirectories-desktopSynopsis">Package stackoverflow provides constants for using OAuth2 to access Stack Overflow.</td></tr></tr>
+
+      
+          
+  
+  <tr
+      class="">
+    <td data-id="twitch" data-aria-owns="">
+      <div class="UnitDirectories-pathCell">
+        <div><a href="/golang.org/x/oauth2@v0.36.0/twitch">twitch</a>
+            
+          </div>
+          <div class="UnitDirectories-mobileSynopsis">Package twitch provides constants for using OAuth2 to access Twitch.</div>
+        </div>
+      </td>
+      <td class="UnitDirectories-desktopSynopsis">Package twitch provides constants for using OAuth2 to access Twitch.</td></tr></tr>
+
+      
+          
+  
+  <tr
+      class="">
+    <td data-id="uber" data-aria-owns="">
+      <div class="UnitDirectories-pathCell">
+        <div><a href="/golang.org/x/oauth2@v0.36.0/uber">uber</a>
+            
+          </div>
+          <div class="UnitDirectories-mobileSynopsis">Package uber provides constants for using OAuth2 to access Uber.</div>
+        </div>
+      </td>
+      <td class="UnitDirectories-desktopSynopsis">Package uber provides constants for using OAuth2 to access Uber.</td></tr></tr>
+
+      
+          
+  
+  <tr
+      class="">
+    <td data-id="vk" data-aria-owns="">
+      <div class="UnitDirectories-pathCell">
+        <div><a href="/golang.org/x/oauth2@v0.36.0/vk">vk</a>
+            
+          </div>
+          <div class="UnitDirectories-mobileSynopsis">Package vk provides constants for using OAuth2 to access VK.com.</div>
+        </div>
+      </td>
+      <td class="UnitDirectories-desktopSynopsis">Package vk provides constants for using OAuth2 to access VK.com.</td></tr></tr>
+
+      
+          
+  
+  <tr
+      class="">
+    <td data-id="yahoo" data-aria-owns="">
+      <div class="UnitDirectories-pathCell">
+        <div><a href="/golang.org/x/oauth2@v0.36.0/yahoo">yahoo</a>
+            
+          </div>
+          <div class="UnitDirectories-mobileSynopsis">Package yahoo provides constants for using OAuth2 to access Yahoo.</div>
+        </div>
+      </td>
+      <td class="UnitDirectories-desktopSynopsis">Package yahoo provides constants for using OAuth2 to access Yahoo.</td></tr></tr>
+
+      
+          
+  
+  <tr
+      class="">
+    <td data-id="yandex" data-aria-owns="">
+      <div class="UnitDirectories-pathCell">
+        <div><a href="/golang.org/x/oauth2@v0.36.0/yandex">yandex</a>
+            
+          </div>
+          <div class="UnitDirectories-mobileSynopsis">Package yandex provides constants for using OAuth2 to access Yandex APIs.</div>
+        </div>
+      </td>
+      <td class="UnitDirectories-desktopSynopsis">Package yandex provides constants for using OAuth2 to access Yandex APIs.</td></tr></tr>
+
+      
+    </table>
+  </div>
+
+      
+    </div>
+  </div>
+  <div id="showInternal-description" hidden> Click to show internal directories. </div>
+  <div id="hideInternal-description" hidden> Click to hide internal directories. </div>
+</article>
+    <footer class="go-Main-footer"></footer>
+  </main>
+
+    
+  <footer class="go-Footer">
+    
+    <div class="go-Footer-links">
+      <div class="go-Footer-linkColumn">
+        <a href="https://go.dev/solutions" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          Why Go
+        </a>
+        <a href="https://go.dev/solutions#use-cases" class="go-Footer-link"
+            data-gtmc="footer link">
+          Use Cases
+        </a>
+        <a href="https://go.dev/solutions#case-studies" class="go-Footer-link"
+            data-gtmc="footer link">
+          Case Studies
+        </a>
+      </div>
+      <div class="go-Footer-linkColumn">
+        <a href="https://learn.go.dev/" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          Get Started
+        </a>
+        <a href="https://play.golang.org" class="go-Footer-link" data-gtmc="footer link">
+          Playground
+        </a>
+        <a href="https://tour.golang.org" class="go-Footer-link" data-gtmc="footer link">
+          Tour
+        </a>
+        <a href="https://stackoverflow.com/questions/tagged/go?tab=Newest" class="go-Footer-link"
+            data-gtmc="footer link">
+          Stack Overflow
+        </a>
+        <a href="https://go.dev/help" class="go-Footer-link"
+            data-gtmc="footer link">
+          Help
+        </a>
+      </div>
+      <div class="go-Footer-linkColumn">
+        <a href="https://pkg.go.dev" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          Packages
+        </a>
+        <a href="/std" class="go-Footer-link" data-gtmc="footer link">
+          Standard Library
+        </a>
+        <a href="/golang.org/x" class="go-Footer-link" data-gtmc="footer link">
+          Sub-repositories
+        </a>
+        <a href="https://pkg.go.dev/about" class="go-Footer-link" data-gtmc="footer link">
+          About Go Packages
+        </a>
+      </div>
+      <div class="go-Footer-linkColumn">
+        <a href="https://go.dev/project" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          About
+        </a>
+        <a href="https://go.dev/dl/" class="go-Footer-link" data-gtmc="footer link">Download</a>
+        <a href="https://go.dev/blog" class="go-Footer-link" data-gtmc="footer link">Blog</a>
+        <a href="https://github.com/golang/go/issues" class="go-Footer-link" data-gtmc="footer link">
+          Issue Tracker
+        </a>
+        <a href="https://go.dev/doc/devel/release.html" class="go-Footer-link"
+            data-gtmc="footer link">
+          Release Notes
+        </a>
+        <a href="https://go.dev/brand" class="go-Footer-link" data-gtmc="footer link">
+          Brand Guidelines
+        </a>
+        <a href="https://go.dev/conduct" class="go-Footer-link" data-gtmc="footer link">
+          Code of Conduct
+        </a>
+      </div>
+      <div class="go-Footer-linkColumn">
+        <a href="https://www.twitter.com/golang" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          Connect
+        </a>
+        <a href="https://www.twitter.com/golang" class="go-Footer-link" data-gtmc="footer link">
+          Twitter
+        </a>
+        <a href="https://github.com/golang" class="go-Footer-link" data-gtmc="footer link">GitHub</a>
+        <a href="https://invite.slack.golangbridge.org/" class="go-Footer-link"
+            data-gtmc="footer link">
+          Slack
+        </a>
+        <a href="https://reddit.com/r/golang" class="go-Footer-link" data-gtmc="footer link">
+          r/golang
+        </a>
+        <a href="https://www.meetup.com/pro/go" class="go-Footer-link" data-gtmc="footer link">
+          Meetup
+        </a>
+        <a href="https://golangweekly.com/" class="go-Footer-link" data-gtmc="footer link">
+          Golang Weekly
+        </a>
+      </div>
+    </div>
+    <div class="go-Footer-bottom">
+      <img class="go-Footer-gopher"  width="1431" height="901"
+          src="/static/shared/gopher/pilot-bust-1431x901.svg" alt="Gopher in flight goggles">
+      <ul class="go-Footer-listRow">
+        <li class="go-Footer-listItem">
+          <a href="https://go.dev/copyright" data-gtmc="footer link">Copyright</a>
+        </li>
+        <li class="go-Footer-listItem">
+          <a href="https://go.dev/tos" data-gtmc="footer link">Terms of Service</a>
+        </li>
+        <li class="go-Footer-listItem">
+          <a href="http://www.google.com/intl/en/policies/privacy/" data-gtmc="footer link"
+              target="_blank" rel="noopener">
+            Privacy Policy
+          </a>
+        </li>
+        <li class="go-Footer-listItem">
+          <a href="https://go.dev/s/pkgsite-feedback" target="_blank" rel="noopener"
+              data-gtmc="footer link">
+            Report an Issue
+          </a>
+        </li>
+        <li class="go-Footer-listItem">
+          <button class="go-Button go-Button--text go-Footer-toggleTheme js-toggleTheme" aria-label="Theme Toggle">
+            <img data-value="auto" class="go-Icon go-Icon--inverted" height="24" width="24" src="/static/shared/icon/brightness_6_gm_grey_24dp.svg" alt="System theme">
+            <img data-value="dark" class="go-Icon go-Icon--inverted" height="24" width="24" src="/static/shared/icon/brightness_2_gm_grey_24dp.svg" alt="Dark theme">
+            <img data-value="light" class="go-Icon go-Icon--inverted" height="24" width="24" src="/static/shared/icon/light_mode_gm_grey_24dp.svg" alt="Light theme">
+            <p> Theme Toggle </p>
+          </button>
+        </li>
+        <li class="go-Footer-listItem">
+          <button class="go-Button go-Button--text go-Footer-keyboard js-openShortcuts" aria-label="Shorcuts Modal">
+            <img class="go-Icon go-Icon--inverted" height="24" width="24" src="/static/shared/icon/keyboard_grey_24dp.svg" alt="">
+            <p> Shortcuts Modal </p>
+          </button>
+        </li>
+      </ul>
+      <a class="go-Footer-googleLogo" href="https://google.com" target="_blank"rel="noopener"
+          data-gtmc="footer link">
+        <img class="go-Footer-googleLogoImg" height="24" width="72"
+            src="/static/shared/logo/google-white.svg" alt="Google logo">
+      </a>
+    </div>
+  </footer>
+
+    
+  <dialog id="jump-to-modal" class="JumpDialog go-Modal go-Modal--md js-modal">
+    <form method="dialog" data-gmtc="jump to form" aria-label="Jump to Identifier">
+      <div class="Dialog-title go-Modal-header">
+        <h2>Jump to</h2>
+        <button
+          class="go-Button go-Button--inline"
+          type="button"
+          data-modal-close
+          data-gtmc="modal button"
+          aria-label="Close"
+        >
+          <img
+            class="go-Icon"
+            height="24"
+            width="24"
+            src="/static/shared/icon/close_gm_grey_24dp.svg"
+            alt=""
+          />
+        </button>
+      </div>
+      <div class="JumpDialog-filter">
+        <input class="JumpDialog-input go-Input" autocomplete="off" type="text">
+      </div>
+      <div class="JumpDialog-body go-Modal-body">
+        <div class="JumpDialog-list"></div>
+      </div>
+      <div class="go-Modal-actions">
+        <button class="go-Button" data-test-id="close-dialog">Close</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog class="ShortcutsDialog go-Modal go-Modal--sm js-modal">
+    <form method="dialog">
+      <div class="go-Modal-header">
+        <h2>Keyboard shortcuts</h2>
+        <button
+          class="go-Button go-Button--inline"
+          type="button"
+          data-modal-close
+          data-gtmc="modal button"
+          aria-label="Close"
+        >
+          <img
+            class="go-Icon"
+            height="24"
+            width="24"
+            src="/static/shared/icon/close_gm_grey_24dp.svg"
+            alt=""
+          />
+        </button>
+      </div>
+      <div class="go-Modal-body">
+        <table>
+          <tbody>
+            <tr><td class="ShortcutsDialog-key">
+              <strong>?</strong></td><td> : This menu</td>
+            </tr>
+            <tr><td class="ShortcutsDialog-key">
+              <strong>/</strong></td><td> : Search site</td>
+            </tr>
+            <tr><td class="ShortcutsDialog-key">
+              <strong>f</strong> or <strong>F</strong></td><td> : Jump to</td>
+            </tr>
+            <tr>
+              <td class="ShortcutsDialog-key"><strong>y</strong> or <strong>Y</strong></td>
+              <td> : Canonical URL</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="go-Modal-actions">
+        <button class="go-Button" data-test-id="close-dialog">Close</button>
+      </div>
+    </form>
+  </dialog>
+
+    
+      <section class="Cookie-notice js-cookieNotice">
+        <div>go.dev uses cookies from Google to deliver and enhance the quality of its services and to
+        analyze traffic. <a target=_blank href="https://policies.google.com/technologies/cookies">Learn more.</a></div>
+        <div><button class="go-Button">Okay</button></div>
+      </section>
+    
+    
+      <script>
+        // this will throw if the querySelector can’t find the element
+        const gtmId = document.querySelector('.js-gtmID').dataset.gtmid;
+        if (!gtmId) {
+          throw new Error('Google Tag Manager ID not found');
+        }
+        loadScript(`https://www.googletagmanager.com/gtm.js?id=${gtmId}`);
+      </script>
+      <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W8MVQXG"
+                height="0" width="0" style="display:none;visibility:hidden">
+        </iframe>
+      </noscript>
+    
+    
+  
+  <div class="js-canonicalURLPath" data-canonical-url-path="/golang.org/x/oauth2@v0.36.0" hidden></div>
+  <div class="js-playgroundVars" data-modulepath="golang.org/x/oauth2" data-version="v0.36.0" hidden></div>
+  <script>
+    loadScript('/static/frontend/unit/main/main.js')
+  </script>
+
+  <script>
+    loadScript('/static/frontend/unit/unit.js')
+  </script>
+
+  </body>
+</html>

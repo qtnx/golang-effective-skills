@@ -1,17 +1,6 @@
-<!--* toc_depth: 3 *-->
-
 # Go Style Best Practices
 
-https://google.github.io/styleguide/go/best-practices
-
-[Overview](index) | [Guide](guide) | [Decisions](decisions) |
 [Best practices](best-practices)
-
-<!--
-
--->
-
-{% raw %}
 
 **Note:** This is part of a series of documents that outline [Go Style](index)
 at Google. This document is **neither [normative](index#normative) nor
@@ -2410,11 +2399,6 @@ comes up.)
 
 ### Leave testing to the `Test` function
 
-<!-- Note to maintainers: This section overlaps with decisions#assert and
-decisions#mark-test-helpers. The point is not to repeat information, but
-to have one place that summarizes the distinction that newcomers to the
-language often wonder about. -->
-
 Go distinguishes between "test helpers" and "assertion helpers":
 
 *   **Test helpers** are functions that do setup or cleanup tasks. All failures
@@ -3307,12 +3291,6 @@ usage := "" +
   "\n" +
   "custom_tool [args]"
 ```
-
-<!--
-
--->
-
-{% endraw %}
 
 <a id="globals"></a>
 

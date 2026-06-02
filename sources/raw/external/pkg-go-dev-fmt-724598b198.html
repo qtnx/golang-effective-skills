@@ -1,0 +1,3368 @@
+---
+source_name: "External Linked Documentation"
+source_url: "https://pkg.go.dev/fmt"
+retrieved_at: "2026-06-02T06:42:22.048094+00:00"
+content_type: "text/html; charset=utf-8"
+truncated: false
+insecure_tls_fallback: true
+---
+
+
+
+<!DOCTYPE html>
+<html lang="en" data-layout="responsive" data-local="">
+  <head>
+    
+    <script>
+      window.addEventListener('error', window.__err=function f(e){f.p=f.p||[];f.p.push(e)});
+    </script>
+    <script>
+      (function() {
+        const theme = document.cookie.match(/prefers-color-scheme=(light|dark|auto)/)?.[1]
+        if (theme) {
+          document.querySelector('html').setAttribute('data-theme', theme);
+        }
+      }())
+    </script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Package fmt implements formatted I/O with functions analogous to C&#39;s printf and scanf.">
+    
+    <meta class="js-gtmID" data-gtmid="GTM-W8MVQXG">
+    <link rel="shortcut icon" href="/static/shared/icon/favicon.ico">
+    
+  
+    <link rel="canonical" href="https://pkg.go.dev/fmt">
+  
+
+    <link href="/static/frontend/frontend.min.css?version=prod-frontend-00193-fdr" rel="stylesheet">
+    
+    <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="Go Packages">
+    
+    
+  <title>fmt package - fmt - Go Packages</title>
+
+    
+  <link href="/static/frontend/unit/unit.min.css?version=prod-frontend-00193-fdr" rel="stylesheet">
+  
+  <link href="/static/frontend/unit/main/main.min.css?version=prod-frontend-00193-fdr" rel="stylesheet">
+
+
+  </head>
+  <body>
+    
+    <script>
+      function loadScript(src, mod = true) {
+        let s = document.createElement('script');
+        s.src = src;
+        if (mod) {
+          s.type = 'module';
+          s.async = true;
+          s.defer = true
+        }
+        document.head.appendChild(s);
+      }
+      loadScript("/third_party/dialog-polyfill/dialog-polyfill.js", false)
+      loadScript("/static/frontend/frontend.js");
+    </script>
+    
+  <header class="go-Header go-Header--full js-siteHeader">
+    <div class="go-Header-inner go-Header-inner--dark">
+      <nav class="go-Header-nav">
+        <a href="https://go.dev/" class="js-headerLogo" data-gtmc="nav link"
+            data-test-id="go-header-logo-link" role="heading" aria-level="1">
+          <img class="go-Header-logo" src="/static/shared/logo/go-white.svg" alt="Go">
+        </a>
+         <div class="skip-navigation-wrapper">
+            <a class="skip-to-content-link" aria-label="Skip to main content" href="#main-content"> Skip to Main Content </a>
+          </div>
+        <div class="go-Header-rightContent">
+          
+<div class="go-SearchForm js-searchForm">
+  <form
+    class="go-InputGroup go-ShortcutKey go-SearchForm-form"
+    action="/search"
+    data-shortcut="/"
+    data-shortcut-alt="search"
+    data-gtmc="search form"
+    aria-label="Search for a package"
+    role="search"
+  >
+    <input name="q" class="go-Input js-searchFocus" aria-label="Search for a package" type="search"
+        autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false"
+        placeholder="Search packages or symbols"
+        value="" />
+    <input name="m" value="" hidden>
+    <button class="go-Button go-Button--inverted" aria-label="Submit search">
+      <img
+        class="go-Icon"
+        height="24"
+        width="24"
+        src="/static/shared/icon/search_gm_grey_24dp.svg"
+        alt=""
+      />
+    </button>
+  </form>
+  <button class="go-SearchForm-expandSearch js-expandSearch" data-gtmc="nav button"
+      aria-label="Open search" data-test-id="expand-search">
+    <img class="go-Icon go-Icon--inverted" height="24" width="24"
+        src="/static/shared/icon/search_gm_grey_24dp.svg" alt="">
+
+  </button>
+</div>
+
+          <ul class="go-Header-menu">
+            <li class="go-Header-menuItem">
+              <a class="js-desktop-menu-hover" href="#" data-gtmc="nav link">
+                Why Go
+                <img class="go-Icon" height="24" width="24" src="/static/shared/icon/arrow_drop_down_gm_grey_24dp.svg" alt="submenu dropdown icon">
+              </a>
+              <ul class="go-Header-submenu go-Header-submenu--why js-desktop-submenu-hover" aria-label="submenu">
+                  <li class="go-Header-submenuItem">
+                    <div>
+                      <a href="https://go.dev/solutions#case-studies">
+                        <span>Case Studies</span>
+                      </a>
+                    </div>
+                    <p>Common problems companies solve with Go</p>
+                  </li>
+                  <li class="go-Header-submenuItem">
+                    <div>
+                      <a href="https://go.dev/solutions#use-cases">
+                        <span>Use Cases</span>
+                      </a>
+                    </div>
+                    <p>Stories about how and why companies use Go</p>
+                  </li>
+                  <li class="go-Header-submenuItem">
+                    <div>
+                      <a href="https://go.dev/security/">
+                        <span>Security</span>
+                      </a>
+                    </div>
+                    <p>How Go can help keep you secure by default</p>
+                  </li>
+              </ul>
+            </li>
+            <li class="go-Header-menuItem">
+              <a href="https://go.dev/learn/" data-gtmc="nav link">Learn</a>
+            </li>
+            <li class="go-Header-menuItem">
+              <a class="js-desktop-menu-hover" href="#" data-gtmc="nav link">
+                Docs
+                <img class="go-Icon" height="24" width="24" src="/static/shared/icon/arrow_drop_down_gm_grey_24dp.svg" alt="submenu dropdown icon">
+              </a>
+              <ul class="go-Header-submenu go-Header-submenu--docs js-desktop-submenu-hover" aria-label="submenu">
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/doc/effective_go">
+                      <span>Effective Go</span>
+                    </a>
+                  </div>
+                  <p>Tips for writing clear, performant, and idiomatic Go code</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/doc/">
+                      <span>Go User Manual</span>
+                    </a>
+                  </div>
+                  <p>A complete introduction to building software with Go</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://pkg.go.dev/std">
+                      <span>Standard library</span>
+                    </a>
+                  </div>
+                  <p>Reference documentation for Go's standard library</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/doc/devel/release">
+                      <span>Release Notes</span>
+                    </a>
+                  </div>
+                  <p>Learn what's new in each Go release</p>
+                </li>
+              </ul>
+            </li>
+            <li class="go-Header-menuItem go-Header-menuItem--active">
+              <a href="/" data-gtmc="nav link">Packages</a>
+            </li>
+            <li class="go-Header-menuItem">
+              <a class="js-desktop-menu-hover" href="#" data-gtmc="nav link">
+                Community
+                <img class="go-Icon" height="24" width="24" src="/static/shared/icon/arrow_drop_down_gm_grey_24dp.svg" alt="submenu dropdown icon">
+              </a>
+              <ul class="go-Header-submenu go-Header-submenu--community js-desktop-submenu-hover" aria-label="submenu">
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/talks/">
+                      <span>Recorded Talks</span>
+                    </a>
+                  </div>
+                  <p>Videos from prior events</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://www.meetup.com/pro/go">
+                      <span>Meetups</span>
+                      <i class="material-icons">
+                        <img class="go-Icon" height="24" width="24"
+                            src="/static/shared/icon/launch_gm_grey_24dp.svg" alt="">
+                      </i>
+                    </a>
+                  </div>
+                  <p>Meet other local Go developers</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://github.com/golang/go/wiki/Conferences">
+                      <span>Conferences</span>
+                      <i class="material-icons">
+                        <img class="go-Icon" height="24" width="24"
+                            src="/static/shared/icon/launch_gm_grey_24dp.svg" alt="">
+                      </i>
+                    </a>
+                  </div>
+                  <p>Learn and network with Go developers from around the world</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/blog">
+                      <span>Go blog</span>
+                    </a>
+                  </div>
+                  <p>The Go project's official blog.</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/help">
+                      <span>Go project</span>
+                    </a>
+                  </div>
+                  <p>Get help and stay informed from Go</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    Get connected
+                  </div>
+                  <p></p>
+                  <div class="go-Header-socialIcons">
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with google-groups (Opens in new window)"
+                        title="Get connected with google-groups (Opens in new window)"
+                        href="https://groups.google.com/g/golang-nuts">
+                        <img src="/static/shared/logo/social/google-groups.svg" />
+                      </a>
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with github (Opens in new window)"
+                        title="Get connected with github (Opens in new window)"
+                        href="https://github.com/golang">
+                        <img src="/static/shared/logo/social/github.svg" />
+                      </a>
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with twitter (Opens in new window)"
+                        title="Get connected with twitter (Opens in new window)"
+                        href="https://twitter.com/golang">
+                        <img src="/static/shared/logo/social/twitter.svg" />
+                      </a>
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with reddit (Opens in new window)"
+                        title="Get connected with reddit (Opens in new window)"
+                        href="https://www.reddit.com/r/golang/">
+                        <img src="/static/shared/logo/social/reddit.svg" />
+                      </a>
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with slack (Opens in new window)"
+                        title="Get connected with slack (Opens in new window)"
+                        href="https://invite.slack.golangbridge.org/">
+                        <img src="/static/shared/logo/social/slack.svg" />
+                      </a>
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with stack-overflow (Opens in new window)"
+                        title=""
+                        href="https://stackoverflow.com/collectives/go">
+                        <img src="/static/shared/logo/social/stack-overflow.svg" />
+                      </a>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <button class="go-Header-navOpen js-headerMenuButton go-Header-navOpen--white" data-gtmc="nav button" aria-label="Open navigation">
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <aside class="go-NavigationDrawer js-header">
+    <nav class="go-NavigationDrawer-nav">
+      <div class="go-NavigationDrawer-header">
+        <a href="https://go.dev/">
+          <img class="go-NavigationDrawer-logo" src="/static/shared/logo/go-blue.svg" alt="Go.">
+        </a>
+      </div>
+      <ul class="go-NavigationDrawer-list">
+          <li class="go-NavigationDrawer-listItem js-mobile-subnav-trigger go-NavigationDrawer-hasSubnav">
+            <a href="#">
+              <span>Why Go</span>
+              <i class="material-icons">
+                <img class="go-Icon" height="24" width="24"
+                  src="/static/shared/icon/navigate_next_gm_grey_24dp.svg" alt="">
+              </i>
+            </a>
+
+            <div class="go-NavigationDrawer go-NavigationDrawer-submenuItem">
+              <div class="go-NavigationDrawer-nav">
+                <div class="go-NavigationDrawer-header">
+                  <a href="#">
+                    <i class="material-icons">
+                      <img class="go-Icon" height="24" width="24"
+                        src="/static/shared/icon/navigate_before_gm_grey_24dp.svg" alt="">
+                      </i>
+                      Why Go
+                  </a>
+                </div>
+                <ul class="go-NavigationDrawer-list">
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/solutions#case-studies">
+                      Case Studies
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/solutions#use-cases">
+                      Use Cases
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/security/">
+                      Security
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="go-NavigationDrawer-listItem">
+            <a href="https://go.dev/learn/">Learn</a>
+          </li>
+          <li class="go-NavigationDrawer-listItem js-mobile-subnav-trigger go-NavigationDrawer-hasSubnav">
+            <a href="#">
+              <span>Docs</span>
+              <i class="material-icons">
+                <img class="go-Icon" height="24" width="24"
+                  src="/static/shared/icon/navigate_next_gm_grey_24dp.svg" alt="">
+              </i>
+            </a>
+
+            <div class="go-NavigationDrawer go-NavigationDrawer-submenuItem">
+              <div class="go-NavigationDrawer-nav">
+                <div class="go-NavigationDrawer-header">
+                  <a href="#"><i class="material-icons">
+                    <img class="go-Icon" height="24" width="24"
+                      src="/static/shared/icon/navigate_before_gm_grey_24dp.svg" alt="">
+                    </i>
+                    Docs
+                  </a>
+                </div>
+                <ul class="go-NavigationDrawer-list">
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/doc/effective_go">
+                      Effective Go
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/doc/">
+                      Go User Manual
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://pkg.go.dev/std">
+                      Standard library
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/doc/devel/release">
+                      Release Notes
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="go-NavigationDrawer-listItem go-NavigationDrawer-listItem--active">
+            <a href="/">Packages</a>
+          </li>
+          <li class="go-NavigationDrawer-listItem js-mobile-subnav-trigger go-NavigationDrawer-hasSubnav">
+            <a href="#">
+              <span>Community</span>
+              <i class="material-icons">
+                <img class="go-Icon" height="24" width="24"
+                  src="/static/shared/icon/navigate_next_gm_grey_24dp.svg" alt="">
+              </i>
+            </a>
+            <div class="go-NavigationDrawer go-NavigationDrawer-submenuItem">
+              <div class="go-NavigationDrawer-nav">
+                <div class="go-NavigationDrawer-header">
+                  <a href="#">
+                    <i class="material-icons">
+                      <img class="go-Icon" height="24" width="24"
+                        src="/static/shared/icon/navigate_before_gm_grey_24dp.svg" alt="">
+                    </i>
+                    Community
+                  </a>
+                </div>
+                <ul class="go-NavigationDrawer-list">
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/talks/">
+                      Recorded Talks
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://www.meetup.com/pro/go">
+                      Meetups
+                      <i class="material-icons">
+                      <img class="go-Icon" height="24" width="24"
+                          src="/static/shared/icon/launch_gm_grey_24dp.svg" alt="">
+                      </i>
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://github.com/golang/go/wiki/Conferences">
+                      Conferences
+                      <i class="material-icons">
+                        <img class="go-Icon" height="24" width="24" src="/static/shared/icon/launch_gm_grey_24dp.svg" alt="">
+                      </i>
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/blog">
+                      Go blog
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/help">
+                      Go project
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <div>Get connected</div>
+                    <div class="go-Header-socialIcons">
+                        <a class="go-Header-socialIcon" href="https://groups.google.com/g/golang-nuts"><img src="/static/shared/logo/social/google-groups.svg" /></a>
+                        <a class="go-Header-socialIcon" href="https://github.com/golang"><img src="/static/shared/logo/social/github.svg" /></a>
+                        <a class="go-Header-socialIcon" href="https://twitter.com/golang"><img src="/static/shared/logo/social/twitter.svg" /></a>
+                        <a class="go-Header-socialIcon" href="https://www.reddit.com/r/golang/"><img src="/static/shared/logo/social/reddit.svg" /></a>
+                        <a class="go-Header-socialIcon" href="https://invite.slack.golangbridge.org/"><img src="/static/shared/logo/social/slack.svg" /></a>
+                        <a class="go-Header-socialIcon" href="https://stackoverflow.com/collectives/go"><img src="/static/shared/logo/social/stack-overflow.svg" /></a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+      </ul>
+    </nav>
+  </aside>
+  <div class="go-NavigationDrawer-scrim js-scrim" role="presentation"></div>
+
+    
+  <main class="go-Main" id="main-content">
+    <div class="go-Main-banner" role="alert"></div>
+    <header class="go-Main-header js-mainHeader">
+  
+  
+  <nav class="go-Main-headerBreadcrumb go-Breadcrumb" aria-label="Breadcrumb" data-test-id="UnitHeader-breadcrumb">
+    <ol>
+      
+        
+          <li data-test-id="UnitHeader-breadcrumbItem">
+            <a href="/" data-gtmc="breadcrumb link">Discover Packages</a>
+          </li>
+        
+          <li data-test-id="UnitHeader-breadcrumbItem">
+            <a href="/std" data-gtmc="breadcrumb link">Standard library</a>
+          </li>
+        
+        <li>
+          <a href="/fmt@go1.26.3" data-gtmc="breadcrumb link" aria-current="location"
+              data-test-id="UnitHeader-breadcrumbCurrent">
+            fmt
+          </a>
+          
+            <button
+              class="go-Button go-Button--inline go-Clipboard js-clipboard"
+              title="Copy path to clipboard.&#10;&#10;fmt"
+              aria-label="Copy Path to Clipboard"
+              data-to-copy="fmt"
+              data-gtmc="breadcrumbs button"
+            >
+              <img
+                class="go-Icon go-Icon--accented"
+                height="24"
+                width="24"
+                src="/static/shared/icon/content_copy_gm_grey_24dp.svg"
+                alt=""
+              >
+            </button>
+          
+        
+      </li>
+    </ol>
+  </nav>
+
+  <div class="go-Main-headerContent">
+    
+  <div class="go-Main-headerTitle js-stickyHeader">
+    <a class="go-Main-headerLogo" href="https://go.dev/" aria-hidden="true" tabindex="-1" data-gtmc="header link" aria-label="Link to Go Homepage">
+      <img height="78" width="207" src="/static/shared/logo/go-blue.svg" alt="Go">
+    </a>
+    <h1 class="UnitHeader-titleHeading" data-test-id="UnitHeader-title">fmt</h1>
+    
+      <span class="go-Chip go-Chip--inverted">package</span>
+    
+      <span class="go-Chip go-Chip--inverted">standard library</span>
+    
+    
+      
+        <button
+          class="go-Button go-Button--inline go-Clipboard js-clipboard"
+          title="Copy path to clipboard.&#10;&#10;fmt"
+          aria-label="Copy Path to Clipboard"
+          data-to-copy="fmt"
+          data-gtmc="title button"
+          tabindex="-1"
+        >
+          <img
+            class="go-Icon go-Icon--accented"
+            height="24"
+            width="24"
+            src="/static/shared/icon/content_copy_gm_grey_24dp.svg"
+            alt=""
+          />
+        </button>
+      
+    
+  </div>
+
+    
+      
+  <div class="go-Main-headerDetails">
+    
+      
+  <span class="go-Main-headerDetailItem" data-test-id="UnitHeader-version">
+    <a href="?tab=versions" aria-label="Version: go1.26.3" 
+    data-gtmc="header link" aria-describedby="version-description">
+      <span class="go-textSubtle" aria-hidden="true">Version: </span>
+        go1.26.3
+    </a>
+    <div class="screen-reader-only" id="version-description" hidden>
+      Opens a new window with list of versions in this module.
+    </div>
+    
+    <span class="DetailsHeader-badge--latest" data-test-id="UnitHeader-minorVersionBanner">
+      <span class="go-Chip DetailsHeader-span--latest">Latest</span>
+      <span class="go-Chip DetailsHeader-span--notAtLatest">
+        Latest
+        
+  <details class="go-Tooltip js-tooltip" data-gtmc="tooltip">
+    <summary>
+      <img class="go-Icon go-Icon--inverted" height="24" width="24" src="/static/shared/icon/alert_gm_grey_24dp.svg" alt="Warning">
+    </summary>
+    <p>This package is not in the latest version of its module.</p>
+  </details>
+
+      </span>
+      <a href="/fmt" aria-label="Go to Latest Version" data-gtmc="header link">
+        <span class="go-Chip go-Chip--alert DetailsHeader-span--goToLatest">Go to latest</span>
+      </a>
+    </span>
+  </span>
+
+      
+  <span class="go-Main-headerDetailItem" data-test-id="UnitHeader-commitTime">
+    Published: May  7, 2026
+  </span>
+
+      
+  <span class="go-Main-headerDetailItem" data-test-id="UnitHeader-licenses">
+    License: <a href="/fmt?tab=licenses" data-test-id="UnitHeader-license" 
+        data-gtmc="header link" aria-describedby="license-description">BSD-3-Clause</a>
+      
+    
+  </span>
+  <div class="screen-reader-only" id="license-description" hidden>
+    Opens a new window with license information.
+  </div>
+
+      
+        
+  <span class="go-Main-headerDetailItem" data-test-id="UnitHeader-imports">
+    <a href="/fmt?tab=imports" aria-label="Imports: 11"
+        data-gtmc="header link" aria-describedby="imports-description">
+      <span class="go-textSubtle">Imports: </span>11
+    </a>
+  </span>
+  <div class="screen-reader-only" id="imports-description" hidden>
+    Opens a new window with list of imports.
+  </div>
+
+        
+  <span class="go-Main-headerDetailItem" data-test-id="UnitHeader-importedby">
+    <a href="/fmt?tab=importedby" aria-label="Imported By: 5,643,267"
+        data-gtmc="header link" aria-describedby="importedby-description">
+       <span class="go-textSubtle">Imported by: </span>5,643,267
+    </a>
+  </span>
+  <div class="screen-reader-only" id="importedby-description" hidden>
+    Opens a new window with list of known importers.
+  </div>
+
+      
+    
+  </div>
+  
+  <div class="UnitHeader-overflowContainer">
+    <svg class="UnitHeader-overflowImage" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+      <path d="M0 0h24v24H0z" fill="none"/>
+      <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+    </svg>
+    <select class="UnitHeader-overflowSelect js-selectNav" tabindex="-1">
+      <option value="/">Main</option>
+      <option value="/fmt?tab=versions">
+        Versions
+      </option>
+      <option value="/fmt?tab=licenses">
+        Licenses
+      </option>
+      
+        <option value="/fmt?tab=imports">
+          Imports
+        </option>
+        <option value="/fmt?tab=importedby">
+          Imported By
+        </option>
+      
+    </select>
+  </div>
+
+
+    
+  </div>
+
+</header>
+    
+      <aside class="go-Main-aside  js-mainAside">
+  
+  <div class="UnitMeta">
+    <h2 class="go-textLabel">Details</h2>
+    
+  <ul class="UnitMeta-details">
+    <li>
+      <details class="go-Tooltip js-tooltip" data-gtmc="tooltip">
+        <summary class="go-textSubtle">
+          
+  <img class="go-Icon go-Icon--accented"
+    tabindex="0"
+    role="button"src="/static/shared/icon/check_circle_gm_grey_24dp.svg" alt="checked" aria-label="Valid file, toggle tooltip"height="24" width="24">
+
+          Valid <a href="https://cs.opensource.google/go/go/+/go1.26.3:src/go.mod" target="_blank" rel="noopener">go.mod</a> file
+          <img class="go-Icon" role="button" tabindex="0" src="/static/shared/icon/help_gm_grey_24dp.svg" alt="" aria-label="Toggle go.mod validity tooltip" height="24" width="24">
+        </summary>
+        <p aria-live="polite" role="tooltip">
+          The Go module system was introduced in Go 1.11 and is the official dependency management
+          solution for Go.
+        </p>
+      </details>
+    </li>
+    <li>
+      <details class="go-Tooltip js-tooltip" data-gtmc="tooltip">
+        <summary class="go-textSubtle">
+          
+  <img class="go-Icon go-Icon--accented"
+    tabindex="0"
+    role="button"src="/static/shared/icon/check_circle_gm_grey_24dp.svg" alt="checked" aria-label="Valid file, toggle tooltip"height="24" width="24">
+
+          Redistributable license
+          <img class="go-Icon" role="button" tabindex="0" src="/static/shared/icon/help_gm_grey_24dp.svg" alt="" aria-label="Toggle redistributable help tooltip" height="24" width="24">
+        </summary>
+        <p aria-live="polite" role="tooltip">
+          Redistributable licenses place minimal restrictions on how software can be used,
+          modified, and redistributed.
+        </p>
+      </details>
+    </li>
+    <li>
+      <details class="go-Tooltip js-tooltip" data-gtmc="tooltip">
+        <summary class="go-textSubtle">
+          
+  <img class="go-Icon go-Icon--accented"
+    tabindex="0"
+    role="button"src="/static/shared/icon/check_circle_gm_grey_24dp.svg" alt="checked" aria-label="Valid file, toggle tooltip"height="24" width="24">
+
+          Tagged version
+          <img class="go-Icon" role="button" tabindex="0" src="/static/shared/icon/help_gm_grey_24dp.svg" alt="" aria-label="Toggle tagged version tooltip" height="24" width="24">
+        </summary>
+        <p aria-live="polite" role="tooltip">Modules with tagged versions give importers more predictable builds.</p>
+      </details>
+    </li>
+    <li>
+      <details class="go-Tooltip js-tooltip" data-gtmc="tooltip">
+        <summary class="go-textSubtle">
+          
+  <img class="go-Icon go-Icon--accented"
+    tabindex="0"
+    role="button"src="/static/shared/icon/check_circle_gm_grey_24dp.svg" alt="checked" aria-label="Valid file, toggle tooltip"height="24" width="24">
+
+          Stable version
+          <img class="go-Icon" role="button" tabindex="0" aria-label="Toggle stable version tooltip" src="/static/shared/icon/help_gm_grey_24dp.svg" alt="" height="24" width="24">
+        </summary>
+        <p aria-live="polite" role="tooltip">When a project reaches major version v1 it is considered stable.</p>
+      </details>
+    </li>
+    <li class="UnitMeta-detailsLearn">
+      <a href="/about#best-practices" data-gtmc="meta link">Learn more about best practices</a>
+    </li>
+  </ul>
+
+    <h2 class="go-textLabel">Repository</h2>
+    <div class="UnitMeta-repo">
+      
+        <a href="https://cs.opensource.google/go/go" title="https://cs.opensource.google/go/go" target="_blank" rel="noopener">
+          cs.opensource.google/go/go
+        </a>
+      
+    </div>
+    
+      <h2 class="go-textLabel" data-test-id="links-heading">Links</h2>
+      <ul class="UnitMeta-links">
+        
+          <li>
+            <a href="https://go.dev/security/policy"
+                title="Report security issues in the Go standard library and sub-repositories">
+              <img class="go-Icon" height="24" width="24" src="/static/shared/icon/security_grey_24dp.svg" alt="">
+              Report a Vulnerability
+            </a>
+          </li>
+        
+        
+        
+        
+  
+
+        
+  
+
+        
+  
+
+      </ul>
+    
+  </div>
+
+</aside>
+    
+    <nav class="go-Main-nav go-Main-nav--sticky js-mainNav" aria-label="Outline">
+  <div class="go-Main-navDesktop">
+    
+  <div class="UnitOutline-jumpTo">
+    <button class="UnitOutline-jumpToInput go-ShortcutKey js-jumpToInput"
+        aria-controls="jump-to-modal"
+        aria-label="Open Jump to Identifier"
+        data-shortcut="f"
+        data-shortcut-alt="find"
+        data-test-id="jump-to-button" data-gtmc="outline button">
+      Jump to ...
+    </button>
+  </div>
+  <ul class="go-Tree js-tree" role="tree" aria-label="Outline">
+    
+    
+      <li>
+        <a href="#section-documentation" data-gtmc="outline link">
+          Documentation
+        </a>
+        
+<ul>
+  
+    <li>
+      <a href="#pkg-overview" data-gtmc="doc outline link">Overview</a>
+    </li>
+  <li class="DocNav-overview">
+      <a href="#pkg-index" data-gtmc="doc outline link">
+        Index
+      </a>
+    </li>
+      <li>
+        <a href="#pkg-examples" data-gtmc="doc outline link">
+          Examples
+        </a>
+        <ul>
+            <li>
+              <a href="#example-package-Formats" title="Package (Formats)" data-gtmc="doc outline link">
+                Package (Formats)
+              </a>
+            </li>
+            <li>
+              <a href="#example-package-Printers" title="Package (Printers)" data-gtmc="doc outline link">
+                Package (Printers)
+              </a>
+            </li>
+            <li>
+              <a href="#example-Errorf" title="Errorf" data-gtmc="doc outline link">
+                Errorf
+              </a>
+            </li>
+            <li>
+              <a href="#example-Fprint" title="Fprint" data-gtmc="doc outline link">
+                Fprint
+              </a>
+            </li>
+            <li>
+              <a href="#example-Fprintf" title="Fprintf" data-gtmc="doc outline link">
+                Fprintf
+              </a>
+            </li>
+            <li>
+              <a href="#example-Fprintln" title="Fprintln" data-gtmc="doc outline link">
+                Fprintln
+              </a>
+            </li>
+            <li>
+              <a href="#example-Fscanf" title="Fscanf" data-gtmc="doc outline link">
+                Fscanf
+              </a>
+            </li>
+            <li>
+              <a href="#example-Fscanln" title="Fscanln" data-gtmc="doc outline link">
+                Fscanln
+              </a>
+            </li>
+            <li>
+              <a href="#example-GoStringer" title="GoStringer" data-gtmc="doc outline link">
+                GoStringer
+              </a>
+            </li>
+            <li>
+              <a href="#example-Print" title="Print" data-gtmc="doc outline link">
+                Print
+              </a>
+            </li>
+            <li>
+              <a href="#example-Printf" title="Printf" data-gtmc="doc outline link">
+                Printf
+              </a>
+            </li>
+            <li>
+              <a href="#example-Println" title="Println" data-gtmc="doc outline link">
+                Println
+              </a>
+            </li>
+            <li>
+              <a href="#example-Sprint" title="Sprint" data-gtmc="doc outline link">
+                Sprint
+              </a>
+            </li>
+            <li>
+              <a href="#example-Sprintf" title="Sprintf" data-gtmc="doc outline link">
+                Sprintf
+              </a>
+            </li>
+            <li>
+              <a href="#example-Sprintln" title="Sprintln" data-gtmc="doc outline link">
+                Sprintln
+              </a>
+            </li>
+            <li>
+              <a href="#example-Sscanf" title="Sscanf" data-gtmc="doc outline link">
+                Sscanf
+              </a>
+            </li>
+            <li>
+              <a href="#example-Stringer" title="Stringer" data-gtmc="doc outline link">
+                Stringer
+              </a>
+            </li>
+        </ul>
+      </li>
+    <li class="DocNav-constants">
+      <a href="#pkg-constants" data-gtmc="doc outline link">
+        Constants
+      </a>
+    </li>
+    <li class="DocNav-variables">
+      <a href="#pkg-variables" data-gtmc="doc outline link">
+        Variables
+      </a>
+    </li>
+    <li class="DocNav-functions">
+      <a href="#pkg-functions" data-gtmc="doc outline link">
+        Functions
+      </a>
+      
+        <ul>
+          
+            <li>
+              <a href="#Append" title="Append(b, a)" data-gtmc="doc outline link">
+                Append(b, a)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Appendf" title="Appendf(b, format, a)" data-gtmc="doc outline link">
+                Appendf(b, format, a)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Appendln" title="Appendln(b, a)" data-gtmc="doc outline link">
+                Appendln(b, a)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Errorf" title="Errorf(format, a)" data-gtmc="doc outline link">
+                Errorf(format, a)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#FormatString" title="FormatString(state, verb)" data-gtmc="doc outline link">
+                FormatString(state, verb)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Fprint" title="Fprint(w, a)" data-gtmc="doc outline link">
+                Fprint(w, a)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Fprintf" title="Fprintf(w, format, a)" data-gtmc="doc outline link">
+                Fprintf(w, format, a)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Fprintln" title="Fprintln(w, a)" data-gtmc="doc outline link">
+                Fprintln(w, a)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Fscan" title="Fscan(r, a)" data-gtmc="doc outline link">
+                Fscan(r, a)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Fscanf" title="Fscanf(r, format, a)" data-gtmc="doc outline link">
+                Fscanf(r, format, a)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Fscanln" title="Fscanln(r, a)" data-gtmc="doc outline link">
+                Fscanln(r, a)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Print" title="Print(a)" data-gtmc="doc outline link">
+                Print(a)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Printf" title="Printf(format, a)" data-gtmc="doc outline link">
+                Printf(format, a)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Println" title="Println(a)" data-gtmc="doc outline link">
+                Println(a)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Scan" title="Scan(a)" data-gtmc="doc outline link">
+                Scan(a)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Scanf" title="Scanf(format, a)" data-gtmc="doc outline link">
+                Scanf(format, a)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Scanln" title="Scanln(a)" data-gtmc="doc outline link">
+                Scanln(a)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Sprint" title="Sprint(a)" data-gtmc="doc outline link">
+                Sprint(a)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Sprintf" title="Sprintf(format, a)" data-gtmc="doc outline link">
+                Sprintf(format, a)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Sprintln" title="Sprintln(a)" data-gtmc="doc outline link">
+                Sprintln(a)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Sscan" title="Sscan(str, a)" data-gtmc="doc outline link">
+                Sscan(str, a)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Sscanf" title="Sscanf(str, format, a)" data-gtmc="doc outline link">
+                Sscanf(str, format, a)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Sscanln" title="Sscanln(str, a)" data-gtmc="doc outline link">
+                Sscanln(str, a)
+              </a>
+            </li>
+          
+        </ul>
+      
+    </li>
+    <li class="DocNav-types">
+      <a href="#pkg-types" data-gtmc="doc outline link">
+        Types
+      </a>
+      <ul>
+        
+          
+          <li>
+            <a href="#Formatter" title="type Formatter" data-gtmc="doc outline link">
+              type Formatter
+            </a>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#GoStringer" title="type GoStringer" data-gtmc="doc outline link">
+              type GoStringer
+            </a>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#ScanState" title="type ScanState" data-gtmc="doc outline link">
+              type ScanState
+            </a>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#Scanner" title="type Scanner" data-gtmc="doc outline link">
+              type Scanner
+            </a>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#State" title="type State" data-gtmc="doc outline link">
+              type State
+            </a>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#Stringer" title="type Stringer" data-gtmc="doc outline link">
+              type Stringer
+            </a>
+             
+          </li>
+         
+      </ul>
+    </li>
+  
+  
+</ul>
+
+      </li>
+    
+    
+      <li>
+        <a href="#section-sourcefiles" data-gtmc="outline link">
+          Source Files
+        </a>
+      </li>
+    
+    
+  </ul>
+
+  </div>
+  <div class="go-Main-navMobile js-mainNavMobile">
+    <label class="go-Label">
+      <select class="go-Select">
+        
+          <option selected disabled>Documentation</option>
+        
+      </select>
+    </label>
+  </div>
+</nav>
+    <article class="go-Main-article js-mainContent">
+  <div class="UnitDetails" data-test-id="UnitDetails" style="display: block;">
+    <div class="UnitDetails-content js-unitDetailsContent" data-test-id="UnitDetails-content">
+      
+      
+        
+          
+  <div class="UnitDoc">
+    <h2 class="UnitDoc-title" id="section-documentation">
+      <img class="go-Icon" height="24" width="24" src="/static/shared/icon/code_gm_grey_24dp.svg" alt="">
+      Documentation
+      <a class="UnitDoc-idLink" href="#section-documentation" title="Go to Documentation" aria-label="Go to Documentation">¶</a>
+    </h2>
+    
+  
+    
+  
+
+    <div class="Documentation js-documentation">
+      
+        
+
+<div class="Documentation-content js-docContent"> <section class="Documentation-overview">
+    <h3 tabindex="-1" id="pkg-overview" class="Documentation-overviewHeader">Overview <a href="#pkg-overview" title="Go to Overview" aria-label="Go to Overview">¶</a></h3>
+
+<div role="navigation" aria-label="Table of Contents">
+  <ul class="Documentation-toc">
+      <li class="Documentation-tocItem"><a href="#hdr-Printing">Printing</a></li>
+      <li class="Documentation-tocItem"><a href="#hdr-Explicit_argument_indexes">Explicit argument indexes</a></li>
+      <li class="Documentation-tocItem"><a href="#hdr-Format_errors">Format errors</a></li>
+      <li class="Documentation-tocItem"><a href="#hdr-Scanning">Scanning</a></li>
+  </ul>
+</div>
+<p>Package fmt implements formatted I/O with functions analogous
+to C&#39;s printf and scanf.  The format &#39;verbs&#39; are derived from C&#39;s but
+are simpler.
+</p><h4 id="hdr-Printing">Printing <a class="Documentation-idLink" href="#hdr-Printing" title="Go to Printing" aria-label="Go to Printing">¶</a></h4><p>There are four families of printing functions defined by their output destination.
+<a href="#Print">Print</a>, <a href="#Println">Println</a> and <a href="#Printf">Printf</a> write to <a href="/os#Stdout">os.Stdout</a>;
+<a href="#Sprint">Sprint</a>, <a href="#Sprintln">Sprintln</a> and <a href="#Sprintf">Sprintf</a> return a string;
+<a href="#Fprint">Fprint</a>, <a href="#Fprintln">Fprintln</a> and <a href="#Fprintf">Fprintf</a> write to an <a href="/io#Writer">io.Writer</a>; and
+<a href="#Append">Append</a>, <a href="#Appendln">Appendln</a> and <a href="#Appendf">Appendf</a> append the output to a byte slice.
+</p><p>The functions within each family do the formatting according to the end of the name.
+Print, Sprint, Fprint and Append use the default format for each argument,
+adding a space between operands when neither is a string.
+Println, Sprintln, Fprintln and Appendln always add spaces and append a newline.
+Printf, Sprintf, Fprintf and Appendf use a sequence of &#34;verbs&#34; to control the formatting.
+</p><p>The verbs:
+</p><p>General:
+</p><pre>%v	the value in a default format
+	when printing structs, the plus flag (%+v) adds field names
+%#v	a Go-syntax representation of the value
+	(floating-point infinities and NaNs print as ±Inf and NaN)
+%T	a Go-syntax representation of the type of the value
+%%	a literal percent sign; consumes no value
+</pre><p>Boolean:
+</p><pre>%t	the word true or false
+</pre><p>Integer:
+</p><pre>%b	base 2
+%c	the character represented by the corresponding Unicode code point
+%d	base 10
+%o	base 8
+%O	base 8 with 0o prefix
+%q	a single-quoted character literal safely escaped with Go syntax.
+%x	base 16, with lower-case letters for a-f
+%X	base 16, with upper-case letters for A-F
+%U	Unicode format: U+1234; same as &#34;U+%04X&#34;
+</pre><p>Floating-point and complex constituents:
+</p><pre>%b	decimalless scientific notation with exponent a power of two,
+	in the manner of strconv.FormatFloat with the &#39;b&#39; format,
+	e.g. -123456p-78
+%e	scientific notation, e.g. -1.234456e+78
+%E	scientific notation, e.g. -1.234456E+78
+%f	decimal point but no exponent, e.g. 123.456
+%F	synonym for %f
+%g	%e for large exponents, %f otherwise. Precision is discussed below.
+%G	%E for large exponents, %F otherwise
+%x	hexadecimal notation (with decimal power of two exponent), e.g. -0x1.23abcp+20
+%X	upper-case hexadecimal notation, e.g. -0X1.23ABCP+20
+
+The exponent is always a decimal integer.
+For formats other than %b the exponent is at least two digits.
+</pre><p>String and slice of bytes (treated equivalently with these verbs):
+</p><pre>%s	the uninterpreted bytes of the string or slice
+%q	a double-quoted string safely escaped with Go syntax
+%x	base 16, lower-case, two characters per byte
+%X	base 16, upper-case, two characters per byte
+</pre><p>Slice:
+</p><pre>%p	address of 0th element in base 16 notation, with leading 0x
+</pre><p>Pointer:
+</p><pre>%p	base 16 notation, with leading 0x
+The %b, %d, %o, %x and %X verbs also work with pointers,
+formatting the value exactly as if it were an integer.
+</pre><p>The default format for %v is:
+</p><pre>bool:                    %t
+int, int8 etc.:          %d
+uint, uint8 etc.:        %d, %#x if printed with %#v
+float32, complex64, etc: %g
+string:                  %s
+chan:                    %p
+pointer:                 %p
+</pre><p>For compound objects, the elements are printed using these rules, recursively,
+laid out like this:
+</p><pre>struct:             {field0 field1 ...}
+array, slice:       [elem0 elem1 ...]
+maps:               map[key1:value1 key2:value2 ...]
+pointer to above:   &amp;{}, &amp;[], &amp;map[]
+</pre><p>Width is specified by an optional decimal number immediately preceding the verb.
+If absent, the width is whatever is necessary to represent the value.
+Precision is specified after the (optional) width by a period followed by a
+decimal number. If no period is present, a default precision is used.
+A period with no following number specifies a precision of zero.
+Examples:
+</p><pre>%f     default width, default precision
+%9f    width 9, default precision
+%.2f   default width, precision 2
+%9.2f  width 9, precision 2
+%9.f   width 9, precision 0
+</pre><p>Width and precision are measured in units of Unicode code points,
+that is, runes. (This differs from C&#39;s printf where the
+units are always measured in bytes.) Either or both of the flags
+may be replaced with the character &#39;*&#39;, causing their values to be
+obtained from the next operand (preceding the one to format),
+which must be of type int.
+</p><p>For most values, width is the minimum number of runes to output,
+padding the formatted form with spaces if necessary.
+</p><p>For strings, byte slices and byte arrays, however, precision
+limits the length of the input to be formatted (not the size of
+the output), truncating if necessary. Normally it is measured in
+runes, but for these types when formatted with the %x or %X format
+it is measured in bytes.
+</p><p>For floating-point values, width sets the minimum width of the field and
+precision sets the number of places after the decimal, if appropriate,
+except that for %g/%G precision sets the maximum number of significant
+digits (trailing zeros are removed). For example, given 12.345 the format
+%6.3f prints 12.345 while %.3g prints 12.3. The default precision for %e, %f
+and %#g is 6; for %g it is the smallest number of digits necessary to identify
+the value uniquely.
+</p><p>For complex numbers, the width and precision apply to the two
+components independently and the result is parenthesized, so %f applied
+to 1.2+3.4i produces (1.200000+3.400000i).
+</p><p>When formatting a single integer code point or a rune string (type []rune)
+with %q, invalid Unicode code points are changed to the Unicode replacement
+character, U+FFFD, as in <a href="/strconv#QuoteRune">strconv.QuoteRune</a>.
+</p><p>Other flags:
+</p><pre>&#39;+&#39;	always print a sign for numeric values;
+	guarantee ASCII-only output for %q (%+q)
+&#39;-&#39;	pad with spaces on the right rather than the left (left-justify the field)
+&#39;#&#39;	alternate format: add leading 0b for binary (%#b), 0 for octal (%#o),
+	0x or 0X for hex (%#x or %#X); suppress 0x for %p (%#p);
+	for %q, print a raw (backquoted) string if [strconv.CanBackquote]
+	returns true;
+	always print a decimal point for %e, %E, %f, %F, %g and %G;
+	do not remove trailing zeros for %g and %G;
+	write e.g. U+0078 &#39;x&#39; if the character is printable for %U (%#U)
+&#39; &#39;	(space) leave a space for elided sign in numbers (% d);
+	put spaces between bytes printing strings or slices in hex (% x, % X)
+&#39;0&#39;	pad with leading zeros rather than spaces;
+	for numbers, this moves the padding after the sign
+</pre><p>Flags are ignored by verbs that do not expect them.
+For example there is no alternate decimal format, so %#d and %d
+behave identically.
+</p><p>For each Printf-like function, there is also a Print function
+that takes no format and is equivalent to saying %v for every
+operand.  Another variant Println inserts blanks between
+operands and appends a newline.
+</p><p>Regardless of the verb, if an operand is an interface value,
+the internal concrete value is used, not the interface itself.
+Thus:
+</p><pre>var i interface{} = 23
+fmt.Printf(&#34;%v\n&#34;, i)
+</pre><p>will print 23.
+</p><p>Except when printed using the verbs %T and %p, special
+formatting considerations apply for operands that implement
+certain interfaces. In order of application:
+</p><p>1. If the operand is a <a href="/reflect#Value">reflect.Value</a>, the operand is replaced by the
+concrete value that it holds, and printing continues with the next rule.
+</p><p>2. If an operand implements the <a href="#Formatter">Formatter</a> interface, it will
+be invoked. In this case the interpretation of verbs and flags is
+controlled by that implementation.
+</p><p>3. If the %v verb is used with the # flag (%#v) and the operand
+implements the <a href="#GoStringer">GoStringer</a> interface, that will be invoked.
+</p><p>If the format (which is implicitly %v for <a href="#Println">Println</a> etc.) is valid
+for a string (%s %q %x %X), or is %v but not %#v,
+the following two rules apply:
+</p><p>4. If an operand implements the error interface, the Error method
+will be invoked to convert the object to a string, which will then
+be formatted as required by the verb (if any).
+</p><p>5. If an operand implements method String() string, that method
+will be invoked to convert the object to a string, which will then
+be formatted as required by the verb (if any).
+</p><p>For compound operands such as slices and structs, the format
+applies to the elements of each operand, recursively, not to the
+operand as a whole. Thus %q will quote each element of a slice
+of strings, and %6.2f will control formatting for each element
+of a floating-point array.
+</p><p>However, when printing a byte slice with a string-like verb
+(%s %q %x %X), it is treated identically to a string, as a single item.
+</p><p>To avoid recursion in cases such as
+</p><pre>type X string
+func (x X) String() string { return Sprintf(&#34;&lt;%s&gt;&#34;, x) }
+</pre><p>convert the value before recurring:
+</p><pre>func (x X) String() string { return Sprintf(&#34;&lt;%s&gt;&#34;, string(x)) }
+</pre><p>Infinite recursion can also be triggered by self-referential data
+structures, such as a slice that contains itself as an element, if
+that type has a String method. Such pathologies are rare, however,
+and the package does not protect against them.
+</p><p>When printing a struct, fmt cannot and therefore does not invoke
+formatting methods such as Error or String on unexported fields.
+</p><h4 id="hdr-Explicit_argument_indexes">Explicit argument indexes <a class="Documentation-idLink" href="#hdr-Explicit_argument_indexes" title="Go to Explicit argument indexes" aria-label="Go to Explicit argument indexes">¶</a></h4><p>In <a href="#Printf">Printf</a>, <a href="#Sprintf">Sprintf</a>, <a href="#Fprintf">Fprintf</a>, and <a href="#Appendf">Appendf</a>, the default behavior is for each
+formatting verb to format successive arguments passed in the call.
+However, the notation [n] immediately before the verb indicates that the
+nth one-indexed argument is to be formatted instead. The same notation
+before a &#39;*&#39; for a width or precision selects the argument index holding
+the value. After processing a bracketed expression [n], subsequent verbs
+will use arguments n+1, n+2, etc. unless otherwise directed.
+</p><p>For example,
+</p><pre>fmt.Sprintf(&#34;%[2]d %[1]d\n&#34;, 11, 22)
+</pre><p>will yield &#34;22 11&#34;, while
+</p><pre>fmt.Sprintf(&#34;%[3]*.[2]*[1]f&#34;, 12.0, 2, 6)
+</pre><p>equivalent to
+</p><pre>fmt.Sprintf(&#34;%6.2f&#34;, 12.0)
+</pre><p>will yield &#34; 12.00&#34;. Because an explicit index affects subsequent verbs,
+this notation can be used to print the same values multiple times
+by resetting the index for the first argument to be repeated:
+</p><pre>fmt.Sprintf(&#34;%d %d %#[1]x %#x&#34;, 16, 17)
+</pre><p>will yield &#34;16 17 0x10 0x11&#34;.
+</p><h4 id="hdr-Format_errors">Format errors <a class="Documentation-idLink" href="#hdr-Format_errors" title="Go to Format errors" aria-label="Go to Format errors">¶</a></h4><p>If an invalid argument is given for a verb, such as providing
+a string to %d, the generated string will contain a
+description of the problem, as in these examples:
+</p><pre>Wrong type or unknown verb: %!verb(type=value)
+	Printf(&#34;%d&#34;, &#34;hi&#34;):        %!d(string=hi)
+Too many arguments: %!(EXTRA type=value)
+	Printf(&#34;hi&#34;, &#34;guys&#34;):      hi%!(EXTRA string=guys)
+Too few arguments: %!verb(MISSING)
+	Printf(&#34;hi%d&#34;):            hi%!d(MISSING)
+Non-int for width or precision: %!(BADWIDTH) or %!(BADPREC)
+	Printf(&#34;%*s&#34;, 4.5, &#34;hi&#34;):  %!(BADWIDTH)hi
+	Printf(&#34;%.*s&#34;, 4.5, &#34;hi&#34;): %!(BADPREC)hi
+Invalid or invalid use of argument index: %!(BADINDEX)
+	Printf(&#34;%*[2]d&#34;, 7):       %!d(BADINDEX)
+	Printf(&#34;%.[2]d&#34;, 7):       %!d(BADINDEX)
+</pre><p>All errors begin with the string &#34;%!&#34; followed sometimes
+by a single character (the verb) and end with a parenthesized
+description.
+</p><p>If an Error or String method triggers a panic when called by a
+print routine, the fmt package reformats the error message
+from the panic, decorating it with an indication that it came
+through the fmt package.  For example, if a String method
+calls panic(&#34;bad&#34;), the resulting formatted message will look
+like
+</p><pre>%!s(PANIC=bad)
+</pre><p>The %!s just shows the print verb in use when the failure
+occurred. If the panic is caused by a nil receiver to an Error,
+String, or GoString method, however, the output is the undecorated
+string, &#34;&lt;nil&gt;&#34;.
+</p><h4 id="hdr-Scanning">Scanning <a class="Documentation-idLink" href="#hdr-Scanning" title="Go to Scanning" aria-label="Go to Scanning">¶</a></h4><p>An analogous set of functions scans formatted text to yield
+values.  <a href="#Scan">Scan</a>, <a href="#Scanf">Scanf</a> and <a href="#Scanln">Scanln</a> read from <a href="/os#Stdin">os.Stdin</a>; <a href="#Fscan">Fscan</a>,
+<a href="#Fscanf">Fscanf</a> and <a href="#Fscanln">Fscanln</a> read from a specified <a href="/io#Reader">io.Reader</a>; <a href="#Sscan">Sscan</a>,
+<a href="#Sscanf">Sscanf</a> and <a href="#Sscanln">Sscanln</a> read from an argument string.
+</p><p><a href="#Scan">Scan</a>, <a href="#Fscan">Fscan</a>, <a href="#Sscan">Sscan</a> treat newlines in the input as spaces.
+</p><p><a href="#Scanln">Scanln</a>, <a href="#Fscanln">Fscanln</a> and <a href="#Sscanln">Sscanln</a> stop scanning at a newline and
+require that the items be followed by a newline or EOF.
+</p><p><a href="#Scanf">Scanf</a>, <a href="#Fscanf">Fscanf</a>, and <a href="#Sscanf">Sscanf</a> parse the arguments according to a
+format string, analogous to that of <a href="#Printf">Printf</a>. In the text that
+follows, &#39;space&#39; means any Unicode whitespace character
+except newline.
+</p><p>In the format string, a verb introduced by the % character
+consumes and parses input; these verbs are described in more
+detail below. A character other than %, space, or newline in
+the format consumes exactly that input character, which must
+be present. A newline with zero or more spaces before it in
+the format string consumes zero or more spaces in the input
+followed by a single newline or the end of the input. A space
+following a newline in the format string consumes zero or more
+spaces in the input. Otherwise, any run of one or more spaces
+in the format string consumes as many spaces as possible in
+the input. Unless the run of spaces in the format string
+appears adjacent to a newline, the run must consume at least
+one space from the input or find the end of the input.
+</p><p>The handling of spaces and newlines differs from that of C&#39;s
+scanf family: in C, newlines are treated as any other space,
+and it is never an error when a run of spaces in the format
+string finds no spaces to consume in the input.
+</p><p>The verbs behave analogously to those of <a href="#Printf">Printf</a>.
+For example, %x will scan an integer as a hexadecimal number,
+and %v will scan the default representation format for the value.
+The <a href="#Printf">Printf</a> verbs %p and %T and the flags # and + are not implemented.
+For floating-point and complex values, all valid formatting verbs
+(%b %e %E %f %F %g %G %x %X and %v) are equivalent and accept
+both decimal and hexadecimal notation (for example: &#34;2.3e+7&#34;, &#34;0x4.5p-8&#34;)
+and digit-separating underscores (for example: &#34;3.14159_26535_89793&#34;).
+</p><p>Input processed by verbs is implicitly space-delimited: the
+implementation of every verb except %c starts by discarding
+leading spaces from the remaining input, and the %s verb
+(and %v reading into a string) stops consuming input at the first
+space or newline character.
+</p><p>The familiar base-setting prefixes 0b (binary), 0o and 0 (octal),
+and 0x (hexadecimal) are accepted when scanning integers
+without a format or with the %v verb, as are digit-separating
+underscores.
+</p><p>Width is interpreted in the input text but there is no
+syntax for scanning with a precision (no %5.2f, just %5f).
+If width is provided, it applies after leading spaces are
+trimmed and specifies the maximum number of runes to read
+to satisfy the verb. For example,
+</p><pre>Sscanf(&#34; 1234567 &#34;, &#34;%5s%d&#34;, &amp;s, &amp;i)
+</pre><p>will set s to &#34;12345&#34; and i to 67 while
+</p><pre>Sscanf(&#34; 12 34 567 &#34;, &#34;%5s%d&#34;, &amp;s, &amp;i)
+</pre><p>will set s to &#34;12&#34; and i to 34.
+</p><p>In all the scanning functions, a carriage return followed
+immediately by a newline is treated as a plain newline
+(\r\n means the same as \n).
+</p><p>In all the scanning functions, if an operand implements method
+<a href="#Scan">Scan</a> (that is, it implements the <a href="#Scanner">Scanner</a> interface) that
+method will be used to scan the text for that operand.  Also,
+if the number of arguments scanned is less than the number of
+arguments provided, an error is returned.
+</p><p>All arguments to be scanned must be either pointers to basic
+types or implementations of the <a href="#Scanner">Scanner</a> interface.
+</p><p>Like <a href="#Scanf">Scanf</a> and <a href="#Fscanf">Fscanf</a>, <a href="#Sscanf">Sscanf</a> need not consume its entire input.
+There is no way to recover how much of the input string <a href="#Sscanf">Sscanf</a> used.
+</p><p>Note: <a href="#Fscan">Fscan</a> etc. can read one character (rune) past the input
+they return, which means that a loop calling a scan routine
+may skip some of the input.  This is usually a problem only
+when there is no space between input values.  If the reader
+provided to <a href="#Fscan">Fscan</a> implements ReadRune, that method will be used
+to read characters.  If the reader also implements UnreadRune,
+that method will be used to save the character and successive
+calls will not lose data.  To attach ReadRune and UnreadRune
+methods to a reader without that capability, use
+<a href="/bufio#NewReader">bufio.NewReader</a>.
+</p>
+<details tabindex="-1" id="example-package-Formats" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example (Formats) <a href="#example-package-Formats" title="Go to Example (Formats)" aria-label="Go to Example (Formats)">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+<p>These examples demonstrate the basics of printing using a format string. Printf,
+Sprintf, and Fprintf all take a format string that specifies how to format the
+subsequent arguments. For example, %d (we call that a &#39;verb&#39;) says to print the
+corresponding argument, which must be an integer (or something containing an
+integer, such as a slice of ints) in decimal. The verb %v (&#39;v&#39; for &#39;value&#39;)
+always formats the argument in its default form, just how Print or Println would
+show it. The special verb %T (&#39;T&#39; for &#39;Type&#39;) prints the type of the argument
+rather than its value. The examples are not exhaustive; see the package comment
+for all the details.
+</p>
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;math&#34;
+	&#34;time&#34;
+)
+
+func main() {
+	// A basic set of examples showing that %v is the default format, in this
+	// case decimal for integers, which can be explicitly requested with %d;
+	// the output is just what Println generates.
+	integer := 23
+	// Each of these prints &#34;23&#34; (without the quotes).
+	fmt.Println(integer)
+	fmt.Printf(&#34;%v\n&#34;, integer)
+	fmt.Printf(&#34;%d\n&#34;, integer)
+
+	// The special verb %T shows the type of an item rather than its value.
+	fmt.Printf(&#34;%T %T\n&#34;, integer, &amp;integer)
+	// Result: int *int
+
+	// Println(x) is the same as Printf(&#34;%v\n&#34;, x) so we will use only Printf
+	// in the following examples. Each one demonstrates how to format values of
+	// a particular type, such as integers or strings. We start each format
+	// string with %v to show the default output and follow that with one or
+	// more custom formats.
+
+	// Booleans print as &#34;true&#34; or &#34;false&#34; with %v or %t.
+	truth := true
+	fmt.Printf(&#34;%v %t\n&#34;, truth, truth)
+	// Result: true true
+
+	// Integers print as decimals with %v and %d,
+	// or in hex with %x, octal with %o, or binary with %b.
+	answer := 42
+	fmt.Printf(&#34;%v %d %x %o %b\n&#34;, answer, answer, answer, answer, answer)
+	// Result: 42 42 2a 52 101010
+
+	// Floats have multiple formats: %v and %g print a compact representation,
+	// while %f prints a decimal point and %e uses exponential notation. The
+	// format %6.2f used here shows how to set the width and precision to
+	// control the appearance of a floating-point value. In this instance, 6 is
+	// the total width of the printed text for the value (note the extra spaces
+	// in the output) and 2 is the number of decimal places to show.
+	pi := math.Pi
+	fmt.Printf(&#34;%v %g %.2f (%6.2f) %e\n&#34;, pi, pi, pi, pi, pi)
+	// Result: 3.141592653589793 3.141592653589793 3.14 (  3.14) 3.141593e+00
+
+	// Complex numbers format as parenthesized pairs of floats, with an &#39;i&#39;
+	// after the imaginary part.
+	point := 110.7 + 22.5i
+	fmt.Printf(&#34;%v %g %.2f %.2e\n&#34;, point, point, point, point)
+	// Result: (110.7+22.5i) (110.7+22.5i) (110.70+22.50i) (1.11e+02+2.25e+01i)
+
+	// Runes are integers but when printed with %c show the character with that
+	// Unicode value. The %q verb shows them as quoted characters, %U as a
+	// hex Unicode code point, and %#U as both a code point and a quoted
+	// printable form if the rune is printable.
+	smile := &#39;😀&#39;
+	fmt.Printf(&#34;%v %d %c %q %U %#U\n&#34;, smile, smile, smile, smile, smile, smile)
+	// Result: 128512 128512 😀 &#39;😀&#39; U+1F600 U+1F600 &#39;😀&#39;
+
+	// Strings are formatted with %v and %s as-is, with %q as quoted strings,
+	// and %#q as backquoted strings.
+	placeholders := `foo &#34;bar&#34;`
+	fmt.Printf(&#34;%v %s %q %#q\n&#34;, placeholders, placeholders, placeholders, placeholders)
+	// Result: foo &#34;bar&#34; foo &#34;bar&#34; &#34;foo \&#34;bar\&#34;&#34; `foo &#34;bar&#34;`
+
+	// Maps formatted with %v show keys and values in their default formats.
+	// The %#v form (the # is called a &#34;flag&#34; in this context) shows the map in
+	// the Go source format. Maps are printed in a consistent order, sorted
+	// by the values of the keys.
+	isLegume := map[string]bool{
+		&#34;peanut&#34;:    true,
+		&#34;dachshund&#34;: false,
+	}
+	fmt.Printf(&#34;%v %#v\n&#34;, isLegume, isLegume)
+	// Result: map[dachshund:false peanut:true] map[string]bool{&#34;dachshund&#34;:false, &#34;peanut&#34;:true}
+
+	// Structs formatted with %v show field values in their default formats.
+	// The %+v form shows the fields by name, while %#v formats the struct in
+	// Go source format.
+	person := struct {
+		Name string
+		Age  int
+	}{&#34;Kim&#34;, 22}
+	fmt.Printf(&#34;%v %+v %#v\n&#34;, person, person, person)
+	// Result: {Kim 22} {Name:Kim Age:22} struct { Name string; Age int }{Name:&#34;Kim&#34;, Age:22}
+
+	// The default format for a pointer shows the underlying value preceded by
+	// an ampersand. The %p verb prints the pointer value in hex. We use a
+	// typed nil for the argument to %p here because the value of any non-nil
+	// pointer would change from run to run; run the commented-out Printf
+	// call yourself to see.
+	pointer := &amp;person
+	fmt.Printf(&#34;%v %p\n&#34;, pointer, (*int)(nil))
+	// Result: &amp;{Kim 22} 0x0
+	// fmt.Printf(&#34;%v %p\n&#34;, pointer, pointer)
+	// Result: &amp;{Kim 22} 0x010203 // See comment above.
+
+	// Arrays and slices are formatted by applying the format to each element.
+	greats := [5]string{&#34;Kitano&#34;, &#34;Kobayashi&#34;, &#34;Kurosawa&#34;, &#34;Miyazaki&#34;, &#34;Ozu&#34;}
+	fmt.Printf(&#34;%v %q\n&#34;, greats, greats)
+	// Result: [Kitano Kobayashi Kurosawa Miyazaki Ozu] [&#34;Kitano&#34; &#34;Kobayashi&#34; &#34;Kurosawa&#34; &#34;Miyazaki&#34; &#34;Ozu&#34;]
+
+	kGreats := greats[:3]
+	fmt.Printf(&#34;%v %q %#v\n&#34;, kGreats, kGreats, kGreats)
+	// Result: [Kitano Kobayashi Kurosawa] [&#34;Kitano&#34; &#34;Kobayashi&#34; &#34;Kurosawa&#34;] []string{&#34;Kitano&#34;, &#34;Kobayashi&#34;, &#34;Kurosawa&#34;}
+
+	// Byte slices are special. Integer verbs like %d print the elements in
+	// that format. The %s and %q forms treat the slice like a string. The %x
+	// verb has a special form with the space flag that puts a space between
+	// the bytes.
+	cmd := []byte(&#34;a⌘&#34;)
+	fmt.Printf(&#34;%v %d %s %q %x % x\n&#34;, cmd, cmd, cmd, cmd, cmd, cmd)
+	// Result: [97 226 140 152] [97 226 140 152] a⌘ &#34;a⌘&#34; 61e28c98 61 e2 8c 98
+
+	// Types that implement Stringer are printed the same as strings. Because
+	// Stringers return a string, we can print them using a string-specific
+	// verb such as %q.
+	now := time.Unix(123456789, 0).UTC() // time.Time implements fmt.Stringer.
+	fmt.Printf(&#34;%v %q\n&#34;, now, now)
+	// Result: 1973-11-29 21:33:09 +0000 UTC &#34;1973-11-29 21:33:09 +0000 UTC&#34;
+
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">23
+23
+23
+int *int
+true true
+42 42 2a 52 101010
+3.141592653589793 3.141592653589793 3.14 (  3.14) 3.141593e+00
+(110.7+22.5i) (110.7+22.5i) (110.70+22.50i) (1.11e+02+2.25e+01i)
+128512 128512 😀 &#39;😀&#39; U+1F600 U+1F600 &#39;😀&#39;
+foo &#34;bar&#34; foo &#34;bar&#34; &#34;foo \&#34;bar\&#34;&#34; `foo &#34;bar&#34;`
+map[dachshund:false peanut:true] map[string]bool{&#34;dachshund&#34;:false, &#34;peanut&#34;:true}
+{Kim 22} {Name:Kim Age:22} struct { Name string; Age int }{Name:&#34;Kim&#34;, Age:22}
+&amp;{Kim 22} 0x0
+[Kitano Kobayashi Kurosawa Miyazaki Ozu] [&#34;Kitano&#34; &#34;Kobayashi&#34; &#34;Kurosawa&#34; &#34;Miyazaki&#34; &#34;Ozu&#34;]
+[Kitano Kobayashi Kurosawa] [&#34;Kitano&#34; &#34;Kobayashi&#34; &#34;Kurosawa&#34;] []string{&#34;Kitano&#34;, &#34;Kobayashi&#34;, &#34;Kurosawa&#34;}
+[97 226 140 152] [97 226 140 152] a⌘ &#34;a⌘&#34; 61e28c98 61 e2 8c 98
+1973-11-29 21:33:09 +0000 UTC &#34;1973-11-29 21:33:09 +0000 UTC&#34;
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+<details tabindex="-1" id="example-package-Printers" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example (Printers) <a href="#example-package-Printers" title="Go to Example (Printers)" aria-label="Go to Example (Printers)">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+<p>Print, Println, and Printf lay out their arguments differently. In this example
+we can compare their behaviors. Println always adds blanks between the items it
+prints, while Print adds blanks only between non-string arguments and Printf
+does exactly what it is told.
+Sprint, Sprintln, Sprintf, Fprint, Fprintln, and Fprintf behave the same as
+their corresponding Print, Println, and Printf functions shown here.
+</p>
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;math&#34;
+)
+
+func main() {
+	a, b := 3.0, 4.0
+	h := math.Hypot(a, b)
+
+	// Print inserts blanks between arguments when neither is a string.
+	// It does not add a newline to the output, so we add one explicitly.
+	fmt.Print(&#34;The vector (&#34;, a, b, &#34;) has length &#34;, h, &#34;.\n&#34;)
+
+	// Println always inserts spaces between its arguments,
+	// so it cannot be used to produce the same output as Print in this case;
+	// its output has extra spaces.
+	// Also, Println always adds a newline to the output.
+	fmt.Println(&#34;The vector (&#34;, a, b, &#34;) has length&#34;, h, &#34;.&#34;)
+
+	// Printf provides complete control but is more complex to use.
+	// It does not add a newline to the output, so we add one explicitly
+	// at the end of the format specifier string.
+	fmt.Printf(&#34;The vector (%g %g) has length %g.\n&#34;, a, b, h)
+
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">The vector (3 4) has length 5.
+The vector ( 3 4 ) has length 5 .
+The vector (3 4) has length 5.
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+</section><section class="Documentation-index">
+    <h3 id="pkg-index" class="Documentation-indexHeader">Index <a href="#pkg-index" title="Go to Index" aria-label="Go to Index">¶</a></h3>
+
+<ul class="Documentation-indexList">
+<li class="Documentation-indexFunction">
+        <a href="#Append">func Append(b []byte, a ...any) []byte</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Appendf">func Appendf(b []byte, format string, a ...any) []byte</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Appendln">func Appendln(b []byte, a ...any) []byte</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Errorf">func Errorf(format string, a ...any) (err error)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#FormatString">func FormatString(state State, verb rune) string</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Fprint">func Fprint(w io.Writer, a ...any) (n int, err error)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Fprintf">func Fprintf(w io.Writer, format string, a ...any) (n int, err error)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Fprintln">func Fprintln(w io.Writer, a ...any) (n int, err error)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Fscan">func Fscan(r io.Reader, a ...any) (n int, err error)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Fscanf">func Fscanf(r io.Reader, format string, a ...any) (n int, err error)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Fscanln">func Fscanln(r io.Reader, a ...any) (n int, err error)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Print">func Print(a ...any) (n int, err error)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Printf">func Printf(format string, a ...any) (n int, err error)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Println">func Println(a ...any) (n int, err error)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Scan">func Scan(a ...any) (n int, err error)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Scanf">func Scanf(format string, a ...any) (n int, err error)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Scanln">func Scanln(a ...any) (n int, err error)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Sprint">func Sprint(a ...any) string</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Sprintf">func Sprintf(format string, a ...any) string</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Sprintln">func Sprintln(a ...any) string</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Sscan">func Sscan(str string, a ...any) (n int, err error)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Sscanf">func Sscanf(str string, format string, a ...any) (n int, err error)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Sscanln">func Sscanln(str string, a ...any) (n int, err error)</a></li>
+<li class="Documentation-indexType">
+          <a href="#Formatter">type Formatter</a></li>
+<li class="Documentation-indexType">
+          <a href="#GoStringer">type GoStringer</a></li>
+<li class="Documentation-indexType">
+          <a href="#ScanState">type ScanState</a></li>
+<li class="Documentation-indexType">
+          <a href="#Scanner">type Scanner</a></li>
+<li class="Documentation-indexType">
+          <a href="#State">type State</a></li>
+<li class="Documentation-indexType">
+          <a href="#Stringer">type Stringer</a></li>
+</ul>
+</section><section class="Documentation-examples">
+    <h3 tabindex="-1" id="pkg-examples" class="Documentation-examplesHeader">Examples <a class="Documentation-idLink" href="#pkg-examples" title="Go to Examples" aria-label="Go to Examples">¶</a></h3>
+<ul class="Documentation-examplesList">
+<li><a href="#example-package-Formats" class="js-exampleHref">Package (Formats)</a></li>
+<li><a href="#example-package-Printers" class="js-exampleHref">Package (Printers)</a></li>
+<li><a href="#example-Errorf" class="js-exampleHref">Errorf</a></li>
+<li><a href="#example-Fprint" class="js-exampleHref">Fprint</a></li>
+<li><a href="#example-Fprintf" class="js-exampleHref">Fprintf</a></li>
+<li><a href="#example-Fprintln" class="js-exampleHref">Fprintln</a></li>
+<li><a href="#example-Fscanf" class="js-exampleHref">Fscanf</a></li>
+<li><a href="#example-Fscanln" class="js-exampleHref">Fscanln</a></li>
+<li><a href="#example-GoStringer" class="js-exampleHref">GoStringer</a></li>
+<li><a href="#example-Print" class="js-exampleHref">Print</a></li>
+<li><a href="#example-Printf" class="js-exampleHref">Printf</a></li>
+<li><a href="#example-Println" class="js-exampleHref">Println</a></li>
+<li><a href="#example-Sprint" class="js-exampleHref">Sprint</a></li>
+<li><a href="#example-Sprintf" class="js-exampleHref">Sprintf</a></li>
+<li><a href="#example-Sprintln" class="js-exampleHref">Sprintln</a></li>
+<li><a href="#example-Sscanf" class="js-exampleHref">Sscanf</a></li>
+<li><a href="#example-Stringer" class="js-exampleHref">Stringer</a></li>
+</ul>
+</section><h3 tabindex="-1" id="pkg-constants" class="Documentation-constantsHeader">Constants <a href="#pkg-constants" title="Go to Constants" aria-label="Go to Constants">¶</a></h3>
+
+  <section class="Documentation-constants"><p class="Documentation-empty">This section is empty.</p></section>
+
+  <h3 tabindex="-1" id="pkg-variables" class="Documentation-variablesHeader">Variables <a href="#pkg-variables" title="Go to Variables" aria-label="Go to Variables">¶</a></h3>
+
+  <section class="Documentation-variables"><p class="Documentation-empty">This section is empty.</p></section>
+
+  <h3 tabindex="-1" id="pkg-functions" class="Documentation-functionsHeader">Functions <a href="#pkg-functions" title="Go to Functions" aria-label="Go to Functions">¶</a></h3>
+
+  <section class="Documentation-functions"><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Append" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/fmt/print.go;l=288">Append</a> <a class="Documentation-idLink" href="#Append" title="Go to Append" aria-label="Go to Append">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.19</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Append(b []<a href="/builtin#byte">byte</a>, a ...<a href="/builtin#any">any</a>) []<a href="/builtin#byte">byte</a></pre>
+    </div>
+  <p>Append formats using the default formats for its operands, appends the result to
+the byte slice, and returns the updated slice.
+Spaces are added between operands when neither is a string.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Appendf" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/fmt/print.go;l=247">Appendf</a> <a class="Documentation-idLink" href="#Appendf" title="Go to Appendf" aria-label="Go to Appendf">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.19</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Appendf(b []<a href="/builtin#byte">byte</a>, format <a href="/builtin#string">string</a>, a ...<a href="/builtin#any">any</a>) []<a href="/builtin#byte">byte</a></pre>
+    </div>
+  <p>Appendf formats according to a format specifier, appends the result to the byte
+slice, and returns the updated slice.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Appendln" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/fmt/print.go;l=331">Appendln</a> <a class="Documentation-idLink" href="#Appendln" title="Go to Appendln" aria-label="Go to Appendln">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.19</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Appendln(b []<a href="/builtin#byte">byte</a>, a ...<a href="/builtin#any">any</a>) []<a href="/builtin#byte">byte</a></pre>
+    </div>
+  <p>Appendln formats using the default formats for its operands, appends the result
+to the byte slice, and returns the updated slice. Spaces are always added
+between operands and a newline is appended.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Errorf" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/fmt/errors.go;l=23">Errorf</a> <a class="Documentation-idLink" href="#Errorf" title="Go to Errorf" aria-label="Go to Errorf">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Errorf(format <a href="/builtin#string">string</a>, a ...<a href="/builtin#any">any</a>) (err <a href="/builtin#error">error</a>)</pre>
+    </div>
+  <p>Errorf formats according to a format specifier and returns the string as a
+value that satisfies error.
+</p><p>If the format specifier includes a %w verb with an error operand,
+the returned error will implement an Unwrap method returning the operand.
+If there is more than one %w verb, the returned error will implement an
+Unwrap method returning a []error containing all the %w operands in the
+order they appear in the arguments.
+It is invalid to supply the %w verb with an operand that does not implement
+the error interface. The %w verb is otherwise a synonym for %v.
+</p>
+<details tabindex="-1" id="example-Errorf" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-Errorf" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+<p>The Errorf function lets us use formatting features
+to create descriptive error messages.
+</p>
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;fmt&#34;
+)
+
+func main() {
+	const name, id = &#34;bueller&#34;, 17
+	err := fmt.Errorf(&#34;user %q (id %d) not found&#34;, name, id)
+	fmt.Println(err.Error())
+
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">user &#34;bueller&#34; (id 17) not found
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="FormatString" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/fmt/print.go;l=81">FormatString</a> <a class="Documentation-idLink" href="#FormatString" title="Go to FormatString" aria-label="Go to FormatString">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.20</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func FormatString(state <a href="#State">State</a>, verb <a href="/builtin#rune">rune</a>) <a href="/builtin#string">string</a></pre>
+    </div>
+  <p>FormatString returns a string representing the fully qualified formatting
+directive captured by the <a href="#State">State</a>, followed by the argument verb. (<a href="#State">State</a> does not
+itself contain the verb.) The result has a leading percent sign followed by any
+flags, the width, and the precision. Missing flags, width, and precision are
+omitted. This function allows a <a href="#Formatter">Formatter</a> to reconstruct the original
+directive triggering the call to Format.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Fprint" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/fmt/print.go;l=260">Fprint</a> <a class="Documentation-idLink" href="#Fprint" title="Go to Fprint" aria-label="Go to Fprint">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Fprint(w <a href="/io">io</a>.<a href="/io#Writer">Writer</a>, a ...<a href="/builtin#any">any</a>) (n <a href="/builtin#int">int</a>, err <a href="/builtin#error">error</a>)</pre>
+    </div>
+  <p>Fprint formats using the default formats for its operands and writes to w.
+Spaces are added between operands when neither is a string.
+It returns the number of bytes written and any write error encountered.
+</p>
+<details tabindex="-1" id="example-Fprint" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-Fprint" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;os&#34;
+)
+
+func main() {
+	const name, age = &#34;Kim&#34;, 22
+	n, err := fmt.Fprint(os.Stdout, name, &#34; is &#34;, age, &#34; years old.\n&#34;)
+
+	// The n and err return values from Fprint are
+	// those returned by the underlying io.Writer.
+	if err != nil {
+		fmt.Fprintf(os.Stderr, &#34;Fprint: %v\n&#34;, err)
+	}
+	fmt.Print(n, &#34; bytes written.\n&#34;)
+
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">Kim is 22 years old.
+21 bytes written.
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Fprintf" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/fmt/print.go;l=222">Fprintf</a> <a class="Documentation-idLink" href="#Fprintf" title="Go to Fprintf" aria-label="Go to Fprintf">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Fprintf(w <a href="/io">io</a>.<a href="/io#Writer">Writer</a>, format <a href="/builtin#string">string</a>, a ...<a href="/builtin#any">any</a>) (n <a href="/builtin#int">int</a>, err <a href="/builtin#error">error</a>)</pre>
+    </div>
+  <p>Fprintf formats according to a format specifier and writes to w.
+It returns the number of bytes written and any write error encountered.
+</p>
+<details tabindex="-1" id="example-Fprintf" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-Fprintf" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;os&#34;
+)
+
+func main() {
+	const name, age = &#34;Kim&#34;, 22
+	n, err := fmt.Fprintf(os.Stdout, &#34;%s is %d years old.\n&#34;, name, age)
+
+	// The n and err return values from Fprintf are
+	// those returned by the underlying io.Writer.
+	if err != nil {
+		fmt.Fprintf(os.Stderr, &#34;Fprintf: %v\n&#34;, err)
+	}
+	fmt.Printf(&#34;%d bytes written.\n&#34;, n)
+
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">Kim is 22 years old.
+21 bytes written.
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Fprintln" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/fmt/print.go;l=303">Fprintln</a> <a class="Documentation-idLink" href="#Fprintln" title="Go to Fprintln" aria-label="Go to Fprintln">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Fprintln(w <a href="/io">io</a>.<a href="/io#Writer">Writer</a>, a ...<a href="/builtin#any">any</a>) (n <a href="/builtin#int">int</a>, err <a href="/builtin#error">error</a>)</pre>
+    </div>
+  <p>Fprintln formats using the default formats for its operands and writes to w.
+Spaces are always added between operands and a newline is appended.
+It returns the number of bytes written and any write error encountered.
+</p>
+<details tabindex="-1" id="example-Fprintln" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-Fprintln" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;os&#34;
+)
+
+func main() {
+	const name, age = &#34;Kim&#34;, 22
+	n, err := fmt.Fprintln(os.Stdout, name, &#34;is&#34;, age, &#34;years old.&#34;)
+
+	// The n and err return values from Fprintln are
+	// those returned by the underlying io.Writer.
+	if err != nil {
+		fmt.Fprintf(os.Stderr, &#34;Fprintln: %v\n&#34;, err)
+	}
+	fmt.Println(n, &#34;bytes written.&#34;)
+
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">Kim is 22 years old.
+21 bytes written.
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Fscan" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/fmt/scan.go;l=121">Fscan</a> <a class="Documentation-idLink" href="#Fscan" title="Go to Fscan" aria-label="Go to Fscan">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Fscan(r <a href="/io">io</a>.<a href="/io#Reader">Reader</a>, a ...<a href="/builtin#any">any</a>) (n <a href="/builtin#int">int</a>, err <a href="/builtin#error">error</a>)</pre>
+    </div>
+  <p>Fscan scans text read from r, storing successive space-separated
+values into successive arguments. Newlines count as space. It
+returns the number of items successfully scanned. If that is less
+than the number of arguments, err will report why.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Fscanf" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/fmt/scan.go;l=141">Fscanf</a> <a class="Documentation-idLink" href="#Fscanf" title="Go to Fscanf" aria-label="Go to Fscanf">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Fscanf(r <a href="/io">io</a>.<a href="/io#Reader">Reader</a>, format <a href="/builtin#string">string</a>, a ...<a href="/builtin#any">any</a>) (n <a href="/builtin#int">int</a>, err <a href="/builtin#error">error</a>)</pre>
+    </div>
+  <p>Fscanf scans text read from r, storing successive space-separated
+values into successive arguments as determined by the format. It
+returns the number of items successfully parsed.
+Newlines in the input must match newlines in the format.
+</p>
+<details tabindex="-1" id="example-Fscanf" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-Fscanf" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;os&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	var (
+		i int
+		b bool
+		s string
+	)
+	r := strings.NewReader(&#34;5 true gophers&#34;)
+	n, err := fmt.Fscanf(r, &#34;%d %t %s&#34;, &amp;i, &amp;b, &amp;s)
+	if err != nil {
+		fmt.Fprintf(os.Stderr, &#34;Fscanf: %v\n&#34;, err)
+	}
+	fmt.Println(i, b, s)
+	fmt.Println(n)
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">5 true gophers
+3
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Fscanln" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/fmt/scan.go;l=130">Fscanln</a> <a class="Documentation-idLink" href="#Fscanln" title="Go to Fscanln" aria-label="Go to Fscanln">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Fscanln(r <a href="/io">io</a>.<a href="/io#Reader">Reader</a>, a ...<a href="/builtin#any">any</a>) (n <a href="/builtin#int">int</a>, err <a href="/builtin#error">error</a>)</pre>
+    </div>
+  <p>Fscanln is similar to <a href="#Fscan">Fscan</a>, but stops scanning at a newline and
+after the final item there must be a newline or EOF.
+</p>
+<details tabindex="-1" id="example-Fscanln" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-Fscanln" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;io&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	s := `dmr 1771 1.61803398875
+	ken 271828 3.14159`
+	r := strings.NewReader(s)
+	var a string
+	var b int
+	var c float64
+	for {
+		n, err := fmt.Fscanln(r, &amp;a, &amp;b, &amp;c)
+		if err == io.EOF {
+			break
+		}
+		if err != nil {
+			panic(err)
+		}
+		fmt.Printf(&#34;%d: %s, %d, %f\n&#34;, n, a, b, c)
+	}
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">3: dmr, 1771, 1.618034
+3: ken, 271828, 3.141590
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Print" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/fmt/print.go;l=271">Print</a> <a class="Documentation-idLink" href="#Print" title="Go to Print" aria-label="Go to Print">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Print(a ...<a href="/builtin#any">any</a>) (n <a href="/builtin#int">int</a>, err <a href="/builtin#error">error</a>)</pre>
+    </div>
+  <p>Print formats using the default formats for its operands and writes to standard output.
+Spaces are added between operands when neither is a string.
+It returns the number of bytes written and any write error encountered.
+</p>
+<details tabindex="-1" id="example-Print" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-Print" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;fmt&#34;
+)
+
+func main() {
+	const name, age = &#34;Kim&#34;, 22
+	fmt.Print(name, &#34; is &#34;, age, &#34; years old.\n&#34;)
+
+	// It is conventional not to worry about any
+	// error returned by Print.
+
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">Kim is 22 years old.
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Printf" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/fmt/print.go;l=232">Printf</a> <a class="Documentation-idLink" href="#Printf" title="Go to Printf" aria-label="Go to Printf">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Printf(format <a href="/builtin#string">string</a>, a ...<a href="/builtin#any">any</a>) (n <a href="/builtin#int">int</a>, err <a href="/builtin#error">error</a>)</pre>
+    </div>
+  <p>Printf formats according to a format specifier and writes to standard output.
+It returns the number of bytes written and any write error encountered.
+</p>
+<details tabindex="-1" id="example-Printf" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-Printf" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;fmt&#34;
+)
+
+func main() {
+	const name, age = &#34;Kim&#34;, 22
+	fmt.Printf(&#34;%s is %d years old.\n&#34;, name, age)
+
+	// It is conventional not to worry about any
+	// error returned by Printf.
+
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">Kim is 22 years old.
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Println" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/fmt/print.go;l=314">Println</a> <a class="Documentation-idLink" href="#Println" title="Go to Println" aria-label="Go to Println">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Println(a ...<a href="/builtin#any">any</a>) (n <a href="/builtin#int">int</a>, err <a href="/builtin#error">error</a>)</pre>
+    </div>
+  <p>Println formats using the default formats for its operands and writes to standard output.
+Spaces are always added between operands and a newline is appended.
+It returns the number of bytes written and any write error encountered.
+</p>
+<details tabindex="-1" id="example-Println" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-Println" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;fmt&#34;
+)
+
+func main() {
+	const name, age = &#34;Kim&#34;, 22
+	fmt.Println(name, &#34;is&#34;, age, &#34;years old.&#34;)
+
+	// It is conventional not to worry about any
+	// error returned by Println.
+
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">Kim is 22 years old.
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Scan" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/fmt/scan.go;l=63">Scan</a> <a class="Documentation-idLink" href="#Scan" title="Go to Scan" aria-label="Go to Scan">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Scan(a ...<a href="/builtin#any">any</a>) (n <a href="/builtin#int">int</a>, err <a href="/builtin#error">error</a>)</pre>
+    </div>
+  <p>Scan scans text read from standard input, storing successive
+space-separated values into successive arguments. Newlines count
+as space. It returns the number of items successfully scanned.
+If that is less than the number of arguments, err will report why.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Scanf" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/fmt/scan.go;l=80">Scanf</a> <a class="Documentation-idLink" href="#Scanf" title="Go to Scanf" aria-label="Go to Scanf">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Scanf(format <a href="/builtin#string">string</a>, a ...<a href="/builtin#any">any</a>) (n <a href="/builtin#int">int</a>, err <a href="/builtin#error">error</a>)</pre>
+    </div>
+  <p>Scanf scans text read from standard input, storing successive
+space-separated values into successive arguments as determined by
+the format. It returns the number of items successfully scanned.
+If that is less than the number of arguments, err will report why.
+Newlines in the input must match newlines in the format.
+The one exception: the verb %c always scans the next rune in the
+input, even if it is a space (or tab etc.) or newline.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Scanln" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/fmt/scan.go;l=69">Scanln</a> <a class="Documentation-idLink" href="#Scanln" title="Go to Scanln" aria-label="Go to Scanln">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Scanln(a ...<a href="/builtin#any">any</a>) (n <a href="/builtin#int">int</a>, err <a href="/builtin#error">error</a>)</pre>
+    </div>
+  <p>Scanln is similar to <a href="#Scan">Scan</a>, but stops scanning at a newline and
+after the final item there must be a newline or EOF.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Sprint" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/fmt/print.go;l=277">Sprint</a> <a class="Documentation-idLink" href="#Sprint" title="Go to Sprint" aria-label="Go to Sprint">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Sprint(a ...<a href="/builtin#any">any</a>) <a href="/builtin#string">string</a></pre>
+    </div>
+  <p>Sprint formats using the default formats for its operands and returns the resulting string.
+Spaces are added between operands when neither is a string.
+</p>
+<details tabindex="-1" id="example-Sprint" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-Sprint" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;io&#34;
+	&#34;os&#34;
+)
+
+func main() {
+	const name, age = &#34;Kim&#34;, 22
+	s := fmt.Sprint(name, &#34; is &#34;, age, &#34; years old.\n&#34;)
+
+	io.WriteString(os.Stdout, s) // Ignoring error for simplicity.
+
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">Kim is 22 years old.
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Sprintf" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/fmt/print.go;l=237">Sprintf</a> <a class="Documentation-idLink" href="#Sprintf" title="Go to Sprintf" aria-label="Go to Sprintf">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Sprintf(format <a href="/builtin#string">string</a>, a ...<a href="/builtin#any">any</a>) <a href="/builtin#string">string</a></pre>
+    </div>
+  <p>Sprintf formats according to a format specifier and returns the resulting string.
+</p>
+<details tabindex="-1" id="example-Sprintf" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-Sprintf" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;io&#34;
+	&#34;os&#34;
+)
+
+func main() {
+	const name, age = &#34;Kim&#34;, 22
+	s := fmt.Sprintf(&#34;%s is %d years old.\n&#34;, name, age)
+
+	io.WriteString(os.Stdout, s) // Ignoring error for simplicity.
+
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">Kim is 22 years old.
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Sprintln" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/fmt/print.go;l=320">Sprintln</a> <a class="Documentation-idLink" href="#Sprintln" title="Go to Sprintln" aria-label="Go to Sprintln">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Sprintln(a ...<a href="/builtin#any">any</a>) <a href="/builtin#string">string</a></pre>
+    </div>
+  <p>Sprintln formats using the default formats for its operands and returns the resulting string.
+Spaces are always added between operands and a newline is appended.
+</p>
+<details tabindex="-1" id="example-Sprintln" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-Sprintln" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;io&#34;
+	&#34;os&#34;
+)
+
+func main() {
+	const name, age = &#34;Kim&#34;, 22
+	s := fmt.Sprintln(name, &#34;is&#34;, age, &#34;years old.&#34;)
+
+	io.WriteString(os.Stdout, s) // Ignoring error for simplicity.
+
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">Kim is 22 years old.
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Sscan" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/fmt/scan.go;l=99">Sscan</a> <a class="Documentation-idLink" href="#Sscan" title="Go to Sscan" aria-label="Go to Sscan">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Sscan(str <a href="/builtin#string">string</a>, a ...<a href="/builtin#any">any</a>) (n <a href="/builtin#int">int</a>, err <a href="/builtin#error">error</a>)</pre>
+    </div>
+  <p>Sscan scans the argument string, storing successive space-separated
+values into successive arguments. Newlines count as space. It
+returns the number of items successfully scanned. If that is less
+than the number of arguments, err will report why.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Sscanf" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/fmt/scan.go;l=113">Sscanf</a> <a class="Documentation-idLink" href="#Sscanf" title="Go to Sscanf" aria-label="Go to Sscanf">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Sscanf(str <a href="/builtin#string">string</a>, format <a href="/builtin#string">string</a>, a ...<a href="/builtin#any">any</a>) (n <a href="/builtin#int">int</a>, err <a href="/builtin#error">error</a>)</pre>
+    </div>
+  <p>Sscanf scans the argument string, storing successive space-separated
+values into successive arguments as determined by the format. It
+returns the number of items successfully parsed.
+Newlines in the input must match newlines in the format.
+</p>
+<details tabindex="-1" id="example-Sscanf" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-Sscanf" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;fmt&#34;
+)
+
+func main() {
+	var name string
+	var age int
+	n, err := fmt.Sscanf(&#34;Kim is 22 years old&#34;, &#34;%s is %d years old&#34;, &amp;name, &amp;age)
+	if err != nil {
+		panic(err)
+	}
+	fmt.Printf(&#34;%d: %s, %d\n&#34;, n, name, age)
+
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">2: Kim, 22
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Sscanln" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/fmt/scan.go;l=105">Sscanln</a> <a class="Documentation-idLink" href="#Sscanln" title="Go to Sscanln" aria-label="Go to Sscanln">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Sscanln(str <a href="/builtin#string">string</a>, a ...<a href="/builtin#any">any</a>) (n <a href="/builtin#int">int</a>, err <a href="/builtin#error">error</a>)</pre>
+    </div>
+  <p>Sscanln is similar to <a href="#Sscan">Sscan</a>, but stops scanning at a newline and
+after the final item there must be a newline or EOF.
+</p>
+
+  
+
+        </div></section>
+
+  <h3 tabindex="-1" id="pkg-types" class="Documentation-typesHeader">Types <a href="#pkg-types" title="Go to Types" aria-label="Go to Types">¶</a></h3>
+
+  <section class="Documentation-types"><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="Formatter" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/fmt/print.go;l=54">Formatter</a> <a class="Documentation-idLink" href="#Formatter" title="Go to Formatter" aria-label="Go to Formatter">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type Formatter interface {
+<span id="Formatter.Format" data-kind="method">	Format(f <a href="#State">State</a>, verb <a href="/builtin#rune">rune</a>)
+</span>}</pre>
+    </div>
+  <p>Formatter is implemented by any value that has a Format method.
+The implementation controls how <a href="#State">State</a> and rune are interpreted,
+and may call <a href="#Sprint">Sprint</a> or <a href="#Fprint">Fprint</a>(f) etc. to generate its output.
+</p>
+
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="GoStringer" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/fmt/print.go;l=71">GoStringer</a> <a class="Documentation-idLink" href="#GoStringer" title="Go to GoStringer" aria-label="Go to GoStringer">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type GoStringer interface {
+<span id="GoStringer.GoString" data-kind="method">	GoString() <a href="/builtin#string">string</a>
+</span>}</pre>
+    </div>
+  <p>GoStringer is implemented by any value that has a GoString method,
+which defines the Go syntax for that value.
+The GoString method is used to print values passed as an operand
+to a %#v format.
+</p>
+<details tabindex="-1" id="example-GoStringer" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-GoStringer" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;fmt&#34;
+)
+
+// Address has a City, State and a Country.
+type Address struct {
+	City    string
+	State   string
+	Country string
+}
+
+// Person has a Name, Age and Address.
+type Person struct {
+	Name string
+	Age  uint
+	Addr *Address
+}
+
+// GoString makes Person satisfy the GoStringer interface.
+// The return value is valid Go code that can be used to reproduce the Person struct.
+func (p Person) GoString() string {
+	if p.Addr != nil {
+		return fmt.Sprintf(&#34;Person{Name: %q, Age: %d, Addr: &amp;Address{City: %q, State: %q, Country: %q}}&#34;, p.Name, int(p.Age), p.Addr.City, p.Addr.State, p.Addr.Country)
+	}
+	return fmt.Sprintf(&#34;Person{Name: %q, Age: %d}&#34;, p.Name, int(p.Age))
+}
+
+func main() {
+	p1 := Person{
+		Name: &#34;Warren&#34;,
+		Age:  31,
+		Addr: &amp;Address{
+			City:    &#34;Denver&#34;,
+			State:   &#34;CO&#34;,
+			Country: &#34;U.S.A.&#34;,
+		},
+	}
+	// If GoString() wasn&#39;t implemented, the output of `fmt.Printf(&#34;%#v&#34;, p1)` would be similar to
+	// Person{Name:&#34;Warren&#34;, Age:0x1f, Addr:(*main.Address)(0x10448240)}
+	fmt.Printf(&#34;%#v\n&#34;, p1)
+
+	p2 := Person{
+		Name: &#34;Theia&#34;,
+		Age:  4,
+	}
+	// If GoString() wasn&#39;t implemented, the output of `fmt.Printf(&#34;%#v&#34;, p2)` would be similar to
+	// Person{Name:&#34;Theia&#34;, Age:0x4, Addr:(*main.Address)(nil)}
+	fmt.Printf(&#34;%#v\n&#34;, p2)
+
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">Person{Name: &#34;Warren&#34;, Age: 31, Addr: &amp;Address{City: &#34;Denver&#34;, State: &#34;CO&#34;, Country: &#34;U.S.A.&#34;}}
+Person{Name: &#34;Theia&#34;, Age: 4}
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="ScanState" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/fmt/scan.go;l=21">ScanState</a> <a class="Documentation-idLink" href="#ScanState" title="Go to ScanState" aria-label="Go to ScanState">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type ScanState interface {
+<span id="ScanState.ReadRune" data-kind="method">	<span class="comment">// ReadRune reads the next rune (Unicode code point) from the input.</span>
+</span>	<span class="comment">// If invoked during Scanln, Fscanln, or Sscanln, ReadRune() will</span>
+	<span class="comment">// return EOF after returning the first &#39;\n&#39; or when reading beyond</span>
+	<span class="comment">// the specified width.</span>
+	ReadRune() (r <a href="/builtin#rune">rune</a>, size <a href="/builtin#int">int</a>, err <a href="/builtin#error">error</a>)
+<span id="ScanState.UnreadRune" data-kind="method">	<span class="comment">// UnreadRune causes the next call to ReadRune to return the same rune.</span>
+</span>	UnreadRune() <a href="/builtin#error">error</a>
+<span id="ScanState.SkipSpace" data-kind="method">	<span class="comment">// SkipSpace skips space in the input. Newlines are treated appropriately</span>
+</span>	<span class="comment">// for the operation being performed; see the package documentation</span>
+	<span class="comment">// for more information.</span>
+	SkipSpace()
+<span id="ScanState.Token" data-kind="method">	<span class="comment">// Token skips space in the input if skipSpace is true, then returns the</span>
+</span>	<span class="comment">// run of Unicode code points c satisfying f(c).  If f is nil,</span>
+	<span class="comment">// !unicode.IsSpace(c) is used; that is, the token will hold non-space</span>
+	<span class="comment">// characters. Newlines are treated appropriately for the operation being</span>
+	<span class="comment">// performed; see the package documentation for more information.</span>
+	<span class="comment">// The returned slice points to shared data that may be overwritten</span>
+	<span class="comment">// by the next call to Token, a call to a Scan function using the ScanState</span>
+	<span class="comment">// as input, or when the calling Scan method returns.</span>
+	Token(skipSpace <a href="/builtin#bool">bool</a>, f func(<a href="/builtin#rune">rune</a>) <a href="/builtin#bool">bool</a>) (token []<a href="/builtin#byte">byte</a>, err <a href="/builtin#error">error</a>)
+<span id="ScanState.Width" data-kind="method">	<span class="comment">// Width returns the value of the width option and whether it has been set.</span>
+</span>	<span class="comment">// The unit is Unicode code points.</span>
+	Width() (wid <a href="/builtin#int">int</a>, ok <a href="/builtin#bool">bool</a>)
+<span id="ScanState.Read" data-kind="method">	<span class="comment">// Because ReadRune is implemented by the interface, Read should never be</span>
+</span>	<span class="comment">// called by the scanning routines and a valid implementation of</span>
+	<span class="comment">// ScanState may choose always to return an error from Read.</span>
+	Read(buf []<a href="/builtin#byte">byte</a>) (n <a href="/builtin#int">int</a>, err <a href="/builtin#error">error</a>)
+}</pre>
+    </div>
+  <p>ScanState represents the scanner state passed to custom scanners.
+Scanners may do rune-at-a-time scanning or ask the ScanState
+to discover the next space-delimited token.
+</p>
+
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="Scanner" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/fmt/scan.go;l=55">Scanner</a> <a class="Documentation-idLink" href="#Scanner" title="Go to Scanner" aria-label="Go to Scanner">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type Scanner interface {
+<span id="Scanner.Scan" data-kind="method">	Scan(state <a href="#ScanState">ScanState</a>, verb <a href="/builtin#rune">rune</a>) <a href="/builtin#error">error</a>
+</span>}</pre>
+    </div>
+  <p>Scanner is implemented by any value that has a Scan method, which scans
+the input for the representation of a value and stores the result in the
+receiver, which must be a pointer to be useful. The Scan method is called
+for any argument to <a href="#Scan">Scan</a>, <a href="#Scanf">Scanf</a>, or <a href="#Scanln">Scanln</a> that implements it.
+</p>
+
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="State" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/fmt/print.go;l=39">State</a> <a class="Documentation-idLink" href="#State" title="Go to State" aria-label="Go to State">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type State interface {
+<span id="State.Write" data-kind="method">	<span class="comment">// Write is the function to call to emit formatted output to be printed.</span>
+</span>	Write(b []<a href="/builtin#byte">byte</a>) (n <a href="/builtin#int">int</a>, err <a href="/builtin#error">error</a>)
+<span id="State.Width" data-kind="method">	<span class="comment">// Width returns the value of the width option and whether it has been set.</span>
+</span>	Width() (wid <a href="/builtin#int">int</a>, ok <a href="/builtin#bool">bool</a>)
+<span id="State.Precision" data-kind="method">	<span class="comment">// Precision returns the value of the precision option and whether it has been set.</span>
+</span>	Precision() (prec <a href="/builtin#int">int</a>, ok <a href="/builtin#bool">bool</a>)
+
+<span id="State.Flag" data-kind="method">	<span class="comment">// Flag reports whether the flag c, a character, has been set.</span>
+</span>	Flag(c <a href="/builtin#int">int</a>) <a href="/builtin#bool">bool</a>
+}</pre>
+    </div>
+  <p>State represents the printer state passed to custom formatters.
+It provides access to the <a href="/io#Writer">io.Writer</a> interface plus information about
+the flags and options for the operand&#39;s format specifier.
+</p>
+
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="Stringer" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/fmt/print.go;l=63">Stringer</a> <a class="Documentation-idLink" href="#Stringer" title="Go to Stringer" aria-label="Go to Stringer">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type Stringer interface {
+<span id="Stringer.String" data-kind="method">	String() <a href="/builtin#string">string</a>
+</span>}</pre>
+    </div>
+  <p>Stringer is implemented by any value that has a String method,
+which defines the “native” format for that value.
+The String method is used to print values passed as an operand
+to any format that accepts a string or to an unformatted printer
+such as <a href="#Print">Print</a>.
+</p>
+<details tabindex="-1" id="example-Stringer" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-Stringer" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;fmt&#34;
+)
+
+// Animal has a Name and an Age to represent an animal.
+type Animal struct {
+	Name string
+	Age  uint
+}
+
+// String makes Animal satisfy the Stringer interface.
+func (a Animal) String() string {
+	return fmt.Sprintf(&#34;%v (%d)&#34;, a.Name, a.Age)
+}
+
+func main() {
+	a := Animal{
+		Name: &#34;Gopher&#34;,
+		Age:  2,
+	}
+	fmt.Println(a)
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">Gopher (2)
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+    </div></section></div> 
+
+
+
+
+
+
+
+      
+    </div>
+  </div>
+
+        
+      
+      
+        
+  <div class="UnitFiles js-unitFiles">
+    <h2 class="UnitFiles-title" id="section-sourcefiles">
+      <img class="go-Icon" height="24" width="24" src="/static/shared/icon/insert_drive_file_gm_grey_24dp.svg" alt="">
+      Source Files
+      <a class="UnitFiles-idLink" href="#section-sourcefiles" title="Go to Source Files" aria-label="Go to Source Files">¶</a>
+    </h2><div class="UnitFiles-titleLink">
+      <a href="https://cs.opensource.google/go/go/+/go1.26.3:src/fmt" target="_blank" rel="noopener">View all Source files</a>
+    </div><div>
+      <ul class="UnitFiles-fileList"><li><a href="https://cs.opensource.google/go/go/+/go1.26.3:src/fmt/doc.go" target="_blank" rel="noopener" title="doc.go">doc.go</a></li><li><a href="https://cs.opensource.google/go/go/+/go1.26.3:src/fmt/errors.go" target="_blank" rel="noopener" title="errors.go">errors.go</a></li><li><a href="https://cs.opensource.google/go/go/+/go1.26.3:src/fmt/format.go" target="_blank" rel="noopener" title="format.go">format.go</a></li><li><a href="https://cs.opensource.google/go/go/+/go1.26.3:src/fmt/print.go" target="_blank" rel="noopener" title="print.go">print.go</a></li><li><a href="https://cs.opensource.google/go/go/+/go1.26.3:src/fmt/scan.go" target="_blank" rel="noopener" title="scan.go">scan.go</a></li></ul>
+    </div>
+  </div>
+
+      
+      
+    </div>
+  </div>
+  <div id="showInternal-description" hidden> Click to show internal directories. </div>
+  <div id="hideInternal-description" hidden> Click to hide internal directories. </div>
+</article>
+    <footer class="go-Main-footer"></footer>
+  </main>
+
+    
+  <footer class="go-Footer">
+    
+    <div class="go-Footer-links">
+      <div class="go-Footer-linkColumn">
+        <a href="https://go.dev/solutions" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          Why Go
+        </a>
+        <a href="https://go.dev/solutions#use-cases" class="go-Footer-link"
+            data-gtmc="footer link">
+          Use Cases
+        </a>
+        <a href="https://go.dev/solutions#case-studies" class="go-Footer-link"
+            data-gtmc="footer link">
+          Case Studies
+        </a>
+      </div>
+      <div class="go-Footer-linkColumn">
+        <a href="https://learn.go.dev/" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          Get Started
+        </a>
+        <a href="https://play.golang.org" class="go-Footer-link" data-gtmc="footer link">
+          Playground
+        </a>
+        <a href="https://tour.golang.org" class="go-Footer-link" data-gtmc="footer link">
+          Tour
+        </a>
+        <a href="https://stackoverflow.com/questions/tagged/go?tab=Newest" class="go-Footer-link"
+            data-gtmc="footer link">
+          Stack Overflow
+        </a>
+        <a href="https://go.dev/help" class="go-Footer-link"
+            data-gtmc="footer link">
+          Help
+        </a>
+      </div>
+      <div class="go-Footer-linkColumn">
+        <a href="https://pkg.go.dev" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          Packages
+        </a>
+        <a href="/std" class="go-Footer-link" data-gtmc="footer link">
+          Standard Library
+        </a>
+        <a href="/golang.org/x" class="go-Footer-link" data-gtmc="footer link">
+          Sub-repositories
+        </a>
+        <a href="https://pkg.go.dev/about" class="go-Footer-link" data-gtmc="footer link">
+          About Go Packages
+        </a>
+      </div>
+      <div class="go-Footer-linkColumn">
+        <a href="https://go.dev/project" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          About
+        </a>
+        <a href="https://go.dev/dl/" class="go-Footer-link" data-gtmc="footer link">Download</a>
+        <a href="https://go.dev/blog" class="go-Footer-link" data-gtmc="footer link">Blog</a>
+        <a href="https://github.com/golang/go/issues" class="go-Footer-link" data-gtmc="footer link">
+          Issue Tracker
+        </a>
+        <a href="https://go.dev/doc/devel/release.html" class="go-Footer-link"
+            data-gtmc="footer link">
+          Release Notes
+        </a>
+        <a href="https://go.dev/brand" class="go-Footer-link" data-gtmc="footer link">
+          Brand Guidelines
+        </a>
+        <a href="https://go.dev/conduct" class="go-Footer-link" data-gtmc="footer link">
+          Code of Conduct
+        </a>
+      </div>
+      <div class="go-Footer-linkColumn">
+        <a href="https://www.twitter.com/golang" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          Connect
+        </a>
+        <a href="https://www.twitter.com/golang" class="go-Footer-link" data-gtmc="footer link">
+          Twitter
+        </a>
+        <a href="https://github.com/golang" class="go-Footer-link" data-gtmc="footer link">GitHub</a>
+        <a href="https://invite.slack.golangbridge.org/" class="go-Footer-link"
+            data-gtmc="footer link">
+          Slack
+        </a>
+        <a href="https://reddit.com/r/golang" class="go-Footer-link" data-gtmc="footer link">
+          r/golang
+        </a>
+        <a href="https://www.meetup.com/pro/go" class="go-Footer-link" data-gtmc="footer link">
+          Meetup
+        </a>
+        <a href="https://golangweekly.com/" class="go-Footer-link" data-gtmc="footer link">
+          Golang Weekly
+        </a>
+      </div>
+    </div>
+    <div class="go-Footer-bottom">
+      <img class="go-Footer-gopher"  width="1431" height="901"
+          src="/static/shared/gopher/pilot-bust-1431x901.svg" alt="Gopher in flight goggles">
+      <ul class="go-Footer-listRow">
+        <li class="go-Footer-listItem">
+          <a href="https://go.dev/copyright" data-gtmc="footer link">Copyright</a>
+        </li>
+        <li class="go-Footer-listItem">
+          <a href="https://go.dev/tos" data-gtmc="footer link">Terms of Service</a>
+        </li>
+        <li class="go-Footer-listItem">
+          <a href="http://www.google.com/intl/en/policies/privacy/" data-gtmc="footer link"
+              target="_blank" rel="noopener">
+            Privacy Policy
+          </a>
+        </li>
+        <li class="go-Footer-listItem">
+          <a href="https://go.dev/s/pkgsite-feedback" target="_blank" rel="noopener"
+              data-gtmc="footer link">
+            Report an Issue
+          </a>
+        </li>
+        <li class="go-Footer-listItem">
+          <button class="go-Button go-Button--text go-Footer-toggleTheme js-toggleTheme" aria-label="Theme Toggle">
+            <img data-value="auto" class="go-Icon go-Icon--inverted" height="24" width="24" src="/static/shared/icon/brightness_6_gm_grey_24dp.svg" alt="System theme">
+            <img data-value="dark" class="go-Icon go-Icon--inverted" height="24" width="24" src="/static/shared/icon/brightness_2_gm_grey_24dp.svg" alt="Dark theme">
+            <img data-value="light" class="go-Icon go-Icon--inverted" height="24" width="24" src="/static/shared/icon/light_mode_gm_grey_24dp.svg" alt="Light theme">
+            <p> Theme Toggle </p>
+          </button>
+        </li>
+        <li class="go-Footer-listItem">
+          <button class="go-Button go-Button--text go-Footer-keyboard js-openShortcuts" aria-label="Shorcuts Modal">
+            <img class="go-Icon go-Icon--inverted" height="24" width="24" src="/static/shared/icon/keyboard_grey_24dp.svg" alt="">
+            <p> Shortcuts Modal </p>
+          </button>
+        </li>
+      </ul>
+      <a class="go-Footer-googleLogo" href="https://google.com" target="_blank"rel="noopener"
+          data-gtmc="footer link">
+        <img class="go-Footer-googleLogoImg" height="24" width="72"
+            src="/static/shared/logo/google-white.svg" alt="Google logo">
+      </a>
+    </div>
+  </footer>
+
+    
+  <dialog id="jump-to-modal" class="JumpDialog go-Modal go-Modal--md js-modal">
+    <form method="dialog" data-gmtc="jump to form" aria-label="Jump to Identifier">
+      <div class="Dialog-title go-Modal-header">
+        <h2>Jump to</h2>
+        <button
+          class="go-Button go-Button--inline"
+          type="button"
+          data-modal-close
+          data-gtmc="modal button"
+          aria-label="Close"
+        >
+          <img
+            class="go-Icon"
+            height="24"
+            width="24"
+            src="/static/shared/icon/close_gm_grey_24dp.svg"
+            alt=""
+          />
+        </button>
+      </div>
+      <div class="JumpDialog-filter">
+        <input class="JumpDialog-input go-Input" autocomplete="off" type="text">
+      </div>
+      <div class="JumpDialog-body go-Modal-body">
+        <div class="JumpDialog-list"></div>
+      </div>
+      <div class="go-Modal-actions">
+        <button class="go-Button" data-test-id="close-dialog">Close</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog class="ShortcutsDialog go-Modal go-Modal--sm js-modal">
+    <form method="dialog">
+      <div class="go-Modal-header">
+        <h2>Keyboard shortcuts</h2>
+        <button
+          class="go-Button go-Button--inline"
+          type="button"
+          data-modal-close
+          data-gtmc="modal button"
+          aria-label="Close"
+        >
+          <img
+            class="go-Icon"
+            height="24"
+            width="24"
+            src="/static/shared/icon/close_gm_grey_24dp.svg"
+            alt=""
+          />
+        </button>
+      </div>
+      <div class="go-Modal-body">
+        <table>
+          <tbody>
+            <tr><td class="ShortcutsDialog-key">
+              <strong>?</strong></td><td> : This menu</td>
+            </tr>
+            <tr><td class="ShortcutsDialog-key">
+              <strong>/</strong></td><td> : Search site</td>
+            </tr>
+            <tr><td class="ShortcutsDialog-key">
+              <strong>f</strong> or <strong>F</strong></td><td> : Jump to</td>
+            </tr>
+            <tr>
+              <td class="ShortcutsDialog-key"><strong>y</strong> or <strong>Y</strong></td>
+              <td> : Canonical URL</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="go-Modal-actions">
+        <button class="go-Button" data-test-id="close-dialog">Close</button>
+      </div>
+    </form>
+  </dialog>
+
+    
+      <section class="Cookie-notice js-cookieNotice">
+        <div>go.dev uses cookies from Google to deliver and enhance the quality of its services and to
+        analyze traffic. <a target=_blank href="https://policies.google.com/technologies/cookies">Learn more.</a></div>
+        <div><button class="go-Button">Okay</button></div>
+      </section>
+    
+    
+      <script>
+        // this will throw if the querySelector can’t find the element
+        const gtmId = document.querySelector('.js-gtmID').dataset.gtmid;
+        if (!gtmId) {
+          throw new Error('Google Tag Manager ID not found');
+        }
+        loadScript(`https://www.googletagmanager.com/gtm.js?id=${gtmId}`);
+      </script>
+      <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W8MVQXG"
+                height="0" width="0" style="display:none;visibility:hidden">
+        </iframe>
+      </noscript>
+    
+    
+  
+  <div class="js-canonicalURLPath" data-canonical-url-path="/fmt@go1.26.3" hidden></div>
+  <div class="js-playgroundVars" data-modulepath="std" data-version="v1.26.3" hidden></div>
+  <script>
+    loadScript('/static/frontend/unit/main/main.js')
+  </script>
+
+  <script>
+    loadScript('/static/frontend/unit/unit.js')
+  </script>
+
+  </body>
+</html>

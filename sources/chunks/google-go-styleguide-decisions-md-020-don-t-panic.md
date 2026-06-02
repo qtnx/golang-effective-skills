@@ -1,0 +1,33 @@
+---
+source_name: "Google Go Style Guide"
+source_url: "https://google.github.io/styleguide/go/"
+source_path: "sources/raw/google-go-styleguide/decisions.md"
+license_ref: "sources/licenses/google-styleguide-LICENSE.txt"
+---
+
+## Language
+
+### Don't panic
+
+<a id="TOC-Don-t-Panic"></a>
+
+Do not use `panic` for normal error handling. Instead, use `error` and multiple
+return values. See the [Effective Go section on errors].
+
+Within `package main` and initialization code, consider [`log.Exit`] for errors
+that should terminate the program (e.g., invalid configuration), as in many of
+these cases a stack trace will not help the reader. Please note that
+[`log.Exit`] calls [`os.Exit`] and any deferred functions will not be run.
+
+For errors that indicate "impossible" conditions, namely bugs that should always
+be caught during code review and/or testing, a function may reasonably return an
+error or call [`log.Fatal`].
+
+Also see [when panic is acceptable](best-practices.md#when-to-panic).
+
+**Note:** `log.Fatalf` is not the standard library log. See [#logging].
+
+[Effective Go section on errors]: http://golang.org/doc/effective_go.html#errors
+[`os.Exit`]: https://pkg.go.dev/os#Exit
+
+<a id="must-functions"></a>

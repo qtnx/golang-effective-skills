@@ -1,17 +1,6 @@
-<!--* toc_depth: 3 *-->
-
 # Go Style Guide
 
-https://google.github.io/styleguide/go/guide
-
-[Overview](index) | [Guide](guide) | [Decisions](decisions) |
 [Best practices](best-practices)
-
-<!--
-
--->
-
-{% raw %}
 
 **Note:** This is part of a series of documents that outline [Go Style](index)
 at Google. This document is **[normative](index#normative) and
@@ -411,8 +400,6 @@ constant is `MaxLength` (not `MAX_LENGTH`) if exported and `maxLength` (not
 Local variables are considered [unexported] for the purpose of choosing the
 initial capitalization.
 
-<!--#include file="/go/g3doc/style/includes/special-name-exception.md"-->
-
 [unexported]: https://go.dev/ref/spec#Exported_identifiers
 
 <a id="line-length"></a>
@@ -475,9 +462,3 @@ justification for violating the style guide for new code. In these cases, it is
 appropriate for the author to clean up the existing codebase in the same CL,
 perform a refactor in advance of the current CL, or find an alternative that at
 least does not make the local problem worse.
-
-<!--
-
--->
-
-{% endraw %}

@@ -2,14 +2,7 @@
 
 https://google.github.io/styleguide/go
 
-[Overview](index) | [Guide](guide) | [Decisions](decisions) |
 [Best practices](best-practices)
-
-<!--
-
--->
-
-{% raw %}
 
 <a id="about"></a>
 
@@ -183,9 +176,3 @@ reviews.
 *   [Regular expressions for parsing](https://commandcenter.blogspot.com/2011/08/regular-expressions-in-lexing-and.html)
 *   [Gofmt's style is no one's favorite, yet Gofmt is everyone's favorite](https://www.youtube.com/watch?v=PAAkCSZUG1c&t=8m43s)
     (YouTube)
-
-<!--
-
--->
-
-{% endraw %}

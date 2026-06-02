@@ -2,16 +2,21 @@
 
 Primary source anchors:
 
-- `sources/chunks/google-go-styleguide-decisions-md-067-useful-test-failures.md`
-- `sources/chunks/google-go-styleguide-decisions-md-071-got-before-want.md`
-- `sources/chunks/google-go-styleguide-decisions-md-079-test-structure.md`
-- `sources/chunks/google-go-styleguide-decisions-md-080-subtests.md`
-- `sources/chunks/google-go-styleguide-decisions-md-081-subtest-names.md`
-- `sources/chunks/google-go-styleguide-decisions-md-082-table-driven-tests.md`
-- `sources/chunks/google-go-styleguide-decisions-md-085-test-helpers.md`
-- `sources/chunks/google-go-styleguide-decisions-md-086-test-package.md`
-- `sources/chunks/google-go-styleguide-best-practices-md-057-t-error-vs-t-fatal.md`
-- `sources/chunks/google-go-styleguide-best-practices-md-058-error-handling-in-test-helpers.md`
-- `sources/chunks/google-go-styleguide-best-practices-md-059-don-t-call-t-fatal-from-separate-goroutines.md`
-- `sources/chunks/uber-go-guide-style-md-071-test-tables.md`
-- `sources/chunks/uber-go-guide-style-md-073-parallel-tests.md`
+- `sources/chunks/google-go-styleguide-decisions-md-031-assertion-libraries.md`
+- `sources/chunks/google-go-styleguide-decisions-md-032-identify-the-function.md`
+- `sources/chunks/google-go-styleguide-decisions-md-033-got-before-want.md`
+- `sources/chunks/google-go-styleguide-decisions-md-034-compare-stable-results.md`
+- `sources/chunks/google-go-styleguide-decisions-md-035-keep-going.md`
+- `sources/chunks/google-go-styleguide-decisions-md-036-equality-comparison-and-diffs.md`
+- `sources/chunks/google-go-styleguide-decisions-md-039-test-error-semantics.md`
+- `sources/chunks/google-go-styleguide-decisions-md-040-subtests.md`
+- `sources/chunks/google-go-styleguide-decisions-md-041-table-driven-tests.md`
+- `sources/chunks/google-go-styleguide-decisions-md-042-test-helpers.md`
+- `sources/chunks/google-go-styleguide-decisions-md-043-test-package.md`
+- `sources/chunks/google-go-styleguide-best-practices-md-020-leave-testing-to-the-test-function.md`
+- `sources/chunks/google-go-styleguide-best-practices-md-021-designing-extensible-validation-apis.md`
+- `sources/chunks/google-go-styleguide-best-practices-md-022-use-real-transports.md`
+- `sources/chunks/google-go-styleguide-best-practices-md-023-t-error-vs-t-fatal.md`
+- `sources/chunks/google-go-styleguide-best-practices-md-024-error-handling-in-test-helpers.md`
+- `sources/chunks/google-go-styleguide-best-practices-md-025-don-t-call-t-fatal-from-separate-goroutines.md`
+- `sources/chunks/uber-go-guide-style-md-036-patterns.md`

@@ -1,0 +1,1639 @@
+---
+source_name: "External Linked Documentation"
+source_url: "https://go.dev/blog/go1.13-errors"
+retrieved_at: "2026-06-02T06:41:42.227897+00:00"
+content_type: "text/html; charset=utf-8"
+truncated: false
+insecure_tls_fallback: true
+---
+
+<!DOCTYPE html>
+<html lang="en" data-theme="auto">
+<head>
+
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<script >(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-W8MVQXG');</script>
+  
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#00add8">
+<link rel="canonical" href="https://go.dev/blog/go1.13-errors">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="icon" href="/images/favicon-gopher.png" sizes="any">
+<link rel="apple-touch-icon" href="/images/favicon-gopher-plain.png"/>
+<link rel="icon" href="/images/favicon-gopher.svg" type="image/svg+xml">
+<link rel="me" href="https://hachyderm.io/@golang">
+
+<link rel="alternate" title="The Go Blog" type="application/atom+xml" href="/blog/feed.atom">
+
+  
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-W8MVQXG');</script>
+  
+<script src="/js/site.js"></script>
+<meta name="og:url" content="https://go.dev/blog/go1.13-errors">
+<meta name="og:title" content="Working with Errors in Go 1.13 - The Go Programming Language">
+<title>Working with Errors in Go 1.13 - The Go Programming Language</title>
+
+<meta name="og:description" content="How to use the new Go 1.13 error interfaces and functions.">
+<meta name="description" content="How to use the new Go 1.13 error interfaces and functions.">
+
+<meta name="og:image" content="https://go.dev/doc/gopher/gopher5logo.jpg">
+<meta name="twitter:image" content="https://go.dev/doc/gopher/runningsquare.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@golang">
+</head>
+<body class="Site">
+  
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W8MVQXG"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  
+
+
+<header class="Site-header js-siteHeader">
+  <div class="Header Header--dark">
+    <nav class="Header-nav">
+      <a href="/">
+        <img
+          class="js-headerLogo Header-logo"
+          src="/images/go-logo-white.svg"
+          alt="Go">
+      </a>
+      <div class="skip-navigation-wrapper">
+        <a class="skip-to-content-link" aria-label="Skip to main content" href="#main-content"> Skip to Main Content </a>
+      </div>
+      <div class="Header-rightContent">
+        <ul class="Header-menu">
+          <li class="Header-menuItem ">
+            <a href="#"  class="js-desktop-menu-hover" aria-label=Why&#32;Go aria-describedby="dropdown-description">
+              Why Go <i class="material-icons" aria-hidden="true">arrow_drop_down</i>
+            </a>
+            <div class="screen-reader-only" id="dropdown-description" hidden>
+              Press Enter to activate/deactivate dropdown
+            </div>
+              <ul class="Header-submenu js-desktop-submenu-hover" aria-label="submenu">
+                  <li class="Header-submenuItem">
+                    <div>
+                        <a href="/solutions/case-studies">
+                          Case Studies
+                          
+                        </a>
+                    </div>
+                    <p>Common problems companies solve with Go</p>
+                  </li>
+                  <li class="Header-submenuItem">
+                    <div>
+                        <a href="/solutions/use-cases">
+                          Use Cases
+                          
+                        </a>
+                    </div>
+                    <p>Stories about how and why companies use Go</p>
+                  </li>
+                  <li class="Header-submenuItem">
+                    <div>
+                        <a href="/security/">
+                          Security
+                          
+                        </a>
+                    </div>
+                    <p>How Go can help keep you secure by default</p>
+                  </li>
+              </ul>
+          </li>
+          <li class="Header-menuItem ">
+            <a href="/learn/"  aria-label=Learn aria-describedby="dropdown-description">
+              Learn 
+            </a>
+            <div class="screen-reader-only" id="dropdown-description" hidden>
+              Press Enter to activate/deactivate dropdown
+            </div>
+          </li>
+          <li class="Header-menuItem ">
+            <a href="#"  class="js-desktop-menu-hover" aria-label=Docs aria-describedby="dropdown-description">
+              Docs <i class="material-icons" aria-hidden="true">arrow_drop_down</i>
+            </a>
+            <div class="screen-reader-only" id="dropdown-description" hidden>
+              Press Enter to activate/deactivate dropdown
+            </div>
+              <ul class="Header-submenu js-desktop-submenu-hover" aria-label="submenu">
+                  <li class="Header-submenuItem">
+                    <div>
+                        <a href="/ref/spec">
+                          Go Spec
+                          
+                        </a>
+                    </div>
+                    <p>The official Go language specification</p>
+                  </li>
+                  <li class="Header-submenuItem">
+                    <div>
+                        <a href="/doc">
+                          Go User Manual
+                          
+                        </a>
+                    </div>
+                    <p>A complete introduction to building software with Go</p>
+                  </li>
+                  <li class="Header-submenuItem">
+                    <div>
+                        <a href="https://pkg.go.dev/std">
+                          Standard library
+                          
+                        </a>
+                    </div>
+                    <p>Reference documentation for Go&#39;s standard library</p>
+                  </li>
+                  <li class="Header-submenuItem">
+                    <div>
+                        <a href="/doc/devel/release">
+                          Release Notes
+                          
+                        </a>
+                    </div>
+                    <p>Learn what&#39;s new in each Go release</p>
+                  </li>
+                  <li class="Header-submenuItem">
+                    <div>
+                        <a href="/doc/effective_go">
+                          Effective Go
+                          
+                        </a>
+                    </div>
+                    <p>Tips for writing clear, performant, and idiomatic Go code</p>
+                  </li>
+              </ul>
+          </li>
+          <li class="Header-menuItem ">
+            <a href="https://pkg.go.dev"  aria-label=Packages aria-describedby="dropdown-description">
+              Packages 
+            </a>
+            <div class="screen-reader-only" id="dropdown-description" hidden>
+              Press Enter to activate/deactivate dropdown
+            </div>
+          </li>
+          <li class="Header-menuItem ">
+            <a href="#"  class="js-desktop-menu-hover" aria-label=Community aria-describedby="dropdown-description">
+              Community <i class="material-icons" aria-hidden="true">arrow_drop_down</i>
+            </a>
+            <div class="screen-reader-only" id="dropdown-description" hidden>
+              Press Enter to activate/deactivate dropdown
+            </div>
+              <ul class="Header-submenu js-desktop-submenu-hover" aria-label="submenu">
+                  <li class="Header-submenuItem">
+                    <div>
+                        <a href="/talks/">
+                          Recorded Talks
+                          
+                        </a>
+                    </div>
+                    <p>Videos from prior events</p>
+                  </li>
+                  <li class="Header-submenuItem">
+                    <div>
+                        <a href="https://www.meetup.com/pro/go">
+                          Meetups
+                           <i class="material-icons">open_in_new</i>
+                        </a>
+                    </div>
+                    <p>Meet other local Go developers</p>
+                  </li>
+                  <li class="Header-submenuItem">
+                    <div>
+                        <a href="/wiki/Conferences">
+                          Conferences
+                           <i class="material-icons">open_in_new</i>
+                        </a>
+                    </div>
+                    <p>Learn and network with Go developers from around the world</p>
+                  </li>
+                  <li class="Header-submenuItem">
+                    <div>
+                        <a href="/blog">
+                          Go blog
+                          
+                        </a>
+                    </div>
+                    <p>The Go project&#39;s official blog.</p>
+                  </li>
+                  <li class="Header-submenuItem">
+                    <div>
+                        <a href="/help">
+                          Go project
+                          
+                        </a>
+                    </div>
+                    <p>Get help and stay informed from Go</p>
+                  </li>
+                  <li class="Header-submenuItem">
+                    <div>
+                        Get connected
+                    </div>
+                    <p></p>
+                      <div class="Header-socialIcons">
+                        
+                        <a class="Header-socialIcon" aria-label="Get connected with google-groups (Opens in new window)" href="https://groups.google.com/g/golang-nuts"><img src="/images/logos/social/google-groups.svg" /></a>
+                        <a class="Header-socialIcon" aria-label="Get connected with github (Opens in new window)" href="https://github.com/golang"><img src="/images/logos/social/github.svg" /></a>
+                        <a class="Header-socialIcon" aria-label="Get connected with bluesky (Opens in new window)" href="https://bsky.app/profile/golang.org"><img src="/images/logos/social/bluesky.svg" /></a>
+                        <a class="Header-socialIcon" aria-label="Get connected with mastodon (Opens in new window)" href="https://hachyderm.io/@golang"><img src="/images/logos/social/mastodon.svg" /></a>
+                        <a class="Header-socialIcon" aria-label="Get connected with twitter (Opens in new window)" href="https://twitter.com/golang"><img src="/images/logos/social/twitter.svg" /></a>
+                        <a class="Header-socialIcon" aria-label="Get connected with reddit (Opens in new window)" href="https://www.reddit.com/r/golang/"><img src="/images/logos/social/reddit.svg" /></a>
+                        <a class="Header-socialIcon" aria-label="Get connected with slack (Opens in new window)" href="https://invite.slack.golangbridge.org/"><img src="/images/logos/social/slack.svg" /></a>
+                        <a class="Header-socialIcon" aria-label="Get connected with stack-overflow (Opens in new window)" href="https://stackoverflow.com/tags/go"><img src="/images/logos/social/stack-overflow.svg" /></a>
+                      </div>
+                  </li>
+              </ul>
+          </li>
+        </ul>
+        <button class="Header-navOpen js-headerMenuButton Header-navOpen--white" aria-label="Open navigation.">
+        </button>
+      </div>
+    </nav>
+    
+  </div>
+</header>
+<aside class="NavigationDrawer js-header">
+  <nav class="NavigationDrawer-nav">
+    <div class="NavigationDrawer-header">
+      <a href="/">
+        <img class="NavigationDrawer-logo" src="/images/go-logo-blue.svg" alt="Go.">
+      </a>
+    </div>
+    <ul class="NavigationDrawer-list">
+        
+          <li class="NavigationDrawer-listItem js-mobile-subnav-trigger  NavigationDrawer-hasSubnav">
+            <a href="#"><span>Why Go</span> <i class="material-icons">navigate_next</i></a>
+
+            <div class="NavigationDrawer NavigationDrawer-submenuItem">
+              <nav class="NavigationDrawer-nav">
+                <div class="NavigationDrawer-header">
+                  <a href="#"><i class="material-icons">navigate_before</i>Why Go</a>
+                </div>
+                <ul class="NavigationDrawer-list">
+                    <li class="NavigationDrawer-listItem">
+                        <a href="/solutions/case-studies">
+                          Case Studies
+                          
+                        </a>
+                      
+                    </li>
+                    <li class="NavigationDrawer-listItem">
+                        <a href="/solutions/use-cases">
+                          Use Cases
+                          
+                        </a>
+                      
+                    </li>
+                    <li class="NavigationDrawer-listItem">
+                        <a href="/security/">
+                          Security
+                          
+                        </a>
+                      
+                    </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+
+        
+        
+          <li class="NavigationDrawer-listItem ">
+            <a href="/learn/">Learn</a>
+          </li>
+        
+        
+          <li class="NavigationDrawer-listItem js-mobile-subnav-trigger  NavigationDrawer-hasSubnav">
+            <a href="#"><span>Docs</span> <i class="material-icons">navigate_next</i></a>
+
+            <div class="NavigationDrawer NavigationDrawer-submenuItem">
+              <nav class="NavigationDrawer-nav">
+                <div class="NavigationDrawer-header">
+                  <a href="#"><i class="material-icons">navigate_before</i>Docs</a>
+                </div>
+                <ul class="NavigationDrawer-list">
+                    <li class="NavigationDrawer-listItem">
+                        <a href="/ref/spec">
+                          Go Spec
+                          
+                        </a>
+                      
+                    </li>
+                    <li class="NavigationDrawer-listItem">
+                        <a href="/doc">
+                          Go User Manual
+                          
+                        </a>
+                      
+                    </li>
+                    <li class="NavigationDrawer-listItem">
+                        <a href="https://pkg.go.dev/std">
+                          Standard library
+                          
+                        </a>
+                      
+                    </li>
+                    <li class="NavigationDrawer-listItem">
+                        <a href="/doc/devel/release">
+                          Release Notes
+                          
+                        </a>
+                      
+                    </li>
+                    <li class="NavigationDrawer-listItem">
+                        <a href="/doc/effective_go">
+                          Effective Go
+                          
+                        </a>
+                      
+                    </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+
+        
+        
+          <li class="NavigationDrawer-listItem ">
+            <a href="https://pkg.go.dev">Packages</a>
+          </li>
+        
+        
+          <li class="NavigationDrawer-listItem js-mobile-subnav-trigger  NavigationDrawer-hasSubnav">
+            <a href="#"><span>Community</span> <i class="material-icons">navigate_next</i></a>
+
+            <div class="NavigationDrawer NavigationDrawer-submenuItem">
+              <nav class="NavigationDrawer-nav">
+                <div class="NavigationDrawer-header">
+                  <a href="#"><i class="material-icons">navigate_before</i>Community</a>
+                </div>
+                <ul class="NavigationDrawer-list">
+                    <li class="NavigationDrawer-listItem">
+                        <a href="/talks/">
+                          Recorded Talks
+                          
+                        </a>
+                      
+                    </li>
+                    <li class="NavigationDrawer-listItem">
+                        <a href="https://www.meetup.com/pro/go">
+                          Meetups
+                           <i class="material-icons">open_in_new</i>
+                        </a>
+                      
+                    </li>
+                    <li class="NavigationDrawer-listItem">
+                        <a href="/wiki/Conferences">
+                          Conferences
+                           <i class="material-icons">open_in_new</i>
+                        </a>
+                      
+                    </li>
+                    <li class="NavigationDrawer-listItem">
+                        <a href="/blog">
+                          Go blog
+                          
+                        </a>
+                      
+                    </li>
+                    <li class="NavigationDrawer-listItem">
+                        <a href="/help">
+                          Go project
+                          
+                        </a>
+                      
+                    </li>
+                    <li class="NavigationDrawer-listItem">
+                        <div>Get connected</div>
+                        <div class="Header-socialIcons">
+                          
+                            <a class="Header-socialIcon" href="https://groups.google.com/g/golang-nuts"><img src="/images/logos/social/google-groups.svg" /></a>
+                            <a class="Header-socialIcon" href="https://github.com/golang"><img src="/images/logos/social/github.svg" /></a>
+                            <a class="Header-socialIcon" href="https://bsky.app/profile/golang.org"><img src="/images/logos/social/bluesky.svg" /></a>
+                            <a class="Header-socialIcon" href="https://hachyderm.io/@golang"><img src="/images/logos/social/mastodon.svg" /></a>
+                            <a class="Header-socialIcon" href="https://twitter.com/golang"><img src="/images/logos/social/twitter.svg" /></a>
+                            <a class="Header-socialIcon" href="https://www.reddit.com/r/golang/"><img src="/images/logos/social/reddit.svg" /></a>
+                            <a class="Header-socialIcon" href="https://invite.slack.golangbridge.org/"><img src="/images/logos/social/slack.svg" /></a>
+                            <a class="Header-socialIcon" href="https://stackoverflow.com/tags/go"><img src="/images/logos/social/stack-overflow.svg" /></a>
+                        </div>
+                    </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+
+        
+    </ul>
+  </nav>
+</aside>
+<div class="NavigationDrawer-scrim js-scrim" role="presentation"></div>
+<main class="SiteContent SiteContent--default" id="main-content">
+  
+<div id="blog"><div id="content">
+  <div id="content">
+
+    <div class="Article" data-slug="/blog/go1.13-errors">
+    
+    <h1 class="small"><a href="/blog/">The Go Blog</a></h1>
+    
+
+    <h1>Working with Errors in Go 1.13</h1>
+      
+      <p class="author">
+      Damien Neil and Jonathan Amsterdam<br>
+      17 October 2019
+      </p>
+      
+      <div class='markdown'>
+<h2 id="introduction">Introduction</h2>
+<p>Go’s treatment of <a href="/blog/errors-are-values">errors as values</a>
+has served us well over the last decade. Although the standard library’s support
+for errors has been minimal—just the <code>errors.New</code> and <code>fmt.Errorf</code> functions,
+which produce errors that contain only a message—the built-in <code>error</code> interface
+allows Go programmers to add whatever information they desire. All it requires
+is a type that implements an <code>Error</code> method:</p>
+<pre><code>type QueryError struct {
+    Query string
+    Err   error
+}
+
+func (e *QueryError) Error() string { return e.Query + &quot;: &quot; + e.Err.Error() }
+</code></pre>
+<p>Error types like this one are ubiquitous, and the information they store varies
+widely, from timestamps to filenames to server addresses. Often, that
+information includes another, lower-level error to provide additional context.</p>
+<p>The pattern of one error containing another is so pervasive in Go code that,
+after <a href="/issue/29934">extensive discussion</a>, Go 1.13 added
+explicit support for it. This post describes the additions to the standard
+library that provide that support: three new functions in the <code>errors</code> package,
+and a new formatting verb for <code>fmt.Errorf</code>.</p>
+<p>Before describing the changes in detail, let&rsquo;s review how errors are examined
+and constructed in previous versions of the language.</p>
+<h2 id="errors-before-go-113">Errors before Go 1.13</h2>
+<h3 id="examining-errors">Examining errors</h3>
+<p>Go errors are values. Programs make decisions based on those values in a few
+ways. The most common is to compare an error to <code>nil</code> to see if an operation
+failed.</p>
+<pre><code>if err != nil {
+    // something went wrong
+}
+</code></pre>
+<p>Sometimes we compare an error to a known <em>sentinel</em> value, to see if a specific error has occurred.</p>
+<pre><code>var ErrNotFound = errors.New(&quot;not found&quot;)
+
+if err == ErrNotFound {
+    // something wasn't found
+}
+</code></pre>
+<p>An error value may be of any type which satisfies the language-defined <code>error</code>
+interface. A program can use a type assertion or type switch to view an error
+value as a more specific type.</p>
+<pre><code>type NotFoundError struct {
+    Name string
+}
+
+func (e *NotFoundError) Error() string { return e.Name + &quot;: not found&quot; }
+
+if e, ok := err.(*NotFoundError); ok {
+    // e.Name wasn't found
+}
+</code></pre>
+<h3 id="adding-information">Adding information</h3>
+<p>Frequently a function passes an error up the call stack while adding information
+to it, like a brief description of what was happening when the error occurred. A
+simple way to do this is to construct a new error that includes the text of the
+previous one:</p>
+<pre><code>if err != nil {
+    return fmt.Errorf(&quot;decompress %v: %v&quot;, name, err)
+}
+</code></pre>
+<p>Creating a new error with <code>fmt.Errorf</code> discards everything from the original
+error except the text. As we saw above with <code>QueryError</code>, we may sometimes want
+to define a new error type that contains the underlying error, preserving it for
+inspection by code. Here is <code>QueryError</code> again:</p>
+<pre><code>type QueryError struct {
+    Query string
+    Err   error
+}
+</code></pre>
+<p>Programs can look inside a <code>*QueryError</code> value to make decisions based on the
+underlying error. You&rsquo;ll sometimes see this referred to as &ldquo;unwrapping&rdquo; the
+error.</p>
+<pre><code>if e, ok := err.(*QueryError); ok &amp;&amp; e.Err == ErrPermission {
+    // query failed because of a permission problem
+}
+</code></pre>
+<p>The <code>os.PathError</code> type in the standard library is another example of one error which contains another.</p>
+<h2 id="errors-in-go-113">Errors in Go 1.13</h2>
+<h3 id="the-unwrap-method">The Unwrap method</h3>
+<p>Go 1.13 introduces new features to the <code>errors</code> and <code>fmt</code> standard library
+packages to simplify working with errors that contain other errors. The most
+significant of these is a convention rather than a change: an error which
+contains another may implement an <code>Unwrap</code> method returning the underlying
+error. If <code>e1.Unwrap()</code> returns <code>e2</code>, then we say that <code>e1</code> <em>wraps</em> <code>e2</code>, and
+that you can <em>unwrap</em> <code>e1</code> to get <code>e2</code>.</p>
+<p>Following this convention, we can give the <code>QueryError</code> type above an <code>Unwrap</code>
+method that returns its contained error:</p>
+<pre><code>func (e *QueryError) Unwrap() error { return e.Err }
+</code></pre>
+<p>The result of unwrapping an error may itself have an <code>Unwrap</code> method; we call
+the sequence of errors produced by repeated unwrapping the <em>error chain</em>.</p>
+<h3 id="examining-errors-with-is-and-as">Examining errors with Is and As</h3>
+<p>The Go 1.13 <code>errors</code> package includes two new functions for examining errors: <code>Is</code> and <code>As</code>.</p>
+<p>The <code>errors.Is</code> function compares an error to a value.</p>
+<pre><code>// Similar to:
+//   if err == ErrNotFound { … }
+if errors.Is(err, ErrNotFound) {
+    // something wasn't found
+}
+</code></pre>
+<p>The <code>As</code> function tests whether an error is a specific type.</p>
+<pre><code>// Similar to:
+//   if e, ok := err.(*QueryError); ok { … }
+var e *QueryError
+// Note: *QueryError is the type of the error.
+if errors.As(err, &amp;e) {
+    // err is a *QueryError, and e is set to the error's value
+}
+</code></pre>
+<p>In the simplest case, the <code>errors.Is</code> function behaves like a comparison to a
+sentinel error, and the <code>errors.As</code> function behaves like a type assertion. When
+operating on wrapped errors, however, these functions consider all the errors in
+a chain. Let&rsquo;s look again at the example from above of unwrapping a <code>QueryError</code>
+to examine the underlying error:</p>
+<pre><code>if e, ok := err.(*QueryError); ok &amp;&amp; e.Err == ErrPermission {
+    // query failed because of a permission problem
+}
+</code></pre>
+<p>Using the <code>errors.Is</code> function, we can write this as:</p>
+<pre><code>if errors.Is(err, ErrPermission) {
+    // err, or some error that it wraps, is a permission problem
+}
+</code></pre>
+<p>The <code>errors</code> package also includes a new <code>Unwrap</code> function which returns the
+result of calling an error&rsquo;s <code>Unwrap</code> method, or <code>nil</code> when the error has no
+<code>Unwrap</code> method. It is usually better to use <code>errors.Is</code> or <code>errors.As</code>,
+however, since these functions will examine the entire chain in a single call.</p>
+<p>Note: although it may feel odd to take a pointer to a pointer, in this case it
+is correct. Think of it instead as taking a pointer to a value of the error
+type; it so happens in this case that the returned error is a pointer type.</p>
+<h3 id="wrapping-errors-with-w">Wrapping errors with %w</h3>
+<p>As mentioned earlier, it is common to use the <code>fmt.Errorf</code> function to add additional information to an error.</p>
+<pre><code>if err != nil {
+    return fmt.Errorf(&quot;decompress %v: %v&quot;, name, err)
+}
+</code></pre>
+<p>In Go 1.13, the <code>fmt.Errorf</code> function supports a new <code>%w</code> verb. When this verb
+is present, the error returned by <code>fmt.Errorf</code> will have an <code>Unwrap</code> method
+returning the argument of <code>%w</code>, which must be an error. In all other ways, <code>%w</code>
+is identical to <code>%v</code>.</p>
+<pre><code>if err != nil {
+    // Return an error which unwraps to err.
+    return fmt.Errorf(&quot;decompress %v: %w&quot;, name, err)
+}
+</code></pre>
+<p>Wrapping an error with <code>%w</code> makes it available to <code>errors.Is</code> and <code>errors.As</code>:</p>
+<pre><code>err := fmt.Errorf(&quot;access denied: %w&quot;, ErrPermission)
+...
+if errors.Is(err, ErrPermission) ...
+</code></pre>
+<h3 id="whether-to-wrap">Whether to Wrap</h3>
+<p>When adding additional context to an error, either with <code>fmt.Errorf</code> or by
+implementing a custom type, you need to decide whether the new error should wrap
+the original. There is no single answer to this question; it depends on the
+context in which the new error is created. Wrap an error to expose it to
+callers. Do not wrap an error when doing so would expose implementation details.</p>
+<p>As one example, imagine a <code>Parse</code> function which reads a complex data structure
+from an <code>io.Reader</code>. If an error occurs, we wish to report the line and column
+number at which it occurred. If the error occurs while reading from the
+<code>io.Reader</code>, we will want to wrap that error to allow inspection of the
+underlying problem. Since the caller provided the <code>io.Reader</code> to the function,
+it makes sense to expose the error produced by it.</p>
+<p>In contrast, a function which makes several calls to a database probably should
+not return an error which unwraps to the result of one of those calls. If the
+database used by the function is an implementation detail, then exposing these
+errors is a violation of abstraction. For example, if the <code>LookupUser</code> function
+of your package <code>pkg</code> uses Go&rsquo;s <code>database/sql</code> package, then it may encounter a
+<code>sql.ErrNoRows</code> error. If you return that error with
+<code>fmt.Errorf(&quot;accessing DB: %v&quot;, err)</code>
+then a caller cannot look inside to find the <code>sql.ErrNoRows</code>. But if
+the function instead returns <code>fmt.Errorf(&quot;accessing DB: %w&quot;, err)</code>, then a
+caller could reasonably write</p>
+<pre><code>err := pkg.LookupUser(...)
+if errors.Is(err, sql.ErrNoRows) …
+</code></pre>
+<p>At that point, the function must always return <code>sql.ErrNoRows</code> if you don&rsquo;t want
+to break your clients, even if you switch to a different database package. In
+other words, wrapping an error makes that error part of your API. If you don&rsquo;t
+want to commit to supporting that error as part of your API in the future, you
+shouldn&rsquo;t wrap the error.</p>
+<p>It’s important to remember that whether you wrap or not, the error text will be
+the same. A <em>person</em> trying to understand the error will have the same information
+either way; the choice to wrap is about whether to give <em>programs</em> additional
+information so they can make more informed decisions, or to withhold that
+information to preserve an abstraction layer.</p>
+<h2 id="customizing-error-tests-with-is-and-as-methods">Customizing error tests with Is and As methods</h2>
+<p>The <code>errors.Is</code> function examines each error in a chain for a match with a
+target value. By default, an error matches the target if the two are
+<a href="/ref/spec#Comparison_operators">equal</a>. In addition, an
+error in the chain may declare that it matches a target by implementing an <code>Is</code>
+<em>method</em>.</p>
+<p>As an example, consider this error inspired by the
+<a href="https://commandcenter.blogspot.com/2017/12/error-handling-in-upspin.html" rel="noreferrer" target="_blank">Upspin error package</a>
+which compares an error against a template, considering only fields which are
+non-zero in the template:</p>
+<pre><code>type Error struct {
+    Path string
+    User string
+}
+
+func (e *Error) Is(target error) bool {
+    t, ok := target.(*Error)
+    if !ok {
+        return false
+    }
+    return (e.Path == t.Path || t.Path == &quot;&quot;) &amp;&amp;
+           (e.User == t.User || t.User == &quot;&quot;)
+}
+
+if errors.Is(err, &amp;Error{User: &quot;someuser&quot;}) {
+    // err's User field is &quot;someuser&quot;.
+}
+</code></pre>
+<p>The <code>errors.As</code> function similarly consults an <code>As</code> method when present.</p>
+<h2 id="errors-and-package-apis">Errors and package APIs</h2>
+<p>A package which returns errors (and most do) should describe what properties of
+those errors programmers may rely on. A well-designed package will also avoid
+returning errors with properties that should not be relied upon.</p>
+<p>The simplest specification is to say that operations either succeed or fail,
+returning a nil or non-nil error value respectively. In many cases, no further
+information is needed.</p>
+<p>If we wish a function to return an identifiable error condition, such as &ldquo;item
+not found,&rdquo; we might return an error wrapping a sentinel.</p>
+<pre><code>var ErrNotFound = errors.New(&quot;not found&quot;)
+
+// FetchItem returns the named item.
+//
+// If no item with the name exists, FetchItem returns an error
+// wrapping ErrNotFound.
+func FetchItem(name string) (*Item, error) {
+    if itemNotFound(name) {
+        return nil, fmt.Errorf(&quot;%q: %w&quot;, name, ErrNotFound)
+    }
+    // ...
+}
+</code></pre>
+<p>There are other existing patterns for providing errors which can be semantically
+examined by the caller, such as directly returning a sentinel value, a specific
+type, or a value which can be examined with a predicate function.</p>
+<p>In all cases, care should be taken not to expose internal details to the user.
+As we touched on in &ldquo;Whether to Wrap&rdquo; above, when you return
+an error from another package you should convert the error to a form that does
+not expose the underlying error, unless you are willing to commit to returning
+that specific error in the future.</p>
+<pre><code>f, err := os.Open(filename)
+if err != nil {
+    // The *os.PathError returned by os.Open is an internal detail.
+    // To avoid exposing it to the caller, repackage it as a new
+    // error with the same text. We use the %v formatting verb, since
+    // %w would permit the caller to unwrap the original *os.PathError.
+    return fmt.Errorf(&quot;%v&quot;, err)
+}
+</code></pre>
+<p>If a function is defined as returning an error wrapping some sentinel or type,
+do not return the underlying error directly.</p>
+<pre><code>var ErrPermission = errors.New(&quot;permission denied&quot;)
+
+// DoSomething returns an error wrapping ErrPermission if the user
+// does not have permission to do something.
+func DoSomething() error {
+    if !userHasPermission() {
+        // If we return ErrPermission directly, callers might come
+        // to depend on the exact error value, writing code like this:
+        //
+        //     if err := pkg.DoSomething(); err == pkg.ErrPermission { … }
+        //
+        // This will cause problems if we want to add additional
+        // context to the error in the future. To avoid this, we
+        // return an error wrapping the sentinel so that users must
+        // always unwrap it:
+        //
+        //     if err := pkg.DoSomething(); errors.Is(err, pkg.ErrPermission) { ... }
+        return fmt.Errorf(&quot;%w&quot;, ErrPermission)
+    }
+    // ...
+}
+</code></pre>
+<h2 id="conclusion">Conclusion</h2>
+<p>Although the changes we’ve discussed amount to just three functions and a
+formatting verb, we hope they will go a long way toward improving how errors are
+handled in Go programs. We expect that wrapping to provide additional context
+will become commonplace, helping programs to make better decisions and helping
+programmers to find bugs more quickly.</p>
+<p>As Russ Cox said in his <a href="/blog/experiment">GopherCon 2019 keynote</a>,
+on the path to Go 2 we experiment, simplify and ship. Now that we’ve
+shipped these changes, we look forward to the experiments that will follow.</p>
+</div>
+
+    </div>
+
+    
+    <div class="Article prevnext">
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <p>
+        
+          
+            <b>Next article: </b><a href="/blog/v2-go-modules">Go Modules: v2 and Beyond</a><br>
+          
+        
+        
+          
+            <b>Previous article: </b><a href="/blog/publishing-go-modules">Publishing Go Modules</a><br>
+          
+        
+        <b><a href="/blog/all">Blog Index</a></b>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    </div>
+    
+
+  </div>
+</div>
+
+<script src="/js/play.js"></script>
+
+</main>
+<footer class="Site-footer">
+  <div class="Footer">
+    <div class="Container">
+      <div class="Footer-links">
+          <div class="Footer-linkColumn">
+            <a href="/solutions/" class="Footer-link Footer-link--primary" aria-describedby="footer-description">
+              Why Go
+            </a>
+              <a href="/solutions/use-cases" class="Footer-link" aria-describedby="footer-description">
+                Use Cases
+              </a>
+              <a href="/solutions/case-studies" class="Footer-link" aria-describedby="footer-description">
+                Case Studies
+              </a>
+          </div>
+          <div class="Footer-linkColumn">
+            <a href="/learn/" class="Footer-link Footer-link--primary" aria-describedby="footer-description">
+              Get Started
+            </a>
+              <a href="/play" class="Footer-link" aria-describedby="footer-description">
+                Playground
+              </a>
+              <a href="/tour/" class="Footer-link" aria-describedby="footer-description">
+                Tour
+              </a>
+              <a href="https://stackoverflow.com/questions/tagged/go?tab=Newest" class="Footer-link" aria-describedby="footer-description">
+                Stack Overflow
+              </a>
+              <a href="/help/" class="Footer-link" aria-describedby="footer-description">
+                Help
+              </a>
+          </div>
+          <div class="Footer-linkColumn">
+            <a href="https://pkg.go.dev" class="Footer-link Footer-link--primary" aria-describedby="footer-description">
+              Packages
+            </a>
+              <a href="/pkg/" class="Footer-link" aria-describedby="footer-description">
+                Standard Library
+              </a>
+              <a href="https://pkg.go.dev/about" class="Footer-link" aria-describedby="footer-description">
+                About Go Packages
+              </a>
+          </div>
+          <div class="Footer-linkColumn">
+            <a href="/project" class="Footer-link Footer-link--primary" aria-describedby="footer-description">
+              About
+            </a>
+              <a href="/dl/" class="Footer-link" aria-describedby="footer-description">
+                Download
+              </a>
+              <a href="/blog/" class="Footer-link" aria-describedby="footer-description">
+                Blog
+              </a>
+              <a href="https://github.com/golang/go/issues" class="Footer-link" aria-describedby="footer-description">
+                Issue Tracker
+              </a>
+              <a href="/doc/devel/release" class="Footer-link" aria-describedby="footer-description">
+                Release Notes
+              </a>
+              <a href="/brand" class="Footer-link" aria-describedby="footer-description">
+                Brand Guidelines
+              </a>
+              <a href="/conduct" class="Footer-link" aria-describedby="footer-description">
+                Code of Conduct
+              </a>
+          </div>
+          <div class="Footer-linkColumn">
+            <a href="/wiki/#the-go-community" class="Footer-link Footer-link--primary" aria-describedby="footer-description">
+              Connect
+            </a>
+              <a href="https://bsky.app/profile/golang.org" class="Footer-link" aria-describedby="footer-description">
+                Bluesky
+              </a>
+              <a href="https://hachyderm.io/@golang" class="Footer-link" aria-describedby="footer-description">
+                Mastodon
+              </a>
+              <a href="https://www.twitter.com/golang" class="Footer-link" aria-describedby="footer-description">
+                Twitter
+              </a>
+              <a href="https://github.com/golang" class="Footer-link" aria-describedby="footer-description">
+                GitHub
+              </a>
+              <a href="https://invite.slack.golangbridge.org/" class="Footer-link" aria-describedby="footer-description">
+                Slack
+              </a>
+              <a href="https://reddit.com/r/golang" class="Footer-link" aria-describedby="footer-description">
+                r/golang
+              </a>
+              <a href="https://www.meetup.com/pro/go" class="Footer-link" aria-describedby="footer-description">
+                Meetup
+              </a>
+              <a href="https://golangweekly.com/" class="Footer-link" aria-describedby="footer-description">
+                Golang Weekly
+              </a>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="screen-reader-only" id="footer-description" hidden>
+          Opens in new window.
+  </div>
+  <div class="Footer">
+    <div class="Container Container--fullBleed">
+      <div class="Footer-bottom">
+        <img class="Footer-gopher" src="/images/gophers/pilot-bust.svg" alt="The Go Gopher">
+        <ul class="Footer-listRow">
+          <li class="Footer-listItem">
+            <a href="/copyright" aria-describedby="footer-description">Copyright</a>
+          </li>
+          <li class="Footer-listItem">
+            <a href="/tos" aria-describedby="footer-description">Terms of Service</a>
+          </li>
+          <li class="Footer-listItem">
+            <a href="http://www.google.com/intl/en/policies/privacy/" aria-describedby="footer-description"
+              target="_blank"
+              rel="noopener">
+              Privacy Policy
+            </a>
+            </li>
+          <li class="Footer-listItem">
+            <a
+              href="/s/website-issue" aria-describedby="footer-description"
+              target="_blank"
+              rel="noopener"
+              >
+              Report an Issue
+            </a>
+          </li>
+          <li class="Footer-listItem go-Footer-listItem">
+            <button class="go-Button go-Button--text go-Footer-toggleTheme js-toggleTheme" aria-label="Toggle theme">
+              <img
+                data-value="auto"
+                class="go-Icon go-Icon--inverted"
+                height="24"
+                width="24"
+                src="/images/icons/brightness_6_gm_grey_24dp.svg"
+                alt="System theme">
+              <img
+                data-value="dark"
+                class="go-Icon go-Icon--inverted"
+                height="24"
+                width="24"
+                src="/images/icons/brightness_2_gm_grey_24dp.svg"
+                alt="Dark theme">
+              <img
+                data-value="light"
+                class="go-Icon go-Icon--inverted"
+                height="24"
+                width="24"
+                src="/images/icons/light_mode_gm_grey_24dp.svg"
+                alt="Light theme">
+            </button>
+          </li>
+        </ul>
+        <a class="Footer-googleLogo" target="_blank" href="https://google.com" rel="noopener">
+          <img class="Footer-googleLogoImg" src="/images/google-white.png" alt="Google logo">
+        </a>
+      </div>
+    </div>
+  </div>
+  <script src="/js/jquery.js"></script>
+  <script src="/js/carousels.js"></script>
+  <script src="/js/searchBox.js"></script>
+  <script src="/js/misc.js"></script>
+  <script src="/js/hats.js"></script>
+  <script src="/js/playground.js"></script>
+  <script src="/js/godocs.js"></script>
+  <script async src="/js/copypaste.js"></script>
+</footer>
+<section class="Cookie-notice js-cookieNotice">
+  <div>go.dev uses cookies from Google to deliver and enhance the quality of its services and to
+  analyze traffic. <a target=_blank href="https://policies.google.com/technologies/cookies">Learn more.</a></div>
+  <div><button class="go-Button">Okay</button></div>
+</section>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

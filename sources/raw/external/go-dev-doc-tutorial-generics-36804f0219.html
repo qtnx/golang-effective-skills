@@ -1,0 +1,1145 @@
+---
+source_name: "External Linked Documentation"
+source_url: "https://go.dev/doc/tutorial/generics"
+retrieved_at: "2026-06-02T06:41:54.244188+00:00"
+content_type: "text/html; charset=utf-8"
+truncated: false
+insecure_tls_fallback: true
+---
+
+<!DOCTYPE html>
+<html lang="en" data-theme="auto">
+<head>
+
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<script >(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-W8MVQXG');</script>
+  
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#00add8">
+<link rel="canonical" href="https://go.dev/doc/tutorial/generics">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="icon" href="/images/favicon-gopher.png" sizes="any">
+<link rel="apple-touch-icon" href="/images/favicon-gopher-plain.png"/>
+<link rel="icon" href="/images/favicon-gopher.svg" type="image/svg+xml">
+<link rel="me" href="https://hachyderm.io/@golang">
+
+  
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-W8MVQXG');</script>
+  
+<script src="/js/site.js"></script>
+<meta name="og:url" content="https://go.dev/doc/tutorial/generics">
+<meta name="og:title" content="Tutorial: Getting started with generics - The Go Programming Language">
+<title>Tutorial: Getting started with generics - The Go Programming Language</title>
+
+<meta name="og:image" content="https://go.dev/doc/gopher/gopher5logo.jpg">
+<meta name="twitter:image" content="https://go.dev/doc/gopher/gopherbelly300.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@golang">
+</head>
+<body class="Site">
+  
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W8MVQXG"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  
+
+
+<header class="Site-header js-siteHeader">
+  <div class="Header Header--dark">
+    <nav class="Header-nav">
+      <a href="/">
+        <img
+          class="js-headerLogo Header-logo"
+          src="/images/go-logo-white.svg"
+          alt="Go">
+      </a>
+      <div class="skip-navigation-wrapper">
+        <a class="skip-to-content-link" aria-label="Skip to main content" href="#main-content"> Skip to Main Content </a>
+      </div>
+      <div class="Header-rightContent">
+        <ul class="Header-menu">
+          <li class="Header-menuItem ">
+            <a href="#"  class="js-desktop-menu-hover" aria-label=Why&#32;Go aria-describedby="dropdown-description">
+              Why Go <i class="material-icons" aria-hidden="true">arrow_drop_down</i>
+            </a>
+            <div class="screen-reader-only" id="dropdown-description" hidden>
+              Press Enter to activate/deactivate dropdown
+            </div>
+              <ul class="Header-submenu js-desktop-submenu-hover" aria-label="submenu">
+                  <li class="Header-submenuItem">
+                    <div>
+                        <a href="/solutions/case-studies">
+                          Case Studies
+                          
+                        </a>
+                    </div>
+                    <p>Common problems companies solve with Go</p>
+                  </li>
+                  <li class="Header-submenuItem">
+                    <div>
+                        <a href="/solutions/use-cases">
+                          Use Cases
+                          
+                        </a>
+                    </div>
+                    <p>Stories about how and why companies use Go</p>
+                  </li>
+                  <li class="Header-submenuItem">
+                    <div>
+                        <a href="/security/">
+                          Security
+                          
+                        </a>
+                    </div>
+                    <p>How Go can help keep you secure by default</p>
+                  </li>
+              </ul>
+          </li>
+          <li class="Header-menuItem ">
+            <a href="/learn/"  aria-label=Learn aria-describedby="dropdown-description">
+              Learn 
+            </a>
+            <div class="screen-reader-only" id="dropdown-description" hidden>
+              Press Enter to activate/deactivate dropdown
+            </div>
+          </li>
+          <li class="Header-menuItem  Header-menuItem--active">
+            <a href="#"  class="js-desktop-menu-hover" aria-label=Docs aria-describedby="dropdown-description">
+              Docs <i class="material-icons" aria-hidden="true">arrow_drop_down</i>
+            </a>
+            <div class="screen-reader-only" id="dropdown-description" hidden>
+              Press Enter to activate/deactivate dropdown
+            </div>
+              <ul class="Header-submenu js-desktop-submenu-hover" aria-label="submenu">
+                  <li class="Header-submenuItem">
+                    <div>
+                        <a href="/ref/spec">
+                          Go Spec
+                          
+                        </a>
+                    </div>
+                    <p>The official Go language specification</p>
+                  </li>
+                  <li class="Header-submenuItem">
+                    <div>
+                        <a href="/doc">
+                          Go User Manual
+                          
+                        </a>
+                    </div>
+                    <p>A complete introduction to building software with Go</p>
+                  </li>
+                  <li class="Header-submenuItem">
+                    <div>
+                        <a href="https://pkg.go.dev/std">
+                          Standard library
+                          
+                        </a>
+                    </div>
+                    <p>Reference documentation for Go&#39;s standard library</p>
+                  </li>
+                  <li class="Header-submenuItem">
+                    <div>
+                        <a href="/doc/devel/release">
+                          Release Notes
+                          
+                        </a>
+                    </div>
+                    <p>Learn what&#39;s new in each Go release</p>
+                  </li>
+                  <li class="Header-submenuItem">
+                    <div>
+                        <a href="/doc/effective_go">
+                          Effective Go
+                          
+                        </a>
+                    </div>
+                    <p>Tips for writing clear, performant, and idiomatic Go code</p>
+                  </li>
+              </ul>
+          </li>
+          <li class="Header-menuItem ">
+            <a href="https://pkg.go.dev"  aria-label=Packages aria-describedby="dropdown-description">
+              Packages 
+            </a>
+            <div class="screen-reader-only" id="dropdown-description" hidden>
+              Press Enter to activate/deactivate dropdown
+            </div>
+          </li>
+          <li class="Header-menuItem ">
+            <a href="#"  class="js-desktop-menu-hover" aria-label=Community aria-describedby="dropdown-description">
+              Community <i class="material-icons" aria-hidden="true">arrow_drop_down</i>
+            </a>
+            <div class="screen-reader-only" id="dropdown-description" hidden>
+              Press Enter to activate/deactivate dropdown
+            </div>
+              <ul class="Header-submenu js-desktop-submenu-hover" aria-label="submenu">
+                  <li class="Header-submenuItem">
+                    <div>
+                        <a href="/talks/">
+                          Recorded Talks
+                          
+                        </a>
+                    </div>
+                    <p>Videos from prior events</p>
+                  </li>
+                  <li class="Header-submenuItem">
+                    <div>
+                        <a href="https://www.meetup.com/pro/go">
+                          Meetups
+                           <i class="material-icons">open_in_new</i>
+                        </a>
+                    </div>
+                    <p>Meet other local Go developers</p>
+                  </li>
+                  <li class="Header-submenuItem">
+                    <div>
+                        <a href="/wiki/Conferences">
+                          Conferences
+                           <i class="material-icons">open_in_new</i>
+                        </a>
+                    </div>
+                    <p>Learn and network with Go developers from around the world</p>
+                  </li>
+                  <li class="Header-submenuItem">
+                    <div>
+                        <a href="/blog">
+                          Go blog
+                          
+                        </a>
+                    </div>
+                    <p>The Go project&#39;s official blog.</p>
+                  </li>
+                  <li class="Header-submenuItem">
+                    <div>
+                        <a href="/help">
+                          Go project
+                          
+                        </a>
+                    </div>
+                    <p>Get help and stay informed from Go</p>
+                  </li>
+                  <li class="Header-submenuItem">
+                    <div>
+                        Get connected
+                    </div>
+                    <p></p>
+                      <div class="Header-socialIcons">
+                        
+                        <a class="Header-socialIcon" aria-label="Get connected with google-groups (Opens in new window)" href="https://groups.google.com/g/golang-nuts"><img src="/images/logos/social/google-groups.svg" /></a>
+                        <a class="Header-socialIcon" aria-label="Get connected with github (Opens in new window)" href="https://github.com/golang"><img src="/images/logos/social/github.svg" /></a>
+                        <a class="Header-socialIcon" aria-label="Get connected with bluesky (Opens in new window)" href="https://bsky.app/profile/golang.org"><img src="/images/logos/social/bluesky.svg" /></a>
+                        <a class="Header-socialIcon" aria-label="Get connected with mastodon (Opens in new window)" href="https://hachyderm.io/@golang"><img src="/images/logos/social/mastodon.svg" /></a>
+                        <a class="Header-socialIcon" aria-label="Get connected with twitter (Opens in new window)" href="https://twitter.com/golang"><img src="/images/logos/social/twitter.svg" /></a>
+                        <a class="Header-socialIcon" aria-label="Get connected with reddit (Opens in new window)" href="https://www.reddit.com/r/golang/"><img src="/images/logos/social/reddit.svg" /></a>
+                        <a class="Header-socialIcon" aria-label="Get connected with slack (Opens in new window)" href="https://invite.slack.golangbridge.org/"><img src="/images/logos/social/slack.svg" /></a>
+                        <a class="Header-socialIcon" aria-label="Get connected with stack-overflow (Opens in new window)" href="https://stackoverflow.com/tags/go"><img src="/images/logos/social/stack-overflow.svg" /></a>
+                      </div>
+                  </li>
+              </ul>
+          </li>
+        </ul>
+        <button class="Header-navOpen js-headerMenuButton Header-navOpen--white" aria-label="Open navigation.">
+        </button>
+      </div>
+    </nav>
+    
+  </div>
+</header>
+<aside class="NavigationDrawer js-header">
+  <nav class="NavigationDrawer-nav">
+    <div class="NavigationDrawer-header">
+      <a href="/">
+        <img class="NavigationDrawer-logo" src="/images/go-logo-blue.svg" alt="Go.">
+      </a>
+    </div>
+    <ul class="NavigationDrawer-list">
+        
+          <li class="NavigationDrawer-listItem js-mobile-subnav-trigger  NavigationDrawer-hasSubnav">
+            <a href="#"><span>Why Go</span> <i class="material-icons">navigate_next</i></a>
+
+            <div class="NavigationDrawer NavigationDrawer-submenuItem">
+              <nav class="NavigationDrawer-nav">
+                <div class="NavigationDrawer-header">
+                  <a href="#"><i class="material-icons">navigate_before</i>Why Go</a>
+                </div>
+                <ul class="NavigationDrawer-list">
+                    <li class="NavigationDrawer-listItem">
+                        <a href="/solutions/case-studies">
+                          Case Studies
+                          
+                        </a>
+                      
+                    </li>
+                    <li class="NavigationDrawer-listItem">
+                        <a href="/solutions/use-cases">
+                          Use Cases
+                          
+                        </a>
+                      
+                    </li>
+                    <li class="NavigationDrawer-listItem">
+                        <a href="/security/">
+                          Security
+                          
+                        </a>
+                      
+                    </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+
+        
+        
+          <li class="NavigationDrawer-listItem ">
+            <a href="/learn/">Learn</a>
+          </li>
+        
+        
+          <li class="NavigationDrawer-listItem js-mobile-subnav-trigger  NavigationDrawer-listItem--active NavigationDrawer-hasSubnav">
+            <a href="#"><span>Docs</span> <i class="material-icons">navigate_next</i></a>
+
+            <div class="NavigationDrawer NavigationDrawer-submenuItem">
+              <nav class="NavigationDrawer-nav">
+                <div class="NavigationDrawer-header">
+                  <a href="#"><i class="material-icons">navigate_before</i>Docs</a>
+                </div>
+                <ul class="NavigationDrawer-list">
+                    <li class="NavigationDrawer-listItem">
+                        <a href="/ref/spec">
+                          Go Spec
+                          
+                        </a>
+                      
+                    </li>
+                    <li class="NavigationDrawer-listItem">
+                        <a href="/doc">
+                          Go User Manual
+                          
+                        </a>
+                      
+                    </li>
+                    <li class="NavigationDrawer-listItem">
+                        <a href="https://pkg.go.dev/std">
+                          Standard library
+                          
+                        </a>
+                      
+                    </li>
+                    <li class="NavigationDrawer-listItem">
+                        <a href="/doc/devel/release">
+                          Release Notes
+                          
+                        </a>
+                      
+                    </li>
+                    <li class="NavigationDrawer-listItem">
+                        <a href="/doc/effective_go">
+                          Effective Go
+                          
+                        </a>
+                      
+                    </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+
+        
+        
+          <li class="NavigationDrawer-listItem ">
+            <a href="https://pkg.go.dev">Packages</a>
+          </li>
+        
+        
+          <li class="NavigationDrawer-listItem js-mobile-subnav-trigger  NavigationDrawer-hasSubnav">
+            <a href="#"><span>Community</span> <i class="material-icons">navigate_next</i></a>
+
+            <div class="NavigationDrawer NavigationDrawer-submenuItem">
+              <nav class="NavigationDrawer-nav">
+                <div class="NavigationDrawer-header">
+                  <a href="#"><i class="material-icons">navigate_before</i>Community</a>
+                </div>
+                <ul class="NavigationDrawer-list">
+                    <li class="NavigationDrawer-listItem">
+                        <a href="/talks/">
+                          Recorded Talks
+                          
+                        </a>
+                      
+                    </li>
+                    <li class="NavigationDrawer-listItem">
+                        <a href="https://www.meetup.com/pro/go">
+                          Meetups
+                           <i class="material-icons">open_in_new</i>
+                        </a>
+                      
+                    </li>
+                    <li class="NavigationDrawer-listItem">
+                        <a href="/wiki/Conferences">
+                          Conferences
+                           <i class="material-icons">open_in_new</i>
+                        </a>
+                      
+                    </li>
+                    <li class="NavigationDrawer-listItem">
+                        <a href="/blog">
+                          Go blog
+                          
+                        </a>
+                      
+                    </li>
+                    <li class="NavigationDrawer-listItem">
+                        <a href="/help">
+                          Go project
+                          
+                        </a>
+                      
+                    </li>
+                    <li class="NavigationDrawer-listItem">
+                        <div>Get connected</div>
+                        <div class="Header-socialIcons">
+                          
+                            <a class="Header-socialIcon" href="https://groups.google.com/g/golang-nuts"><img src="/images/logos/social/google-groups.svg" /></a>
+                            <a class="Header-socialIcon" href="https://github.com/golang"><img src="/images/logos/social/github.svg" /></a>
+                            <a class="Header-socialIcon" href="https://bsky.app/profile/golang.org"><img src="/images/logos/social/bluesky.svg" /></a>
+                            <a class="Header-socialIcon" href="https://hachyderm.io/@golang"><img src="/images/logos/social/mastodon.svg" /></a>
+                            <a class="Header-socialIcon" href="https://twitter.com/golang"><img src="/images/logos/social/twitter.svg" /></a>
+                            <a class="Header-socialIcon" href="https://www.reddit.com/r/golang/"><img src="/images/logos/social/reddit.svg" /></a>
+                            <a class="Header-socialIcon" href="https://invite.slack.golangbridge.org/"><img src="/images/logos/social/slack.svg" /></a>
+                            <a class="Header-socialIcon" href="https://stackoverflow.com/tags/go"><img src="/images/logos/social/stack-overflow.svg" /></a>
+                        </div>
+                    </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+
+        
+    </ul>
+  </nav>
+</aside>
+<div class="NavigationDrawer-scrim js-scrim" role="presentation"></div>
+<main class="SiteContent SiteContent--default" id="main-content">
+  
+
+
+<article class="Doc Article">
+
+
+
+  
+<ol class="SiteBreadcrumb">
+  
+<li class="BreadcrumbNav-li ">
+  <a class="BreadcrumbNav-link" href="/doc/">
+  Documentation
+  </a>
+</li>
+<li class="BreadcrumbNav-li ">
+  <a class="BreadcrumbNav-link" href="/doc/tutorial/">
+  Tutorials
+  </a>
+</li>
+<li class="BreadcrumbNav-li active">
+  <a class="BreadcrumbNav-link" href="/doc/tutorial/generics">
+  Tutorial: Getting started with generics
+  </a>
+</li>
+</ol>
+
+
+
+<h1>Tutorial: Getting started with generics</h1>
+
+
+
+
+
+
+<div id="nav" class="TOC"></div>
+
+
+
+<div class='markdown'>
+<p>This tutorial introduces the basics of generics in Go. With generics, you can
+declare and use functions or types that are written to work with any of a set
+of types provided by calling code.</p>
+<p>In this tutorial, you&rsquo;ll declare two simple non-generic functions, then capture
+the same logic in a single generic function.</p>
+<p>You&rsquo;ll progress through the following sections:</p>
+<ol>
+<li>Create a folder for your code.</li>
+<li>Add non-generic functions.</li>
+<li>Add a generic function to handle multiple types.</li>
+<li>Remove type arguments when calling the generic function.</li>
+<li>Declare a type constraint.</li>
+</ol>
+<p><strong>Note:</strong> For other tutorials, see <a href="/doc/tutorial/index.html">Tutorials</a>.</p>
+<p><strong>Note:</strong> If you prefer, you can use
+<a href="/play/?v=gotip">the Go playground in “Go dev branch” mode</a>
+to edit and run your program instead.</p>
+<h2 id="prerequisites">Prerequisites</h2>
+<ul>
+<li><strong>An installation of Go 1.18 or later.</strong> For installation instructions, see
+<a href="/doc/install">Installing Go</a>.</li>
+<li><strong>A tool to edit your code.</strong> Any text editor you have will work fine.</li>
+<li><strong>A command terminal.</strong> Go works well using any terminal on Linux and Mac,
+and on PowerShell or cmd in Windows.</li>
+</ul>
+<h2 id="create_folder">Create a folder for your code</h2>
+<p>To begin, create a folder for the code you’ll write.</p>
+<ol>
+<li>
+<p>Open a command prompt and change to your home directory.</p>
+<p>On Linux or Mac:</p>
+<pre><code>$ cd
+</code></pre>
+<p>On Windows:</p>
+<pre><code>C:\&gt; cd %HOMEPATH%
+</code></pre>
+<p>The rest of the tutorial will show a $ as the prompt. The commands you use
+will work on Windows too.</p>
+</li>
+<li>
+<p>From the command prompt, create a directory for your code called generics.</p>
+<pre><code>$ mkdir generics
+$ cd generics
+</code></pre>
+</li>
+<li>
+<p>Create a module to hold your code.</p>
+<p>Run the <code>go mod init</code> command, giving it your new code’s module path.</p>
+<pre><code>$ go mod init example/generics
+go: creating new go.mod: module example/generics
+</code></pre>
+<p><strong>Note:</strong> For production code, you’d specify a module path that’s more specific
+to your own needs. For more, be sure to see
+<a href="/doc/modules/managing-dependencies">Managing dependencies</a>.</p>
+</li>
+</ol>
+<p>Next, you&rsquo;ll add some simple code to work with maps.</p>
+<h2 id="non_generic_functions">Add non-generic functions</h2>
+<p>In this step, you&rsquo;ll add two functions that each add together the values of a
+map and return the total.</p>
+<p>You&rsquo;re declaring two functions instead of one because you&rsquo;re working with two
+different types of maps: one that stores <code>int64</code> values, and one that stores <code>float64</code> values.</p>
+<h4 id="write-the-code">Write the code</h4>
+<ol>
+<li>
+<p>Using your text editor, create a file called main.go in the generics
+directory. You’ll write your Go code in this file.</p>
+</li>
+<li>
+<p>Into main.go, at the top of the file, paste the following package
+declaration.</p>
+<pre><code>package main
+</code></pre>
+<p>A standalone program (as opposed to a library) is always in package <code>main</code>.</p>
+</li>
+<li>
+<p>Beneath the package declaration, paste the following two function
+declarations.</p>
+<pre><code>// SumInts adds together the values of m.
+func SumInts(m map[string]int64) int64 {
+    var s int64
+    for _, v := range m {
+        s += v
+    }
+    return s
+}
+
+// SumFloats adds together the values of m.
+func SumFloats(m map[string]float64) float64 {
+    var s float64
+    for _, v := range m {
+        s += v
+    }
+    return s
+}
+</code></pre>
+<p>In this code, you:</p>
+<ul>
+<li>Declare two functions to add together the values of a map and return
+the sum.
+<ul>
+<li><code>SumFloats</code> takes a map of <code>string</code> to <code>float64</code> values.</li>
+<li><code>SumInts</code> takes a map of <code>string</code> to <code>int64</code> values.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>At the top of main.go, beneath the package declaration, paste the following
+<code>main</code> function to initialize the two maps and use them as arguments when
+calling the functions you declared in the preceding step.</p>
+<pre><code>func main() {
+    // Initialize a map for the integer values
+    ints := map[string]int64{
+        &quot;first&quot;:  34,
+        &quot;second&quot;: 12,
+    }
+
+    // Initialize a map for the float values
+    floats := map[string]float64{
+        &quot;first&quot;:  35.98,
+        &quot;second&quot;: 26.99,
+    }
+
+    fmt.Printf(&quot;Non-Generic Sums: %v and %v\n&quot;,
+        SumInts(ints),
+        SumFloats(floats))
+}
+</code></pre>
+<p>In this code, you:</p>
+<ul>
+<li>Initialize a map of <code>float64</code> values and a map of <code>int64</code> values, each
+with two entries.</li>
+<li>Call the two functions you declared earlier to find the sum of each
+map&rsquo;s values.</li>
+<li>Print the result.</li>
+</ul>
+</li>
+<li>
+<p>Near the top of main.go, just beneath the package declaration, import the
+package you’ll need to support the code you’ve just written.</p>
+<p>The first lines of code should look like this:</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+</code></pre>
+</li>
+<li>
+<p>Save main.go.</p>
+</li>
+</ol>
+<h4 id="run-the-code">Run the code</h4>
+<p>From the command line in the directory containing main.go, run the code.</p>
+<pre><code>$ go run .
+Non-Generic Sums: 46 and 62.97
+</code></pre>
+<p>With generics, you can write one function here instead of two. Next, you’ll
+add a single generic function for maps containing either integer or float values.</p>
+<h2 id="add_generic_function">Add a generic function to handle multiple types</h2>
+<p>In this section, you&rsquo;ll add a single generic function that can receive a map
+containing either integer or float values, effectively replacing the two
+functions you just wrote with a single function.</p>
+<p>To support values of either type, that single function will need a way to
+declare what types it supports. Calling code, on the other hand, will need a
+way to specify whether it is calling with an integer or float map.</p>
+<p>To support this, you&rsquo;ll write a function that declares <em>type parameters</em> in
+addition to its ordinary function parameters. These type parameters make the
+function generic, enabling it to work with arguments of different types. You&rsquo;ll
+call the function with <em>type arguments</em> and ordinary function arguments.</p>
+<p>Each type parameter has a <em>type constraint</em> that acts as a kind of meta-type
+for the type parameter. Each type constraint specifies the permissible type
+arguments that calling code can use for the respective type parameter.</p>
+<p>While a type parameter&rsquo;s constraint typically represents a set of types, at
+compile time the type parameter stands for a single type – the type provided
+as a type argument by the calling code. If the type argument&rsquo;s type isn&rsquo;t
+allowed by the type parameter&rsquo;s constraint, the code won&rsquo;t compile.</p>
+<p>Keep in mind that a type parameter must support all the operations the generic
+code is performing on it. For example, if your function&rsquo;s code were to try to
+perform <code>string</code> operations (such as indexing) on a type parameter whose
+constraint included numeric types, the code wouldn&rsquo;t compile.</p>
+<p>In the code you&rsquo;re about to write, you&rsquo;ll use a constraint that allows either
+integer or float types.</p>
+<h4 id="write-the-code-1">Write the code</h4>
+<ol>
+<li>
+<p>Beneath the two functions you added previously, paste the following generic
+function.</p>
+<pre><code>// SumIntsOrFloats sums the values of map m. It supports both int64 and float64
+// as types for map values.
+func SumIntsOrFloats[K comparable, V int64 | float64](m map[K]V) V {
+    var s V
+    for _, v := range m {
+        s += v
+    }
+    return s
+}
+</code></pre>
+<p>In this code, you:</p>
+<ul>
+<li>Declare a <code>SumIntsOrFloats</code> function with two type parameters (inside
+the square brackets), <code>K</code> and <code>V</code>, and one argument that uses the type
+parameters, <code>m</code> of type <code>map[K]V</code>. The function returns a value of
+type <code>V</code>.</li>
+<li>Specify for the <code>K</code> type parameter the type constraint <code>comparable</code>.
+Intended specifically for cases like these, the <code>comparable</code> constraint
+is predeclared in Go. It allows any type whose values may be used as an
+operand of the comparison operators <code>==</code> and <code>!=</code>. Go requires that map
+keys be comparable. So declaring <code>K</code> as <code>comparable</code> is necessary so you
+can use <code>K</code> as the key in the map variable. It also ensures that calling
+code uses an allowable type for map keys.</li>
+<li>Specify for the <code>V</code> type parameter a constraint that is a union of two
+types: <code>int64</code> and <code>float64</code>. Using <code>|</code> specifies a union of the two
+types, meaning that this constraint allows either type. Either type
+will be permitted by the compiler as an argument in the calling code.</li>
+<li>Specify that the <code>m</code> argument is of type <code>map[K]V</code>, where <code>K</code> and <code>V</code>
+are the types already specified for the type parameters. Note that we
+know <code>map[K]V</code> is a valid map type because <code>K</code> is a comparable type. If
+we hadn’t declared <code>K</code> comparable, the compiler would reject the
+reference to <code>map[K]V</code>.</li>
+</ul>
+</li>
+<li>
+<p>In main.go, beneath the code you already have, paste the following code.</p>
+<pre><code>fmt.Printf(&quot;Generic Sums: %v and %v\n&quot;,
+    SumIntsOrFloats[string, int64](ints),
+    SumIntsOrFloats[string, float64](floats))
+</code></pre>
+<p>In this code, you:</p>
+<ul>
+<li>
+<p>Call the generic function you just declared, passing each of the maps
+you created.</p>
+</li>
+<li>
+<p>Specify type arguments – the type names in square brackets – to be
+clear about the types that should replace type parameters in the
+function you&rsquo;re calling.</p>
+<p>As you&rsquo;ll see in the next section, you can often omit the type
+arguments in the function call. Go can often infer them from your code.</p>
+</li>
+<li>
+<p>Print the sums returned by the function.</p>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="run-the-code-1">Run the code</h4>
+<p>From the command line in the directory containing main.go, run the code.</p>
+<pre><code>$ go run .
+Non-Generic Sums: 46 and 62.97
+Generic Sums: 46 and 62.97
+</code></pre>
+<p>To run your code, in each call the compiler replaced the type parameters with
+the concrete types specified in that call.</p>
+<p>In calling the generic function you wrote, you specified type arguments that
+told the compiler what types to use in place of the function&rsquo;s type parameters.
+As you&rsquo;ll see in the next section, in many cases you can omit these type
+arguments because the compiler can infer them.</p>
+<h2 id="remove_type_arguments">Remove type arguments when calling the generic function</h2>
+<p>In this section, you&rsquo;ll add a modified version of the generic function call,
+making a small change to simplify the calling code. You&rsquo;ll remove the type
+arguments, which aren&rsquo;t needed in this case.</p>
+<p>You can omit type arguments in calling code when the Go compiler can infer the
+types you want to use. The compiler infers type arguments from the types of
+function arguments.</p>
+<p>Note that this isn&rsquo;t always possible. For example, if you needed to call a
+generic function that had no arguments, you would need to include the type
+arguments in the function call.</p>
+<h4 id="write-the-code-2">Write the code</h4>
+<ul>
+<li>
+<p>In main.go, beneath the code you already have, paste the following code.</p>
+<pre><code>fmt.Printf(&quot;Generic Sums, type parameters inferred: %v and %v\n&quot;,
+    SumIntsOrFloats(ints),
+    SumIntsOrFloats(floats))
+</code></pre>
+<p>In this code, you:</p>
+<ul>
+<li>Call the generic function, omitting the type arguments.</li>
+</ul>
+</li>
+</ul>
+<h4 id="run-the-code-2">Run the code</h4>
+<p>From the command line in the directory containing main.go, run the code.</p>
+<pre><code>$ go run .
+Non-Generic Sums: 46 and 62.97
+Generic Sums: 46 and 62.97
+Generic Sums, type parameters inferred: 46 and 62.97
+</code></pre>
+<p>Next, you&rsquo;ll further simplify the function by capturing the union of integers
+and floats into a type constraint you can reuse, such as from other code.</p>
+<h2 id="declare_type_constraint">Declare a type constraint</h2>
+<p>In this last section, you&rsquo;ll move the constraint you defined earlier into its
+own interface so that you can reuse it in multiple places. Declaring
+constraints in this way helps streamline code, such as when a constraint is
+more complex.</p>
+<p>You declare a <em>type constraint</em> as an interface. The constraint allows any
+type implementing the interface. For example, if you declare a type constraint
+interface with three methods, then use it with a type parameter in a generic
+function, type arguments used to call the function must have all of those
+methods.</p>
+<p>Constraint interfaces can also refer to specific types, as you&rsquo;ll see in this
+section.</p>
+<h4 id="write-the-code-3">Write the code</h4>
+<ol>
+<li>
+<p>Just above <code>main</code>, immediately after the import statements, paste the
+following code to declare a type constraint.</p>
+<pre><code>type Number interface {
+    int64 | float64
+}
+</code></pre>
+<p>In this code, you:</p>
+<ul>
+<li>
+<p>Declare the <code>Number</code> interface type to use as a type constraint.</p>
+</li>
+<li>
+<p>Declare a union of <code>int64</code> and <code>float64</code> inside the interface.</p>
+<p>Essentially, you&rsquo;re moving the union from the function declaration
+into a new type constraint. That way, when you want to constrain a type
+parameter to either <code>int64</code> or <code>float64</code>, you can use this <code>Number</code>
+type constraint instead of writing out <code>int64 | float64</code>.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Beneath the functions you already have, paste the following generic
+<code>SumNumbers</code> function.</p>
+<pre><code>// SumNumbers sums the values of map m. It supports both integers
+// and floats as map values.
+func SumNumbers[K comparable, V Number](m map[K]V) V {
+    var s V
+    for _, v := range m {
+        s += v
+    }
+    return s
+}
+</code></pre>
+<p>In this code, you:</p>
+<ul>
+<li>Declare a generic function with the same logic as the generic function
+you declared previously, but with the new interface type instead of the
+union as the type constraint. As before, you use the type parameters
+for the argument and return types.</li>
+</ul>
+</li>
+<li>
+<p>In main.go, beneath the code you already have, paste the following code.</p>
+<pre><code>fmt.Printf(&quot;Generic Sums with Constraint: %v and %v\n&quot;,
+    SumNumbers(ints),
+    SumNumbers(floats))
+</code></pre>
+<p>In this code, you:</p>
+<ul>
+<li>
+<p>Call <code>SumNumbers</code> with each map, printing the sum from the values of
+each.</p>
+<p>As in the preceding section, you omit the type arguments (the type
+names in square brackets) in calls to the generic function. The Go
+compiler can infer the type argument from other arguments.</p>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="run-the-code-3">Run the code</h4>
+<p>From the command line in the directory containing main.go, run the code.</p>
+<pre><code>$ go run .
+Non-Generic Sums: 46 and 62.97
+Generic Sums: 46 and 62.97
+Generic Sums, type parameters inferred: 46 and 62.97
+Generic Sums with Constraint: 46 and 62.97
+</code></pre>
+<h2 id="conclusion">Conclusion</h2>
+<p>Nicely done! You&rsquo;ve just introduced yourself to generics in Go.</p>
+<p>Suggested next topics:</p>
+<ul>
+<li>The <a href="/tour/">Go Tour</a> is a great step-by-step
+introduction to Go fundamentals.</li>
+<li>You&rsquo;ll find useful Go best practices described in
+<a href="/doc/effective_go">Effective Go</a> and
+<a href="/doc/code">How to write Go code</a>.</li>
+</ul>
+<h2 id="completed_code">Completed code</h2>
+<!--TODO: Update text and link after release.-->
+<p>You can run this program in the
+<a href="/play/p/apNmfVwogK0?v=gotip">Go playground</a>. On the
+playground simply click the <strong>Run</strong> button.</p>
+<pre><code>package main
+
+import &quot;fmt&quot;
+
+type Number interface {
+    int64 | float64
+}
+
+func main() {
+    // Initialize a map for the integer values
+    ints := map[string]int64{
+        &quot;first&quot;: 34,
+        &quot;second&quot;: 12,
+    }
+
+    // Initialize a map for the float values
+    floats := map[string]float64{
+        &quot;first&quot;: 35.98,
+        &quot;second&quot;: 26.99,
+    }
+
+    fmt.Printf(&quot;Non-Generic Sums: %v and %v\n&quot;,
+        SumInts(ints),
+        SumFloats(floats))
+
+    fmt.Printf(&quot;Generic Sums: %v and %v\n&quot;,
+        SumIntsOrFloats[string, int64](ints),
+        SumIntsOrFloats[string, float64](floats))
+
+    fmt.Printf(&quot;Generic Sums, type parameters inferred: %v and %v\n&quot;,
+        SumIntsOrFloats(ints),
+        SumIntsOrFloats(floats))
+
+    fmt.Printf(&quot;Generic Sums with Constraint: %v and %v\n&quot;,
+        SumNumbers(ints),
+        SumNumbers(floats))
+}
+
+// SumInts adds together the values of m.
+func SumInts(m map[string]int64) int64 {
+    var s int64
+    for _, v := range m {
+        s += v
+    }
+    return s
+}
+
+// SumFloats adds together the values of m.
+func SumFloats(m map[string]float64) float64 {
+    var s float64
+    for _, v := range m {
+        s += v
+    }
+    return s
+}
+
+// SumIntsOrFloats sums the values of map m. It supports both floats and integers
+// as map values.
+func SumIntsOrFloats[K comparable, V int64 | float64](m map[K]V) V {
+    var s V
+    for _, v := range m {
+        s += v
+    }
+    return s
+}
+
+// SumNumbers sums the values of map m. Its supports both integers
+// and floats as map values.
+func SumNumbers[K comparable, V Number](m map[K]V) V {
+    var s V
+    for _, v := range m {
+        s += v
+    }
+    return s
+}
+</code></pre>
+</div>
+
+
+
+
+
+
+
+</article>
+
+
+
+</main>
+<footer class="Site-footer">
+  <div class="Footer">
+    <div class="Container">
+      <div class="Footer-links">
+          <div class="Footer-linkColumn">
+            <a href="/solutions/" class="Footer-link Footer-link--primary" aria-describedby="footer-description">
+              Why Go
+            </a>
+              <a href="/solutions/use-cases" class="Footer-link" aria-describedby="footer-description">
+                Use Cases
+              </a>
+              <a href="/solutions/case-studies" class="Footer-link" aria-describedby="footer-description">
+                Case Studies
+              </a>
+          </div>
+          <div class="Footer-linkColumn">
+            <a href="/learn/" class="Footer-link Footer-link--primary" aria-describedby="footer-description">
+              Get Started
+            </a>
+              <a href="/play" class="Footer-link" aria-describedby="footer-description">
+                Playground
+              </a>
+              <a href="/tour/" class="Footer-link" aria-describedby="footer-description">
+                Tour
+              </a>
+              <a href="https://stackoverflow.com/questions/tagged/go?tab=Newest" class="Footer-link" aria-describedby="footer-description">
+                Stack Overflow
+              </a>
+              <a href="/help/" class="Footer-link" aria-describedby="footer-description">
+                Help
+              </a>
+          </div>
+          <div class="Footer-linkColumn">
+            <a href="https://pkg.go.dev" class="Footer-link Footer-link--primary" aria-describedby="footer-description">
+              Packages
+            </a>
+              <a href="/pkg/" class="Footer-link" aria-describedby="footer-description">
+                Standard Library
+              </a>
+              <a href="https://pkg.go.dev/about" class="Footer-link" aria-describedby="footer-description">
+                About Go Packages
+              </a>
+          </div>
+          <div class="Footer-linkColumn">
+            <a href="/project" class="Footer-link Footer-link--primary" aria-describedby="footer-description">
+              About
+            </a>
+              <a href="/dl/" class="Footer-link" aria-describedby="footer-description">
+                Download
+              </a>
+              <a href="/blog/" class="Footer-link" aria-describedby="footer-description">
+                Blog
+              </a>
+              <a href="https://github.com/golang/go/issues" class="Footer-link" aria-describedby="footer-description">
+                Issue Tracker
+              </a>
+              <a href="/doc/devel/release" class="Footer-link" aria-describedby="footer-description">
+                Release Notes
+              </a>
+              <a href="/brand" class="Footer-link" aria-describedby="footer-description">
+                Brand Guidelines
+              </a>
+              <a href="/conduct" class="Footer-link" aria-describedby="footer-description">
+                Code of Conduct
+              </a>
+          </div>
+          <div class="Footer-linkColumn">
+            <a href="/wiki/#the-go-community" class="Footer-link Footer-link--primary" aria-describedby="footer-description">
+              Connect
+            </a>
+              <a href="https://bsky.app/profile/golang.org" class="Footer-link" aria-describedby="footer-description">
+                Bluesky
+              </a>
+              <a href="https://hachyderm.io/@golang" class="Footer-link" aria-describedby="footer-description">
+                Mastodon
+              </a>
+              <a href="https://www.twitter.com/golang" class="Footer-link" aria-describedby="footer-description">
+                Twitter
+              </a>
+              <a href="https://github.com/golang" class="Footer-link" aria-describedby="footer-description">
+                GitHub
+              </a>
+              <a href="https://invite.slack.golangbridge.org/" class="Footer-link" aria-describedby="footer-description">
+                Slack
+              </a>
+              <a href="https://reddit.com/r/golang" class="Footer-link" aria-describedby="footer-description">
+                r/golang
+              </a>
+              <a href="https://www.meetup.com/pro/go" class="Footer-link" aria-describedby="footer-description">
+                Meetup
+              </a>
+              <a href="https://golangweekly.com/" class="Footer-link" aria-describedby="footer-description">
+                Golang Weekly
+              </a>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="screen-reader-only" id="footer-description" hidden>
+          Opens in new window.
+  </div>
+  <div class="Footer">
+    <div class="Container Container--fullBleed">
+      <div class="Footer-bottom">
+        <img class="Footer-gopher" src="/images/gophers/pilot-bust.svg" alt="The Go Gopher">
+        <ul class="Footer-listRow">
+          <li class="Footer-listItem">
+            <a href="/copyright" aria-describedby="footer-description">Copyright</a>
+          </li>
+          <li class="Footer-listItem">
+            <a href="/tos" aria-describedby="footer-description">Terms of Service</a>
+          </li>
+          <li class="Footer-listItem">
+            <a href="http://www.google.com/intl/en/policies/privacy/" aria-describedby="footer-description"
+              target="_blank"
+              rel="noopener">
+              Privacy Policy
+            </a>
+            </li>
+          <li class="Footer-listItem">
+            <a
+              href="/s/website-issue" aria-describedby="footer-description"
+              target="_blank"
+              rel="noopener"
+              >
+              Report an Issue
+            </a>
+          </li>
+          <li class="Footer-listItem go-Footer-listItem">
+            <button class="go-Button go-Button--text go-Footer-toggleTheme js-toggleTheme" aria-label="Toggle theme">
+              <img
+                data-value="auto"
+                class="go-Icon go-Icon--inverted"
+                height="24"
+                width="24"
+                src="/images/icons/brightness_6_gm_grey_24dp.svg"
+                alt="System theme">
+              <img
+                data-value="dark"
+                class="go-Icon go-Icon--inverted"
+                height="24"
+                width="24"
+                src="/images/icons/brightness_2_gm_grey_24dp.svg"
+                alt="Dark theme">
+              <img
+                data-value="light"
+                class="go-Icon go-Icon--inverted"
+                height="24"
+                width="24"
+                src="/images/icons/light_mode_gm_grey_24dp.svg"
+                alt="Light theme">
+            </button>
+          </li>
+        </ul>
+        <a class="Footer-googleLogo" target="_blank" href="https://google.com" rel="noopener">
+          <img class="Footer-googleLogoImg" src="/images/google-white.png" alt="Google logo">
+        </a>
+      </div>
+    </div>
+  </div>
+  <script src="/js/jquery.js"></script>
+  <script src="/js/carousels.js"></script>
+  <script src="/js/searchBox.js"></script>
+  <script src="/js/misc.js"></script>
+  <script src="/js/hats.js"></script>
+  <script src="/js/playground.js"></script>
+  <script src="/js/godocs.js"></script>
+  <script async src="/js/copypaste.js"></script>
+</footer>
+<section class="Cookie-notice js-cookieNotice">
+  <div>go.dev uses cookies from Google to deliver and enhance the quality of its services and to
+  analyze traffic. <a target=_blank href="https://policies.google.com/technologies/cookies">Learn more.</a></div>
+  <div><button class="go-Button">Okay</button></div>
+</section>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

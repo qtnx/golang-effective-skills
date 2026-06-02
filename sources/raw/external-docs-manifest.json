@@ -1,0 +1,1208 @@
+{
+  "failed": [],
+  "failed_count": 0,
+  "fetched": [
+    {
+      "path": "sources/raw/external/commandcenter-blogspot-com-2014-01-self-referential-functions-and-design-html-40a5ae2ada.html",
+      "status": "already-present",
+      "url": "http://commandcenter.blogspot.com/2014/01/self-referential-functions-and-design.html"
+    },
+    {
+      "path": "sources/raw/external/abseil-io-resources-swe-book-html-ch12-html-f0fc7050d3.html",
+      "status": "already-present",
+      "url": "https://abseil.io/resources/swe-book/html/ch12.html"
+    },
+    {
+      "path": "sources/raw/external/abseil-io-resources-swe-book-html-ch13-html-8b9cefb288.html",
+      "status": "already-present",
+      "url": "https://abseil.io/resources/swe-book/html/ch13.html"
+    },
+    {
+      "path": "sources/raw/external/abseil-io-tips-45-1b27c67343.html",
+      "status": "already-present",
+      "url": "https://abseil.io/tips/45"
+    },
+    {
+      "path": "sources/raw/external/bazel-build-docs-user-manual-699508e594.html",
+      "status": "already-present",
+      "url": "https://bazel.build/docs/user-manual"
+    },
+    {
+      "path": "sources/raw/external/commandcenter-blogspot-com-2011-08-regular-expressions-in-lexing-and-html-41f887ad6f.html",
+      "status": "already-present",
+      "url": "https://commandcenter.blogspot.com/2011/08/regular-expressions-in-lexing-and.html"
+    },
+    {
+      "path": "sources/raw/external/commandcenter-blogspot-com-2011-12-esmereldas-imagination-html-a7875f385b.html",
+      "status": "already-present",
+      "url": "https://commandcenter.blogspot.com/2011/12/esmereldas-imagination.html"
+    },
+    {
+      "path": "sources/raw/external/commandcenter-blogspot-com-2012-06-less-is-exponentially-more-html-b48cdd4bca.html",
+      "status": "already-present",
+      "url": "https://commandcenter.blogspot.com/2012/06/less-is-exponentially-more.html"
+    },
+    {
+      "path": "sources/raw/external/commandcenter-blogspot-com-2014-01-self-referential-functions-and-design-html-cb7586aa12.html",
+      "status": "already-present",
+      "url": "https://commandcenter.blogspot.com/2014/01/self-referential-functions-and-design.html"
+    },
+    {
+      "path": "sources/raw/external/commandcenter-blogspot-com-2017-12-error-handling-in-upspin-html-e227930291.html",
+      "status": "already-present",
+      "url": "https://commandcenter.blogspot.com/2017/12/error-handling-in-upspin.html"
+    },
+    {
+      "path": "sources/raw/external/dave-cheney-net-2014-10-17-functional-options-for-friendly-apis-fd693013a6.html",
+      "status": "already-present",
+      "url": "https://dave.cheney.net/2014/10/17/functional-options-for-friendly-apis"
+    },
+    {
+      "path": "sources/raw/external/dave-cheney-net-2016-04-27-dont-just-check-errors-handle-them-gracefully-a37809db60.html",
+      "status": "already-present",
+      "url": "https://dave.cheney.net/2016/04/27/dont-just-check-errors-handle-them-gracefully"
+    },
+    {
+      "path": "sources/raw/external/dave-cheney-net-2016-12-22-never-start-a-goroutine-without-knowing-how-it-will-stop-f1bee19ad9.html",
+      "status": "already-present",
+      "url": "https://dave.cheney.net/2016/12/22/never-start-a-goroutine-without-knowing-how-it-will-stop"
+    },
+    {
+      "path": "sources/raw/external/docs-bazel-build-versions-main-be-general-html-1d20475b8b.html",
+      "status": "already-present",
+      "url": "https://docs.bazel.build/versions/main/be/general.html"
+    },
+    {
+      "path": "sources/raw/external/docs-python-org-3-glossary-html-f05d926bb6.html",
+      "status": "already-present",
+      "url": "https://docs.python.org/3/glossary.html"
+    },
+    {
+      "path": "sources/raw/external/eli-thegreenplace-net-2018-on-the-uses-and-misuses-of-panics-in-go-094725cf76.html",
+      "status": "already-present",
+      "url": "https://eli.thegreenplace.net/2018/on-the-uses-and-misuses-of-panics-in-go/"
+    },
+    {
+      "path": "sources/raw/external/go-proverbs-github-io-4afb7e1114.html",
+      "status": "already-present",
+      "url": "https://go-proverbs.github.io/"
+    },
+    {
+      "path": "sources/raw/external/go-dev-blog-context-and-structs-bf5dd536db.html",
+      "status": "already-present",
+      "url": "https://go.dev/blog/context-and-structs"
+    },
+    {
+      "path": "sources/raw/external/go-dev-blog-defer-panic-and-recover-f74714adf9.html",
+      "status": "already-present",
+      "url": "https://go.dev/blog/defer-panic-and-recover"
+    },
+    {
+      "path": "sources/raw/external/go-dev-blog-errors-are-values-1d4e57379c.html",
+      "status": "already-present",
+      "url": "https://go.dev/blog/errors-are-values"
+    },
+    {
+      "path": "sources/raw/external/go-dev-blog-examples-e3a4d00ce5.html",
+      "status": "already-present",
+      "url": "https://go.dev/blog/examples"
+    },
+    {
+      "path": "sources/raw/external/go-dev-blog-go1-13-errors-cf4f1e8e99.html",
+      "status": "already-present",
+      "url": "https://go.dev/blog/go1.13-errors"
+    },
+    {
+      "path": "sources/raw/external/go-dev-blog-godoc-documenting-go-code-03f6141888.html",
+      "status": "already-present",
+      "url": "https://go.dev/blog/godoc-documenting-go-code"
+    },
+    {
+      "path": "sources/raw/external/go-dev-blog-organizing-go-code-c9d2d1e8d6.html",
+      "status": "already-present",
+      "url": "https://go.dev/blog/organizing-go-code"
+    },
+    {
+      "path": "sources/raw/external/go-dev-blog-package-names-a6de1f37de.html",
+      "status": "already-present",
+      "url": "https://go.dev/blog/package-names"
+    },
+    {
+      "path": "sources/raw/external/go-dev-blog-subtests-0e125eccbd.html",
+      "status": "already-present",
+      "url": "https://go.dev/blog/subtests"
+    },
+    {
+      "path": "sources/raw/external/go-dev-cmd-go-8fc4a393a0.html",
+      "status": "already-present",
+      "url": "https://go.dev/cmd/go/"
+    },
+    {
+      "path": "sources/raw/external/go-dev-design-43651-type-parameters-8b418b79f1.html",
+      "status": "already-present",
+      "url": "https://go.dev/design/43651-type-parameters"
+    },
+    {
+      "path": "sources/raw/external/go-dev-doc-comment-d01a1d6946.html",
+      "status": "already-present",
+      "url": "https://go.dev/doc/comment"
+    },
+    {
+      "path": "sources/raw/external/go-dev-doc-devel-release-d3e2273091.html",
+      "status": "already-present",
+      "url": "https://go.dev/doc/devel/release"
+    },
+    {
+      "path": "sources/raw/external/go-dev-doc-faq-c6a034d6a5.html",
+      "status": "already-present",
+      "url": "https://go.dev/doc/faq"
+    },
+    {
+      "path": "sources/raw/external/go-dev-doc-fuzz-ee5f17aa89.html",
+      "status": "already-present",
+      "url": "https://go.dev/doc/fuzz"
+    },
+    {
+      "path": "sources/raw/external/go-dev-doc-tutorial-generics-36804f0219.html",
+      "status": "already-present",
+      "url": "https://go.dev/doc/tutorial/generics"
+    },
+    {
+      "path": "sources/raw/external/go-dev-pkg-encoding-json-c3edc236b4.html",
+      "status": "already-present",
+      "url": "https://go.dev/pkg/encoding/json/"
+    },
+    {
+      "path": "sources/raw/external/go-dev-pkg-flag-a94723d477.html",
+      "status": "already-present",
+      "url": "https://go.dev/pkg/flag/"
+    },
+    {
+      "path": "sources/raw/external/go-dev-pkg-fmt-1c6a18c9a7.html",
+      "status": "already-present",
+      "url": "https://go.dev/pkg/fmt/"
+    },
+    {
+      "path": "sources/raw/external/go-dev-pkg-regexp-159ad86ac3.html",
+      "status": "already-present",
+      "url": "https://go.dev/pkg/regexp/"
+    },
+    {
+      "path": "sources/raw/external/go-dev-pkg-testing-dfdfd9d29c.html",
+      "status": "already-present",
+      "url": "https://go.dev/pkg/testing/"
+    },
+    {
+      "path": "sources/raw/external/go-dev-pkg-text-template-0ccc281518.html",
+      "status": "already-present",
+      "url": "https://go.dev/pkg/text/template/"
+    },
+    {
+      "path": "sources/raw/external/go-dev-ref-mem-e5c89c3316.html",
+      "status": "already-present",
+      "url": "https://go.dev/ref/mem"
+    },
+    {
+      "path": "sources/raw/external/go-dev-ref-spec-3c5b020879.html",
+      "status": "already-present",
+      "url": "https://go.dev/ref/spec"
+    },
+    {
+      "path": "sources/raw/external/go-dev-talks-2014-organizeio-slide-f62aaae46e.html",
+      "status": "already-present",
+      "url": "https://go.dev/talks/2014/organizeio.slide"
+    },
+    {
+      "path": "sources/raw/external/go-dev-wiki-codereviewcomments-46376b7b23.html",
+      "status": "already-present",
+      "url": "https://go.dev/wiki/CodeReviewComments"
+    },
+    {
+      "path": "sources/raw/external/go-dev-wiki-commonmistakes-00f48450ae.html",
+      "status": "already-present",
+      "url": "https://go.dev/wiki/CommonMistakes"
+    },
+    {
+      "path": "sources/raw/external/go-dev-wiki-idesandtexteditorplugins-c7a534c392.html",
+      "status": "already-present",
+      "url": "https://go.dev/wiki/IDEsAndTextEditorPlugins"
+    },
+    {
+      "path": "sources/raw/external/go-dev-wiki-tabledriventests-39d18d6ccb.html",
+      "status": "already-present",
+      "url": "https://go.dev/wiki/TableDrivenTests"
+    },
+    {
+      "path": "sources/raw/external/go-googlesource-com-proposal-master-design-18130-type-alias-md-a07792256e.md",
+      "status": "already-present",
+      "url": "https://go.googlesource.com/proposal/+/master/design/18130-type-alias.md"
+    },
+    {
+      "path": "sources/raw/external/golangci-lint-run-usage-linters-cec117c3bc.html",
+      "status": "already-present",
+      "url": "https://golangci-lint.run/usage/linters/"
+    },
+    {
+      "path": "sources/raw/external/grpc-io-docs-languages-go-generated-code-fc5dc16cf3.html",
+      "status": "already-present",
+      "url": "https://grpc.io/docs/languages/go/generated-code/"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-edcab886c5.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-builtin-4f137aa946.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/builtin"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-bytes-42228f0497.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/bytes"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-cmd-vet-dea8ccb8e0.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/cmd/vet"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-container-heap-ced7c2d6f9.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/container/heap"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-context-9eea0150f3.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/context"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-context-e36d51d778.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/context/"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-database-sql-21734c2f8a.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/database/sql"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-embed-8876991d6a.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/embed"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-encoding-csv-0736117f5d.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/encoding/csv"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-encoding-gob-fa8ae5ca51.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/encoding/gob"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-encoding-json-81c12a626b.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/encoding/json"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-errors-848f06332a.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/errors"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-expvar-b8590496ec.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/expvar"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-flag-1af3ce524d.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/flag"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-fmt-724598b198.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/fmt"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-github-com-golang-glog-cd06075ea0.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/github.com/golang/glog"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-github-com-google-go-cmp-cmp-5b1469c340.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/github.com/google/go-cmp/cmp"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-github-com-google-go-cmp-cmp-cmpopts-86231e72d1.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/github.com/google/go-cmp/cmp/cmpopts"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-github-com-google-safehtml-template-38bb1b1b4b.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/github.com/google/safehtml/template"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-github-com-google-subcommands-221a8be968.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/github.com/google/subcommands"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-github-com-kylelemons-godebug-diff-5d0083f56a.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/github.com/kylelemons/godebug/diff"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-github-com-kylelemons-godebug-pretty-3a16411fec.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/github.com/kylelemons/godebug/pretty"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-github-com-spf13-cobra-c48fa3a8d3.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/github.com/spf13/cobra"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-go-uber-org-atomic-2ea10f25fd.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/go.uber.org/atomic"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-go-uber-org-goleak-ccf0e19af0.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/go.uber.org/goleak"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-go-format-2c6c5d07fd.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/go/format"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-golang-org-x-oauth2-dc2f217817.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/golang.org/x/oauth2"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-golang-org-x-pkgsite-cmd-pkgsite-6bc8869728.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/golang.org/x/pkgsite/cmd/pkgsite"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-golang-org-x-sync-errgroup-1521b1c850.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/golang.org/x/sync/errgroup"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-golang-org-x-time-rate-190336c8d1.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/golang.org/x/time/rate"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-golang-org-x-tools-cmd-goimports-fd18d65f65.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/golang.org/x/tools/cmd/goimports"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-google-golang-org-genproto-googleapis-longrunning-aab37f1ebe.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/google.golang.org/genproto/googleapis/longrunning"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-google-golang-org-grpc-codes-0735fbfabe.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/google.golang.org/grpc/codes"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-google-golang-org-grpc-status-1ca646cf0d.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/google.golang.org/grpc/status"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-google-golang-org-protobuf-proto-5a3b0b6a8a.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/google.golang.org/protobuf/proto"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-google-golang-org-protobuf-testing-protocmp-e174402a9a.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/google.golang.org/protobuf/testing/protocmp"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-gopkg-in-yaml-v2-2222c21e03.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/gopkg.in/yaml.v2"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-hash-de8cdcc8cd.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/hash"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-image-5e7cf50ca0.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/image"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-image-jpeg-5abe70d7d6.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/image/jpeg"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-image-png-bdb9eda8b5.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/image/png"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-io-227b602496.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/io"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-io-fs-c79b887093.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/io/fs"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-k8s-io-client-go-kubernetes-41840fd068.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/k8s.io/client-go/kubernetes"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-log-a37bc52346.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/log"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-log-slog-0557076f34.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/log/slog"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-math-rand-ccaeadbdbe.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/math/rand"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-net-http-c174aa11e0.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/net/http"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-os-f732ab9005.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/os"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-reflect-22137cdb59.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/reflect"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-sort-b0cd968d4c.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/sort"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-strings-2a66c125d7.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/strings"
+    },
+    {
+      "bytes": 124622,
+      "content_type": "text/html; charset=utf-8",
+      "insecure_tls_fallback": true,
+      "path": "sources/raw/external/pkg-go-dev-sync-d4e8901ada.html",
+      "referenced_by": [
+        "sources/chunks/google-go-styleguide-decisions-md-026-receiver-type.md"
+      ],
+      "status": "fetched",
+      "truncated": false,
+      "url": "https://pkg.go.dev/sync"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-sync-atomic-093ca515ac.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/sync/atomic"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-syscall-cc00f6c0ec.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/syscall"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-testing-6e86118611.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/testing"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-testing-fstest-6d4403c796.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/testing/fstest"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-text-tabwriter-aa1f07cc28.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/text/tabwriter"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-text-template-6ffbb3f83b.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/text/template"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-time-3c0307dd89.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/time"
+    },
+    {
+      "path": "sources/raw/external/pkg-go-dev-time-tzdata-f07799a4dc.html",
+      "status": "already-present",
+      "url": "https://pkg.go.dev/time/tzdata"
+    },
+    {
+      "path": "sources/raw/external/research-swtch-com-dogma-35a7668da7.html",
+      "status": "already-present",
+      "url": "https://research.swtch.com/dogma"
+    },
+    {
+      "path": "sources/raw/external/research-swtch-com-godata-4c4e9825fb.html",
+      "status": "already-present",
+      "url": "https://research.swtch.com/godata"
+    },
+    {
+      "path": "sources/raw/external/research-swtch-com-interfaces-8664b07867.html",
+      "status": "already-present",
+      "url": "https://research.swtch.com/interfaces"
+    },
+    {
+      "path": "sources/raw/external/testing-googleblog-com-2008-09-tott-data-driven-traps-html-7d265d4d39.html",
+      "status": "already-present",
+      "url": "https://testing.googleblog.com/2008/09/tott-data-driven-traps.html"
+    },
+    {
+      "path": "sources/raw/external/testing-googleblog-com-2013-03-testing-on-toilet-testing-state-vs-html-d3cdd73eda.html",
+      "status": "already-present",
+      "url": "https://testing.googleblog.com/2013/03/testing-on-toilet-testing-state-vs.html"
+    },
+    {
+      "path": "sources/raw/external/testing-googleblog-com-2014-05-testing-on-toilet-effective-testing-html-b18e80b439.html",
+      "status": "already-present",
+      "url": "https://testing.googleblog.com/2014/05/testing-on-toilet-effective-testing.html"
+    },
+    {
+      "path": "sources/raw/external/testing-googleblog-com-2014-05-testing-on-toilet-risk-driven-testing-html-692eb8a87d.html",
+      "status": "already-present",
+      "url": "https://testing.googleblog.com/2014/05/testing-on-toilet-risk-driven-testing.html"
+    },
+    {
+      "path": "sources/raw/external/testing-googleblog-com-2015-01-testing-on-toilet-change-detector-tests-html-10bff6cc6f.html",
+      "status": "already-present",
+      "url": "https://testing.googleblog.com/2015/01/testing-on-toilet-change-detector-tests.html"
+    },
+    {
+      "path": "sources/raw/external/testing-googleblog-com-2017-06-code-health-reduce-nesting-reduce-html-ce11f99236.html",
+      "status": "already-present",
+      "url": "https://testing.googleblog.com/2017/06/code-health-reduce-nesting-reduce.html"
+    },
+    {
+      "path": "sources/raw/external/testing-googleblog-com-2017-10-code-health-identifiernamingpostforworl-html-c860e908f3.html",
+      "status": "already-present",
+      "url": "https://testing.googleblog.com/2017/10/code-health-identifiernamingpostforworl.html"
+    }
+  ],
+  "fetched_count": 121,
+  "generated_at": "2026-06-02T06:43:56.159197+00:00",
+  "input_dir": "sources/chunks",
+  "output_dir": "sources/raw/external",
+  "pruned": [],
+  "pruned_count": 0,
+  "skipped": [
+    {
+      "reason": "not-in-doc-allowlist",
+      "referenced_by": [
+        "sources/chunks/effective-go-effective-go-html-032-a-web-server.md"
+      ],
+      "url": "http://chart.apis.google.com/chart"
+    },
+    {
+      "reason": "skipped-host",
+      "referenced_by": [
+        "sources/chunks/google-go-styleguide-best-practices-md-014-conventions.md"
+      ],
+      "url": "http://example.com/"
+    },
+    {
+      "reason": "not-in-doc-allowlist",
+      "referenced_by": [
+        "sources/chunks/google-go-styleguide-decisions-md-022-goroutine-lifetimes.md"
+      ],
+      "url": "https://changelog.com/gotime/165"
+    },
+    {
+      "reason": "not-in-doc-allowlist",
+      "referenced_by": [
+        "sources/chunks/uber-go-guide-style-md-016-avoid-init.md"
+      ],
+      "url": "https://cloud.google.com/functions/docs/bestpractices/tips"
+    },
+    {
+      "reason": "not-in-doc-allowlist",
+      "referenced_by": [
+        "sources/chunks/google-go-styleguide-best-practices-md-034-designing-effective-interfaces.md",
+        "sources/chunks/google-go-styleguide-decisions-md-023-interfaces.md"
+      ],
+      "url": "https://codelabs.developers.google.com/grpc/getting-started-grpc-go"
+    },
+    {
+      "reason": "not-in-doc-allowlist",
+      "referenced_by": [
+        "sources/chunks/google-go-styleguide-decisions-md-011-examples.md"
+      ],
+      "url": "https://cs.opensource.google/go/go/+/HEAD:src/time/example_test.go"
+    },
+    {
+      "reason": "not-in-doc-allowlist",
+      "referenced_by": [
+        "sources/chunks/google-go-styleguide-decisions-md-041-table-driven-tests.md"
+      ],
+      "url": "https://cs.opensource.google/go/go/+/master:src/fmt/fmt_test.go"
+    },
+    {
+      "reason": "not-in-doc-allowlist",
+      "referenced_by": [
+        "sources/chunks/google-go-styleguide-decisions-md-041-table-driven-tests.md"
+      ],
+      "url": "https://cs.opensource.google/go/go/+/master:src/net/dial_test.go;l=318;drc=5b606a9d2b7649532fe25794fa6b99bd24e7697c"
+    },
+    {
+      "reason": "not-in-doc-allowlist",
+      "referenced_by": [
+        "sources/chunks/google-go-styleguide-guide-md-002-clarity.md"
+      ],
+      "url": "https://cs.opensource.google/go/go/+/refs/tags/go1.19.2:src/sort/example_search_test.go"
+    },
+    {
+      "reason": "not-in-doc-allowlist",
+      "referenced_by": [
+        "sources/chunks/google-go-styleguide-guide-md-002-clarity.md"
+      ],
+      "url": "https://cs.opensource.google/go/go/+/refs/tags/go1.19.2:src/sort/sort.go"
+    },
+    {
+      "reason": "skipped-host",
+      "referenced_by": [
+        "sources/chunks/google-go-styleguide-best-practices-md-017-variable-declarations.md",
+        "sources/chunks/google-go-styleguide-decisions-md-022-goroutine-lifetimes.md"
+      ],
+      "url": "https://drive.google.com/file/d/1nPdvhB0PutEJzdCq5ms6UI58dp50fcAN/view"
+    },
+    {
+      "reason": "not-in-doc-allowlist",
+      "referenced_by": [
+        "sources/chunks/google-go-styleguide-best-practices-md-021-designing-extensible-validation-apis.md"
+      ],
+      "url": "https://en.wikipedia.org/wiki/Acceptance_testing"
+    },
+    {
+      "reason": "not-in-doc-allowlist",
+      "referenced_by": [
+        "sources/chunks/google-go-styleguide-best-practices-md-029-major-forms-of-package-state-apis.md"
+      ],
+      "url": "https://en.wikipedia.org/wiki/Callback_\\(computer_programming\\"
+    },
+    {
+      "reason": "not-in-doc-allowlist",
+      "referenced_by": [
+        "sources/chunks/uber-go-guide-style-md-011-handle-type-assertion-failures.md"
+      ],
+      "url": "https://en.wikipedia.org/wiki/Cascading_failure"
+    },
+    {
+      "reason": "not-in-doc-allowlist",
+      "referenced_by": [
+        "sources/chunks/google-go-styleguide-best-practices-md-026-use-field-names-in-struct-literals.md"
+      ],
+      "url": "https://en.wikipedia.org/wiki/Functional_testing"
+    },
+    {
+      "reason": "not-in-doc-allowlist",
+      "referenced_by": [
+        "sources/chunks/google-go-styleguide-best-practices-md-028-global-state.md"
+      ],
+      "url": "https://en.wikipedia.org/wiki/Global_variable"
+    },
+    {
+      "reason": "not-in-doc-allowlist",
+      "referenced_by": [
+        "sources/chunks/google-go-styleguide-best-practices-md-021-designing-extensible-validation-apis.md"
+      ],
+      "url": "https://en.wikipedia.org/wiki/Inversion_of_control"
+    },
+    {
+      "reason": "not-in-doc-allowlist",
+      "referenced_by": [
+        "sources/chunks/google-go-styleguide-guide-md-005-maintainability.md"
+      ],
+      "url": "https://en.wikipedia.org/wiki/Leap_year"
+    },
+    {
+      "reason": "not-in-doc-allowlist",
+      "referenced_by": [
+        "sources/chunks/google-go-styleguide-decisions-md-026-receiver-type.md"
+      ],
+      "url": "https://en.wikipedia.org/wiki/Passive_data_structure"
+    },
+    {
+      "reason": "not-in-doc-allowlist",
+      "referenced_by": [
+        "sources/chunks/google-go-styleguide-best-practices-md-011-logging-errors.md"
+      ],
+      "url": "https://en.wikipedia.org/wiki/Personal_data"
+    },
+    {
+      "reason": "not-in-doc-allowlist",
+      "referenced_by": [
+        "sources/chunks/google-go-styleguide-best-practices-md-029-major-forms-of-package-state-apis.md"
+      ],
+      "url": "https://en.wikipedia.org/wiki/Service_locator_pattern"
+    },
+    {
+      "reason": "not-in-doc-allowlist",
+      "referenced_by": [
+        "sources/chunks/google-go-styleguide-best-practices-md-034-designing-effective-interfaces.md",
+        "sources/chunks/google-go-styleguide-decisions-md-023-interfaces.md"
+      ],
+      "url": "https://en.wikipedia.org/wiki/Strategy_pattern"
+    },
+    {
+      "reason": "not-in-doc-allowlist",
+      "referenced_by": [
+        "sources/chunks/google-go-styleguide-decisions-md-018-conditionals-and-loops.md"
+      ],
+      "url": "https://en.wikipedia.org/wiki/Yoda_conditions"
+    },
+    {
+      "reason": "skipped-host",
+      "referenced_by": [
+        "sources/chunks/google-go-styleguide-best-practices-md-003-shadowing.md"
+      ],
+      "url": "https://example.com/"
+    },
+    {
+      "reason": "skipped-host",
+      "referenced_by": [
+        "sources/chunks/google-go-styleguide-best-practices-md-031-providing-a-default-instance.md",
+        "sources/chunks/google-go-styleguide-decisions-md-043-test-package.md"
+      ],
+      "url": "https://github.com/bazelbuild/rules_go/blob/master/docs/go/core/rules.md"
+    },
+    {
+      "reason": "skipped-host",
+      "referenced_by": [
+        "sources/chunks/google-go-styleguide-decisions-md-013-imports.md"
+      ],
+      "url": "https://github.com/bazelbuild/rules_go/blob/master/go/nogo.rst"
+    },
+    {
+      "reason": "skipped-host",
+      "referenced_by": [
+        "sources/chunks/uber-go-guide-style-md-009-use-time-to-handle-time.md"
+      ],
+      "url": "https://github.com/golang/go/issues/15190"
+    },
+    {
+      "reason": "skipped-host",
+      "referenced_by": [
+        "sources/chunks/google-go-styleguide-decisions-md-030-common-libraries.md"
+      ],
+      "url": "https://github.com/golang/go/issues/40221"
+    },
+    {
+      "reason": "skipped-host",
+      "referenced_by": [
+        "sources/chunks/google-go-styleguide-guide-md-002-clarity.md"
+      ],
+      "url": "https://github.com/golang/go/issues/46336"
+    },
+    {
+      "reason": "skipped-host",
+      "referenced_by": [
+        "sources/chunks/uber-go-guide-style-md-009-use-time-to-handle-time.md"
+      ],
+      "url": "https://github.com/golang/go/issues/8728"
+    },
+    {
+      "reason": "skipped-host",
+      "referenced_by": [
+        "sources/chunks/uber-go-guide-style-md-037-linting.md"
+      ],
+      "url": "https://github.com/golang/lint"
+    },
+    {
+      "reason": "skipped-host",
+      "referenced_by": [
+        "sources/chunks/uber-go-guide-style-md-037-linting.md"
+      ],
+      "url": "https://github.com/golangci/golangci-lint"
+    },
+    {
+      "reason": "skipped-host",
+      "referenced_by": [
+        "sources/chunks/uber-go-guide-style-md-037-linting.md"
+      ],
+      "url": "https://github.com/kisielk/errcheck"
+    },
+    {
+      "reason": "skipped-host",
+      "referenced_by": [
+        "sources/chunks/google-go-styleguide-best-practices-md-030-litmus-tests.md"
+      ],
+      "url": "https://github.com/klauspost/compress/blob/290f4cfacb3eff892555a491e3eeb569a48665e7/zstd/snappy.go"
+    },
+    {
+      "reason": "skipped-host",
+      "referenced_by": [
+        "sources/chunks/uber-go-guide-style-md-037-linting.md"
+      ],
+      "url": "https://github.com/mgechev/revive"
+    },
+    {
+      "reason": "skipped-host",
+      "referenced_by": [
+        "sources/chunks/uber-go-guide-style-md-002-introduction.md"
+      ],
+      "url": "https://github.com/nomis52"
+    },
+    {
+      "reason": "skipped-host",
+      "referenced_by": [
+        "sources/chunks/uber-go-guide-style-md-002-introduction.md"
+      ],
+      "url": "https://github.com/prashantv"
+    },
+    {
+      "reason": "skipped-host",
+      "referenced_by": [
+        "sources/chunks/uber-go-guide-style-md-037-linting.md"
+      ],
+      "url": "https://github.com/uber-go/guide/blob/master/.golangci.yml"
+    },
+    {
+      "reason": "skipped-host",
+      "referenced_by": [
+        "sources/chunks/uber-go-guide-style-md-001-uber-go-style-guide.md",
+        "sources/chunks/uber-go-guide-style-md-002-introduction.md",
+        "sources/chunks/uber-go-guide-style-md-003-pointers-to-interfaces.md",
+        "sources/chunks/uber-go-guide-style-md-004-receivers-and-interfaces.md",
+        "sources/chunks/uber-go-guide-style-md-005-zero-value-mutexes-are-valid.md",
+        "sources/chunks/uber-go-guide-style-md-006-copy-slices-and-maps-at-boundaries.md",
+        "sources/chunks/uber-go-guide-style-md-007-defer-to-clean-up.md",
+        "sources/chunks/uber-go-guide-style-md-008-channel-size-is-one-or-none.md",
+        "sources/chunks/uber-go-guide-style-md-009-use-time-to-handle-time.md",
+        "sources/chunks/uber-go-guide-style-md-010-errors.md",
+        "sources/chunks/uber-go-guide-style-md-011-handle-type-assertion-failures.md",
+        "sources/chunks/uber-go-guide-style-md-012-use-go-uber-org-atomic.md",
+        "sources/chunks/uber-go-guide-style-md-013-avoid-mutable-globals.md",
+        "sources/chunks/uber-go-guide-style-md-014-avoid-embedding-types-in-public-structs.md",
+        "sources/chunks/uber-go-guide-style-md-015-avoid-using-built-in-names.md",
+        "sources/chunks/uber-go-guide-style-md-016-avoid-init.md",
+        "sources/chunks/uber-go-guide-style-md-017-exit-in-main.md",
+        "sources/chunks/uber-go-guide-style-md-018-use-field-tags-in-marshaled-structs.md",
+        "sources/chunks/uber-go-guide-style-md-019-don-t-fire-and-forget-goroutines.md",
+        "sources/chunks/uber-go-guide-style-md-020-performance.md"
+      ],
+      "url": "https://github.com/uber-go/guide/blob/master/style.md"
+    },
+    {
+      "reason": "already-vendored",
+      "referenced_by": [
+        "sources/chunks/effective-go-effective-go-html-001-introduction.md",
+        "sources/chunks/effective-go-effective-go-html-002-formatting.md",
+        "sources/chunks/effective-go-effective-go-html-003-commentary.md",
+        "sources/chunks/effective-go-effective-go-html-004-semicolons.md",
+        "sources/chunks/effective-go-effective-go-html-005-control-structures.md",
+        "sources/chunks/effective-go-effective-go-html-006-functions.md",
+        "sources/chunks/effective-go-effective-go-html-007-allocation-with-new.md",
+        "sources/chunks/effective-go-effective-go-html-008-constructors-and-composite-literals.md",
+        "sources/chunks/effective-go-effective-go-html-009-allocation-with-make.md",
+        "sources/chunks/effective-go-effective-go-html-010-arrays.md",
+        "sources/chunks/effective-go-effective-go-html-011-slices.md",
+        "sources/chunks/effective-go-effective-go-html-012-two-dimensional-slices.md",
+        "sources/chunks/effective-go-effective-go-html-013-maps.md",
+        "sources/chunks/effective-go-effective-go-html-014-printing.md",
+        "sources/chunks/effective-go-effective-go-html-015-append.md",
+        "sources/chunks/effective-go-effective-go-html-016-initialization.md",
+        "sources/chunks/effective-go-effective-go-html-017-methods.md",
+        "sources/chunks/effective-go-effective-go-html-018-interfaces.md",
+        "sources/chunks/effective-go-effective-go-html-019-conversions.md",
+        "sources/chunks/effective-go-effective-go-html-020-interface-conversions-and-type-assertions.md"
+      ],
+      "url": "https://go.dev/doc/effective_go"
+    },
+    {
+      "reason": "already-vendored",
+      "referenced_by": [
+        "sources/chunks/google-go-styleguide-decisions-md-008-comment-line-length.md",
+        "sources/chunks/google-go-styleguide-decisions-md-014-errors.md",
+        "sources/chunks/google-go-styleguide-decisions-md-020-don-t-panic.md"
+      ],
+      "url": "https://go.dev/doc/effective_go.html"
+    },
+    {
+      "reason": "source-viewer",
+      "referenced_by": [
+        "sources/chunks/google-go-styleguide-best-practices-md-005-package-size.md"
+      ],
+      "url": "https://go.dev/src/bytes/"
+    },
+    {
+      "reason": "source-viewer",
+      "referenced_by": [
+        "sources/chunks/google-go-styleguide-best-practices-md-005-package-size.md"
+      ],
+      "url": "https://go.googlesource.com/go/+/refs/heads/master/src/encoding/csv/reader.go"
+    },
+    {
+      "reason": "source-viewer",
+      "referenced_by": [
+        "sources/chunks/google-go-styleguide-best-practices-md-005-package-size.md"
+      ],
+      "url": "https://go.googlesource.com/go/+/refs/heads/master/src/encoding/csv/writer.go"
+    },
+    {
+      "reason": "source-viewer",
+      "referenced_by": [
+        "sources/chunks/google-go-styleguide-best-practices-md-005-package-size.md"
+      ],
+      "url": "https://go.googlesource.com/go/+/refs/heads/master/src/expvar/expvar.go"
+    },
+    {
+      "reason": "source-viewer",
+      "referenced_by": [
+        "sources/chunks/google-go-styleguide-best-practices-md-005-package-size.md"
+      ],
+      "url": "https://go.googlesource.com/go/+/refs/heads/master/src/flag/flag.go"
+    },
+    {
+      "reason": "source-viewer",
+      "referenced_by": [
+        "sources/chunks/google-go-styleguide-best-practices-md-005-package-size.md"
+      ],
+      "url": "https://go.googlesource.com/go/+/refs/heads/master/src/net/http/client.go"
+    },
+    {
+      "reason": "source-viewer",
+      "referenced_by": [
+        "sources/chunks/google-go-styleguide-best-practices-md-005-package-size.md"
+      ],
+      "url": "https://go.googlesource.com/go/+/refs/heads/master/src/net/http/cookie.go"
+    },
+    {
+      "reason": "source-viewer",
+      "referenced_by": [
+        "sources/chunks/google-go-styleguide-best-practices-md-005-package-size.md"
+      ],
+      "url": "https://go.googlesource.com/go/+/refs/heads/master/src/net/http/server.go"
+    },
+    {
+      "reason": "source-viewer",
+      "referenced_by": [
+        "sources/chunks/google-go-styleguide-best-practices-md-005-package-size.md"
+      ],
+      "url": "https://go.googlesource.com/go/+/refs/heads/master/src/os/exec.go"
+    },
+    {
+      "reason": "source-viewer",
+      "referenced_by": [
+        "sources/chunks/google-go-styleguide-best-practices-md-005-package-size.md"
+      ],
+      "url": "https://go.googlesource.com/go/+/refs/heads/master/src/os/file.go"
+    },
+    {
+      "reason": "source-viewer",
+      "referenced_by": [
+        "sources/chunks/google-go-styleguide-best-practices-md-005-package-size.md"
+      ],
+      "url": "https://go.googlesource.com/go/+/refs/heads/master/src/os/tempfile.go"
+    },
+    {
+      "reason": "already-vendored",
+      "referenced_by": [
+        "sources/chunks/google-go-styleguide-decisions-md-001-about.md",
+        "sources/chunks/google-go-styleguide-index-md-001-about.md",
+        "sources/chunks/google-go-styleguide-index-md-002-definitions.md"
+      ],
+      "url": "https://google.github.io/styleguide/go"
+    },
+    {
+      "reason": "already-vendored",
+      "referenced_by": [
+        "sources/chunks/google-go-styleguide-best-practices-md-001-about.md",
+        "sources/chunks/google-go-styleguide-best-practices-md-002-test-double-and-helper-packages.md",
+        "sources/chunks/google-go-styleguide-best-practices-md-003-shadowing.md",
+        "sources/chunks/google-go-styleguide-best-practices-md-004-util-packages.md",
+        "sources/chunks/google-go-styleguide-best-practices-md-005-package-size.md",
+        "sources/chunks/google-go-styleguide-best-practices-md-006-imports.md",
+        "sources/chunks/google-go-styleguide-best-practices-md-007-error-handling.md",
+        "sources/chunks/google-go-styleguide-best-practices-md-008-error-structure.md",
+        "sources/chunks/google-go-styleguide-best-practices-md-009-adding-information-to-errors.md",
+        "sources/chunks/google-go-styleguide-best-practices-md-010-placement-of-w-in-errors.md",
+        "sources/chunks/google-go-styleguide-best-practices-md-011-logging-errors.md",
+        "sources/chunks/google-go-styleguide-best-practices-md-012-program-initialization.md",
+        "sources/chunks/google-go-styleguide-best-practices-md-013-when-to-panic.md",
+        "sources/chunks/google-go-styleguide-best-practices-md-014-conventions.md",
+        "sources/chunks/google-go-styleguide-best-practices-md-015-preview.md",
+        "sources/chunks/google-go-styleguide-best-practices-md-016-signal-boosting.md",
+        "sources/chunks/google-go-styleguide-best-practices-md-017-variable-declarations.md",
+        "sources/chunks/google-go-styleguide-best-practices-md-018-function-argument-lists.md",
+        "sources/chunks/google-go-styleguide-best-practices-md-019-complex-command-line-interfaces.md",
+        "sources/chunks/google-go-styleguide-best-practices-md-020-leave-testing-to-the-test-function.md"
+      ],
+      "url": "https://google.github.io/styleguide/go/"
+    },
+    {
+      "reason": "already-vendored",
+      "referenced_by": [
+        "sources/chunks/google-go-styleguide-decisions-md-044-use-package-testing.md",
+        "sources/chunks/google-go-styleguide-index-md-001-about.md"
+      ],
+      "url": "https://google.github.io/styleguide/go/best-practices"
+    },
+    {
+      "reason": "already-vendored",
+      "referenced_by": [
+        "sources/chunks/google-go-styleguide-best-practices-md-006-imports.md",
+        "sources/chunks/google-go-styleguide-best-practices-md-011-logging-errors.md",
+        "sources/chunks/google-go-styleguide-best-practices-md-012-program-initialization.md",
+        "sources/chunks/google-go-styleguide-index-md-001-about.md"
+      ],
+      "url": "https://google.github.io/styleguide/go/decisions"
+    },
+    {
+      "reason": "already-vendored",
+      "referenced_by": [
+        "sources/chunks/google-go-styleguide-index-md-001-about.md"
+      ],
+      "url": "https://google.github.io/styleguide/go/guide"
+    },
+    {
+      "reason": "already-vendored",
+      "referenced_by": [
+        "sources/chunks/google-go-styleguide-best-practices-md-002-test-double-and-helper-packages.md",
+        "sources/chunks/google-go-styleguide-best-practices-md-007-error-handling.md",
+        "sources/chunks/google-go-styleguide-best-practices-md-008-error-structure.md",
+        "sources/chunks/google-go-styleguide-best-practices-md-010-placement-of-w-in-errors.md",
+        "sources/chunks/google-go-styleguide-best-practices-md-013-when-to-panic.md",
+        "sources/chunks/google-go-styleguide-best-practices-md-014-conventions.md",
+        "sources/chunks/google-go-styleguide-best-practices-md-017-variable-declarations.md",
+        "sources/chunks/google-go-styleguide-best-practices-md-018-function-argument-lists.md",
+        "sources/chunks/google-go-styleguide-best-practices-md-021-designing-extensible-validation-apis.md",
+        "sources/chunks/google-go-styleguide-best-practices-md-024-error-handling-in-test-helpers.md",
+        "sources/chunks/google-go-styleguide-best-practices-md-027-string-concatenation.md",
+        "sources/chunks/google-go-styleguide-best-practices-md-028-global-state.md",
+        "sources/chunks/google-go-styleguide-best-practices-md-031-providing-a-default-instance.md",
+        "sources/chunks/google-go-styleguide-best-practices-md-034-designing-effective-interfaces.md",
+        "sources/chunks/google-go-styleguide-decisions-md-003-package-names.md",
+        "sources/chunks/google-go-styleguide-decisions-md-011-examples.md",
+        "sources/chunks/google-go-styleguide-decisions-md-014-errors.md",
+        "sources/chunks/google-go-styleguide-decisions-md-023-interfaces.md",
+        "sources/chunks/google-go-styleguide-decisions-md-030-common-libraries.md",
+        "sources/chunks/google-go-styleguide-decisions-md-035-keep-going.md"
+      ],
+      "url": "https://google.github.io/styleguide/go/index.html"
+    },
+    {
+      "reason": "not-in-doc-allowlist",
+      "referenced_by": [
+        "sources/chunks/uber-go-guide-style-md-009-use-time-to-handle-time.md"
+      ],
+      "url": "https://infiniteundo.com/post/25326999628/falsehoods-programmers-believe-about-time"
+    },
+    {
+      "reason": "not-in-doc-allowlist",
+      "referenced_by": [
+        "sources/chunks/uber-go-guide-style-md-035-format-strings-outside-printf.md"
+      ],
+      "url": "https://kuzminva.wordpress.com/2017/11/07/go-vet-printf-family-check/"
+    },
+    {
+      "reason": "not-in-doc-allowlist",
+      "referenced_by": [
+        "sources/chunks/google-go-styleguide-decisions-md-033-got-before-want.md"
+      ],
+      "url": "https://play.golang.org/p/vrCUNVfxsvF"
+    },
+    {
+      "reason": "not-in-doc-allowlist",
+      "referenced_by": [
+        "sources/chunks/uber-go-guide-style-md-023-import-group-ordering.md"
+      ],
+      "url": "https://rakyll.org/style-packages/"
+    },
+    {
+      "reason": "not-in-doc-allowlist",
+      "referenced_by": [
+        "sources/chunks/uber-go-guide-style-md-037-linting.md"
+      ],
+      "url": "https://staticcheck.dev"
+    },
+    {
+      "reason": "not-in-doc-allowlist",
+      "referenced_by": [
+        "sources/chunks/google-go-styleguide-decisions-md-008-comment-line-length.md"
+      ],
+      "url": "https://supercalifragilisticexpialidocious.example.com:8080/Animalia/Chordata/Mammalia/Rodentia/Geomyoidea/Geomyidae/"
+    },
+    {
+      "reason": "not-in-doc-allowlist",
+      "referenced_by": [
+        "sources/chunks/uber-go-guide-style-md-009-use-time-to-handle-time.md"
+      ],
+      "url": "https://tools.ietf.org/html/rfc3339"
+    },
+    {
+      "reason": "not-in-doc-allowlist",
+      "referenced_by": [
+        "sources/chunks/google-go-styleguide-decisions-md-004-receiver-names.md"
+      ],
+      "url": "https://tour.golang.org/basics/3"
+    },
+    {
+      "reason": "not-in-doc-allowlist",
+      "referenced_by": [
+        "sources/chunks/google-go-styleguide-decisions-md-011-examples.md"
+      ],
+      "url": "https://tour.golang.org/basics/7"
+    },
+    {
+      "reason": "not-in-doc-allowlist",
+      "referenced_by": [
+        "sources/chunks/google-go-styleguide-decisions-md-024-generics.md"
+      ],
+      "url": "https://tour.golang.org/methods/16"
+    },
+    {
+      "reason": "not-in-doc-allowlist",
+      "referenced_by": [
+        "sources/chunks/google-go-styleguide-best-practices-md-030-litmus-tests.md"
+      ],
+      "url": "https://www.oreilly.com/library/view/designing-distributed-systems/9781491983638/ch02.html"
+    },
+    {
+      "reason": "skipped-host",
+      "referenced_by": [
+        "sources/chunks/google-go-styleguide-best-practices-md-017-variable-declarations.md",
+        "sources/chunks/google-go-styleguide-decisions-md-022-goroutine-lifetimes.md",
+        "sources/chunks/google-go-styleguide-decisions-md-024-generics.md",
+        "sources/chunks/google-go-styleguide-index-md-003-additional-references.md"
+      ],
+      "url": "https://www.youtube.com/watch"
+    }
+  ],
+  "skipped_count": 70
+}

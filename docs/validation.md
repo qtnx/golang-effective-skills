@@ -7,6 +7,8 @@ Run:
 ```bash
 python3 scripts/validate_skills.py skills
 python3 scripts/validate_agents.py agents
+python3 scripts/validate_source_chunks.py
+python3 -m py_compile scripts/*.py
 ```
 
 Expected:
@@ -14,6 +16,30 @@ Expected:
 - All MVP skill folders pass frontmatter, metadata, reference, and line-budget
   checks.
 - All special agent profiles pass frontmatter and role-body checks.
+- Source chunks stay within the configured word-count budget, source maps point
+  at existing chunks, and the external-doc manifest has no failed URLs.
+
+## Source Corpus Validation
+
+Current generated corpus:
+
+- Normalized sources: 127
+- Chunks: 810
+- Minimum chunk body size: 120 words
+- Maximum chunk body size: 1600 words
+- External docs fetched: 121
+- External URL failures: 0
+
+Useful audit:
+
+```bash
+python3 scripts/chunk_sources.py sources/raw sources
+python3 scripts/fetch_external_docs.py sources/chunks sources/raw/external --limit 180 --prune
+python3 scripts/chunk_sources.py sources/raw sources
+```
+
+After regeneration, verify that source-code viewer pages are skipped and that
+skill source maps do not reference missing chunk paths.
 
 ## Fixture Coverage
 

@@ -1,0 +1,540 @@
+---
+source_name: "External Linked Documentation"
+source_url: "https://dave.cheney.net/2016/04/27/dont-just-check-errors-handle-them-gracefully"
+retrieved_at: "2026-06-02T06:41:32.920471+00:00"
+content_type: "text/html; charset=UTF-8"
+truncated: false
+insecure_tls_fallback: true
+---
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Don&#8217;t just check errors, handle them gracefully | Dave Cheney</title>
+<link rel="profile" href="https://gmpg.org/xfn/11" />
+<link rel="pingback" href="https://dave.cheney.net/xmlrpc.php">
+<meta name='robots' content='max-image-preview:large' />
+<link rel="alternate" type="application/rss+xml" title="Dave Cheney &raquo; Feed" href="https://dave.cheney.net/feed" />
+<link rel="alternate" type="application/rss+xml" title="Dave Cheney &raquo; Comments Feed" href="https://dave.cheney.net/comments/feed" />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://dave.cheney.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdave.cheney.net%2F2016%2F04%2F27%2Fdont-just-check-errors-handle-them-gracefully" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://dave.cheney.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdave.cheney.net%2F2016%2F04%2F27%2Fdont-just-check-errors-handle-them-gracefully&#038;format=xml" />
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id="wp-emoji-styles-inline-css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<style id="wp-block-library-inline-css">
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}:root .has-text-align-center{text-align:center}:root .has-text-align-left{text-align:left}:root .has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{word-wrap:normal!important;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style*=border-color]){border-style:solid}html :where([style*=border-top-color]){border-top-style:solid}html :where([style*=border-right-color]){border-right-style:solid}html :where([style*=border-bottom-color]){border-bottom-style:solid}html :where([style*=border-left-color]){border-left-style:solid}html :where([style*=border-width]){border-style:solid}html :where([style*=border-top-width]){border-top-style:solid}html :where([style*=border-right-width]){border-right-style:solid}html :where([style*=border-bottom-width]){border-bottom-style:solid}html :where([style*=border-left-width]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+
+/*# sourceURL=/wp-includes/css/dist/block-library/common.min.css */
+</style>
+<style id="classic-theme-styles-inline-css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #fff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--blue: #21759b;--wp--preset--color--dark-gray: #444;--wp--preset--color--medium-gray: #9f9f9f;--wp--preset--color--light-gray: #e6e6e6;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:where(body) { margin: 0; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-blue-color{color: var(--wp--preset--color--blue) !important;}.has-dark-gray-color{color: var(--wp--preset--color--dark-gray) !important;}.has-medium-gray-color{color: var(--wp--preset--color--medium-gray) !important;}.has-light-gray-color{color: var(--wp--preset--color--light-gray) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-blue-background-color{background-color: var(--wp--preset--color--blue) !important;}.has-dark-gray-background-color{background-color: var(--wp--preset--color--dark-gray) !important;}.has-medium-gray-background-color{background-color: var(--wp--preset--color--medium-gray) !important;}.has-light-gray-background-color{background-color: var(--wp--preset--color--light-gray) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-blue-border-color{border-color: var(--wp--preset--color--blue) !important;}.has-dark-gray-border-color{border-color: var(--wp--preset--color--dark-gray) !important;}.has-medium-gray-border-color{border-color: var(--wp--preset--color--medium-gray) !important;}.has-light-gray-border-color{border-color: var(--wp--preset--color--light-gray) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<link rel='stylesheet' id='twentytwelve-fonts-css' href='https://dave.cheney.net/wp-content/themes/twentytwelve/fonts/font-open-sans.css?ver=20230328' media='all' />
+<link rel='stylesheet' id='twentytwelve-style-css' href='https://dave.cheney.net/wp-content/themes/twentytwelve/style.css?ver=20260520' media='all' />
+<link rel='stylesheet' id='twentytwelve-block-style-css' href='https://dave.cheney.net/wp-content/themes/twentytwelve/css/blocks.css?ver=20251031' media='all' />
+<script id="jquery-core-js" src="https://dave.cheney.net/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"></script>
+<script id="jquery-migrate-js" src="https://dave.cheney.net/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1"></script>
+<script data-wp-strategy="defer" defer id="twentytwelve-navigation-js" src="https://dave.cheney.net/wp-content/themes/twentytwelve/js/navigation.js?ver=20250303"></script>
+<link rel="https://api.w.org/" href="https://dave.cheney.net/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://dave.cheney.net/wp-json/wp/v2/posts/2351" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://dave.cheney.net/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 7.0" />
+<link rel="canonical" href="https://dave.cheney.net/2016/04/27/dont-just-check-errors-handle-them-gracefully" />
+<link rel='shortlink' href='https://dave.cheney.net/?p=2351' />
+<meta property="fediverse:creator" name="fediverse:creator" content="dfc@dave.cheney.net" />
+
+<link rel="alternate" title="ActivityPub (JSON)" type="application/activity+json" href="https://dave.cheney.net/2016/04/27/dont-just-check-errors-handle-them-gracefully" />
+<style id="wp-custom-css">
+.wp-block-code code {
+    display: block;
+    white-space: pre;
+    overflow-wrap: break-word;
+}
+
+.wp-block-preformatted {
+    white-space: pre;
+}
+</style>
+<link rel='stylesheet' id='yarppRelatedCss-css' href='https://dave.cheney.net/wp-content/plugins/yet-another-related-posts-plugin/style/related.css?ver=5.30.11' media='all' />
+
+</head>
+
+<body class="wp-singular post-template-default single single-post postid-2351 single-format-standard wp-embed-responsive wp-theme-twentytwelve custom-font-enabled single-author">
+<div id="page" class="hfeed site">
+	<a class="screen-reader-text skip-link" href="#content">Skip to content</a>
+	<header id="masthead" class="site-header">
+		<hgroup>
+							<h1 class="site-title"><a href="https://dave.cheney.net/" rel="home" >Dave Cheney</a></h1>
+								<h2 class="site-description">The acme of foolishness</h2>
+					</hgroup>
+
+		<nav id="site-navigation" class="main-navigation">
+			<button class="menu-toggle">Menu</button>
+			<div class="menu-topnav-container"><ul id="menu-topnav" class="nav-menu"><li id="menu-item-3737" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3737"><a href="https://dave.cheney.net/high-performance-go">High Performance Go</a></li>
+<li id="menu-item-3652" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3652"><a href="https://dave.cheney.net/practical-go">Practical Go</a></li>
+<li id="menu-item-4312" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4312"><a href="https://dave.cheney.net/internets-of-interest">Internets of Interest</a></li>
+<li id="menu-item-1818" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1818"><a href="https://dave.cheney.net/about">About</a>
+<ul class="sub-menu">
+	<li id="menu-item-3744" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3744"><a href="/feed/atom">RSS</a></li>
+</ul>
+</li>
+</ul></div>		</nav><!-- #site-navigation -->
+
+			</header><!-- #masthead -->
+
+	<div id="main" class="wrapper">
+
+	<div id="primary" class="site-content">
+		<div id="content" role="main">
+
+			
+				
+	<article id="post-2351" class="post-2351 post type-post status-publish format-standard hentry category-golang category-programming-2 tag-error-handling tag-errors">
+				<header class="entry-header">
+			
+						<h1 class="entry-title">Don&#8217;t just check errors, handle them gracefully</h1>
+								</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>This post is an extract from my presentation at the recent <a href="http://gocon.connpass.com/event/27521/">GoCon spring conference</a> in Tokyo, Japan.</p>
+<hr />
+<p><img fetchpriority="high" decoding="async" class="aligncenter wp-image-2354 size-full" src="http://dave.cheney.net/wp-content/uploads/2016/04/Screen-Shot-2016-04-23-at-11.39.26.png" alt="Don't just check errors, handle them gracefully" width="798" height="442" srcset="https://dave.cheney.net/wp-content/uploads/2016/04/Screen-Shot-2016-04-23-at-11.39.26.png 798w, https://dave.cheney.net/wp-content/uploads/2016/04/Screen-Shot-2016-04-23-at-11.39.26-300x166.png 300w, https://dave.cheney.net/wp-content/uploads/2016/04/Screen-Shot-2016-04-23-at-11.39.26-768x425.png 768w, https://dave.cheney.net/wp-content/uploads/2016/04/Screen-Shot-2016-04-23-at-11.39.26-624x346.png 624w" sizes="(max-width: 798px) 100vw, 798px" /></p>
+<h1>Errors are just values</h1>
+<p>I&#8217;ve spent a lot of time thinking about the best way to handle errors in Go programs. I really wanted there to be a single way to do error handling, something that we could teach all Go programmers by rote, just as we might teach mathematics, or the alphabet.</p>
+<p>However, I have concluded that there is no single way to handle errors. Instead, I believe Go’s error handling can be classified into the three core strategies.</p>
+<h1 id="sentinel errors">Sentinel errors</h1>
+<p>The first category of error handling is what I call <i>sentinel errors</i>.</p>
+<pre>if err == ErrSomething { … }</pre>
+<p>The name descends from the practice in computer programming of using a specific value to signify that no further processing is possible. So to with Go, we use specific values to signify an error.</p>
+<p>Examples include values like <code>io.EOF</code> or low level errors like the constants in the <code>syscall</code> package, like <code>syscall.ENOENT</code>.</p>
+<p>There are even sentinel errors that signify that an error <em>did not</em> occur, like <code>go/build.NoGoError<code>, and <code>path/filepath.SkipDir</code> from <code>path/filepath.Walk</code>.</code></code></p>
+<p>Using sentinel values is the least flexible error handling strategy, as the caller must compare the result to predeclared value using the equality operator. This presents a problem when you want to provide more context, as returning a different error would will break the equality check.</p>
+<p>Even something as well meaning as using <code>fmt.Errorf</code> to add some context to the error will defeat the caller&#8217;s equality test. Instead the caller will be forced to look at the output of the <code>error</code>&#8216;s <code>Error</code> method to see if it matches a specific string.</p>
+<h2>Never inspect the output of error.Error</h2>
+<p>As an aside, I believe you should never inspect the output of the <code>error.Error</code> method. The <code>Error</code> method on the <code>error</code> interface exists for humans, not code.</p>
+<p>The contents of that string belong in a log file, or displayed on screen. You shouldn’t try to change the behaviour of your program by inspecting it.</p>
+<p>I know that sometimes this isn&#8217;t possible, and as someone pointed out on twitter, this advice doesn’t apply to writing tests. Never the less, comparing the string form of an error is, in my opinion, a code smell, and you should try to avoid it.</p>
+<h2>Sentinel errors become part of your public API</h2>
+<p>If your public function or method returns an error of a particular value then that value must be public, and of course documented. This adds to the surface area of your API.</p>
+<p>If your API defines an interface which returns a specific error, all implementations of that interface will be restricted to returning only that error, even if they could provide a more descriptive error.</p>
+<p>We see this with <code>io.Reader</code>. Functions like <code>io.Copy</code> require a reader implementation to return <em>exactly</em> <code>io.EOF</code> to signal to the caller <em>no more data, but that isn’t an error</em>.</p>
+<h2>Sentinel errors create a dependency between two packages</h2>
+<p>By far the worst problem with sentinel error values is they create a source code dependency between two packages. As an example, to check if an error is equal to <code>io.EOF</code>, your code must import the <code>io</code> package.</p>
+<p>This specific example does not sound so bad, because it is quite common, but imagine the coupling that exists when many packages in your project export error values, which other packages in your project must import to check for specific error conditions.</p>
+<p>Having worked in a large project that toyed with this pattern, I can tell you that the spectre of bad design&#8211;in the form of an import loop&#8211;was never far from our minds.</p>
+<h2>Conclusion: avoid sentinel errors</h2>
+<p>So, my advice is to avoid using sentinel error values in the code you write. There are a few cases where they are used in the standard library, but this is not a pattern that you should emulate.</p>
+<p>If someone asks you to export an error value from your package, you should politely decline and instead suggest an alternative method, such as the ones I will discuss next.</p>
+<h1>Error types</h1>
+<p>Error types are the second form of Go error handling I want to discuss.</p>
+<pre>if err, ok := err.(SomeType); ok { … }</pre>
+<p>An error type is a type that you create that implements the error interface. In this example, the <code>MyError</code> type tracks the file and line, as well as a message explaining what happened.</p>
+<pre>type MyError struct {
+        Msg string
+        File string
+        Line int
+}
+
+func (e *MyError) Error() string { 
+        return fmt.Sprintf("%s:%d: %s”, e.File, e.Line, e.Msg)
+}
+
+return &amp;MyError{"Something happened", “server.go", 42}</pre>
+<p>Because <code>MyError error</code> is a type, callers can use type assertion to extract the extra context from the error.</p>
+<pre>err := something()
+switch err := err.(type) {
+case nil:
+        // call succeeded, nothing to do
+case *MyError:
+        fmt.Println(“error occurred on line:”, err.Line)
+default:
+// unknown error
+}</pre>
+<p>A big improvement of error types over error values is their ability to wrap an underlying error to provide more context.</p>
+<p>An excellent example of this is the <code>os.PathError</code> type which annotates the underlying error with the operation it was trying to perform, and the file it was trying to use.</p>
+<pre>// PathError records an error and the operation
+// and file path that caused it.
+type PathError struct {
+        Op   string
+        Path string
+        <b>Err  error // the cause</b>
+}
+
+func (e *PathError) Error() string</pre>
+<h2>Problems with error types</h2>
+<p>So the caller can use a type assertion or type switch, error types must be made public.</p>
+<p>If your code implements an interface whose contract requires a specific error type, all implementors of that interface need to depend on the package that defines the error type.</p>
+<p>This intimate knowledge of a package&#8217;s types creates a strong coupling with the caller, making for a brittle API.</p>
+<h2>Conclusion: avoid error types</h2>
+<p>While error types are better than sentinel error values, because they can capture more context about what went wrong, error types share many of the problems of error values.</p>
+<p>So again my advice is to avoid error types, or at least, avoid making them part of your public API.</p>
+<h1>Opaque errors</h1>
+<p>Now we come to the third category of error handling. In my opinion this is the most flexible error handling strategy as it requires the least coupling between your code and caller.</p>
+<p>I call this style opaque error handling, because while you know an error occurred, you don’t have the ability to see inside the error. As the caller, all you know about the result of the operation is that it worked, or it didn’t.</p>
+<p>This is all there is to opaque error handling&#8211;just return the error without assuming anything about its contents. If you adopt this position, then error handling can become significantly more useful as a debugging aid.</p>
+<pre>import “github.com/quux/bar”
+
+func fn() error {
+        x, err := bar.Foo()
+        <b>if err != nil {
+                return err
+        }</b>
+        // use x
+}</pre>
+<p>For example, <code>Foo</code>&#8216;s contract makes no guarantees about what it will return in the context of an error. The author of <code>Foo</code> is now free to annotate errors that pass through it with additional context without breaking its contract with the caller.</p>
+<h2>Assert errors for behaviour, not type</h2>
+<p>In a small number of cases, this binary approach to error handling is not sufficient.</p>
+<p>For example, interactions with the world outside your process, like network activity, require that the caller investigate the nature of the error to decide if it is reasonable to retry the operation.</p>
+<p>In this case rather than asserting the error is a specific type or value, we can assert that the error implements a particular behaviour. Consider this example:</p>
+<pre>type temporary interface {
+        Temporary() bool
+}
+ 
+// IsTemporary returns true if err is temporary.
+func IsTemporary(err error) bool {
+        te, ok := err.(temporary)
+        return ok &amp;&amp; te.Temporary()
+}</pre>
+<p>We can pass any error to <code>IsTemporary</code> to determine if the error could be retried.</p>
+<p>If the error does not implement the <code>temporary</code> interface; that is, it does not have a <code>Temporary</code> method, then then error is not temporary.</p>
+<p>If the error does implement <code>Temporary</code>, then perhaps the caller can retry the operation if <code>Temporary</code> returns <code>true</code>.</p>
+<p>The key here is this logic can be implemented without importing the package that defines the error or indeed knowing anything about <code>err</code>&#8216;s underlying type&#8211;we&#8217;re simply interested in its behaviour.</p>
+<h1>Don&#8217;t just check errors, handle them gracefully</h1>
+<p>This brings me to a second Go proverb that I want to talk about; don’t just check errors, handle them gracefully. Can you suggest some problems with the following piece of code?</p>
+<pre>func AuthenticateRequest(r *Request) error {
+        err := authenticate(r.User)
+        if err != nil {
+                return err
+        }
+        return nil
+}</pre>
+<p>An obvious suggestion is that the five lines of the function could be replaced with</p>
+<pre>return authenticate(r.User)</pre>
+<p>But this is the simple stuff that everyone should be catching in code review. More fundamentally the problem with this code is I cannot tell where the original error came from.</p>
+<p>If <code>authenticate</code> returns an error, then <code>AuthenticateRequest</code> will return the error to its caller, who will probably do the same, and so on. At the top of the program the main body of the program will print the error to the screen or a log file, and all that will be printed is: <code>No such file or directory</code>.<br />
+<img decoding="async" class="aligncenter size-full wp-image-2360" src="http://dave.cheney.net/wp-content/uploads/2016/04/Screen-Shot-2016-04-27-at-07.00.21.png" alt="No such file or directory" width="736" height="412" srcset="https://dave.cheney.net/wp-content/uploads/2016/04/Screen-Shot-2016-04-27-at-07.00.21.png 736w, https://dave.cheney.net/wp-content/uploads/2016/04/Screen-Shot-2016-04-27-at-07.00.21-300x168.png 300w, https://dave.cheney.net/wp-content/uploads/2016/04/Screen-Shot-2016-04-27-at-07.00.21-624x349.png 624w" sizes="(max-width: 736px) 100vw, 736px" /><br />
+There is no information of file and line where the error was generated. There is no stack trace of the call stack leading up to the error. The author of this code will be forced to a long session of bisecting their code to discover which code path trigged the file not found error.</p>
+<p>Donovan and Kernighan&#8217;s <em>The Go Programming Language</em> recommends that you add context to the error path using <code>fmt.Errorf</code></p>
+<pre>func AuthenticateRequest(r *Request) error {
+        err := authenticate(r.User)
+        if err != nil {
+                return <b>fmt.Errorf("authenticate failed: %v", err)</b>
+        }
+        return nil
+}</pre>
+<p>But as we saw earlier, this pattern is incompatible with the use of sentinel error values or type assertions, because converting the error value to a string, merging it with another string, then converting it back to an error with <code>fmt.Errorf</code> breaks equality and destroys any context in the original error.</p>
+<h2>Annotating errors</h2>
+<p>I&#8217;d like to suggest a method to add context to errors, and to do that I&#8217;m going to introduce a simple package. The code is online at <a href="https://godoc.org/github.com/pkg/errors"><code>github.com/pkg/errors</code></a>. The errors package has two main functions:</p>
+<pre>// Wrap annotates cause with a message.
+func Wrap(cause error, message string) error</pre>
+<p>The first function is <code>Wrap</code>, which takes an error, and a message and produces a new error.</p>
+<pre>// Cause unwraps an annotated error.
+func Cause(err error) error</pre>
+<p>The second function is <code>Cause</code>, which takes an error that has possibly been wrapped, and unwraps it to recover the original error.</p>
+<p>Using these two functions, we can now annotate any error, and recover the underlying error if we need to inspect it. Consider this example of a function that reads the content of a file into memory.</p>
+<pre>func ReadFile(path string) ([]byte, error) {
+        f, err := os.Open(path)
+        if err != nil {
+                return nil, <b>errors.Wrap(err, "open failed")</b>
+        } 
+        defer f.Close()
+ 
+        buf, err := ioutil.ReadAll(f)
+        if err != nil {
+                return nil, <b>errors.Wrap(err, "read failed")</b>
+        }
+        return buf, nil
+}</pre>
+<p>We&#8217;ll use this function to write a function to read a config file, then call that from <code>main</code>.</p>
+<pre>func ReadConfig() ([]byte, error) {
+        home := os.Getenv("HOME")
+        config, err := ReadFile(filepath.Join(home, ".settings.xml"))
+        return config, <b>errors.Wrap(err, "could not read config")</b>
+}
+ 
+func main() {
+        _, err := ReadConfig()
+        if err != nil {
+                <b>fmt.Println(err)</b>
+                os.Exit(1)
+        }
+}</pre>
+<p>If the <code>ReadConfig</code> code path fails, because we used <code>errors.Wrap</code>, we get a nicely annotated error in the K&amp;D style.</p>
+<pre>could not read config: open failed: open /Users/dfc/.settings.xml: no such file or directory</pre>
+<p>Because <code>errors.Wrap</code> produces a stack of errors, we can inspect that stack for additional debugging information. This is the same example again, but this time we replace <code>fmt.Println</code> with <code>errors.Print</code></p>
+<pre>func main() {
+        _, err := ReadConfig()
+        if err != nil {
+                <b>errors.Print(err)</b>
+                os.Exit(1)
+        }
+}</pre>
+<p>We&#8217;ll get something like this:</p>
+<pre>readfile.go:27: could not read config
+readfile.go:14: open failed
+open /Users/dfc/.settings.xml: no such file or directory</pre>
+<p>The first line comes from <code>ReadConfig</code>, the second comes from the <code>os.Open</code> part of <code>ReadFile</code>, and the remainder comes from the <code>os</code> package itself, which does not carry location information.</p>
+<p>Now we&#8217;ve introduced the concept of wrapping errors to produce a stack, we need to talk about the reverse, unwrapping them. This is the domain of the <code>errors.Cause</code> function.</p>
+<pre>// IsTemporary returns true if err is temporary.
+func IsTemporary(err error) bool {
+        te, ok := <b>errors.Cause(err)</b>.(temporary)
+        return ok &amp;&amp; te.Temporary()
+}</pre>
+<p>In operation, whenever you need to check an error matches a specific value or type, you should first recover the original error using the <code>errors.Cause</code> function.</p>
+<h1 id="handle-errors-once">Only handle errors once</h1>
+<p>Lastly, I want to mention that you should only handle errors once. Handling an error means inspecting the error value, and making a decision.</p>
+<pre>func Write(w io.Writer, buf []byte) {
+        w.Write(buf)
+}</pre>
+<p>If you make less than one decision, you&#8217;re ignoring the error. As we see here, the error from <code>w.Write</code> is being discarded.</p>
+<p>But making more than one decision in response to a single error is also problematic.</p>
+<pre>func Write(w io.Writer, buf []byte) error {
+        _, err := w.Write(buf)
+        if err != nil {
+                // annotated error goes to log file
+                <b>log.Println("unable to write:", err)</b>
+ 
+                // unannotated error returned to caller
+                <b>return err</b>
+        }
+        return nil
+}</pre>
+<p>In this example if an error occurs during <code>Write</code>, a line will be written to a log file, noting the file and line that the error occurred, and the error is also returned to the caller, who possibly will log it, and return it, all the way back up to the top of the program.</p>
+<p>So you get a stack of duplicate lines in your log file, but at the top of the program you get the original error without any context. Java anyone?</p>
+<pre>func Write(w io.Write, buf []byte) error {
+        _, err := w.Write(buf)
+        return <b>errors.Wrap(err, "write failed")</b>
+}</pre>
+<p>Using the <code>errors</code> package gives you the ability to add context to error values, in a way that is inspectable by both a human and a machine.</p>
+<h1>Conclusion</h1>
+<p>In conclusion, errors are part of your package&#8217;s public API, treat them with as much care as you would any other part of your public API.</p>
+<p>For maximum flexibility I recommend that you try to treat all errors as opaque. In the situations where you cannot do that, assert errors for behaviour, not type or value.</p>
+<p>Minimise the number of sentinel error values in your program and convert errors to opaque errors by wrapping them with <code>errors.Wrap</code> as soon as they occur.</p>
+<p>Finally, use <code>errors.Cause</code> to recover the underlying error if you need to inspect it.</p>
+<div class='yarpp yarpp-related yarpp-related-website yarpp-template-list'>
+<!-- YARPP List -->
+<h3>Related posts:</h3><ol>
+<li><a href="https://dave.cheney.net/2016/04/07/constant-errors" rel="bookmark" title="Constant errors">Constant errors</a></li>
+<li><a href="https://dave.cheney.net/2016/06/12/stack-traces-and-the-errors-package" rel="bookmark" title="Stack traces and the errors package">Stack traces and the errors package</a></li>
+<li><a href="https://dave.cheney.net/2014/12/24/inspecting-errors" rel="bookmark" title="Inspecting errors">Inspecting errors</a></li>
+<li><a href="https://dave.cheney.net/2015/01/26/errors-and-exceptions-redux" rel="bookmark" title="Errors and Exceptions, redux">Errors and Exceptions, redux</a></li>
+</ol>
+</div>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+			This entry was posted in <a href="https://dave.cheney.net/category/golang" rel="category tag">Go</a>, <a href="https://dave.cheney.net/category/programming-2" rel="category tag">Programming</a> and tagged <a href="https://dave.cheney.net/tag/error-handling" rel="tag">error handling</a>, <a href="https://dave.cheney.net/tag/errors" rel="tag">errors</a> on <a href="https://dave.cheney.net/2016/04/27/dont-just-check-errors-handle-them-gracefully" title="8:37 am" rel="bookmark"><time class="entry-date" datetime="2016-04-27T08:37:13+10:00">April 27, 2016</time></a><span class="by-author"> by <span class="author vcard"><a class="url fn n" href="https://dave.cheney.net/author/davecheney" title="View all posts by Dave Cheney" rel="author">Dave Cheney</a></span></span>.								</footer><!-- .entry-meta -->
+	</article><!-- #post -->
+
+				<nav class="nav-single">
+					<h3 class="assistive-text">Post navigation</h3>
+					<span class="nav-previous"><a href="https://dave.cheney.net/2016/04/11/the-value-of-tdd" rel="prev"><span class="meta-nav">&larr;</span> The value of TDD</a></span>
+					<span class="nav-next"><a href="https://dave.cheney.net/2016/05/10/test-fixtures-in-go" rel="next">Test fixtures in Go <span class="meta-nav">&rarr;</span></a></span>
+				</nav><!-- .nav-single -->
+
+				
+<div id="comments" class="comments-area">
+
+	
+	
+	
+</div><!-- #comments .comments-area -->
+
+			
+		</div><!-- #content -->
+	</div><!-- #primary -->
+
+
+			<div id="secondary" class="widget-area" role="complementary">
+			<aside id="linkcat-30" class="widget widget_links"><h3 class="widget-title">Elsewhere</h3>
+	<ul class='xoxo blogroll'>
+<li><a href="https://www.linkedin.com/in/davecheney" rel="me" target="_blank">LinkedIn</a></li>
+<li><a href="http://serverfault.com/users/301/dave-cheney" rel="me">Serverfault</a></li>
+<li><a href="http://stackoverflow.com/users/6449/dave-cheney" rel="me">Stackoverflow</a></li>
+
+	</ul>
+</aside>
+<aside id="categories-2" class="widget widget_categories"><h3 class="widget-title">Categories</h3>
+			<ul>
+					<li class="cat-item cat-item-43"><a href="https://dave.cheney.net/category/economy">Economy</a>
+</li>
+	<li class="cat-item cat-item-29"><a href="https://dave.cheney.net/category/golang">Go</a>
+</li>
+	<li class="cat-item cat-item-87"><a href="https://dave.cheney.net/category/hardware-hacking">Hardware Hacking</a>
+</li>
+	<li class="cat-item cat-item-46"><a href="https://dave.cheney.net/category/history">History</a>
+</li>
+	<li class="cat-item cat-item-257"><a href="https://dave.cheney.net/category/internets-of-interest">Internets of interest</a>
+</li>
+	<li class="cat-item cat-item-44"><a href="https://dave.cheney.net/category/photography">Photography</a>
+</li>
+	<li class="cat-item cat-item-36"><a href="https://dave.cheney.net/category/programming-2">Programming</a>
+</li>
+	<li class="cat-item cat-item-165"><a href="https://dave.cheney.net/category/retrochallenge">Retrochallenge</a>
+</li>
+	<li class="cat-item cat-item-114"><a href="https://dave.cheney.net/category/small-ideas">Small ideas</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="https://dave.cheney.net/category/uncategorized">Uncategorized</a>
+</li>
+	<li class="cat-item cat-item-28"><a href="https://dave.cheney.net/category/useless-trivia">Useless Trivia</a>
+</li>
+			</ul>
+
+			</aside><aside id="archives-4" class="widget widget_archive"><h3 class="widget-title">Archives</h3>
+			<ul>
+					<li><a href='https://dave.cheney.net/2025/12'>December 2025</a></li>
+	<li><a href='https://dave.cheney.net/2025/11'>November 2025</a></li>
+	<li><a href='https://dave.cheney.net/2024/02'>February 2024</a></li>
+	<li><a href='https://dave.cheney.net/2021/01'>January 2021</a></li>
+	<li><a href='https://dave.cheney.net/2020/12'>December 2020</a></li>
+	<li><a href='https://dave.cheney.net/2020/06'>June 2020</a></li>
+	<li><a href='https://dave.cheney.net/2020/05'>May 2020</a></li>
+	<li><a href='https://dave.cheney.net/2020/04'>April 2020</a></li>
+	<li><a href='https://dave.cheney.net/2020/03'>March 2020</a></li>
+	<li><a href='https://dave.cheney.net/2020/02'>February 2020</a></li>
+	<li><a href='https://dave.cheney.net/2019/12'>December 2019</a></li>
+	<li><a href='https://dave.cheney.net/2019/11'>November 2019</a></li>
+	<li><a href='https://dave.cheney.net/2019/10'>October 2019</a></li>
+	<li><a href='https://dave.cheney.net/2019/09'>September 2019</a></li>
+	<li><a href='https://dave.cheney.net/2019/08'>August 2019</a></li>
+	<li><a href='https://dave.cheney.net/2019/07'>July 2019</a></li>
+	<li><a href='https://dave.cheney.net/2019/06'>June 2019</a></li>
+	<li><a href='https://dave.cheney.net/2019/05'>May 2019</a></li>
+	<li><a href='https://dave.cheney.net/2019/04'>April 2019</a></li>
+	<li><a href='https://dave.cheney.net/2019/02'>February 2019</a></li>
+	<li><a href='https://dave.cheney.net/2019/01'>January 2019</a></li>
+	<li><a href='https://dave.cheney.net/2018/12'>December 2018</a></li>
+	<li><a href='https://dave.cheney.net/2018/11'>November 2018</a></li>
+	<li><a href='https://dave.cheney.net/2018/10'>October 2018</a></li>
+	<li><a href='https://dave.cheney.net/2018/09'>September 2018</a></li>
+	<li><a href='https://dave.cheney.net/2018/08'>August 2018</a></li>
+	<li><a href='https://dave.cheney.net/2018/07'>July 2018</a></li>
+	<li><a href='https://dave.cheney.net/2018/05'>May 2018</a></li>
+	<li><a href='https://dave.cheney.net/2018/01'>January 2018</a></li>
+	<li><a href='https://dave.cheney.net/2017/12'>December 2017</a></li>
+	<li><a href='https://dave.cheney.net/2017/11'>November 2017</a></li>
+	<li><a href='https://dave.cheney.net/2017/09'>September 2017</a></li>
+	<li><a href='https://dave.cheney.net/2017/08'>August 2017</a></li>
+	<li><a href='https://dave.cheney.net/2017/07'>July 2017</a></li>
+	<li><a href='https://dave.cheney.net/2017/06'>June 2017</a></li>
+	<li><a href='https://dave.cheney.net/2017/04'>April 2017</a></li>
+	<li><a href='https://dave.cheney.net/2017/03'>March 2017</a></li>
+	<li><a href='https://dave.cheney.net/2017/02'>February 2017</a></li>
+	<li><a href='https://dave.cheney.net/2017/01'>January 2017</a></li>
+	<li><a href='https://dave.cheney.net/2016/12'>December 2016</a></li>
+	<li><a href='https://dave.cheney.net/2016/11'>November 2016</a></li>
+	<li><a href='https://dave.cheney.net/2016/10'>October 2016</a></li>
+	<li><a href='https://dave.cheney.net/2016/09'>September 2016</a></li>
+	<li><a href='https://dave.cheney.net/2016/08'>August 2016</a></li>
+	<li><a href='https://dave.cheney.net/2016/06'>June 2016</a></li>
+	<li><a href='https://dave.cheney.net/2016/05'>May 2016</a></li>
+	<li><a href='https://dave.cheney.net/2016/04'>April 2016</a></li>
+	<li><a href='https://dave.cheney.net/2016/03'>March 2016</a></li>
+	<li><a href='https://dave.cheney.net/2016/02'>February 2016</a></li>
+	<li><a href='https://dave.cheney.net/2016/01'>January 2016</a></li>
+	<li><a href='https://dave.cheney.net/2015/12'>December 2015</a></li>
+	<li><a href='https://dave.cheney.net/2015/11'>November 2015</a></li>
+	<li><a href='https://dave.cheney.net/2015/10'>October 2015</a></li>
+	<li><a href='https://dave.cheney.net/2015/09'>September 2015</a></li>
+	<li><a href='https://dave.cheney.net/2015/08'>August 2015</a></li>
+	<li><a href='https://dave.cheney.net/2015/07'>July 2015</a></li>
+	<li><a href='https://dave.cheney.net/2015/06'>June 2015</a></li>
+	<li><a href='https://dave.cheney.net/2015/05'>May 2015</a></li>
+	<li><a href='https://dave.cheney.net/2015/03'>March 2015</a></li>
+	<li><a href='https://dave.cheney.net/2015/02'>February 2015</a></li>
+	<li><a href='https://dave.cheney.net/2015/01'>January 2015</a></li>
+	<li><a href='https://dave.cheney.net/2014/12'>December 2014</a></li>
+	<li><a href='https://dave.cheney.net/2014/11'>November 2014</a></li>
+	<li><a href='https://dave.cheney.net/2014/10'>October 2014</a></li>
+	<li><a href='https://dave.cheney.net/2014/09'>September 2014</a></li>
+	<li><a href='https://dave.cheney.net/2014/08'>August 2014</a></li>
+	<li><a href='https://dave.cheney.net/2014/07'>July 2014</a></li>
+	<li><a href='https://dave.cheney.net/2014/06'>June 2014</a></li>
+	<li><a href='https://dave.cheney.net/2014/05'>May 2014</a></li>
+	<li><a href='https://dave.cheney.net/2014/04'>April 2014</a></li>
+	<li><a href='https://dave.cheney.net/2014/03'>March 2014</a></li>
+	<li><a href='https://dave.cheney.net/2014/02'>February 2014</a></li>
+	<li><a href='https://dave.cheney.net/2014/01'>January 2014</a></li>
+	<li><a href='https://dave.cheney.net/2013/12'>December 2013</a></li>
+	<li><a href='https://dave.cheney.net/2013/11'>November 2013</a></li>
+	<li><a href='https://dave.cheney.net/2013/10'>October 2013</a></li>
+	<li><a href='https://dave.cheney.net/2013/09'>September 2013</a></li>
+	<li><a href='https://dave.cheney.net/2013/08'>August 2013</a></li>
+	<li><a href='https://dave.cheney.net/2013/07'>July 2013</a></li>
+	<li><a href='https://dave.cheney.net/2013/06'>June 2013</a></li>
+	<li><a href='https://dave.cheney.net/2013/05'>May 2013</a></li>
+	<li><a href='https://dave.cheney.net/2013/04'>April 2013</a></li>
+	<li><a href='https://dave.cheney.net/2013/01'>January 2013</a></li>
+	<li><a href='https://dave.cheney.net/2012/12'>December 2012</a></li>
+	<li><a href='https://dave.cheney.net/2012/11'>November 2012</a></li>
+	<li><a href='https://dave.cheney.net/2012/10'>October 2012</a></li>
+	<li><a href='https://dave.cheney.net/2012/09'>September 2012</a></li>
+	<li><a href='https://dave.cheney.net/2012/08'>August 2012</a></li>
+	<li><a href='https://dave.cheney.net/2012/02'>February 2012</a></li>
+	<li><a href='https://dave.cheney.net/2012/01'>January 2012</a></li>
+	<li><a href='https://dave.cheney.net/2011/11'>November 2011</a></li>
+	<li><a href='https://dave.cheney.net/2011/10'>October 2011</a></li>
+	<li><a href='https://dave.cheney.net/2011/08'>August 2011</a></li>
+	<li><a href='https://dave.cheney.net/2011/07'>July 2011</a></li>
+	<li><a href='https://dave.cheney.net/2011/06'>June 2011</a></li>
+	<li><a href='https://dave.cheney.net/2011/05'>May 2011</a></li>
+	<li><a href='https://dave.cheney.net/2011/04'>April 2011</a></li>
+	<li><a href='https://dave.cheney.net/2011/03'>March 2011</a></li>
+	<li><a href='https://dave.cheney.net/2011/02'>February 2011</a></li>
+	<li><a href='https://dave.cheney.net/2010/11'>November 2010</a></li>
+	<li><a href='https://dave.cheney.net/2010/10'>October 2010</a></li>
+			</ul>
+
+			</aside><aside id="text-2" class="widget widget_text"><h3 class="widget-title">License</h3>			<div class="textwidget"><a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</div>
+		</aside>		</div><!-- #secondary -->
+		</div><!-- #main .wrapper -->
+	<footer id="colophon" role="contentinfo">
+		<div class="site-info">
+									<a href="https://wordpress.org/" class="imprint" title="Semantic Personal Publishing Platform">
+				Proudly powered by WordPress			</a>
+		</div><!-- .site-info -->
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/twentytwelve/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<script id="wp-emoji-settings" type="application/json">
+{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"https://dave.cheney.net/wp-includes/js/wp-emoji-release.min.js?ver=7.0"}}
+</script>
+<script type="module">
+/*! This file is auto-generated */
+const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(window._wpemojiSettings=a,"wpEmojiSettingsSupports"),s=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const a=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===a[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,a){let r;const o=(r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),s=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(e=>{s[e]=t(o,e,n,a)}),s}function r(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}a.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),c.toString(),p.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"});const r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=e=>{i(n=e.data),r.terminate(),t(n)})}catch(e){}i(n=f(s,u,c,p))}t(n)}).then(e=>{for(const n in e)a.supports[n]=e[n],a.supports.everything=a.supports.everything&&a.supports[n],"flag"!==n&&(a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&a.supports[n]);var t;a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&!a.supports.flag,a.supports.everything||((t=a.source||{}).concatemoji?r(t.concatemoji):t.wpemoji&&t.twemoji&&(r(t.twemoji),r(t.wpemoji)))});
+//# sourceURL=https://dave.cheney.net/wp-includes/js/wp-emoji-loader.min.js
+</script>
+</body>
+</html>
+
+<!-- Dynamic page generated in 0.087 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2026-06-02 16:29:07 -->
+
+<!-- super cache -->

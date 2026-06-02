@@ -1,0 +1,97 @@
+---
+source_name: "External Linked Documentation"
+source_url: "https://pkg.go.dev/github.com/google/subcommands"
+source_path: "sources/raw/external/pkg-go-dev-github-com-google-subcommands-221a8be968.html"
+license_ref: ""
+---
+
+subcommands package - github.com/google/subcommands - Go Packages
+## Details
+
+-     Valid go.mod <https://github.com/google/subcommands/tree/v1.2.0/go.mod> file
+ The Go module system was introduced in Go 1.11 and is the official dependency management solution for Go.
+
+-     Redistributable license
+ Redistributable licenses place minimal restrictions on how software can be used, modified, and redistributed.
+
+-     Tagged version
+Modules with tagged versions give importers more predictable builds.
+
+-     Stable version
+When a project reaches major version v1 it is considered stable.
+
+-  Learn more about best practices
+
+## Repository
+   github.com/google/subcommands  <https://github.com/google/subcommands>
+
+##   README ¶
+
+### subcommands
+
+ <https://godoc.org/github.com/google/subcommands>
+ Subcommands is a Go package that implements a simple way for a single command to have many subcommands, each of which takes arguments and so forth.
+
+This is not an official Google product.
+
+#### Usage
+
+Set up a 'print' subcommand:
+
+```go
+import (
+  "context"
+  "flag"
+  "fmt"
+  "os"
+  "strings"
+
+  "github.com/google/subcommands"
+)
+
+type printCmd struct {
+  capitalize bool
+}
+
+func (*printCmd) Name() string     { return "print" }
+func (*printCmd) Synopsis() string { return "Print args to stdout." }
+func (*printCmd) Usage() string {
+  return `print [-capitalize] <some text>:
+  Print args to stdout.
+`
+}
+
+func (p *printCmd) SetFlags(f *flag.FlagSet) {
+  f.BoolVar(&p.capitalize, "capitalize", false, "capitalize output")
+}
+
+func (p *printCmd) Execute(_ context.Context, f *flag.FlagSet, _ ...interface{}) subcommands.ExitStatus {
+  for _, arg := range f.Args() {
+    if p.capitalize {
+      arg = strings.ToUpper(arg)
+    }
+    fmt.Printf("%s ", arg)
+  }
+  fmt.Println()
+  return subcommands.ExitSuccess
+}
+
+```
+
+Register using the default Commander, also use some built in subcommands, finally run Execute using ExitStatus as the exit code:
+
+```go
+func main() {
+  subcommands.Register(subcommands.HelpCommand(), "")
+  subcommands.Register(subcommands.FlagsCommand(), "")
+  subcommands.Register(subcommands.CommandsCommand(), "")
+  subcommands.Register(&printCmd{}, "")
+
+  flag.Parse()
+  ctx := context.Background()
+  os.Exit(int(subcommands.Execute(ctx)))
+}
+
+```
+
+ Expand ▾ Collapse ▴

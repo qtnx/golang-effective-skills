@@ -1,0 +1,1000 @@
+---
+source_name: "External Linked Documentation"
+source_url: "https://go.dev/talks/2014/organizeio.slide"
+retrieved_at: "2026-06-02T06:42:04.057106+00:00"
+content_type: "text/html; charset=utf-8"
+truncated: false
+insecure_tls_fallback: true
+---
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Organizing Go code</title>
+    <meta charset='utf-8'>
+    <script>
+      var notesEnabled =  null ;
+    </script>
+    <script src='/talks/static/slides.js'></script>
+
+    
+
+    <script>
+      
+      if (window["location"] && window["location"]["hostname"] == "go.dev/talks") {
+        var _gaq = _gaq || [];
+        _gaq.push(["_setAccount", "UA-11222381-6"]);
+        _gaq.push(["b._setAccount", "UA-49880327-6"]);
+        window.trackPageview = function() {
+          _gaq.push(["_trackPageview", location.pathname+location.hash]);
+          _gaq.push(["b._trackPageview", location.pathname+location.hash]);
+        };
+        window.trackPageview();
+        window.trackEvent = function(category, action, opt_label, opt_value, opt_noninteraction) {
+          _gaq.push(["_trackEvent", category, action, opt_label, opt_value, opt_noninteraction]);
+          _gaq.push(["b._trackEvent", category, action, opt_label, opt_value, opt_noninteraction]);
+        };
+      }
+    </script>
+  </head>
+
+  <body style='display: none'>
+
+    <section class='slides layout-widescreen'>
+
+      <article>
+        <h1>Organizing Go code</h1>
+        
+        
+        
+          <div class="presenter">
+            
+  
+  <p>
+    David Crawshaw
+  </p>
+  
+
+          </div>
+        
+          <div class="presenter">
+            
+  
+  <p>
+    
+  </p>
+  
+
+          </div>
+        
+      </article>
+
+  
+  
+      <article >
+      
+        <h2>Packages</h2>
+      
+      <span class="pagenumber">2</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Go programs are made up of packages</h3>
+        
+  
+  <p>
+    All Go source is part of a package.
+<br>
+
+    Every file begins with a package statement.
+<br>
+
+    Programs start in package main.
+  </p>
+  
+
+  <div class="code playground" >
+<pre><span num="1">package main</span>
+<span num="2"></span>
+<span num="3">import &#34;fmt&#34;</span>
+<span num="4"></span>
+<span num="5">func main() {</span>
+<span num="6">    fmt.Println(&#34;Hello, world!&#34;)</span>
+<span num="7">}</span>
+</pre>
+</div>
+
+  
+  <p>
+    For very small programs, <code>main</code> is the only package you need to write.
+  </p>
+  
+
+  
+  <p>
+    The hello world program <i>imports</i> package <code>fmt</code>.
+  </p>
+  
+
+  
+  <p>
+    The function <code>Println</code> is defined in the fmt package.
+  </p>
+  
+
+      
+      <span class="pagenumber">3</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>An example package: fmt</h3>
+        
+  
+  <div class="code"><pre>// Package fmt implements formatted I/O.
+package fmt
+
+// Println formats using the default formats for its
+// operands and writes to standard output.
+func Println(a ...interface{}) (n int, err error) {
+    ...
+}
+
+func newPrinter() *pp {
+    ...
+}</pre></div>
+  
+
+  
+  <p>
+    The <code>Println</code> function is <i>exported</i>. It starts with an upper case
+<br>
+
+    letter, which means other packages are allowed to call it.
+  </p>
+  
+
+  
+  <p>
+    The <code>newPrinter</code> function is <i>unexported</i>. It starts with a lower
+<br>
+
+    case letter, so it can only be used inside the fmt package.
+  </p>
+  
+
+      
+      <span class="pagenumber">4</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>The shape of a package</h3>
+        
+  
+  <p>
+    Packages collect related code.
+  </p>
+  
+
+  
+  <p>
+    They can be big or small,
+<br>
+
+    and may be spread across multiple files.
+  </p>
+  
+
+  
+  <p>
+    All the files in a package live in a single directory.
+  </p>
+  
+
+  
+  <p>
+    The <code>net/http</code> package exports more than 100 names. (18 files)
+<br>
+
+    The <code>errors</code> package exports just one. (1 file)
+  </p>
+  
+
+      
+      <span class="pagenumber">5</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>The name of a package</h3>
+        
+  
+  <p>
+    Keep package names short and meaningful.
+<br>
+
+    Don&#39;t use underscores, they make package names long.
+  </p>
+  
+
+  <ul>
+  
+    <li><code>io/ioutil</code> not <code>io/util</code></li>
+  
+    <li><code>suffixarray</code> not <code>suffix_array</code></li>
+  
+  </ul>
+
+  
+  <p>
+    Don&#39;t overgeneralize. A <code>util</code> package could be anything.
+  </p>
+  
+
+  
+  <p>
+    The name of a package is part of its type and function names.
+<br>
+
+    On its own, type <code>Buffer</code> is ambiguous. But users see:
+  </p>
+  
+
+  
+  <div class="code"><pre>buf := new(bytes.Buffer)</pre></div>
+  
+
+  
+  <p>
+    Choose package names carefully.
+  </p>
+  
+
+  
+  <p>
+    Choose good names for users.
+  </p>
+  
+
+      
+      <span class="pagenumber">6</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>The testing of a package</h3>
+        
+  
+  <p>
+    Tests are distinguished by file name. Test files end in <code>_test.go</code>.
+  </p>
+  
+
+  
+  <div class="code"><pre>package fmt
+
+import &#34;testing&#34;
+
+var fmtTests = []fmtTest{
+    {&#34;%d&#34;, 12345, &#34;12345&#34;},
+    {&#34;%v&#34;, 12345, &#34;12345&#34;},
+    {&#34;%t&#34;, true, &#34;true&#34;},
+}
+
+func TestSprintf(t *testing.T) {
+    for _, tt := range fmtTests {
+        if s := Sprintf(tt.fmt, tt.val); s != tt.out {
+            t.Errorf(&#34;...&#34;)
+        }
+    }
+}</pre></div>
+  
+
+  
+  <p>
+    Test well.
+  </p>
+  
+
+      
+      <span class="pagenumber">7</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h2>Code organization</h2>
+      
+      <span class="pagenumber">8</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Introducing workspaces</h3>
+        
+  
+  <p>
+    Your Go code is kept in a <i>workspace</i>.
+  </p>
+  
+
+  
+  <p>
+    A workspace contains <i>many</i> source repositories (git, hg).
+  </p>
+  
+
+  
+  <p>
+    The Go tool understands the layout of a workspace.
+<br>
+
+    You don&#39;t need a <code>Makefile</code>. The file layout is everything.
+  </p>
+  
+
+  
+  <p>
+    Change the file layout, change the build.
+  </p>
+  
+
+  
+  <div class="code"><pre>$GOPATH/
+    src/
+        github.com/user/repo/
+            mypkg/
+                mysrc1.go
+                mysrc2.go
+            cmd/mycmd/
+                main.go
+    bin/
+        mycmd</pre></div>
+  
+
+      
+      <span class="pagenumber">9</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Let&#39;s make a workspace</h3>
+        
+  
+  <div class="code"><pre>mkdir /tmp/gows
+GOPATH=/tmp/gows</pre></div>
+  
+
+  
+  <p>
+    The <code>GOPATH</code> environment variable tells the Go tool where your workspace is located.
+  </p>
+  
+
+  
+  <div class="code"><pre>go get github.com/dsymonds/fixhub/cmd/fixhub</pre></div>
+  
+
+  
+  <p>
+    The <code>go</code> <code>get</code> command fetches source repositories from the internet and places them in your workspace.
+  </p>
+  
+
+  
+  <p>
+    Package paths matter to the Go tool. Using &#34;github.com/...&#34;
+<br>
+
+    means the tool knows how to fetch your repository.
+  </p>
+  
+
+  
+  <div class="code"><pre>go install github.com/dsymonds/fixhub/cmd/fixhub</pre></div>
+  
+
+  
+  <p>
+    The go install command builds a binary and places it in <code>$GOPATH/bin/fixhub</code>.
+  </p>
+  
+
+      
+      <span class="pagenumber">10</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Our workspace</h3>
+        
+  
+  <div class="code"><pre>$GOPATH/
+    bin/fixhub                              # installed binary
+    pkg/darwin_amd64/                       # compiled archives
+        code.google.com/p/goauth2/oauth.a
+        github.com/...
+    src/                                    # source repositories
+        code.google.com/p/goauth2/
+            .hg
+            oauth                           # used by package go-github
+            ...
+        github.com/
+            golang/lint/...                 # used by package fixhub
+                .git
+            google/go-github/...            # used by package fixhub
+                .git
+            dsymonds/fixhub/
+                .git
+                client.go
+                cmd/fixhub/fixhub.go        # package main</pre></div>
+  
+
+  
+  <p>
+    <code>go</code> <code>get</code> fetched many repositories.
+<br>
+
+    <code>go</code> <code>install</code> built a binary out of them.
+  </p>
+  
+
+      
+      <span class="pagenumber">11</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Why prescribe file layout?</h3>
+        
+  
+  <p>
+    Using file layout for builds means less configuration.
+<br>
+
+    In fact, it means no configuration.
+<br>
+
+    No <code>Makefile</code>, no <code>build.xml</code>.
+  </p>
+  
+
+  
+  <p>
+    Less time configuring means more time programming.
+  </p>
+  
+
+  
+  <p>
+    Everyone in the community uses the same layout.
+<br>
+
+    This makes it easier to share code.
+  </p>
+  
+
+  
+  <p>
+    The Go tool helps build the Go community.
+  </p>
+  
+
+      
+      <span class="pagenumber">12</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Where&#39;s your workspace?</h3>
+        
+  
+  <p>
+    It is possible to have multiple workspaces, but most people just use one.
+  </p>
+  
+
+  
+  <p>
+    So where do you point your <code>GOPATH</code>? A common preference:
+  </p>
+  
+
+<div class="image">
+  <img src="organizeio/home.png">
+</div>
+
+  
+  <p>
+    This puts <code>src</code>, <code>bin</code>, and <code>pkg</code> directories in your home directory.
+  </p>
+  
+
+  
+  <p>
+    (Convenient, because <code>$HOME/bin</code> is probably already in your <code>PATH</code>.)
+  </p>
+  
+
+      
+      <span class="pagenumber">13</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Working with workspaces</h3>
+        
+  
+  <p>
+    Unix eschews typing:
+  </p>
+  
+
+  
+  <div class="code"><pre>CDPATH=$GOPATH/src/github.com:$GOPATH/src/code.google.com/p
+
+$ cd dsymonds/fixhub
+/tmp/gows/src/github.com/dsymonds/fixhub
+$ cd goauth2
+/tmp/gows/src/code.google.com/p/goauth2
+$</pre></div>
+  
+
+  
+  <p>
+    A shell function for your <code>~/.profile</code>:
+  </p>
+  
+
+  
+  <div class="code"><pre>gocd () { cd `go list -f &#39;{{.Dir}}&#39; $1` }</pre></div>
+  
+
+  
+  <p>
+    This lets you move around using the Go tool&#39;s path names:
+  </p>
+  
+
+  
+  <div class="code"><pre>$ gocd .../lint
+/tmp/gows/src/github.com/golang/lint
+$</pre></div>
+  
+
+      
+      <span class="pagenumber">14</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>The Go tool&#39;s many talents</h3>
+        
+  
+  <div class="code"><pre>$ go help
+Go is a tool for managing Go source code.
+
+Usage:
+
+    go command [arguments]
+
+The commands are:</pre></div>
+  
+
+  
+  <p>
+    Worth exploring! Some highlights:
+  </p>
+  
+
+  
+  <div class="code"><pre>build       compile packages and dependencies
+get         download and install packages and dependencies
+install     compile and install packages and dependencies
+test        test packages</pre></div>
+  
+
+  
+  <p>
+    There are more useful subcommands. Check out <code>vet</code> and <code>fmt</code>.
+  </p>
+  
+
+      
+      <span class="pagenumber">15</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h2>Dependency management</h2>
+      
+      <span class="pagenumber">16</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>In production, versions matter.</h3>
+        
+  
+  <p>
+    <code>go</code> <code>get</code> always fetches the latest code, even if your build breaks.
+  </p>
+  
+
+<div class="image">
+  <img src="organizeio/gogetversion.png">
+</div>
+
+  
+  <p>
+    That&#39;s fine when developing. It&#39;s not fine when releasing.
+<br>
+
+    We need other tools.
+  </p>
+  
+
+      
+      <span class="pagenumber">17</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Versioning</h3>
+        
+  
+  <p>
+    My favorite technique: vendoring.
+  </p>
+  
+
+  
+  <p>
+    For building binaries, import the packages you care about
+<br>
+
+    into a <code>_vendor</code> workspace.
+  </p>
+  
+
+  
+  <div class="code"><pre>GOPATH=/tmp/gows/_vendor:/tmp/gows</pre></div>
+  
+
+  
+  <p>
+    For building libraries, import the packages you care about
+<br>
+
+    into your repository. Rename the imports to:
+  </p>
+  
+
+  
+  <div class="code"><pre>import &#34;github.com/you/proj/vendor/github.com/them/lib&#34;</pre></div>
+  
+
+  
+  <p>
+    Long paths, but trivial to automate. Write a Go program!
+  </p>
+  
+
+  
+  <p>
+    Another technique: <a href="http://gopkg.in" target="_blank">gopkg.in</a>, provides versioned package paths:
+  </p>
+  
+
+  
+  <div class="code"><pre>gopkg.in/user/pkg.v3 -&gt; github.com/user/pkg (branch/tag v3, v3.N, or v.3.N.M)</pre></div>
+  
+
+      
+      <span class="pagenumber">18</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h2>Naming</h2>
+      
+      <span class="pagenumber">19</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Names matter</h3>
+        
+  
+  <p>
+    Programs are full of names. Names have costs and benefits.
+  </p>
+  
+
+  
+  <p>
+    <b>Costs</b>: <b>space</b> <b>and</b> <b>time</b>
+<br>
+
+    Names need to be in short term memory when reading code.
+<br>
+
+    You can only fit so many. Longer names take up more space.
+  </p>
+  
+
+  
+  <p>
+    <b>Benefits:</b> <b>information</b>
+<br>
+
+    A good name is not only a referent, it conveys information.
+  </p>
+  
+
+  
+  <p>
+    Use the shortest name that carries the right amount of information in its context.
+  </p>
+  
+
+  
+  <p>
+    Devote time to naming.
+  </p>
+  
+
+      
+      <span class="pagenumber">20</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Name style</h3>
+        
+  
+  <p>
+    Use <code>camelCase</code>, <code>not_underscores</code>.
+<br>
+
+    Local variable names should be short, typically one or two characters.
+  </p>
+  
+
+  
+  <p>
+    Package names are usually one lowercase word.
+  </p>
+  
+
+  
+  <p>
+    Global variables should have longer names.
+  </p>
+  
+
+  
+  <p>
+    Don&#39;t stutter.
+  </p>
+  
+
+  <ul>
+  
+    <li><code>bytes.Buffer</code> not <code>bytes.ByteBuffer</code></li>
+  
+    <li><code>zip.Reader</code> not <code>zip.ZipReader</code></li>
+  
+    <li><code>errors.New</code> not <code>errors.NewError</code></li>
+  
+    <li><code>r</code> not <code>bytesReader</code></li>
+  
+    <li><code>i</code> not <code>loopIterator</code></li>
+  
+  </ul>
+
+      
+      <span class="pagenumber">21</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Doc comments</h3>
+        
+  
+  <p>
+    Doc comments precede the declaration of an exported identifier:
+  </p>
+  
+
+  
+  <div class="code"><pre>// Join concatenates the elements of elem to create a single string.
+// The separator string sep is placed between elements in the resulting string.
+func Join(elem []string, sep string) string {</pre></div>
+  
+
+  
+  <p>
+    The godoc tool extracts such comments and presents them on the web:
+  </p>
+  
+
+<div class="image">
+  <img src="organizeio/godoc.png">
+</div>
+
+      
+      <span class="pagenumber">22</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h3>Writing doc comments</h3>
+        
+  
+  <p>
+    Doc comments should be English sentences and paragraphs.
+<br>
+
+    They use no special formatting beyond indentation for preformatted text.
+  </p>
+  
+
+  
+  <p>
+    Doc comments should begin with the noun they describe.
+  </p>
+  
+
+  
+  <div class="code"><pre>// Join concatenates…         good
+// This function…             bad</pre></div>
+  
+
+  
+  <p>
+    Package docs go above the package declaration:
+  </p>
+  
+
+  
+  <div class="code"><pre>// Package fmt…
+package fmt</pre></div>
+  
+
+  
+  <p>
+    Read the world&#39;s Go docs on <a href="https://pkg.go.dev" target="_blank">pkg.go.dev</a>. E.g.
+  </p>
+  
+
+  
+  <p>
+    <a href="https://pkg.go.dev/golang.org/x/tools/txtar" target="_blank">pkg.go.dev/golang.org/x/tools/txtar</a>
+  </p>
+  
+
+      
+      <span class="pagenumber">23</span>
+      </article>
+  
+  
+  
+      <article >
+      
+        <h2>Questions?</h2>
+      
+      <span class="pagenumber">24</span>
+      </article>
+  
+  
+
+      <article>
+        <h3>Thank you</h3>
+        
+          <div class="presenter">
+            
+  
+  <p>
+    David Crawshaw
+  </p>
+  
+<p class="link"><a href="mailto:crawshaw@golang.org" target="_blank">crawshaw@golang.org</a></p>
+          </div>
+        
+          <div class="presenter">
+            
+  
+  <p>
+    
+  </p>
+  
+
+          </div>
+        
+      </article>
+
+    </section>
+
+    <div id="help">
+      Use the left and right arrow keys or click the left and right
+      edges of the page to navigate between slides.<br>
+      (Press 'H' or navigate to hide this message.)
+    </div>
+
+    
+
+    <script>
+      (function() {
+        
+        if (window["location"] && window["location"]["hostname"] == "go.dev/talks") {
+          var ga = document.createElement("script"); ga.type = "text/javascript"; ga.async = true;
+          ga.src = ("https:" == document.location.protocol ? "https://ssl" : "http://www") + ".google-analytics.com/ga.js";
+          var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(ga, s);
+        }
+      })();
+    </script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

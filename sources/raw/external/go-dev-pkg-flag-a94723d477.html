@@ -1,0 +1,4013 @@
+---
+source_name: "External Linked Documentation"
+source_url: "https://go.dev/pkg/flag/"
+retrieved_at: "2026-06-02T06:41:56.529017+00:00"
+content_type: "text/html; charset=utf-8"
+truncated: false
+insecure_tls_fallback: true
+---
+
+
+
+<!DOCTYPE html>
+<html lang="en" data-layout="responsive" data-local="">
+  <head>
+    
+    <script>
+      window.addEventListener('error', window.__err=function f(e){f.p=f.p||[];f.p.push(e)});
+    </script>
+    <script>
+      (function() {
+        const theme = document.cookie.match(/prefers-color-scheme=(light|dark|auto)/)?.[1]
+        if (theme) {
+          document.querySelector('html').setAttribute('data-theme', theme);
+        }
+      }())
+    </script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Package flag implements command-line flag parsing.">
+    
+    <meta class="js-gtmID" data-gtmid="GTM-W8MVQXG">
+    <link rel="shortcut icon" href="/static/shared/icon/favicon.ico">
+    
+  
+    <link rel="canonical" href="https://pkg.go.dev/flag">
+  
+
+    <link href="/static/frontend/frontend.min.css?version=prod-frontend-00193-fdr" rel="stylesheet">
+    
+    <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="Go Packages">
+    
+    
+  <title>flag package - flag - Go Packages</title>
+
+    
+  <link href="/static/frontend/unit/unit.min.css?version=prod-frontend-00193-fdr" rel="stylesheet">
+  
+  <link href="/static/frontend/unit/main/main.min.css?version=prod-frontend-00193-fdr" rel="stylesheet">
+
+
+  </head>
+  <body>
+    
+    <script>
+      function loadScript(src, mod = true) {
+        let s = document.createElement('script');
+        s.src = src;
+        if (mod) {
+          s.type = 'module';
+          s.async = true;
+          s.defer = true
+        }
+        document.head.appendChild(s);
+      }
+      loadScript("/third_party/dialog-polyfill/dialog-polyfill.js", false)
+      loadScript("/static/frontend/frontend.js");
+    </script>
+    
+  <header class="go-Header go-Header--full js-siteHeader">
+    <div class="go-Header-inner go-Header-inner--dark">
+      <nav class="go-Header-nav">
+        <a href="https://go.dev/" class="js-headerLogo" data-gtmc="nav link"
+            data-test-id="go-header-logo-link" role="heading" aria-level="1">
+          <img class="go-Header-logo" src="/static/shared/logo/go-white.svg" alt="Go">
+        </a>
+         <div class="skip-navigation-wrapper">
+            <a class="skip-to-content-link" aria-label="Skip to main content" href="#main-content"> Skip to Main Content </a>
+          </div>
+        <div class="go-Header-rightContent">
+          
+<div class="go-SearchForm js-searchForm">
+  <form
+    class="go-InputGroup go-ShortcutKey go-SearchForm-form"
+    action="/search"
+    data-shortcut="/"
+    data-shortcut-alt="search"
+    data-gtmc="search form"
+    aria-label="Search for a package"
+    role="search"
+  >
+    <input name="q" class="go-Input js-searchFocus" aria-label="Search for a package" type="search"
+        autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false"
+        placeholder="Search packages or symbols"
+        value="" />
+    <input name="m" value="" hidden>
+    <button class="go-Button go-Button--inverted" aria-label="Submit search">
+      <img
+        class="go-Icon"
+        height="24"
+        width="24"
+        src="/static/shared/icon/search_gm_grey_24dp.svg"
+        alt=""
+      />
+    </button>
+  </form>
+  <button class="go-SearchForm-expandSearch js-expandSearch" data-gtmc="nav button"
+      aria-label="Open search" data-test-id="expand-search">
+    <img class="go-Icon go-Icon--inverted" height="24" width="24"
+        src="/static/shared/icon/search_gm_grey_24dp.svg" alt="">
+
+  </button>
+</div>
+
+          <ul class="go-Header-menu">
+            <li class="go-Header-menuItem">
+              <a class="js-desktop-menu-hover" href="#" data-gtmc="nav link">
+                Why Go
+                <img class="go-Icon" height="24" width="24" src="/static/shared/icon/arrow_drop_down_gm_grey_24dp.svg" alt="submenu dropdown icon">
+              </a>
+              <ul class="go-Header-submenu go-Header-submenu--why js-desktop-submenu-hover" aria-label="submenu">
+                  <li class="go-Header-submenuItem">
+                    <div>
+                      <a href="https://go.dev/solutions#case-studies">
+                        <span>Case Studies</span>
+                      </a>
+                    </div>
+                    <p>Common problems companies solve with Go</p>
+                  </li>
+                  <li class="go-Header-submenuItem">
+                    <div>
+                      <a href="https://go.dev/solutions#use-cases">
+                        <span>Use Cases</span>
+                      </a>
+                    </div>
+                    <p>Stories about how and why companies use Go</p>
+                  </li>
+                  <li class="go-Header-submenuItem">
+                    <div>
+                      <a href="https://go.dev/security/">
+                        <span>Security</span>
+                      </a>
+                    </div>
+                    <p>How Go can help keep you secure by default</p>
+                  </li>
+              </ul>
+            </li>
+            <li class="go-Header-menuItem">
+              <a href="https://go.dev/learn/" data-gtmc="nav link">Learn</a>
+            </li>
+            <li class="go-Header-menuItem">
+              <a class="js-desktop-menu-hover" href="#" data-gtmc="nav link">
+                Docs
+                <img class="go-Icon" height="24" width="24" src="/static/shared/icon/arrow_drop_down_gm_grey_24dp.svg" alt="submenu dropdown icon">
+              </a>
+              <ul class="go-Header-submenu go-Header-submenu--docs js-desktop-submenu-hover" aria-label="submenu">
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/doc/effective_go">
+                      <span>Effective Go</span>
+                    </a>
+                  </div>
+                  <p>Tips for writing clear, performant, and idiomatic Go code</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/doc/">
+                      <span>Go User Manual</span>
+                    </a>
+                  </div>
+                  <p>A complete introduction to building software with Go</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://pkg.go.dev/std">
+                      <span>Standard library</span>
+                    </a>
+                  </div>
+                  <p>Reference documentation for Go's standard library</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/doc/devel/release">
+                      <span>Release Notes</span>
+                    </a>
+                  </div>
+                  <p>Learn what's new in each Go release</p>
+                </li>
+              </ul>
+            </li>
+            <li class="go-Header-menuItem go-Header-menuItem--active">
+              <a href="/" data-gtmc="nav link">Packages</a>
+            </li>
+            <li class="go-Header-menuItem">
+              <a class="js-desktop-menu-hover" href="#" data-gtmc="nav link">
+                Community
+                <img class="go-Icon" height="24" width="24" src="/static/shared/icon/arrow_drop_down_gm_grey_24dp.svg" alt="submenu dropdown icon">
+              </a>
+              <ul class="go-Header-submenu go-Header-submenu--community js-desktop-submenu-hover" aria-label="submenu">
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/talks/">
+                      <span>Recorded Talks</span>
+                    </a>
+                  </div>
+                  <p>Videos from prior events</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://www.meetup.com/pro/go">
+                      <span>Meetups</span>
+                      <i class="material-icons">
+                        <img class="go-Icon" height="24" width="24"
+                            src="/static/shared/icon/launch_gm_grey_24dp.svg" alt="">
+                      </i>
+                    </a>
+                  </div>
+                  <p>Meet other local Go developers</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://github.com/golang/go/wiki/Conferences">
+                      <span>Conferences</span>
+                      <i class="material-icons">
+                        <img class="go-Icon" height="24" width="24"
+                            src="/static/shared/icon/launch_gm_grey_24dp.svg" alt="">
+                      </i>
+                    </a>
+                  </div>
+                  <p>Learn and network with Go developers from around the world</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/blog">
+                      <span>Go blog</span>
+                    </a>
+                  </div>
+                  <p>The Go project's official blog.</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/help">
+                      <span>Go project</span>
+                    </a>
+                  </div>
+                  <p>Get help and stay informed from Go</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    Get connected
+                  </div>
+                  <p></p>
+                  <div class="go-Header-socialIcons">
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with google-groups (Opens in new window)"
+                        title="Get connected with google-groups (Opens in new window)"
+                        href="https://groups.google.com/g/golang-nuts">
+                        <img src="/static/shared/logo/social/google-groups.svg" />
+                      </a>
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with github (Opens in new window)"
+                        title="Get connected with github (Opens in new window)"
+                        href="https://github.com/golang">
+                        <img src="/static/shared/logo/social/github.svg" />
+                      </a>
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with twitter (Opens in new window)"
+                        title="Get connected with twitter (Opens in new window)"
+                        href="https://twitter.com/golang">
+                        <img src="/static/shared/logo/social/twitter.svg" />
+                      </a>
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with reddit (Opens in new window)"
+                        title="Get connected with reddit (Opens in new window)"
+                        href="https://www.reddit.com/r/golang/">
+                        <img src="/static/shared/logo/social/reddit.svg" />
+                      </a>
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with slack (Opens in new window)"
+                        title="Get connected with slack (Opens in new window)"
+                        href="https://invite.slack.golangbridge.org/">
+                        <img src="/static/shared/logo/social/slack.svg" />
+                      </a>
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with stack-overflow (Opens in new window)"
+                        title=""
+                        href="https://stackoverflow.com/collectives/go">
+                        <img src="/static/shared/logo/social/stack-overflow.svg" />
+                      </a>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <button class="go-Header-navOpen js-headerMenuButton go-Header-navOpen--white" data-gtmc="nav button" aria-label="Open navigation">
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <aside class="go-NavigationDrawer js-header">
+    <nav class="go-NavigationDrawer-nav">
+      <div class="go-NavigationDrawer-header">
+        <a href="https://go.dev/">
+          <img class="go-NavigationDrawer-logo" src="/static/shared/logo/go-blue.svg" alt="Go.">
+        </a>
+      </div>
+      <ul class="go-NavigationDrawer-list">
+          <li class="go-NavigationDrawer-listItem js-mobile-subnav-trigger go-NavigationDrawer-hasSubnav">
+            <a href="#">
+              <span>Why Go</span>
+              <i class="material-icons">
+                <img class="go-Icon" height="24" width="24"
+                  src="/static/shared/icon/navigate_next_gm_grey_24dp.svg" alt="">
+              </i>
+            </a>
+
+            <div class="go-NavigationDrawer go-NavigationDrawer-submenuItem">
+              <div class="go-NavigationDrawer-nav">
+                <div class="go-NavigationDrawer-header">
+                  <a href="#">
+                    <i class="material-icons">
+                      <img class="go-Icon" height="24" width="24"
+                        src="/static/shared/icon/navigate_before_gm_grey_24dp.svg" alt="">
+                      </i>
+                      Why Go
+                  </a>
+                </div>
+                <ul class="go-NavigationDrawer-list">
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/solutions#case-studies">
+                      Case Studies
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/solutions#use-cases">
+                      Use Cases
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/security/">
+                      Security
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="go-NavigationDrawer-listItem">
+            <a href="https://go.dev/learn/">Learn</a>
+          </li>
+          <li class="go-NavigationDrawer-listItem js-mobile-subnav-trigger go-NavigationDrawer-hasSubnav">
+            <a href="#">
+              <span>Docs</span>
+              <i class="material-icons">
+                <img class="go-Icon" height="24" width="24"
+                  src="/static/shared/icon/navigate_next_gm_grey_24dp.svg" alt="">
+              </i>
+            </a>
+
+            <div class="go-NavigationDrawer go-NavigationDrawer-submenuItem">
+              <div class="go-NavigationDrawer-nav">
+                <div class="go-NavigationDrawer-header">
+                  <a href="#"><i class="material-icons">
+                    <img class="go-Icon" height="24" width="24"
+                      src="/static/shared/icon/navigate_before_gm_grey_24dp.svg" alt="">
+                    </i>
+                    Docs
+                  </a>
+                </div>
+                <ul class="go-NavigationDrawer-list">
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/doc/effective_go">
+                      Effective Go
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/doc/">
+                      Go User Manual
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://pkg.go.dev/std">
+                      Standard library
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/doc/devel/release">
+                      Release Notes
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="go-NavigationDrawer-listItem go-NavigationDrawer-listItem--active">
+            <a href="/">Packages</a>
+          </li>
+          <li class="go-NavigationDrawer-listItem js-mobile-subnav-trigger go-NavigationDrawer-hasSubnav">
+            <a href="#">
+              <span>Community</span>
+              <i class="material-icons">
+                <img class="go-Icon" height="24" width="24"
+                  src="/static/shared/icon/navigate_next_gm_grey_24dp.svg" alt="">
+              </i>
+            </a>
+            <div class="go-NavigationDrawer go-NavigationDrawer-submenuItem">
+              <div class="go-NavigationDrawer-nav">
+                <div class="go-NavigationDrawer-header">
+                  <a href="#">
+                    <i class="material-icons">
+                      <img class="go-Icon" height="24" width="24"
+                        src="/static/shared/icon/navigate_before_gm_grey_24dp.svg" alt="">
+                    </i>
+                    Community
+                  </a>
+                </div>
+                <ul class="go-NavigationDrawer-list">
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/talks/">
+                      Recorded Talks
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://www.meetup.com/pro/go">
+                      Meetups
+                      <i class="material-icons">
+                      <img class="go-Icon" height="24" width="24"
+                          src="/static/shared/icon/launch_gm_grey_24dp.svg" alt="">
+                      </i>
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://github.com/golang/go/wiki/Conferences">
+                      Conferences
+                      <i class="material-icons">
+                        <img class="go-Icon" height="24" width="24" src="/static/shared/icon/launch_gm_grey_24dp.svg" alt="">
+                      </i>
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/blog">
+                      Go blog
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/help">
+                      Go project
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <div>Get connected</div>
+                    <div class="go-Header-socialIcons">
+                        <a class="go-Header-socialIcon" href="https://groups.google.com/g/golang-nuts"><img src="/static/shared/logo/social/google-groups.svg" /></a>
+                        <a class="go-Header-socialIcon" href="https://github.com/golang"><img src="/static/shared/logo/social/github.svg" /></a>
+                        <a class="go-Header-socialIcon" href="https://twitter.com/golang"><img src="/static/shared/logo/social/twitter.svg" /></a>
+                        <a class="go-Header-socialIcon" href="https://www.reddit.com/r/golang/"><img src="/static/shared/logo/social/reddit.svg" /></a>
+                        <a class="go-Header-socialIcon" href="https://invite.slack.golangbridge.org/"><img src="/static/shared/logo/social/slack.svg" /></a>
+                        <a class="go-Header-socialIcon" href="https://stackoverflow.com/collectives/go"><img src="/static/shared/logo/social/stack-overflow.svg" /></a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+      </ul>
+    </nav>
+  </aside>
+  <div class="go-NavigationDrawer-scrim js-scrim" role="presentation"></div>
+
+    
+  <main class="go-Main" id="main-content">
+    <div class="go-Main-banner" role="alert"></div>
+    <header class="go-Main-header js-mainHeader">
+  
+  
+  <nav class="go-Main-headerBreadcrumb go-Breadcrumb" aria-label="Breadcrumb" data-test-id="UnitHeader-breadcrumb">
+    <ol>
+      
+        
+          <li data-test-id="UnitHeader-breadcrumbItem">
+            <a href="/" data-gtmc="breadcrumb link">Discover Packages</a>
+          </li>
+        
+          <li data-test-id="UnitHeader-breadcrumbItem">
+            <a href="/std" data-gtmc="breadcrumb link">Standard library</a>
+          </li>
+        
+        <li>
+          <a href="/flag@go1.26.3" data-gtmc="breadcrumb link" aria-current="location"
+              data-test-id="UnitHeader-breadcrumbCurrent">
+            flag
+          </a>
+          
+            <button
+              class="go-Button go-Button--inline go-Clipboard js-clipboard"
+              title="Copy path to clipboard.&#10;&#10;flag"
+              aria-label="Copy Path to Clipboard"
+              data-to-copy="flag"
+              data-gtmc="breadcrumbs button"
+            >
+              <img
+                class="go-Icon go-Icon--accented"
+                height="24"
+                width="24"
+                src="/static/shared/icon/content_copy_gm_grey_24dp.svg"
+                alt=""
+              >
+            </button>
+          
+        
+      </li>
+    </ol>
+  </nav>
+
+  <div class="go-Main-headerContent">
+    
+  <div class="go-Main-headerTitle js-stickyHeader">
+    <a class="go-Main-headerLogo" href="https://go.dev/" aria-hidden="true" tabindex="-1" data-gtmc="header link" aria-label="Link to Go Homepage">
+      <img height="78" width="207" src="/static/shared/logo/go-blue.svg" alt="Go">
+    </a>
+    <h1 class="UnitHeader-titleHeading" data-test-id="UnitHeader-title">flag</h1>
+    
+      <span class="go-Chip go-Chip--inverted">package</span>
+    
+      <span class="go-Chip go-Chip--inverted">standard library</span>
+    
+    
+      
+        <button
+          class="go-Button go-Button--inline go-Clipboard js-clipboard"
+          title="Copy path to clipboard.&#10;&#10;flag"
+          aria-label="Copy Path to Clipboard"
+          data-to-copy="flag"
+          data-gtmc="title button"
+          tabindex="-1"
+        >
+          <img
+            class="go-Icon go-Icon--accented"
+            height="24"
+            width="24"
+            src="/static/shared/icon/content_copy_gm_grey_24dp.svg"
+            alt=""
+          />
+        </button>
+      
+    
+  </div>
+
+    
+      
+  <div class="go-Main-headerDetails">
+    
+      
+  <span class="go-Main-headerDetailItem" data-test-id="UnitHeader-version">
+    <a href="?tab=versions" aria-label="Version: go1.26.3" 
+    data-gtmc="header link" aria-describedby="version-description">
+      <span class="go-textSubtle" aria-hidden="true">Version: </span>
+        go1.26.3
+    </a>
+    <div class="screen-reader-only" id="version-description" hidden>
+      Opens a new window with list of versions in this module.
+    </div>
+    
+    <span class="DetailsHeader-badge--latest" data-test-id="UnitHeader-minorVersionBanner">
+      <span class="go-Chip DetailsHeader-span--latest">Latest</span>
+      <span class="go-Chip DetailsHeader-span--notAtLatest">
+        Latest
+        
+  <details class="go-Tooltip js-tooltip" data-gtmc="tooltip">
+    <summary>
+      <img class="go-Icon go-Icon--inverted" height="24" width="24" src="/static/shared/icon/alert_gm_grey_24dp.svg" alt="Warning">
+    </summary>
+    <p>This package is not in the latest version of its module.</p>
+  </details>
+
+      </span>
+      <a href="/flag" aria-label="Go to Latest Version" data-gtmc="header link">
+        <span class="go-Chip go-Chip--alert DetailsHeader-span--goToLatest">Go to latest</span>
+      </a>
+    </span>
+  </span>
+
+      
+  <span class="go-Main-headerDetailItem" data-test-id="UnitHeader-commitTime">
+    Published: May  7, 2026
+  </span>
+
+      
+  <span class="go-Main-headerDetailItem" data-test-id="UnitHeader-licenses">
+    License: <a href="/flag?tab=licenses" data-test-id="UnitHeader-license" 
+        data-gtmc="header link" aria-describedby="license-description">BSD-3-Clause</a>
+      
+    
+  </span>
+  <div class="screen-reader-only" id="license-description" hidden>
+    Opens a new window with license information.
+  </div>
+
+      
+        
+  <span class="go-Main-headerDetailItem" data-test-id="UnitHeader-imports">
+    <a href="/flag?tab=imports" aria-label="Imports: 11"
+        data-gtmc="header link" aria-describedby="imports-description">
+      <span class="go-textSubtle">Imports: </span>11
+    </a>
+  </span>
+  <div class="screen-reader-only" id="imports-description" hidden>
+    Opens a new window with list of imports.
+  </div>
+
+        
+  <span class="go-Main-headerDetailItem" data-test-id="UnitHeader-importedby">
+    <a href="/flag?tab=importedby" aria-label="Imported By: 549,423"
+        data-gtmc="header link" aria-describedby="importedby-description">
+       <span class="go-textSubtle">Imported by: </span>549,423
+    </a>
+  </span>
+  <div class="screen-reader-only" id="importedby-description" hidden>
+    Opens a new window with list of known importers.
+  </div>
+
+      
+    
+  </div>
+  
+  <div class="UnitHeader-overflowContainer">
+    <svg class="UnitHeader-overflowImage" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+      <path d="M0 0h24v24H0z" fill="none"/>
+      <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+    </svg>
+    <select class="UnitHeader-overflowSelect js-selectNav" tabindex="-1">
+      <option value="/">Main</option>
+      <option value="/flag?tab=versions">
+        Versions
+      </option>
+      <option value="/flag?tab=licenses">
+        Licenses
+      </option>
+      
+        <option value="/flag?tab=imports">
+          Imports
+        </option>
+        <option value="/flag?tab=importedby">
+          Imported By
+        </option>
+      
+    </select>
+  </div>
+
+
+    
+  </div>
+
+</header>
+    
+      <aside class="go-Main-aside  js-mainAside">
+  
+  <div class="UnitMeta">
+    <h2 class="go-textLabel">Details</h2>
+    
+  <ul class="UnitMeta-details">
+    <li>
+      <details class="go-Tooltip js-tooltip" data-gtmc="tooltip">
+        <summary class="go-textSubtle">
+          
+  <img class="go-Icon go-Icon--accented"
+    tabindex="0"
+    role="button"src="/static/shared/icon/check_circle_gm_grey_24dp.svg" alt="checked" aria-label="Valid file, toggle tooltip"height="24" width="24">
+
+          Valid <a href="https://cs.opensource.google/go/go/+/go1.26.3:src/go.mod" target="_blank" rel="noopener">go.mod</a> file
+          <img class="go-Icon" role="button" tabindex="0" src="/static/shared/icon/help_gm_grey_24dp.svg" alt="" aria-label="Toggle go.mod validity tooltip" height="24" width="24">
+        </summary>
+        <p aria-live="polite" role="tooltip">
+          The Go module system was introduced in Go 1.11 and is the official dependency management
+          solution for Go.
+        </p>
+      </details>
+    </li>
+    <li>
+      <details class="go-Tooltip js-tooltip" data-gtmc="tooltip">
+        <summary class="go-textSubtle">
+          
+  <img class="go-Icon go-Icon--accented"
+    tabindex="0"
+    role="button"src="/static/shared/icon/check_circle_gm_grey_24dp.svg" alt="checked" aria-label="Valid file, toggle tooltip"height="24" width="24">
+
+          Redistributable license
+          <img class="go-Icon" role="button" tabindex="0" src="/static/shared/icon/help_gm_grey_24dp.svg" alt="" aria-label="Toggle redistributable help tooltip" height="24" width="24">
+        </summary>
+        <p aria-live="polite" role="tooltip">
+          Redistributable licenses place minimal restrictions on how software can be used,
+          modified, and redistributed.
+        </p>
+      </details>
+    </li>
+    <li>
+      <details class="go-Tooltip js-tooltip" data-gtmc="tooltip">
+        <summary class="go-textSubtle">
+          
+  <img class="go-Icon go-Icon--accented"
+    tabindex="0"
+    role="button"src="/static/shared/icon/check_circle_gm_grey_24dp.svg" alt="checked" aria-label="Valid file, toggle tooltip"height="24" width="24">
+
+          Tagged version
+          <img class="go-Icon" role="button" tabindex="0" src="/static/shared/icon/help_gm_grey_24dp.svg" alt="" aria-label="Toggle tagged version tooltip" height="24" width="24">
+        </summary>
+        <p aria-live="polite" role="tooltip">Modules with tagged versions give importers more predictable builds.</p>
+      </details>
+    </li>
+    <li>
+      <details class="go-Tooltip js-tooltip" data-gtmc="tooltip">
+        <summary class="go-textSubtle">
+          
+  <img class="go-Icon go-Icon--accented"
+    tabindex="0"
+    role="button"src="/static/shared/icon/check_circle_gm_grey_24dp.svg" alt="checked" aria-label="Valid file, toggle tooltip"height="24" width="24">
+
+          Stable version
+          <img class="go-Icon" role="button" tabindex="0" aria-label="Toggle stable version tooltip" src="/static/shared/icon/help_gm_grey_24dp.svg" alt="" height="24" width="24">
+        </summary>
+        <p aria-live="polite" role="tooltip">When a project reaches major version v1 it is considered stable.</p>
+      </details>
+    </li>
+    <li class="UnitMeta-detailsLearn">
+      <a href="/about#best-practices" data-gtmc="meta link">Learn more about best practices</a>
+    </li>
+  </ul>
+
+    <h2 class="go-textLabel">Repository</h2>
+    <div class="UnitMeta-repo">
+      
+        <a href="https://cs.opensource.google/go/go" title="https://cs.opensource.google/go/go" target="_blank" rel="noopener">
+          cs.opensource.google/go/go
+        </a>
+      
+    </div>
+    
+      <h2 class="go-textLabel" data-test-id="links-heading">Links</h2>
+      <ul class="UnitMeta-links">
+        
+          <li>
+            <a href="https://go.dev/security/policy"
+                title="Report security issues in the Go standard library and sub-repositories">
+              <img class="go-Icon" height="24" width="24" src="/static/shared/icon/security_grey_24dp.svg" alt="">
+              Report a Vulnerability
+            </a>
+          </li>
+        
+        
+        
+        
+  
+
+        
+  
+
+        
+  
+
+      </ul>
+    
+  </div>
+
+</aside>
+    
+    <nav class="go-Main-nav go-Main-nav--sticky js-mainNav" aria-label="Outline">
+  <div class="go-Main-navDesktop">
+    
+  <div class="UnitOutline-jumpTo">
+    <button class="UnitOutline-jumpToInput go-ShortcutKey js-jumpToInput"
+        aria-controls="jump-to-modal"
+        aria-label="Open Jump to Identifier"
+        data-shortcut="f"
+        data-shortcut-alt="find"
+        data-test-id="jump-to-button" data-gtmc="outline button">
+      Jump to ...
+    </button>
+  </div>
+  <ul class="go-Tree js-tree" role="tree" aria-label="Outline">
+    
+    
+      <li>
+        <a href="#section-documentation" data-gtmc="outline link">
+          Documentation
+        </a>
+        
+<ul>
+  
+    <li>
+      <a href="#pkg-overview" data-gtmc="doc outline link">Overview</a>
+    </li>
+  <li class="DocNav-overview">
+      <a href="#pkg-index" data-gtmc="doc outline link">
+        Index
+      </a>
+    </li>
+      <li>
+        <a href="#pkg-examples" data-gtmc="doc outline link">
+          Examples
+        </a>
+        <ul>
+            <li>
+              <a href="#example-package" title="Package" data-gtmc="doc outline link">
+                Package
+              </a>
+            </li>
+            <li>
+              <a href="#example-BoolFunc" title="BoolFunc" data-gtmc="doc outline link">
+                BoolFunc
+              </a>
+            </li>
+            <li>
+              <a href="#example-FlagSet" title="FlagSet" data-gtmc="doc outline link">
+                FlagSet
+              </a>
+            </li>
+            <li>
+              <a href="#example-Func" title="Func" data-gtmc="doc outline link">
+                Func
+              </a>
+            </li>
+            <li>
+              <a href="#example-TextVar" title="TextVar" data-gtmc="doc outline link">
+                TextVar
+              </a>
+            </li>
+            <li>
+              <a href="#example-Value" title="Value" data-gtmc="doc outline link">
+                Value
+              </a>
+            </li>
+        </ul>
+      </li>
+    <li class="DocNav-constants">
+      <a href="#pkg-constants" data-gtmc="doc outline link">
+        Constants
+      </a>
+    </li>
+    <li class="DocNav-variables">
+      <a href="#pkg-variables" data-gtmc="doc outline link">
+        Variables
+      </a>
+    </li>
+    <li class="DocNav-functions">
+      <a href="#pkg-functions" data-gtmc="doc outline link">
+        Functions
+      </a>
+      
+        <ul>
+          
+            <li>
+              <a href="#Arg" title="Arg(i)" data-gtmc="doc outline link">
+                Arg(i)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Args" title="Args()" data-gtmc="doc outline link">
+                Args()
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Bool" title="Bool(name, value, usage)" data-gtmc="doc outline link">
+                Bool(name, value, usage)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#BoolFunc" title="BoolFunc(name, usage, fn)" data-gtmc="doc outline link">
+                BoolFunc(name, usage, fn)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#BoolVar" title="BoolVar(p, name, value, usage)" data-gtmc="doc outline link">
+                BoolVar(p, name, value, usage)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Duration" title="Duration(name, value, usage)" data-gtmc="doc outline link">
+                Duration(name, value, usage)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#DurationVar" title="DurationVar(p, name, value, usage)" data-gtmc="doc outline link">
+                DurationVar(p, name, value, usage)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Float64" title="Float64(name, value, usage)" data-gtmc="doc outline link">
+                Float64(name, value, usage)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Float64Var" title="Float64Var(p, name, value, usage)" data-gtmc="doc outline link">
+                Float64Var(p, name, value, usage)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Func" title="Func(name, usage, fn)" data-gtmc="doc outline link">
+                Func(name, usage, fn)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Int" title="Int(name, value, usage)" data-gtmc="doc outline link">
+                Int(name, value, usage)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Int64" title="Int64(name, value, usage)" data-gtmc="doc outline link">
+                Int64(name, value, usage)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Int64Var" title="Int64Var(p, name, value, usage)" data-gtmc="doc outline link">
+                Int64Var(p, name, value, usage)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#IntVar" title="IntVar(p, name, value, usage)" data-gtmc="doc outline link">
+                IntVar(p, name, value, usage)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#NArg" title="NArg()" data-gtmc="doc outline link">
+                NArg()
+              </a>
+            </li>
+          
+            <li>
+              <a href="#NFlag" title="NFlag()" data-gtmc="doc outline link">
+                NFlag()
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Parse" title="Parse()" data-gtmc="doc outline link">
+                Parse()
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Parsed" title="Parsed()" data-gtmc="doc outline link">
+                Parsed()
+              </a>
+            </li>
+          
+            <li>
+              <a href="#PrintDefaults" title="PrintDefaults()" data-gtmc="doc outline link">
+                PrintDefaults()
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Set" title="Set(name, value)" data-gtmc="doc outline link">
+                Set(name, value)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#String" title="String(name, value, usage)" data-gtmc="doc outline link">
+                String(name, value, usage)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#StringVar" title="StringVar(p, name, value, usage)" data-gtmc="doc outline link">
+                StringVar(p, name, value, usage)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#TextVar" title="TextVar(p, name, value, usage)" data-gtmc="doc outline link">
+                TextVar(p, name, value, usage)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Uint" title="Uint(name, value, usage)" data-gtmc="doc outline link">
+                Uint(name, value, usage)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Uint64" title="Uint64(name, value, usage)" data-gtmc="doc outline link">
+                Uint64(name, value, usage)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Uint64Var" title="Uint64Var(p, name, value, usage)" data-gtmc="doc outline link">
+                Uint64Var(p, name, value, usage)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#UintVar" title="UintVar(p, name, value, usage)" data-gtmc="doc outline link">
+                UintVar(p, name, value, usage)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#UnquoteUsage" title="UnquoteUsage(flag)" data-gtmc="doc outline link">
+                UnquoteUsage(flag)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Var" title="Var(value, name, usage)" data-gtmc="doc outline link">
+                Var(value, name, usage)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Visit" title="Visit(fn)" data-gtmc="doc outline link">
+                Visit(fn)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#VisitAll" title="VisitAll(fn)" data-gtmc="doc outline link">
+                VisitAll(fn)
+              </a>
+            </li>
+          
+        </ul>
+      
+    </li>
+    <li class="DocNav-types">
+      <a href="#pkg-types" data-gtmc="doc outline link">
+        Types
+      </a>
+      <ul>
+        
+          
+          <li>
+            <a href="#ErrorHandling" title="type ErrorHandling" data-gtmc="doc outline link">
+              type ErrorHandling
+            </a>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#Flag" title="type Flag" data-gtmc="doc outline link">
+              type Flag
+            </a>
+            
+              <ul>
+                
+                  <li>
+                    <a href="#Lookup" title="Lookup(name)"
+                        data-gtmc="doc outline link">
+                      Lookup(name)
+                    </a>
+                  </li>
+                
+                
+              </ul>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#FlagSet" title="type FlagSet" data-gtmc="doc outline link">
+              type FlagSet
+            </a>
+            
+              <ul>
+                
+                  <li>
+                    <a href="#NewFlagSet" title="NewFlagSet(name, errorHandling)"
+                        data-gtmc="doc outline link">
+                      NewFlagSet(name, errorHandling)
+                    </a>
+                  </li>
+                
+                
+                  <li>
+                    <a href="#FlagSet.Arg" title="(f) Arg(i)"
+                        data-gtmc="doc outline link">
+                      (f) Arg(i)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#FlagSet.Args" title="(f) Args()"
+                        data-gtmc="doc outline link">
+                      (f) Args()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#FlagSet.Bool" title="(f) Bool(name, value, usage)"
+                        data-gtmc="doc outline link">
+                      (f) Bool(name, value, usage)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#FlagSet.BoolFunc" title="(f) BoolFunc(name, usage, fn)"
+                        data-gtmc="doc outline link">
+                      (f) BoolFunc(name, usage, fn)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#FlagSet.BoolVar" title="(f) BoolVar(p, name, value, usage)"
+                        data-gtmc="doc outline link">
+                      (f) BoolVar(p, name, value, usage)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#FlagSet.Duration" title="(f) Duration(name, value, usage)"
+                        data-gtmc="doc outline link">
+                      (f) Duration(name, value, usage)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#FlagSet.DurationVar" title="(f) DurationVar(p, name, value, usage)"
+                        data-gtmc="doc outline link">
+                      (f) DurationVar(p, name, value, usage)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#FlagSet.ErrorHandling" title="(f) ErrorHandling()"
+                        data-gtmc="doc outline link">
+                      (f) ErrorHandling()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#FlagSet.Float64" title="(f) Float64(name, value, usage)"
+                        data-gtmc="doc outline link">
+                      (f) Float64(name, value, usage)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#FlagSet.Float64Var" title="(f) Float64Var(p, name, value, usage)"
+                        data-gtmc="doc outline link">
+                      (f) Float64Var(p, name, value, usage)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#FlagSet.Func" title="(f) Func(name, usage, fn)"
+                        data-gtmc="doc outline link">
+                      (f) Func(name, usage, fn)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#FlagSet.Init" title="(f) Init(name, errorHandling)"
+                        data-gtmc="doc outline link">
+                      (f) Init(name, errorHandling)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#FlagSet.Int" title="(f) Int(name, value, usage)"
+                        data-gtmc="doc outline link">
+                      (f) Int(name, value, usage)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#FlagSet.Int64" title="(f) Int64(name, value, usage)"
+                        data-gtmc="doc outline link">
+                      (f) Int64(name, value, usage)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#FlagSet.Int64Var" title="(f) Int64Var(p, name, value, usage)"
+                        data-gtmc="doc outline link">
+                      (f) Int64Var(p, name, value, usage)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#FlagSet.IntVar" title="(f) IntVar(p, name, value, usage)"
+                        data-gtmc="doc outline link">
+                      (f) IntVar(p, name, value, usage)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#FlagSet.Lookup" title="(f) Lookup(name)"
+                        data-gtmc="doc outline link">
+                      (f) Lookup(name)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#FlagSet.NArg" title="(f) NArg()"
+                        data-gtmc="doc outline link">
+                      (f) NArg()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#FlagSet.NFlag" title="(f) NFlag()"
+                        data-gtmc="doc outline link">
+                      (f) NFlag()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#FlagSet.Name" title="(f) Name()"
+                        data-gtmc="doc outline link">
+                      (f) Name()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#FlagSet.Output" title="(f) Output()"
+                        data-gtmc="doc outline link">
+                      (f) Output()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#FlagSet.Parse" title="(f) Parse(arguments)"
+                        data-gtmc="doc outline link">
+                      (f) Parse(arguments)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#FlagSet.Parsed" title="(f) Parsed()"
+                        data-gtmc="doc outline link">
+                      (f) Parsed()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#FlagSet.PrintDefaults" title="(f) PrintDefaults()"
+                        data-gtmc="doc outline link">
+                      (f) PrintDefaults()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#FlagSet.Set" title="(f) Set(name, value)"
+                        data-gtmc="doc outline link">
+                      (f) Set(name, value)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#FlagSet.SetOutput" title="(f) SetOutput(output)"
+                        data-gtmc="doc outline link">
+                      (f) SetOutput(output)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#FlagSet.String" title="(f) String(name, value, usage)"
+                        data-gtmc="doc outline link">
+                      (f) String(name, value, usage)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#FlagSet.StringVar" title="(f) StringVar(p, name, value, usage)"
+                        data-gtmc="doc outline link">
+                      (f) StringVar(p, name, value, usage)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#FlagSet.TextVar" title="(f) TextVar(p, name, value, usage)"
+                        data-gtmc="doc outline link">
+                      (f) TextVar(p, name, value, usage)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#FlagSet.Uint" title="(f) Uint(name, value, usage)"
+                        data-gtmc="doc outline link">
+                      (f) Uint(name, value, usage)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#FlagSet.Uint64" title="(f) Uint64(name, value, usage)"
+                        data-gtmc="doc outline link">
+                      (f) Uint64(name, value, usage)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#FlagSet.Uint64Var" title="(f) Uint64Var(p, name, value, usage)"
+                        data-gtmc="doc outline link">
+                      (f) Uint64Var(p, name, value, usage)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#FlagSet.UintVar" title="(f) UintVar(p, name, value, usage)"
+                        data-gtmc="doc outline link">
+                      (f) UintVar(p, name, value, usage)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#FlagSet.Var" title="(f) Var(value, name, usage)"
+                        data-gtmc="doc outline link">
+                      (f) Var(value, name, usage)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#FlagSet.Visit" title="(f) Visit(fn)"
+                        data-gtmc="doc outline link">
+                      (f) Visit(fn)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#FlagSet.VisitAll" title="(f) VisitAll(fn)"
+                        data-gtmc="doc outline link">
+                      (f) VisitAll(fn)
+                    </a>
+                  </li>
+                
+              </ul>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#Getter" title="type Getter" data-gtmc="doc outline link">
+              type Getter
+            </a>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#Value" title="type Value" data-gtmc="doc outline link">
+              type Value
+            </a>
+             
+          </li>
+         
+      </ul>
+    </li>
+  
+  
+</ul>
+
+      </li>
+    
+    
+      <li>
+        <a href="#section-sourcefiles" data-gtmc="outline link">
+          Source Files
+        </a>
+      </li>
+    
+    
+  </ul>
+
+  </div>
+  <div class="go-Main-navMobile js-mainNavMobile">
+    <label class="go-Label">
+      <select class="go-Select">
+        
+          <option selected disabled>Documentation</option>
+        
+      </select>
+    </label>
+  </div>
+</nav>
+    <article class="go-Main-article js-mainContent">
+  <div class="UnitDetails" data-test-id="UnitDetails" style="display: block;">
+    <div class="UnitDetails-content js-unitDetailsContent" data-test-id="UnitDetails-content">
+      
+      
+        
+          
+  <div class="UnitDoc">
+    <h2 class="UnitDoc-title" id="section-documentation">
+      <img class="go-Icon" height="24" width="24" src="/static/shared/icon/code_gm_grey_24dp.svg" alt="">
+      Documentation
+      <a class="UnitDoc-idLink" href="#section-documentation" title="Go to Documentation" aria-label="Go to Documentation">¶</a>
+    </h2>
+    
+  
+    
+  
+
+    <div class="Documentation js-documentation">
+      
+        
+
+<div class="Documentation-content js-docContent"> <section class="Documentation-overview">
+    <h3 tabindex="-1" id="pkg-overview" class="Documentation-overviewHeader">Overview <a href="#pkg-overview" title="Go to Overview" aria-label="Go to Overview">¶</a></h3>
+
+<div role="navigation" aria-label="Table of Contents">
+  <ul class="Documentation-toc">
+      <li class="Documentation-tocItem"><a href="#hdr-Usage">Usage</a></li>
+      <li class="Documentation-tocItem"><a href="#hdr-Command_line_flag_syntax">Command line flag syntax</a></li>
+  </ul>
+</div>
+<p>Package flag implements command-line flag parsing.
+</p><h4 id="hdr-Usage">Usage <a class="Documentation-idLink" href="#hdr-Usage" title="Go to Usage" aria-label="Go to Usage">¶</a></h4><p>Define flags using <a href="#String">flag.String</a>, <a href="#Bool">Bool</a>, <a href="#Int">Int</a>, etc.
+</p><p>This declares an integer flag, -n, stored in the pointer nFlag, with type *int:
+</p><pre>import &#34;flag&#34;
+var nFlag = flag.Int(&#34;n&#34;, 1234, &#34;help message for flag n&#34;)
+</pre><p>If you like, you can bind the flag to a variable using the Var() functions.
+</p><pre>var flagvar int
+func init() {
+	flag.IntVar(&amp;flagvar, &#34;flagname&#34;, 1234, &#34;help message for flagname&#34;)
+}
+</pre><p>Or you can create custom flags that satisfy the Value interface (with
+pointer receivers) and couple them to flag parsing by
+</p><pre>flag.Var(&amp;flagVal, &#34;name&#34;, &#34;help message for flagname&#34;)
+</pre><p>For such flags, the default value is just the initial value of the variable.
+</p><p>After all flags are defined, call
+</p><pre>flag.Parse()
+</pre><p>to parse the command line into the defined flags.
+</p><p>Flags may then be used directly. If you&#39;re using the flags themselves,
+they are all pointers; if you bind to variables, they&#39;re values.
+</p><pre>fmt.Println(&#34;ip has value &#34;, *ip)
+fmt.Println(&#34;flagvar has value &#34;, flagvar)
+</pre><p>After parsing, the arguments following the flags are available as the
+slice <a href="#Args">flag.Args</a> or individually as <a href="#Arg">flag.Arg</a>(i).
+The arguments are indexed from 0 through <a href="#NArg">flag.NArg</a>-1.
+</p><h4 id="hdr-Command_line_flag_syntax">Command line flag syntax <a class="Documentation-idLink" href="#hdr-Command_line_flag_syntax" title="Go to Command line flag syntax" aria-label="Go to Command line flag syntax">¶</a></h4><p>The following forms are permitted:
+</p><pre>-flag
+--flag   // double dashes are also permitted
+-flag=x
+-flag x  // non-boolean flags only
+</pre><p>One or two dashes may be used; they are equivalent.
+The last form is not permitted for boolean flags because the
+meaning of the command
+</p><pre>cmd -x *
+</pre><p>where * is a Unix shell wildcard, will change if there is a file
+called 0, false, etc. You must use the -flag=false form to turn
+off a boolean flag.
+</p><p>Flag parsing stops just before the first non-flag argument
+(&#34;-&#34; is a non-flag argument) or after the terminator &#34;--&#34;.
+</p><p>Integer flags accept 1234, 0664, 0x1234 and may be negative.
+Boolean flags may be:
+</p><pre>1, 0, t, f, T, F, true, false, TRUE, FALSE, True, False
+</pre><p>Duration flags accept any input valid for time.ParseDuration.
+</p><p>The default set of command-line flags is controlled by
+top-level functions.  The <a href="#FlagSet">FlagSet</a> type allows one to define
+independent sets of flags, such as to implement subcommands
+in a command-line interface. The methods of <a href="#FlagSet">FlagSet</a> are
+analogous to the top-level functions for the command-line
+flag set.
+</p>
+<details tabindex="-1" id="example-package" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-package" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+// These examples demonstrate more intricate uses of the flag package.
+package main
+
+import (
+	&#34;errors&#34;
+	&#34;flag&#34;
+	&#34;fmt&#34;
+	&#34;strings&#34;
+	&#34;time&#34;
+)
+
+// Example 1: A single string flag called &#34;species&#34; with default value &#34;gopher&#34;.
+var species = flag.String(&#34;species&#34;, &#34;gopher&#34;, &#34;the species we are studying&#34;)
+
+// Example 2: Two flags sharing a variable, so we can have a shorthand.
+// The order of initialization is undefined, so make sure both use the
+// same default value. They must be set up with an init function.
+var gopherType string
+
+func init() {
+	const (
+		defaultGopher = &#34;pocket&#34;
+		usage         = &#34;the variety of gopher&#34;
+	)
+	flag.StringVar(&amp;gopherType, &#34;gopher_type&#34;, defaultGopher, usage)
+	flag.StringVar(&amp;gopherType, &#34;g&#34;, defaultGopher, usage+&#34; (shorthand)&#34;)
+}
+
+// Example 3: A user-defined flag type, a slice of durations.
+type interval []time.Duration
+
+// String is the method to format the flag&#39;s value, part of the flag.Value interface.
+// The String method&#39;s output will be used in diagnostics.
+func (i *interval) String() string {
+	return fmt.Sprint(*i)
+}
+
+// Set is the method to set the flag value, part of the flag.Value interface.
+// Set&#39;s argument is a string to be parsed to set the flag.
+// It&#39;s a comma-separated list, so we split it.
+func (i *interval) Set(value string) error {
+	// If we wanted to allow the flag to be set multiple times,
+	// accumulating values, we would delete this if statement.
+	// That would permit usages such as
+	//	-deltaT 10s -deltaT 15s
+	// and other combinations.
+	if len(*i) &gt; 0 {
+		return errors.New(&#34;interval flag already set&#34;)
+	}
+	for _, dt := range strings.Split(value, &#34;,&#34;) {
+		duration, err := time.ParseDuration(dt)
+		if err != nil {
+			return err
+		}
+		*i = append(*i, duration)
+	}
+	return nil
+}
+
+// Define a flag to accumulate durations. Because it has a special type,
+// we need to use the Var function and therefore create the flag during
+// init.
+
+var intervalFlag interval
+
+func init() {
+	// Tie the command-line flag to the intervalFlag variable and
+	// set a usage message.
+	flag.Var(&amp;intervalFlag, &#34;deltaT&#34;, &#34;comma-separated list of intervals to use between events&#34;)
+}
+
+func main() {
+	// All the interesting pieces are with the variables declared above, but
+	// to enable the flag package to see the flags defined there, one must
+	// execute, typically at the start of main (not init!):
+	//	flag.Parse()
+	// We don&#39;t call it here because this code is a function called &#34;Example&#34;
+	// that is part of the testing suite for the package, which has already
+	// parsed the flags. When viewed at pkg.go.dev, however, the function is
+	// renamed to &#34;main&#34; and it could be run as a standalone example.
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer" hidden><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput"></span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+</section><section class="Documentation-index">
+    <h3 id="pkg-index" class="Documentation-indexHeader">Index <a href="#pkg-index" title="Go to Index" aria-label="Go to Index">¶</a></h3>
+
+<ul class="Documentation-indexList">
+<li class="Documentation-indexVariables"><a href="#pkg-variables">Variables</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Arg">func Arg(i int) string</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Args">func Args() []string</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Bool">func Bool(name string, value bool, usage string) *bool</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#BoolFunc">func BoolFunc(name, usage string, fn func(string) error)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#BoolVar">func BoolVar(p *bool, name string, value bool, usage string)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Duration">func Duration(name string, value time.Duration, usage string) *time.Duration</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#DurationVar">func DurationVar(p *time.Duration, name string, value time.Duration, usage string)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Float64">func Float64(name string, value float64, usage string) *float64</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Float64Var">func Float64Var(p *float64, name string, value float64, usage string)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Func">func Func(name, usage string, fn func(string) error)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Int">func Int(name string, value int, usage string) *int</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Int64">func Int64(name string, value int64, usage string) *int64</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Int64Var">func Int64Var(p *int64, name string, value int64, usage string)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#IntVar">func IntVar(p *int, name string, value int, usage string)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#NArg">func NArg() int</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#NFlag">func NFlag() int</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Parse">func Parse()</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Parsed">func Parsed() bool</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#PrintDefaults">func PrintDefaults()</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Set">func Set(name, value string) error</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#String">func String(name string, value string, usage string) *string</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#StringVar">func StringVar(p *string, name string, value string, usage string)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#TextVar">func TextVar(p encoding.TextUnmarshaler, name string, value encoding.TextMarshaler, ...)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Uint">func Uint(name string, value uint, usage string) *uint</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Uint64">func Uint64(name string, value uint64, usage string) *uint64</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Uint64Var">func Uint64Var(p *uint64, name string, value uint64, usage string)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#UintVar">func UintVar(p *uint, name string, value uint, usage string)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#UnquoteUsage">func UnquoteUsage(flag *Flag) (name string, usage string)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Var">func Var(value Value, name string, usage string)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Visit">func Visit(fn func(*Flag))</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#VisitAll">func VisitAll(fn func(*Flag))</a></li>
+<li class="Documentation-indexType">
+          <a href="#ErrorHandling">type ErrorHandling</a></li>
+<li class="Documentation-indexType">
+          <a href="#Flag">type Flag</a></li>
+<li><ul class="Documentation-indexTypeFunctions">
+<li>
+            <a href="#Lookup">func Lookup(name string) *Flag</a></li>
+</ul></li>
+<li class="Documentation-indexType">
+          <a href="#FlagSet">type FlagSet</a></li>
+<li><ul class="Documentation-indexTypeFunctions">
+<li>
+            <a href="#NewFlagSet">func NewFlagSet(name string, errorHandling ErrorHandling) *FlagSet</a></li>
+</ul></li>
+<li><ul class="Documentation-indexTypeMethods">
+<li>
+            <a href="#FlagSet.Arg">func (f *FlagSet) Arg(i int) string</a></li>
+<li>
+            <a href="#FlagSet.Args">func (f *FlagSet) Args() []string</a></li>
+<li>
+            <a href="#FlagSet.Bool">func (f *FlagSet) Bool(name string, value bool, usage string) *bool</a></li>
+<li>
+            <a href="#FlagSet.BoolFunc">func (f *FlagSet) BoolFunc(name, usage string, fn func(string) error)</a></li>
+<li>
+            <a href="#FlagSet.BoolVar">func (f *FlagSet) BoolVar(p *bool, name string, value bool, usage string)</a></li>
+<li>
+            <a href="#FlagSet.Duration">func (f *FlagSet) Duration(name string, value time.Duration, usage string) *time.Duration</a></li>
+<li>
+            <a href="#FlagSet.DurationVar">func (f *FlagSet) DurationVar(p *time.Duration, name string, value time.Duration, usage string)</a></li>
+<li>
+            <a href="#FlagSet.ErrorHandling">func (f *FlagSet) ErrorHandling() ErrorHandling</a></li>
+<li>
+            <a href="#FlagSet.Float64">func (f *FlagSet) Float64(name string, value float64, usage string) *float64</a></li>
+<li>
+            <a href="#FlagSet.Float64Var">func (f *FlagSet) Float64Var(p *float64, name string, value float64, usage string)</a></li>
+<li>
+            <a href="#FlagSet.Func">func (f *FlagSet) Func(name, usage string, fn func(string) error)</a></li>
+<li>
+            <a href="#FlagSet.Init">func (f *FlagSet) Init(name string, errorHandling ErrorHandling)</a></li>
+<li>
+            <a href="#FlagSet.Int">func (f *FlagSet) Int(name string, value int, usage string) *int</a></li>
+<li>
+            <a href="#FlagSet.Int64">func (f *FlagSet) Int64(name string, value int64, usage string) *int64</a></li>
+<li>
+            <a href="#FlagSet.Int64Var">func (f *FlagSet) Int64Var(p *int64, name string, value int64, usage string)</a></li>
+<li>
+            <a href="#FlagSet.IntVar">func (f *FlagSet) IntVar(p *int, name string, value int, usage string)</a></li>
+<li>
+            <a href="#FlagSet.Lookup">func (f *FlagSet) Lookup(name string) *Flag</a></li>
+<li>
+            <a href="#FlagSet.NArg">func (f *FlagSet) NArg() int</a></li>
+<li>
+            <a href="#FlagSet.NFlag">func (f *FlagSet) NFlag() int</a></li>
+<li>
+            <a href="#FlagSet.Name">func (f *FlagSet) Name() string</a></li>
+<li>
+            <a href="#FlagSet.Output">func (f *FlagSet) Output() io.Writer</a></li>
+<li>
+            <a href="#FlagSet.Parse">func (f *FlagSet) Parse(arguments []string) error</a></li>
+<li>
+            <a href="#FlagSet.Parsed">func (f *FlagSet) Parsed() bool</a></li>
+<li>
+            <a href="#FlagSet.PrintDefaults">func (f *FlagSet) PrintDefaults()</a></li>
+<li>
+            <a href="#FlagSet.Set">func (f *FlagSet) Set(name, value string) error</a></li>
+<li>
+            <a href="#FlagSet.SetOutput">func (f *FlagSet) SetOutput(output io.Writer)</a></li>
+<li>
+            <a href="#FlagSet.String">func (f *FlagSet) String(name string, value string, usage string) *string</a></li>
+<li>
+            <a href="#FlagSet.StringVar">func (f *FlagSet) StringVar(p *string, name string, value string, usage string)</a></li>
+<li>
+            <a href="#FlagSet.TextVar">func (f *FlagSet) TextVar(p encoding.TextUnmarshaler, name string, value encoding.TextMarshaler, ...)</a></li>
+<li>
+            <a href="#FlagSet.Uint">func (f *FlagSet) Uint(name string, value uint, usage string) *uint</a></li>
+<li>
+            <a href="#FlagSet.Uint64">func (f *FlagSet) Uint64(name string, value uint64, usage string) *uint64</a></li>
+<li>
+            <a href="#FlagSet.Uint64Var">func (f *FlagSet) Uint64Var(p *uint64, name string, value uint64, usage string)</a></li>
+<li>
+            <a href="#FlagSet.UintVar">func (f *FlagSet) UintVar(p *uint, name string, value uint, usage string)</a></li>
+<li>
+            <a href="#FlagSet.Var">func (f *FlagSet) Var(value Value, name string, usage string)</a></li>
+<li>
+            <a href="#FlagSet.Visit">func (f *FlagSet) Visit(fn func(*Flag))</a></li>
+<li>
+            <a href="#FlagSet.VisitAll">func (f *FlagSet) VisitAll(fn func(*Flag))</a></li>
+</ul></li>
+<li class="Documentation-indexType">
+          <a href="#Getter">type Getter</a></li>
+<li class="Documentation-indexType">
+          <a href="#Value">type Value</a></li>
+</ul>
+</section><section class="Documentation-examples">
+    <h3 tabindex="-1" id="pkg-examples" class="Documentation-examplesHeader">Examples <a class="Documentation-idLink" href="#pkg-examples" title="Go to Examples" aria-label="Go to Examples">¶</a></h3>
+<ul class="Documentation-examplesList">
+<li><a href="#example-package" class="js-exampleHref">Package</a></li>
+<li><a href="#example-BoolFunc" class="js-exampleHref">BoolFunc</a></li>
+<li><a href="#example-FlagSet" class="js-exampleHref">FlagSet</a></li>
+<li><a href="#example-Func" class="js-exampleHref">Func</a></li>
+<li><a href="#example-TextVar" class="js-exampleHref">TextVar</a></li>
+<li><a href="#example-Value" class="js-exampleHref">Value</a></li>
+</ul>
+</section><h3 tabindex="-1" id="pkg-constants" class="Documentation-constantsHeader">Constants <a href="#pkg-constants" title="Go to Constants" aria-label="Go to Constants">¶</a></h3>
+
+  <section class="Documentation-constants"><p class="Documentation-empty">This section is empty.</p></section>
+
+  <h3 tabindex="-1" id="pkg-variables" class="Documentation-variablesHeader">Variables <a href="#pkg-variables" title="Go to Variables" aria-label="Go to Variables">¶</a></h3>
+
+  <section class="Documentation-variables">
+    <div class="Documentation-declaration">
+      <span class="Documentation-declarationLink"><a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=101">View Source</a></span>
+      <pre><span id="ErrHelp" data-kind="variable">var ErrHelp = <a href="/errors">errors</a>.<a href="/errors#New">New</a>(&#34;flag: help requested&#34;)</span></pre>
+    </div>
+  <p>ErrHelp is the error returned if the -help or -h flag is invoked
+but no such flag is defined.
+</p>
+
+    <div class="Documentation-declaration">
+      <span class="Documentation-declarationLink"><a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=706">View Source</a></span>
+      <pre><span id="Usage" data-kind="variable">var Usage = func() {
+</span>	<a href="/fmt">fmt</a>.<a href="/fmt#Fprintf">Fprintf</a>(<a href="#CommandLine">CommandLine</a>.Output(), &#34;Usage of %s:\n&#34;, <a href="/os">os</a>.<a href="/os#Args">Args</a>[0])
+	<a href="#PrintDefaults">PrintDefaults</a>()
+}</pre>
+    </div>
+  <p>Usage prints a usage message documenting all defined command-line flags
+to <a href="#CommandLine">CommandLine</a>&#39;s output, which by default is <a href="/os#Stderr">os.Stderr</a>.
+It is called when an error occurs while parsing flags.
+The function is a variable that may be changed to point to a custom function.
+By default it prints a simple header and calls <a href="#PrintDefaults">PrintDefaults</a>; for details about the
+format of the output and how to control it, see the documentation for <a href="#PrintDefaults">PrintDefaults</a>.
+Custom usage functions may choose to exit the program; by default exiting
+happens anyway as the command line&#39;s error handling strategy is set to
+<a href="#ExitOnError">ExitOnError</a>.
+</p>
+</section>
+
+  <h3 tabindex="-1" id="pkg-functions" class="Documentation-functionsHeader">Functions <a href="#pkg-functions" title="Go to Functions" aria-label="Go to Functions">¶</a></h3>
+
+  <section class="Documentation-functions"><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Arg" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=730">Arg</a> <a class="Documentation-idLink" href="#Arg" title="Go to Arg" aria-label="Go to Arg">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Arg(i <a href="/builtin#int">int</a>) <a href="/builtin#string">string</a></pre>
+    </div>
+  <p>Arg returns the i&#39;th command-line argument. Arg(0) is the first remaining argument
+after flags have been processed. Arg returns an empty string if the
+requested element does not exist.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Args" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=744">Args</a> <a class="Documentation-idLink" href="#Args" title="Go to Args" aria-label="Go to Args">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Args() []<a href="/builtin#string">string</a></pre>
+    </div>
+  <p>Args returns the non-flag command-line arguments.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Bool" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=768">Bool</a> <a class="Documentation-idLink" href="#Bool" title="Go to Bool" aria-label="Go to Bool">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Bool(name <a href="/builtin#string">string</a>, value <a href="/builtin#bool">bool</a>, usage <a href="/builtin#string">string</a>) *<a href="/builtin#bool">bool</a></pre>
+    </div>
+  <p>Bool defines a bool flag with specified name, default value, and usage string.
+The return value is the address of a bool variable that stores the value of the flag.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="BoolFunc" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=1000">BoolFunc</a> <a class="Documentation-idLink" href="#BoolFunc" title="Go to BoolFunc" aria-label="Go to BoolFunc">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.21.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func BoolFunc(name, usage <a href="/builtin#string">string</a>, fn func(<a href="/builtin#string">string</a>) <a href="/builtin#error">error</a>)</pre>
+    </div>
+  <p>BoolFunc defines a flag with the specified name and usage string without requiring values.
+Each time the flag is seen, fn is called with the value of the flag.
+If fn returns a non-nil error, it will be treated as a flag value parsing error.
+</p>
+<details tabindex="-1" id="example-BoolFunc" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-BoolFunc" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;flag&#34;
+	&#34;fmt&#34;
+	&#34;os&#34;
+)
+
+func main() {
+	fs := flag.NewFlagSet(&#34;ExampleBoolFunc&#34;, flag.ContinueOnError)
+	fs.SetOutput(os.Stdout)
+
+	fs.BoolFunc(&#34;log&#34;, &#34;logs a dummy message&#34;, func(s string) error {
+		fmt.Println(&#34;dummy message:&#34;, s)
+		return nil
+	})
+	fs.Parse([]string{&#34;-log&#34;})
+	fs.Parse([]string{&#34;-log=0&#34;})
+
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">dummy message: true
+dummy message: 0
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="BoolVar" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=754">BoolVar</a> <a class="Documentation-idLink" href="#BoolVar" title="Go to BoolVar" aria-label="Go to BoolVar">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func BoolVar(p *<a href="/builtin#bool">bool</a>, name <a href="/builtin#string">string</a>, value <a href="/builtin#bool">bool</a>, usage <a href="/builtin#string">string</a>)</pre>
+    </div>
+  <p>BoolVar defines a bool flag with specified name, default value, and usage string.
+The argument p points to a bool variable in which to store the value of the flag.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Duration" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=954">Duration</a> <a class="Documentation-idLink" href="#Duration" title="Go to Duration" aria-label="Go to Duration">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Duration(name <a href="/builtin#string">string</a>, value <a href="/time">time</a>.<a href="/time#Duration">Duration</a>, usage <a href="/builtin#string">string</a>) *<a href="/time">time</a>.<a href="/time#Duration">Duration</a></pre>
+    </div>
+  <p>Duration defines a time.Duration flag with specified name, default value, and usage string.
+The return value is the address of a time.Duration variable that stores the value of the flag.
+The flag accepts a value acceptable to time.ParseDuration.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="DurationVar" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=938">DurationVar</a> <a class="Documentation-idLink" href="#DurationVar" title="Go to DurationVar" aria-label="Go to DurationVar">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func DurationVar(p *<a href="/time">time</a>.<a href="/time#Duration">Duration</a>, name <a href="/builtin#string">string</a>, value <a href="/time">time</a>.<a href="/time#Duration">Duration</a>, usage <a href="/builtin#string">string</a>)</pre>
+    </div>
+  <p>DurationVar defines a time.Duration flag with specified name, default value, and usage string.
+The argument p points to a time.Duration variable in which to store the value of the flag.
+The flag accepts a value acceptable to time.ParseDuration.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Float64" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=924">Float64</a> <a class="Documentation-idLink" href="#Float64" title="Go to Float64" aria-label="Go to Float64">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Float64(name <a href="/builtin#string">string</a>, value <a href="/builtin#float64">float64</a>, usage <a href="/builtin#string">string</a>) *<a href="/builtin#float64">float64</a></pre>
+    </div>
+  <p>Float64 defines a float64 flag with specified name, default value, and usage string.
+The return value is the address of a float64 variable that stores the value of the flag.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Float64Var" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=910">Float64Var</a> <a class="Documentation-idLink" href="#Float64Var" title="Go to Float64Var" aria-label="Go to Float64Var">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Float64Var(p *<a href="/builtin#float64">float64</a>, name <a href="/builtin#string">string</a>, value <a href="/builtin#float64">float64</a>, usage <a href="/builtin#string">string</a>)</pre>
+    </div>
+  <p>Float64Var defines a float64 flag with specified name, default value, and usage string.
+The argument p points to a float64 variable in which to store the value of the flag.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Func" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=986">Func</a> <a class="Documentation-idLink" href="#Func" title="Go to Func" aria-label="Go to Func">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.16</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Func(name, usage <a href="/builtin#string">string</a>, fn func(<a href="/builtin#string">string</a>) <a href="/builtin#error">error</a>)</pre>
+    </div>
+  <p>Func defines a flag with the specified name and usage string.
+Each time the flag is seen, fn is called with the value of the flag.
+If fn returns a non-nil error, it will be treated as a flag value parsing error.
+</p>
+<details tabindex="-1" id="example-Func" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-Func" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;errors&#34;
+	&#34;flag&#34;
+	&#34;fmt&#34;
+	&#34;net&#34;
+	&#34;os&#34;
+)
+
+func main() {
+	fs := flag.NewFlagSet(&#34;ExampleFunc&#34;, flag.ContinueOnError)
+	fs.SetOutput(os.Stdout)
+	var ip net.IP
+	fs.Func(&#34;ip&#34;, &#34;`IP address` to parse&#34;, func(s string) error {
+		ip = net.ParseIP(s)
+		if ip == nil {
+			return errors.New(&#34;could not parse IP&#34;)
+		}
+		return nil
+	})
+	fs.Parse([]string{&#34;-ip&#34;, &#34;127.0.0.1&#34;})
+	fmt.Printf(&#34;{ip: %v, loopback: %t}\n\n&#34;, ip, ip.IsLoopback())
+
+	// 256 is not a valid IPv4 component
+	fs.Parse([]string{&#34;-ip&#34;, &#34;256.0.0.1&#34;})
+	fmt.Printf(&#34;{ip: %v, loopback: %t}\n\n&#34;, ip, ip.IsLoopback())
+
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">{ip: 127.0.0.1, loopback: true}
+
+invalid value &#34;256.0.0.1&#34; for flag -ip: could not parse IP
+Usage of ExampleFunc:
+  -ip IP address
+    	IP address to parse
+{ip: &lt;nil&gt;, loopback: false}
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Int" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=794">Int</a> <a class="Documentation-idLink" href="#Int" title="Go to Int" aria-label="Go to Int">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Int(name <a href="/builtin#string">string</a>, value <a href="/builtin#int">int</a>, usage <a href="/builtin#string">string</a>) *<a href="/builtin#int">int</a></pre>
+    </div>
+  <p>Int defines an int flag with specified name, default value, and usage string.
+The return value is the address of an int variable that stores the value of the flag.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Int64" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=820">Int64</a> <a class="Documentation-idLink" href="#Int64" title="Go to Int64" aria-label="Go to Int64">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Int64(name <a href="/builtin#string">string</a>, value <a href="/builtin#int64">int64</a>, usage <a href="/builtin#string">string</a>) *<a href="/builtin#int64">int64</a></pre>
+    </div>
+  <p>Int64 defines an int64 flag with specified name, default value, and usage string.
+The return value is the address of an int64 variable that stores the value of the flag.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Int64Var" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=806">Int64Var</a> <a class="Documentation-idLink" href="#Int64Var" title="Go to Int64Var" aria-label="Go to Int64Var">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Int64Var(p *<a href="/builtin#int64">int64</a>, name <a href="/builtin#string">string</a>, value <a href="/builtin#int64">int64</a>, usage <a href="/builtin#string">string</a>)</pre>
+    </div>
+  <p>Int64Var defines an int64 flag with specified name, default value, and usage string.
+The argument p points to an int64 variable in which to store the value of the flag.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="IntVar" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=780">IntVar</a> <a class="Documentation-idLink" href="#IntVar" title="Go to IntVar" aria-label="Go to IntVar">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func IntVar(p *<a href="/builtin#int">int</a>, name <a href="/builtin#string">string</a>, value <a href="/builtin#int">int</a>, usage <a href="/builtin#string">string</a>)</pre>
+    </div>
+  <p>IntVar defines an int flag with specified name, default value, and usage string.
+The argument p points to an int variable in which to store the value of the flag.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="NArg" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=738">NArg</a> <a class="Documentation-idLink" href="#NArg" title="Go to NArg" aria-label="Go to NArg">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func NArg() <a href="/builtin#int">int</a></pre>
+    </div>
+  <p>NArg is the number of arguments remaining after flags have been processed.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="NFlag" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=715">NFlag</a> <a class="Documentation-idLink" href="#NFlag" title="Go to NFlag" aria-label="Go to NFlag">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func NFlag() <a href="/builtin#int">int</a></pre>
+    </div>
+  <p>NFlag returns the number of command-line flags that have been set.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Parse" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=1186">Parse</a> <a class="Documentation-idLink" href="#Parse" title="Go to Parse" aria-label="Go to Parse">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Parse()</pre>
+    </div>
+  <p>Parse parses the command-line flags from <a href="/os#Args">os.Args</a>[1:]. Must be called
+after all flags are defined and before flags are accessed by the program.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Parsed" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=1192">Parsed</a> <a class="Documentation-idLink" href="#Parsed" title="Go to Parsed" aria-label="Go to Parsed">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Parsed() <a href="/builtin#bool">bool</a></pre>
+    </div>
+  <p>Parsed reports whether the command-line flags have been parsed.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="PrintDefaults" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=679">PrintDefaults</a> <a class="Documentation-idLink" href="#PrintDefaults" title="Go to PrintDefaults" aria-label="Go to PrintDefaults">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func PrintDefaults()</pre>
+    </div>
+  <p>PrintDefaults prints, to standard error unless configured otherwise,
+a usage message showing the default settings of all defined
+command-line flags.
+For an integer valued flag x, the default output has the form
+</p><pre>-x int
+	usage-message-for-x (default 7)
+</pre><p>The usage message will appear on a separate line for anything but
+a bool flag with a one-byte name. For bool flags, the type is
+omitted and if the flag name is one byte the usage message appears
+on the same line. The parenthetical default is omitted if the
+default is the zero value for the type. The listed type, here int,
+can be changed by placing a back-quoted name in the flag&#39;s usage
+string; the first such item in the message is taken to be a parameter
+name to show in the message and the back quotes are stripped from
+the message when displayed. For instance, given
+</p><pre>flag.String(&#34;I&#34;, &#34;&#34;, &#34;search `directory` for include files&#34;)
+</pre><p>the output will be
+</p><pre>-I directory
+	search directory for include files.
+</pre><p>To change the destination for flag messages, call <a href="#CommandLine">CommandLine</a>.SetOutput.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Set" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=532">Set</a> <a class="Documentation-idLink" href="#Set" title="Go to Set" aria-label="Go to Set">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Set(name, value <a href="/builtin#string">string</a>) <a href="/builtin#error">error</a></pre>
+    </div>
+  <p>Set sets the value of the named command-line flag.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="String" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=898">String</a> <a class="Documentation-idLink" href="#String" title="Go to String" aria-label="Go to String">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func String(name <a href="/builtin#string">string</a>, value <a href="/builtin#string">string</a>, usage <a href="/builtin#string">string</a>) *<a href="/builtin#string">string</a></pre>
+    </div>
+  <p>String defines a string flag with specified name, default value, and usage string.
+The return value is the address of a string variable that stores the value of the flag.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="StringVar" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=884">StringVar</a> <a class="Documentation-idLink" href="#StringVar" title="Go to StringVar" aria-label="Go to StringVar">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func StringVar(p *<a href="/builtin#string">string</a>, name <a href="/builtin#string">string</a>, value <a href="/builtin#string">string</a>, usage <a href="/builtin#string">string</a>)</pre>
+    </div>
+  <p>StringVar defines a string flag with specified name, default value, and usage string.
+The argument p points to a string variable in which to store the value of the flag.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="TextVar" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=972">TextVar</a> <a class="Documentation-idLink" href="#TextVar" title="Go to TextVar" aria-label="Go to TextVar">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.19</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func TextVar(p <a href="/encoding">encoding</a>.<a href="/encoding#TextUnmarshaler">TextUnmarshaler</a>, name <a href="/builtin#string">string</a>, value <a href="/encoding">encoding</a>.<a href="/encoding#TextMarshaler">TextMarshaler</a>, usage <a href="/builtin#string">string</a>)</pre>
+    </div>
+  <p>TextVar defines a flag with a specified name, default value, and usage string.
+The argument p must be a pointer to a variable that will hold the value
+of the flag, and p must implement encoding.TextUnmarshaler.
+If the flag is used, the flag value will be passed to p&#39;s UnmarshalText method.
+The type of the default value must be the same as the type of p.
+</p>
+<details tabindex="-1" id="example-TextVar" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-TextVar" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;flag&#34;
+	&#34;fmt&#34;
+	&#34;net&#34;
+	&#34;os&#34;
+)
+
+func main() {
+	fs := flag.NewFlagSet(&#34;ExampleTextVar&#34;, flag.ContinueOnError)
+	fs.SetOutput(os.Stdout)
+	var ip net.IP
+	fs.TextVar(&amp;ip, &#34;ip&#34;, net.IPv4(192, 168, 0, 100), &#34;`IP address` to parse&#34;)
+	fs.Parse([]string{&#34;-ip&#34;, &#34;127.0.0.1&#34;})
+	fmt.Printf(&#34;{ip: %v}\n\n&#34;, ip)
+
+	// 256 is not a valid IPv4 component
+	ip = nil
+	fs.Parse([]string{&#34;-ip&#34;, &#34;256.0.0.1&#34;})
+	fmt.Printf(&#34;{ip: %v}\n\n&#34;, ip)
+
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">{ip: 127.0.0.1}
+
+invalid value &#34;256.0.0.1&#34; for flag -ip: invalid IP address: 256.0.0.1
+Usage of ExampleTextVar:
+  -ip IP address
+    	IP address to parse (default 192.168.0.100)
+{ip: &lt;nil&gt;}
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Uint" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=846">Uint</a> <a class="Documentation-idLink" href="#Uint" title="Go to Uint" aria-label="Go to Uint">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Uint(name <a href="/builtin#string">string</a>, value <a href="/builtin#uint">uint</a>, usage <a href="/builtin#string">string</a>) *<a href="/builtin#uint">uint</a></pre>
+    </div>
+  <p>Uint defines a uint flag with specified name, default value, and usage string.
+The return value is the address of a uint variable that stores the value of the flag.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Uint64" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=872">Uint64</a> <a class="Documentation-idLink" href="#Uint64" title="Go to Uint64" aria-label="Go to Uint64">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Uint64(name <a href="/builtin#string">string</a>, value <a href="/builtin#uint64">uint64</a>, usage <a href="/builtin#string">string</a>) *<a href="/builtin#uint64">uint64</a></pre>
+    </div>
+  <p>Uint64 defines a uint64 flag with specified name, default value, and usage string.
+The return value is the address of a uint64 variable that stores the value of the flag.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Uint64Var" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=858">Uint64Var</a> <a class="Documentation-idLink" href="#Uint64Var" title="Go to Uint64Var" aria-label="Go to Uint64Var">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Uint64Var(p *<a href="/builtin#uint64">uint64</a>, name <a href="/builtin#string">string</a>, value <a href="/builtin#uint64">uint64</a>, usage <a href="/builtin#string">string</a>)</pre>
+    </div>
+  <p>Uint64Var defines a uint64 flag with specified name, default value, and usage string.
+The argument p points to a uint64 variable in which to store the value of the flag.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="UintVar" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=832">UintVar</a> <a class="Documentation-idLink" href="#UintVar" title="Go to UintVar" aria-label="Go to UintVar">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func UintVar(p *<a href="/builtin#uint">uint</a>, name <a href="/builtin#string">string</a>, value <a href="/builtin#uint">uint</a>, usage <a href="/builtin#string">string</a>)</pre>
+    </div>
+  <p>UintVar defines a uint flag with specified name, default value, and usage string.
+The argument p points to a uint variable in which to store the value of the flag.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="UnquoteUsage" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=568">UnquoteUsage</a> <a class="Documentation-idLink" href="#UnquoteUsage" title="Go to UnquoteUsage" aria-label="Go to UnquoteUsage">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.5</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func UnquoteUsage(flag *<a href="#Flag">Flag</a>) (name <a href="/builtin#string">string</a>, usage <a href="/builtin#string">string</a>)</pre>
+    </div>
+  <p>UnquoteUsage extracts a back-quoted name from the usage
+string for a flag and returns it and the un-quoted usage.
+Given &#34;a `name` to show&#34; it returns (&#34;name&#34;, &#34;a name to show&#34;).
+If there are no back quotes, the name is an educated guess of the
+type of the flag&#39;s value, or the empty string if the flag is boolean.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Var" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=1045">Var</a> <a class="Documentation-idLink" href="#Var" title="Go to Var" aria-label="Go to Var">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Var(value <a href="#Value">Value</a>, name <a href="/builtin#string">string</a>, usage <a href="/builtin#string">string</a>)</pre>
+    </div>
+  <p>Var defines a flag with the specified name and usage string. The type and
+value of the flag are represented by the first argument, of type <a href="#Value">Value</a>, which
+typically holds a user-defined implementation of <a href="#Value">Value</a>. For instance, the
+caller could create a flag that turns a comma-separated string into a slice
+of strings by giving the slice the methods of <a href="#Value">Value</a>; in particular, <a href="#Set">Set</a> would
+decompose the comma-separated string into the slice.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Visit" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=478">Visit</a> <a class="Documentation-idLink" href="#Visit" title="Go to Visit" aria-label="Go to Visit">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Visit(fn func(*<a href="#Flag">Flag</a>))</pre>
+    </div>
+  <p>Visit visits the command-line flags in lexicographical order, calling fn
+for each. It visits only those flags that have been set.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="VisitAll" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=464">VisitAll</a> <a class="Documentation-idLink" href="#VisitAll" title="Go to VisitAll" aria-label="Go to VisitAll">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func VisitAll(fn func(*<a href="#Flag">Flag</a>))</pre>
+    </div>
+  <p>VisitAll visits the command-line flags in lexicographical order, calling
+fn for each. It visits all flags, even those not set.
+</p>
+
+  
+
+        </div></section>
+
+  <h3 tabindex="-1" id="pkg-types" class="Documentation-typesHeader">Types <a href="#pkg-types" title="Go to Types" aria-label="Go to Types">¶</a></h3>
+
+  <section class="Documentation-types"><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="ErrorHandling" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=375">ErrorHandling</a> <a class="Documentation-idLink" href="#ErrorHandling" title="Go to ErrorHandling" aria-label="Go to ErrorHandling">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type ErrorHandling <a href="/builtin#int">int</a></pre>
+    </div>
+  <p>ErrorHandling defines how <a href="#FlagSet.Parse">FlagSet.Parse</a> behaves if the parse fails.
+</p>
+<div class="Documentation-typeConstant">
+    <div class="Documentation-declaration">
+      <pre>const (
+<span id="ContinueOnError" data-kind="constant">	ContinueOnError <a href="#ErrorHandling">ErrorHandling</a> = <a href="/builtin#iota">iota</a> <span class="comment">// Return a descriptive error.</span>
+</span><span id="ExitOnError" data-kind="constant">	ExitOnError                          <span class="comment">// Call os.Exit(2) or for -h/-help Exit(0).</span>
+</span><span id="PanicOnError" data-kind="constant">	PanicOnError                         <span class="comment">// Call panic with a descriptive error.</span>
+</span>)</pre>
+    </div>
+  <p>These constants cause <a href="#FlagSet.Parse">FlagSet.Parse</a> to behave as described if the parse fails.
+</p>
+</div>
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="Flag" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=408">Flag</a> <a class="Documentation-idLink" href="#Flag" title="Go to Flag" aria-label="Go to Flag">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type Flag struct {
+<span id="Flag.Name" data-kind="field">	Name     <a href="/builtin#string">string</a> <span class="comment">// name as it appears on command line</span>
+</span><span id="Flag.Usage" data-kind="field">	Usage    <a href="/builtin#string">string</a> <span class="comment">// help message</span>
+</span><span id="Flag.Value" data-kind="field">	Value    <a href="#Value">Value</a>  <span class="comment">// value as set</span>
+</span><span id="Flag.DefValue" data-kind="field">	DefValue <a href="/builtin#string">string</a> <span class="comment">// default value (as text); for usage message</span>
+</span>}</pre>
+    </div>
+  <p>A Flag represents the state of a flag.
+</p>
+<div class="Documentation-typeFunc">
+    
+  
+  
+    <h4 tabindex="-1" id="Lookup" data-kind="function" class="Documentation-typeFuncHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=489">Lookup</a> <a class="Documentation-idLink" href="#Lookup" title="Go to Lookup" aria-label="Go to Lookup">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Lookup(name <a href="/builtin#string">string</a>) *<a href="#Flag">Flag</a></pre>
+    </div>
+  <p>Lookup returns the <a href="#Flag">Flag</a> structure of the named command-line flag,
+returning nil if none exists.
+</p>
+
+  
+
+  </div>
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="FlagSet" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=389">FlagSet</a> <a class="Documentation-idLink" href="#FlagSet" title="Go to FlagSet" aria-label="Go to FlagSet">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type FlagSet struct {
+<span id="FlagSet.Usage" data-kind="field">	<span class="comment">// Usage is the function called when an error occurs while parsing flags.</span>
+</span>	<span class="comment">// The field is a function (not a method) that may be changed to point to</span>
+	<span class="comment">// a custom error handler. What happens after Usage is called depends</span>
+	<span class="comment">// on the ErrorHandling setting; for the command line, this defaults</span>
+	<span class="comment">// to ExitOnError, which exits the program after calling Usage.</span>
+	Usage func()
+	<span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+    </div>
+  <p>A FlagSet represents a set of defined flags. The zero value of a FlagSet
+has no name and has <a href="#ContinueOnError">ContinueOnError</a> error handling.
+</p><p><a href="#Flag">Flag</a> names must be unique within a FlagSet. An attempt to define a flag whose
+name is already in use will cause a panic.
+</p>
+<details tabindex="-1" id="example-FlagSet" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-FlagSet" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;flag&#34;
+	&#34;fmt&#34;
+	&#34;time&#34;
+)
+
+func main() {
+
+	start := func(args []string) {
+		// A real program (not an example) would use flag.ExitOnError.
+		fs := flag.NewFlagSet(&#34;start&#34;, flag.ContinueOnError)
+		addr := fs.String(&#34;addr&#34;, &#34;:8080&#34;, &#34;`address` to listen on&#34;)
+		if err := fs.Parse(args); err != nil {
+			fmt.Printf(&#34;error: %s&#34;, err)
+			return
+		}
+		fmt.Printf(&#34;starting server on %s\n&#34;, *addr)
+	}
+
+	stop := func(args []string) {
+		fs := flag.NewFlagSet(&#34;stop&#34;, flag.ContinueOnError)
+		timeout := fs.Duration(&#34;timeout&#34;, time.Second, &#34;stop timeout duration&#34;)
+		if err := fs.Parse(args); err != nil {
+			fmt.Printf(&#34;error: %s&#34;, err)
+			return
+		}
+		fmt.Printf(&#34;stopping server (timeout=%v)\n&#34;, *timeout)
+	}
+
+	main := func(args []string) {
+		subArgs := args[2:] // Drop program name and command.
+		switch args[1] {
+		case &#34;start&#34;:
+			start(subArgs)
+		case &#34;stop&#34;:
+			stop(subArgs)
+		default:
+			fmt.Printf(&#34;error: unknown command - %q\n&#34;, args[1])
+			// In a real program (not an example) print to os.Stderr and exit the program with non-zero value.
+		}
+	}
+
+	main([]string{&#34;httpd&#34;, &#34;start&#34;, &#34;-addr&#34;, &#34;:9999&#34;})
+	main([]string{&#34;httpd&#34;, &#34;stop&#34;})
+	main([]string{&#34;http&#34;, &#34;start&#34;, &#34;-log-level&#34;, &#34;verbose&#34;})
+
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">starting server on :9999
+stopping server (timeout=1s)
+error: flag provided but not defined: -log-level
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+<div class="Documentation-typeVariable">
+    <div class="Documentation-declaration">
+      <pre><span id="CommandLine" data-kind="variable">var CommandLine *<a href="#FlagSet">FlagSet</a></span></pre>
+    </div>
+  <p>CommandLine is the default set of command-line flags, parsed from <a href="/os#Args">os.Args</a>.
+The top-level functions such as <a href="#BoolVar">BoolVar</a>, <a href="#Arg">Arg</a>, and so on are wrappers for the
+methods of CommandLine.
+</p>
+</div><div class="Documentation-typeFunc">
+    
+  
+  
+    <h4 tabindex="-1" id="NewFlagSet" data-kind="function" class="Documentation-typeFuncHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=1223">NewFlagSet</a> <a class="Documentation-idLink" href="#NewFlagSet" title="Go to NewFlagSet" aria-label="Go to NewFlagSet">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func NewFlagSet(name <a href="/builtin#string">string</a>, errorHandling <a href="#ErrorHandling">ErrorHandling</a>) *<a href="#FlagSet">FlagSet</a></pre>
+    </div>
+  <p>NewFlagSet returns a new, empty flag set with the specified name and
+error handling property. If the name is not empty, it will be printed
+in the default usage message and in error messages.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="FlagSet.Arg" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*FlagSet) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=720">Arg</a> <a class="Documentation-idLink" href="#FlagSet.Arg" title="Go to FlagSet.Arg" aria-label="Go to FlagSet.Arg">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (f *<a href="#FlagSet">FlagSet</a>) Arg(i <a href="/builtin#int">int</a>) <a href="/builtin#string">string</a></pre>
+    </div>
+  <p>Arg returns the i&#39;th argument. Arg(0) is the first remaining argument
+after flags have been processed. Arg returns an empty string if the
+requested element does not exist.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="FlagSet.Args" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*FlagSet) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=741">Args</a> <a class="Documentation-idLink" href="#FlagSet.Args" title="Go to FlagSet.Args" aria-label="Go to FlagSet.Args">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (f *<a href="#FlagSet">FlagSet</a>) Args() []<a href="/builtin#string">string</a></pre>
+    </div>
+  <p>Args returns the non-flag arguments.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="FlagSet.Bool" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*FlagSet) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=760">Bool</a> <a class="Documentation-idLink" href="#FlagSet.Bool" title="Go to FlagSet.Bool" aria-label="Go to FlagSet.Bool">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (f *<a href="#FlagSet">FlagSet</a>) Bool(name <a href="/builtin#string">string</a>, value <a href="/builtin#bool">bool</a>, usage <a href="/builtin#string">string</a>) *<a href="/builtin#bool">bool</a></pre>
+    </div>
+  <p>Bool defines a bool flag with specified name, default value, and usage string.
+The return value is the address of a bool variable that stores the value of the flag.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="FlagSet.BoolFunc" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*FlagSet) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=993">BoolFunc</a> <a class="Documentation-idLink" href="#FlagSet.BoolFunc" title="Go to FlagSet.BoolFunc" aria-label="Go to FlagSet.BoolFunc">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.21.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (f *<a href="#FlagSet">FlagSet</a>) BoolFunc(name, usage <a href="/builtin#string">string</a>, fn func(<a href="/builtin#string">string</a>) <a href="/builtin#error">error</a>)</pre>
+    </div>
+  <p>BoolFunc defines a flag with the specified name and usage string without requiring values.
+Each time the flag is seen, fn is called with the value of the flag.
+If fn returns a non-nil error, it will be treated as a flag value parsing error.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="FlagSet.BoolVar" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*FlagSet) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=748">BoolVar</a> <a class="Documentation-idLink" href="#FlagSet.BoolVar" title="Go to FlagSet.BoolVar" aria-label="Go to FlagSet.BoolVar">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (f *<a href="#FlagSet">FlagSet</a>) BoolVar(p *<a href="/builtin#bool">bool</a>, name <a href="/builtin#string">string</a>, value <a href="/builtin#bool">bool</a>, usage <a href="/builtin#string">string</a>)</pre>
+    </div>
+  <p>BoolVar defines a bool flag with specified name, default value, and usage string.
+The argument p points to a bool variable in which to store the value of the flag.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="FlagSet.Duration" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*FlagSet) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=945">Duration</a> <a class="Documentation-idLink" href="#FlagSet.Duration" title="Go to FlagSet.Duration" aria-label="Go to FlagSet.Duration">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (f *<a href="#FlagSet">FlagSet</a>) Duration(name <a href="/builtin#string">string</a>, value <a href="/time">time</a>.<a href="/time#Duration">Duration</a>, usage <a href="/builtin#string">string</a>) *<a href="/time">time</a>.<a href="/time#Duration">Duration</a></pre>
+    </div>
+  <p>Duration defines a time.Duration flag with specified name, default value, and usage string.
+The return value is the address of a time.Duration variable that stores the value of the flag.
+The flag accepts a value acceptable to time.ParseDuration.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="FlagSet.DurationVar" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*FlagSet) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=931">DurationVar</a> <a class="Documentation-idLink" href="#FlagSet.DurationVar" title="Go to FlagSet.DurationVar" aria-label="Go to FlagSet.DurationVar">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (f *<a href="#FlagSet">FlagSet</a>) DurationVar(p *<a href="/time">time</a>.<a href="/time#Duration">Duration</a>, name <a href="/builtin#string">string</a>, value <a href="/time">time</a>.<a href="/time#Duration">Duration</a>, usage <a href="/builtin#string">string</a>)</pre>
+    </div>
+  <p>DurationVar defines a time.Duration flag with specified name, default value, and usage string.
+The argument p points to a time.Duration variable in which to store the value of the flag.
+The flag accepts a value acceptable to time.ParseDuration.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="FlagSet.ErrorHandling" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*FlagSet) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=444">ErrorHandling</a> <a class="Documentation-idLink" href="#FlagSet.ErrorHandling" title="Go to FlagSet.ErrorHandling" aria-label="Go to FlagSet.ErrorHandling">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.10</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (f *<a href="#FlagSet">FlagSet</a>) ErrorHandling() <a href="#ErrorHandling">ErrorHandling</a></pre>
+    </div>
+  <p>ErrorHandling returns the error handling behavior of the flag set.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="FlagSet.Float64" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*FlagSet) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=916">Float64</a> <a class="Documentation-idLink" href="#FlagSet.Float64" title="Go to FlagSet.Float64" aria-label="Go to FlagSet.Float64">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (f *<a href="#FlagSet">FlagSet</a>) Float64(name <a href="/builtin#string">string</a>, value <a href="/builtin#float64">float64</a>, usage <a href="/builtin#string">string</a>) *<a href="/builtin#float64">float64</a></pre>
+    </div>
+  <p>Float64 defines a float64 flag with specified name, default value, and usage string.
+The return value is the address of a float64 variable that stores the value of the flag.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="FlagSet.Float64Var" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*FlagSet) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=904">Float64Var</a> <a class="Documentation-idLink" href="#FlagSet.Float64Var" title="Go to FlagSet.Float64Var" aria-label="Go to FlagSet.Float64Var">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (f *<a href="#FlagSet">FlagSet</a>) Float64Var(p *<a href="/builtin#float64">float64</a>, name <a href="/builtin#string">string</a>, value <a href="/builtin#float64">float64</a>, usage <a href="/builtin#string">string</a>)</pre>
+    </div>
+  <p>Float64Var defines a float64 flag with specified name, default value, and usage string.
+The argument p points to a float64 variable in which to store the value of the flag.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="FlagSet.Func" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*FlagSet) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=979">Func</a> <a class="Documentation-idLink" href="#FlagSet.Func" title="Go to FlagSet.Func" aria-label="Go to FlagSet.Func">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.16</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (f *<a href="#FlagSet">FlagSet</a>) Func(name, usage <a href="/builtin#string">string</a>, fn func(<a href="/builtin#string">string</a>) <a href="/builtin#error">error</a>)</pre>
+    </div>
+  <p>Func defines a flag with the specified name and usage string.
+Each time the flag is seen, fn is called with the value of the flag.
+If fn returns a non-nil error, it will be treated as a flag value parsing error.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="FlagSet.Init" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*FlagSet) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=1235">Init</a> <a class="Documentation-idLink" href="#FlagSet.Init" title="Go to FlagSet.Init" aria-label="Go to FlagSet.Init">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (f *<a href="#FlagSet">FlagSet</a>) Init(name <a href="/builtin#string">string</a>, errorHandling <a href="#ErrorHandling">ErrorHandling</a>)</pre>
+    </div>
+  <p>Init sets the name and error handling property for a flag set.
+By default, the zero <a href="#FlagSet">FlagSet</a> uses an empty name and the
+<a href="#ContinueOnError">ContinueOnError</a> error handling policy.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="FlagSet.Int" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*FlagSet) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=786">Int</a> <a class="Documentation-idLink" href="#FlagSet.Int" title="Go to FlagSet.Int" aria-label="Go to FlagSet.Int">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (f *<a href="#FlagSet">FlagSet</a>) Int(name <a href="/builtin#string">string</a>, value <a href="/builtin#int">int</a>, usage <a href="/builtin#string">string</a>) *<a href="/builtin#int">int</a></pre>
+    </div>
+  <p>Int defines an int flag with specified name, default value, and usage string.
+The return value is the address of an int variable that stores the value of the flag.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="FlagSet.Int64" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*FlagSet) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=812">Int64</a> <a class="Documentation-idLink" href="#FlagSet.Int64" title="Go to FlagSet.Int64" aria-label="Go to FlagSet.Int64">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (f *<a href="#FlagSet">FlagSet</a>) Int64(name <a href="/builtin#string">string</a>, value <a href="/builtin#int64">int64</a>, usage <a href="/builtin#string">string</a>) *<a href="/builtin#int64">int64</a></pre>
+    </div>
+  <p>Int64 defines an int64 flag with specified name, default value, and usage string.
+The return value is the address of an int64 variable that stores the value of the flag.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="FlagSet.Int64Var" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*FlagSet) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=800">Int64Var</a> <a class="Documentation-idLink" href="#FlagSet.Int64Var" title="Go to FlagSet.Int64Var" aria-label="Go to FlagSet.Int64Var">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (f *<a href="#FlagSet">FlagSet</a>) Int64Var(p *<a href="/builtin#int64">int64</a>, name <a href="/builtin#string">string</a>, value <a href="/builtin#int64">int64</a>, usage <a href="/builtin#string">string</a>)</pre>
+    </div>
+  <p>Int64Var defines an int64 flag with specified name, default value, and usage string.
+The argument p points to an int64 variable in which to store the value of the flag.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="FlagSet.IntVar" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*FlagSet) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=774">IntVar</a> <a class="Documentation-idLink" href="#FlagSet.IntVar" title="Go to FlagSet.IntVar" aria-label="Go to FlagSet.IntVar">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (f *<a href="#FlagSet">FlagSet</a>) IntVar(p *<a href="/builtin#int">int</a>, name <a href="/builtin#string">string</a>, value <a href="/builtin#int">int</a>, usage <a href="/builtin#string">string</a>)</pre>
+    </div>
+  <p>IntVar defines an int flag with specified name, default value, and usage string.
+The argument p points to an int variable in which to store the value of the flag.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="FlagSet.Lookup" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*FlagSet) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=483">Lookup</a> <a class="Documentation-idLink" href="#FlagSet.Lookup" title="Go to FlagSet.Lookup" aria-label="Go to FlagSet.Lookup">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (f *<a href="#FlagSet">FlagSet</a>) Lookup(name <a href="/builtin#string">string</a>) *<a href="#Flag">Flag</a></pre>
+    </div>
+  <p>Lookup returns the <a href="#Flag">Flag</a> structure of the named flag, returning nil if none exists.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="FlagSet.NArg" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*FlagSet) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=735">NArg</a> <a class="Documentation-idLink" href="#FlagSet.NArg" title="Go to FlagSet.NArg" aria-label="Go to FlagSet.NArg">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (f *<a href="#FlagSet">FlagSet</a>) NArg() <a href="/builtin#int">int</a></pre>
+    </div>
+  <p>NArg is the number of arguments remaining after flags have been processed.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="FlagSet.NFlag" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*FlagSet) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=712">NFlag</a> <a class="Documentation-idLink" href="#FlagSet.NFlag" title="Go to FlagSet.NFlag" aria-label="Go to FlagSet.NFlag">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (f *<a href="#FlagSet">FlagSet</a>) NFlag() <a href="/builtin#int">int</a></pre>
+    </div>
+  <p>NFlag returns the number of flags that have been set.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="FlagSet.Name" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*FlagSet) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=439">Name</a> <a class="Documentation-idLink" href="#FlagSet.Name" title="Go to FlagSet.Name" aria-label="Go to FlagSet.Name">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.10</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (f *<a href="#FlagSet">FlagSet</a>) Name() <a href="/builtin#string">string</a></pre>
+    </div>
+  <p>Name returns the name of the flag set.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="FlagSet.Output" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*FlagSet) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=431">Output</a> <a class="Documentation-idLink" href="#FlagSet.Output" title="Go to FlagSet.Output" aria-label="Go to FlagSet.Output">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.10</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (f *<a href="#FlagSet">FlagSet</a>) Output() <a href="/io">io</a>.<a href="/io#Writer">Writer</a></pre>
+    </div>
+  <p>Output returns the destination for usage and error messages. <a href="/os#Stderr">os.Stderr</a> is returned if
+output was not set or was set to nil.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="FlagSet.Parse" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*FlagSet) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=1153">Parse</a> <a class="Documentation-idLink" href="#FlagSet.Parse" title="Go to FlagSet.Parse" aria-label="Go to FlagSet.Parse">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (f *<a href="#FlagSet">FlagSet</a>) Parse(arguments []<a href="/builtin#string">string</a>) <a href="/builtin#error">error</a></pre>
+    </div>
+  <p>Parse parses flag definitions from the argument list, which should not
+include the command name. Must be called after all flags in the <a href="#FlagSet">FlagSet</a>
+are defined and before flags are accessed by the program.
+The return value will be <a href="#ErrHelp">ErrHelp</a> if -help or -h were set but not defined.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="FlagSet.Parsed" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*FlagSet) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=1180">Parsed</a> <a class="Documentation-idLink" href="#FlagSet.Parsed" title="Go to FlagSet.Parsed" aria-label="Go to FlagSet.Parsed">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (f *<a href="#FlagSet">FlagSet</a>) Parsed() <a href="/builtin#bool">bool</a></pre>
+    </div>
+  <p>Parsed reports whether f.Parse has been called.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="FlagSet.PrintDefaults" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*FlagSet) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=607">PrintDefaults</a> <a class="Documentation-idLink" href="#FlagSet.PrintDefaults" title="Go to FlagSet.PrintDefaults" aria-label="Go to FlagSet.PrintDefaults">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (f *<a href="#FlagSet">FlagSet</a>) PrintDefaults()</pre>
+    </div>
+  <p>PrintDefaults prints, to standard error unless configured otherwise, the
+default values of all defined command-line flags in the set. See the
+documentation for the global function PrintDefaults for more information.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="FlagSet.Set" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*FlagSet) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=494">Set</a> <a class="Documentation-idLink" href="#FlagSet.Set" title="Go to FlagSet.Set" aria-label="Go to FlagSet.Set">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (f *<a href="#FlagSet">FlagSet</a>) Set(name, value <a href="/builtin#string">string</a>) <a href="/builtin#error">error</a></pre>
+    </div>
+  <p>Set sets the value of the named flag.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="FlagSet.SetOutput" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*FlagSet) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=450">SetOutput</a> <a class="Documentation-idLink" href="#FlagSet.SetOutput" title="Go to FlagSet.SetOutput" aria-label="Go to FlagSet.SetOutput">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (f *<a href="#FlagSet">FlagSet</a>) SetOutput(output <a href="/io">io</a>.<a href="/io#Writer">Writer</a>)</pre>
+    </div>
+  <p>SetOutput sets the destination for usage and error messages.
+If output is nil, <a href="/os#Stderr">os.Stderr</a> is used.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="FlagSet.String" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*FlagSet) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=890">String</a> <a class="Documentation-idLink" href="#FlagSet.String" title="Go to FlagSet.String" aria-label="Go to FlagSet.String">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (f *<a href="#FlagSet">FlagSet</a>) String(name <a href="/builtin#string">string</a>, value <a href="/builtin#string">string</a>, usage <a href="/builtin#string">string</a>) *<a href="/builtin#string">string</a></pre>
+    </div>
+  <p>String defines a string flag with specified name, default value, and usage string.
+The return value is the address of a string variable that stores the value of the flag.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="FlagSet.StringVar" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*FlagSet) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=878">StringVar</a> <a class="Documentation-idLink" href="#FlagSet.StringVar" title="Go to FlagSet.StringVar" aria-label="Go to FlagSet.StringVar">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (f *<a href="#FlagSet">FlagSet</a>) StringVar(p *<a href="/builtin#string">string</a>, name <a href="/builtin#string">string</a>, value <a href="/builtin#string">string</a>, usage <a href="/builtin#string">string</a>)</pre>
+    </div>
+  <p>StringVar defines a string flag with specified name, default value, and usage string.
+The argument p points to a string variable in which to store the value of the flag.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="FlagSet.TextVar" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*FlagSet) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=963">TextVar</a> <a class="Documentation-idLink" href="#FlagSet.TextVar" title="Go to FlagSet.TextVar" aria-label="Go to FlagSet.TextVar">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.19</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (f *<a href="#FlagSet">FlagSet</a>) TextVar(p <a href="/encoding">encoding</a>.<a href="/encoding#TextUnmarshaler">TextUnmarshaler</a>, name <a href="/builtin#string">string</a>, value <a href="/encoding">encoding</a>.<a href="/encoding#TextMarshaler">TextMarshaler</a>, usage <a href="/builtin#string">string</a>)</pre>
+    </div>
+  <p>TextVar defines a flag with a specified name, default value, and usage string.
+The argument p must be a pointer to a variable that will hold the value
+of the flag, and p must implement encoding.TextUnmarshaler.
+If the flag is used, the flag value will be passed to p&#39;s UnmarshalText method.
+The type of the default value must be the same as the type of p.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="FlagSet.Uint" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*FlagSet) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=838">Uint</a> <a class="Documentation-idLink" href="#FlagSet.Uint" title="Go to FlagSet.Uint" aria-label="Go to FlagSet.Uint">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (f *<a href="#FlagSet">FlagSet</a>) Uint(name <a href="/builtin#string">string</a>, value <a href="/builtin#uint">uint</a>, usage <a href="/builtin#string">string</a>) *<a href="/builtin#uint">uint</a></pre>
+    </div>
+  <p>Uint defines a uint flag with specified name, default value, and usage string.
+The return value is the address of a uint variable that stores the value of the flag.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="FlagSet.Uint64" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*FlagSet) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=864">Uint64</a> <a class="Documentation-idLink" href="#FlagSet.Uint64" title="Go to FlagSet.Uint64" aria-label="Go to FlagSet.Uint64">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (f *<a href="#FlagSet">FlagSet</a>) Uint64(name <a href="/builtin#string">string</a>, value <a href="/builtin#uint64">uint64</a>, usage <a href="/builtin#string">string</a>) *<a href="/builtin#uint64">uint64</a></pre>
+    </div>
+  <p>Uint64 defines a uint64 flag with specified name, default value, and usage string.
+The return value is the address of a uint64 variable that stores the value of the flag.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="FlagSet.Uint64Var" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*FlagSet) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=852">Uint64Var</a> <a class="Documentation-idLink" href="#FlagSet.Uint64Var" title="Go to FlagSet.Uint64Var" aria-label="Go to FlagSet.Uint64Var">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (f *<a href="#FlagSet">FlagSet</a>) Uint64Var(p *<a href="/builtin#uint64">uint64</a>, name <a href="/builtin#string">string</a>, value <a href="/builtin#uint64">uint64</a>, usage <a href="/builtin#string">string</a>)</pre>
+    </div>
+  <p>Uint64Var defines a uint64 flag with specified name, default value, and usage string.
+The argument p points to a uint64 variable in which to store the value of the flag.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="FlagSet.UintVar" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*FlagSet) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=826">UintVar</a> <a class="Documentation-idLink" href="#FlagSet.UintVar" title="Go to FlagSet.UintVar" aria-label="Go to FlagSet.UintVar">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (f *<a href="#FlagSet">FlagSet</a>) UintVar(p *<a href="/builtin#uint">uint</a>, name <a href="/builtin#string">string</a>, value <a href="/builtin#uint">uint</a>, usage <a href="/builtin#string">string</a>)</pre>
+    </div>
+  <p>UintVar defines a uint flag with specified name, default value, and usage string.
+The argument p points to a uint variable in which to store the value of the flag.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="FlagSet.Var" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*FlagSet) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=1010">Var</a> <a class="Documentation-idLink" href="#FlagSet.Var" title="Go to FlagSet.Var" aria-label="Go to FlagSet.Var">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (f *<a href="#FlagSet">FlagSet</a>) Var(value <a href="#Value">Value</a>, name <a href="/builtin#string">string</a>, usage <a href="/builtin#string">string</a>)</pre>
+    </div>
+  <p>Var defines a flag with the specified name and usage string. The type and
+value of the flag are represented by the first argument, of type <a href="#Value">Value</a>, which
+typically holds a user-defined implementation of <a href="#Value">Value</a>. For instance, the
+caller could create a flag that turns a comma-separated string into a slice
+of strings by giving the slice the methods of <a href="#Value">Value</a>; in particular, <a href="#Set">Set</a> would
+decompose the comma-separated string into the slice.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="FlagSet.Visit" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*FlagSet) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=470">Visit</a> <a class="Documentation-idLink" href="#FlagSet.Visit" title="Go to FlagSet.Visit" aria-label="Go to FlagSet.Visit">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (f *<a href="#FlagSet">FlagSet</a>) Visit(fn func(*<a href="#Flag">Flag</a>))</pre>
+    </div>
+  <p>Visit visits the flags in lexicographical order, calling fn for each.
+It visits only those flags that have been set.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="FlagSet.VisitAll" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*FlagSet) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=456">VisitAll</a> <a class="Documentation-idLink" href="#FlagSet.VisitAll" title="Go to FlagSet.VisitAll" aria-label="Go to FlagSet.VisitAll">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (f *<a href="#FlagSet">FlagSet</a>) VisitAll(fn func(*<a href="#Flag">Flag</a>))</pre>
+    </div>
+  <p>VisitAll visits the flags in lexicographical order, calling fn for each.
+It visits all flags, even those not set.
+</p>
+
+  
+
+  </div>
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="Getter" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=369">Getter</a> <a class="Documentation-idLink" href="#Getter" title="Go to Getter" aria-label="Go to Getter">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.2</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type Getter interface {
+	<a href="#Value">Value</a>
+<span id="Getter.Get" data-kind="method">	Get() <a href="/builtin#any">any</a>
+</span>}</pre>
+    </div>
+  <p>Getter is an interface that allows the contents of a <a href="#Value">Value</a> to be retrieved.
+It wraps the <a href="#Value">Value</a> interface, rather than being part of it, because it
+appeared after Go 1 and its compatibility rules. All <a href="#Value">Value</a> types provided
+by this package satisfy the <a href="#Getter">Getter</a> interface, except the type used by <a href="#Func">Func</a>.
+</p>
+
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="Value" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go;l=360">Value</a> <a class="Documentation-idLink" href="#Value" title="Go to Value" aria-label="Go to Value">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type Value interface {
+<span id="Value.String" data-kind="method">	String() <a href="/builtin#string">string</a>
+</span><span id="Value.Set" data-kind="method">	Set(<a href="/builtin#string">string</a>) <a href="/builtin#error">error</a>
+</span>}</pre>
+    </div>
+  <p>Value is the interface to the dynamic value stored in a flag.
+(The default value is represented as a string.)
+</p><p>If a Value has an IsBoolFlag() bool method returning true,
+the command-line parser makes -name equivalent to -name=true
+rather than using the next command-line argument.
+</p><p>Set is called once, in command line order, for each flag present.
+The flag package may call the <a href="#String">String</a> method with a zero-valued receiver,
+such as a nil pointer.
+</p>
+<details tabindex="-1" id="example-Value" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-Value" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;flag&#34;
+	&#34;fmt&#34;
+	&#34;net/url&#34;
+)
+
+type URLValue struct {
+	URL *url.URL
+}
+
+func (v URLValue) String() string {
+	if v.URL != nil {
+		return v.URL.String()
+	}
+	return &#34;&#34;
+}
+
+func (v URLValue) Set(s string) error {
+	if u, err := url.Parse(s); err != nil {
+		return err
+	} else {
+		*v.URL = *u
+	}
+	return nil
+}
+
+var u = &amp;url.URL{}
+
+func main() {
+	fs := flag.NewFlagSet(&#34;ExampleValue&#34;, flag.ExitOnError)
+	fs.Var(&amp;URLValue{u}, &#34;url&#34;, &#34;URL to parse&#34;)
+
+	fs.Parse([]string{&#34;-url&#34;, &#34;https://golang.org/pkg/flag/&#34;})
+	fmt.Printf(`{scheme: %q, host: %q, path: %q}`, u.Scheme, u.Host, u.Path)
+
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">{scheme: &#34;https&#34;, host: &#34;golang.org&#34;, path: &#34;/pkg/flag/&#34;}
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+    </div></section></div> 
+
+
+
+
+
+
+
+      
+    </div>
+  </div>
+
+        
+      
+      
+        
+  <div class="UnitFiles js-unitFiles">
+    <h2 class="UnitFiles-title" id="section-sourcefiles">
+      <img class="go-Icon" height="24" width="24" src="/static/shared/icon/insert_drive_file_gm_grey_24dp.svg" alt="">
+      Source Files
+      <a class="UnitFiles-idLink" href="#section-sourcefiles" title="Go to Source Files" aria-label="Go to Source Files">¶</a>
+    </h2><div class="UnitFiles-titleLink">
+      <a href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag" target="_blank" rel="noopener">View all Source files</a>
+    </div><div>
+      <ul class="UnitFiles-fileList"><li><a href="https://cs.opensource.google/go/go/+/go1.26.3:src/flag/flag.go" target="_blank" rel="noopener" title="flag.go">flag.go</a></li></ul>
+    </div>
+  </div>
+
+      
+      
+    </div>
+  </div>
+  <div id="showInternal-description" hidden> Click to show internal directories. </div>
+  <div id="hideInternal-description" hidden> Click to hide internal directories. </div>
+</article>
+    <footer class="go-Main-footer"></footer>
+  </main>
+
+    
+  <footer class="go-Footer">
+    
+    <div class="go-Footer-links">
+      <div class="go-Footer-linkColumn">
+        <a href="https://go.dev/solutions" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          Why Go
+        </a>
+        <a href="https://go.dev/solutions#use-cases" class="go-Footer-link"
+            data-gtmc="footer link">
+          Use Cases
+        </a>
+        <a href="https://go.dev/solutions#case-studies" class="go-Footer-link"
+            data-gtmc="footer link">
+          Case Studies
+        </a>
+      </div>
+      <div class="go-Footer-linkColumn">
+        <a href="https://learn.go.dev/" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          Get Started
+        </a>
+        <a href="https://play.golang.org" class="go-Footer-link" data-gtmc="footer link">
+          Playground
+        </a>
+        <a href="https://tour.golang.org" class="go-Footer-link" data-gtmc="footer link">
+          Tour
+        </a>
+        <a href="https://stackoverflow.com/questions/tagged/go?tab=Newest" class="go-Footer-link"
+            data-gtmc="footer link">
+          Stack Overflow
+        </a>
+        <a href="https://go.dev/help" class="go-Footer-link"
+            data-gtmc="footer link">
+          Help
+        </a>
+      </div>
+      <div class="go-Footer-linkColumn">
+        <a href="https://pkg.go.dev" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          Packages
+        </a>
+        <a href="/std" class="go-Footer-link" data-gtmc="footer link">
+          Standard Library
+        </a>
+        <a href="/golang.org/x" class="go-Footer-link" data-gtmc="footer link">
+          Sub-repositories
+        </a>
+        <a href="https://pkg.go.dev/about" class="go-Footer-link" data-gtmc="footer link">
+          About Go Packages
+        </a>
+      </div>
+      <div class="go-Footer-linkColumn">
+        <a href="https://go.dev/project" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          About
+        </a>
+        <a href="https://go.dev/dl/" class="go-Footer-link" data-gtmc="footer link">Download</a>
+        <a href="https://go.dev/blog" class="go-Footer-link" data-gtmc="footer link">Blog</a>
+        <a href="https://github.com/golang/go/issues" class="go-Footer-link" data-gtmc="footer link">
+          Issue Tracker
+        </a>
+        <a href="https://go.dev/doc/devel/release.html" class="go-Footer-link"
+            data-gtmc="footer link">
+          Release Notes
+        </a>
+        <a href="https://go.dev/brand" class="go-Footer-link" data-gtmc="footer link">
+          Brand Guidelines
+        </a>
+        <a href="https://go.dev/conduct" class="go-Footer-link" data-gtmc="footer link">
+          Code of Conduct
+        </a>
+      </div>
+      <div class="go-Footer-linkColumn">
+        <a href="https://www.twitter.com/golang" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          Connect
+        </a>
+        <a href="https://www.twitter.com/golang" class="go-Footer-link" data-gtmc="footer link">
+          Twitter
+        </a>
+        <a href="https://github.com/golang" class="go-Footer-link" data-gtmc="footer link">GitHub</a>
+        <a href="https://invite.slack.golangbridge.org/" class="go-Footer-link"
+            data-gtmc="footer link">
+          Slack
+        </a>
+        <a href="https://reddit.com/r/golang" class="go-Footer-link" data-gtmc="footer link">
+          r/golang
+        </a>
+        <a href="https://www.meetup.com/pro/go" class="go-Footer-link" data-gtmc="footer link">
+          Meetup
+        </a>
+        <a href="https://golangweekly.com/" class="go-Footer-link" data-gtmc="footer link">
+          Golang Weekly
+        </a>
+      </div>
+    </div>
+    <div class="go-Footer-bottom">
+      <img class="go-Footer-gopher"  width="1431" height="901"
+          src="/static/shared/gopher/pilot-bust-1431x901.svg" alt="Gopher in flight goggles">
+      <ul class="go-Footer-listRow">
+        <li class="go-Footer-listItem">
+          <a href="https://go.dev/copyright" data-gtmc="footer link">Copyright</a>
+        </li>
+        <li class="go-Footer-listItem">
+          <a href="https://go.dev/tos" data-gtmc="footer link">Terms of Service</a>
+        </li>
+        <li class="go-Footer-listItem">
+          <a href="http://www.google.com/intl/en/policies/privacy/" data-gtmc="footer link"
+              target="_blank" rel="noopener">
+            Privacy Policy
+          </a>
+        </li>
+        <li class="go-Footer-listItem">
+          <a href="https://go.dev/s/pkgsite-feedback" target="_blank" rel="noopener"
+              data-gtmc="footer link">
+            Report an Issue
+          </a>
+        </li>
+        <li class="go-Footer-listItem">
+          <button class="go-Button go-Button--text go-Footer-toggleTheme js-toggleTheme" aria-label="Theme Toggle">
+            <img data-value="auto" class="go-Icon go-Icon--inverted" height="24" width="24" src="/static/shared/icon/brightness_6_gm_grey_24dp.svg" alt="System theme">
+            <img data-value="dark" class="go-Icon go-Icon--inverted" height="24" width="24" src="/static/shared/icon/brightness_2_gm_grey_24dp.svg" alt="Dark theme">
+            <img data-value="light" class="go-Icon go-Icon--inverted" height="24" width="24" src="/static/shared/icon/light_mode_gm_grey_24dp.svg" alt="Light theme">
+            <p> Theme Toggle </p>
+          </button>
+        </li>
+        <li class="go-Footer-listItem">
+          <button class="go-Button go-Button--text go-Footer-keyboard js-openShortcuts" aria-label="Shorcuts Modal">
+            <img class="go-Icon go-Icon--inverted" height="24" width="24" src="/static/shared/icon/keyboard_grey_24dp.svg" alt="">
+            <p> Shortcuts Modal </p>
+          </button>
+        </li>
+      </ul>
+      <a class="go-Footer-googleLogo" href="https://google.com" target="_blank"rel="noopener"
+          data-gtmc="footer link">
+        <img class="go-Footer-googleLogoImg" height="24" width="72"
+            src="/static/shared/logo/google-white.svg" alt="Google logo">
+      </a>
+    </div>
+  </footer>
+
+    
+  <dialog id="jump-to-modal" class="JumpDialog go-Modal go-Modal--md js-modal">
+    <form method="dialog" data-gmtc="jump to form" aria-label="Jump to Identifier">
+      <div class="Dialog-title go-Modal-header">
+        <h2>Jump to</h2>
+        <button
+          class="go-Button go-Button--inline"
+          type="button"
+          data-modal-close
+          data-gtmc="modal button"
+          aria-label="Close"
+        >
+          <img
+            class="go-Icon"
+            height="24"
+            width="24"
+            src="/static/shared/icon/close_gm_grey_24dp.svg"
+            alt=""
+          />
+        </button>
+      </div>
+      <div class="JumpDialog-filter">
+        <input class="JumpDialog-input go-Input" autocomplete="off" type="text">
+      </div>
+      <div class="JumpDialog-body go-Modal-body">
+        <div class="JumpDialog-list"></div>
+      </div>
+      <div class="go-Modal-actions">
+        <button class="go-Button" data-test-id="close-dialog">Close</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog class="ShortcutsDialog go-Modal go-Modal--sm js-modal">
+    <form method="dialog">
+      <div class="go-Modal-header">
+        <h2>Keyboard shortcuts</h2>
+        <button
+          class="go-Button go-Button--inline"
+          type="button"
+          data-modal-close
+          data-gtmc="modal button"
+          aria-label="Close"
+        >
+          <img
+            class="go-Icon"
+            height="24"
+            width="24"
+            src="/static/shared/icon/close_gm_grey_24dp.svg"
+            alt=""
+          />
+        </button>
+      </div>
+      <div class="go-Modal-body">
+        <table>
+          <tbody>
+            <tr><td class="ShortcutsDialog-key">
+              <strong>?</strong></td><td> : This menu</td>
+            </tr>
+            <tr><td class="ShortcutsDialog-key">
+              <strong>/</strong></td><td> : Search site</td>
+            </tr>
+            <tr><td class="ShortcutsDialog-key">
+              <strong>f</strong> or <strong>F</strong></td><td> : Jump to</td>
+            </tr>
+            <tr>
+              <td class="ShortcutsDialog-key"><strong>y</strong> or <strong>Y</strong></td>
+              <td> : Canonical URL</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="go-Modal-actions">
+        <button class="go-Button" data-test-id="close-dialog">Close</button>
+      </div>
+    </form>
+  </dialog>
+
+    
+      <section class="Cookie-notice js-cookieNotice">
+        <div>go.dev uses cookies from Google to deliver and enhance the quality of its services and to
+        analyze traffic. <a target=_blank href="https://policies.google.com/technologies/cookies">Learn more.</a></div>
+        <div><button class="go-Button">Okay</button></div>
+      </section>
+    
+    
+      <script>
+        // this will throw if the querySelector can’t find the element
+        const gtmId = document.querySelector('.js-gtmID').dataset.gtmid;
+        if (!gtmId) {
+          throw new Error('Google Tag Manager ID not found');
+        }
+        loadScript(`https://www.googletagmanager.com/gtm.js?id=${gtmId}`);
+      </script>
+      <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W8MVQXG"
+                height="0" width="0" style="display:none;visibility:hidden">
+        </iframe>
+      </noscript>
+    
+    
+  
+  <div class="js-canonicalURLPath" data-canonical-url-path="/flag@go1.26.3" hidden></div>
+  <div class="js-playgroundVars" data-modulepath="std" data-version="v1.26.3" hidden></div>
+  <script>
+    loadScript('/static/frontend/unit/main/main.js')
+  </script>
+
+  <script>
+    loadScript('/static/frontend/unit/unit.js')
+  </script>
+
+  </body>
+</html>

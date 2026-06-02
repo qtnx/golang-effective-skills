@@ -1,0 +1,462 @@
+---
+source_name: "External Linked Documentation"
+source_url: "https://dave.cheney.net/2014/10/17/functional-options-for-friendly-apis"
+retrieved_at: "2026-06-02T06:41:31.152764+00:00"
+content_type: "text/html; charset=UTF-8"
+truncated: false
+insecure_tls_fallback: true
+---
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Functional options for friendly APIs | Dave Cheney</title>
+<link rel="profile" href="https://gmpg.org/xfn/11" />
+<link rel="pingback" href="https://dave.cheney.net/xmlrpc.php">
+<meta name='robots' content='max-image-preview:large' />
+<link rel="alternate" type="application/rss+xml" title="Dave Cheney &raquo; Feed" href="https://dave.cheney.net/feed" />
+<link rel="alternate" type="application/rss+xml" title="Dave Cheney &raquo; Comments Feed" href="https://dave.cheney.net/comments/feed" />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://dave.cheney.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdave.cheney.net%2F2014%2F10%2F17%2Ffunctional-options-for-friendly-apis" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://dave.cheney.net/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fdave.cheney.net%2F2014%2F10%2F17%2Ffunctional-options-for-friendly-apis&#038;format=xml" />
+<style id="wp-img-auto-sizes-contain-inline-css">
+img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
+/*# sourceURL=wp-img-auto-sizes-contain-inline-css */
+</style>
+<style id="wp-emoji-styles-inline-css">
+
+	img.wp-smiley, img.emoji {
+		display: inline !important;
+		border: none !important;
+		box-shadow: none !important;
+		height: 1em !important;
+		width: 1em !important;
+		margin: 0 0.07em !important;
+		vertical-align: -0.1em !important;
+		background: none !important;
+		padding: 0 !important;
+	}
+/*# sourceURL=wp-emoji-styles-inline-css */
+</style>
+<style id="wp-block-library-inline-css">
+:root{--wp-block-synced-color:#7a00df;--wp-block-synced-color--rgb:122,0,223;--wp-bound-block-color:var(--wp-block-synced-color);--wp-editor-canvas-background:#ddd;--wp-admin-theme-color:#007cba;--wp-admin-theme-color--rgb:0,124,186;--wp-admin-theme-color-darker-10:#006ba1;--wp-admin-theme-color-darker-10--rgb:0,107,160.5;--wp-admin-theme-color-darker-20:#005a87;--wp-admin-theme-color-darker-20--rgb:0,90,135;--wp-admin-border-width-focus:2px}@media (min-resolution:192dpi){:root{--wp-admin-border-width-focus:1.5px}}.wp-element-button{cursor:pointer}:root .has-very-light-gray-background-color{background-color:#eee}:root .has-very-dark-gray-background-color{background-color:#313131}:root .has-very-light-gray-color{color:#eee}:root .has-very-dark-gray-color{color:#313131}:root .has-vivid-green-cyan-to-vivid-cyan-blue-gradient-background{background:linear-gradient(135deg,#00d084,#0693e3)}:root .has-purple-crush-gradient-background{background:linear-gradient(135deg,#34e2e4,#4721fb 50%,#ab1dfe)}:root .has-hazy-dawn-gradient-background{background:linear-gradient(135deg,#faaca8,#dad0ec)}:root .has-subdued-olive-gradient-background{background:linear-gradient(135deg,#fafae1,#67a671)}:root .has-atomic-cream-gradient-background{background:linear-gradient(135deg,#fdd79a,#004a59)}:root .has-nightshade-gradient-background{background:linear-gradient(135deg,#330968,#31cdcf)}:root .has-midnight-gradient-background{background:linear-gradient(135deg,#020381,#2874fc)}:root{--wp--preset--font-size--normal:16px;--wp--preset--font-size--huge:42px}.has-regular-font-size{font-size:1em}.has-larger-font-size{font-size:2.625em}.has-normal-font-size{font-size:var(--wp--preset--font-size--normal)}.has-huge-font-size{font-size:var(--wp--preset--font-size--huge)}:root .has-text-align-center{text-align:center}:root .has-text-align-left{text-align:left}:root .has-text-align-right{text-align:right}.has-fit-text{white-space:nowrap!important}#end-resizable-editor-section{display:none}.aligncenter{clear:both}.items-justified-left{justify-content:flex-start}.items-justified-center{justify-content:center}.items-justified-right{justify-content:flex-end}.items-justified-space-between{justify-content:space-between}.screen-reader-text{word-wrap:normal!important;border:0;clip-path:inset(50%);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.screen-reader-text:focus{background-color:#ddd;clip-path:none;color:#444;display:block;font-size:1em;height:auto;left:5px;line-height:normal;padding:15px 23px 14px;text-decoration:none;top:5px;width:auto;z-index:100000}html :where(.has-border-color){border-style:solid}html :where([style*=border-color]){border-style:solid}html :where([style*=border-top-color]){border-top-style:solid}html :where([style*=border-right-color]){border-right-style:solid}html :where([style*=border-bottom-color]){border-bottom-style:solid}html :where([style*=border-left-color]){border-left-style:solid}html :where([style*=border-width]){border-style:solid}html :where([style*=border-top-width]){border-top-style:solid}html :where([style*=border-right-width]){border-right-style:solid}html :where([style*=border-bottom-width]){border-bottom-style:solid}html :where([style*=border-left-width]){border-left-style:solid}html :where(img[class*=wp-image-]){height:auto;max-width:100%}:where(figure){margin:0 0 1em}html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:var(--wp-admin--admin-bar--height,0px)}@media screen and (max-width:600px){html :where(.is-position-sticky){--wp-admin--admin-bar--position-offset:0px}}
+
+/*# sourceURL=/wp-includes/css/dist/block-library/common.min.css */
+</style>
+<style id="classic-theme-styles-inline-css">
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+/*# sourceURL=/wp-includes/css/classic-themes.min.css */
+</style>
+
+<style id="global-styles-inline-css">
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #fff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--color--blue: #21759b;--wp--preset--color--dark-gray: #444;--wp--preset--color--medium-gray: #9f9f9f;--wp--preset--color--light-gray: #e6e6e6;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgb(6,147,227) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgb(252,185,0) 0%,rgb(255,105,0) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgb(255,105,0) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgb(255, 255, 255), 6px 6px rgb(0, 0, 0);--wp--preset--shadow--crisp: 6px 6px 0px rgb(0, 0, 0);}:where(body) { margin: 0; }:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}body{padding-top: 0px;padding-right: 0px;padding-bottom: 0px;padding-left: 0px;}:root :where(.wp-element-button, .wp-block-button__link){background-color: #32373c;border-width: 0;color: #fff;font-family: inherit;font-size: inherit;font-style: inherit;font-weight: inherit;letter-spacing: inherit;line-height: inherit;padding-top: calc(0.667em + 2px);padding-right: calc(1.333em + 2px);padding-bottom: calc(0.667em + 2px);padding-left: calc(1.333em + 2px);text-decoration: none;text-transform: inherit;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-blue-color{color: var(--wp--preset--color--blue) !important;}.has-dark-gray-color{color: var(--wp--preset--color--dark-gray) !important;}.has-medium-gray-color{color: var(--wp--preset--color--medium-gray) !important;}.has-light-gray-color{color: var(--wp--preset--color--light-gray) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-blue-background-color{background-color: var(--wp--preset--color--blue) !important;}.has-dark-gray-background-color{background-color: var(--wp--preset--color--dark-gray) !important;}.has-medium-gray-background-color{background-color: var(--wp--preset--color--medium-gray) !important;}.has-light-gray-background-color{background-color: var(--wp--preset--color--light-gray) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-blue-border-color{border-color: var(--wp--preset--color--blue) !important;}.has-dark-gray-border-color{border-color: var(--wp--preset--color--dark-gray) !important;}.has-medium-gray-border-color{border-color: var(--wp--preset--color--medium-gray) !important;}.has-light-gray-border-color{border-color: var(--wp--preset--color--light-gray) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+/*# sourceURL=global-styles-inline-css */
+</style>
+
+<link rel='stylesheet' id='twentytwelve-fonts-css' href='https://dave.cheney.net/wp-content/themes/twentytwelve/fonts/font-open-sans.css?ver=20230328' media='all' />
+<link rel='stylesheet' id='twentytwelve-style-css' href='https://dave.cheney.net/wp-content/themes/twentytwelve/style.css?ver=20260520' media='all' />
+<link rel='stylesheet' id='twentytwelve-block-style-css' href='https://dave.cheney.net/wp-content/themes/twentytwelve/css/blocks.css?ver=20251031' media='all' />
+<script id="jquery-core-js" src="https://dave.cheney.net/wp-includes/js/jquery/jquery.min.js?ver=3.7.1"></script>
+<script id="jquery-migrate-js" src="https://dave.cheney.net/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1"></script>
+<script data-wp-strategy="defer" defer id="twentytwelve-navigation-js" src="https://dave.cheney.net/wp-content/themes/twentytwelve/js/navigation.js?ver=20250303"></script>
+<link rel="https://api.w.org/" href="https://dave.cheney.net/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="https://dave.cheney.net/wp-json/wp/v2/posts/1426" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://dave.cheney.net/xmlrpc.php?rsd" />
+<meta name="generator" content="WordPress 7.0" />
+<link rel="canonical" href="https://dave.cheney.net/2014/10/17/functional-options-for-friendly-apis" />
+<link rel='shortlink' href='https://dave.cheney.net/?p=1426' />
+<meta property="fediverse:creator" name="fediverse:creator" content="dfc@dave.cheney.net" />
+
+<link rel="alternate" title="ActivityPub (JSON)" type="application/activity+json" href="https://dave.cheney.net/2014/10/17/functional-options-for-friendly-apis" />
+<style id="wp-custom-css">
+.wp-block-code code {
+    display: block;
+    white-space: pre;
+    overflow-wrap: break-word;
+}
+
+.wp-block-preformatted {
+    white-space: pre;
+}
+</style>
+<link rel='stylesheet' id='yarppRelatedCss-css' href='https://dave.cheney.net/wp-content/plugins/yet-another-related-posts-plugin/style/related.css?ver=5.30.11' media='all' />
+
+</head>
+
+<body class="wp-singular post-template-default single single-post postid-1426 single-format-standard wp-embed-responsive wp-theme-twentytwelve custom-font-enabled single-author">
+<div id="page" class="hfeed site">
+	<a class="screen-reader-text skip-link" href="#content">Skip to content</a>
+	<header id="masthead" class="site-header">
+		<hgroup>
+							<h1 class="site-title"><a href="https://dave.cheney.net/" rel="home" >Dave Cheney</a></h1>
+								<h2 class="site-description">The acme of foolishness</h2>
+					</hgroup>
+
+		<nav id="site-navigation" class="main-navigation">
+			<button class="menu-toggle">Menu</button>
+			<div class="menu-topnav-container"><ul id="menu-topnav" class="nav-menu"><li id="menu-item-3737" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3737"><a href="https://dave.cheney.net/high-performance-go">High Performance Go</a></li>
+<li id="menu-item-3652" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3652"><a href="https://dave.cheney.net/practical-go">Practical Go</a></li>
+<li id="menu-item-4312" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4312"><a href="https://dave.cheney.net/internets-of-interest">Internets of Interest</a></li>
+<li id="menu-item-1818" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-1818"><a href="https://dave.cheney.net/about">About</a>
+<ul class="sub-menu">
+	<li id="menu-item-3744" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3744"><a href="/feed/atom">RSS</a></li>
+</ul>
+</li>
+</ul></div>		</nav><!-- #site-navigation -->
+
+			</header><!-- #masthead -->
+
+	<div id="main" class="wrapper">
+
+	<div id="primary" class="site-content">
+		<div id="content" role="main">
+
+			
+				
+	<article id="post-1426" class="post-1426 post type-post status-publish format-standard hentry category-golang category-programming-2 tag-dotgo tag-functional-options">
+				<header class="entry-header">
+			
+						<h1 class="entry-title">Functional options for friendly APIs</h1>
+								</header><!-- .entry-header -->
+
+				<div class="entry-content">
+			<p>What follows is the text of my presentation, <q>Functional options for friendly APIs</q> that I gave at <a href="http://www.dotgo.eu/">dotGo</a> this year. It has been edited slightly for readability.</p>
+<p>I want to thank Kelsey Hightower, Bill Kennedy, Jeremy Saenz, and Brian Ketelsen, for their assistance in preparing this talk.</p>
+<hr />
+<p><a href="https://dave.cheney.net/wp-content/uploads/2014/10/Screenshot-from-2014-10-15-032414.png"><img fetchpriority="high" decoding="async" class="aligncenter wp-image-1429 size-full" src="https://dave.cheney.net/wp-content/uploads/2014/10/Screenshot-from-2014-10-15-032414.png" alt="Screenshot from 2014-10-15 03:24:14" width="961" height="541" /></a></p>
+<p>I want to begin my talk with a story.</p>
+<p>It is late 2014, your company is launching a revolutionary new distributed social network. Wisely, your team has chosen Go as the language for this product.</p>
+<p>You have been tasked with writing the crucial server component. Possibly it looks a little like this.</p>
+<p><a href="https://dave.cheney.net/wp-content/uploads/2014/10/Screenshot-from-2014-10-17-212315.png"><img decoding="async" class="aligncenter wp-image-1451 size-full" src="https://dave.cheney.net/wp-content/uploads/2014/10/Screenshot-from-2014-10-17-212315.png" alt="Screenshot from 2014-10-17 21:23:15" width="881" height="498" /></a></p>
+<p>There are some unexported fields that need to be initialised, and a goroutine must be started to service incoming requests.</p>
+<p>The package has a simple API, it is pretty easy to use.</p>
+<p>But, there is a problem. Soon after you announce your first beta release, the feature requests start to roll in.</p>
+<p><a href="https://dave.cheney.net/wp-content/uploads/2014/10/Screenshot-from-2014-10-15-032706.png"><img decoding="async" class="aligncenter wp-image-1431 size-full" src="https://dave.cheney.net/wp-content/uploads/2014/10/Screenshot-from-2014-10-15-032706.png" alt="Screenshot from 2014-10-15 03:27:06" width="963" height="542" /></a></p>
+<p>Mobile clients are often slow to respond, or stop responding altogether—you’ll need to add support for disconnecting these slow clients.</p>
+<p>In this climate of heightened security awareness, your bug tracker starts to fill with demands to support secure connections.</p>
+<p>Then, you get a report from a user who is running your server on a very small VPS. They need a way to limit the number of simultaneous clients.</p>
+<p>Next is the request to rate limit concurrent connections from a group of users being targeted by a botnet.</p>
+<p>&#8230; and on it goes.</p>
+<p>Now, you need to change your API to incorporate all these feature requests.</p>
+<p><a href="https://dave.cheney.net/wp-content/uploads/2014/10/Screenshot-from-2014-10-15-032801.png"><img loading="lazy" decoding="async" class="aligncenter wp-image-1432 size-full" src="https://dave.cheney.net/wp-content/uploads/2014/10/Screenshot-from-2014-10-15-032801.png" alt="Screenshot from 2014-10-15 03:28:01" width="963" height="541" /></a></p>
+<p>It’s kind of a sign that things are not going well when the function won’t easily fit on a slide.</p>
+<p>Show of hands, who has used an API like this ?</p>
+<p>Who has written an API like this ?</p>
+<p>Who has had their code break while depending on an API like this ?</p>
+<p>Obviously this solution is cumbersome and brittle. It also isn&#8217;t very discoverable.</p>
+<p>Newcomers to your package have no idea which parameters are optional, and which are mandatory.</p>
+<p>For example, if I want to create an instance of the Server for testing, do I need to provide a real TLS certificate ? If not, what do I provide instead ?</p>
+<p>If I don’t care about <code>maxconns</code>, or <code>maxconcurrent</code> what value should I use ? Do I use zero ? Zero sounds reasonable, but depending on how the feature was implemented, that might limit you to zero total concurrent connections.</p>
+<p>It appears to me, that writing an API like this can be easy; as long as you make it the caller’s responsibility to use it correctly.</p>
+<p>While this example could be a considered an exaggeration, maliciously constructed and compounded by poor documentation, I believe that it demonstrates a real issue with ornate, brittle APIs such as this.</p>
+<p>So now that I&#8217;ve defined the problem, lets look at some solutions.</p>
+<p><a href="https://dave.cheney.net/wp-content/uploads/2014/10/Screenshot-from-2014-10-15-032912.png"><img loading="lazy" decoding="async" class="aligncenter wp-image-1433 size-full" src="https://dave.cheney.net/wp-content/uploads/2014/10/Screenshot-from-2014-10-15-032912.png" alt="Screenshot from 2014-10-15 03:29:12" width="964" height="544" /></a></p>
+<p>Rather than trying to provide one single function which must cater for every permutation, a solution might be to create a set of functions.</p>
+<p>With this approach, when callers need a secure server they can call the TLS variant.</p>
+<p>When they need to establish a maximum duration for idle connections, they can use the variant that takes a timeout.</p>
+<p>Unfortunately, as you can see, providing every possible permutation can quickly become overwhelming.</p>
+<p>Let’s move on to others way of making your API configurable.</p>
+<p><a href="https://dave.cheney.net/wp-content/uploads/2014/10/Screenshot-from-2014-10-15-033016.png"><img loading="lazy" decoding="async" class="aligncenter wp-image-1434 size-full" src="https://dave.cheney.net/wp-content/uploads/2014/10/Screenshot-from-2014-10-15-033016.png" alt="Screenshot from 2014-10-15 03:30:16" width="959" height="543" /></a></p>
+<p>A very common solution is to use a configuration struct.</p>
+<p>This has some advantages.</p>
+<p>Using this approach, the configuration struct can grow over time as new options are added, while the public API for creating a server itself remains unchanged.</p>
+<p>This method can lead to better documentation.</p>
+<p>What was once a massive comment block on the <code>NewServer</code> function, becomes a nicely documented struct.</p>
+<p>Potentially it also enables the callers to use the zero value to signify they they want the default behaviour for a particular configuration option.</p>
+<p><a href="https://dave.cheney.net/wp-content/uploads/2014/10/Screenshot-from-2014-10-15-033123.png"><img loading="lazy" decoding="async" class="aligncenter wp-image-1435 size-full" src="https://dave.cheney.net/wp-content/uploads/2014/10/Screenshot-from-2014-10-15-033123.png" alt="Screenshot from 2014-10-15 03:31:23" width="962" height="540" /></a></p>
+<p>However, this pattern is not perfect.</p>
+<p>It has trouble with defaults, especially if the zero value has a well understood meaning.</p>
+<p>For example, in the config structure shown here, when <code>Port</code> is not provided, <code>NewServer</code> will return a <code>*Server</code> for listening on port 8080.</p>
+<p>But this has the downside that you can no longer explicitly set <code>Port</code> to 0 and have the operating system automatically choose a free port, because that explicit 0 is indistinguishable from the fields’ zero value.</p>
+<p><a href="https://dave.cheney.net/wp-content/uploads/2014/10/Screenshot-from-2014-10-15-033220.png"><img loading="lazy" decoding="async" class="aligncenter wp-image-1436 size-full" src="https://dave.cheney.net/wp-content/uploads/2014/10/Screenshot-from-2014-10-15-033220.png" alt="Screenshot from 2014-10-15 03:32:20" width="962" height="542" /></a></p>
+<p>Most of the time, users of your API will be expecting to use its default behaviour.</p>
+<p>Even though they do not intend to change any of the configuration parameters, those callers are still required to pass <em>something</em> for that second argument.</p>
+<p>So, when people read your tests or your example code, trying to figure out how to use your package, they’ll see this magic empty value, and it’ll become enshrined in the collective unconsciousness.</p>
+<p>[and] to me, this just feel wrong.</p>
+<p>Why should users of your API be required to construct an empty value, simply to satisfy the signature of the function ?</p>
+<p><a href="https://dave.cheney.net/wp-content/uploads/2014/10/Screenshot-from-2014-10-15-033508.png"><img loading="lazy" decoding="async" class="aligncenter wp-image-1437 size-full" src="https://dave.cheney.net/wp-content/uploads/2014/10/Screenshot-from-2014-10-15-033508.png" alt="Screenshot from 2014-10-15 03:35:08" width="964" height="540" /></a></p>
+<p>A common solution to this empty value problem is to pass a pointer to the value instead, thereby enabling callers to use nil rather than constructing an empty value.</p>
+<p>In my opinion this pattern has all the problems of the previous example, and it adds a few more.</p>
+<p>We still have to pass <em>something</em> for this function’s second argument, but now this value could be <code>nil</code>, and most of the time <em>will</em> be <code>nil</code> for those wanting the default behaviour.</p>
+<p>It raises the question, is there a difference between passing <code>nil</code>, and passing a pointer to an empty value ?</p>
+<p>More concerning to both the package’s author, and its callers, is the Server and the caller can now share a reference to the same configuration value. Which gives rise to questions of what happens if this value is mutated after being passed to the <code>NewServer</code> function ?</p>
+<p>I believe that well written APIs should not require callers to create dummy values to satisfy those rarer use cases.</p>
+<p>I believe that we, as Go programmers, should work hard to ensure that nil is never a parameter that needs to be passed to any public function.</p>
+<p>And when we do want to pass configuration information, it should be as self explanatory and as expressive as possible.</p>
+<p>So now with these points in mind, I want to talk about what I believe are some better solutions.</p>
+<p><a href="https://dave.cheney.net/wp-content/uploads/2014/10/Screenshot-from-2014-10-15-033605.png"><img loading="lazy" decoding="async" class="aligncenter wp-image-1438 size-full" src="https://dave.cheney.net/wp-content/uploads/2014/10/Screenshot-from-2014-10-15-033605.png" alt="Screenshot from 2014-10-15 03:36:05" width="963" height="545" /></a></p>
+<p>To remove the problem of that mandatory, yet frequently unused, configuration value, we can change the <code>NewServer</code> function to accept a variable number of arguments.</p>
+<p>Instead of passing <code>nil</code>, or some zero value, as a signal that you want the defaults, the variadic nature of the function means you don’t need to pass <em>anything at all</em>.</p>
+<p>And in my book this solves two big problems.</p>
+<p>First, the invocation for the default behaviour becomes as concise as possible.</p>
+<p>Secondly, <code>NewServer</code> now only accepts <code>Config</code> values, not pointers to config values, removing <code>nil</code> as a possible argument, and ensuring that the caller cannot retain a reference to the server&#8217;s internal configuration.</p>
+<p>I think this is a big improvement.</p>
+<p>But if we’re being pedantic, it still has a few problems.</p>
+<p>Obviously the expectation is for you to provide at most one <code>Config</code> value. But as the function signature is variadic, the implementation has to be written to cope with a caller passing multiple, possibly contradictory, configuration structs.</p>
+<p>Is there a way to use a variadic function signature <em>and</em> improve the expressiveness of configuration parameters when needed ?</p>
+<p>I think that there is.</p>
+<p><a href="https://dave.cheney.net/wp-content/uploads/2014/10/Screenshot-from-2014-10-15-033713.png"><img loading="lazy" decoding="async" class="aligncenter wp-image-1439 size-full" src="https://dave.cheney.net/wp-content/uploads/2014/10/Screenshot-from-2014-10-15-033713.png" alt="Screenshot from 2014-10-15 03:37:13" width="962" height="542" /></a></p>
+<p>At this point I want to make it clear that that the idea of <q>functional options</q> comes from a blog post titled. <q><a href="http://commandcenter.blogspot.com.au/2014/01/self-referential-functions-and-design.html">Self referential functions and design</a></q> by Rob Pike, published in January this year. I encourage everyone here to read it.</p>
+<p>The key difference from the previous example, and in fact all the examples so far, is customisation of the Server is performed not with configuration parameters stored in a structure, but with <em>functions</em> which operate on the <code>Server</code> value itself.</p>
+<p>As before, the variadic nature of the function’s signature gives us the compact behaviour for the default case.</p>
+<p>When configuration is required, I pass to <code>NewServer</code> functions which operate on the <code>Server</code> value as an argument.</p>
+<p>The <code>timeout</code> function simply changes the <code>timeout</code> field of any <code>*Server</code> value passed to it.</p>
+<p>The <code>tls</code> function is a little more complicated. It takes a <code>*Server</code> value and wraps the original <code>listener</code> value inside a <code>tls.Listener</code>, thereby transforming it into a secure listener.</p>
+<p><a href="https://dave.cheney.net/wp-content/uploads/2014/10/Screenshot-from-2014-10-15-033937.png"><img loading="lazy" decoding="async" class="aligncenter wp-image-1440 size-full" src="https://dave.cheney.net/wp-content/uploads/2014/10/Screenshot-from-2014-10-15-033937.png" alt="Screenshot from 2014-10-15 03:39:37" width="959" height="538" /></a></p>
+<p>Inside <code>NewServer</code>, applying these options is straightforward.</p>
+<p>After opening a <code>net.Listener</code>, we declare a <code>Server</code> instance using that <code>listener</code>.</p>
+<p>Then, for each option function provided to <code>NewServer</code>, we call that function, passing in a pointer to the <code>Server</code> value that was just declared.</p>
+<p>Obviously, if no option functions were provided, there is no work to do in this loop and so <code>srv</code> is unchanged.</p>
+<p>And that’s all there is too it.</p>
+<p>Using this pattern we can make an API that has</p>
+<ul>
+<li>sensible defaults</li>
+<li>is highly configurable</li>
+<li>can grow over time</li>
+<li>self documenting</li>
+<li>safe for newcomers</li>
+<li>and never requires nil or an empty value to keep the compiler happy</li>
+</ul>
+<p>In the few minutes I have remaining I’d like to show you how I improved one of my own packages by converting it to use functional options.</p>
+<p><a href="https://dave.cheney.net/wp-content/uploads/2014/10/Screenshot-from-2014-10-15-034029.png"><img loading="lazy" decoding="async" class="aligncenter wp-image-1441 size-full" src="https://dave.cheney.net/wp-content/uploads/2014/10/Screenshot-from-2014-10-15-034029.png" alt="Screenshot from 2014-10-15 03:40:29" width="962" height="541" /></a></p>
+<p>I&#8217;m an amateur hardware hacker, and many of the devices I work with use a USB serial interface. A so a few months ago I wrote a <a href="https://github.com/pkg/term">terminal handling package</a>.</p>
+<p>In the prior version of this package, to open a serial device, change the speed and set the terminal to raw mode, you’d have to do each of these steps individually, checking the error at every stage.</p>
+<p>Even though this package is trying to provide a friendlier interface on an even lower level interface, it still left too many procedural warts for the user.</p>
+<p>Let’s take a look at the package after applying the functional options pattern.</p>
+<p><a href="https://dave.cheney.net/wp-content/uploads/2014/10/Screenshot-from-2014-10-15-034321.png"><img loading="lazy" decoding="async" class="aligncenter wp-image-1442 size-full" src="https://dave.cheney.net/wp-content/uploads/2014/10/Screenshot-from-2014-10-15-034321.png" alt="Screenshot from 2014-10-15 03:43:21" width="961" height="542" /></a></p>
+<p>By converting the <code>Open</code> function to use a variadic parameter of function values, we get a much cleaner API.</p>
+<p>In fact, it’s not just the <code>Open</code> API that improves, the grind of setting an option, checking an error, setting the next option, checking the error, that is gone as well.</p>
+<p>The default case, still just takes one argument, the name of the device.</p>
+<p>For more complicated use cases, configuration functions, defined in the <code>term</code> package, are passed to the <code>Open</code> function and are applied in order before returning.</p>
+<p>This is the same pattern we saw in the previous example, the only thing that is different is rather than being anonymous, these are public functions. In all other respects their operation is identical.</p>
+<p>We’ll take a look at how <code>Speed</code>, <code>RawMode</code>, and <code>Open</code>, are implemented on the next slide.</p>
+<p><a href="https://dave.cheney.net/wp-content/uploads/2014/10/Screenshot-from-2014-10-15-034413.png"><img loading="lazy" decoding="async" class="aligncenter wp-image-1443 size-full" src="https://dave.cheney.net/wp-content/uploads/2014/10/Screenshot-from-2014-10-15-034413.png" alt="Screenshot from 2014-10-15 03:44:13" width="961" height="541" /></a></p>
+<p><code>RawMode</code> is the easiest to explain. It just a function whose signature is compatible with Open.</p>
+<p>Because <code>RawMode</code> is declared in the same package as <code>Term</code>, it can access the private fields and call private methods declared on the <code>Term</code> type, in this case calling the private <code>setRawMode</code> helper.</p>
+<p><code>Speed</code> is also just a regular function, however it does not match the signature <code>Open</code> requires. This is because <code>Speed</code> itself requires an argument; the baud rate.</p>
+<p><code>Speed</code> returns an anonymous function which is compatible with the <code>Open</code> function’s signature, which closes over the baud rate parameter, capturing it for later when the function is applied.</p>
+<p>Inside the call to <code>Open</code>, we first open the terminal device with the <code>openTerm</code> helper.</p>
+<p>Next, just as before, we range over the slice of options functions, calling each one in turn passing in <code>t</code>, the pointer to our <code>term.Term</code> value.</p>
+<p>If there is an error applying any function then we stop at that point, clean up and return the error to the caller.</p>
+<p>Otherwise, returning from the function, we&#8217;ve now created and configured a Term value to the caller&#8217;s specifications.</p>
+<p><a href="https://dave.cheney.net/wp-content/uploads/2014/10/Screenshot-from-2014-10-15-034503.png"><img loading="lazy" decoding="async" class="aligncenter wp-image-1444 size-full" src="https://dave.cheney.net/wp-content/uploads/2014/10/Screenshot-from-2014-10-15-034503.png" alt="Screenshot from 2014-10-15 03:45:03" width="962" height="540" /></a></p>
+<p>In summary</p>
+<ul>
+<li>Functional options let you write APIs that can grow over time.</li>
+<li>They enable the default use case to be the simplest.</li>
+<li>They provide meaningful configuration parameters.</li>
+<li>Finally they give you access to the entire power of the language to initialize complex values.</li>
+</ul>
+<p>In this talk, I have presented many of the existing configuration patterns, those considered idiomatic and commonly in use today, and at every stage asked questions like:</p>
+<ul>
+<li>Can this be made simpler ?</li>
+<li>Is that parameter necessary ?</li>
+<li>Does the signature of this function make it easy for it to be used safely ?</li>
+<li>Does the API contain traps or confusing misdirection that will frustrate ?</li>
+</ul>
+<p>I hope I have inspired you to do the same. To revisit code that you have written in the past and pose yourself these same questions and thereby improve it.</p>
+<p><a href="https://dave.cheney.net/wp-content/uploads/2014/10/Screenshot-from-2014-10-15-034543.png"><img loading="lazy" decoding="async" class="aligncenter wp-image-1445 size-full" src="https://dave.cheney.net/wp-content/uploads/2014/10/Screenshot-from-2014-10-15-034543.png" alt="Screenshot from 2014-10-15 03:45:43" width="959" height="542" /></a></p>
+<p>Thank you.</p>
+<div class='yarpp yarpp-related yarpp-related-website yarpp-template-list'>
+<!-- YARPP List -->
+<h3>Related posts:</h3><ol>
+<li><a href="https://dave.cheney.net/2013/09/07/how-to-include-c-code-in-your-go-package" rel="bookmark" title="How to include C code in your Go package">How to include C code in your Go package</a></li>
+<li><a href="https://dave.cheney.net/2016/11/13/do-not-fear-first-class-functions" rel="bookmark" title="Do not fear first class functions">Do not fear first class functions</a></li>
+<li><a href="https://dave.cheney.net/2014/01/21/using-go-test-build-and-install" rel="bookmark" title="Using go test, build and install">Using go test, build and install</a></li>
+<li><a href="https://dave.cheney.net/2014/10/22/simple-profiling-package-moved-updated" rel="bookmark" title="Simple profiling package moved, updated">Simple profiling package moved, updated</a></li>
+</ol>
+</div>
+					</div><!-- .entry-content -->
+		
+		<footer class="entry-meta">
+			This entry was posted in <a href="https://dave.cheney.net/category/golang" rel="category tag">Go</a>, <a href="https://dave.cheney.net/category/programming-2" rel="category tag">Programming</a> and tagged <a href="https://dave.cheney.net/tag/dotgo" rel="tag">dotgo</a>, <a href="https://dave.cheney.net/tag/functional-options" rel="tag">functional options</a> on <a href="https://dave.cheney.net/2014/10/17/functional-options-for-friendly-apis" title="1:14 am" rel="bookmark"><time class="entry-date" datetime="2014-10-17T01:14:20+11:00">October 17, 2014</time></a><span class="by-author"> by <span class="author vcard"><a class="url fn n" href="https://dave.cheney.net/author/davecheney" title="View all posts by Dave Cheney" rel="author">Dave Cheney</a></span></span>.								</footer><!-- .entry-meta -->
+	</article><!-- #post -->
+
+				<nav class="nav-single">
+					<h3 class="assistive-text">Post navigation</h3>
+					<span class="nav-previous"><a href="https://dave.cheney.net/2014/10/04/that-trailing-comma" rel="prev"><span class="meta-nav">&larr;</span> That trailing comma</a></span>
+					<span class="nav-next"><a href="https://dave.cheney.net/2014/10/22/simple-profiling-package-moved-updated" rel="next">Simple profiling package moved, updated <span class="meta-nav">&rarr;</span></a></span>
+				</nav><!-- .nav-single -->
+
+				
+<div id="comments" class="comments-area">
+
+	
+	
+	
+</div><!-- #comments .comments-area -->
+
+			
+		</div><!-- #content -->
+	</div><!-- #primary -->
+
+
+			<div id="secondary" class="widget-area" role="complementary">
+			<aside id="linkcat-30" class="widget widget_links"><h3 class="widget-title">Elsewhere</h3>
+	<ul class='xoxo blogroll'>
+<li><a href="https://www.linkedin.com/in/davecheney" rel="me" target="_blank">LinkedIn</a></li>
+<li><a href="http://serverfault.com/users/301/dave-cheney" rel="me">Serverfault</a></li>
+<li><a href="http://stackoverflow.com/users/6449/dave-cheney" rel="me">Stackoverflow</a></li>
+
+	</ul>
+</aside>
+<aside id="categories-2" class="widget widget_categories"><h3 class="widget-title">Categories</h3>
+			<ul>
+					<li class="cat-item cat-item-43"><a href="https://dave.cheney.net/category/economy">Economy</a>
+</li>
+	<li class="cat-item cat-item-29"><a href="https://dave.cheney.net/category/golang">Go</a>
+</li>
+	<li class="cat-item cat-item-87"><a href="https://dave.cheney.net/category/hardware-hacking">Hardware Hacking</a>
+</li>
+	<li class="cat-item cat-item-46"><a href="https://dave.cheney.net/category/history">History</a>
+</li>
+	<li class="cat-item cat-item-257"><a href="https://dave.cheney.net/category/internets-of-interest">Internets of interest</a>
+</li>
+	<li class="cat-item cat-item-44"><a href="https://dave.cheney.net/category/photography">Photography</a>
+</li>
+	<li class="cat-item cat-item-36"><a href="https://dave.cheney.net/category/programming-2">Programming</a>
+</li>
+	<li class="cat-item cat-item-165"><a href="https://dave.cheney.net/category/retrochallenge">Retrochallenge</a>
+</li>
+	<li class="cat-item cat-item-114"><a href="https://dave.cheney.net/category/small-ideas">Small ideas</a>
+</li>
+	<li class="cat-item cat-item-1"><a href="https://dave.cheney.net/category/uncategorized">Uncategorized</a>
+</li>
+	<li class="cat-item cat-item-28"><a href="https://dave.cheney.net/category/useless-trivia">Useless Trivia</a>
+</li>
+			</ul>
+
+			</aside><aside id="archives-4" class="widget widget_archive"><h3 class="widget-title">Archives</h3>
+			<ul>
+					<li><a href='https://dave.cheney.net/2025/12'>December 2025</a></li>
+	<li><a href='https://dave.cheney.net/2025/11'>November 2025</a></li>
+	<li><a href='https://dave.cheney.net/2024/02'>February 2024</a></li>
+	<li><a href='https://dave.cheney.net/2021/01'>January 2021</a></li>
+	<li><a href='https://dave.cheney.net/2020/12'>December 2020</a></li>
+	<li><a href='https://dave.cheney.net/2020/06'>June 2020</a></li>
+	<li><a href='https://dave.cheney.net/2020/05'>May 2020</a></li>
+	<li><a href='https://dave.cheney.net/2020/04'>April 2020</a></li>
+	<li><a href='https://dave.cheney.net/2020/03'>March 2020</a></li>
+	<li><a href='https://dave.cheney.net/2020/02'>February 2020</a></li>
+	<li><a href='https://dave.cheney.net/2019/12'>December 2019</a></li>
+	<li><a href='https://dave.cheney.net/2019/11'>November 2019</a></li>
+	<li><a href='https://dave.cheney.net/2019/10'>October 2019</a></li>
+	<li><a href='https://dave.cheney.net/2019/09'>September 2019</a></li>
+	<li><a href='https://dave.cheney.net/2019/08'>August 2019</a></li>
+	<li><a href='https://dave.cheney.net/2019/07'>July 2019</a></li>
+	<li><a href='https://dave.cheney.net/2019/06'>June 2019</a></li>
+	<li><a href='https://dave.cheney.net/2019/05'>May 2019</a></li>
+	<li><a href='https://dave.cheney.net/2019/04'>April 2019</a></li>
+	<li><a href='https://dave.cheney.net/2019/02'>February 2019</a></li>
+	<li><a href='https://dave.cheney.net/2019/01'>January 2019</a></li>
+	<li><a href='https://dave.cheney.net/2018/12'>December 2018</a></li>
+	<li><a href='https://dave.cheney.net/2018/11'>November 2018</a></li>
+	<li><a href='https://dave.cheney.net/2018/10'>October 2018</a></li>
+	<li><a href='https://dave.cheney.net/2018/09'>September 2018</a></li>
+	<li><a href='https://dave.cheney.net/2018/08'>August 2018</a></li>
+	<li><a href='https://dave.cheney.net/2018/07'>July 2018</a></li>
+	<li><a href='https://dave.cheney.net/2018/05'>May 2018</a></li>
+	<li><a href='https://dave.cheney.net/2018/01'>January 2018</a></li>
+	<li><a href='https://dave.cheney.net/2017/12'>December 2017</a></li>
+	<li><a href='https://dave.cheney.net/2017/11'>November 2017</a></li>
+	<li><a href='https://dave.cheney.net/2017/09'>September 2017</a></li>
+	<li><a href='https://dave.cheney.net/2017/08'>August 2017</a></li>
+	<li><a href='https://dave.cheney.net/2017/07'>July 2017</a></li>
+	<li><a href='https://dave.cheney.net/2017/06'>June 2017</a></li>
+	<li><a href='https://dave.cheney.net/2017/04'>April 2017</a></li>
+	<li><a href='https://dave.cheney.net/2017/03'>March 2017</a></li>
+	<li><a href='https://dave.cheney.net/2017/02'>February 2017</a></li>
+	<li><a href='https://dave.cheney.net/2017/01'>January 2017</a></li>
+	<li><a href='https://dave.cheney.net/2016/12'>December 2016</a></li>
+	<li><a href='https://dave.cheney.net/2016/11'>November 2016</a></li>
+	<li><a href='https://dave.cheney.net/2016/10'>October 2016</a></li>
+	<li><a href='https://dave.cheney.net/2016/09'>September 2016</a></li>
+	<li><a href='https://dave.cheney.net/2016/08'>August 2016</a></li>
+	<li><a href='https://dave.cheney.net/2016/06'>June 2016</a></li>
+	<li><a href='https://dave.cheney.net/2016/05'>May 2016</a></li>
+	<li><a href='https://dave.cheney.net/2016/04'>April 2016</a></li>
+	<li><a href='https://dave.cheney.net/2016/03'>March 2016</a></li>
+	<li><a href='https://dave.cheney.net/2016/02'>February 2016</a></li>
+	<li><a href='https://dave.cheney.net/2016/01'>January 2016</a></li>
+	<li><a href='https://dave.cheney.net/2015/12'>December 2015</a></li>
+	<li><a href='https://dave.cheney.net/2015/11'>November 2015</a></li>
+	<li><a href='https://dave.cheney.net/2015/10'>October 2015</a></li>
+	<li><a href='https://dave.cheney.net/2015/09'>September 2015</a></li>
+	<li><a href='https://dave.cheney.net/2015/08'>August 2015</a></li>
+	<li><a href='https://dave.cheney.net/2015/07'>July 2015</a></li>
+	<li><a href='https://dave.cheney.net/2015/06'>June 2015</a></li>
+	<li><a href='https://dave.cheney.net/2015/05'>May 2015</a></li>
+	<li><a href='https://dave.cheney.net/2015/03'>March 2015</a></li>
+	<li><a href='https://dave.cheney.net/2015/02'>February 2015</a></li>
+	<li><a href='https://dave.cheney.net/2015/01'>January 2015</a></li>
+	<li><a href='https://dave.cheney.net/2014/12'>December 2014</a></li>
+	<li><a href='https://dave.cheney.net/2014/11'>November 2014</a></li>
+	<li><a href='https://dave.cheney.net/2014/10'>October 2014</a></li>
+	<li><a href='https://dave.cheney.net/2014/09'>September 2014</a></li>
+	<li><a href='https://dave.cheney.net/2014/08'>August 2014</a></li>
+	<li><a href='https://dave.cheney.net/2014/07'>July 2014</a></li>
+	<li><a href='https://dave.cheney.net/2014/06'>June 2014</a></li>
+	<li><a href='https://dave.cheney.net/2014/05'>May 2014</a></li>
+	<li><a href='https://dave.cheney.net/2014/04'>April 2014</a></li>
+	<li><a href='https://dave.cheney.net/2014/03'>March 2014</a></li>
+	<li><a href='https://dave.cheney.net/2014/02'>February 2014</a></li>
+	<li><a href='https://dave.cheney.net/2014/01'>January 2014</a></li>
+	<li><a href='https://dave.cheney.net/2013/12'>December 2013</a></li>
+	<li><a href='https://dave.cheney.net/2013/11'>November 2013</a></li>
+	<li><a href='https://dave.cheney.net/2013/10'>October 2013</a></li>
+	<li><a href='https://dave.cheney.net/2013/09'>September 2013</a></li>
+	<li><a href='https://dave.cheney.net/2013/08'>August 2013</a></li>
+	<li><a href='https://dave.cheney.net/2013/07'>July 2013</a></li>
+	<li><a href='https://dave.cheney.net/2013/06'>June 2013</a></li>
+	<li><a href='https://dave.cheney.net/2013/05'>May 2013</a></li>
+	<li><a href='https://dave.cheney.net/2013/04'>April 2013</a></li>
+	<li><a href='https://dave.cheney.net/2013/01'>January 2013</a></li>
+	<li><a href='https://dave.cheney.net/2012/12'>December 2012</a></li>
+	<li><a href='https://dave.cheney.net/2012/11'>November 2012</a></li>
+	<li><a href='https://dave.cheney.net/2012/10'>October 2012</a></li>
+	<li><a href='https://dave.cheney.net/2012/09'>September 2012</a></li>
+	<li><a href='https://dave.cheney.net/2012/08'>August 2012</a></li>
+	<li><a href='https://dave.cheney.net/2012/02'>February 2012</a></li>
+	<li><a href='https://dave.cheney.net/2012/01'>January 2012</a></li>
+	<li><a href='https://dave.cheney.net/2011/11'>November 2011</a></li>
+	<li><a href='https://dave.cheney.net/2011/10'>October 2011</a></li>
+	<li><a href='https://dave.cheney.net/2011/08'>August 2011</a></li>
+	<li><a href='https://dave.cheney.net/2011/07'>July 2011</a></li>
+	<li><a href='https://dave.cheney.net/2011/06'>June 2011</a></li>
+	<li><a href='https://dave.cheney.net/2011/05'>May 2011</a></li>
+	<li><a href='https://dave.cheney.net/2011/04'>April 2011</a></li>
+	<li><a href='https://dave.cheney.net/2011/03'>March 2011</a></li>
+	<li><a href='https://dave.cheney.net/2011/02'>February 2011</a></li>
+	<li><a href='https://dave.cheney.net/2010/11'>November 2010</a></li>
+	<li><a href='https://dave.cheney.net/2010/10'>October 2010</a></li>
+			</ul>
+
+			</aside><aside id="text-2" class="widget widget_text"><h3 class="widget-title">License</h3>			<div class="textwidget"><a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.</div>
+		</aside>		</div><!-- #secondary -->
+		</div><!-- #main .wrapper -->
+	<footer id="colophon" role="contentinfo">
+		<div class="site-info">
+									<a href="https://wordpress.org/" class="imprint" title="Semantic Personal Publishing Platform">
+				Proudly powered by WordPress			</a>
+		</div><!-- .site-info -->
+	</footer><!-- #colophon -->
+</div><!-- #page -->
+
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/twentytwelve/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<script id="wp-emoji-settings" type="application/json">
+{"baseUrl":"https://s.w.org/images/core/emoji/17.0.2/72x72/","ext":".png","svgUrl":"https://s.w.org/images/core/emoji/17.0.2/svg/","svgExt":".svg","source":{"concatemoji":"https://dave.cheney.net/wp-includes/js/wp-emoji-release.min.js?ver=7.0"}}
+</script>
+<script type="module">
+/*! This file is auto-generated */
+const a=JSON.parse(document.getElementById("wp-emoji-settings").textContent),o=(window._wpemojiSettings=a,"wpEmojiSettingsSupports"),s=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(o,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const a=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===a[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,a){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!a(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,a){let r;const o=(r="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),s=(o.textBaseline="top",o.font="600 32px Arial",{});return e.forEach(e=>{s[e]=t(o,e,n,a)}),s}function r(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}a.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(o));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(s),u.toString(),c.toString(),p.toString()].join(",")+"));",a=new Blob([e],{type:"text/javascript"});const r=new Worker(URL.createObjectURL(a),{name:"wpTestEmojiSupports"});return void(r.onmessage=e=>{i(n=e.data),r.terminate(),t(n)})}catch(e){}i(n=f(s,u,c,p))}t(n)}).then(e=>{for(const n in e)a.supports[n]=e[n],a.supports.everything=a.supports.everything&&a.supports[n],"flag"!==n&&(a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&a.supports[n]);var t;a.supports.everythingExceptFlag=a.supports.everythingExceptFlag&&!a.supports.flag,a.supports.everything||((t=a.source||{}).concatemoji?r(t.concatemoji):t.wpemoji&&t.twemoji&&(r(t.twemoji),r(t.wpemoji)))});
+//# sourceURL=https://dave.cheney.net/wp-includes/js/wp-emoji-loader.min.js
+</script>
+</body>
+</html>
+
+<!-- Dynamic page generated in 0.081 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2026-06-02 16:29:05 -->
+
+<!-- super cache -->

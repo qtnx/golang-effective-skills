@@ -98,6 +98,9 @@ The pack is grounded in:
 - [Effective Go](https://go.dev/doc/effective_go)
 - [Google Go Style Guide](https://google.github.io/styleguide/go/)
 - [Uber Go Style Guide](https://github.com/uber-go/guide/blob/master/style.md)
+- Linked external docs referenced by those sources, cached under
+  `sources/raw/external/` with a manifest at
+  `sources/raw/external-docs-manifest.json`
 
 This is not an official Google, Go, or Uber project. See
 [docs/source-provenance.md](docs/source-provenance.md) and

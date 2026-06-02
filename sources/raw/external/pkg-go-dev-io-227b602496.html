@@ -1,0 +1,4136 @@
+---
+source_name: "External Linked Documentation"
+source_url: "https://pkg.go.dev/io"
+retrieved_at: "2026-06-02T06:42:44.970130+00:00"
+content_type: "text/html; charset=utf-8"
+truncated: false
+insecure_tls_fallback: true
+---
+
+
+
+<!DOCTYPE html>
+<html lang="en" data-layout="responsive" data-local="">
+  <head>
+    
+    <script>
+      window.addEventListener('error', window.__err=function f(e){f.p=f.p||[];f.p.push(e)});
+    </script>
+    <script>
+      (function() {
+        const theme = document.cookie.match(/prefers-color-scheme=(light|dark|auto)/)?.[1]
+        if (theme) {
+          document.querySelector('html').setAttribute('data-theme', theme);
+        }
+      }())
+    </script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Package io provides basic interfaces to I/O primitives.">
+    
+    <meta class="js-gtmID" data-gtmid="GTM-W8MVQXG">
+    <link rel="shortcut icon" href="/static/shared/icon/favicon.ico">
+    
+  
+    <link rel="canonical" href="https://pkg.go.dev/io">
+  
+
+    <link href="/static/frontend/frontend.min.css?version=prod-frontend-00193-fdr" rel="stylesheet">
+    
+    <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="Go Packages">
+    
+    
+  <title>io package - io - Go Packages</title>
+
+    
+  <link href="/static/frontend/unit/unit.min.css?version=prod-frontend-00193-fdr" rel="stylesheet">
+  
+  <link href="/static/frontend/unit/main/main.min.css?version=prod-frontend-00193-fdr" rel="stylesheet">
+
+
+  </head>
+  <body>
+    
+    <script>
+      function loadScript(src, mod = true) {
+        let s = document.createElement('script');
+        s.src = src;
+        if (mod) {
+          s.type = 'module';
+          s.async = true;
+          s.defer = true
+        }
+        document.head.appendChild(s);
+      }
+      loadScript("/third_party/dialog-polyfill/dialog-polyfill.js", false)
+      loadScript("/static/frontend/frontend.js");
+    </script>
+    
+  <header class="go-Header go-Header--full js-siteHeader">
+    <div class="go-Header-inner go-Header-inner--dark">
+      <nav class="go-Header-nav">
+        <a href="https://go.dev/" class="js-headerLogo" data-gtmc="nav link"
+            data-test-id="go-header-logo-link" role="heading" aria-level="1">
+          <img class="go-Header-logo" src="/static/shared/logo/go-white.svg" alt="Go">
+        </a>
+         <div class="skip-navigation-wrapper">
+            <a class="skip-to-content-link" aria-label="Skip to main content" href="#main-content"> Skip to Main Content </a>
+          </div>
+        <div class="go-Header-rightContent">
+          
+<div class="go-SearchForm js-searchForm">
+  <form
+    class="go-InputGroup go-ShortcutKey go-SearchForm-form"
+    action="/search"
+    data-shortcut="/"
+    data-shortcut-alt="search"
+    data-gtmc="search form"
+    aria-label="Search for a package"
+    role="search"
+  >
+    <input name="q" class="go-Input js-searchFocus" aria-label="Search for a package" type="search"
+        autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false"
+        placeholder="Search packages or symbols"
+        value="" />
+    <input name="m" value="" hidden>
+    <button class="go-Button go-Button--inverted" aria-label="Submit search">
+      <img
+        class="go-Icon"
+        height="24"
+        width="24"
+        src="/static/shared/icon/search_gm_grey_24dp.svg"
+        alt=""
+      />
+    </button>
+  </form>
+  <button class="go-SearchForm-expandSearch js-expandSearch" data-gtmc="nav button"
+      aria-label="Open search" data-test-id="expand-search">
+    <img class="go-Icon go-Icon--inverted" height="24" width="24"
+        src="/static/shared/icon/search_gm_grey_24dp.svg" alt="">
+
+  </button>
+</div>
+
+          <ul class="go-Header-menu">
+            <li class="go-Header-menuItem">
+              <a class="js-desktop-menu-hover" href="#" data-gtmc="nav link">
+                Why Go
+                <img class="go-Icon" height="24" width="24" src="/static/shared/icon/arrow_drop_down_gm_grey_24dp.svg" alt="submenu dropdown icon">
+              </a>
+              <ul class="go-Header-submenu go-Header-submenu--why js-desktop-submenu-hover" aria-label="submenu">
+                  <li class="go-Header-submenuItem">
+                    <div>
+                      <a href="https://go.dev/solutions#case-studies">
+                        <span>Case Studies</span>
+                      </a>
+                    </div>
+                    <p>Common problems companies solve with Go</p>
+                  </li>
+                  <li class="go-Header-submenuItem">
+                    <div>
+                      <a href="https://go.dev/solutions#use-cases">
+                        <span>Use Cases</span>
+                      </a>
+                    </div>
+                    <p>Stories about how and why companies use Go</p>
+                  </li>
+                  <li class="go-Header-submenuItem">
+                    <div>
+                      <a href="https://go.dev/security/">
+                        <span>Security</span>
+                      </a>
+                    </div>
+                    <p>How Go can help keep you secure by default</p>
+                  </li>
+              </ul>
+            </li>
+            <li class="go-Header-menuItem">
+              <a href="https://go.dev/learn/" data-gtmc="nav link">Learn</a>
+            </li>
+            <li class="go-Header-menuItem">
+              <a class="js-desktop-menu-hover" href="#" data-gtmc="nav link">
+                Docs
+                <img class="go-Icon" height="24" width="24" src="/static/shared/icon/arrow_drop_down_gm_grey_24dp.svg" alt="submenu dropdown icon">
+              </a>
+              <ul class="go-Header-submenu go-Header-submenu--docs js-desktop-submenu-hover" aria-label="submenu">
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/doc/effective_go">
+                      <span>Effective Go</span>
+                    </a>
+                  </div>
+                  <p>Tips for writing clear, performant, and idiomatic Go code</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/doc/">
+                      <span>Go User Manual</span>
+                    </a>
+                  </div>
+                  <p>A complete introduction to building software with Go</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://pkg.go.dev/std">
+                      <span>Standard library</span>
+                    </a>
+                  </div>
+                  <p>Reference documentation for Go's standard library</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/doc/devel/release">
+                      <span>Release Notes</span>
+                    </a>
+                  </div>
+                  <p>Learn what's new in each Go release</p>
+                </li>
+              </ul>
+            </li>
+            <li class="go-Header-menuItem go-Header-menuItem--active">
+              <a href="/" data-gtmc="nav link">Packages</a>
+            </li>
+            <li class="go-Header-menuItem">
+              <a class="js-desktop-menu-hover" href="#" data-gtmc="nav link">
+                Community
+                <img class="go-Icon" height="24" width="24" src="/static/shared/icon/arrow_drop_down_gm_grey_24dp.svg" alt="submenu dropdown icon">
+              </a>
+              <ul class="go-Header-submenu go-Header-submenu--community js-desktop-submenu-hover" aria-label="submenu">
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/talks/">
+                      <span>Recorded Talks</span>
+                    </a>
+                  </div>
+                  <p>Videos from prior events</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://www.meetup.com/pro/go">
+                      <span>Meetups</span>
+                      <i class="material-icons">
+                        <img class="go-Icon" height="24" width="24"
+                            src="/static/shared/icon/launch_gm_grey_24dp.svg" alt="">
+                      </i>
+                    </a>
+                  </div>
+                  <p>Meet other local Go developers</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://github.com/golang/go/wiki/Conferences">
+                      <span>Conferences</span>
+                      <i class="material-icons">
+                        <img class="go-Icon" height="24" width="24"
+                            src="/static/shared/icon/launch_gm_grey_24dp.svg" alt="">
+                      </i>
+                    </a>
+                  </div>
+                  <p>Learn and network with Go developers from around the world</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/blog">
+                      <span>Go blog</span>
+                    </a>
+                  </div>
+                  <p>The Go project's official blog.</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/help">
+                      <span>Go project</span>
+                    </a>
+                  </div>
+                  <p>Get help and stay informed from Go</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    Get connected
+                  </div>
+                  <p></p>
+                  <div class="go-Header-socialIcons">
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with google-groups (Opens in new window)"
+                        title="Get connected with google-groups (Opens in new window)"
+                        href="https://groups.google.com/g/golang-nuts">
+                        <img src="/static/shared/logo/social/google-groups.svg" />
+                      </a>
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with github (Opens in new window)"
+                        title="Get connected with github (Opens in new window)"
+                        href="https://github.com/golang">
+                        <img src="/static/shared/logo/social/github.svg" />
+                      </a>
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with twitter (Opens in new window)"
+                        title="Get connected with twitter (Opens in new window)"
+                        href="https://twitter.com/golang">
+                        <img src="/static/shared/logo/social/twitter.svg" />
+                      </a>
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with reddit (Opens in new window)"
+                        title="Get connected with reddit (Opens in new window)"
+                        href="https://www.reddit.com/r/golang/">
+                        <img src="/static/shared/logo/social/reddit.svg" />
+                      </a>
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with slack (Opens in new window)"
+                        title="Get connected with slack (Opens in new window)"
+                        href="https://invite.slack.golangbridge.org/">
+                        <img src="/static/shared/logo/social/slack.svg" />
+                      </a>
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with stack-overflow (Opens in new window)"
+                        title=""
+                        href="https://stackoverflow.com/collectives/go">
+                        <img src="/static/shared/logo/social/stack-overflow.svg" />
+                      </a>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <button class="go-Header-navOpen js-headerMenuButton go-Header-navOpen--white" data-gtmc="nav button" aria-label="Open navigation">
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <aside class="go-NavigationDrawer js-header">
+    <nav class="go-NavigationDrawer-nav">
+      <div class="go-NavigationDrawer-header">
+        <a href="https://go.dev/">
+          <img class="go-NavigationDrawer-logo" src="/static/shared/logo/go-blue.svg" alt="Go.">
+        </a>
+      </div>
+      <ul class="go-NavigationDrawer-list">
+          <li class="go-NavigationDrawer-listItem js-mobile-subnav-trigger go-NavigationDrawer-hasSubnav">
+            <a href="#">
+              <span>Why Go</span>
+              <i class="material-icons">
+                <img class="go-Icon" height="24" width="24"
+                  src="/static/shared/icon/navigate_next_gm_grey_24dp.svg" alt="">
+              </i>
+            </a>
+
+            <div class="go-NavigationDrawer go-NavigationDrawer-submenuItem">
+              <div class="go-NavigationDrawer-nav">
+                <div class="go-NavigationDrawer-header">
+                  <a href="#">
+                    <i class="material-icons">
+                      <img class="go-Icon" height="24" width="24"
+                        src="/static/shared/icon/navigate_before_gm_grey_24dp.svg" alt="">
+                      </i>
+                      Why Go
+                  </a>
+                </div>
+                <ul class="go-NavigationDrawer-list">
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/solutions#case-studies">
+                      Case Studies
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/solutions#use-cases">
+                      Use Cases
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/security/">
+                      Security
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="go-NavigationDrawer-listItem">
+            <a href="https://go.dev/learn/">Learn</a>
+          </li>
+          <li class="go-NavigationDrawer-listItem js-mobile-subnav-trigger go-NavigationDrawer-hasSubnav">
+            <a href="#">
+              <span>Docs</span>
+              <i class="material-icons">
+                <img class="go-Icon" height="24" width="24"
+                  src="/static/shared/icon/navigate_next_gm_grey_24dp.svg" alt="">
+              </i>
+            </a>
+
+            <div class="go-NavigationDrawer go-NavigationDrawer-submenuItem">
+              <div class="go-NavigationDrawer-nav">
+                <div class="go-NavigationDrawer-header">
+                  <a href="#"><i class="material-icons">
+                    <img class="go-Icon" height="24" width="24"
+                      src="/static/shared/icon/navigate_before_gm_grey_24dp.svg" alt="">
+                    </i>
+                    Docs
+                  </a>
+                </div>
+                <ul class="go-NavigationDrawer-list">
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/doc/effective_go">
+                      Effective Go
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/doc/">
+                      Go User Manual
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://pkg.go.dev/std">
+                      Standard library
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/doc/devel/release">
+                      Release Notes
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="go-NavigationDrawer-listItem go-NavigationDrawer-listItem--active">
+            <a href="/">Packages</a>
+          </li>
+          <li class="go-NavigationDrawer-listItem js-mobile-subnav-trigger go-NavigationDrawer-hasSubnav">
+            <a href="#">
+              <span>Community</span>
+              <i class="material-icons">
+                <img class="go-Icon" height="24" width="24"
+                  src="/static/shared/icon/navigate_next_gm_grey_24dp.svg" alt="">
+              </i>
+            </a>
+            <div class="go-NavigationDrawer go-NavigationDrawer-submenuItem">
+              <div class="go-NavigationDrawer-nav">
+                <div class="go-NavigationDrawer-header">
+                  <a href="#">
+                    <i class="material-icons">
+                      <img class="go-Icon" height="24" width="24"
+                        src="/static/shared/icon/navigate_before_gm_grey_24dp.svg" alt="">
+                    </i>
+                    Community
+                  </a>
+                </div>
+                <ul class="go-NavigationDrawer-list">
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/talks/">
+                      Recorded Talks
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://www.meetup.com/pro/go">
+                      Meetups
+                      <i class="material-icons">
+                      <img class="go-Icon" height="24" width="24"
+                          src="/static/shared/icon/launch_gm_grey_24dp.svg" alt="">
+                      </i>
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://github.com/golang/go/wiki/Conferences">
+                      Conferences
+                      <i class="material-icons">
+                        <img class="go-Icon" height="24" width="24" src="/static/shared/icon/launch_gm_grey_24dp.svg" alt="">
+                      </i>
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/blog">
+                      Go blog
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/help">
+                      Go project
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <div>Get connected</div>
+                    <div class="go-Header-socialIcons">
+                        <a class="go-Header-socialIcon" href="https://groups.google.com/g/golang-nuts"><img src="/static/shared/logo/social/google-groups.svg" /></a>
+                        <a class="go-Header-socialIcon" href="https://github.com/golang"><img src="/static/shared/logo/social/github.svg" /></a>
+                        <a class="go-Header-socialIcon" href="https://twitter.com/golang"><img src="/static/shared/logo/social/twitter.svg" /></a>
+                        <a class="go-Header-socialIcon" href="https://www.reddit.com/r/golang/"><img src="/static/shared/logo/social/reddit.svg" /></a>
+                        <a class="go-Header-socialIcon" href="https://invite.slack.golangbridge.org/"><img src="/static/shared/logo/social/slack.svg" /></a>
+                        <a class="go-Header-socialIcon" href="https://stackoverflow.com/collectives/go"><img src="/static/shared/logo/social/stack-overflow.svg" /></a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+      </ul>
+    </nav>
+  </aside>
+  <div class="go-NavigationDrawer-scrim js-scrim" role="presentation"></div>
+
+    
+  <main class="go-Main" id="main-content">
+    <div class="go-Main-banner" role="alert"></div>
+    <header class="go-Main-header js-mainHeader">
+  
+  
+  <nav class="go-Main-headerBreadcrumb go-Breadcrumb" aria-label="Breadcrumb" data-test-id="UnitHeader-breadcrumb">
+    <ol>
+      
+        
+          <li data-test-id="UnitHeader-breadcrumbItem">
+            <a href="/" data-gtmc="breadcrumb link">Discover Packages</a>
+          </li>
+        
+          <li data-test-id="UnitHeader-breadcrumbItem">
+            <a href="/std" data-gtmc="breadcrumb link">Standard library</a>
+          </li>
+        
+        <li>
+          <a href="/io@go1.26.3" data-gtmc="breadcrumb link" aria-current="location"
+              data-test-id="UnitHeader-breadcrumbCurrent">
+            io
+          </a>
+          
+            <button
+              class="go-Button go-Button--inline go-Clipboard js-clipboard"
+              title="Copy path to clipboard.&#10;&#10;io"
+              aria-label="Copy Path to Clipboard"
+              data-to-copy="io"
+              data-gtmc="breadcrumbs button"
+            >
+              <img
+                class="go-Icon go-Icon--accented"
+                height="24"
+                width="24"
+                src="/static/shared/icon/content_copy_gm_grey_24dp.svg"
+                alt=""
+              >
+            </button>
+          
+        
+      </li>
+    </ol>
+  </nav>
+
+  <div class="go-Main-headerContent">
+    
+  <div class="go-Main-headerTitle js-stickyHeader">
+    <a class="go-Main-headerLogo" href="https://go.dev/" aria-hidden="true" tabindex="-1" data-gtmc="header link" aria-label="Link to Go Homepage">
+      <img height="78" width="207" src="/static/shared/logo/go-blue.svg" alt="Go">
+    </a>
+    <h1 class="UnitHeader-titleHeading" data-test-id="UnitHeader-title">io</h1>
+    
+      <span class="go-Chip go-Chip--inverted">package</span>
+    
+      <span class="go-Chip go-Chip--inverted">standard library</span>
+    
+    
+      
+        <button
+          class="go-Button go-Button--inline go-Clipboard js-clipboard"
+          title="Copy path to clipboard.&#10;&#10;io"
+          aria-label="Copy Path to Clipboard"
+          data-to-copy="io"
+          data-gtmc="title button"
+          tabindex="-1"
+        >
+          <img
+            class="go-Icon go-Icon--accented"
+            height="24"
+            width="24"
+            src="/static/shared/icon/content_copy_gm_grey_24dp.svg"
+            alt=""
+          />
+        </button>
+      
+    
+  </div>
+
+    
+      
+  <div class="go-Main-headerDetails">
+    
+      
+  <span class="go-Main-headerDetailItem" data-test-id="UnitHeader-version">
+    <a href="?tab=versions" aria-label="Version: go1.26.3" 
+    data-gtmc="header link" aria-describedby="version-description">
+      <span class="go-textSubtle" aria-hidden="true">Version: </span>
+        go1.26.3
+    </a>
+    <div class="screen-reader-only" id="version-description" hidden>
+      Opens a new window with list of versions in this module.
+    </div>
+    
+    <span class="DetailsHeader-badge--latest" data-test-id="UnitHeader-minorVersionBanner">
+      <span class="go-Chip DetailsHeader-span--latest">Latest</span>
+      <span class="go-Chip DetailsHeader-span--notAtLatest">
+        Latest
+        
+  <details class="go-Tooltip js-tooltip" data-gtmc="tooltip">
+    <summary>
+      <img class="go-Icon go-Icon--inverted" height="24" width="24" src="/static/shared/icon/alert_gm_grey_24dp.svg" alt="Warning">
+    </summary>
+    <p>This package is not in the latest version of its module.</p>
+  </details>
+
+      </span>
+      <a href="/io" aria-label="Go to Latest Version" data-gtmc="header link">
+        <span class="go-Chip go-Chip--alert DetailsHeader-span--goToLatest">Go to latest</span>
+      </a>
+    </span>
+  </span>
+
+      
+  <span class="go-Main-headerDetailItem" data-test-id="UnitHeader-commitTime">
+    Published: May  7, 2026
+  </span>
+
+      
+  <span class="go-Main-headerDetailItem" data-test-id="UnitHeader-licenses">
+    License: <a href="/io?tab=licenses" data-test-id="UnitHeader-license" 
+        data-gtmc="header link" aria-describedby="license-description">BSD-3-Clause</a>
+      
+    
+  </span>
+  <div class="screen-reader-only" id="license-description" hidden>
+    Opens a new window with license information.
+  </div>
+
+      
+        
+  <span class="go-Main-headerDetailItem" data-test-id="UnitHeader-imports">
+    <a href="/io?tab=imports" aria-label="Imports: 2"
+        data-gtmc="header link" aria-describedby="imports-description">
+      <span class="go-textSubtle">Imports: </span>2
+    </a>
+  </span>
+  <div class="screen-reader-only" id="imports-description" hidden>
+    Opens a new window with list of imports.
+  </div>
+
+        
+  <span class="go-Main-headerDetailItem" data-test-id="UnitHeader-importedby">
+    <a href="/io?tab=importedby" aria-label="Imported By: 1,576,022"
+        data-gtmc="header link" aria-describedby="importedby-description">
+       <span class="go-textSubtle">Imported by: </span>1,576,022
+    </a>
+  </span>
+  <div class="screen-reader-only" id="importedby-description" hidden>
+    Opens a new window with list of known importers.
+  </div>
+
+      
+    
+  </div>
+  
+  <div class="UnitHeader-overflowContainer">
+    <svg class="UnitHeader-overflowImage" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+      <path d="M0 0h24v24H0z" fill="none"/>
+      <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+    </svg>
+    <select class="UnitHeader-overflowSelect js-selectNav" tabindex="-1">
+      <option value="/">Main</option>
+      <option value="/io?tab=versions">
+        Versions
+      </option>
+      <option value="/io?tab=licenses">
+        Licenses
+      </option>
+      
+        <option value="/io?tab=imports">
+          Imports
+        </option>
+        <option value="/io?tab=importedby">
+          Imported By
+        </option>
+      
+    </select>
+  </div>
+
+
+    
+  </div>
+
+</header>
+    
+      <aside class="go-Main-aside  js-mainAside">
+  
+  <div class="UnitMeta">
+    <h2 class="go-textLabel">Details</h2>
+    
+  <ul class="UnitMeta-details">
+    <li>
+      <details class="go-Tooltip js-tooltip" data-gtmc="tooltip">
+        <summary class="go-textSubtle">
+          
+  <img class="go-Icon go-Icon--accented"
+    tabindex="0"
+    role="button"src="/static/shared/icon/check_circle_gm_grey_24dp.svg" alt="checked" aria-label="Valid file, toggle tooltip"height="24" width="24">
+
+          Valid <a href="https://cs.opensource.google/go/go/+/go1.26.3:src/go.mod" target="_blank" rel="noopener">go.mod</a> file
+          <img class="go-Icon" role="button" tabindex="0" src="/static/shared/icon/help_gm_grey_24dp.svg" alt="" aria-label="Toggle go.mod validity tooltip" height="24" width="24">
+        </summary>
+        <p aria-live="polite" role="tooltip">
+          The Go module system was introduced in Go 1.11 and is the official dependency management
+          solution for Go.
+        </p>
+      </details>
+    </li>
+    <li>
+      <details class="go-Tooltip js-tooltip" data-gtmc="tooltip">
+        <summary class="go-textSubtle">
+          
+  <img class="go-Icon go-Icon--accented"
+    tabindex="0"
+    role="button"src="/static/shared/icon/check_circle_gm_grey_24dp.svg" alt="checked" aria-label="Valid file, toggle tooltip"height="24" width="24">
+
+          Redistributable license
+          <img class="go-Icon" role="button" tabindex="0" src="/static/shared/icon/help_gm_grey_24dp.svg" alt="" aria-label="Toggle redistributable help tooltip" height="24" width="24">
+        </summary>
+        <p aria-live="polite" role="tooltip">
+          Redistributable licenses place minimal restrictions on how software can be used,
+          modified, and redistributed.
+        </p>
+      </details>
+    </li>
+    <li>
+      <details class="go-Tooltip js-tooltip" data-gtmc="tooltip">
+        <summary class="go-textSubtle">
+          
+  <img class="go-Icon go-Icon--accented"
+    tabindex="0"
+    role="button"src="/static/shared/icon/check_circle_gm_grey_24dp.svg" alt="checked" aria-label="Valid file, toggle tooltip"height="24" width="24">
+
+          Tagged version
+          <img class="go-Icon" role="button" tabindex="0" src="/static/shared/icon/help_gm_grey_24dp.svg" alt="" aria-label="Toggle tagged version tooltip" height="24" width="24">
+        </summary>
+        <p aria-live="polite" role="tooltip">Modules with tagged versions give importers more predictable builds.</p>
+      </details>
+    </li>
+    <li>
+      <details class="go-Tooltip js-tooltip" data-gtmc="tooltip">
+        <summary class="go-textSubtle">
+          
+  <img class="go-Icon go-Icon--accented"
+    tabindex="0"
+    role="button"src="/static/shared/icon/check_circle_gm_grey_24dp.svg" alt="checked" aria-label="Valid file, toggle tooltip"height="24" width="24">
+
+          Stable version
+          <img class="go-Icon" role="button" tabindex="0" aria-label="Toggle stable version tooltip" src="/static/shared/icon/help_gm_grey_24dp.svg" alt="" height="24" width="24">
+        </summary>
+        <p aria-live="polite" role="tooltip">When a project reaches major version v1 it is considered stable.</p>
+      </details>
+    </li>
+    <li class="UnitMeta-detailsLearn">
+      <a href="/about#best-practices" data-gtmc="meta link">Learn more about best practices</a>
+    </li>
+  </ul>
+
+    <h2 class="go-textLabel">Repository</h2>
+    <div class="UnitMeta-repo">
+      
+        <a href="https://cs.opensource.google/go/go" title="https://cs.opensource.google/go/go" target="_blank" rel="noopener">
+          cs.opensource.google/go/go
+        </a>
+      
+    </div>
+    
+      <h2 class="go-textLabel" data-test-id="links-heading">Links</h2>
+      <ul class="UnitMeta-links">
+        
+          <li>
+            <a href="https://go.dev/security/policy"
+                title="Report security issues in the Go standard library and sub-repositories">
+              <img class="go-Icon" height="24" width="24" src="/static/shared/icon/security_grey_24dp.svg" alt="">
+              Report a Vulnerability
+            </a>
+          </li>
+        
+        
+        
+        
+  
+
+        
+  
+
+        
+  
+
+      </ul>
+    
+  </div>
+
+</aside>
+    
+    <nav class="go-Main-nav go-Main-nav--sticky js-mainNav" aria-label="Outline">
+  <div class="go-Main-navDesktop">
+    
+  <div class="UnitOutline-jumpTo">
+    <button class="UnitOutline-jumpToInput go-ShortcutKey js-jumpToInput"
+        aria-controls="jump-to-modal"
+        aria-label="Open Jump to Identifier"
+        data-shortcut="f"
+        data-shortcut-alt="find"
+        data-test-id="jump-to-button" data-gtmc="outline button">
+      Jump to ...
+    </button>
+  </div>
+  <ul class="go-Tree js-tree" role="tree" aria-label="Outline">
+    
+    
+      <li>
+        <a href="#section-documentation" data-gtmc="outline link">
+          Documentation
+        </a>
+        
+<ul>
+  
+    <li>
+      <a href="#pkg-overview" data-gtmc="doc outline link">Overview</a>
+    </li>
+  <li class="DocNav-overview">
+      <a href="#pkg-index" data-gtmc="doc outline link">
+        Index
+      </a>
+    </li>
+      <li>
+        <a href="#pkg-examples" data-gtmc="doc outline link">
+          Examples
+        </a>
+        <ul>
+            <li>
+              <a href="#example-Copy" title="Copy" data-gtmc="doc outline link">
+                Copy
+              </a>
+            </li>
+            <li>
+              <a href="#example-CopyBuffer" title="CopyBuffer" data-gtmc="doc outline link">
+                CopyBuffer
+              </a>
+            </li>
+            <li>
+              <a href="#example-CopyN" title="CopyN" data-gtmc="doc outline link">
+                CopyN
+              </a>
+            </li>
+            <li>
+              <a href="#example-LimitReader" title="LimitReader" data-gtmc="doc outline link">
+                LimitReader
+              </a>
+            </li>
+            <li>
+              <a href="#example-MultiReader" title="MultiReader" data-gtmc="doc outline link">
+                MultiReader
+              </a>
+            </li>
+            <li>
+              <a href="#example-MultiWriter" title="MultiWriter" data-gtmc="doc outline link">
+                MultiWriter
+              </a>
+            </li>
+            <li>
+              <a href="#example-Pipe" title="Pipe" data-gtmc="doc outline link">
+                Pipe
+              </a>
+            </li>
+            <li>
+              <a href="#example-ReadAll" title="ReadAll" data-gtmc="doc outline link">
+                ReadAll
+              </a>
+            </li>
+            <li>
+              <a href="#example-ReadAtLeast" title="ReadAtLeast" data-gtmc="doc outline link">
+                ReadAtLeast
+              </a>
+            </li>
+            <li>
+              <a href="#example-ReadFull" title="ReadFull" data-gtmc="doc outline link">
+                ReadFull
+              </a>
+            </li>
+            <li>
+              <a href="#example-SectionReader" title="SectionReader" data-gtmc="doc outline link">
+                SectionReader
+              </a>
+            </li>
+            <li>
+              <a href="#example-SectionReader.Read" title="SectionReader.Read" data-gtmc="doc outline link">
+                SectionReader.Read
+              </a>
+            </li>
+            <li>
+              <a href="#example-SectionReader.ReadAt" title="SectionReader.ReadAt" data-gtmc="doc outline link">
+                SectionReader.ReadAt
+              </a>
+            </li>
+            <li>
+              <a href="#example-SectionReader.Seek" title="SectionReader.Seek" data-gtmc="doc outline link">
+                SectionReader.Seek
+              </a>
+            </li>
+            <li>
+              <a href="#example-SectionReader.Size" title="SectionReader.Size" data-gtmc="doc outline link">
+                SectionReader.Size
+              </a>
+            </li>
+            <li>
+              <a href="#example-TeeReader" title="TeeReader" data-gtmc="doc outline link">
+                TeeReader
+              </a>
+            </li>
+            <li>
+              <a href="#example-WriteString" title="WriteString" data-gtmc="doc outline link">
+                WriteString
+              </a>
+            </li>
+        </ul>
+      </li>
+    <li class="DocNav-constants">
+      <a href="#pkg-constants" data-gtmc="doc outline link">
+        Constants
+      </a>
+    </li>
+    <li class="DocNav-variables">
+      <a href="#pkg-variables" data-gtmc="doc outline link">
+        Variables
+      </a>
+    </li>
+    <li class="DocNav-functions">
+      <a href="#pkg-functions" data-gtmc="doc outline link">
+        Functions
+      </a>
+      
+        <ul>
+          
+            <li>
+              <a href="#Copy" title="Copy(dst, src)" data-gtmc="doc outline link">
+                Copy(dst, src)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#CopyBuffer" title="CopyBuffer(dst, src, buf)" data-gtmc="doc outline link">
+                CopyBuffer(dst, src, buf)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#CopyN" title="CopyN(dst, src, n)" data-gtmc="doc outline link">
+                CopyN(dst, src, n)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Pipe" title="Pipe()" data-gtmc="doc outline link">
+                Pipe()
+              </a>
+            </li>
+          
+            <li>
+              <a href="#ReadAll" title="ReadAll(r)" data-gtmc="doc outline link">
+                ReadAll(r)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#ReadAtLeast" title="ReadAtLeast(r, buf, min)" data-gtmc="doc outline link">
+                ReadAtLeast(r, buf, min)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#ReadFull" title="ReadFull(r, buf)" data-gtmc="doc outline link">
+                ReadFull(r, buf)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#WriteString" title="WriteString(w, s)" data-gtmc="doc outline link">
+                WriteString(w, s)
+              </a>
+            </li>
+          
+        </ul>
+      
+    </li>
+    <li class="DocNav-types">
+      <a href="#pkg-types" data-gtmc="doc outline link">
+        Types
+      </a>
+      <ul>
+        
+          
+          <li>
+            <a href="#ByteReader" title="type ByteReader" data-gtmc="doc outline link">
+              type ByteReader
+            </a>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#ByteScanner" title="type ByteScanner" data-gtmc="doc outline link">
+              type ByteScanner
+            </a>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#ByteWriter" title="type ByteWriter" data-gtmc="doc outline link">
+              type ByteWriter
+            </a>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#Closer" title="type Closer" data-gtmc="doc outline link">
+              type Closer
+            </a>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#LimitedReader" title="type LimitedReader" data-gtmc="doc outline link">
+              type LimitedReader
+            </a>
+            
+              <ul>
+                
+                
+                  <li>
+                    <a href="#LimitedReader.Read" title="(l) Read(p)"
+                        data-gtmc="doc outline link">
+                      (l) Read(p)
+                    </a>
+                  </li>
+                
+              </ul>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#OffsetWriter" title="type OffsetWriter" data-gtmc="doc outline link">
+              type OffsetWriter
+            </a>
+            
+              <ul>
+                
+                  <li>
+                    <a href="#NewOffsetWriter" title="NewOffsetWriter(w, off)"
+                        data-gtmc="doc outline link">
+                      NewOffsetWriter(w, off)
+                    </a>
+                  </li>
+                
+                
+                  <li>
+                    <a href="#OffsetWriter.Seek" title="(o) Seek(offset, whence)"
+                        data-gtmc="doc outline link">
+                      (o) Seek(offset, whence)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#OffsetWriter.Write" title="(o) Write(p)"
+                        data-gtmc="doc outline link">
+                      (o) Write(p)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#OffsetWriter.WriteAt" title="(o) WriteAt(p, off)"
+                        data-gtmc="doc outline link">
+                      (o) WriteAt(p, off)
+                    </a>
+                  </li>
+                
+              </ul>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#PipeReader" title="type PipeReader" data-gtmc="doc outline link">
+              type PipeReader
+            </a>
+            
+              <ul>
+                
+                
+                  <li>
+                    <a href="#PipeReader.Close" title="(r) Close()"
+                        data-gtmc="doc outline link">
+                      (r) Close()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#PipeReader.CloseWithError" title="(r) CloseWithError(err)"
+                        data-gtmc="doc outline link">
+                      (r) CloseWithError(err)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#PipeReader.Read" title="(r) Read(data)"
+                        data-gtmc="doc outline link">
+                      (r) Read(data)
+                    </a>
+                  </li>
+                
+              </ul>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#PipeWriter" title="type PipeWriter" data-gtmc="doc outline link">
+              type PipeWriter
+            </a>
+            
+              <ul>
+                
+                
+                  <li>
+                    <a href="#PipeWriter.Close" title="(w) Close()"
+                        data-gtmc="doc outline link">
+                      (w) Close()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#PipeWriter.CloseWithError" title="(w) CloseWithError(err)"
+                        data-gtmc="doc outline link">
+                      (w) CloseWithError(err)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#PipeWriter.Write" title="(w) Write(data)"
+                        data-gtmc="doc outline link">
+                      (w) Write(data)
+                    </a>
+                  </li>
+                
+              </ul>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#ReadCloser" title="type ReadCloser" data-gtmc="doc outline link">
+              type ReadCloser
+            </a>
+            
+              <ul>
+                
+                  <li>
+                    <a href="#NopCloser" title="NopCloser(r)"
+                        data-gtmc="doc outline link">
+                      NopCloser(r)
+                    </a>
+                  </li>
+                
+                
+              </ul>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#ReadSeekCloser" title="type ReadSeekCloser" data-gtmc="doc outline link">
+              type ReadSeekCloser
+            </a>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#ReadSeeker" title="type ReadSeeker" data-gtmc="doc outline link">
+              type ReadSeeker
+            </a>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#ReadWriteCloser" title="type ReadWriteCloser" data-gtmc="doc outline link">
+              type ReadWriteCloser
+            </a>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#ReadWriteSeeker" title="type ReadWriteSeeker" data-gtmc="doc outline link">
+              type ReadWriteSeeker
+            </a>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#ReadWriter" title="type ReadWriter" data-gtmc="doc outline link">
+              type ReadWriter
+            </a>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#Reader" title="type Reader" data-gtmc="doc outline link">
+              type Reader
+            </a>
+            
+              <ul>
+                
+                  <li>
+                    <a href="#LimitReader" title="LimitReader(r, n)"
+                        data-gtmc="doc outline link">
+                      LimitReader(r, n)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#MultiReader" title="MultiReader(readers)"
+                        data-gtmc="doc outline link">
+                      MultiReader(readers)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#TeeReader" title="TeeReader(r, w)"
+                        data-gtmc="doc outline link">
+                      TeeReader(r, w)
+                    </a>
+                  </li>
+                
+                
+              </ul>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#ReaderAt" title="type ReaderAt" data-gtmc="doc outline link">
+              type ReaderAt
+            </a>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#ReaderFrom" title="type ReaderFrom" data-gtmc="doc outline link">
+              type ReaderFrom
+            </a>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#RuneReader" title="type RuneReader" data-gtmc="doc outline link">
+              type RuneReader
+            </a>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#RuneScanner" title="type RuneScanner" data-gtmc="doc outline link">
+              type RuneScanner
+            </a>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#SectionReader" title="type SectionReader" data-gtmc="doc outline link">
+              type SectionReader
+            </a>
+            
+              <ul>
+                
+                  <li>
+                    <a href="#NewSectionReader" title="NewSectionReader(r, off, n)"
+                        data-gtmc="doc outline link">
+                      NewSectionReader(r, off, n)
+                    </a>
+                  </li>
+                
+                
+                  <li>
+                    <a href="#SectionReader.Outer" title="(s) Outer()"
+                        data-gtmc="doc outline link">
+                      (s) Outer()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#SectionReader.Read" title="(s) Read(p)"
+                        data-gtmc="doc outline link">
+                      (s) Read(p)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#SectionReader.ReadAt" title="(s) ReadAt(p, off)"
+                        data-gtmc="doc outline link">
+                      (s) ReadAt(p, off)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#SectionReader.Seek" title="(s) Seek(offset, whence)"
+                        data-gtmc="doc outline link">
+                      (s) Seek(offset, whence)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#SectionReader.Size" title="(s) Size()"
+                        data-gtmc="doc outline link">
+                      (s) Size()
+                    </a>
+                  </li>
+                
+              </ul>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#Seeker" title="type Seeker" data-gtmc="doc outline link">
+              type Seeker
+            </a>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#StringWriter" title="type StringWriter" data-gtmc="doc outline link">
+              type StringWriter
+            </a>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#WriteCloser" title="type WriteCloser" data-gtmc="doc outline link">
+              type WriteCloser
+            </a>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#WriteSeeker" title="type WriteSeeker" data-gtmc="doc outline link">
+              type WriteSeeker
+            </a>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#Writer" title="type Writer" data-gtmc="doc outline link">
+              type Writer
+            </a>
+            
+              <ul>
+                
+                  <li>
+                    <a href="#MultiWriter" title="MultiWriter(writers)"
+                        data-gtmc="doc outline link">
+                      MultiWriter(writers)
+                    </a>
+                  </li>
+                
+                
+              </ul>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#WriterAt" title="type WriterAt" data-gtmc="doc outline link">
+              type WriterAt
+            </a>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#WriterTo" title="type WriterTo" data-gtmc="doc outline link">
+              type WriterTo
+            </a>
+             
+          </li>
+         
+      </ul>
+    </li>
+  
+  
+</ul>
+
+      </li>
+    
+    
+      <li>
+        <a href="#section-sourcefiles" data-gtmc="outline link">
+          Source Files
+        </a>
+      </li>
+    
+    
+      <li>
+        <a href="#section-directories" data-gtmc="outline link">
+          Directories
+        </a>
+      </li>
+    
+  </ul>
+
+  </div>
+  <div class="go-Main-navMobile js-mainNavMobile">
+    <label class="go-Label">
+      <select class="go-Select">
+        
+          <option selected disabled>Documentation</option>
+        
+      </select>
+    </label>
+  </div>
+</nav>
+    <article class="go-Main-article js-mainContent">
+  <div class="UnitDetails" data-test-id="UnitDetails" style="display: block;">
+    <div class="UnitDetails-content js-unitDetailsContent" data-test-id="UnitDetails-content">
+      
+      
+        
+          
+  <div class="UnitDoc">
+    <h2 class="UnitDoc-title" id="section-documentation">
+      <img class="go-Icon" height="24" width="24" src="/static/shared/icon/code_gm_grey_24dp.svg" alt="">
+      Documentation
+      <a class="UnitDoc-idLink" href="#section-documentation" title="Go to Documentation" aria-label="Go to Documentation">¶</a>
+    </h2>
+    
+  
+    
+  
+
+    <div class="Documentation js-documentation">
+      
+        
+
+<div class="Documentation-content js-docContent"> <section class="Documentation-overview">
+    <h3 tabindex="-1" id="pkg-overview" class="Documentation-overviewHeader">Overview <a href="#pkg-overview" title="Go to Overview" aria-label="Go to Overview">¶</a></h3>
+
+<p>Package io provides basic interfaces to I/O primitives.
+Its primary job is to wrap existing implementations of such primitives,
+such as those in package os, into shared public interfaces that
+abstract the functionality, plus some other related primitives.
+</p><p>Because these interfaces and primitives wrap lower-level operations with
+various implementations, unless otherwise informed clients should not
+assume they are safe for parallel execution.
+</p>
+</section><section class="Documentation-index">
+    <h3 id="pkg-index" class="Documentation-indexHeader">Index <a href="#pkg-index" title="Go to Index" aria-label="Go to Index">¶</a></h3>
+
+<ul class="Documentation-indexList">
+<li class="Documentation-indexConstants"><a href="#pkg-constants">Constants</a></li>
+<li class="Documentation-indexVariables"><a href="#pkg-variables">Variables</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Copy">func Copy(dst Writer, src Reader) (written int64, err error)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#CopyBuffer">func CopyBuffer(dst Writer, src Reader, buf []byte) (written int64, err error)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#CopyN">func CopyN(dst Writer, src Reader, n int64) (written int64, err error)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Pipe">func Pipe() (*PipeReader, *PipeWriter)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#ReadAll">func ReadAll(r Reader) ([]byte, error)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#ReadAtLeast">func ReadAtLeast(r Reader, buf []byte, min int) (n int, err error)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#ReadFull">func ReadFull(r Reader, buf []byte) (n int, err error)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#WriteString">func WriteString(w Writer, s string) (n int, err error)</a></li>
+<li class="Documentation-indexType">
+          <a href="#ByteReader">type ByteReader</a></li>
+<li class="Documentation-indexType">
+          <a href="#ByteScanner">type ByteScanner</a></li>
+<li class="Documentation-indexType">
+          <a href="#ByteWriter">type ByteWriter</a></li>
+<li class="Documentation-indexType">
+          <a href="#Closer">type Closer</a></li>
+<li class="Documentation-indexType">
+          <a href="#LimitedReader">type LimitedReader</a></li>
+<li><ul class="Documentation-indexTypeMethods">
+<li>
+            <a href="#LimitedReader.Read">func (l *LimitedReader) Read(p []byte) (n int, err error)</a></li>
+</ul></li>
+<li class="Documentation-indexType">
+          <a href="#OffsetWriter">type OffsetWriter</a></li>
+<li><ul class="Documentation-indexTypeFunctions">
+<li>
+            <a href="#NewOffsetWriter">func NewOffsetWriter(w WriterAt, off int64) *OffsetWriter</a></li>
+</ul></li>
+<li><ul class="Documentation-indexTypeMethods">
+<li>
+            <a href="#OffsetWriter.Seek">func (o *OffsetWriter) Seek(offset int64, whence int) (int64, error)</a></li>
+<li>
+            <a href="#OffsetWriter.Write">func (o *OffsetWriter) Write(p []byte) (n int, err error)</a></li>
+<li>
+            <a href="#OffsetWriter.WriteAt">func (o *OffsetWriter) WriteAt(p []byte, off int64) (n int, err error)</a></li>
+</ul></li>
+<li class="Documentation-indexType">
+          <a href="#PipeReader">type PipeReader</a></li>
+<li><ul class="Documentation-indexTypeMethods">
+<li>
+            <a href="#PipeReader.Close">func (r *PipeReader) Close() error</a></li>
+<li>
+            <a href="#PipeReader.CloseWithError">func (r *PipeReader) CloseWithError(err error) error</a></li>
+<li>
+            <a href="#PipeReader.Read">func (r *PipeReader) Read(data []byte) (n int, err error)</a></li>
+</ul></li>
+<li class="Documentation-indexType">
+          <a href="#PipeWriter">type PipeWriter</a></li>
+<li><ul class="Documentation-indexTypeMethods">
+<li>
+            <a href="#PipeWriter.Close">func (w *PipeWriter) Close() error</a></li>
+<li>
+            <a href="#PipeWriter.CloseWithError">func (w *PipeWriter) CloseWithError(err error) error</a></li>
+<li>
+            <a href="#PipeWriter.Write">func (w *PipeWriter) Write(data []byte) (n int, err error)</a></li>
+</ul></li>
+<li class="Documentation-indexType">
+          <a href="#ReadCloser">type ReadCloser</a></li>
+<li><ul class="Documentation-indexTypeFunctions">
+<li>
+            <a href="#NopCloser">func NopCloser(r Reader) ReadCloser</a></li>
+</ul></li>
+<li class="Documentation-indexType">
+          <a href="#ReadSeekCloser">type ReadSeekCloser</a></li>
+<li class="Documentation-indexType">
+          <a href="#ReadSeeker">type ReadSeeker</a></li>
+<li class="Documentation-indexType">
+          <a href="#ReadWriteCloser">type ReadWriteCloser</a></li>
+<li class="Documentation-indexType">
+          <a href="#ReadWriteSeeker">type ReadWriteSeeker</a></li>
+<li class="Documentation-indexType">
+          <a href="#ReadWriter">type ReadWriter</a></li>
+<li class="Documentation-indexType">
+          <a href="#Reader">type Reader</a></li>
+<li><ul class="Documentation-indexTypeFunctions">
+<li>
+            <a href="#LimitReader">func LimitReader(r Reader, n int64) Reader</a></li>
+<li>
+            <a href="#MultiReader">func MultiReader(readers ...Reader) Reader</a></li>
+<li>
+            <a href="#TeeReader">func TeeReader(r Reader, w Writer) Reader</a></li>
+</ul></li>
+<li class="Documentation-indexType">
+          <a href="#ReaderAt">type ReaderAt</a></li>
+<li class="Documentation-indexType">
+          <a href="#ReaderFrom">type ReaderFrom</a></li>
+<li class="Documentation-indexType">
+          <a href="#RuneReader">type RuneReader</a></li>
+<li class="Documentation-indexType">
+          <a href="#RuneScanner">type RuneScanner</a></li>
+<li class="Documentation-indexType">
+          <a href="#SectionReader">type SectionReader</a></li>
+<li><ul class="Documentation-indexTypeFunctions">
+<li>
+            <a href="#NewSectionReader">func NewSectionReader(r ReaderAt, off int64, n int64) *SectionReader</a></li>
+</ul></li>
+<li><ul class="Documentation-indexTypeMethods">
+<li>
+            <a href="#SectionReader.Outer">func (s *SectionReader) Outer() (r ReaderAt, off int64, n int64)</a></li>
+<li>
+            <a href="#SectionReader.Read">func (s *SectionReader) Read(p []byte) (n int, err error)</a></li>
+<li>
+            <a href="#SectionReader.ReadAt">func (s *SectionReader) ReadAt(p []byte, off int64) (n int, err error)</a></li>
+<li>
+            <a href="#SectionReader.Seek">func (s *SectionReader) Seek(offset int64, whence int) (int64, error)</a></li>
+<li>
+            <a href="#SectionReader.Size">func (s *SectionReader) Size() int64</a></li>
+</ul></li>
+<li class="Documentation-indexType">
+          <a href="#Seeker">type Seeker</a></li>
+<li class="Documentation-indexType">
+          <a href="#StringWriter">type StringWriter</a></li>
+<li class="Documentation-indexType">
+          <a href="#WriteCloser">type WriteCloser</a></li>
+<li class="Documentation-indexType">
+          <a href="#WriteSeeker">type WriteSeeker</a></li>
+<li class="Documentation-indexType">
+          <a href="#Writer">type Writer</a></li>
+<li><ul class="Documentation-indexTypeFunctions">
+<li>
+            <a href="#MultiWriter">func MultiWriter(writers ...Writer) Writer</a></li>
+</ul></li>
+<li class="Documentation-indexType">
+          <a href="#WriterAt">type WriterAt</a></li>
+<li class="Documentation-indexType">
+          <a href="#WriterTo">type WriterTo</a></li>
+</ul>
+</section><section class="Documentation-examples">
+    <h3 tabindex="-1" id="pkg-examples" class="Documentation-examplesHeader">Examples <a class="Documentation-idLink" href="#pkg-examples" title="Go to Examples" aria-label="Go to Examples">¶</a></h3>
+<ul class="Documentation-examplesList">
+<li><a href="#example-Copy" class="js-exampleHref">Copy</a></li>
+<li><a href="#example-CopyBuffer" class="js-exampleHref">CopyBuffer</a></li>
+<li><a href="#example-CopyN" class="js-exampleHref">CopyN</a></li>
+<li><a href="#example-LimitReader" class="js-exampleHref">LimitReader</a></li>
+<li><a href="#example-MultiReader" class="js-exampleHref">MultiReader</a></li>
+<li><a href="#example-MultiWriter" class="js-exampleHref">MultiWriter</a></li>
+<li><a href="#example-Pipe" class="js-exampleHref">Pipe</a></li>
+<li><a href="#example-ReadAll" class="js-exampleHref">ReadAll</a></li>
+<li><a href="#example-ReadAtLeast" class="js-exampleHref">ReadAtLeast</a></li>
+<li><a href="#example-ReadFull" class="js-exampleHref">ReadFull</a></li>
+<li><a href="#example-SectionReader" class="js-exampleHref">SectionReader</a></li>
+<li><a href="#example-SectionReader.Read" class="js-exampleHref">SectionReader.Read</a></li>
+<li><a href="#example-SectionReader.ReadAt" class="js-exampleHref">SectionReader.ReadAt</a></li>
+<li><a href="#example-SectionReader.Seek" class="js-exampleHref">SectionReader.Seek</a></li>
+<li><a href="#example-SectionReader.Size" class="js-exampleHref">SectionReader.Size</a></li>
+<li><a href="#example-TeeReader" class="js-exampleHref">TeeReader</a></li>
+<li><a href="#example-WriteString" class="js-exampleHref">WriteString</a></li>
+</ul>
+</section><h3 tabindex="-1" id="pkg-constants" class="Documentation-constantsHeader">Constants <a href="#pkg-constants" title="Go to Constants" aria-label="Go to Constants">¶</a></h3>
+
+  <section class="Documentation-constants">
+    <div class="Documentation-declaration">
+      <span class="Documentation-declarationLink"><a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/io.go;l=21">View Source</a></span>
+      <pre>const (
+<span id="SeekStart" data-kind="constant">	SeekStart   = 0 <span class="comment">// seek relative to the origin of the file</span>
+</span><span id="SeekCurrent" data-kind="constant">	SeekCurrent = 1 <span class="comment">// seek relative to the current offset</span>
+</span><span id="SeekEnd" data-kind="constant">	SeekEnd     = 2 <span class="comment">// seek relative to the end</span>
+</span>)</pre>
+    </div>
+  <p>Seek whence values.
+</p>
+</section>
+
+  <h3 tabindex="-1" id="pkg-variables" class="Documentation-variablesHeader">Variables <a href="#pkg-variables" title="Go to Variables" aria-label="Go to Variables">¶</a></h3>
+
+  <section class="Documentation-variables">
+    <div class="Documentation-declaration">
+      <span class="Documentation-declarationLink"><a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/io.go;l=44">View Source</a></span>
+      <pre><span id="EOF" data-kind="variable">var EOF = <a href="/errors">errors</a>.<a href="/errors#New">New</a>(&#34;EOF&#34;)</span></pre>
+    </div>
+  <p>EOF is the error returned by Read when no more input is available.
+(Read must return EOF itself, not an error wrapping EOF,
+because callers will test for EOF using ==.)
+Functions should return EOF only to signal a graceful end of input.
+If the EOF occurs unexpectedly in a structured data stream,
+the appropriate error is either <a href="#ErrUnexpectedEOF">ErrUnexpectedEOF</a> or some other error
+giving more detail.
+</p>
+
+    <div class="Documentation-declaration">
+      <span class="Documentation-declarationLink"><a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/pipe.go;l=36">View Source</a></span>
+      <pre><span id="ErrClosedPipe" data-kind="variable">var ErrClosedPipe = <a href="/errors">errors</a>.<a href="/errors#New">New</a>(&#34;io: read/write on closed pipe&#34;)</span></pre>
+    </div>
+  <p>ErrClosedPipe is the error used for read or write operations on a closed pipe.
+</p>
+
+    <div class="Documentation-declaration">
+      <span class="Documentation-declarationLink"><a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/io.go;l=53">View Source</a></span>
+      <pre><span id="ErrNoProgress" data-kind="variable">var ErrNoProgress = <a href="/errors">errors</a>.<a href="/errors#New">New</a>(&#34;multiple Read calls return no data or error&#34;)</span></pre>
+    </div>
+  <p>ErrNoProgress is returned by some clients of a <a href="#Reader">Reader</a> when
+many calls to Read have failed to return any data or error,
+usually the sign of a broken <a href="#Reader">Reader</a> implementation.
+</p>
+
+    <div class="Documentation-declaration">
+      <span class="Documentation-declarationLink"><a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/io.go;l=35">View Source</a></span>
+      <pre><span id="ErrShortBuffer" data-kind="variable">var ErrShortBuffer = <a href="/errors">errors</a>.<a href="/errors#New">New</a>(&#34;short buffer&#34;)</span></pre>
+    </div>
+  <p>ErrShortBuffer means that a read required a longer buffer than was provided.
+</p>
+
+    <div class="Documentation-declaration">
+      <span class="Documentation-declarationLink"><a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/io.go;l=29">View Source</a></span>
+      <pre><span id="ErrShortWrite" data-kind="variable">var ErrShortWrite = <a href="/errors">errors</a>.<a href="/errors#New">New</a>(&#34;short write&#34;)</span></pre>
+    </div>
+  <p>ErrShortWrite means that a write accepted fewer bytes than requested
+but failed to return an explicit error.
+</p>
+
+    <div class="Documentation-declaration">
+      <span class="Documentation-declarationLink"><a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/io.go;l=48">View Source</a></span>
+      <pre><span id="ErrUnexpectedEOF" data-kind="variable">var ErrUnexpectedEOF = <a href="/errors">errors</a>.<a href="/errors#New">New</a>(&#34;unexpected EOF&#34;)</span></pre>
+    </div>
+  <p>ErrUnexpectedEOF means that EOF was encountered in the
+middle of reading a fixed-size block or data structure.
+</p>
+</section>
+
+  <h3 tabindex="-1" id="pkg-functions" class="Documentation-functionsHeader">Functions <a href="#pkg-functions" title="Go to Functions" aria-label="Go to Functions">¶</a></h3>
+
+  <section class="Documentation-functions"><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Copy" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/io.go;l=387">Copy</a> <a class="Documentation-idLink" href="#Copy" title="Go to Copy" aria-label="Go to Copy">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Copy(dst <a href="#Writer">Writer</a>, src <a href="#Reader">Reader</a>) (written <a href="/builtin#int64">int64</a>, err <a href="/builtin#error">error</a>)</pre>
+    </div>
+  <p>Copy copies from src to dst until either EOF is reached
+on src or an error occurs. It returns the number of bytes
+copied and the first error encountered while copying, if any.
+</p><p>A successful Copy returns err == nil, not err == EOF.
+Because Copy is defined to read from src until EOF, it does
+not treat an EOF from Read as an error to be reported.
+</p><p>If src implements <a href="#WriterTo">WriterTo</a>,
+the copy is implemented by calling src.WriteTo(dst).
+Otherwise, if dst implements <a href="#ReaderFrom">ReaderFrom</a>,
+the copy is implemented by calling dst.ReadFrom(src).
+</p>
+<details tabindex="-1" id="example-Copy" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-Copy" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;io&#34;
+	&#34;log&#34;
+	&#34;os&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	r := strings.NewReader(&#34;some io.Reader stream to be read\n&#34;)
+
+	if _, err := io.Copy(os.Stdout, r); err != nil {
+		log.Fatal(err)
+	}
+
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">some io.Reader stream to be read
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="CopyBuffer" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/io.go;l=398">CopyBuffer</a> <a class="Documentation-idLink" href="#CopyBuffer" title="Go to CopyBuffer" aria-label="Go to CopyBuffer">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.5</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func CopyBuffer(dst <a href="#Writer">Writer</a>, src <a href="#Reader">Reader</a>, buf []<a href="/builtin#byte">byte</a>) (written <a href="/builtin#int64">int64</a>, err <a href="/builtin#error">error</a>)</pre>
+    </div>
+  <p>CopyBuffer is identical to Copy except that it stages through the
+provided buffer (if one is required) rather than allocating a
+temporary one. If buf is nil, one is allocated; otherwise if it has
+zero length, CopyBuffer panics.
+</p><p>If either src implements <a href="#WriterTo">WriterTo</a> or dst implements <a href="#ReaderFrom">ReaderFrom</a>,
+buf will not be used to perform the copy.
+</p>
+<details tabindex="-1" id="example-CopyBuffer" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-CopyBuffer" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;io&#34;
+	&#34;log&#34;
+	&#34;os&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	r1 := strings.NewReader(&#34;first reader\n&#34;)
+	r2 := strings.NewReader(&#34;second reader\n&#34;)
+	buf := make([]byte, 8)
+
+	// buf is used here...
+	if _, err := io.CopyBuffer(os.Stdout, r1, buf); err != nil {
+		log.Fatal(err)
+	}
+
+	// ... reused here also. No need to allocate an extra buffer.
+	if _, err := io.CopyBuffer(os.Stdout, r2, buf); err != nil {
+		log.Fatal(err)
+	}
+
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">first reader
+second reader
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="CopyN" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/io.go;l=363">CopyN</a> <a class="Documentation-idLink" href="#CopyN" title="Go to CopyN" aria-label="Go to CopyN">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func CopyN(dst <a href="#Writer">Writer</a>, src <a href="#Reader">Reader</a>, n <a href="/builtin#int64">int64</a>) (written <a href="/builtin#int64">int64</a>, err <a href="/builtin#error">error</a>)</pre>
+    </div>
+  <p>CopyN copies n bytes (or until an error) from src to dst.
+It returns the number of bytes copied and the earliest
+error encountered while copying.
+On return, written == n if and only if err == nil.
+</p><p>If dst implements <a href="#ReaderFrom">ReaderFrom</a>, the copy is implemented using it.
+</p>
+<details tabindex="-1" id="example-CopyN" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-CopyN" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;io&#34;
+	&#34;log&#34;
+	&#34;os&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	r := strings.NewReader(&#34;some io.Reader stream to be read&#34;)
+
+	if _, err := io.CopyN(os.Stdout, r, 4); err != nil {
+		log.Fatal(err)
+	}
+
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">some
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Pipe" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/pipe.go;l=195">Pipe</a> <a class="Documentation-idLink" href="#Pipe" title="Go to Pipe" aria-label="Go to Pipe">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Pipe() (*<a href="#PipeReader">PipeReader</a>, *<a href="#PipeWriter">PipeWriter</a>)</pre>
+    </div>
+  <p>Pipe creates a synchronous in-memory pipe.
+It can be used to connect code expecting an <a href="#Reader">io.Reader</a>
+with code expecting an <a href="#Writer">io.Writer</a>.
+</p><p>Reads and Writes on the pipe are matched one to one
+except when multiple Reads are needed to consume a single Write.
+That is, each Write to the <a href="#PipeWriter">PipeWriter</a> blocks until it has satisfied
+one or more Reads from the <a href="#PipeReader">PipeReader</a> that fully consume
+the written data.
+The data is copied directly from the Write to the corresponding
+Read (or Reads); there is no internal buffering.
+</p><p>It is safe to call Read and Write in parallel with each other or with Close.
+Parallel calls to Read and parallel calls to Write are also safe:
+the individual calls will be gated sequentially.
+</p>
+<details tabindex="-1" id="example-Pipe" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-Pipe" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;io&#34;
+	&#34;log&#34;
+	&#34;os&#34;
+)
+
+func main() {
+	r, w := io.Pipe()
+
+	go func() {
+		fmt.Fprint(w, &#34;some io.Reader stream to be read\n&#34;)
+		w.Close()
+	}()
+
+	if _, err := io.Copy(os.Stdout, r); err != nil {
+		log.Fatal(err)
+	}
+
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">some io.Reader stream to be read
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="ReadAll" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/io.go;l=709">ReadAll</a> <a class="Documentation-idLink" href="#ReadAll" title="Go to ReadAll" aria-label="Go to ReadAll">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.16</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func ReadAll(r <a href="#Reader">Reader</a>) ([]<a href="/builtin#byte">byte</a>, <a href="/builtin#error">error</a>)</pre>
+    </div>
+  <p>ReadAll reads from r until an error or EOF and returns the data it read.
+A successful call returns err == nil, not err == EOF. Because ReadAll is
+defined to read from src until EOF, it does not treat an EOF from Read
+as an error to be reported.
+</p>
+<details tabindex="-1" id="example-ReadAll" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-ReadAll" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;io&#34;
+	&#34;log&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	r := strings.NewReader(&#34;Go is a general-purpose language designed with systems programming in mind.&#34;)
+
+	b, err := io.ReadAll(r)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Printf(&#34;%s&#34;, b)
+
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">Go is a general-purpose language designed with systems programming in mind.
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="ReadAtLeast" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/io.go;l=329">ReadAtLeast</a> <a class="Documentation-idLink" href="#ReadAtLeast" title="Go to ReadAtLeast" aria-label="Go to ReadAtLeast">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func ReadAtLeast(r <a href="#Reader">Reader</a>, buf []<a href="/builtin#byte">byte</a>, min <a href="/builtin#int">int</a>) (n <a href="/builtin#int">int</a>, err <a href="/builtin#error">error</a>)</pre>
+    </div>
+  <p>ReadAtLeast reads from r into buf until it has read at least min bytes.
+It returns the number of bytes copied and an error if fewer bytes were read.
+The error is EOF only if no bytes were read.
+If an EOF happens after reading fewer than min bytes,
+ReadAtLeast returns <a href="#ErrUnexpectedEOF">ErrUnexpectedEOF</a>.
+If min is greater than the length of buf, ReadAtLeast returns <a href="#ErrShortBuffer">ErrShortBuffer</a>.
+On return, n &gt;= min if and only if err == nil.
+If r returns an error having read at least min bytes, the error is dropped.
+</p>
+<details tabindex="-1" id="example-ReadAtLeast" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-ReadAtLeast" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;io&#34;
+	&#34;log&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	r := strings.NewReader(&#34;some io.Reader stream to be read\n&#34;)
+
+	buf := make([]byte, 14)
+	if _, err := io.ReadAtLeast(r, buf, 4); err != nil {
+		log.Fatal(err)
+	}
+	fmt.Printf(&#34;%s\n&#34;, buf)
+
+	// buffer smaller than minimal read size.
+	shortBuf := make([]byte, 3)
+	if _, err := io.ReadAtLeast(r, shortBuf, 4); err != nil {
+		fmt.Println(&#34;error:&#34;, err)
+	}
+
+	// minimal read size bigger than io.Reader stream
+	longBuf := make([]byte, 64)
+	if _, err := io.ReadAtLeast(r, longBuf, 64); err != nil {
+		fmt.Println(&#34;error:&#34;, err)
+	}
+
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">some io.Reader
+error: short buffer
+error: unexpected EOF
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="ReadFull" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/io.go;l=353">ReadFull</a> <a class="Documentation-idLink" href="#ReadFull" title="Go to ReadFull" aria-label="Go to ReadFull">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func ReadFull(r <a href="#Reader">Reader</a>, buf []<a href="/builtin#byte">byte</a>) (n <a href="/builtin#int">int</a>, err <a href="/builtin#error">error</a>)</pre>
+    </div>
+  <p>ReadFull reads exactly len(buf) bytes from r into buf.
+It returns the number of bytes copied and an error if fewer bytes were read.
+The error is EOF only if no bytes were read.
+If an EOF happens after reading some but not all the bytes,
+ReadFull returns <a href="#ErrUnexpectedEOF">ErrUnexpectedEOF</a>.
+On return, n == len(buf) if and only if err == nil.
+If r returns an error having read at least len(buf) bytes, the error is dropped.
+</p>
+<details tabindex="-1" id="example-ReadFull" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-ReadFull" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;io&#34;
+	&#34;log&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	r := strings.NewReader(&#34;some io.Reader stream to be read\n&#34;)
+
+	buf := make([]byte, 4)
+	if _, err := io.ReadFull(r, buf); err != nil {
+		log.Fatal(err)
+	}
+	fmt.Printf(&#34;%s\n&#34;, buf)
+
+	// minimal read size bigger than io.Reader stream
+	longBuf := make([]byte, 64)
+	if _, err := io.ReadFull(r, longBuf); err != nil {
+		fmt.Println(&#34;error:&#34;, err)
+	}
+
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">some
+error: unexpected EOF
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="WriteString" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/io.go;l=314">WriteString</a> <a class="Documentation-idLink" href="#WriteString" title="Go to WriteString" aria-label="Go to WriteString">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func WriteString(w <a href="#Writer">Writer</a>, s <a href="/builtin#string">string</a>) (n <a href="/builtin#int">int</a>, err <a href="/builtin#error">error</a>)</pre>
+    </div>
+  <p>WriteString writes the contents of the string s to w, which accepts a slice of bytes.
+If w implements <a href="#StringWriter">StringWriter</a>, [StringWriter.WriteString] is invoked directly.
+Otherwise, [Writer.Write] is called exactly once.
+</p>
+<details tabindex="-1" id="example-WriteString" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-WriteString" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;io&#34;
+	&#34;log&#34;
+	&#34;os&#34;
+)
+
+func main() {
+	if _, err := io.WriteString(os.Stdout, &#34;Hello World&#34;); err != nil {
+		log.Fatal(err)
+	}
+
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">Hello World
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+        </div></section>
+
+  <h3 tabindex="-1" id="pkg-types" class="Documentation-typesHeader">Types <a href="#pkg-types" title="Go to Types" aria-label="Go to Types">¶</a></h3>
+
+  <section class="Documentation-types"><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="ByteReader" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/io.go;l=262">ByteReader</a> <a class="Documentation-idLink" href="#ByteReader" title="Go to ByteReader" aria-label="Go to ByteReader">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type ByteReader interface {
+<span id="ByteReader.ReadByte" data-kind="method">	ReadByte() (<a href="/builtin#byte">byte</a>, <a href="/builtin#error">error</a>)
+</span>}</pre>
+    </div>
+  <p>ByteReader is the interface that wraps the ReadByte method.
+</p><p>ReadByte reads and returns the next byte from the input or
+any error encountered. If ReadByte returns an error, no input
+byte was consumed, and the returned byte value is undefined.
+</p><p>ReadByte provides an efficient interface for byte-at-time
+processing. A <a href="#Reader">Reader</a> that does not implement  ByteReader
+can be wrapped using bufio.NewReader to add this method.
+</p>
+
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="ByteScanner" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/io.go;l=274">ByteScanner</a> <a class="Documentation-idLink" href="#ByteScanner" title="Go to ByteScanner" aria-label="Go to ByteScanner">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type ByteScanner interface {
+	<a href="#ByteReader">ByteReader</a>
+<span id="ByteScanner.UnreadByte" data-kind="method">	UnreadByte() <a href="/builtin#error">error</a>
+</span>}</pre>
+    </div>
+  <p>ByteScanner is the interface that adds the UnreadByte method to the
+basic ReadByte method.
+</p><p>UnreadByte causes the next call to ReadByte to return the last byte read.
+If the last operation was not a successful call to ReadByte, UnreadByte may
+return an error, unread the last byte read (or the byte prior to the
+last-unread byte), or (in implementations that support the <a href="#Seeker">Seeker</a> interface)
+seek to one byte before the current offset.
+</p>
+
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="ByteWriter" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/io.go;l=280">ByteWriter</a> <a class="Documentation-idLink" href="#ByteWriter" title="Go to ByteWriter" aria-label="Go to ByteWriter">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.1</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type ByteWriter interface {
+<span id="ByteWriter.WriteByte" data-kind="method">	WriteByte(c <a href="/builtin#byte">byte</a>) <a href="/builtin#error">error</a>
+</span>}</pre>
+    </div>
+  <p>ByteWriter is the interface that wraps the WriteByte method.
+</p>
+
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="Closer" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/io.go;l=107">Closer</a> <a class="Documentation-idLink" href="#Closer" title="Go to Closer" aria-label="Go to Closer">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type Closer interface {
+<span id="Closer.Close" data-kind="method">	Close() <a href="/builtin#error">error</a>
+</span>}</pre>
+    </div>
+  <p>Closer is the interface that wraps the basic Close method.
+</p><p>The behavior of Close after the first call is undefined.
+Specific implementations may document their own behavior.
+</p>
+
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="LimitedReader" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/io.go;l=467">LimitedReader</a> <a class="Documentation-idLink" href="#LimitedReader" title="Go to LimitedReader" aria-label="Go to LimitedReader">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type LimitedReader struct {
+<span id="LimitedReader.R" data-kind="field">	R <a href="#Reader">Reader</a> <span class="comment">// underlying reader</span>
+</span><span id="LimitedReader.N" data-kind="field">	N <a href="/builtin#int64">int64</a>  <span class="comment">// max bytes remaining</span>
+</span>}</pre>
+    </div>
+  <p>A LimitedReader reads from R but limits the amount of
+data returned to just N bytes. Each call to Read
+updates N to reflect the new amount remaining.
+Read returns EOF when N &lt;= 0 or when the underlying R returns EOF.
+</p>
+<div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="LimitedReader.Read" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*LimitedReader) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/io.go;l=472">Read</a> <a class="Documentation-idLink" href="#LimitedReader.Read" title="Go to LimitedReader.Read" aria-label="Go to LimitedReader.Read">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (l *<a href="#LimitedReader">LimitedReader</a>) Read(p []<a href="/builtin#byte">byte</a>) (n <a href="/builtin#int">int</a>, err <a href="/builtin#error">error</a>)</pre>
+    </div>
+  
+
+  
+
+  </div>
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="OffsetWriter" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/io.go;l=570">OffsetWriter</a> <a class="Documentation-idLink" href="#OffsetWriter" title="Go to OffsetWriter" aria-label="Go to OffsetWriter">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.20</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type OffsetWriter struct {
+	<span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+    </div>
+  <p>An OffsetWriter maps writes at offset base to offset base+off in the underlying writer.
+</p>
+<div class="Documentation-typeFunc">
+    
+  
+  
+    <h4 tabindex="-1" id="NewOffsetWriter" data-kind="function" class="Documentation-typeFuncHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/io.go;l=578">NewOffsetWriter</a> <a class="Documentation-idLink" href="#NewOffsetWriter" title="Go to NewOffsetWriter" aria-label="Go to NewOffsetWriter">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.20</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func NewOffsetWriter(w <a href="#WriterAt">WriterAt</a>, off <a href="/builtin#int64">int64</a>) *<a href="#OffsetWriter">OffsetWriter</a></pre>
+    </div>
+  <p>NewOffsetWriter returns an <a href="#OffsetWriter">OffsetWriter</a> that writes to w
+starting at offset off.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="OffsetWriter.Seek" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*OffsetWriter) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/io.go;l=597">Seek</a> <a class="Documentation-idLink" href="#OffsetWriter.Seek" title="Go to OffsetWriter.Seek" aria-label="Go to OffsetWriter.Seek">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.20</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (o *<a href="#OffsetWriter">OffsetWriter</a>) Seek(offset <a href="/builtin#int64">int64</a>, whence <a href="/builtin#int">int</a>) (<a href="/builtin#int64">int64</a>, <a href="/builtin#error">error</a>)</pre>
+    </div>
+  
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="OffsetWriter.Write" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*OffsetWriter) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/io.go;l=582">Write</a> <a class="Documentation-idLink" href="#OffsetWriter.Write" title="Go to OffsetWriter.Write" aria-label="Go to OffsetWriter.Write">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.20</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (o *<a href="#OffsetWriter">OffsetWriter</a>) Write(p []<a href="/builtin#byte">byte</a>) (n <a href="/builtin#int">int</a>, err <a href="/builtin#error">error</a>)</pre>
+    </div>
+  
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="OffsetWriter.WriteAt" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*OffsetWriter) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/io.go;l=588">WriteAt</a> <a class="Documentation-idLink" href="#OffsetWriter.WriteAt" title="Go to OffsetWriter.WriteAt" aria-label="Go to OffsetWriter.WriteAt">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.20</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (o *<a href="#OffsetWriter">OffsetWriter</a>) WriteAt(p []<a href="/builtin#byte">byte</a>, off <a href="/builtin#int64">int64</a>) (n <a href="/builtin#int">int</a>, err <a href="/builtin#error">error</a>)</pre>
+    </div>
+  
+
+  
+
+  </div>
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="PipeReader" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/pipe.go;l=126">PipeReader</a> <a class="Documentation-idLink" href="#PipeReader" title="Go to PipeReader" aria-label="Go to PipeReader">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type PipeReader struct {
+	<span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+    </div>
+  <p>A PipeReader is the read half of a pipe.
+</p>
+<div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="PipeReader.Close" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*PipeReader) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/pipe.go;l=139">Close</a> <a class="Documentation-idLink" href="#PipeReader.Close" title="Go to PipeReader.Close" aria-label="Go to PipeReader.Close">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (r *<a href="#PipeReader">PipeReader</a>) Close() <a href="/builtin#error">error</a></pre>
+    </div>
+  <p>Close closes the reader; subsequent writes to the
+write half of the pipe will return the error <a href="#ErrClosedPipe">ErrClosedPipe</a>.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="PipeReader.CloseWithError" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*PipeReader) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/pipe.go;l=148">CloseWithError</a> <a class="Documentation-idLink" href="#PipeReader.CloseWithError" title="Go to PipeReader.CloseWithError" aria-label="Go to PipeReader.CloseWithError">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (r *<a href="#PipeReader">PipeReader</a>) CloseWithError(err <a href="/builtin#error">error</a>) <a href="/builtin#error">error</a></pre>
+    </div>
+  <p>CloseWithError closes the reader; subsequent writes
+to the write half of the pipe will return the error err.
+</p><p>CloseWithError never overwrites the previous error if it exists
+and always returns nil.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="PipeReader.Read" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*PipeReader) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/pipe.go;l=133">Read</a> <a class="Documentation-idLink" href="#PipeReader.Read" title="Go to PipeReader.Read" aria-label="Go to PipeReader.Read">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (r *<a href="#PipeReader">PipeReader</a>) Read(data []<a href="/builtin#byte">byte</a>) (n <a href="/builtin#int">int</a>, err <a href="/builtin#error">error</a>)</pre>
+    </div>
+  <p>Read implements the standard Read interface:
+it reads data from the pipe, blocking until a writer
+arrives or the write end is closed.
+If the write end is closed with an error, that error is
+returned as err; otherwise err is EOF.
+</p>
+
+  
+
+  </div>
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="PipeWriter" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/pipe.go;l=153">PipeWriter</a> <a class="Documentation-idLink" href="#PipeWriter" title="Go to PipeWriter" aria-label="Go to PipeWriter">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type PipeWriter struct {
+	<span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+    </div>
+  <p>A PipeWriter is the write half of a pipe.
+</p>
+<div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="PipeWriter.Close" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*PipeWriter) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/pipe.go;l=166">Close</a> <a class="Documentation-idLink" href="#PipeWriter.Close" title="Go to PipeWriter.Close" aria-label="Go to PipeWriter.Close">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (w *<a href="#PipeWriter">PipeWriter</a>) Close() <a href="/builtin#error">error</a></pre>
+    </div>
+  <p>Close closes the writer; subsequent reads from the
+read half of the pipe will return no bytes and EOF.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="PipeWriter.CloseWithError" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*PipeWriter) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/pipe.go;l=176">CloseWithError</a> <a class="Documentation-idLink" href="#PipeWriter.CloseWithError" title="Go to PipeWriter.CloseWithError" aria-label="Go to PipeWriter.CloseWithError">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (w *<a href="#PipeWriter">PipeWriter</a>) CloseWithError(err <a href="/builtin#error">error</a>) <a href="/builtin#error">error</a></pre>
+    </div>
+  <p>CloseWithError closes the writer; subsequent reads from the
+read half of the pipe will return no bytes and the error err,
+or EOF if err is nil.
+</p><p>CloseWithError never overwrites the previous error if it exists
+and always returns nil.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="PipeWriter.Write" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*PipeWriter) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/pipe.go;l=160">Write</a> <a class="Documentation-idLink" href="#PipeWriter.Write" title="Go to PipeWriter.Write" aria-label="Go to PipeWriter.Write">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (w *<a href="#PipeWriter">PipeWriter</a>) Write(data []<a href="/builtin#byte">byte</a>) (n <a href="/builtin#int">int</a>, err <a href="/builtin#error">error</a>)</pre>
+    </div>
+  <p>Write implements the standard Write interface:
+it writes data to the pipe, blocking until one or more readers
+have consumed all the data or the read end is closed.
+If the read end is closed with an error, that err is
+returned as err; otherwise err is <a href="#ErrClosedPipe">ErrClosedPipe</a>.
+</p>
+
+  
+
+  </div>
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="ReadCloser" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/io.go;l=137">ReadCloser</a> <a class="Documentation-idLink" href="#ReadCloser" title="Go to ReadCloser" aria-label="Go to ReadCloser">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type ReadCloser interface {
+	<a href="#Reader">Reader</a>
+	<a href="#Closer">Closer</a>
+}</pre>
+    </div>
+  <p>ReadCloser is the interface that groups the basic Read and Close methods.
+</p>
+<div class="Documentation-typeFunc">
+    
+  
+  
+    <h4 tabindex="-1" id="NopCloser" data-kind="function" class="Documentation-typeFuncHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/io.go;l=682">NopCloser</a> <a class="Documentation-idLink" href="#NopCloser" title="Go to NopCloser" aria-label="Go to NopCloser">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.16</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func NopCloser(r <a href="#Reader">Reader</a>) <a href="#ReadCloser">ReadCloser</a></pre>
+    </div>
+  <p>NopCloser returns a <a href="#ReadCloser">ReadCloser</a> with a no-op Close method wrapping
+the provided <a href="#Reader">Reader</a> r.
+If r implements <a href="#WriterTo">WriterTo</a>, the returned <a href="#ReadCloser">ReadCloser</a> will implement <a href="#WriterTo">WriterTo</a>
+by forwarding calls to r.
+</p>
+
+  
+
+  </div>
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="ReadSeekCloser" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/io.go;l=163">ReadSeekCloser</a> <a class="Documentation-idLink" href="#ReadSeekCloser" title="Go to ReadSeekCloser" aria-label="Go to ReadSeekCloser">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.16</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type ReadSeekCloser interface {
+	<a href="#Reader">Reader</a>
+	<a href="#Seeker">Seeker</a>
+	<a href="#Closer">Closer</a>
+}</pre>
+    </div>
+  <p>ReadSeekCloser is the interface that groups the basic Read, Seek and Close
+methods.
+</p>
+
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="ReadSeeker" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/io.go;l=156">ReadSeeker</a> <a class="Documentation-idLink" href="#ReadSeeker" title="Go to ReadSeeker" aria-label="Go to ReadSeeker">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type ReadSeeker interface {
+	<a href="#Reader">Reader</a>
+	<a href="#Seeker">Seeker</a>
+}</pre>
+    </div>
+  <p>ReadSeeker is the interface that groups the basic Read and Seek methods.
+</p>
+
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="ReadWriteCloser" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/io.go;l=149">ReadWriteCloser</a> <a class="Documentation-idLink" href="#ReadWriteCloser" title="Go to ReadWriteCloser" aria-label="Go to ReadWriteCloser">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type ReadWriteCloser interface {
+	<a href="#Reader">Reader</a>
+	<a href="#Writer">Writer</a>
+	<a href="#Closer">Closer</a>
+}</pre>
+    </div>
+  <p>ReadWriteCloser is the interface that groups the basic Read, Write and Close methods.
+</p>
+
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="ReadWriteSeeker" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/io.go;l=176">ReadWriteSeeker</a> <a class="Documentation-idLink" href="#ReadWriteSeeker" title="Go to ReadWriteSeeker" aria-label="Go to ReadWriteSeeker">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type ReadWriteSeeker interface {
+	<a href="#Reader">Reader</a>
+	<a href="#Writer">Writer</a>
+	<a href="#Seeker">Seeker</a>
+}</pre>
+    </div>
+  <p>ReadWriteSeeker is the interface that groups the basic Read, Write and Seek methods.
+</p>
+
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="ReadWriter" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/io.go;l=131">ReadWriter</a> <a class="Documentation-idLink" href="#ReadWriter" title="Go to ReadWriter" aria-label="Go to ReadWriter">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type ReadWriter interface {
+	<a href="#Reader">Reader</a>
+	<a href="#Writer">Writer</a>
+}</pre>
+    </div>
+  <p>ReadWriter is the interface that groups the basic Read and Write methods.
+</p>
+
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="Reader" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/io.go;l=86">Reader</a> <a class="Documentation-idLink" href="#Reader" title="Go to Reader" aria-label="Go to Reader">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type Reader interface {
+<span id="Reader.Read" data-kind="method">	Read(p []<a href="/builtin#byte">byte</a>) (n <a href="/builtin#int">int</a>, err <a href="/builtin#error">error</a>)
+</span>}</pre>
+    </div>
+  <p>Reader is the interface that wraps the basic Read method.
+</p><p>Read reads up to len(p) bytes into p. It returns the number of bytes
+read (0 &lt;= n &lt;= len(p)) and any error encountered. Even if Read
+returns n &lt; len(p), it may use all of p as scratch space during the call.
+If some data is available but not len(p) bytes, Read conventionally
+returns what is available instead of waiting for more.
+</p><p>When Read encounters an error or end-of-file condition after
+successfully reading n &gt; 0 bytes, it returns the number of
+bytes read. It may return the (non-nil) error from the same call
+or return the error (and n == 0) from a subsequent call.
+An instance of this general case is that a Reader returning
+a non-zero number of bytes at the end of the input stream may
+return either err == EOF or err == nil. The next Read should
+return 0, EOF.
+</p><p>Callers should always process the n &gt; 0 bytes returned before
+considering the error err. Doing so correctly handles I/O errors
+that happen after reading some bytes and also both of the
+allowed EOF behaviors.
+</p><p>If len(p) == 0, Read should always return n == 0. It may return a
+non-nil error if some error condition is known, such as EOF.
+</p><p>Implementations of Read are discouraged from returning a
+zero byte count with a nil error, except when len(p) == 0.
+Callers should treat a return of 0 and nil as indicating that
+nothing happened; in particular it does not indicate EOF.
+</p><p>Implementations must not retain p.
+</p>
+<div class="Documentation-typeFunc">
+    
+  
+  
+    <h4 tabindex="-1" id="LimitReader" data-kind="function" class="Documentation-typeFuncHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/io.go;l=461">LimitReader</a> <a class="Documentation-idLink" href="#LimitReader" title="Go to LimitReader" aria-label="Go to LimitReader">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func LimitReader(r <a href="#Reader">Reader</a>, n <a href="/builtin#int64">int64</a>) <a href="#Reader">Reader</a></pre>
+    </div>
+  <p>LimitReader returns a Reader that reads from r
+but stops with EOF after n bytes.
+The underlying implementation is a *LimitedReader.
+</p>
+<details tabindex="-1" id="example-LimitReader" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-LimitReader" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;io&#34;
+	&#34;log&#34;
+	&#34;os&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	r := strings.NewReader(&#34;some io.Reader stream to be read\n&#34;)
+	lr := io.LimitReader(r, 4)
+
+	if _, err := io.Copy(os.Stdout, lr); err != nil {
+		log.Fatal(err)
+	}
+
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">some
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+  </div><div class="Documentation-typeFunc">
+    
+  
+  
+    <h4 tabindex="-1" id="MultiReader" data-kind="function" class="Documentation-typeFuncHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/multi.go;l=73">MultiReader</a> <a class="Documentation-idLink" href="#MultiReader" title="Go to MultiReader" aria-label="Go to MultiReader">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func MultiReader(readers ...<a href="#Reader">Reader</a>) <a href="#Reader">Reader</a></pre>
+    </div>
+  <p>MultiReader returns a Reader that&#39;s the logical concatenation of
+the provided input readers. They&#39;re read sequentially. Once all
+inputs have returned EOF, Read will return EOF.  If any of the readers
+return a non-nil, non-EOF error, Read will return that error.
+</p>
+<details tabindex="-1" id="example-MultiReader" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-MultiReader" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;io&#34;
+	&#34;log&#34;
+	&#34;os&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	r1 := strings.NewReader(&#34;first reader &#34;)
+	r2 := strings.NewReader(&#34;second reader &#34;)
+	r3 := strings.NewReader(&#34;third reader\n&#34;)
+	r := io.MultiReader(r1, r2, r3)
+
+	if _, err := io.Copy(os.Stdout, r); err != nil {
+		log.Fatal(err)
+	}
+
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">first reader second reader third reader
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+  </div><div class="Documentation-typeFunc">
+    
+  
+  
+    <h4 tabindex="-1" id="TeeReader" data-kind="function" class="Documentation-typeFuncHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/io.go;l=618">TeeReader</a> <a class="Documentation-idLink" href="#TeeReader" title="Go to TeeReader" aria-label="Go to TeeReader">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func TeeReader(r <a href="#Reader">Reader</a>, w <a href="#Writer">Writer</a>) <a href="#Reader">Reader</a></pre>
+    </div>
+  <p>TeeReader returns a <a href="#Reader">Reader</a> that writes to w what it reads from r.
+All reads from r performed through it are matched with
+corresponding writes to w. There is no internal buffering -
+the write must complete before the read completes.
+Any error encountered while writing is reported as a read error.
+</p>
+<details tabindex="-1" id="example-TeeReader" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-TeeReader" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;io&#34;
+	&#34;log&#34;
+	&#34;os&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	var r io.Reader = strings.NewReader(&#34;some io.Reader stream to be read\n&#34;)
+
+	r = io.TeeReader(r, os.Stdout)
+
+	// Everything read from r will be copied to stdout.
+	if _, err := io.ReadAll(r); err != nil {
+		log.Fatal(err)
+	}
+
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">some io.Reader stream to be read
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+  </div>
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="ReaderAt" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/io.go;l=230">ReaderAt</a> <a class="Documentation-idLink" href="#ReaderAt" title="Go to ReaderAt" aria-label="Go to ReaderAt">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type ReaderAt interface {
+<span id="ReaderAt.ReadAt" data-kind="method">	ReadAt(p []<a href="/builtin#byte">byte</a>, off <a href="/builtin#int64">int64</a>) (n <a href="/builtin#int">int</a>, err <a href="/builtin#error">error</a>)
+</span>}</pre>
+    </div>
+  <p>ReaderAt is the interface that wraps the basic ReadAt method.
+</p><p>ReadAt reads len(p) bytes into p starting at offset off in the
+underlying input source. It returns the number of bytes
+read (0 &lt;= n &lt;= len(p)) and any error encountered.
+</p><p>When ReadAt returns n &lt; len(p), it returns a non-nil error
+explaining why more bytes were not returned. In this respect,
+ReadAt is stricter than Read.
+</p><p>Even if ReadAt returns n &lt; len(p), it may use all of p as scratch
+space during the call. If some data is available but not len(p) bytes,
+ReadAt blocks until either all the data is available or an error occurs.
+In this respect ReadAt is different from Read.
+</p><p>If the n = len(p) bytes returned by ReadAt are at the end of the
+input source, ReadAt may return either err == EOF or err == nil.
+</p><p>If ReadAt is reading from an input source with a seek offset,
+ReadAt should not affect nor be affected by the underlying
+seek offset.
+</p><p>Clients of ReadAt can execute parallel ReadAt calls on the
+same input source.
+</p><p>Implementations must not retain p.
+</p>
+
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="ReaderFrom" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/io.go;l=189">ReaderFrom</a> <a class="Documentation-idLink" href="#ReaderFrom" title="Go to ReaderFrom" aria-label="Go to ReaderFrom">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type ReaderFrom interface {
+<span id="ReaderFrom.ReadFrom" data-kind="method">	ReadFrom(r <a href="#Reader">Reader</a>) (n <a href="/builtin#int64">int64</a>, err <a href="/builtin#error">error</a>)
+</span>}</pre>
+    </div>
+  <p>ReaderFrom is the interface that wraps the ReadFrom method.
+</p><p>ReadFrom reads data from r until EOF or error.
+The return value n is the number of bytes read.
+Any error except EOF encountered during the read is also returned.
+</p><p>The <a href="#Copy">Copy</a> function uses <a href="#ReaderFrom">ReaderFrom</a> if available.
+</p>
+
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="RuneReader" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/io.go;l=289">RuneReader</a> <a class="Documentation-idLink" href="#RuneReader" title="Go to RuneReader" aria-label="Go to RuneReader">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type RuneReader interface {
+<span id="RuneReader.ReadRune" data-kind="method">	ReadRune() (r <a href="/builtin#rune">rune</a>, size <a href="/builtin#int">int</a>, err <a href="/builtin#error">error</a>)
+</span>}</pre>
+    </div>
+  <p>RuneReader is the interface that wraps the ReadRune method.
+</p><p>ReadRune reads a single encoded Unicode character
+and returns the rune and its size in bytes. If no character is
+available, err will be set.
+</p>
+
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="RuneScanner" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/io.go;l=301">RuneScanner</a> <a class="Documentation-idLink" href="#RuneScanner" title="Go to RuneScanner" aria-label="Go to RuneScanner">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type RuneScanner interface {
+	<a href="#RuneReader">RuneReader</a>
+<span id="RuneScanner.UnreadRune" data-kind="method">	UnreadRune() <a href="/builtin#error">error</a>
+</span>}</pre>
+    </div>
+  <p>RuneScanner is the interface that adds the UnreadRune method to the
+basic ReadRune method.
+</p><p>UnreadRune causes the next call to ReadRune to return the last rune read.
+If the last operation was not a successful call to ReadRune, UnreadRune may
+return an error, unread the last rune read (or the rune prior to the
+last-unread rune), or (in implementations that support the <a href="#Seeker">Seeker</a> interface)
+seek to the start of the rune before the current offset.
+</p>
+
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="SectionReader" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/io.go;l=501">SectionReader</a> <a class="Documentation-idLink" href="#SectionReader" title="Go to SectionReader" aria-label="Go to SectionReader">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type SectionReader struct {
+	<span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+    </div>
+  <p>SectionReader implements Read, Seek, and ReadAt on a section
+of an underlying <a href="#ReaderAt">ReaderAt</a>.
+</p>
+<details tabindex="-1" id="example-SectionReader" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-SectionReader" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;io&#34;
+	&#34;log&#34;
+	&#34;os&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	r := strings.NewReader(&#34;some io.Reader stream to be read\n&#34;)
+	s := io.NewSectionReader(r, 5, 17)
+
+	if _, err := io.Copy(os.Stdout, s); err != nil {
+		log.Fatal(err)
+	}
+
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">io.Reader stream
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+<div class="Documentation-typeFunc">
+    
+  
+  
+    <h4 tabindex="-1" id="NewSectionReader" data-kind="function" class="Documentation-typeFuncHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/io.go;l=486">NewSectionReader</a> <a class="Documentation-idLink" href="#NewSectionReader" title="Go to NewSectionReader" aria-label="Go to NewSectionReader">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func NewSectionReader(r <a href="#ReaderAt">ReaderAt</a>, off <a href="/builtin#int64">int64</a>, n <a href="/builtin#int64">int64</a>) *<a href="#SectionReader">SectionReader</a></pre>
+    </div>
+  <p>NewSectionReader returns a <a href="#SectionReader">SectionReader</a> that reads from r
+starting at offset off and stops with EOF after n bytes.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="SectionReader.Outer" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*SectionReader) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/io.go;l=565">Outer</a> <a class="Documentation-idLink" href="#SectionReader.Outer" title="Go to SectionReader.Outer" aria-label="Go to SectionReader.Outer">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.22.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (s *<a href="#SectionReader">SectionReader</a>) Outer() (r <a href="#ReaderAt">ReaderAt</a>, off <a href="/builtin#int64">int64</a>, n <a href="/builtin#int64">int64</a>)</pre>
+    </div>
+  <p>Outer returns the underlying <a href="#ReaderAt">ReaderAt</a> and offsets for the section.
+</p><p>The returned values are the same that were passed to <a href="#NewSectionReader">NewSectionReader</a>
+when the <a href="#SectionReader">SectionReader</a> was created.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="SectionReader.Read" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*SectionReader) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/io.go;l=509">Read</a> <a class="Documentation-idLink" href="#SectionReader.Read" title="Go to SectionReader.Read" aria-label="Go to SectionReader.Read">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (s *<a href="#SectionReader">SectionReader</a>) Read(p []<a href="/builtin#byte">byte</a>) (n <a href="/builtin#int">int</a>, err <a href="/builtin#error">error</a>)</pre>
+    </div>
+  
+<details tabindex="-1" id="example-SectionReader.Read" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-SectionReader.Read" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;io&#34;
+	&#34;log&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	r := strings.NewReader(&#34;some io.Reader stream to be read\n&#34;)
+	s := io.NewSectionReader(r, 5, 17)
+
+	buf := make([]byte, 9)
+	if _, err := s.Read(buf); err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Printf(&#34;%s\n&#34;, buf)
+
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">io.Reader
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="SectionReader.ReadAt" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*SectionReader) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/io.go;l=542">ReadAt</a> <a class="Documentation-idLink" href="#SectionReader.ReadAt" title="Go to SectionReader.ReadAt" aria-label="Go to SectionReader.ReadAt">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (s *<a href="#SectionReader">SectionReader</a>) ReadAt(p []<a href="/builtin#byte">byte</a>, off <a href="/builtin#int64">int64</a>) (n <a href="/builtin#int">int</a>, err <a href="/builtin#error">error</a>)</pre>
+    </div>
+  
+<details tabindex="-1" id="example-SectionReader.ReadAt" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-SectionReader.ReadAt" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;io&#34;
+	&#34;log&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	r := strings.NewReader(&#34;some io.Reader stream to be read\n&#34;)
+	s := io.NewSectionReader(r, 5, 17)
+
+	buf := make([]byte, 6)
+	if _, err := s.ReadAt(buf, 10); err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Printf(&#34;%s\n&#34;, buf)
+
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">stream
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="SectionReader.Seek" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*SectionReader) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/io.go;l=524">Seek</a> <a class="Documentation-idLink" href="#SectionReader.Seek" title="Go to SectionReader.Seek" aria-label="Go to SectionReader.Seek">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (s *<a href="#SectionReader">SectionReader</a>) Seek(offset <a href="/builtin#int64">int64</a>, whence <a href="/builtin#int">int</a>) (<a href="/builtin#int64">int64</a>, <a href="/builtin#error">error</a>)</pre>
+    </div>
+  
+<details tabindex="-1" id="example-SectionReader.Seek" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-SectionReader.Seek" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;io&#34;
+	&#34;log&#34;
+	&#34;os&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	r := strings.NewReader(&#34;some io.Reader stream to be read\n&#34;)
+	s := io.NewSectionReader(r, 5, 17)
+
+	if _, err := s.Seek(10, io.SeekStart); err != nil {
+		log.Fatal(err)
+	}
+
+	if _, err := io.Copy(os.Stdout, s); err != nil {
+		log.Fatal(err)
+	}
+
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">stream
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="SectionReader.Size" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*SectionReader) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/io.go;l=559">Size</a> <a class="Documentation-idLink" href="#SectionReader.Size" title="Go to SectionReader.Size" aria-label="Go to SectionReader.Size">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (s *<a href="#SectionReader">SectionReader</a>) Size() <a href="/builtin#int64">int64</a></pre>
+    </div>
+  <p>Size returns the size of the section in bytes.
+</p>
+<details tabindex="-1" id="example-SectionReader.Size" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-SectionReader.Size" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;io&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	r := strings.NewReader(&#34;some io.Reader stream to be read\n&#34;)
+	s := io.NewSectionReader(r, 5, 17)
+
+	fmt.Println(s.Size())
+
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">17
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+  </div>
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="Seeker" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/io.go;l=126">Seeker</a> <a class="Documentation-idLink" href="#Seeker" title="Go to Seeker" aria-label="Go to Seeker">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type Seeker interface {
+<span id="Seeker.Seek" data-kind="method">	Seek(offset <a href="/builtin#int64">int64</a>, whence <a href="/builtin#int">int</a>) (<a href="/builtin#int64">int64</a>, <a href="/builtin#error">error</a>)
+</span>}</pre>
+    </div>
+  <p>Seeker is the interface that wraps the basic Seek method.
+</p><p>Seek sets the offset for the next Read or Write to offset,
+interpreted according to whence:
+<a href="#SeekStart">SeekStart</a> means relative to the start of the file,
+<a href="#SeekCurrent">SeekCurrent</a> means relative to the current offset, and
+<a href="#SeekEnd">SeekEnd</a> means relative to the end
+(for example, offset = -2 specifies the penultimate byte of the file).
+Seek returns the new offset relative to the start of the
+file or an error, if any.
+</p><p>Seeking to an offset before the start of the file is an error.
+Seeking to any positive offset may be allowed, but if the new offset exceeds
+the size of the underlying object the behavior of subsequent I/O operations
+is implementation-dependent.
+</p>
+
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="StringWriter" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/io.go;l=307">StringWriter</a> <a class="Documentation-idLink" href="#StringWriter" title="Go to StringWriter" aria-label="Go to StringWriter">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.12</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type StringWriter interface {
+<span id="StringWriter.WriteString" data-kind="method">	WriteString(s <a href="/builtin#string">string</a>) (n <a href="/builtin#int">int</a>, err <a href="/builtin#error">error</a>)
+</span>}</pre>
+    </div>
+  <p>StringWriter is the interface that wraps the WriteString method.
+</p>
+
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="WriteCloser" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/io.go;l=143">WriteCloser</a> <a class="Documentation-idLink" href="#WriteCloser" title="Go to WriteCloser" aria-label="Go to WriteCloser">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type WriteCloser interface {
+	<a href="#Writer">Writer</a>
+	<a href="#Closer">Closer</a>
+}</pre>
+    </div>
+  <p>WriteCloser is the interface that groups the basic Write and Close methods.
+</p>
+
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="WriteSeeker" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/io.go;l=170">WriteSeeker</a> <a class="Documentation-idLink" href="#WriteSeeker" title="Go to WriteSeeker" aria-label="Go to WriteSeeker">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type WriteSeeker interface {
+	<a href="#Writer">Writer</a>
+	<a href="#Seeker">Seeker</a>
+}</pre>
+    </div>
+  <p>WriteSeeker is the interface that groups the basic Write and Seek methods.
+</p>
+
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="Writer" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/io.go;l=99">Writer</a> <a class="Documentation-idLink" href="#Writer" title="Go to Writer" aria-label="Go to Writer">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type Writer interface {
+<span id="Writer.Write" data-kind="method">	Write(p []<a href="/builtin#byte">byte</a>) (n <a href="/builtin#int">int</a>, err <a href="/builtin#error">error</a>)
+</span>}</pre>
+    </div>
+  <p>Writer is the interface that wraps the basic Write method.
+</p><p>Write writes len(p) bytes from p to the underlying data stream.
+It returns the number of bytes written from p (0 &lt;= n &lt;= len(p))
+and any error encountered that caused the write to stop early.
+Write must return a non-nil error if it returns n &lt; len(p).
+Write must not modify the slice data, even temporarily.
+</p><p>Implementations must not retain p.
+</p>
+<div class="Documentation-typeVariable">
+    <div class="Documentation-declaration">
+      <pre><span id="Discard" data-kind="variable">var Discard <a href="#Writer">Writer</a> = discard{}</span></pre>
+    </div>
+  <p>Discard is a <a href="#Writer">Writer</a> on which all Write calls succeed
+without doing anything.
+</p>
+</div><div class="Documentation-typeFunc">
+    
+  
+  
+    <h4 tabindex="-1" id="MultiWriter" data-kind="function" class="Documentation-typeFuncHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/multi.go;l=127">MultiWriter</a> <a class="Documentation-idLink" href="#MultiWriter" title="Go to MultiWriter" aria-label="Go to MultiWriter">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func MultiWriter(writers ...<a href="#Writer">Writer</a>) <a href="#Writer">Writer</a></pre>
+    </div>
+  <p>MultiWriter creates a writer that duplicates its writes to all the
+provided writers, similar to the Unix tee(1) command.
+</p><p>Each write is written to each listed writer, one at a time.
+If a listed writer returns an error, that overall write operation
+stops and returns the error; it does not continue down the list.
+</p>
+<details tabindex="-1" id="example-MultiWriter" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-MultiWriter" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;io&#34;
+	&#34;log&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	r := strings.NewReader(&#34;some io.Reader stream to be read\n&#34;)
+
+	var buf1, buf2 strings.Builder
+	w := io.MultiWriter(&amp;buf1, &amp;buf2)
+
+	if _, err := io.Copy(w, r); err != nil {
+		log.Fatal(err)
+	}
+
+	fmt.Print(buf1.String())
+	fmt.Print(buf2.String())
+
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">some io.Reader stream to be read
+some io.Reader stream to be read
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+  </div>
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="WriterAt" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/io.go;l=249">WriterAt</a> <a class="Documentation-idLink" href="#WriterAt" title="Go to WriterAt" aria-label="Go to WriterAt">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type WriterAt interface {
+<span id="WriterAt.WriteAt" data-kind="method">	WriteAt(p []<a href="/builtin#byte">byte</a>, off <a href="/builtin#int64">int64</a>) (n <a href="/builtin#int">int</a>, err <a href="/builtin#error">error</a>)
+</span>}</pre>
+    </div>
+  <p>WriterAt is the interface that wraps the basic WriteAt method.
+</p><p>WriteAt writes len(p) bytes from p to the underlying data stream
+at offset off. It returns the number of bytes written from p (0 &lt;= n &lt;= len(p))
+and any error encountered that caused the write to stop early.
+WriteAt must return a non-nil error if it returns n &lt; len(p).
+</p><p>If WriteAt is writing to a destination with a seek offset,
+WriteAt should not affect nor be affected by the underlying
+seek offset.
+</p><p>Clients of WriteAt can execute parallel WriteAt calls on the same
+destination if the ranges do not overlap.
+</p><p>Implementations must not retain p.
+</p>
+
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="WriterTo" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/io.go;l=200">WriterTo</a> <a class="Documentation-idLink" href="#WriterTo" title="Go to WriterTo" aria-label="Go to WriterTo">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type WriterTo interface {
+<span id="WriterTo.WriteTo" data-kind="method">	WriteTo(w <a href="#Writer">Writer</a>) (n <a href="/builtin#int64">int64</a>, err <a href="/builtin#error">error</a>)
+</span>}</pre>
+    </div>
+  <p>WriterTo is the interface that wraps the WriteTo method.
+</p><p>WriteTo writes data to w until there&#39;s no more data to write or
+when an error occurs. The return value n is the number of bytes
+written. Any error encountered during the write is also returned.
+</p><p>The Copy function uses WriterTo if available.
+</p>
+
+  
+
+    </div></section></div> 
+
+
+
+
+
+
+
+      
+    </div>
+  </div>
+
+        
+      
+      
+        
+  <div class="UnitFiles js-unitFiles">
+    <h2 class="UnitFiles-title" id="section-sourcefiles">
+      <img class="go-Icon" height="24" width="24" src="/static/shared/icon/insert_drive_file_gm_grey_24dp.svg" alt="">
+      Source Files
+      <a class="UnitFiles-idLink" href="#section-sourcefiles" title="Go to Source Files" aria-label="Go to Source Files">¶</a>
+    </h2><div class="UnitFiles-titleLink">
+      <a href="https://cs.opensource.google/go/go/+/go1.26.3:src/io" target="_blank" rel="noopener">View all Source files</a>
+    </div><div>
+      <ul class="UnitFiles-fileList"><li><a href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/io.go" target="_blank" rel="noopener" title="io.go">io.go</a></li><li><a href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/multi.go" target="_blank" rel="noopener" title="multi.go">multi.go</a></li><li><a href="https://cs.opensource.google/go/go/+/go1.26.3:src/io/pipe.go" target="_blank" rel="noopener" title="pipe.go">pipe.go</a></li></ul>
+    </div>
+  </div>
+
+      
+      
+        
+  <div class="UnitDirectories js-unitDirectories">
+    <h2 class="UnitDirectories-title" id="section-directories">
+      <img class="go-Icon" height="24" width="24" src="/static/shared/icon/folder_gm_grey_24dp.svg" alt="">
+      Directories
+      <a class="UnitDirectories-idLink" href="#section-directories" title="Go to Directories" aria-label="Go to Directories">¶</a>
+    </h2>
+    <div class="UnitDirectories-toggles">
+      <div class="UnitDirectories-toggleButtons">
+        <button class="js-showInternalDirectories" data-test-id="internal-directories-toggle"
+            data-gtmc="directories button" aria-label="Show Internal Directories">
+          Show internal
+        </button>
+        <button class="js-expandAllDirectories" data-test-id="directories-toggle"
+            data-gtmc="directories button" aria-label="Expand All Directories">
+          Expand all
+        </button>
+      </div>
+    </div>
+    <table class="UnitDirectories-table UnitDirectories-table--tree js-expandableTable"
+          data-test-id="UnitDirectories-table">
+      <tr class="UnitDirectories-tableHeader UnitDirectories-tableHeader--tree">
+        <th>Path</th>
+        <th class="UnitDirectories-desktopSynopsis">Synopsis</th>
+      </tr>
+      
+          
+  
+  <tr
+      class="">
+    <td data-id="fs" data-aria-owns="">
+      <div class="UnitDirectories-pathCell">
+        <div><a href="/io/fs@go1.26.3">fs</a>
+            
+          </div>
+          <div class="UnitDirectories-mobileSynopsis">Package fs defines basic interfaces to a file system.</div>
+        </div>
+      </td>
+      <td class="UnitDirectories-desktopSynopsis">Package fs defines basic interfaces to a file system.</td></tr></tr>
+
+      
+          
+  
+  <tr
+      class="">
+    <td data-id="ioutil" data-aria-owns="">
+      <div class="UnitDirectories-pathCell">
+        <div><a href="/io/ioutil@go1.26.3">ioutil</a>
+            
+          </div>
+          <div class="UnitDirectories-mobileSynopsis">Package ioutil implements some I/O utility functions.</div>
+        </div>
+      </td>
+      <td class="UnitDirectories-desktopSynopsis">Package ioutil implements some I/O utility functions.</td></tr></tr>
+
+      
+    </table>
+  </div>
+
+      
+    </div>
+  </div>
+  <div id="showInternal-description" hidden> Click to show internal directories. </div>
+  <div id="hideInternal-description" hidden> Click to hide internal directories. </div>
+</article>
+    <footer class="go-Main-footer"></footer>
+  </main>
+
+    
+  <footer class="go-Footer">
+    
+    <div class="go-Footer-links">
+      <div class="go-Footer-linkColumn">
+        <a href="https://go.dev/solutions" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          Why Go
+        </a>
+        <a href="https://go.dev/solutions#use-cases" class="go-Footer-link"
+            data-gtmc="footer link">
+          Use Cases
+        </a>
+        <a href="https://go.dev/solutions#case-studies" class="go-Footer-link"
+            data-gtmc="footer link">
+          Case Studies
+        </a>
+      </div>
+      <div class="go-Footer-linkColumn">
+        <a href="https://learn.go.dev/" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          Get Started
+        </a>
+        <a href="https://play.golang.org" class="go-Footer-link" data-gtmc="footer link">
+          Playground
+        </a>
+        <a href="https://tour.golang.org" class="go-Footer-link" data-gtmc="footer link">
+          Tour
+        </a>
+        <a href="https://stackoverflow.com/questions/tagged/go?tab=Newest" class="go-Footer-link"
+            data-gtmc="footer link">
+          Stack Overflow
+        </a>
+        <a href="https://go.dev/help" class="go-Footer-link"
+            data-gtmc="footer link">
+          Help
+        </a>
+      </div>
+      <div class="go-Footer-linkColumn">
+        <a href="https://pkg.go.dev" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          Packages
+        </a>
+        <a href="/std" class="go-Footer-link" data-gtmc="footer link">
+          Standard Library
+        </a>
+        <a href="/golang.org/x" class="go-Footer-link" data-gtmc="footer link">
+          Sub-repositories
+        </a>
+        <a href="https://pkg.go.dev/about" class="go-Footer-link" data-gtmc="footer link">
+          About Go Packages
+        </a>
+      </div>
+      <div class="go-Footer-linkColumn">
+        <a href="https://go.dev/project" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          About
+        </a>
+        <a href="https://go.dev/dl/" class="go-Footer-link" data-gtmc="footer link">Download</a>
+        <a href="https://go.dev/blog" class="go-Footer-link" data-gtmc="footer link">Blog</a>
+        <a href="https://github.com/golang/go/issues" class="go-Footer-link" data-gtmc="footer link">
+          Issue Tracker
+        </a>
+        <a href="https://go.dev/doc/devel/release.html" class="go-Footer-link"
+            data-gtmc="footer link">
+          Release Notes
+        </a>
+        <a href="https://go.dev/brand" class="go-Footer-link" data-gtmc="footer link">
+          Brand Guidelines
+        </a>
+        <a href="https://go.dev/conduct" class="go-Footer-link" data-gtmc="footer link">
+          Code of Conduct
+        </a>
+      </div>
+      <div class="go-Footer-linkColumn">
+        <a href="https://www.twitter.com/golang" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          Connect
+        </a>
+        <a href="https://www.twitter.com/golang" class="go-Footer-link" data-gtmc="footer link">
+          Twitter
+        </a>
+        <a href="https://github.com/golang" class="go-Footer-link" data-gtmc="footer link">GitHub</a>
+        <a href="https://invite.slack.golangbridge.org/" class="go-Footer-link"
+            data-gtmc="footer link">
+          Slack
+        </a>
+        <a href="https://reddit.com/r/golang" class="go-Footer-link" data-gtmc="footer link">
+          r/golang
+        </a>
+        <a href="https://www.meetup.com/pro/go" class="go-Footer-link" data-gtmc="footer link">
+          Meetup
+        </a>
+        <a href="https://golangweekly.com/" class="go-Footer-link" data-gtmc="footer link">
+          Golang Weekly
+        </a>
+      </div>
+    </div>
+    <div class="go-Footer-bottom">
+      <img class="go-Footer-gopher"  width="1431" height="901"
+          src="/static/shared/gopher/pilot-bust-1431x901.svg" alt="Gopher in flight goggles">
+      <ul class="go-Footer-listRow">
+        <li class="go-Footer-listItem">
+          <a href="https://go.dev/copyright" data-gtmc="footer link">Copyright</a>
+        </li>
+        <li class="go-Footer-listItem">
+          <a href="https://go.dev/tos" data-gtmc="footer link">Terms of Service</a>
+        </li>
+        <li class="go-Footer-listItem">
+          <a href="http://www.google.com/intl/en/policies/privacy/" data-gtmc="footer link"
+              target="_blank" rel="noopener">
+            Privacy Policy
+          </a>
+        </li>
+        <li class="go-Footer-listItem">
+          <a href="https://go.dev/s/pkgsite-feedback" target="_blank" rel="noopener"
+              data-gtmc="footer link">
+            Report an Issue
+          </a>
+        </li>
+        <li class="go-Footer-listItem">
+          <button class="go-Button go-Button--text go-Footer-toggleTheme js-toggleTheme" aria-label="Theme Toggle">
+            <img data-value="auto" class="go-Icon go-Icon--inverted" height="24" width="24" src="/static/shared/icon/brightness_6_gm_grey_24dp.svg" alt="System theme">
+            <img data-value="dark" class="go-Icon go-Icon--inverted" height="24" width="24" src="/static/shared/icon/brightness_2_gm_grey_24dp.svg" alt="Dark theme">
+            <img data-value="light" class="go-Icon go-Icon--inverted" height="24" width="24" src="/static/shared/icon/light_mode_gm_grey_24dp.svg" alt="Light theme">
+            <p> Theme Toggle </p>
+          </button>
+        </li>
+        <li class="go-Footer-listItem">
+          <button class="go-Button go-Button--text go-Footer-keyboard js-openShortcuts" aria-label="Shorcuts Modal">
+            <img class="go-Icon go-Icon--inverted" height="24" width="24" src="/static/shared/icon/keyboard_grey_24dp.svg" alt="">
+            <p> Shortcuts Modal </p>
+          </button>
+        </li>
+      </ul>
+      <a class="go-Footer-googleLogo" href="https://google.com" target="_blank"rel="noopener"
+          data-gtmc="footer link">
+        <img class="go-Footer-googleLogoImg" height="24" width="72"
+            src="/static/shared/logo/google-white.svg" alt="Google logo">
+      </a>
+    </div>
+  </footer>
+
+    
+  <dialog id="jump-to-modal" class="JumpDialog go-Modal go-Modal--md js-modal">
+    <form method="dialog" data-gmtc="jump to form" aria-label="Jump to Identifier">
+      <div class="Dialog-title go-Modal-header">
+        <h2>Jump to</h2>
+        <button
+          class="go-Button go-Button--inline"
+          type="button"
+          data-modal-close
+          data-gtmc="modal button"
+          aria-label="Close"
+        >
+          <img
+            class="go-Icon"
+            height="24"
+            width="24"
+            src="/static/shared/icon/close_gm_grey_24dp.svg"
+            alt=""
+          />
+        </button>
+      </div>
+      <div class="JumpDialog-filter">
+        <input class="JumpDialog-input go-Input" autocomplete="off" type="text">
+      </div>
+      <div class="JumpDialog-body go-Modal-body">
+        <div class="JumpDialog-list"></div>
+      </div>
+      <div class="go-Modal-actions">
+        <button class="go-Button" data-test-id="close-dialog">Close</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog class="ShortcutsDialog go-Modal go-Modal--sm js-modal">
+    <form method="dialog">
+      <div class="go-Modal-header">
+        <h2>Keyboard shortcuts</h2>
+        <button
+          class="go-Button go-Button--inline"
+          type="button"
+          data-modal-close
+          data-gtmc="modal button"
+          aria-label="Close"
+        >
+          <img
+            class="go-Icon"
+            height="24"
+            width="24"
+            src="/static/shared/icon/close_gm_grey_24dp.svg"
+            alt=""
+          />
+        </button>
+      </div>
+      <div class="go-Modal-body">
+        <table>
+          <tbody>
+            <tr><td class="ShortcutsDialog-key">
+              <strong>?</strong></td><td> : This menu</td>
+            </tr>
+            <tr><td class="ShortcutsDialog-key">
+              <strong>/</strong></td><td> : Search site</td>
+            </tr>
+            <tr><td class="ShortcutsDialog-key">
+              <strong>f</strong> or <strong>F</strong></td><td> : Jump to</td>
+            </tr>
+            <tr>
+              <td class="ShortcutsDialog-key"><strong>y</strong> or <strong>Y</strong></td>
+              <td> : Canonical URL</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="go-Modal-actions">
+        <button class="go-Button" data-test-id="close-dialog">Close</button>
+      </div>
+    </form>
+  </dialog>
+
+    
+      <section class="Cookie-notice js-cookieNotice">
+        <div>go.dev uses cookies from Google to deliver and enhance the quality of its services and to
+        analyze traffic. <a target=_blank href="https://policies.google.com/technologies/cookies">Learn more.</a></div>
+        <div><button class="go-Button">Okay</button></div>
+      </section>
+    
+    
+      <script>
+        // this will throw if the querySelector can’t find the element
+        const gtmId = document.querySelector('.js-gtmID').dataset.gtmid;
+        if (!gtmId) {
+          throw new Error('Google Tag Manager ID not found');
+        }
+        loadScript(`https://www.googletagmanager.com/gtm.js?id=${gtmId}`);
+      </script>
+      <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W8MVQXG"
+                height="0" width="0" style="display:none;visibility:hidden">
+        </iframe>
+      </noscript>
+    
+    
+  
+  <div class="js-canonicalURLPath" data-canonical-url-path="/io@go1.26.3" hidden></div>
+  <div class="js-playgroundVars" data-modulepath="std" data-version="v1.26.3" hidden></div>
+  <script>
+    loadScript('/static/frontend/unit/main/main.js')
+  </script>
+
+  <script>
+    loadScript('/static/frontend/unit/unit.js')
+  </script>
+
+  </body>
+</html>

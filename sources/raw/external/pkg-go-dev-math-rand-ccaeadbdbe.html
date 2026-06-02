@@ -1,0 +1,2870 @@
+---
+source_name: "External Linked Documentation"
+source_url: "https://pkg.go.dev/math/rand"
+retrieved_at: "2026-06-02T06:42:49.458630+00:00"
+content_type: "text/html; charset=utf-8"
+truncated: false
+insecure_tls_fallback: true
+---
+
+
+
+<!DOCTYPE html>
+<html lang="en" data-layout="responsive" data-local="">
+  <head>
+    
+    <script>
+      window.addEventListener('error', window.__err=function f(e){f.p=f.p||[];f.p.push(e)});
+    </script>
+    <script>
+      (function() {
+        const theme = document.cookie.match(/prefers-color-scheme=(light|dark|auto)/)?.[1]
+        if (theme) {
+          document.querySelector('html').setAttribute('data-theme', theme);
+        }
+      }())
+    </script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Package rand implements pseudo-random number generators suitable for tasks such as simulation, but it should not be used for security-sensitive work.">
+    
+    <meta class="js-gtmID" data-gtmid="GTM-W8MVQXG">
+    <link rel="shortcut icon" href="/static/shared/icon/favicon.ico">
+    
+  
+    <link rel="canonical" href="https://pkg.go.dev/math/rand">
+  
+
+    <link href="/static/frontend/frontend.min.css?version=prod-frontend-00193-fdr" rel="stylesheet">
+    
+    <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="Go Packages">
+    
+    
+  <title>rand package - math/rand - Go Packages</title>
+
+    
+  <link href="/static/frontend/unit/unit.min.css?version=prod-frontend-00193-fdr" rel="stylesheet">
+  
+  <link href="/static/frontend/unit/main/main.min.css?version=prod-frontend-00193-fdr" rel="stylesheet">
+
+
+  </head>
+  <body>
+    
+    <script>
+      function loadScript(src, mod = true) {
+        let s = document.createElement('script');
+        s.src = src;
+        if (mod) {
+          s.type = 'module';
+          s.async = true;
+          s.defer = true
+        }
+        document.head.appendChild(s);
+      }
+      loadScript("/third_party/dialog-polyfill/dialog-polyfill.js", false)
+      loadScript("/static/frontend/frontend.js");
+    </script>
+    
+  <header class="go-Header go-Header--full js-siteHeader">
+    <div class="go-Header-inner go-Header-inner--dark">
+      <nav class="go-Header-nav">
+        <a href="https://go.dev/" class="js-headerLogo" data-gtmc="nav link"
+            data-test-id="go-header-logo-link" role="heading" aria-level="1">
+          <img class="go-Header-logo" src="/static/shared/logo/go-white.svg" alt="Go">
+        </a>
+         <div class="skip-navigation-wrapper">
+            <a class="skip-to-content-link" aria-label="Skip to main content" href="#main-content"> Skip to Main Content </a>
+          </div>
+        <div class="go-Header-rightContent">
+          
+<div class="go-SearchForm js-searchForm">
+  <form
+    class="go-InputGroup go-ShortcutKey go-SearchForm-form"
+    action="/search"
+    data-shortcut="/"
+    data-shortcut-alt="search"
+    data-gtmc="search form"
+    aria-label="Search for a package"
+    role="search"
+  >
+    <input name="q" class="go-Input js-searchFocus" aria-label="Search for a package" type="search"
+        autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false"
+        placeholder="Search packages or symbols"
+        value="" />
+    <input name="m" value="" hidden>
+    <button class="go-Button go-Button--inverted" aria-label="Submit search">
+      <img
+        class="go-Icon"
+        height="24"
+        width="24"
+        src="/static/shared/icon/search_gm_grey_24dp.svg"
+        alt=""
+      />
+    </button>
+  </form>
+  <button class="go-SearchForm-expandSearch js-expandSearch" data-gtmc="nav button"
+      aria-label="Open search" data-test-id="expand-search">
+    <img class="go-Icon go-Icon--inverted" height="24" width="24"
+        src="/static/shared/icon/search_gm_grey_24dp.svg" alt="">
+
+  </button>
+</div>
+
+          <ul class="go-Header-menu">
+            <li class="go-Header-menuItem">
+              <a class="js-desktop-menu-hover" href="#" data-gtmc="nav link">
+                Why Go
+                <img class="go-Icon" height="24" width="24" src="/static/shared/icon/arrow_drop_down_gm_grey_24dp.svg" alt="submenu dropdown icon">
+              </a>
+              <ul class="go-Header-submenu go-Header-submenu--why js-desktop-submenu-hover" aria-label="submenu">
+                  <li class="go-Header-submenuItem">
+                    <div>
+                      <a href="https://go.dev/solutions#case-studies">
+                        <span>Case Studies</span>
+                      </a>
+                    </div>
+                    <p>Common problems companies solve with Go</p>
+                  </li>
+                  <li class="go-Header-submenuItem">
+                    <div>
+                      <a href="https://go.dev/solutions#use-cases">
+                        <span>Use Cases</span>
+                      </a>
+                    </div>
+                    <p>Stories about how and why companies use Go</p>
+                  </li>
+                  <li class="go-Header-submenuItem">
+                    <div>
+                      <a href="https://go.dev/security/">
+                        <span>Security</span>
+                      </a>
+                    </div>
+                    <p>How Go can help keep you secure by default</p>
+                  </li>
+              </ul>
+            </li>
+            <li class="go-Header-menuItem">
+              <a href="https://go.dev/learn/" data-gtmc="nav link">Learn</a>
+            </li>
+            <li class="go-Header-menuItem">
+              <a class="js-desktop-menu-hover" href="#" data-gtmc="nav link">
+                Docs
+                <img class="go-Icon" height="24" width="24" src="/static/shared/icon/arrow_drop_down_gm_grey_24dp.svg" alt="submenu dropdown icon">
+              </a>
+              <ul class="go-Header-submenu go-Header-submenu--docs js-desktop-submenu-hover" aria-label="submenu">
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/doc/effective_go">
+                      <span>Effective Go</span>
+                    </a>
+                  </div>
+                  <p>Tips for writing clear, performant, and idiomatic Go code</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/doc/">
+                      <span>Go User Manual</span>
+                    </a>
+                  </div>
+                  <p>A complete introduction to building software with Go</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://pkg.go.dev/std">
+                      <span>Standard library</span>
+                    </a>
+                  </div>
+                  <p>Reference documentation for Go's standard library</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/doc/devel/release">
+                      <span>Release Notes</span>
+                    </a>
+                  </div>
+                  <p>Learn what's new in each Go release</p>
+                </li>
+              </ul>
+            </li>
+            <li class="go-Header-menuItem go-Header-menuItem--active">
+              <a href="/" data-gtmc="nav link">Packages</a>
+            </li>
+            <li class="go-Header-menuItem">
+              <a class="js-desktop-menu-hover" href="#" data-gtmc="nav link">
+                Community
+                <img class="go-Icon" height="24" width="24" src="/static/shared/icon/arrow_drop_down_gm_grey_24dp.svg" alt="submenu dropdown icon">
+              </a>
+              <ul class="go-Header-submenu go-Header-submenu--community js-desktop-submenu-hover" aria-label="submenu">
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/talks/">
+                      <span>Recorded Talks</span>
+                    </a>
+                  </div>
+                  <p>Videos from prior events</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://www.meetup.com/pro/go">
+                      <span>Meetups</span>
+                      <i class="material-icons">
+                        <img class="go-Icon" height="24" width="24"
+                            src="/static/shared/icon/launch_gm_grey_24dp.svg" alt="">
+                      </i>
+                    </a>
+                  </div>
+                  <p>Meet other local Go developers</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://github.com/golang/go/wiki/Conferences">
+                      <span>Conferences</span>
+                      <i class="material-icons">
+                        <img class="go-Icon" height="24" width="24"
+                            src="/static/shared/icon/launch_gm_grey_24dp.svg" alt="">
+                      </i>
+                    </a>
+                  </div>
+                  <p>Learn and network with Go developers from around the world</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/blog">
+                      <span>Go blog</span>
+                    </a>
+                  </div>
+                  <p>The Go project's official blog.</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/help">
+                      <span>Go project</span>
+                    </a>
+                  </div>
+                  <p>Get help and stay informed from Go</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    Get connected
+                  </div>
+                  <p></p>
+                  <div class="go-Header-socialIcons">
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with google-groups (Opens in new window)"
+                        title="Get connected with google-groups (Opens in new window)"
+                        href="https://groups.google.com/g/golang-nuts">
+                        <img src="/static/shared/logo/social/google-groups.svg" />
+                      </a>
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with github (Opens in new window)"
+                        title="Get connected with github (Opens in new window)"
+                        href="https://github.com/golang">
+                        <img src="/static/shared/logo/social/github.svg" />
+                      </a>
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with twitter (Opens in new window)"
+                        title="Get connected with twitter (Opens in new window)"
+                        href="https://twitter.com/golang">
+                        <img src="/static/shared/logo/social/twitter.svg" />
+                      </a>
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with reddit (Opens in new window)"
+                        title="Get connected with reddit (Opens in new window)"
+                        href="https://www.reddit.com/r/golang/">
+                        <img src="/static/shared/logo/social/reddit.svg" />
+                      </a>
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with slack (Opens in new window)"
+                        title="Get connected with slack (Opens in new window)"
+                        href="https://invite.slack.golangbridge.org/">
+                        <img src="/static/shared/logo/social/slack.svg" />
+                      </a>
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with stack-overflow (Opens in new window)"
+                        title=""
+                        href="https://stackoverflow.com/collectives/go">
+                        <img src="/static/shared/logo/social/stack-overflow.svg" />
+                      </a>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <button class="go-Header-navOpen js-headerMenuButton go-Header-navOpen--white" data-gtmc="nav button" aria-label="Open navigation">
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <aside class="go-NavigationDrawer js-header">
+    <nav class="go-NavigationDrawer-nav">
+      <div class="go-NavigationDrawer-header">
+        <a href="https://go.dev/">
+          <img class="go-NavigationDrawer-logo" src="/static/shared/logo/go-blue.svg" alt="Go.">
+        </a>
+      </div>
+      <ul class="go-NavigationDrawer-list">
+          <li class="go-NavigationDrawer-listItem js-mobile-subnav-trigger go-NavigationDrawer-hasSubnav">
+            <a href="#">
+              <span>Why Go</span>
+              <i class="material-icons">
+                <img class="go-Icon" height="24" width="24"
+                  src="/static/shared/icon/navigate_next_gm_grey_24dp.svg" alt="">
+              </i>
+            </a>
+
+            <div class="go-NavigationDrawer go-NavigationDrawer-submenuItem">
+              <div class="go-NavigationDrawer-nav">
+                <div class="go-NavigationDrawer-header">
+                  <a href="#">
+                    <i class="material-icons">
+                      <img class="go-Icon" height="24" width="24"
+                        src="/static/shared/icon/navigate_before_gm_grey_24dp.svg" alt="">
+                      </i>
+                      Why Go
+                  </a>
+                </div>
+                <ul class="go-NavigationDrawer-list">
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/solutions#case-studies">
+                      Case Studies
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/solutions#use-cases">
+                      Use Cases
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/security/">
+                      Security
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="go-NavigationDrawer-listItem">
+            <a href="https://go.dev/learn/">Learn</a>
+          </li>
+          <li class="go-NavigationDrawer-listItem js-mobile-subnav-trigger go-NavigationDrawer-hasSubnav">
+            <a href="#">
+              <span>Docs</span>
+              <i class="material-icons">
+                <img class="go-Icon" height="24" width="24"
+                  src="/static/shared/icon/navigate_next_gm_grey_24dp.svg" alt="">
+              </i>
+            </a>
+
+            <div class="go-NavigationDrawer go-NavigationDrawer-submenuItem">
+              <div class="go-NavigationDrawer-nav">
+                <div class="go-NavigationDrawer-header">
+                  <a href="#"><i class="material-icons">
+                    <img class="go-Icon" height="24" width="24"
+                      src="/static/shared/icon/navigate_before_gm_grey_24dp.svg" alt="">
+                    </i>
+                    Docs
+                  </a>
+                </div>
+                <ul class="go-NavigationDrawer-list">
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/doc/effective_go">
+                      Effective Go
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/doc/">
+                      Go User Manual
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://pkg.go.dev/std">
+                      Standard library
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/doc/devel/release">
+                      Release Notes
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="go-NavigationDrawer-listItem go-NavigationDrawer-listItem--active">
+            <a href="/">Packages</a>
+          </li>
+          <li class="go-NavigationDrawer-listItem js-mobile-subnav-trigger go-NavigationDrawer-hasSubnav">
+            <a href="#">
+              <span>Community</span>
+              <i class="material-icons">
+                <img class="go-Icon" height="24" width="24"
+                  src="/static/shared/icon/navigate_next_gm_grey_24dp.svg" alt="">
+              </i>
+            </a>
+            <div class="go-NavigationDrawer go-NavigationDrawer-submenuItem">
+              <div class="go-NavigationDrawer-nav">
+                <div class="go-NavigationDrawer-header">
+                  <a href="#">
+                    <i class="material-icons">
+                      <img class="go-Icon" height="24" width="24"
+                        src="/static/shared/icon/navigate_before_gm_grey_24dp.svg" alt="">
+                    </i>
+                    Community
+                  </a>
+                </div>
+                <ul class="go-NavigationDrawer-list">
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/talks/">
+                      Recorded Talks
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://www.meetup.com/pro/go">
+                      Meetups
+                      <i class="material-icons">
+                      <img class="go-Icon" height="24" width="24"
+                          src="/static/shared/icon/launch_gm_grey_24dp.svg" alt="">
+                      </i>
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://github.com/golang/go/wiki/Conferences">
+                      Conferences
+                      <i class="material-icons">
+                        <img class="go-Icon" height="24" width="24" src="/static/shared/icon/launch_gm_grey_24dp.svg" alt="">
+                      </i>
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/blog">
+                      Go blog
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/help">
+                      Go project
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <div>Get connected</div>
+                    <div class="go-Header-socialIcons">
+                        <a class="go-Header-socialIcon" href="https://groups.google.com/g/golang-nuts"><img src="/static/shared/logo/social/google-groups.svg" /></a>
+                        <a class="go-Header-socialIcon" href="https://github.com/golang"><img src="/static/shared/logo/social/github.svg" /></a>
+                        <a class="go-Header-socialIcon" href="https://twitter.com/golang"><img src="/static/shared/logo/social/twitter.svg" /></a>
+                        <a class="go-Header-socialIcon" href="https://www.reddit.com/r/golang/"><img src="/static/shared/logo/social/reddit.svg" /></a>
+                        <a class="go-Header-socialIcon" href="https://invite.slack.golangbridge.org/"><img src="/static/shared/logo/social/slack.svg" /></a>
+                        <a class="go-Header-socialIcon" href="https://stackoverflow.com/collectives/go"><img src="/static/shared/logo/social/stack-overflow.svg" /></a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+      </ul>
+    </nav>
+  </aside>
+  <div class="go-NavigationDrawer-scrim js-scrim" role="presentation"></div>
+
+    
+  <main class="go-Main" id="main-content">
+    <div class="go-Main-banner" role="alert"></div>
+    <header class="go-Main-header js-mainHeader">
+  
+  
+  <nav class="go-Main-headerBreadcrumb go-Breadcrumb" aria-label="Breadcrumb" data-test-id="UnitHeader-breadcrumb">
+    <ol>
+      
+        
+          <li data-test-id="UnitHeader-breadcrumbItem">
+            <a href="/" data-gtmc="breadcrumb link">Discover Packages</a>
+          </li>
+        
+          <li data-test-id="UnitHeader-breadcrumbItem">
+            <a href="/std" data-gtmc="breadcrumb link">Standard library</a>
+          </li>
+        
+          <li data-test-id="UnitHeader-breadcrumbItem">
+            <a href="/math" data-gtmc="breadcrumb link">math</a>
+          </li>
+        
+        <li>
+          <a href="/math/rand@go1.26.3" data-gtmc="breadcrumb link" aria-current="location"
+              data-test-id="UnitHeader-breadcrumbCurrent">
+            rand
+          </a>
+          
+            <button
+              class="go-Button go-Button--inline go-Clipboard js-clipboard"
+              title="Copy path to clipboard.&#10;&#10;math/rand"
+              aria-label="Copy Path to Clipboard"
+              data-to-copy="math/rand"
+              data-gtmc="breadcrumbs button"
+            >
+              <img
+                class="go-Icon go-Icon--accented"
+                height="24"
+                width="24"
+                src="/static/shared/icon/content_copy_gm_grey_24dp.svg"
+                alt=""
+              >
+            </button>
+          
+        
+      </li>
+    </ol>
+  </nav>
+
+  <div class="go-Main-headerContent">
+    
+  <div class="go-Main-headerTitle js-stickyHeader">
+    <a class="go-Main-headerLogo" href="https://go.dev/" aria-hidden="true" tabindex="-1" data-gtmc="header link" aria-label="Link to Go Homepage">
+      <img height="78" width="207" src="/static/shared/logo/go-blue.svg" alt="Go">
+    </a>
+    <h1 class="UnitHeader-titleHeading" data-test-id="UnitHeader-title">rand</h1>
+    
+      <span class="go-Chip go-Chip--inverted">package</span>
+    
+      <span class="go-Chip go-Chip--inverted">standard library</span>
+    
+    
+      
+        <button
+          class="go-Button go-Button--inline go-Clipboard js-clipboard"
+          title="Copy path to clipboard.&#10;&#10;math/rand"
+          aria-label="Copy Path to Clipboard"
+          data-to-copy="math/rand"
+          data-gtmc="title button"
+          tabindex="-1"
+        >
+          <img
+            class="go-Icon go-Icon--accented"
+            height="24"
+            width="24"
+            src="/static/shared/icon/content_copy_gm_grey_24dp.svg"
+            alt=""
+          />
+        </button>
+      
+    
+  </div>
+
+    
+      
+  <div class="go-Main-headerDetails">
+    
+      
+  <span class="go-Main-headerDetailItem" data-test-id="UnitHeader-version">
+    <a href="?tab=versions" aria-label="Version: go1.26.3" 
+    data-gtmc="header link" aria-describedby="version-description">
+      <span class="go-textSubtle" aria-hidden="true">Version: </span>
+        go1.26.3
+    </a>
+    <div class="screen-reader-only" id="version-description" hidden>
+      Opens a new window with list of versions in this module.
+    </div>
+    
+    <span class="DetailsHeader-badge--latest" data-test-id="UnitHeader-minorVersionBanner">
+      <span class="go-Chip DetailsHeader-span--latest">Latest</span>
+      <span class="go-Chip DetailsHeader-span--notAtLatest">
+        Latest
+        
+  <details class="go-Tooltip js-tooltip" data-gtmc="tooltip">
+    <summary>
+      <img class="go-Icon go-Icon--inverted" height="24" width="24" src="/static/shared/icon/alert_gm_grey_24dp.svg" alt="Warning">
+    </summary>
+    <p>This package is not in the latest version of its module.</p>
+  </details>
+
+      </span>
+      <a href="/math/rand" aria-label="Go to Latest Version" data-gtmc="header link">
+        <span class="go-Chip go-Chip--alert DetailsHeader-span--goToLatest">Go to latest</span>
+      </a>
+    </span>
+  </span>
+
+      
+  <span class="go-Main-headerDetailItem" data-test-id="UnitHeader-commitTime">
+    Published: May  7, 2026
+  </span>
+
+      
+  <span class="go-Main-headerDetailItem" data-test-id="UnitHeader-licenses">
+    License: <a href="/math/rand?tab=licenses" data-test-id="UnitHeader-license" 
+        data-gtmc="header link" aria-describedby="license-description">BSD-3-Clause</a>
+      
+    
+  </span>
+  <div class="screen-reader-only" id="license-description" hidden>
+    Opens a new window with license information.
+  </div>
+
+      
+        
+  <span class="go-Main-headerDetailItem" data-test-id="UnitHeader-imports">
+    <a href="/math/rand?tab=imports" aria-label="Imports: 5"
+        data-gtmc="header link" aria-describedby="imports-description">
+      <span class="go-textSubtle">Imports: </span>5
+    </a>
+  </span>
+  <div class="screen-reader-only" id="imports-description" hidden>
+    Opens a new window with list of imports.
+  </div>
+
+        
+  <span class="go-Main-headerDetailItem" data-test-id="UnitHeader-importedby">
+    <a href="/math/rand?tab=importedby" aria-label="Imported By: 360,691"
+        data-gtmc="header link" aria-describedby="importedby-description">
+       <span class="go-textSubtle">Imported by: </span>360,691
+    </a>
+  </span>
+  <div class="screen-reader-only" id="importedby-description" hidden>
+    Opens a new window with list of known importers.
+  </div>
+
+      
+    
+  </div>
+  
+  <div class="UnitHeader-overflowContainer">
+    <svg class="UnitHeader-overflowImage" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+      <path d="M0 0h24v24H0z" fill="none"/>
+      <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+    </svg>
+    <select class="UnitHeader-overflowSelect js-selectNav" tabindex="-1">
+      <option value="/">Main</option>
+      <option value="/math/rand?tab=versions">
+        Versions
+      </option>
+      <option value="/math/rand?tab=licenses">
+        Licenses
+      </option>
+      
+        <option value="/math/rand?tab=imports">
+          Imports
+        </option>
+        <option value="/math/rand?tab=importedby">
+          Imported By
+        </option>
+      
+    </select>
+  </div>
+
+
+    
+  </div>
+
+</header>
+    
+      <aside class="go-Main-aside  js-mainAside">
+  
+  <div class="UnitMeta">
+    <h2 class="go-textLabel">Details</h2>
+    
+  <ul class="UnitMeta-details">
+    <li>
+      <details class="go-Tooltip js-tooltip" data-gtmc="tooltip">
+        <summary class="go-textSubtle">
+          
+  <img class="go-Icon go-Icon--accented"
+    tabindex="0"
+    role="button"src="/static/shared/icon/check_circle_gm_grey_24dp.svg" alt="checked" aria-label="Valid file, toggle tooltip"height="24" width="24">
+
+          Valid <a href="https://cs.opensource.google/go/go/+/go1.26.3:src/go.mod" target="_blank" rel="noopener">go.mod</a> file
+          <img class="go-Icon" role="button" tabindex="0" src="/static/shared/icon/help_gm_grey_24dp.svg" alt="" aria-label="Toggle go.mod validity tooltip" height="24" width="24">
+        </summary>
+        <p aria-live="polite" role="tooltip">
+          The Go module system was introduced in Go 1.11 and is the official dependency management
+          solution for Go.
+        </p>
+      </details>
+    </li>
+    <li>
+      <details class="go-Tooltip js-tooltip" data-gtmc="tooltip">
+        <summary class="go-textSubtle">
+          
+  <img class="go-Icon go-Icon--accented"
+    tabindex="0"
+    role="button"src="/static/shared/icon/check_circle_gm_grey_24dp.svg" alt="checked" aria-label="Valid file, toggle tooltip"height="24" width="24">
+
+          Redistributable license
+          <img class="go-Icon" role="button" tabindex="0" src="/static/shared/icon/help_gm_grey_24dp.svg" alt="" aria-label="Toggle redistributable help tooltip" height="24" width="24">
+        </summary>
+        <p aria-live="polite" role="tooltip">
+          Redistributable licenses place minimal restrictions on how software can be used,
+          modified, and redistributed.
+        </p>
+      </details>
+    </li>
+    <li>
+      <details class="go-Tooltip js-tooltip" data-gtmc="tooltip">
+        <summary class="go-textSubtle">
+          
+  <img class="go-Icon go-Icon--accented"
+    tabindex="0"
+    role="button"src="/static/shared/icon/check_circle_gm_grey_24dp.svg" alt="checked" aria-label="Valid file, toggle tooltip"height="24" width="24">
+
+          Tagged version
+          <img class="go-Icon" role="button" tabindex="0" src="/static/shared/icon/help_gm_grey_24dp.svg" alt="" aria-label="Toggle tagged version tooltip" height="24" width="24">
+        </summary>
+        <p aria-live="polite" role="tooltip">Modules with tagged versions give importers more predictable builds.</p>
+      </details>
+    </li>
+    <li>
+      <details class="go-Tooltip js-tooltip" data-gtmc="tooltip">
+        <summary class="go-textSubtle">
+          
+  <img class="go-Icon go-Icon--accented"
+    tabindex="0"
+    role="button"src="/static/shared/icon/check_circle_gm_grey_24dp.svg" alt="checked" aria-label="Valid file, toggle tooltip"height="24" width="24">
+
+          Stable version
+          <img class="go-Icon" role="button" tabindex="0" aria-label="Toggle stable version tooltip" src="/static/shared/icon/help_gm_grey_24dp.svg" alt="" height="24" width="24">
+        </summary>
+        <p aria-live="polite" role="tooltip">When a project reaches major version v1 it is considered stable.</p>
+      </details>
+    </li>
+    <li class="UnitMeta-detailsLearn">
+      <a href="/about#best-practices" data-gtmc="meta link">Learn more about best practices</a>
+    </li>
+  </ul>
+
+    <h2 class="go-textLabel">Repository</h2>
+    <div class="UnitMeta-repo">
+      
+        <a href="https://cs.opensource.google/go/go" title="https://cs.opensource.google/go/go" target="_blank" rel="noopener">
+          cs.opensource.google/go/go
+        </a>
+      
+    </div>
+    
+      <h2 class="go-textLabel" data-test-id="links-heading">Links</h2>
+      <ul class="UnitMeta-links">
+        
+          <li>
+            <a href="https://go.dev/security/policy"
+                title="Report security issues in the Go standard library and sub-repositories">
+              <img class="go-Icon" height="24" width="24" src="/static/shared/icon/security_grey_24dp.svg" alt="">
+              Report a Vulnerability
+            </a>
+          </li>
+        
+        
+        
+        
+  
+
+        
+  
+
+        
+  
+
+      </ul>
+    
+  </div>
+
+</aside>
+    
+    <nav class="go-Main-nav go-Main-nav--sticky js-mainNav" aria-label="Outline">
+  <div class="go-Main-navDesktop">
+    
+  <div class="UnitOutline-jumpTo">
+    <button class="UnitOutline-jumpToInput go-ShortcutKey js-jumpToInput"
+        aria-controls="jump-to-modal"
+        aria-label="Open Jump to Identifier"
+        data-shortcut="f"
+        data-shortcut-alt="find"
+        data-test-id="jump-to-button" data-gtmc="outline button">
+      Jump to ...
+    </button>
+  </div>
+  <ul class="go-Tree js-tree" role="tree" aria-label="Outline">
+    
+    
+      <li>
+        <a href="#section-documentation" data-gtmc="outline link">
+          Documentation
+        </a>
+        
+<ul>
+  
+    <li>
+      <a href="#pkg-overview" data-gtmc="doc outline link">Overview</a>
+    </li>
+  <li class="DocNav-overview">
+      <a href="#pkg-index" data-gtmc="doc outline link">
+        Index
+      </a>
+    </li>
+      <li>
+        <a href="#pkg-examples" data-gtmc="doc outline link">
+          Examples
+        </a>
+        <ul>
+            <li>
+              <a href="#example-package" title="Package" data-gtmc="doc outline link">
+                Package
+              </a>
+            </li>
+            <li>
+              <a href="#example-package-Rand" title="Package (Rand)" data-gtmc="doc outline link">
+                Package (Rand)
+              </a>
+            </li>
+            <li>
+              <a href="#example-Intn" title="Intn" data-gtmc="doc outline link">
+                Intn
+              </a>
+            </li>
+            <li>
+              <a href="#example-Perm" title="Perm" data-gtmc="doc outline link">
+                Perm
+              </a>
+            </li>
+            <li>
+              <a href="#example-Shuffle" title="Shuffle" data-gtmc="doc outline link">
+                Shuffle
+              </a>
+            </li>
+            <li>
+              <a href="#example-Shuffle-SlicesInUnison" title="Shuffle (SlicesInUnison)" data-gtmc="doc outline link">
+                Shuffle (SlicesInUnison)
+              </a>
+            </li>
+        </ul>
+      </li>
+    <li class="DocNav-constants">
+      <a href="#pkg-constants" data-gtmc="doc outline link">
+        Constants
+      </a>
+    </li>
+    <li class="DocNav-variables">
+      <a href="#pkg-variables" data-gtmc="doc outline link">
+        Variables
+      </a>
+    </li>
+    <li class="DocNav-functions">
+      <a href="#pkg-functions" data-gtmc="doc outline link">
+        Functions
+      </a>
+      
+        <ul>
+          
+            <li>
+              <a href="#ExpFloat64" title="ExpFloat64()" data-gtmc="doc outline link">
+                ExpFloat64()
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Float32" title="Float32()" data-gtmc="doc outline link">
+                Float32()
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Float64" title="Float64()" data-gtmc="doc outline link">
+                Float64()
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Int" title="Int()" data-gtmc="doc outline link">
+                Int()
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Int31" title="Int31()" data-gtmc="doc outline link">
+                Int31()
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Int31n" title="Int31n(n)" data-gtmc="doc outline link">
+                Int31n(n)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Int63" title="Int63()" data-gtmc="doc outline link">
+                Int63()
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Int63n" title="Int63n(n)" data-gtmc="doc outline link">
+                Int63n(n)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Intn" title="Intn(n)" data-gtmc="doc outline link">
+                Intn(n)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#NormFloat64" title="NormFloat64()" data-gtmc="doc outline link">
+                NormFloat64()
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Perm" title="Perm(n)" data-gtmc="doc outline link">
+                Perm(n)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Read" title="Read(p)" data-gtmc="doc outline link">
+                Read(p)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Seed" title="Seed(seed)" data-gtmc="doc outline link">
+                Seed(seed)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Shuffle" title="Shuffle(n, swap)" data-gtmc="doc outline link">
+                Shuffle(n, swap)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Uint32" title="Uint32()" data-gtmc="doc outline link">
+                Uint32()
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Uint64" title="Uint64()" data-gtmc="doc outline link">
+                Uint64()
+              </a>
+            </li>
+          
+        </ul>
+      
+    </li>
+    <li class="DocNav-types">
+      <a href="#pkg-types" data-gtmc="doc outline link">
+        Types
+      </a>
+      <ul>
+        
+          
+          <li>
+            <a href="#Rand" title="type Rand" data-gtmc="doc outline link">
+              type Rand
+            </a>
+            
+              <ul>
+                
+                  <li>
+                    <a href="#New" title="New(src)"
+                        data-gtmc="doc outline link">
+                      New(src)
+                    </a>
+                  </li>
+                
+                
+                  <li>
+                    <a href="#Rand.ExpFloat64" title="(r) ExpFloat64()"
+                        data-gtmc="doc outline link">
+                      (r) ExpFloat64()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Rand.Float32" title="(r) Float32()"
+                        data-gtmc="doc outline link">
+                      (r) Float32()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Rand.Float64" title="(r) Float64()"
+                        data-gtmc="doc outline link">
+                      (r) Float64()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Rand.Int" title="(r) Int()"
+                        data-gtmc="doc outline link">
+                      (r) Int()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Rand.Int31" title="(r) Int31()"
+                        data-gtmc="doc outline link">
+                      (r) Int31()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Rand.Int31n" title="(r) Int31n(n)"
+                        data-gtmc="doc outline link">
+                      (r) Int31n(n)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Rand.Int63" title="(r) Int63()"
+                        data-gtmc="doc outline link">
+                      (r) Int63()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Rand.Int63n" title="(r) Int63n(n)"
+                        data-gtmc="doc outline link">
+                      (r) Int63n(n)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Rand.Intn" title="(r) Intn(n)"
+                        data-gtmc="doc outline link">
+                      (r) Intn(n)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Rand.NormFloat64" title="(r) NormFloat64()"
+                        data-gtmc="doc outline link">
+                      (r) NormFloat64()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Rand.Perm" title="(r) Perm(n)"
+                        data-gtmc="doc outline link">
+                      (r) Perm(n)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Rand.Read" title="(r) Read(p)"
+                        data-gtmc="doc outline link">
+                      (r) Read(p)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Rand.Seed" title="(r) Seed(seed)"
+                        data-gtmc="doc outline link">
+                      (r) Seed(seed)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Rand.Shuffle" title="(r) Shuffle(n, swap)"
+                        data-gtmc="doc outline link">
+                      (r) Shuffle(n, swap)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Rand.Uint32" title="(r) Uint32()"
+                        data-gtmc="doc outline link">
+                      (r) Uint32()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Rand.Uint64" title="(r) Uint64()"
+                        data-gtmc="doc outline link">
+                      (r) Uint64()
+                    </a>
+                  </li>
+                
+              </ul>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#Source" title="type Source" data-gtmc="doc outline link">
+              type Source
+            </a>
+            
+              <ul>
+                
+                  <li>
+                    <a href="#NewSource" title="NewSource(seed)"
+                        data-gtmc="doc outline link">
+                      NewSource(seed)
+                    </a>
+                  </li>
+                
+                
+              </ul>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#Source64" title="type Source64" data-gtmc="doc outline link">
+              type Source64
+            </a>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#Zipf" title="type Zipf" data-gtmc="doc outline link">
+              type Zipf
+            </a>
+            
+              <ul>
+                
+                  <li>
+                    <a href="#NewZipf" title="NewZipf(r, s, v, imax)"
+                        data-gtmc="doc outline link">
+                      NewZipf(r, s, v, imax)
+                    </a>
+                  </li>
+                
+                
+                  <li>
+                    <a href="#Zipf.Uint64" title="(z) Uint64()"
+                        data-gtmc="doc outline link">
+                      (z) Uint64()
+                    </a>
+                  </li>
+                
+              </ul>
+             
+          </li>
+         
+      </ul>
+    </li>
+  
+  
+</ul>
+
+      </li>
+    
+    
+      <li>
+        <a href="#section-sourcefiles" data-gtmc="outline link">
+          Source Files
+        </a>
+      </li>
+    
+    
+      <li>
+        <a href="#section-directories" data-gtmc="outline link">
+          Directories
+        </a>
+      </li>
+    
+  </ul>
+
+  </div>
+  <div class="go-Main-navMobile js-mainNavMobile">
+    <label class="go-Label">
+      <select class="go-Select">
+        
+          <option selected disabled>Documentation</option>
+        
+      </select>
+    </label>
+  </div>
+</nav>
+    <article class="go-Main-article js-mainContent">
+  <div class="UnitDetails" data-test-id="UnitDetails" style="display: block;">
+    <div class="UnitDetails-content js-unitDetailsContent" data-test-id="UnitDetails-content">
+      
+      
+        
+          
+  <div class="UnitDoc">
+    <h2 class="UnitDoc-title" id="section-documentation">
+      <img class="go-Icon" height="24" width="24" src="/static/shared/icon/code_gm_grey_24dp.svg" alt="">
+      Documentation
+      <a class="UnitDoc-idLink" href="#section-documentation" title="Go to Documentation" aria-label="Go to Documentation">¶</a>
+    </h2>
+    
+  
+    
+  
+
+    <div class="Documentation js-documentation">
+      
+        
+
+<div class="Documentation-content js-docContent"> <section class="Documentation-overview">
+    <h3 tabindex="-1" id="pkg-overview" class="Documentation-overviewHeader">Overview <a href="#pkg-overview" title="Go to Overview" aria-label="Go to Overview">¶</a></h3>
+
+<p>Package rand implements pseudo-random number generators suitable for tasks
+such as simulation, but it should not be used for security-sensitive work.
+</p><p>Random numbers are generated by a <a href="#Source">Source</a>, usually wrapped in a <a href="#Rand">Rand</a>.
+Both types should be used by a single goroutine at a time: sharing among
+multiple goroutines requires some kind of synchronization.
+</p><p>Top-level functions, such as <a href="#Float64">Float64</a> and <a href="#Int">Int</a>,
+are safe for concurrent use by multiple goroutines.
+</p><p>This package&#39;s outputs might be easily predictable regardless of how it&#39;s
+seeded. For random numbers suitable for security-sensitive work, see the
+crypto/rand package.
+</p>
+<details tabindex="-1" id="example-package" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-package" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;math/rand&#34;
+)
+
+func main() {
+	answers := []string{
+		&#34;It is certain&#34;,
+		&#34;It is decidedly so&#34;,
+		&#34;Without a doubt&#34;,
+		&#34;Yes definitely&#34;,
+		&#34;You may rely on it&#34;,
+		&#34;As I see it yes&#34;,
+		&#34;Most likely&#34;,
+		&#34;Outlook good&#34;,
+		&#34;Yes&#34;,
+		&#34;Signs point to yes&#34;,
+		&#34;Reply hazy try again&#34;,
+		&#34;Ask again later&#34;,
+		&#34;Better not tell you now&#34;,
+		&#34;Cannot predict now&#34;,
+		&#34;Concentrate and ask again&#34;,
+		&#34;Don&#39;t count on it&#34;,
+		&#34;My reply is no&#34;,
+		&#34;My sources say no&#34;,
+		&#34;Outlook not so good&#34;,
+		&#34;Very doubtful&#34;,
+	}
+	fmt.Println(&#34;Magic 8-Ball says:&#34;, answers[rand.Intn(len(answers))])
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer" hidden><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput"></span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+<details tabindex="-1" id="example-package-Rand" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example (Rand) <a href="#example-package-Rand" title="Go to Example (Rand)" aria-label="Go to Example (Rand)">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+<p>This example shows the use of each of the methods on a *Rand.
+The use of the global functions is the same, without the receiver.
+</p>
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;math/rand&#34;
+	&#34;os&#34;
+	&#34;text/tabwriter&#34;
+)
+
+func main() {
+	// Create and seed the generator.
+	// Typically a non-fixed seed should be used, such as time.Now().UnixNano().
+	// Using a fixed seed will produce the same output on every run.
+	r := rand.New(rand.NewSource(99))
+
+	// The tabwriter here helps us generate aligned output.
+	w := tabwriter.NewWriter(os.Stdout, 1, 1, 1, &#39; &#39;, 0)
+	defer w.Flush()
+	show := func(name string, v1, v2, v3 any) {
+		fmt.Fprintf(w, &#34;%s\t%v\t%v\t%v\n&#34;, name, v1, v2, v3)
+	}
+
+	// Float32 and Float64 values are in [0, 1).
+	show(&#34;Float32&#34;, r.Float32(), r.Float32(), r.Float32())
+	show(&#34;Float64&#34;, r.Float64(), r.Float64(), r.Float64())
+
+	// ExpFloat64 values have an average of 1 but decay exponentially.
+	show(&#34;ExpFloat64&#34;, r.ExpFloat64(), r.ExpFloat64(), r.ExpFloat64())
+
+	// NormFloat64 values have an average of 0 and a standard deviation of 1.
+	show(&#34;NormFloat64&#34;, r.NormFloat64(), r.NormFloat64(), r.NormFloat64())
+
+	// Int31, Int63, and Uint32 generate values of the given width.
+	// The Int method (not shown) is like either Int31 or Int63
+	// depending on the size of &#39;int&#39;.
+	show(&#34;Int31&#34;, r.Int31(), r.Int31(), r.Int31())
+	show(&#34;Int63&#34;, r.Int63(), r.Int63(), r.Int63())
+	show(&#34;Uint32&#34;, r.Uint32(), r.Uint32(), r.Uint32())
+
+	// Intn, Int31n, and Int63n limit their output to be &lt; n.
+	// They do so more carefully than using r.Int()%n.
+	show(&#34;Intn(10)&#34;, r.Intn(10), r.Intn(10), r.Intn(10))
+	show(&#34;Int31n(10)&#34;, r.Int31n(10), r.Int31n(10), r.Int31n(10))
+	show(&#34;Int63n(10)&#34;, r.Int63n(10), r.Int63n(10), r.Int63n(10))
+
+	// Perm generates a random permutation of the numbers [0, n).
+	show(&#34;Perm&#34;, r.Perm(5), r.Perm(5), r.Perm(5))
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">Float32     0.2635776           0.6358173           0.6718283
+Float64     0.628605430454327   0.4504798828572669  0.9562755949377957
+ExpFloat64  0.3362240648200941  1.4256072328483647  0.24354758816173044
+NormFloat64 0.17233959114940064 1.577014951434847   0.04259129641113857
+Int31       1501292890          1486668269          182840835
+Int63       3546343826724305832 5724354148158589552 5239846799706671610
+Uint32      2760229429          296659907           1922395059
+Intn(10)    1                   2                   5
+Int31n(10)  4                   7                   8
+Int63n(10)  7                   6                   3
+Perm        [1 4 2 3 0]         [4 2 1 3 0]         [1 2 4 0 3]
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+</section><section class="Documentation-index">
+    <h3 id="pkg-index" class="Documentation-indexHeader">Index <a href="#pkg-index" title="Go to Index" aria-label="Go to Index">¶</a></h3>
+
+<ul class="Documentation-indexList">
+<li class="Documentation-indexFunction">
+        <a href="#ExpFloat64">func ExpFloat64() float64</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Float32">func Float32() float32</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Float64">func Float64() float64</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Int">func Int() int</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Int31">func Int31() int32</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Int31n">func Int31n(n int32) int32</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Int63">func Int63() int64</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Int63n">func Int63n(n int64) int64</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Intn">func Intn(n int) int</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#NormFloat64">func NormFloat64() float64</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Perm">func Perm(n int) []int</a></li>
+<li class="Documentation-indexFunction">
+        <a class="js-deprecatedTagLink" href="#Read">func Read(p []byte) (n int, err error)</a><span class="Documentation-indexDeprecated Documentation-deprecatedTag">deprecated</span></li>
+<li class="Documentation-indexFunction">
+        <a class="js-deprecatedTagLink" href="#Seed">func Seed(seed int64)</a><span class="Documentation-indexDeprecated Documentation-deprecatedTag">deprecated</span></li>
+<li class="Documentation-indexFunction">
+        <a href="#Shuffle">func Shuffle(n int, swap func(i, j int))</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Uint32">func Uint32() uint32</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Uint64">func Uint64() uint64</a></li>
+<li class="Documentation-indexType">
+          <a href="#Rand">type Rand</a></li>
+<li><ul class="Documentation-indexTypeFunctions">
+<li>
+            <a href="#New">func New(src Source) *Rand</a></li>
+</ul></li>
+<li><ul class="Documentation-indexTypeMethods">
+<li>
+            <a href="#Rand.ExpFloat64">func (r *Rand) ExpFloat64() float64</a></li>
+<li>
+            <a href="#Rand.Float32">func (r *Rand) Float32() float32</a></li>
+<li>
+            <a href="#Rand.Float64">func (r *Rand) Float64() float64</a></li>
+<li>
+            <a href="#Rand.Int">func (r *Rand) Int() int</a></li>
+<li>
+            <a href="#Rand.Int31">func (r *Rand) Int31() int32</a></li>
+<li>
+            <a href="#Rand.Int31n">func (r *Rand) Int31n(n int32) int32</a></li>
+<li>
+            <a href="#Rand.Int63">func (r *Rand) Int63() int64</a></li>
+<li>
+            <a href="#Rand.Int63n">func (r *Rand) Int63n(n int64) int64</a></li>
+<li>
+            <a href="#Rand.Intn">func (r *Rand) Intn(n int) int</a></li>
+<li>
+            <a href="#Rand.NormFloat64">func (r *Rand) NormFloat64() float64</a></li>
+<li>
+            <a href="#Rand.Perm">func (r *Rand) Perm(n int) []int</a></li>
+<li>
+            <a href="#Rand.Read">func (r *Rand) Read(p []byte) (n int, err error)</a></li>
+<li>
+            <a href="#Rand.Seed">func (r *Rand) Seed(seed int64)</a></li>
+<li>
+            <a href="#Rand.Shuffle">func (r *Rand) Shuffle(n int, swap func(i, j int))</a></li>
+<li>
+            <a href="#Rand.Uint32">func (r *Rand) Uint32() uint32</a></li>
+<li>
+            <a href="#Rand.Uint64">func (r *Rand) Uint64() uint64</a></li>
+</ul></li>
+<li class="Documentation-indexType">
+          <a href="#Source">type Source</a></li>
+<li><ul class="Documentation-indexTypeFunctions">
+<li>
+            <a href="#NewSource">func NewSource(seed int64) Source</a></li>
+</ul></li>
+<li class="Documentation-indexType">
+          <a href="#Source64">type Source64</a></li>
+<li class="Documentation-indexType">
+          <a href="#Zipf">type Zipf</a></li>
+<li><ul class="Documentation-indexTypeFunctions">
+<li>
+            <a href="#NewZipf">func NewZipf(r *Rand, s float64, v float64, imax uint64) *Zipf</a></li>
+</ul></li>
+<li><ul class="Documentation-indexTypeMethods">
+<li>
+            <a href="#Zipf.Uint64">func (z *Zipf) Uint64() uint64</a></li>
+</ul></li>
+</ul>
+</section><section class="Documentation-examples">
+    <h3 tabindex="-1" id="pkg-examples" class="Documentation-examplesHeader">Examples <a class="Documentation-idLink" href="#pkg-examples" title="Go to Examples" aria-label="Go to Examples">¶</a></h3>
+<ul class="Documentation-examplesList">
+<li><a href="#example-package" class="js-exampleHref">Package</a></li>
+<li><a href="#example-package-Rand" class="js-exampleHref">Package (Rand)</a></li>
+<li><a href="#example-Intn" class="js-exampleHref">Intn</a></li>
+<li><a href="#example-Perm" class="js-exampleHref">Perm</a></li>
+<li><a href="#example-Shuffle" class="js-exampleHref">Shuffle</a></li>
+<li><a href="#example-Shuffle-SlicesInUnison" class="js-exampleHref">Shuffle (SlicesInUnison)</a></li>
+</ul>
+</section><h3 tabindex="-1" id="pkg-constants" class="Documentation-constantsHeader">Constants <a href="#pkg-constants" title="Go to Constants" aria-label="Go to Constants">¶</a></h3>
+
+  <section class="Documentation-constants"><p class="Documentation-empty">This section is empty.</p></section>
+
+  <h3 tabindex="-1" id="pkg-variables" class="Documentation-variablesHeader">Variables <a href="#pkg-variables" title="Go to Variables" aria-label="Go to Variables">¶</a></h3>
+
+  <section class="Documentation-variables"><p class="Documentation-empty">This section is empty.</p></section>
+
+  <h3 tabindex="-1" id="pkg-functions" class="Documentation-functionsHeader">Functions <a href="#pkg-functions" title="Go to Functions" aria-label="Go to Functions">¶</a></h3>
+
+  <section class="Documentation-functions"><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="ExpFloat64" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/math/rand/rand.go;l=508">ExpFloat64</a> <a class="Documentation-idLink" href="#ExpFloat64" title="Go to ExpFloat64" aria-label="Go to ExpFloat64">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func ExpFloat64() <a href="/builtin#float64">float64</a></pre>
+    </div>
+  <p>ExpFloat64 returns an exponentially distributed float64 in the range
+(0, +[math.MaxFloat64]] with an exponential distribution whose rate parameter
+(lambda) is 1 and whose mean is 1/lambda (1) from the default <a href="#Source">Source</a>.
+To produce a distribution with a different rate parameter,
+callers can adjust the output using:
+</p><pre>sample = ExpFloat64() / desiredRateParameter
+</pre>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Float32" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/math/rand/rand.go;l=472">Float32</a> <a class="Documentation-idLink" href="#Float32" title="Go to Float32" aria-label="Go to Float32">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Float32() <a href="/builtin#float32">float32</a></pre>
+    </div>
+  <p>Float32 returns, as a float32, a pseudo-random number in the half-open interval [0.0,1.0)
+from the default <a href="#Source">Source</a>.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Float64" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/math/rand/rand.go;l=468">Float64</a> <a class="Documentation-idLink" href="#Float64" title="Go to Float64" aria-label="Go to Float64">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Float64() <a href="/builtin#float64">float64</a></pre>
+    </div>
+  <p>Float64 returns, as a float64, a pseudo-random number in the half-open interval [0.0,1.0)
+from the default <a href="#Source">Source</a>.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Int" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/math/rand/rand.go;l=449">Int</a> <a class="Documentation-idLink" href="#Int" title="Go to Int" aria-label="Go to Int">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Int() <a href="/builtin#int">int</a></pre>
+    </div>
+  <p>Int returns a non-negative pseudo-random int from the default <a href="#Source">Source</a>.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Int31" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/math/rand/rand.go;l=446">Int31</a> <a class="Documentation-idLink" href="#Int31" title="Go to Int31" aria-label="Go to Int31">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Int31() <a href="/builtin#int32">int32</a></pre>
+    </div>
+  <p>Int31 returns a non-negative pseudo-random 31-bit integer as an int32
+from the default <a href="#Source">Source</a>.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Int31n" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/math/rand/rand.go;l=459">Int31n</a> <a class="Documentation-idLink" href="#Int31n" title="Go to Int31n" aria-label="Go to Int31n">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Int31n(n <a href="/builtin#int32">int32</a>) <a href="/builtin#int32">int32</a></pre>
+    </div>
+  <p>Int31n returns, as an int32, a non-negative pseudo-random number in the half-open interval [0,n)
+from the default <a href="#Source">Source</a>.
+It panics if n &lt;= 0.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Int63" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/math/rand/rand.go;l=434">Int63</a> <a class="Documentation-idLink" href="#Int63" title="Go to Int63" aria-label="Go to Int63">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Int63() <a href="/builtin#int64">int64</a></pre>
+    </div>
+  <p>Int63 returns a non-negative pseudo-random 63-bit integer as an int64
+from the default <a href="#Source">Source</a>.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Int63n" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/math/rand/rand.go;l=454">Int63n</a> <a class="Documentation-idLink" href="#Int63n" title="Go to Int63n" aria-label="Go to Int63n">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Int63n(n <a href="/builtin#int64">int64</a>) <a href="/builtin#int64">int64</a></pre>
+    </div>
+  <p>Int63n returns, as an int64, a non-negative pseudo-random number in the half-open interval [0,n)
+from the default <a href="#Source">Source</a>.
+It panics if n &lt;= 0.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Intn" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/math/rand/rand.go;l=464">Intn</a> <a class="Documentation-idLink" href="#Intn" title="Go to Intn" aria-label="Go to Intn">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Intn(n <a href="/builtin#int">int</a>) <a href="/builtin#int">int</a></pre>
+    </div>
+  <p>Intn returns, as an int, a non-negative pseudo-random number in the half-open interval [0,n)
+from the default <a href="#Source">Source</a>.
+It panics if n &lt;= 0.
+</p>
+<details tabindex="-1" id="example-Intn" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-Intn" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;math/rand&#34;
+)
+
+func main() {
+	fmt.Println(rand.Intn(100))
+	fmt.Println(rand.Intn(100))
+	fmt.Println(rand.Intn(100))
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer" hidden><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput"></span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="NormFloat64" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/math/rand/rand.go;l=499">NormFloat64</a> <a class="Documentation-idLink" href="#NormFloat64" title="Go to NormFloat64" aria-label="Go to NormFloat64">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func NormFloat64() <a href="/builtin#float64">float64</a></pre>
+    </div>
+  <p>NormFloat64 returns a normally distributed float64 in the range
+[-<a href="/math#MaxFloat64">math.MaxFloat64</a>, +[math.MaxFloat64]] with
+standard normal distribution (mean = 0, stddev = 1)
+from the default <a href="#Source">Source</a>.
+To produce a different normal distribution, callers can
+adjust the output using:
+</p><pre>sample = NormFloat64() * desiredStdDev + desiredMean
+</pre>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Perm" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/math/rand/rand.go;l=476">Perm</a> <a class="Documentation-idLink" href="#Perm" title="Go to Perm" aria-label="Go to Perm">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Perm(n <a href="/builtin#int">int</a>) []<a href="/builtin#int">int</a></pre>
+    </div>
+  <p>Perm returns, as a slice of n ints, a pseudo-random permutation of the integers
+in the half-open interval [0,n) from the default <a href="#Source">Source</a>.
+</p>
+<details tabindex="-1" id="example-Perm" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-Perm" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;math/rand&#34;
+)
+
+func main() {
+	for _, value := range rand.Perm(3) {
+		fmt.Println(value)
+	}
+
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">1
+2
+0
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <details class="Documentation-deprecatedDetails js-deprecatedDetails">
+      <summary>
+        <h4 tabindex="-1" id="Read" data-kind="function" class="Documentation-functionHeader">
+          <span class="Documentation-deprecatedTitle">
+            func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/math/rand/rand.go;l=489">Read</a>
+            <span class="Documentation-deprecatedTag">deprecated</span>
+            <span class="Documentation-deprecatedBody"></span>
+          </span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.6</span>
+    
+  </span>
+</h4>
+
+      </summary>
+      <div class="go-Message go-Message--warning Documentation-deprecatedItemBody">
+        
+    <div class="Documentation-declaration">
+      <pre>func Read(p []<a href="/builtin#byte">byte</a>) (n <a href="/builtin#int">int</a>, err <a href="/builtin#error">error</a>)</pre>
+    </div>
+  <p>Read generates len(p) random bytes from the default <a href="#Source">Source</a> and
+writes them into p. It always returns len(p) and a nil error.
+Read, unlike the <a href="#Rand.Read">Rand.Read</a> method, is safe for concurrent use.
+</p><p>Deprecated: For almost all use cases, <a href="/crypto/rand#Read">crypto/rand.Read</a> is more appropriate.
+If a deterministic source is required, use <a href="/math/rand/v2#ChaCha8.Read">math/rand/v2.ChaCha8.Read</a>.
+</p>
+
+      </div>
+    </details>
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <details class="Documentation-deprecatedDetails js-deprecatedDetails">
+      <summary>
+        <h4 tabindex="-1" id="Seed" data-kind="function" class="Documentation-functionHeader">
+          <span class="Documentation-deprecatedTitle">
+            func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/math/rand/rand.go;l=400">Seed</a>
+            <span class="Documentation-deprecatedTag">deprecated</span>
+            <span class="Documentation-deprecatedBody"></span>
+          </span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+      </summary>
+      <div class="go-Message go-Message--warning Documentation-deprecatedItemBody">
+        
+    <div class="Documentation-declaration">
+      <pre>func Seed(seed <a href="/builtin#int64">int64</a>)</pre>
+    </div>
+  <p>Seed uses the provided seed value to initialize the default Source to a
+deterministic state. Seed values that have the same remainder when
+divided by 2³¹-1 generate the same pseudo-random sequence.
+Seed, unlike the <a href="#Rand.Seed">Rand.Seed</a> method, is safe for concurrent use.
+</p><p>If Seed is not called, the generator is seeded randomly at program startup.
+</p><p>Prior to Go 1.20, the generator was seeded like Seed(1) at program startup.
+To force the old behavior, call Seed(1) at program startup.
+Alternately, set GODEBUG=randautoseed=0 in the environment
+before making any calls to functions in this package.
+</p><p>Deprecated: As of Go 1.20 there is no reason to call Seed with
+a random value. Programs that call Seed with a known value to get
+a specific sequence of results should use New(NewSource(seed)) to
+obtain a local random generator.
+</p><p>As of Go 1.24 <a href="#Seed">Seed</a> is a no-op. To restore the previous behavior set
+GODEBUG=randseednop=0.
+</p>
+
+      </div>
+    </details>
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Shuffle" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/math/rand/rand.go;l=481">Shuffle</a> <a class="Documentation-idLink" href="#Shuffle" title="Go to Shuffle" aria-label="Go to Shuffle">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.10</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Shuffle(n <a href="/builtin#int">int</a>, swap func(i, j <a href="/builtin#int">int</a>))</pre>
+    </div>
+  <p>Shuffle pseudo-randomizes the order of elements using the default <a href="#Source">Source</a>.
+n is the number of elements. Shuffle panics if n &lt; 0.
+swap swaps the elements with indexes i and j.
+</p>
+<details tabindex="-1" id="example-Shuffle" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-Shuffle" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;math/rand&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	words := strings.Fields(&#34;ink runs from the corners of my mouth&#34;)
+	rand.Shuffle(len(words), func(i, j int) {
+		words[i], words[j] = words[j], words[i]
+	})
+	fmt.Println(words)
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer" hidden><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput"></span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+<details tabindex="-1" id="example-Shuffle-SlicesInUnison" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example (SlicesInUnison) <a href="#example-Shuffle-SlicesInUnison" title="Go to Example (SlicesInUnison)" aria-label="Go to Example (SlicesInUnison)">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;math/rand&#34;
+)
+
+func main() {
+	numbers := []byte(&#34;12345&#34;)
+	letters := []byte(&#34;ABCDE&#34;)
+	// Shuffle numbers, swapping corresponding entries in letters at the same time.
+	rand.Shuffle(len(numbers), func(i, j int) {
+		numbers[i], numbers[j] = numbers[j], numbers[i]
+		letters[i], letters[j] = letters[j], letters[i]
+	})
+	for i := range numbers {
+		fmt.Printf(&#34;%c: %c\n&#34;, letters[i], numbers[i])
+	}
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer" hidden><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput"></span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Uint32" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/math/rand/rand.go;l=438">Uint32</a> <a class="Documentation-idLink" href="#Uint32" title="Go to Uint32" aria-label="Go to Uint32">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Uint32() <a href="/builtin#uint32">uint32</a></pre>
+    </div>
+  <p>Uint32 returns a pseudo-random 32-bit value as a uint32
+from the default <a href="#Source">Source</a>.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Uint64" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/math/rand/rand.go;l=442">Uint64</a> <a class="Documentation-idLink" href="#Uint64" title="Go to Uint64" aria-label="Go to Uint64">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.8</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Uint64() <a href="/builtin#uint64">uint64</a></pre>
+    </div>
+  <p>Uint64 returns a pseudo-random 64-bit value as a uint64
+from the default <a href="#Source">Source</a>.
+</p>
+
+  
+
+        </div></section>
+
+  <h3 tabindex="-1" id="pkg-types" class="Documentation-typesHeader">Types <a href="#pkg-types" title="Go to Types" aria-label="Go to Types">¶</a></h3>
+
+  <section class="Documentation-types"><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="Rand" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/math/rand/rand.go;l=62">Rand</a> <a class="Documentation-idLink" href="#Rand" title="Go to Rand" aria-label="Go to Rand">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type Rand struct {
+	<span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+    </div>
+  <p>A Rand is a source of random numbers.
+</p>
+<div class="Documentation-typeFunc">
+    
+  
+  
+    <h4 tabindex="-1" id="New" data-kind="function" class="Documentation-typeFuncHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/math/rand/rand.go;l=78">New</a> <a class="Documentation-idLink" href="#New" title="Go to New" aria-label="Go to New">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func New(src <a href="#Source">Source</a>) *<a href="#Rand">Rand</a></pre>
+    </div>
+  <p>New returns a new <a href="#Rand">Rand</a> that uses random values from src
+to generate other random values.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Rand.ExpFloat64" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Rand) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/math/rand/exp.go;l=30">ExpFloat64</a> <a class="Documentation-idLink" href="#Rand.ExpFloat64" title="Go to Rand.ExpFloat64" aria-label="Go to Rand.ExpFloat64">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (r *<a href="#Rand">Rand</a>) ExpFloat64() <a href="/builtin#float64">float64</a></pre>
+    </div>
+  <p>ExpFloat64 returns an exponentially distributed float64 in the range
+(0, +[math.MaxFloat64]] with an exponential distribution whose rate parameter
+(lambda) is 1 and whose mean is 1/lambda (1).
+To produce a distribution with a different rate parameter,
+callers can adjust the output using:
+</p><pre>sample = ExpFloat64() / desiredRateParameter
+</pre>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Rand.Float32" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Rand) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/math/rand/rand.go;l=215">Float32</a> <a class="Documentation-idLink" href="#Rand.Float32" title="Go to Rand.Float32" aria-label="Go to Rand.Float32">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (r *<a href="#Rand">Rand</a>) Float32() <a href="/builtin#float32">float32</a></pre>
+    </div>
+  <p>Float32 returns, as a float32, a pseudo-random number in the half-open interval [0.0,1.0).
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Rand.Float64" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Rand) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/math/rand/rand.go;l=189">Float64</a> <a class="Documentation-idLink" href="#Rand.Float64" title="Go to Rand.Float64" aria-label="Go to Rand.Float64">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (r *<a href="#Rand">Rand</a>) Float64() <a href="/builtin#float64">float64</a></pre>
+    </div>
+  <p>Float64 returns, as a float64, a pseudo-random number in the half-open interval [0.0,1.0).
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Rand.Int" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Rand) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/math/rand/rand.go;l=113">Int</a> <a class="Documentation-idLink" href="#Rand.Int" title="Go to Rand.Int" aria-label="Go to Rand.Int">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (r *<a href="#Rand">Rand</a>) Int() <a href="/builtin#int">int</a></pre>
+    </div>
+  <p>Int returns a non-negative pseudo-random int.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Rand.Int31" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Rand) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/math/rand/rand.go;l=110">Int31</a> <a class="Documentation-idLink" href="#Rand.Int31" title="Go to Rand.Int31" aria-label="Go to Rand.Int31">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (r *<a href="#Rand">Rand</a>) Int31() <a href="/builtin#int32">int32</a></pre>
+    </div>
+  <p>Int31 returns a non-negative pseudo-random 31-bit integer as an int32.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Rand.Int31n" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Rand) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/math/rand/rand.go;l=137">Int31n</a> <a class="Documentation-idLink" href="#Rand.Int31n" title="Go to Rand.Int31n" aria-label="Go to Rand.Int31n">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (r *<a href="#Rand">Rand</a>) Int31n(n <a href="/builtin#int32">int32</a>) <a href="/builtin#int32">int32</a></pre>
+    </div>
+  <p>Int31n returns, as an int32, a non-negative pseudo-random number in the half-open interval [0,n).
+It panics if n &lt;= 0.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Rand.Int63" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Rand) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/math/rand/rand.go;l=96">Int63</a> <a class="Documentation-idLink" href="#Rand.Int63" title="Go to Rand.Int63" aria-label="Go to Rand.Int63">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (r *<a href="#Rand">Rand</a>) Int63() <a href="/builtin#int64">int64</a></pre>
+    </div>
+  <p>Int63 returns a non-negative pseudo-random 63-bit integer as an int64.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Rand.Int63n" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Rand) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/math/rand/rand.go;l=120">Int63n</a> <a class="Documentation-idLink" href="#Rand.Int63n" title="Go to Rand.Int63n" aria-label="Go to Rand.Int63n">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (r *<a href="#Rand">Rand</a>) Int63n(n <a href="/builtin#int64">int64</a>) <a href="/builtin#int64">int64</a></pre>
+    </div>
+  <p>Int63n returns, as an int64, a non-negative pseudo-random number in the half-open interval [0,n).
+It panics if n &lt;= 0.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Rand.Intn" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Rand) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/math/rand/rand.go;l=178">Intn</a> <a class="Documentation-idLink" href="#Rand.Intn" title="Go to Rand.Intn" aria-label="Go to Rand.Intn">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (r *<a href="#Rand">Rand</a>) Intn(n <a href="/builtin#int">int</a>) <a href="/builtin#int">int</a></pre>
+    </div>
+  <p>Intn returns, as an int, a non-negative pseudo-random number in the half-open interval [0,n).
+It panics if n &lt;= 0.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Rand.NormFloat64" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Rand) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/math/rand/normal.go;l=37">NormFloat64</a> <a class="Documentation-idLink" href="#Rand.NormFloat64" title="Go to Rand.NormFloat64" aria-label="Go to Rand.NormFloat64">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (r *<a href="#Rand">Rand</a>) NormFloat64() <a href="/builtin#float64">float64</a></pre>
+    </div>
+  <p>NormFloat64 returns a normally distributed float64 in
+the range -<a href="/math#MaxFloat64">math.MaxFloat64</a> through +[math.MaxFloat64] inclusive,
+with standard normal distribution (mean = 0, stddev = 1).
+To produce a different normal distribution, callers can
+adjust the output using:
+</p><pre>sample = NormFloat64() * desiredStdDev + desiredMean
+</pre>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Rand.Perm" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Rand) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/math/rand/rand.go;l=229">Perm</a> <a class="Documentation-idLink" href="#Rand.Perm" title="Go to Rand.Perm" aria-label="Go to Rand.Perm">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (r *<a href="#Rand">Rand</a>) Perm(n <a href="/builtin#int">int</a>) []<a href="/builtin#int">int</a></pre>
+    </div>
+  <p>Perm returns, as a slice of n ints, a pseudo-random permutation of the integers
+in the half-open interval [0,n).
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Rand.Read" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Rand) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/math/rand/rand.go;l=272">Read</a> <a class="Documentation-idLink" href="#Rand.Read" title="Go to Rand.Read" aria-label="Go to Rand.Read">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.6</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (r *<a href="#Rand">Rand</a>) Read(p []<a href="/builtin#byte">byte</a>) (n <a href="/builtin#int">int</a>, err <a href="/builtin#error">error</a>)</pre>
+    </div>
+  <p>Read generates len(p) random bytes and writes them into p. It
+always returns len(p) and a nil error.
+Read should not be called concurrently with any other Rand method.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Rand.Seed" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Rand) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/math/rand/rand.go;l=85">Seed</a> <a class="Documentation-idLink" href="#Rand.Seed" title="Go to Rand.Seed" aria-label="Go to Rand.Seed">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (r *<a href="#Rand">Rand</a>) Seed(seed <a href="/builtin#int64">int64</a>)</pre>
+    </div>
+  <p>Seed uses the provided seed value to initialize the generator to a deterministic state.
+Seed should not be called concurrently with any other <a href="#Rand">Rand</a> method.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Rand.Shuffle" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Rand) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/math/rand/rand.go;l=247">Shuffle</a> <a class="Documentation-idLink" href="#Rand.Shuffle" title="Go to Rand.Shuffle" aria-label="Go to Rand.Shuffle">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.10</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (r *<a href="#Rand">Rand</a>) Shuffle(n <a href="/builtin#int">int</a>, swap func(i, j <a href="/builtin#int">int</a>))</pre>
+    </div>
+  <p>Shuffle pseudo-randomizes the order of elements.
+n is the number of elements. Shuffle panics if n &lt; 0.
+swap swaps the elements with indexes i and j.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Rand.Uint32" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Rand) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/math/rand/rand.go;l=99">Uint32</a> <a class="Documentation-idLink" href="#Rand.Uint32" title="Go to Rand.Uint32" aria-label="Go to Rand.Uint32">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (r *<a href="#Rand">Rand</a>) Uint32() <a href="/builtin#uint32">uint32</a></pre>
+    </div>
+  <p>Uint32 returns a pseudo-random 32-bit value as a uint32.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Rand.Uint64" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Rand) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/math/rand/rand.go;l=102">Uint64</a> <a class="Documentation-idLink" href="#Rand.Uint64" title="Go to Rand.Uint64" aria-label="Go to Rand.Uint64">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.8</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (r *<a href="#Rand">Rand</a>) Uint64() <a href="/builtin#uint64">uint64</a></pre>
+    </div>
+  <p>Uint64 returns a pseudo-random 64-bit value as a uint64.
+</p>
+
+  
+
+  </div>
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="Source" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/math/rand/rand.go;l=31">Source</a> <a class="Documentation-idLink" href="#Source" title="Go to Source" aria-label="Go to Source">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type Source interface {
+<span id="Source.Int63" data-kind="method">	Int63() <a href="/builtin#int64">int64</a>
+</span><span id="Source.Seed" data-kind="method">	Seed(seed <a href="/builtin#int64">int64</a>)
+</span>}</pre>
+    </div>
+  <p>A Source represents a source of uniformly-distributed
+pseudo-random int64 values in the range [0, 1&lt;&lt;63).
+</p><p>A Source is not safe for concurrent use by multiple goroutines.
+</p>
+<div class="Documentation-typeFunc">
+    
+  
+  
+    <h4 tabindex="-1" id="NewSource" data-kind="function" class="Documentation-typeFuncHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/math/rand/rand.go;l=51">NewSource</a> <a class="Documentation-idLink" href="#NewSource" title="Go to NewSource" aria-label="Go to NewSource">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func NewSource(seed <a href="/builtin#int64">int64</a>) <a href="#Source">Source</a></pre>
+    </div>
+  <p>NewSource returns a new pseudo-random <a href="#Source">Source</a> seeded with the given value.
+Unlike the default <a href="#Source">Source</a> used by top-level functions, this source is not
+safe for concurrent use by multiple goroutines.
+The returned <a href="#Source">Source</a> implements <a href="#Source64">Source64</a>.
+</p>
+
+  
+
+  </div>
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="Source64" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/math/rand/rand.go;l=42">Source64</a> <a class="Documentation-idLink" href="#Source64" title="Go to Source64" aria-label="Go to Source64">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.8</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type Source64 interface {
+	<a href="#Source">Source</a>
+<span id="Source64.Uint64" data-kind="method">	Uint64() <a href="/builtin#uint64">uint64</a>
+</span>}</pre>
+    </div>
+  <p>A Source64 is a <a href="#Source">Source</a> that can also generate
+uniformly-distributed pseudo-random uint64 values in
+the range [0, 1&lt;&lt;64) directly.
+If a <a href="#Rand">Rand</a> r&#39;s underlying <a href="#Source">Source</a> s implements Source64,
+then r.Uint64 returns the result of one call to s.Uint64
+instead of making two calls to s.Int63.
+</p>
+
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="Zipf" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/math/rand/zipf.go;l=15">Zipf</a> <a class="Documentation-idLink" href="#Zipf" title="Go to Zipf" aria-label="Go to Zipf">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type Zipf struct {
+	<span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+    </div>
+  <p>A Zipf generates Zipf distributed variates.
+</p>
+<div class="Documentation-typeFunc">
+    
+  
+  
+    <h4 tabindex="-1" id="NewZipf" data-kind="function" class="Documentation-typeFuncHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/math/rand/zipf.go;l=39">NewZipf</a> <a class="Documentation-idLink" href="#NewZipf" title="Go to NewZipf" aria-label="Go to NewZipf">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func NewZipf(r *<a href="#Rand">Rand</a>, s <a href="/builtin#float64">float64</a>, v <a href="/builtin#float64">float64</a>, imax <a href="/builtin#uint64">uint64</a>) *<a href="#Zipf">Zipf</a></pre>
+    </div>
+  <p>NewZipf returns a <a href="#Zipf">Zipf</a> variate generator.
+The generator generates values k ∈ [0, imax]
+such that P(k) is proportional to (v + k) ** (-s).
+Requirements: s &gt; 1 and v &gt;= 1.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Zipf.Uint64" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Zipf) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/math/rand/zipf.go;l=58">Uint64</a> <a class="Documentation-idLink" href="#Zipf.Uint64" title="Go to Zipf.Uint64" aria-label="Go to Zipf.Uint64">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (z *<a href="#Zipf">Zipf</a>) Uint64() <a href="/builtin#uint64">uint64</a></pre>
+    </div>
+  <p>Uint64 returns a value drawn from the <a href="#Zipf">Zipf</a> distribution described
+by the <a href="#Zipf">Zipf</a> object.
+</p>
+
+  
+
+  </div>
+  
+
+    </div></section></div> 
+
+
+
+
+
+
+
+      
+    </div>
+  </div>
+
+        
+      
+      
+        
+  <div class="UnitFiles js-unitFiles">
+    <h2 class="UnitFiles-title" id="section-sourcefiles">
+      <img class="go-Icon" height="24" width="24" src="/static/shared/icon/insert_drive_file_gm_grey_24dp.svg" alt="">
+      Source Files
+      <a class="UnitFiles-idLink" href="#section-sourcefiles" title="Go to Source Files" aria-label="Go to Source Files">¶</a>
+    </h2><div class="UnitFiles-titleLink">
+      <a href="https://cs.opensource.google/go/go/+/go1.26.3:src/math/rand" target="_blank" rel="noopener">View all Source files</a>
+    </div><div>
+      <ul class="UnitFiles-fileList"><li><a href="https://cs.opensource.google/go/go/+/go1.26.3:src/math/rand/exp.go" target="_blank" rel="noopener" title="exp.go">exp.go</a></li><li><a href="https://cs.opensource.google/go/go/+/go1.26.3:src/math/rand/normal.go" target="_blank" rel="noopener" title="normal.go">normal.go</a></li><li><a href="https://cs.opensource.google/go/go/+/go1.26.3:src/math/rand/rand.go" target="_blank" rel="noopener" title="rand.go">rand.go</a></li><li><a href="https://cs.opensource.google/go/go/+/go1.26.3:src/math/rand/rng.go" target="_blank" rel="noopener" title="rng.go">rng.go</a></li><li><a href="https://cs.opensource.google/go/go/+/go1.26.3:src/math/rand/zipf.go" target="_blank" rel="noopener" title="zipf.go">zipf.go</a></li></ul>
+    </div>
+  </div>
+
+      
+      
+        
+  <div class="UnitDirectories js-unitDirectories">
+    <h2 class="UnitDirectories-title" id="section-directories">
+      <img class="go-Icon" height="24" width="24" src="/static/shared/icon/folder_gm_grey_24dp.svg" alt="">
+      Directories
+      <a class="UnitDirectories-idLink" href="#section-directories" title="Go to Directories" aria-label="Go to Directories">¶</a>
+    </h2>
+    <div class="UnitDirectories-toggles">
+      <div class="UnitDirectories-toggleButtons">
+        <button class="js-showInternalDirectories" data-test-id="internal-directories-toggle"
+            data-gtmc="directories button" aria-label="Show Internal Directories">
+          Show internal
+        </button>
+        <button class="js-expandAllDirectories" data-test-id="directories-toggle"
+            data-gtmc="directories button" aria-label="Expand All Directories">
+          Expand all
+        </button>
+      </div>
+    </div>
+    <table class="UnitDirectories-table UnitDirectories-table--tree js-expandableTable"
+          data-test-id="UnitDirectories-table">
+      <tr class="UnitDirectories-tableHeader UnitDirectories-tableHeader--tree">
+        <th>Path</th>
+        <th class="UnitDirectories-desktopSynopsis">Synopsis</th>
+      </tr>
+      
+          
+  
+  <tr
+      class="">
+    <td data-id="v2" data-aria-owns="">
+      <div class="UnitDirectories-pathCell">
+        <div><a href="/math/rand/v2@go1.26.3">v2</a>
+            
+          </div>
+          <div class="UnitDirectories-mobileSynopsis">Package rand implements pseudo-random number generators suitable for tasks such as simulation, but it should not be used for security-sensitive work.</div>
+        </div>
+      </td>
+      <td class="UnitDirectories-desktopSynopsis">Package rand implements pseudo-random number generators suitable for tasks such as simulation, but it should not be used for security-sensitive work.</td></tr></tr>
+
+      
+    </table>
+  </div>
+
+      
+    </div>
+  </div>
+  <div id="showInternal-description" hidden> Click to show internal directories. </div>
+  <div id="hideInternal-description" hidden> Click to hide internal directories. </div>
+</article>
+    <footer class="go-Main-footer"></footer>
+  </main>
+
+    
+  <footer class="go-Footer">
+    
+    <div class="go-Footer-links">
+      <div class="go-Footer-linkColumn">
+        <a href="https://go.dev/solutions" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          Why Go
+        </a>
+        <a href="https://go.dev/solutions#use-cases" class="go-Footer-link"
+            data-gtmc="footer link">
+          Use Cases
+        </a>
+        <a href="https://go.dev/solutions#case-studies" class="go-Footer-link"
+            data-gtmc="footer link">
+          Case Studies
+        </a>
+      </div>
+      <div class="go-Footer-linkColumn">
+        <a href="https://learn.go.dev/" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          Get Started
+        </a>
+        <a href="https://play.golang.org" class="go-Footer-link" data-gtmc="footer link">
+          Playground
+        </a>
+        <a href="https://tour.golang.org" class="go-Footer-link" data-gtmc="footer link">
+          Tour
+        </a>
+        <a href="https://stackoverflow.com/questions/tagged/go?tab=Newest" class="go-Footer-link"
+            data-gtmc="footer link">
+          Stack Overflow
+        </a>
+        <a href="https://go.dev/help" class="go-Footer-link"
+            data-gtmc="footer link">
+          Help
+        </a>
+      </div>
+      <div class="go-Footer-linkColumn">
+        <a href="https://pkg.go.dev" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          Packages
+        </a>
+        <a href="/std" class="go-Footer-link" data-gtmc="footer link">
+          Standard Library
+        </a>
+        <a href="/golang.org/x" class="go-Footer-link" data-gtmc="footer link">
+          Sub-repositories
+        </a>
+        <a href="https://pkg.go.dev/about" class="go-Footer-link" data-gtmc="footer link">
+          About Go Packages
+        </a>
+      </div>
+      <div class="go-Footer-linkColumn">
+        <a href="https://go.dev/project" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          About
+        </a>
+        <a href="https://go.dev/dl/" class="go-Footer-link" data-gtmc="footer link">Download</a>
+        <a href="https://go.dev/blog" class="go-Footer-link" data-gtmc="footer link">Blog</a>
+        <a href="https://github.com/golang/go/issues" class="go-Footer-link" data-gtmc="footer link">
+          Issue Tracker
+        </a>
+        <a href="https://go.dev/doc/devel/release.html" class="go-Footer-link"
+            data-gtmc="footer link">
+          Release Notes
+        </a>
+        <a href="https://go.dev/brand" class="go-Footer-link" data-gtmc="footer link">
+          Brand Guidelines
+        </a>
+        <a href="https://go.dev/conduct" class="go-Footer-link" data-gtmc="footer link">
+          Code of Conduct
+        </a>
+      </div>
+      <div class="go-Footer-linkColumn">
+        <a href="https://www.twitter.com/golang" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          Connect
+        </a>
+        <a href="https://www.twitter.com/golang" class="go-Footer-link" data-gtmc="footer link">
+          Twitter
+        </a>
+        <a href="https://github.com/golang" class="go-Footer-link" data-gtmc="footer link">GitHub</a>
+        <a href="https://invite.slack.golangbridge.org/" class="go-Footer-link"
+            data-gtmc="footer link">
+          Slack
+        </a>
+        <a href="https://reddit.com/r/golang" class="go-Footer-link" data-gtmc="footer link">
+          r/golang
+        </a>
+        <a href="https://www.meetup.com/pro/go" class="go-Footer-link" data-gtmc="footer link">
+          Meetup
+        </a>
+        <a href="https://golangweekly.com/" class="go-Footer-link" data-gtmc="footer link">
+          Golang Weekly
+        </a>
+      </div>
+    </div>
+    <div class="go-Footer-bottom">
+      <img class="go-Footer-gopher"  width="1431" height="901"
+          src="/static/shared/gopher/pilot-bust-1431x901.svg" alt="Gopher in flight goggles">
+      <ul class="go-Footer-listRow">
+        <li class="go-Footer-listItem">
+          <a href="https://go.dev/copyright" data-gtmc="footer link">Copyright</a>
+        </li>
+        <li class="go-Footer-listItem">
+          <a href="https://go.dev/tos" data-gtmc="footer link">Terms of Service</a>
+        </li>
+        <li class="go-Footer-listItem">
+          <a href="http://www.google.com/intl/en/policies/privacy/" data-gtmc="footer link"
+              target="_blank" rel="noopener">
+            Privacy Policy
+          </a>
+        </li>
+        <li class="go-Footer-listItem">
+          <a href="https://go.dev/s/pkgsite-feedback" target="_blank" rel="noopener"
+              data-gtmc="footer link">
+            Report an Issue
+          </a>
+        </li>
+        <li class="go-Footer-listItem">
+          <button class="go-Button go-Button--text go-Footer-toggleTheme js-toggleTheme" aria-label="Theme Toggle">
+            <img data-value="auto" class="go-Icon go-Icon--inverted" height="24" width="24" src="/static/shared/icon/brightness_6_gm_grey_24dp.svg" alt="System theme">
+            <img data-value="dark" class="go-Icon go-Icon--inverted" height="24" width="24" src="/static/shared/icon/brightness_2_gm_grey_24dp.svg" alt="Dark theme">
+            <img data-value="light" class="go-Icon go-Icon--inverted" height="24" width="24" src="/static/shared/icon/light_mode_gm_grey_24dp.svg" alt="Light theme">
+            <p> Theme Toggle </p>
+          </button>
+        </li>
+        <li class="go-Footer-listItem">
+          <button class="go-Button go-Button--text go-Footer-keyboard js-openShortcuts" aria-label="Shorcuts Modal">
+            <img class="go-Icon go-Icon--inverted" height="24" width="24" src="/static/shared/icon/keyboard_grey_24dp.svg" alt="">
+            <p> Shortcuts Modal </p>
+          </button>
+        </li>
+      </ul>
+      <a class="go-Footer-googleLogo" href="https://google.com" target="_blank"rel="noopener"
+          data-gtmc="footer link">
+        <img class="go-Footer-googleLogoImg" height="24" width="72"
+            src="/static/shared/logo/google-white.svg" alt="Google logo">
+      </a>
+    </div>
+  </footer>
+
+    
+  <dialog id="jump-to-modal" class="JumpDialog go-Modal go-Modal--md js-modal">
+    <form method="dialog" data-gmtc="jump to form" aria-label="Jump to Identifier">
+      <div class="Dialog-title go-Modal-header">
+        <h2>Jump to</h2>
+        <button
+          class="go-Button go-Button--inline"
+          type="button"
+          data-modal-close
+          data-gtmc="modal button"
+          aria-label="Close"
+        >
+          <img
+            class="go-Icon"
+            height="24"
+            width="24"
+            src="/static/shared/icon/close_gm_grey_24dp.svg"
+            alt=""
+          />
+        </button>
+      </div>
+      <div class="JumpDialog-filter">
+        <input class="JumpDialog-input go-Input" autocomplete="off" type="text">
+      </div>
+      <div class="JumpDialog-body go-Modal-body">
+        <div class="JumpDialog-list"></div>
+      </div>
+      <div class="go-Modal-actions">
+        <button class="go-Button" data-test-id="close-dialog">Close</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog class="ShortcutsDialog go-Modal go-Modal--sm js-modal">
+    <form method="dialog">
+      <div class="go-Modal-header">
+        <h2>Keyboard shortcuts</h2>
+        <button
+          class="go-Button go-Button--inline"
+          type="button"
+          data-modal-close
+          data-gtmc="modal button"
+          aria-label="Close"
+        >
+          <img
+            class="go-Icon"
+            height="24"
+            width="24"
+            src="/static/shared/icon/close_gm_grey_24dp.svg"
+            alt=""
+          />
+        </button>
+      </div>
+      <div class="go-Modal-body">
+        <table>
+          <tbody>
+            <tr><td class="ShortcutsDialog-key">
+              <strong>?</strong></td><td> : This menu</td>
+            </tr>
+            <tr><td class="ShortcutsDialog-key">
+              <strong>/</strong></td><td> : Search site</td>
+            </tr>
+            <tr><td class="ShortcutsDialog-key">
+              <strong>f</strong> or <strong>F</strong></td><td> : Jump to</td>
+            </tr>
+            <tr>
+              <td class="ShortcutsDialog-key"><strong>y</strong> or <strong>Y</strong></td>
+              <td> : Canonical URL</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="go-Modal-actions">
+        <button class="go-Button" data-test-id="close-dialog">Close</button>
+      </div>
+    </form>
+  </dialog>
+
+    
+      <section class="Cookie-notice js-cookieNotice">
+        <div>go.dev uses cookies from Google to deliver and enhance the quality of its services and to
+        analyze traffic. <a target=_blank href="https://policies.google.com/technologies/cookies">Learn more.</a></div>
+        <div><button class="go-Button">Okay</button></div>
+      </section>
+    
+    
+      <script>
+        // this will throw if the querySelector can’t find the element
+        const gtmId = document.querySelector('.js-gtmID').dataset.gtmid;
+        if (!gtmId) {
+          throw new Error('Google Tag Manager ID not found');
+        }
+        loadScript(`https://www.googletagmanager.com/gtm.js?id=${gtmId}`);
+      </script>
+      <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W8MVQXG"
+                height="0" width="0" style="display:none;visibility:hidden">
+        </iframe>
+      </noscript>
+    
+    
+  
+  <div class="js-canonicalURLPath" data-canonical-url-path="/math/rand@go1.26.3" hidden></div>
+  <div class="js-playgroundVars" data-modulepath="std" data-version="v1.26.3" hidden></div>
+  <script>
+    loadScript('/static/frontend/unit/main/main.js')
+  </script>
+
+  <script>
+    loadScript('/static/frontend/unit/unit.js')
+  </script>
+
+  </body>
+</html>

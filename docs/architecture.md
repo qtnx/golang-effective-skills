@@ -11,8 +11,8 @@ The repository uses progressive disclosure.
    implementation or review subagents.
 4. `sources/chunks/*.md`: generated source chunks used for grounding,
    conflict resolution, and source-backed updates.
-5. `sources/raw/*`: downloaded upstream documents kept for provenance and
-   regeneration.
+5. `sources/raw/*`: downloaded upstream documents and linked-doc cache kept for
+   provenance and regeneration.
 
 ## Routing
 

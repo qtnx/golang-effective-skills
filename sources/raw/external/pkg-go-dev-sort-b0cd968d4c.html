@@ -1,0 +1,3562 @@
+---
+source_name: "External Linked Documentation"
+source_url: "https://pkg.go.dev/sort"
+retrieved_at: "2026-06-02T06:42:53.230191+00:00"
+content_type: "text/html; charset=utf-8"
+truncated: false
+insecure_tls_fallback: true
+---
+
+
+
+<!DOCTYPE html>
+<html lang="en" data-layout="responsive" data-local="">
+  <head>
+    
+    <script>
+      window.addEventListener('error', window.__err=function f(e){f.p=f.p||[];f.p.push(e)});
+    </script>
+    <script>
+      (function() {
+        const theme = document.cookie.match(/prefers-color-scheme=(light|dark|auto)/)?.[1]
+        if (theme) {
+          document.querySelector('html').setAttribute('data-theme', theme);
+        }
+      }())
+    </script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Package sort provides primitives for sorting slices and user-defined collections.">
+    
+    <meta class="js-gtmID" data-gtmid="GTM-W8MVQXG">
+    <link rel="shortcut icon" href="/static/shared/icon/favicon.ico">
+    
+  
+    <link rel="canonical" href="https://pkg.go.dev/sort">
+  
+
+    <link href="/static/frontend/frontend.min.css?version=prod-frontend-00193-fdr" rel="stylesheet">
+    
+    <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="Go Packages">
+    
+    
+  <title>sort package - sort - Go Packages</title>
+
+    
+  <link href="/static/frontend/unit/unit.min.css?version=prod-frontend-00193-fdr" rel="stylesheet">
+  
+  <link href="/static/frontend/unit/main/main.min.css?version=prod-frontend-00193-fdr" rel="stylesheet">
+
+
+  </head>
+  <body>
+    
+    <script>
+      function loadScript(src, mod = true) {
+        let s = document.createElement('script');
+        s.src = src;
+        if (mod) {
+          s.type = 'module';
+          s.async = true;
+          s.defer = true
+        }
+        document.head.appendChild(s);
+      }
+      loadScript("/third_party/dialog-polyfill/dialog-polyfill.js", false)
+      loadScript("/static/frontend/frontend.js");
+    </script>
+    
+  <header class="go-Header go-Header--full js-siteHeader">
+    <div class="go-Header-inner go-Header-inner--dark">
+      <nav class="go-Header-nav">
+        <a href="https://go.dev/" class="js-headerLogo" data-gtmc="nav link"
+            data-test-id="go-header-logo-link" role="heading" aria-level="1">
+          <img class="go-Header-logo" src="/static/shared/logo/go-white.svg" alt="Go">
+        </a>
+         <div class="skip-navigation-wrapper">
+            <a class="skip-to-content-link" aria-label="Skip to main content" href="#main-content"> Skip to Main Content </a>
+          </div>
+        <div class="go-Header-rightContent">
+          
+<div class="go-SearchForm js-searchForm">
+  <form
+    class="go-InputGroup go-ShortcutKey go-SearchForm-form"
+    action="/search"
+    data-shortcut="/"
+    data-shortcut-alt="search"
+    data-gtmc="search form"
+    aria-label="Search for a package"
+    role="search"
+  >
+    <input name="q" class="go-Input js-searchFocus" aria-label="Search for a package" type="search"
+        autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false"
+        placeholder="Search packages or symbols"
+        value="" />
+    <input name="m" value="" hidden>
+    <button class="go-Button go-Button--inverted" aria-label="Submit search">
+      <img
+        class="go-Icon"
+        height="24"
+        width="24"
+        src="/static/shared/icon/search_gm_grey_24dp.svg"
+        alt=""
+      />
+    </button>
+  </form>
+  <button class="go-SearchForm-expandSearch js-expandSearch" data-gtmc="nav button"
+      aria-label="Open search" data-test-id="expand-search">
+    <img class="go-Icon go-Icon--inverted" height="24" width="24"
+        src="/static/shared/icon/search_gm_grey_24dp.svg" alt="">
+
+  </button>
+</div>
+
+          <ul class="go-Header-menu">
+            <li class="go-Header-menuItem">
+              <a class="js-desktop-menu-hover" href="#" data-gtmc="nav link">
+                Why Go
+                <img class="go-Icon" height="24" width="24" src="/static/shared/icon/arrow_drop_down_gm_grey_24dp.svg" alt="submenu dropdown icon">
+              </a>
+              <ul class="go-Header-submenu go-Header-submenu--why js-desktop-submenu-hover" aria-label="submenu">
+                  <li class="go-Header-submenuItem">
+                    <div>
+                      <a href="https://go.dev/solutions#case-studies">
+                        <span>Case Studies</span>
+                      </a>
+                    </div>
+                    <p>Common problems companies solve with Go</p>
+                  </li>
+                  <li class="go-Header-submenuItem">
+                    <div>
+                      <a href="https://go.dev/solutions#use-cases">
+                        <span>Use Cases</span>
+                      </a>
+                    </div>
+                    <p>Stories about how and why companies use Go</p>
+                  </li>
+                  <li class="go-Header-submenuItem">
+                    <div>
+                      <a href="https://go.dev/security/">
+                        <span>Security</span>
+                      </a>
+                    </div>
+                    <p>How Go can help keep you secure by default</p>
+                  </li>
+              </ul>
+            </li>
+            <li class="go-Header-menuItem">
+              <a href="https://go.dev/learn/" data-gtmc="nav link">Learn</a>
+            </li>
+            <li class="go-Header-menuItem">
+              <a class="js-desktop-menu-hover" href="#" data-gtmc="nav link">
+                Docs
+                <img class="go-Icon" height="24" width="24" src="/static/shared/icon/arrow_drop_down_gm_grey_24dp.svg" alt="submenu dropdown icon">
+              </a>
+              <ul class="go-Header-submenu go-Header-submenu--docs js-desktop-submenu-hover" aria-label="submenu">
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/doc/effective_go">
+                      <span>Effective Go</span>
+                    </a>
+                  </div>
+                  <p>Tips for writing clear, performant, and idiomatic Go code</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/doc/">
+                      <span>Go User Manual</span>
+                    </a>
+                  </div>
+                  <p>A complete introduction to building software with Go</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://pkg.go.dev/std">
+                      <span>Standard library</span>
+                    </a>
+                  </div>
+                  <p>Reference documentation for Go's standard library</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/doc/devel/release">
+                      <span>Release Notes</span>
+                    </a>
+                  </div>
+                  <p>Learn what's new in each Go release</p>
+                </li>
+              </ul>
+            </li>
+            <li class="go-Header-menuItem go-Header-menuItem--active">
+              <a href="/" data-gtmc="nav link">Packages</a>
+            </li>
+            <li class="go-Header-menuItem">
+              <a class="js-desktop-menu-hover" href="#" data-gtmc="nav link">
+                Community
+                <img class="go-Icon" height="24" width="24" src="/static/shared/icon/arrow_drop_down_gm_grey_24dp.svg" alt="submenu dropdown icon">
+              </a>
+              <ul class="go-Header-submenu go-Header-submenu--community js-desktop-submenu-hover" aria-label="submenu">
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/talks/">
+                      <span>Recorded Talks</span>
+                    </a>
+                  </div>
+                  <p>Videos from prior events</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://www.meetup.com/pro/go">
+                      <span>Meetups</span>
+                      <i class="material-icons">
+                        <img class="go-Icon" height="24" width="24"
+                            src="/static/shared/icon/launch_gm_grey_24dp.svg" alt="">
+                      </i>
+                    </a>
+                  </div>
+                  <p>Meet other local Go developers</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://github.com/golang/go/wiki/Conferences">
+                      <span>Conferences</span>
+                      <i class="material-icons">
+                        <img class="go-Icon" height="24" width="24"
+                            src="/static/shared/icon/launch_gm_grey_24dp.svg" alt="">
+                      </i>
+                    </a>
+                  </div>
+                  <p>Learn and network with Go developers from around the world</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/blog">
+                      <span>Go blog</span>
+                    </a>
+                  </div>
+                  <p>The Go project's official blog.</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/help">
+                      <span>Go project</span>
+                    </a>
+                  </div>
+                  <p>Get help and stay informed from Go</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    Get connected
+                  </div>
+                  <p></p>
+                  <div class="go-Header-socialIcons">
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with google-groups (Opens in new window)"
+                        title="Get connected with google-groups (Opens in new window)"
+                        href="https://groups.google.com/g/golang-nuts">
+                        <img src="/static/shared/logo/social/google-groups.svg" />
+                      </a>
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with github (Opens in new window)"
+                        title="Get connected with github (Opens in new window)"
+                        href="https://github.com/golang">
+                        <img src="/static/shared/logo/social/github.svg" />
+                      </a>
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with twitter (Opens in new window)"
+                        title="Get connected with twitter (Opens in new window)"
+                        href="https://twitter.com/golang">
+                        <img src="/static/shared/logo/social/twitter.svg" />
+                      </a>
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with reddit (Opens in new window)"
+                        title="Get connected with reddit (Opens in new window)"
+                        href="https://www.reddit.com/r/golang/">
+                        <img src="/static/shared/logo/social/reddit.svg" />
+                      </a>
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with slack (Opens in new window)"
+                        title="Get connected with slack (Opens in new window)"
+                        href="https://invite.slack.golangbridge.org/">
+                        <img src="/static/shared/logo/social/slack.svg" />
+                      </a>
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with stack-overflow (Opens in new window)"
+                        title=""
+                        href="https://stackoverflow.com/collectives/go">
+                        <img src="/static/shared/logo/social/stack-overflow.svg" />
+                      </a>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <button class="go-Header-navOpen js-headerMenuButton go-Header-navOpen--white" data-gtmc="nav button" aria-label="Open navigation">
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <aside class="go-NavigationDrawer js-header">
+    <nav class="go-NavigationDrawer-nav">
+      <div class="go-NavigationDrawer-header">
+        <a href="https://go.dev/">
+          <img class="go-NavigationDrawer-logo" src="/static/shared/logo/go-blue.svg" alt="Go.">
+        </a>
+      </div>
+      <ul class="go-NavigationDrawer-list">
+          <li class="go-NavigationDrawer-listItem js-mobile-subnav-trigger go-NavigationDrawer-hasSubnav">
+            <a href="#">
+              <span>Why Go</span>
+              <i class="material-icons">
+                <img class="go-Icon" height="24" width="24"
+                  src="/static/shared/icon/navigate_next_gm_grey_24dp.svg" alt="">
+              </i>
+            </a>
+
+            <div class="go-NavigationDrawer go-NavigationDrawer-submenuItem">
+              <div class="go-NavigationDrawer-nav">
+                <div class="go-NavigationDrawer-header">
+                  <a href="#">
+                    <i class="material-icons">
+                      <img class="go-Icon" height="24" width="24"
+                        src="/static/shared/icon/navigate_before_gm_grey_24dp.svg" alt="">
+                      </i>
+                      Why Go
+                  </a>
+                </div>
+                <ul class="go-NavigationDrawer-list">
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/solutions#case-studies">
+                      Case Studies
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/solutions#use-cases">
+                      Use Cases
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/security/">
+                      Security
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="go-NavigationDrawer-listItem">
+            <a href="https://go.dev/learn/">Learn</a>
+          </li>
+          <li class="go-NavigationDrawer-listItem js-mobile-subnav-trigger go-NavigationDrawer-hasSubnav">
+            <a href="#">
+              <span>Docs</span>
+              <i class="material-icons">
+                <img class="go-Icon" height="24" width="24"
+                  src="/static/shared/icon/navigate_next_gm_grey_24dp.svg" alt="">
+              </i>
+            </a>
+
+            <div class="go-NavigationDrawer go-NavigationDrawer-submenuItem">
+              <div class="go-NavigationDrawer-nav">
+                <div class="go-NavigationDrawer-header">
+                  <a href="#"><i class="material-icons">
+                    <img class="go-Icon" height="24" width="24"
+                      src="/static/shared/icon/navigate_before_gm_grey_24dp.svg" alt="">
+                    </i>
+                    Docs
+                  </a>
+                </div>
+                <ul class="go-NavigationDrawer-list">
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/doc/effective_go">
+                      Effective Go
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/doc/">
+                      Go User Manual
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://pkg.go.dev/std">
+                      Standard library
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/doc/devel/release">
+                      Release Notes
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="go-NavigationDrawer-listItem go-NavigationDrawer-listItem--active">
+            <a href="/">Packages</a>
+          </li>
+          <li class="go-NavigationDrawer-listItem js-mobile-subnav-trigger go-NavigationDrawer-hasSubnav">
+            <a href="#">
+              <span>Community</span>
+              <i class="material-icons">
+                <img class="go-Icon" height="24" width="24"
+                  src="/static/shared/icon/navigate_next_gm_grey_24dp.svg" alt="">
+              </i>
+            </a>
+            <div class="go-NavigationDrawer go-NavigationDrawer-submenuItem">
+              <div class="go-NavigationDrawer-nav">
+                <div class="go-NavigationDrawer-header">
+                  <a href="#">
+                    <i class="material-icons">
+                      <img class="go-Icon" height="24" width="24"
+                        src="/static/shared/icon/navigate_before_gm_grey_24dp.svg" alt="">
+                    </i>
+                    Community
+                  </a>
+                </div>
+                <ul class="go-NavigationDrawer-list">
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/talks/">
+                      Recorded Talks
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://www.meetup.com/pro/go">
+                      Meetups
+                      <i class="material-icons">
+                      <img class="go-Icon" height="24" width="24"
+                          src="/static/shared/icon/launch_gm_grey_24dp.svg" alt="">
+                      </i>
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://github.com/golang/go/wiki/Conferences">
+                      Conferences
+                      <i class="material-icons">
+                        <img class="go-Icon" height="24" width="24" src="/static/shared/icon/launch_gm_grey_24dp.svg" alt="">
+                      </i>
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/blog">
+                      Go blog
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/help">
+                      Go project
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <div>Get connected</div>
+                    <div class="go-Header-socialIcons">
+                        <a class="go-Header-socialIcon" href="https://groups.google.com/g/golang-nuts"><img src="/static/shared/logo/social/google-groups.svg" /></a>
+                        <a class="go-Header-socialIcon" href="https://github.com/golang"><img src="/static/shared/logo/social/github.svg" /></a>
+                        <a class="go-Header-socialIcon" href="https://twitter.com/golang"><img src="/static/shared/logo/social/twitter.svg" /></a>
+                        <a class="go-Header-socialIcon" href="https://www.reddit.com/r/golang/"><img src="/static/shared/logo/social/reddit.svg" /></a>
+                        <a class="go-Header-socialIcon" href="https://invite.slack.golangbridge.org/"><img src="/static/shared/logo/social/slack.svg" /></a>
+                        <a class="go-Header-socialIcon" href="https://stackoverflow.com/collectives/go"><img src="/static/shared/logo/social/stack-overflow.svg" /></a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+      </ul>
+    </nav>
+  </aside>
+  <div class="go-NavigationDrawer-scrim js-scrim" role="presentation"></div>
+
+    
+  <main class="go-Main" id="main-content">
+    <div class="go-Main-banner" role="alert"></div>
+    <header class="go-Main-header js-mainHeader">
+  
+  
+  <nav class="go-Main-headerBreadcrumb go-Breadcrumb" aria-label="Breadcrumb" data-test-id="UnitHeader-breadcrumb">
+    <ol>
+      
+        
+          <li data-test-id="UnitHeader-breadcrumbItem">
+            <a href="/" data-gtmc="breadcrumb link">Discover Packages</a>
+          </li>
+        
+          <li data-test-id="UnitHeader-breadcrumbItem">
+            <a href="/std" data-gtmc="breadcrumb link">Standard library</a>
+          </li>
+        
+        <li>
+          <a href="/sort@go1.26.3" data-gtmc="breadcrumb link" aria-current="location"
+              data-test-id="UnitHeader-breadcrumbCurrent">
+            sort
+          </a>
+          
+            <button
+              class="go-Button go-Button--inline go-Clipboard js-clipboard"
+              title="Copy path to clipboard.&#10;&#10;sort"
+              aria-label="Copy Path to Clipboard"
+              data-to-copy="sort"
+              data-gtmc="breadcrumbs button"
+            >
+              <img
+                class="go-Icon go-Icon--accented"
+                height="24"
+                width="24"
+                src="/static/shared/icon/content_copy_gm_grey_24dp.svg"
+                alt=""
+              >
+            </button>
+          
+        
+      </li>
+    </ol>
+  </nav>
+
+  <div class="go-Main-headerContent">
+    
+  <div class="go-Main-headerTitle js-stickyHeader">
+    <a class="go-Main-headerLogo" href="https://go.dev/" aria-hidden="true" tabindex="-1" data-gtmc="header link" aria-label="Link to Go Homepage">
+      <img height="78" width="207" src="/static/shared/logo/go-blue.svg" alt="Go">
+    </a>
+    <h1 class="UnitHeader-titleHeading" data-test-id="UnitHeader-title">sort</h1>
+    
+      <span class="go-Chip go-Chip--inverted">package</span>
+    
+      <span class="go-Chip go-Chip--inverted">standard library</span>
+    
+    
+      
+        <button
+          class="go-Button go-Button--inline go-Clipboard js-clipboard"
+          title="Copy path to clipboard.&#10;&#10;sort"
+          aria-label="Copy Path to Clipboard"
+          data-to-copy="sort"
+          data-gtmc="title button"
+          tabindex="-1"
+        >
+          <img
+            class="go-Icon go-Icon--accented"
+            height="24"
+            width="24"
+            src="/static/shared/icon/content_copy_gm_grey_24dp.svg"
+            alt=""
+          />
+        </button>
+      
+    
+  </div>
+
+    
+      
+  <div class="go-Main-headerDetails">
+    
+      
+  <span class="go-Main-headerDetailItem" data-test-id="UnitHeader-version">
+    <a href="?tab=versions" aria-label="Version: go1.26.3" 
+    data-gtmc="header link" aria-describedby="version-description">
+      <span class="go-textSubtle" aria-hidden="true">Version: </span>
+        go1.26.3
+    </a>
+    <div class="screen-reader-only" id="version-description" hidden>
+      Opens a new window with list of versions in this module.
+    </div>
+    
+    <span class="DetailsHeader-badge--latest" data-test-id="UnitHeader-minorVersionBanner">
+      <span class="go-Chip DetailsHeader-span--latest">Latest</span>
+      <span class="go-Chip DetailsHeader-span--notAtLatest">
+        Latest
+        
+  <details class="go-Tooltip js-tooltip" data-gtmc="tooltip">
+    <summary>
+      <img class="go-Icon go-Icon--inverted" height="24" width="24" src="/static/shared/icon/alert_gm_grey_24dp.svg" alt="Warning">
+    </summary>
+    <p>This package is not in the latest version of its module.</p>
+  </details>
+
+      </span>
+      <a href="/sort" aria-label="Go to Latest Version" data-gtmc="header link">
+        <span class="go-Chip go-Chip--alert DetailsHeader-span--goToLatest">Go to latest</span>
+      </a>
+    </span>
+  </span>
+
+      
+  <span class="go-Main-headerDetailItem" data-test-id="UnitHeader-commitTime">
+    Published: May  7, 2026
+  </span>
+
+      
+  <span class="go-Main-headerDetailItem" data-test-id="UnitHeader-licenses">
+    License: <a href="/sort?tab=licenses" data-test-id="UnitHeader-license" 
+        data-gtmc="header link" aria-describedby="license-description">BSD-3-Clause</a>
+      
+    
+  </span>
+  <div class="screen-reader-only" id="license-description" hidden>
+    Opens a new window with license information.
+  </div>
+
+      
+        
+  <span class="go-Main-headerDetailItem" data-test-id="UnitHeader-imports">
+    <a href="/sort?tab=imports" aria-label="Imports: 3"
+        data-gtmc="header link" aria-describedby="imports-description">
+      <span class="go-textSubtle">Imports: </span>3
+    </a>
+  </span>
+  <div class="screen-reader-only" id="imports-description" hidden>
+    Opens a new window with list of imports.
+  </div>
+
+        
+  <span class="go-Main-headerDetailItem" data-test-id="UnitHeader-importedby">
+    <a href="/sort?tab=importedby" aria-label="Imported By: 574,542"
+        data-gtmc="header link" aria-describedby="importedby-description">
+       <span class="go-textSubtle">Imported by: </span>574,542
+    </a>
+  </span>
+  <div class="screen-reader-only" id="importedby-description" hidden>
+    Opens a new window with list of known importers.
+  </div>
+
+      
+    
+  </div>
+  
+  <div class="UnitHeader-overflowContainer">
+    <svg class="UnitHeader-overflowImage" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+      <path d="M0 0h24v24H0z" fill="none"/>
+      <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+    </svg>
+    <select class="UnitHeader-overflowSelect js-selectNav" tabindex="-1">
+      <option value="/">Main</option>
+      <option value="/sort?tab=versions">
+        Versions
+      </option>
+      <option value="/sort?tab=licenses">
+        Licenses
+      </option>
+      
+        <option value="/sort?tab=imports">
+          Imports
+        </option>
+        <option value="/sort?tab=importedby">
+          Imported By
+        </option>
+      
+    </select>
+  </div>
+
+
+    
+  </div>
+
+</header>
+    
+      <aside class="go-Main-aside  js-mainAside">
+  
+  <div class="UnitMeta">
+    <h2 class="go-textLabel">Details</h2>
+    
+  <ul class="UnitMeta-details">
+    <li>
+      <details class="go-Tooltip js-tooltip" data-gtmc="tooltip">
+        <summary class="go-textSubtle">
+          
+  <img class="go-Icon go-Icon--accented"
+    tabindex="0"
+    role="button"src="/static/shared/icon/check_circle_gm_grey_24dp.svg" alt="checked" aria-label="Valid file, toggle tooltip"height="24" width="24">
+
+          Valid <a href="https://cs.opensource.google/go/go/+/go1.26.3:src/go.mod" target="_blank" rel="noopener">go.mod</a> file
+          <img class="go-Icon" role="button" tabindex="0" src="/static/shared/icon/help_gm_grey_24dp.svg" alt="" aria-label="Toggle go.mod validity tooltip" height="24" width="24">
+        </summary>
+        <p aria-live="polite" role="tooltip">
+          The Go module system was introduced in Go 1.11 and is the official dependency management
+          solution for Go.
+        </p>
+      </details>
+    </li>
+    <li>
+      <details class="go-Tooltip js-tooltip" data-gtmc="tooltip">
+        <summary class="go-textSubtle">
+          
+  <img class="go-Icon go-Icon--accented"
+    tabindex="0"
+    role="button"src="/static/shared/icon/check_circle_gm_grey_24dp.svg" alt="checked" aria-label="Valid file, toggle tooltip"height="24" width="24">
+
+          Redistributable license
+          <img class="go-Icon" role="button" tabindex="0" src="/static/shared/icon/help_gm_grey_24dp.svg" alt="" aria-label="Toggle redistributable help tooltip" height="24" width="24">
+        </summary>
+        <p aria-live="polite" role="tooltip">
+          Redistributable licenses place minimal restrictions on how software can be used,
+          modified, and redistributed.
+        </p>
+      </details>
+    </li>
+    <li>
+      <details class="go-Tooltip js-tooltip" data-gtmc="tooltip">
+        <summary class="go-textSubtle">
+          
+  <img class="go-Icon go-Icon--accented"
+    tabindex="0"
+    role="button"src="/static/shared/icon/check_circle_gm_grey_24dp.svg" alt="checked" aria-label="Valid file, toggle tooltip"height="24" width="24">
+
+          Tagged version
+          <img class="go-Icon" role="button" tabindex="0" src="/static/shared/icon/help_gm_grey_24dp.svg" alt="" aria-label="Toggle tagged version tooltip" height="24" width="24">
+        </summary>
+        <p aria-live="polite" role="tooltip">Modules with tagged versions give importers more predictable builds.</p>
+      </details>
+    </li>
+    <li>
+      <details class="go-Tooltip js-tooltip" data-gtmc="tooltip">
+        <summary class="go-textSubtle">
+          
+  <img class="go-Icon go-Icon--accented"
+    tabindex="0"
+    role="button"src="/static/shared/icon/check_circle_gm_grey_24dp.svg" alt="checked" aria-label="Valid file, toggle tooltip"height="24" width="24">
+
+          Stable version
+          <img class="go-Icon" role="button" tabindex="0" aria-label="Toggle stable version tooltip" src="/static/shared/icon/help_gm_grey_24dp.svg" alt="" height="24" width="24">
+        </summary>
+        <p aria-live="polite" role="tooltip">When a project reaches major version v1 it is considered stable.</p>
+      </details>
+    </li>
+    <li class="UnitMeta-detailsLearn">
+      <a href="/about#best-practices" data-gtmc="meta link">Learn more about best practices</a>
+    </li>
+  </ul>
+
+    <h2 class="go-textLabel">Repository</h2>
+    <div class="UnitMeta-repo">
+      
+        <a href="https://cs.opensource.google/go/go" title="https://cs.opensource.google/go/go" target="_blank" rel="noopener">
+          cs.opensource.google/go/go
+        </a>
+      
+    </div>
+    
+      <h2 class="go-textLabel" data-test-id="links-heading">Links</h2>
+      <ul class="UnitMeta-links">
+        
+          <li>
+            <a href="https://go.dev/security/policy"
+                title="Report security issues in the Go standard library and sub-repositories">
+              <img class="go-Icon" height="24" width="24" src="/static/shared/icon/security_grey_24dp.svg" alt="">
+              Report a Vulnerability
+            </a>
+          </li>
+        
+        
+        
+        
+  
+
+        
+  
+
+        
+  
+
+      </ul>
+    
+  </div>
+
+</aside>
+    
+    <nav class="go-Main-nav go-Main-nav--sticky js-mainNav" aria-label="Outline">
+  <div class="go-Main-navDesktop">
+    
+  <div class="UnitOutline-jumpTo">
+    <button class="UnitOutline-jumpToInput go-ShortcutKey js-jumpToInput"
+        aria-controls="jump-to-modal"
+        aria-label="Open Jump to Identifier"
+        data-shortcut="f"
+        data-shortcut-alt="find"
+        data-test-id="jump-to-button" data-gtmc="outline button">
+      Jump to ...
+    </button>
+  </div>
+  <ul class="go-Tree js-tree" role="tree" aria-label="Outline">
+    
+    
+      <li>
+        <a href="#section-documentation" data-gtmc="outline link">
+          Documentation
+        </a>
+        
+<ul>
+  
+    <li>
+      <a href="#pkg-overview" data-gtmc="doc outline link">Overview</a>
+    </li>
+  <li class="DocNav-overview">
+      <a href="#pkg-index" data-gtmc="doc outline link">
+        Index
+      </a>
+    </li>
+      <li>
+        <a href="#pkg-examples" data-gtmc="doc outline link">
+          Examples
+        </a>
+        <ul>
+            <li>
+              <a href="#example-package" title="Package" data-gtmc="doc outline link">
+                Package
+              </a>
+            </li>
+            <li>
+              <a href="#example-package-SortKeys" title="Package (SortKeys)" data-gtmc="doc outline link">
+                Package (SortKeys)
+              </a>
+            </li>
+            <li>
+              <a href="#example-package-SortMultiKeys" title="Package (SortMultiKeys)" data-gtmc="doc outline link">
+                Package (SortMultiKeys)
+              </a>
+            </li>
+            <li>
+              <a href="#example-package-SortWrapper" title="Package (SortWrapper)" data-gtmc="doc outline link">
+                Package (SortWrapper)
+              </a>
+            </li>
+            <li>
+              <a href="#example-Find" title="Find" data-gtmc="doc outline link">
+                Find
+              </a>
+            </li>
+            <li>
+              <a href="#example-Float64s" title="Float64s" data-gtmc="doc outline link">
+                Float64s
+              </a>
+            </li>
+            <li>
+              <a href="#example-Float64sAreSorted" title="Float64sAreSorted" data-gtmc="doc outline link">
+                Float64sAreSorted
+              </a>
+            </li>
+            <li>
+              <a href="#example-Ints" title="Ints" data-gtmc="doc outline link">
+                Ints
+              </a>
+            </li>
+            <li>
+              <a href="#example-IntsAreSorted" title="IntsAreSorted" data-gtmc="doc outline link">
+                IntsAreSorted
+              </a>
+            </li>
+            <li>
+              <a href="#example-Reverse" title="Reverse" data-gtmc="doc outline link">
+                Reverse
+              </a>
+            </li>
+            <li>
+              <a href="#example-Search" title="Search" data-gtmc="doc outline link">
+                Search
+              </a>
+            </li>
+            <li>
+              <a href="#example-Search-DescendingOrder" title="Search (DescendingOrder)" data-gtmc="doc outline link">
+                Search (DescendingOrder)
+              </a>
+            </li>
+            <li>
+              <a href="#example-SearchFloat64s" title="SearchFloat64s" data-gtmc="doc outline link">
+                SearchFloat64s
+              </a>
+            </li>
+            <li>
+              <a href="#example-SearchInts" title="SearchInts" data-gtmc="doc outline link">
+                SearchInts
+              </a>
+            </li>
+            <li>
+              <a href="#example-SearchStrings" title="SearchStrings" data-gtmc="doc outline link">
+                SearchStrings
+              </a>
+            </li>
+            <li>
+              <a href="#example-Slice" title="Slice" data-gtmc="doc outline link">
+                Slice
+              </a>
+            </li>
+            <li>
+              <a href="#example-SliceIsSorted" title="SliceIsSorted" data-gtmc="doc outline link">
+                SliceIsSorted
+              </a>
+            </li>
+            <li>
+              <a href="#example-SliceStable" title="SliceStable" data-gtmc="doc outline link">
+                SliceStable
+              </a>
+            </li>
+            <li>
+              <a href="#example-Strings" title="Strings" data-gtmc="doc outline link">
+                Strings
+              </a>
+            </li>
+        </ul>
+      </li>
+    <li class="DocNav-constants">
+      <a href="#pkg-constants" data-gtmc="doc outline link">
+        Constants
+      </a>
+    </li>
+    <li class="DocNav-variables">
+      <a href="#pkg-variables" data-gtmc="doc outline link">
+        Variables
+      </a>
+    </li>
+    <li class="DocNav-functions">
+      <a href="#pkg-functions" data-gtmc="doc outline link">
+        Functions
+      </a>
+      
+        <ul>
+          
+            <li>
+              <a href="#Find" title="Find(n, cmp)" data-gtmc="doc outline link">
+                Find(n, cmp)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Float64s" title="Float64s(x)" data-gtmc="doc outline link">
+                Float64s(x)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Float64sAreSorted" title="Float64sAreSorted(x)" data-gtmc="doc outline link">
+                Float64sAreSorted(x)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Ints" title="Ints(x)" data-gtmc="doc outline link">
+                Ints(x)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#IntsAreSorted" title="IntsAreSorted(x)" data-gtmc="doc outline link">
+                IntsAreSorted(x)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#IsSorted" title="IsSorted(data)" data-gtmc="doc outline link">
+                IsSorted(data)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Search" title="Search(n, f)" data-gtmc="doc outline link">
+                Search(n, f)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#SearchFloat64s" title="SearchFloat64s(a, x)" data-gtmc="doc outline link">
+                SearchFloat64s(a, x)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#SearchInts" title="SearchInts(a, x)" data-gtmc="doc outline link">
+                SearchInts(a, x)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#SearchStrings" title="SearchStrings(a, x)" data-gtmc="doc outline link">
+                SearchStrings(a, x)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Slice" title="Slice(x, less)" data-gtmc="doc outline link">
+                Slice(x, less)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#SliceIsSorted" title="SliceIsSorted(x, less)" data-gtmc="doc outline link">
+                SliceIsSorted(x, less)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#SliceStable" title="SliceStable(x, less)" data-gtmc="doc outline link">
+                SliceStable(x, less)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Sort" title="Sort(data)" data-gtmc="doc outline link">
+                Sort(data)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Stable" title="Stable(data)" data-gtmc="doc outline link">
+                Stable(data)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Strings" title="Strings(x)" data-gtmc="doc outline link">
+                Strings(x)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#StringsAreSorted" title="StringsAreSorted(x)" data-gtmc="doc outline link">
+                StringsAreSorted(x)
+              </a>
+            </li>
+          
+        </ul>
+      
+    </li>
+    <li class="DocNav-types">
+      <a href="#pkg-types" data-gtmc="doc outline link">
+        Types
+      </a>
+      <ul>
+        
+          
+          <li>
+            <a href="#Float64Slice" title="type Float64Slice" data-gtmc="doc outline link">
+              type Float64Slice
+            </a>
+            
+              <ul>
+                
+                
+                  <li>
+                    <a href="#Float64Slice.Len" title="(x) Len()"
+                        data-gtmc="doc outline link">
+                      (x) Len()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Float64Slice.Less" title="(x) Less(i, j)"
+                        data-gtmc="doc outline link">
+                      (x) Less(i, j)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Float64Slice.Search" title="(p) Search(x)"
+                        data-gtmc="doc outline link">
+                      (p) Search(x)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Float64Slice.Sort" title="(x) Sort()"
+                        data-gtmc="doc outline link">
+                      (x) Sort()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Float64Slice.Swap" title="(x) Swap(i, j)"
+                        data-gtmc="doc outline link">
+                      (x) Swap(i, j)
+                    </a>
+                  </li>
+                
+              </ul>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#IntSlice" title="type IntSlice" data-gtmc="doc outline link">
+              type IntSlice
+            </a>
+            
+              <ul>
+                
+                
+                  <li>
+                    <a href="#IntSlice.Len" title="(x) Len()"
+                        data-gtmc="doc outline link">
+                      (x) Len()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#IntSlice.Less" title="(x) Less(i, j)"
+                        data-gtmc="doc outline link">
+                      (x) Less(i, j)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#IntSlice.Search" title="(p) Search(x)"
+                        data-gtmc="doc outline link">
+                      (p) Search(x)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#IntSlice.Sort" title="(x) Sort()"
+                        data-gtmc="doc outline link">
+                      (x) Sort()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#IntSlice.Swap" title="(x) Swap(i, j)"
+                        data-gtmc="doc outline link">
+                      (x) Swap(i, j)
+                    </a>
+                  </li>
+                
+              </ul>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#Interface" title="type Interface" data-gtmc="doc outline link">
+              type Interface
+            </a>
+            
+              <ul>
+                
+                  <li>
+                    <a href="#Reverse" title="Reverse(data)"
+                        data-gtmc="doc outline link">
+                      Reverse(data)
+                    </a>
+                  </li>
+                
+                
+              </ul>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#StringSlice" title="type StringSlice" data-gtmc="doc outline link">
+              type StringSlice
+            </a>
+            
+              <ul>
+                
+                
+                  <li>
+                    <a href="#StringSlice.Len" title="(x) Len()"
+                        data-gtmc="doc outline link">
+                      (x) Len()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#StringSlice.Less" title="(x) Less(i, j)"
+                        data-gtmc="doc outline link">
+                      (x) Less(i, j)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#StringSlice.Search" title="(p) Search(x)"
+                        data-gtmc="doc outline link">
+                      (p) Search(x)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#StringSlice.Sort" title="(x) Sort()"
+                        data-gtmc="doc outline link">
+                      (x) Sort()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#StringSlice.Swap" title="(x) Swap(i, j)"
+                        data-gtmc="doc outline link">
+                      (x) Swap(i, j)
+                    </a>
+                  </li>
+                
+              </ul>
+             
+          </li>
+         
+      </ul>
+    </li>
+  
+  
+</ul>
+
+      </li>
+    
+    
+      <li>
+        <a href="#section-sourcefiles" data-gtmc="outline link">
+          Source Files
+        </a>
+      </li>
+    
+    
+  </ul>
+
+  </div>
+  <div class="go-Main-navMobile js-mainNavMobile">
+    <label class="go-Label">
+      <select class="go-Select">
+        
+          <option selected disabled>Documentation</option>
+        
+      </select>
+    </label>
+  </div>
+</nav>
+    <article class="go-Main-article js-mainContent">
+  <div class="UnitDetails" data-test-id="UnitDetails" style="display: block;">
+    <div class="UnitDetails-content js-unitDetailsContent" data-test-id="UnitDetails-content">
+      
+      
+        
+          
+  <div class="UnitDoc">
+    <h2 class="UnitDoc-title" id="section-documentation">
+      <img class="go-Icon" height="24" width="24" src="/static/shared/icon/code_gm_grey_24dp.svg" alt="">
+      Documentation
+      <a class="UnitDoc-idLink" href="#section-documentation" title="Go to Documentation" aria-label="Go to Documentation">¶</a>
+    </h2>
+    
+  
+    
+  
+
+    <div class="Documentation js-documentation">
+      
+        
+
+<div class="Documentation-content js-docContent"> <section class="Documentation-overview">
+    <h3 tabindex="-1" id="pkg-overview" class="Documentation-overviewHeader">Overview <a href="#pkg-overview" title="Go to Overview" aria-label="Go to Overview">¶</a></h3>
+
+<p>Package sort provides primitives for sorting slices and user-defined collections.
+</p>
+<details tabindex="-1" id="example-package" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-package" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;sort&#34;
+)
+
+type Person struct {
+	Name string
+	Age  int
+}
+
+func (p Person) String() string {
+	return fmt.Sprintf(&#34;%s: %d&#34;, p.Name, p.Age)
+}
+
+// ByAge implements sort.Interface for []Person based on
+// the Age field.
+type ByAge []Person
+
+func (a ByAge) Len() int           { return len(a) }
+func (a ByAge) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
+func (a ByAge) Less(i, j int) bool { return a[i].Age &lt; a[j].Age }
+
+func main() {
+	people := []Person{
+		{&#34;Bob&#34;, 31},
+		{&#34;John&#34;, 42},
+		{&#34;Michael&#34;, 17},
+		{&#34;Jenny&#34;, 26},
+	}
+
+	fmt.Println(people)
+	// There are two ways to sort a slice. First, one can define
+	// a set of methods for the slice type, as with ByAge, and
+	// call sort.Sort. In this first example we use that technique.
+	sort.Sort(ByAge(people))
+	fmt.Println(people)
+
+	// The other way is to use sort.Slice with a custom Less
+	// function, which can be provided as a closure. In this
+	// case no methods are needed. (And if they exist, they
+	// are ignored.) Here we re-sort in reverse order: compare
+	// the closure with ByAge.Less.
+	sort.Slice(people, func(i, j int) bool {
+		return people[i].Age &gt; people[j].Age
+	})
+	fmt.Println(people)
+
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">[Bob: 31 John: 42 Michael: 17 Jenny: 26]
+[Michael: 17 Jenny: 26 Bob: 31 John: 42]
+[John: 42 Bob: 31 Jenny: 26 Michael: 17]
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+<details tabindex="-1" id="example-package-SortKeys" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example (SortKeys) <a href="#example-package-SortKeys" title="Go to Example (SortKeys)" aria-label="Go to Example (SortKeys)">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+<p>Example_sortKeys demonstrates a technique for sorting a struct type using programmable sort criteria.
+</p>
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;sort&#34;
+)
+
+// A couple of type definitions to make the units clear.
+type earthMass float64
+type au float64
+
+// A Planet defines the properties of a solar system object.
+type Planet struct {
+	name     string
+	mass     earthMass
+	distance au
+}
+
+// By is the type of a &#34;less&#34; function that defines the ordering of its Planet arguments.
+type By func(p1, p2 *Planet) bool
+
+// Sort is a method on the function type, By, that sorts the argument slice according to the function.
+func (by By) Sort(planets []Planet) {
+	ps := &amp;planetSorter{
+		planets: planets,
+		by:      by, // The Sort method&#39;s receiver is the function (closure) that defines the sort order.
+	}
+	sort.Sort(ps)
+}
+
+// planetSorter joins a By function and a slice of Planets to be sorted.
+type planetSorter struct {
+	planets []Planet
+	by      func(p1, p2 *Planet) bool // Closure used in the Less method.
+}
+
+// Len is part of sort.Interface.
+func (s *planetSorter) Len() int {
+	return len(s.planets)
+}
+
+// Swap is part of sort.Interface.
+func (s *planetSorter) Swap(i, j int) {
+	s.planets[i], s.planets[j] = s.planets[j], s.planets[i]
+}
+
+// Less is part of sort.Interface. It is implemented by calling the &#34;by&#34; closure in the sorter.
+func (s *planetSorter) Less(i, j int) bool {
+	return s.by(&amp;s.planets[i], &amp;s.planets[j])
+}
+
+var planets = []Planet{
+	{&#34;Mercury&#34;, 0.055, 0.4},
+	{&#34;Venus&#34;, 0.815, 0.7},
+	{&#34;Earth&#34;, 1.0, 1.0},
+	{&#34;Mars&#34;, 0.107, 1.5},
+}
+
+// Example_sortKeys demonstrates a technique for sorting a struct type using programmable sort criteria.
+func main() {
+	// Closures that order the Planet structure.
+	name := func(p1, p2 *Planet) bool {
+		return p1.name &lt; p2.name
+	}
+	mass := func(p1, p2 *Planet) bool {
+		return p1.mass &lt; p2.mass
+	}
+	distance := func(p1, p2 *Planet) bool {
+		return p1.distance &lt; p2.distance
+	}
+	decreasingDistance := func(p1, p2 *Planet) bool {
+		return distance(p2, p1)
+	}
+
+	// Sort the planets by the various criteria.
+	By(name).Sort(planets)
+	fmt.Println(&#34;By name:&#34;, planets)
+
+	By(mass).Sort(planets)
+	fmt.Println(&#34;By mass:&#34;, planets)
+
+	By(distance).Sort(planets)
+	fmt.Println(&#34;By distance:&#34;, planets)
+
+	By(decreasingDistance).Sort(planets)
+	fmt.Println(&#34;By decreasing distance:&#34;, planets)
+
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">By name: [{Earth 1 1} {Mars 0.107 1.5} {Mercury 0.055 0.4} {Venus 0.815 0.7}]
+By mass: [{Mercury 0.055 0.4} {Mars 0.107 1.5} {Venus 0.815 0.7} {Earth 1 1}]
+By distance: [{Mercury 0.055 0.4} {Venus 0.815 0.7} {Earth 1 1} {Mars 0.107 1.5}]
+By decreasing distance: [{Mars 0.107 1.5} {Earth 1 1} {Venus 0.815 0.7} {Mercury 0.055 0.4}]
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+<details tabindex="-1" id="example-package-SortMultiKeys" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example (SortMultiKeys) <a href="#example-package-SortMultiKeys" title="Go to Example (SortMultiKeys)" aria-label="Go to Example (SortMultiKeys)">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+<p>Example_sortMultiKeys demonstrates a technique for sorting a struct type using different
+sets of multiple fields in the comparison. We chain together &#34;Less&#34; functions, each of
+which compares a single field.
+</p>
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;sort&#34;
+)
+
+// A Change is a record of source code changes, recording user, language, and delta size.
+type Change struct {
+	user     string
+	language string
+	lines    int
+}
+
+type lessFunc func(p1, p2 *Change) bool
+
+// multiSorter implements the Sort interface, sorting the changes within.
+type multiSorter struct {
+	changes []Change
+	less    []lessFunc
+}
+
+// Sort sorts the argument slice according to the less functions passed to OrderedBy.
+func (ms *multiSorter) Sort(changes []Change) {
+	ms.changes = changes
+	sort.Sort(ms)
+}
+
+// OrderedBy returns a Sorter that sorts using the less functions, in order.
+// Call its Sort method to sort the data.
+func OrderedBy(less ...lessFunc) *multiSorter {
+	return &amp;multiSorter{
+		less: less,
+	}
+}
+
+// Len is part of sort.Interface.
+func (ms *multiSorter) Len() int {
+	return len(ms.changes)
+}
+
+// Swap is part of sort.Interface.
+func (ms *multiSorter) Swap(i, j int) {
+	ms.changes[i], ms.changes[j] = ms.changes[j], ms.changes[i]
+}
+
+// Less is part of sort.Interface. It is implemented by looping along the
+// less functions until it finds a comparison that discriminates between
+// the two items (one is less than the other). Note that it can call the
+// less functions twice per call. We could change the functions to return
+// -1, 0, 1 and reduce the number of calls for greater efficiency: an
+// exercise for the reader.
+func (ms *multiSorter) Less(i, j int) bool {
+	p, q := &amp;ms.changes[i], &amp;ms.changes[j]
+	// Try all but the last comparison.
+	var k int
+	for k = 0; k &lt; len(ms.less)-1; k++ {
+		less := ms.less[k]
+		switch {
+		case less(p, q):
+			// p &lt; q, so we have a decision.
+			return true
+		case less(q, p):
+			// p &gt; q, so we have a decision.
+			return false
+		}
+		// p == q; try the next comparison.
+	}
+	// All comparisons to here said &#34;equal&#34;, so just return whatever
+	// the final comparison reports.
+	return ms.less[k](p, q)
+}
+
+var changes = []Change{
+	{&#34;gri&#34;, &#34;Go&#34;, 100},
+	{&#34;ken&#34;, &#34;C&#34;, 150},
+	{&#34;glenda&#34;, &#34;Go&#34;, 200},
+	{&#34;rsc&#34;, &#34;Go&#34;, 200},
+	{&#34;r&#34;, &#34;Go&#34;, 100},
+	{&#34;ken&#34;, &#34;Go&#34;, 200},
+	{&#34;dmr&#34;, &#34;C&#34;, 100},
+	{&#34;r&#34;, &#34;C&#34;, 150},
+	{&#34;gri&#34;, &#34;Smalltalk&#34;, 80},
+}
+
+// Example_sortMultiKeys demonstrates a technique for sorting a struct type using different
+// sets of multiple fields in the comparison. We chain together &#34;Less&#34; functions, each of
+// which compares a single field.
+func main() {
+	// Closures that order the Change structure.
+	user := func(c1, c2 *Change) bool {
+		return c1.user &lt; c2.user
+	}
+	language := func(c1, c2 *Change) bool {
+		return c1.language &lt; c2.language
+	}
+	increasingLines := func(c1, c2 *Change) bool {
+		return c1.lines &lt; c2.lines
+	}
+	decreasingLines := func(c1, c2 *Change) bool {
+		return c1.lines &gt; c2.lines // Note: &gt; orders downwards.
+	}
+
+	// Simple use: Sort by user.
+	OrderedBy(user).Sort(changes)
+	fmt.Println(&#34;By user:&#34;, changes)
+
+	// More examples.
+	OrderedBy(user, increasingLines).Sort(changes)
+	fmt.Println(&#34;By user,&lt;lines:&#34;, changes)
+
+	OrderedBy(user, decreasingLines).Sort(changes)
+	fmt.Println(&#34;By user,&gt;lines:&#34;, changes)
+
+	OrderedBy(language, increasingLines).Sort(changes)
+	fmt.Println(&#34;By language,&lt;lines:&#34;, changes)
+
+	OrderedBy(language, increasingLines, user).Sort(changes)
+	fmt.Println(&#34;By language,&lt;lines,user:&#34;, changes)
+
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">By user: [{dmr C 100} {glenda Go 200} {gri Go 100} {gri Smalltalk 80} {ken C 150} {ken Go 200} {r Go 100} {r C 150} {rsc Go 200}]
+By user,&lt;lines: [{dmr C 100} {glenda Go 200} {gri Smalltalk 80} {gri Go 100} {ken C 150} {ken Go 200} {r Go 100} {r C 150} {rsc Go 200}]
+By user,&gt;lines: [{dmr C 100} {glenda Go 200} {gri Go 100} {gri Smalltalk 80} {ken Go 200} {ken C 150} {r C 150} {r Go 100} {rsc Go 200}]
+By language,&lt;lines: [{dmr C 100} {ken C 150} {r C 150} {gri Go 100} {r Go 100} {glenda Go 200} {ken Go 200} {rsc Go 200} {gri Smalltalk 80}]
+By language,&lt;lines,user: [{dmr C 100} {ken C 150} {r C 150} {gri Go 100} {r Go 100} {glenda Go 200} {ken Go 200} {rsc Go 200} {gri Smalltalk 80}]
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+<details tabindex="-1" id="example-package-SortWrapper" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example (SortWrapper) <a href="#example-package-SortWrapper" title="Go to Example (SortWrapper)" aria-label="Go to Example (SortWrapper)">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;sort&#34;
+)
+
+type Grams int
+
+func (g Grams) String() string { return fmt.Sprintf(&#34;%dg&#34;, int(g)) }
+
+type Organ struct {
+	Name   string
+	Weight Grams
+}
+
+type Organs []*Organ
+
+func (s Organs) Len() int      { return len(s) }
+func (s Organs) Swap(i, j int) { s[i], s[j] = s[j], s[i] }
+
+// ByName implements sort.Interface by providing Less and using the Len and
+// Swap methods of the embedded Organs value.
+type ByName struct{ Organs }
+
+func (s ByName) Less(i, j int) bool { return s.Organs[i].Name &lt; s.Organs[j].Name }
+
+// ByWeight implements sort.Interface by providing Less and using the Len and
+// Swap methods of the embedded Organs value.
+type ByWeight struct{ Organs }
+
+func (s ByWeight) Less(i, j int) bool { return s.Organs[i].Weight &lt; s.Organs[j].Weight }
+
+func main() {
+	s := []*Organ{
+		{&#34;brain&#34;, 1340},
+		{&#34;heart&#34;, 290},
+		{&#34;liver&#34;, 1494},
+		{&#34;pancreas&#34;, 131},
+		{&#34;prostate&#34;, 62},
+		{&#34;spleen&#34;, 162},
+	}
+
+	sort.Sort(ByWeight{s})
+	fmt.Println(&#34;Organs by weight:&#34;)
+	printOrgans(s)
+
+	sort.Sort(ByName{s})
+	fmt.Println(&#34;Organs by name:&#34;)
+	printOrgans(s)
+
+}
+
+func printOrgans(s []*Organ) {
+	for _, o := range s {
+		fmt.Printf(&#34;%-8s (%v)\n&#34;, o.Name, o.Weight)
+	}
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">Organs by weight:
+prostate (62g)
+pancreas (131g)
+spleen   (162g)
+heart    (290g)
+brain    (1340g)
+liver    (1494g)
+Organs by name:
+brain    (1340g)
+heart    (290g)
+liver    (1494g)
+pancreas (131g)
+prostate (62g)
+spleen   (162g)
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+</section><section class="Documentation-index">
+    <h3 id="pkg-index" class="Documentation-indexHeader">Index <a href="#pkg-index" title="Go to Index" aria-label="Go to Index">¶</a></h3>
+
+<ul class="Documentation-indexList">
+<li class="Documentation-indexFunction">
+        <a href="#Find">func Find(n int, cmp func(int) int) (i int, found bool)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Float64s">func Float64s(x []float64)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Float64sAreSorted">func Float64sAreSorted(x []float64) bool</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Ints">func Ints(x []int)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#IntsAreSorted">func IntsAreSorted(x []int) bool</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#IsSorted">func IsSorted(data Interface) bool</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Search">func Search(n int, f func(int) bool) int</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#SearchFloat64s">func SearchFloat64s(a []float64, x float64) int</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#SearchInts">func SearchInts(a []int, x int) int</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#SearchStrings">func SearchStrings(a []string, x string) int</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Slice">func Slice(x any, less func(i, j int) bool)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#SliceIsSorted">func SliceIsSorted(x any, less func(i, j int) bool) bool</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#SliceStable">func SliceStable(x any, less func(i, j int) bool)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Sort">func Sort(data Interface)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Stable">func Stable(data Interface)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Strings">func Strings(x []string)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#StringsAreSorted">func StringsAreSorted(x []string) bool</a></li>
+<li class="Documentation-indexType">
+          <a href="#Float64Slice">type Float64Slice</a></li>
+<li><ul class="Documentation-indexTypeMethods">
+<li>
+            <a href="#Float64Slice.Len">func (x Float64Slice) Len() int</a></li>
+<li>
+            <a href="#Float64Slice.Less">func (x Float64Slice) Less(i, j int) bool</a></li>
+<li>
+            <a href="#Float64Slice.Search">func (p Float64Slice) Search(x float64) int</a></li>
+<li>
+            <a href="#Float64Slice.Sort">func (x Float64Slice) Sort()</a></li>
+<li>
+            <a href="#Float64Slice.Swap">func (x Float64Slice) Swap(i, j int)</a></li>
+</ul></li>
+<li class="Documentation-indexType">
+          <a href="#IntSlice">type IntSlice</a></li>
+<li><ul class="Documentation-indexTypeMethods">
+<li>
+            <a href="#IntSlice.Len">func (x IntSlice) Len() int</a></li>
+<li>
+            <a href="#IntSlice.Less">func (x IntSlice) Less(i, j int) bool</a></li>
+<li>
+            <a href="#IntSlice.Search">func (p IntSlice) Search(x int) int</a></li>
+<li>
+            <a href="#IntSlice.Sort">func (x IntSlice) Sort()</a></li>
+<li>
+            <a href="#IntSlice.Swap">func (x IntSlice) Swap(i, j int)</a></li>
+</ul></li>
+<li class="Documentation-indexType">
+          <a href="#Interface">type Interface</a></li>
+<li><ul class="Documentation-indexTypeFunctions">
+<li>
+            <a href="#Reverse">func Reverse(data Interface) Interface</a></li>
+</ul></li>
+<li class="Documentation-indexType">
+          <a href="#StringSlice">type StringSlice</a></li>
+<li><ul class="Documentation-indexTypeMethods">
+<li>
+            <a href="#StringSlice.Len">func (x StringSlice) Len() int</a></li>
+<li>
+            <a href="#StringSlice.Less">func (x StringSlice) Less(i, j int) bool</a></li>
+<li>
+            <a href="#StringSlice.Search">func (p StringSlice) Search(x string) int</a></li>
+<li>
+            <a href="#StringSlice.Sort">func (x StringSlice) Sort()</a></li>
+<li>
+            <a href="#StringSlice.Swap">func (x StringSlice) Swap(i, j int)</a></li>
+</ul></li>
+</ul>
+</section><section class="Documentation-examples">
+    <h3 tabindex="-1" id="pkg-examples" class="Documentation-examplesHeader">Examples <a class="Documentation-idLink" href="#pkg-examples" title="Go to Examples" aria-label="Go to Examples">¶</a></h3>
+<ul class="Documentation-examplesList">
+<li><a href="#example-package" class="js-exampleHref">Package</a></li>
+<li><a href="#example-package-SortKeys" class="js-exampleHref">Package (SortKeys)</a></li>
+<li><a href="#example-package-SortMultiKeys" class="js-exampleHref">Package (SortMultiKeys)</a></li>
+<li><a href="#example-package-SortWrapper" class="js-exampleHref">Package (SortWrapper)</a></li>
+<li><a href="#example-Find" class="js-exampleHref">Find</a></li>
+<li><a href="#example-Float64s" class="js-exampleHref">Float64s</a></li>
+<li><a href="#example-Float64sAreSorted" class="js-exampleHref">Float64sAreSorted</a></li>
+<li><a href="#example-Ints" class="js-exampleHref">Ints</a></li>
+<li><a href="#example-IntsAreSorted" class="js-exampleHref">IntsAreSorted</a></li>
+<li><a href="#example-Reverse" class="js-exampleHref">Reverse</a></li>
+<li><a href="#example-Search" class="js-exampleHref">Search</a></li>
+<li><a href="#example-Search-DescendingOrder" class="js-exampleHref">Search (DescendingOrder)</a></li>
+<li><a href="#example-SearchFloat64s" class="js-exampleHref">SearchFloat64s</a></li>
+<li><a href="#example-SearchInts" class="js-exampleHref">SearchInts</a></li>
+<li><a href="#example-SearchStrings" class="js-exampleHref">SearchStrings</a></li>
+<li><a href="#example-Slice" class="js-exampleHref">Slice</a></li>
+<li><a href="#example-SliceIsSorted" class="js-exampleHref">SliceIsSorted</a></li>
+<li><a href="#example-SliceStable" class="js-exampleHref">SliceStable</a></li>
+<li><a href="#example-Strings" class="js-exampleHref">Strings</a></li>
+</ul>
+</section><h3 tabindex="-1" id="pkg-constants" class="Documentation-constantsHeader">Constants <a href="#pkg-constants" title="Go to Constants" aria-label="Go to Constants">¶</a></h3>
+
+  <section class="Documentation-constants"><p class="Documentation-empty">This section is empty.</p></section>
+
+  <h3 tabindex="-1" id="pkg-variables" class="Documentation-variablesHeader">Variables <a href="#pkg-variables" title="Go to Variables" aria-label="Go to Variables">¶</a></h3>
+
+  <section class="Documentation-variables"><p class="Documentation-empty">This section is empty.</p></section>
+
+  <h3 tabindex="-1" id="pkg-functions" class="Documentation-functionsHeader">Functions <a href="#pkg-functions" title="Go to Functions" aria-label="Go to Functions">¶</a></h3>
+
+  <section class="Documentation-functions"><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Find" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sort/search.go;l=99">Find</a> <a class="Documentation-idLink" href="#Find" title="Go to Find" aria-label="Go to Find">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.19</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Find(n <a href="/builtin#int">int</a>, cmp func(<a href="/builtin#int">int</a>) <a href="/builtin#int">int</a>) (i <a href="/builtin#int">int</a>, found <a href="/builtin#bool">bool</a>)</pre>
+    </div>
+  <p>Find uses binary search to find and return the smallest index i in [0, n)
+at which cmp(i) &lt;= 0. If there is no such index i, Find returns i = n.
+The found result is true if i &lt; n and cmp(i) == 0.
+Find calls cmp(i) only for i in the range [0, n).
+</p><p>To permit binary search, Find requires that cmp(i) &gt; 0 for a leading
+prefix of the range, cmp(i) == 0 in the middle, and cmp(i) &lt; 0 for
+the final suffix of the range. (Each subrange could be empty.)
+The usual way to establish this condition is to interpret cmp(i)
+as a comparison of a desired target value t against entry i in an
+underlying indexed data structure x, returning &lt;0, 0, and &gt;0
+when t &lt; x[i], t == x[i], and t &gt; x[i], respectively.
+</p><p>For example, to look for a particular string in a sorted, random-access
+list of strings:
+</p><pre>i, found := sort.Find(x.Len(), func(i int) int {
+    return strings.Compare(target, x.At(i))
+})
+if found {
+    fmt.Printf(&#34;found %s at entry %d\n&#34;, target, i)
+} else {
+    fmt.Printf(&#34;%s not found, would insert at %d&#34;, target, i)
+}
+</pre>
+<details tabindex="-1" id="example-Find" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-Find" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+<p>This example demonstrates finding a string in a list sorted in ascending order.
+</p>
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;sort&#34;
+	&#34;strings&#34;
+)
+
+func main() {
+	a := []string{&#34;apple&#34;, &#34;banana&#34;, &#34;lemon&#34;, &#34;mango&#34;, &#34;pear&#34;, &#34;strawberry&#34;}
+
+	for _, x := range []string{&#34;banana&#34;, &#34;orange&#34;} {
+		i, found := sort.Find(len(a), func(i int) int {
+			return strings.Compare(x, a[i])
+		})
+		if found {
+			fmt.Printf(&#34;found %s at index %d\n&#34;, x, i)
+		} else {
+			fmt.Printf(&#34;%s not found, would insert at %d\n&#34;, x, i)
+		}
+	}
+
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">found banana at index 1
+orange not found, would insert at 4
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Float64s" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sort/sort.go;l=176">Float64s</a> <a class="Documentation-idLink" href="#Float64s" title="Go to Float64s" aria-label="Go to Float64s">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Float64s(x []<a href="/builtin#float64">float64</a>)</pre>
+    </div>
+  <p>Float64s sorts a slice of float64s in increasing order.
+Not-a-number (NaN) values are ordered before other values.
+</p><p>Note: as of Go 1.22, this function simply calls <a href="/slices#Sort">slices.Sort</a>.
+</p>
+<details tabindex="-1" id="example-Float64s" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-Float64s" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;math&#34;
+	&#34;sort&#34;
+)
+
+func main() {
+	s := []float64{5.2, -1.3, 0.7, -3.8, 2.6} // unsorted
+	sort.Float64s(s)
+	fmt.Println(s)
+
+	s = []float64{math.Inf(1), math.NaN(), math.Inf(-1), 0.0} // unsorted
+	sort.Float64s(s)
+	fmt.Println(s)
+
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">[-3.8 -1.3 0.7 2.6 5.2]
+[NaN -Inf 0 +Inf]
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Float64sAreSorted" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sort/sort.go;l=192">Float64sAreSorted</a> <a class="Documentation-idLink" href="#Float64sAreSorted" title="Go to Float64sAreSorted" aria-label="Go to Float64sAreSorted">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Float64sAreSorted(x []<a href="/builtin#float64">float64</a>) <a href="/builtin#bool">bool</a></pre>
+    </div>
+  <p>Float64sAreSorted reports whether the slice x is sorted in increasing order,
+with not-a-number (NaN) values before any other values.
+</p><p>Note: as of Go 1.22, this function simply calls <a href="/slices#IsSorted">slices.IsSorted</a>.
+</p>
+<details tabindex="-1" id="example-Float64sAreSorted" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-Float64sAreSorted" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;sort&#34;
+)
+
+func main() {
+	s := []float64{0.7, 1.3, 2.6, 3.8, 5.2} // sorted ascending
+	fmt.Println(sort.Float64sAreSorted(s))
+
+	s = []float64{5.2, 3.8, 2.6, 1.3, 0.7} // sorted descending
+	fmt.Println(sort.Float64sAreSorted(s))
+
+	s = []float64{5.2, 1.3, 0.7, 3.8, 2.6} // unsorted
+	fmt.Println(sort.Float64sAreSorted(s))
+
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">true
+false
+false
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Ints" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sort/sort.go;l=170">Ints</a> <a class="Documentation-idLink" href="#Ints" title="Go to Ints" aria-label="Go to Ints">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Ints(x []<a href="/builtin#int">int</a>)</pre>
+    </div>
+  <p>Ints sorts a slice of ints in increasing order.
+</p><p>Note: as of Go 1.22, this function simply calls <a href="/slices#Sort">slices.Sort</a>.
+</p>
+<details tabindex="-1" id="example-Ints" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-Ints" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;sort&#34;
+)
+
+func main() {
+	s := []int{5, 2, 6, 3, 1, 4} // unsorted
+	sort.Ints(s)
+	fmt.Println(s)
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">[1 2 3 4 5 6]
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="IntsAreSorted" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sort/sort.go;l=186">IntsAreSorted</a> <a class="Documentation-idLink" href="#IntsAreSorted" title="Go to IntsAreSorted" aria-label="Go to IntsAreSorted">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func IntsAreSorted(x []<a href="/builtin#int">int</a>) <a href="/builtin#bool">bool</a></pre>
+    </div>
+  <p>IntsAreSorted reports whether the slice x is sorted in increasing order.
+</p><p>Note: as of Go 1.22, this function simply calls <a href="/slices#IsSorted">slices.IsSorted</a>.
+</p>
+<details tabindex="-1" id="example-IntsAreSorted" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-IntsAreSorted" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;sort&#34;
+)
+
+func main() {
+	s := []int{1, 2, 3, 4, 5, 6} // sorted ascending
+	fmt.Println(sort.IntsAreSorted(s))
+
+	s = []int{6, 5, 4, 3, 2, 1} // sorted descending
+	fmt.Println(sort.IntsAreSorted(s))
+
+	s = []int{3, 2, 4, 1, 5} // unsorted
+	fmt.Println(sort.IntsAreSorted(s))
+
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">true
+false
+false
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="IsSorted" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sort/sort.go;l=110">IsSorted</a> <a class="Documentation-idLink" href="#IsSorted" title="Go to IsSorted" aria-label="Go to IsSorted">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func IsSorted(data <a href="#Interface">Interface</a>) <a href="/builtin#bool">bool</a></pre>
+    </div>
+  <p>IsSorted reports whether data is sorted.
+</p><p>Note: in many situations, the newer <a href="/slices#IsSortedFunc">slices.IsSortedFunc</a> function is more
+ergonomic and runs faster.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Search" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sort/search.go;l=58">Search</a> <a class="Documentation-idLink" href="#Search" title="Go to Search" aria-label="Go to Search">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Search(n <a href="/builtin#int">int</a>, f func(<a href="/builtin#int">int</a>) <a href="/builtin#bool">bool</a>) <a href="/builtin#int">int</a></pre>
+    </div>
+  <p>Search uses binary search to find and return the smallest index i
+in [0, n) at which f(i) is true, assuming that on the range [0, n),
+f(i) == true implies f(i+1) == true. That is, Search requires that
+f is false for some (possibly empty) prefix of the input range [0, n)
+and then true for the (possibly empty) remainder; Search returns
+the first true index. If there is no such index, Search returns n.
+(Note that the &#34;not found&#34; return value is not -1 as in, for instance,
+strings.Index.)
+Search calls f(i) only for i in the range [0, n).
+</p><p>A common use of Search is to find the index i for a value x in
+a sorted, indexable data structure such as an array or slice.
+In this case, the argument f, typically a closure, captures the value
+to be searched for, and how the data structure is indexed and
+ordered.
+</p><p>For instance, given a slice data sorted in ascending order,
+the call Search(len(data), func(i int) bool { return data[i] &gt;= 23 })
+returns the smallest index i such that data[i] &gt;= 23. If the caller
+wants to find whether 23 is in the slice, it must test data[i] == 23
+separately.
+</p><p>Searching data sorted in descending order would use the &lt;=
+operator instead of the &gt;= operator.
+</p><p>To complete the example above, the following code tries to find the value
+x in an integer slice data sorted in ascending order:
+</p><pre>x := 23
+i := sort.Search(len(data), func(i int) bool { return data[i] &gt;= x })
+if i &lt; len(data) &amp;&amp; data[i] == x {
+	// x is present at data[i]
+} else {
+	// x is not present in data,
+	// but i is the index where it would be inserted.
+}
+</pre><p>As a more whimsical example, this program guesses your number:
+</p><pre>func GuessingGame() {
+	var s string
+	fmt.Printf(&#34;Pick an integer from 0 to 100.\n&#34;)
+	answer := sort.Search(100, func(i int) bool {
+		fmt.Printf(&#34;Is your number &lt;= %d? &#34;, i)
+		fmt.Scanf(&#34;%s&#34;, &amp;s)
+		return s != &#34;&#34; &amp;&amp; s[0] == &#39;y&#39;
+	})
+	fmt.Printf(&#34;Your number is %d.\n&#34;, answer)
+}
+</pre>
+<details tabindex="-1" id="example-Search" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-Search" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+<p>This example demonstrates searching a list sorted in ascending order.
+</p>
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;sort&#34;
+)
+
+func main() {
+	a := []int{1, 3, 6, 10, 15, 21, 28, 36, 45, 55}
+	x := 6
+
+	i := sort.Search(len(a), func(i int) bool { return a[i] &gt;= x })
+	if i &lt; len(a) &amp;&amp; a[i] == x {
+		fmt.Printf(&#34;found %d at index %d in %v\n&#34;, x, i, a)
+	} else {
+		fmt.Printf(&#34;%d not found in %v\n&#34;, x, a)
+	}
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">found 6 at index 2 in [1 3 6 10 15 21 28 36 45 55]
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+<details tabindex="-1" id="example-Search-DescendingOrder" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example (DescendingOrder) <a href="#example-Search-DescendingOrder" title="Go to Example (DescendingOrder)" aria-label="Go to Example (DescendingOrder)">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+<p>This example demonstrates searching a list sorted in descending order.
+The approach is the same as searching a list in ascending order,
+but with the condition inverted.
+</p>
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;sort&#34;
+)
+
+func main() {
+	a := []int{55, 45, 36, 28, 21, 15, 10, 6, 3, 1}
+	x := 6
+
+	i := sort.Search(len(a), func(i int) bool { return a[i] &lt;= x })
+	if i &lt; len(a) &amp;&amp; a[i] == x {
+		fmt.Printf(&#34;found %d at index %d in %v\n&#34;, x, i, a)
+	} else {
+		fmt.Printf(&#34;%d not found in %v\n&#34;, x, a)
+	}
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">found 6 at index 7 in [55 45 36 28 21 15 10 6 3 1]
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="SearchFloat64s" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sort/search.go;l=131">SearchFloat64s</a> <a class="Documentation-idLink" href="#SearchFloat64s" title="Go to SearchFloat64s" aria-label="Go to SearchFloat64s">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func SearchFloat64s(a []<a href="/builtin#float64">float64</a>, x <a href="/builtin#float64">float64</a>) <a href="/builtin#int">int</a></pre>
+    </div>
+  <p>SearchFloat64s searches for x in a sorted slice of float64s and returns the index
+as specified by <a href="#Search">Search</a>. The return value is the index to insert x if x is not
+present (it could be len(a)).
+The slice must be sorted in ascending order.
+</p>
+<details tabindex="-1" id="example-SearchFloat64s" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-SearchFloat64s" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+<p>This example demonstrates searching for float64 in a list sorted in ascending order.
+</p>
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;sort&#34;
+)
+
+func main() {
+	a := []float64{1.0, 2.0, 3.3, 4.6, 6.1, 7.2, 8.0}
+
+	x := 2.0
+	i := sort.SearchFloat64s(a, x)
+	fmt.Printf(&#34;found %g at index %d in %v\n&#34;, x, i, a)
+
+	x = 0.5
+	i = sort.SearchFloat64s(a, x)
+	fmt.Printf(&#34;%g not found, can be inserted at index %d in %v\n&#34;, x, i, a)
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">found 2 at index 1 in [1 2 3.3 4.6 6.1 7.2 8]
+0.5 not found, can be inserted at index 0 in [1 2 3.3 4.6 6.1 7.2 8]
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="SearchInts" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sort/search.go;l=123">SearchInts</a> <a class="Documentation-idLink" href="#SearchInts" title="Go to SearchInts" aria-label="Go to SearchInts">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func SearchInts(a []<a href="/builtin#int">int</a>, x <a href="/builtin#int">int</a>) <a href="/builtin#int">int</a></pre>
+    </div>
+  <p>SearchInts searches for x in a sorted slice of ints and returns the index
+as specified by <a href="#Search">Search</a>. The return value is the index to insert x if x is
+not present (it could be len(a)).
+The slice must be sorted in ascending order.
+</p>
+<details tabindex="-1" id="example-SearchInts" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-SearchInts" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+<p>This example demonstrates searching for int in a list sorted in ascending order.
+</p>
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;sort&#34;
+)
+
+func main() {
+	a := []int{1, 2, 3, 4, 6, 7, 8}
+
+	x := 2
+	i := sort.SearchInts(a, x)
+	fmt.Printf(&#34;found %d at index %d in %v\n&#34;, x, i, a)
+
+	x = 5
+	i = sort.SearchInts(a, x)
+	fmt.Printf(&#34;%d not found, can be inserted at index %d in %v\n&#34;, x, i, a)
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">found 2 at index 1 in [1 2 3 4 6 7 8]
+5 not found, can be inserted at index 4 in [1 2 3 4 6 7 8]
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="SearchStrings" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sort/search.go;l=139">SearchStrings</a> <a class="Documentation-idLink" href="#SearchStrings" title="Go to SearchStrings" aria-label="Go to SearchStrings">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func SearchStrings(a []<a href="/builtin#string">string</a>, x <a href="/builtin#string">string</a>) <a href="/builtin#int">int</a></pre>
+    </div>
+  <p>SearchStrings searches for x in a sorted slice of strings and returns the index
+as specified by Search. The return value is the index to insert x if x is not
+present (it could be len(a)).
+The slice must be sorted in ascending order.
+</p>
+<details tabindex="-1" id="example-SearchStrings" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-SearchStrings" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+<p>This example demonstrates searching for string in a list sorted in ascending order.
+</p>
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;sort&#34;
+)
+
+func main() {
+	a := []string{&#34;apple&#34;, &#34;banana&#34;, &#34;cherry&#34;, &#34;date&#34;, &#34;fig&#34;, &#34;grape&#34;}
+
+	x := &#34;banana&#34;
+	i := sort.SearchStrings(a, x)
+	fmt.Printf(&#34;found %s at index %d in %v\n&#34;, x, i, a)
+
+	x = &#34;coconut&#34;
+	i = sort.SearchStrings(a, x)
+	fmt.Printf(&#34;%s not found, can be inserted at index %d in %v\n&#34;, x, i, a)
+
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">found banana at index 1 in [apple banana cherry date fig grape]
+coconut not found, can be inserted at index 3 in [apple banana cherry date fig grape]
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Slice" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sort/slice.go;l=24">Slice</a> <a class="Documentation-idLink" href="#Slice" title="Go to Slice" aria-label="Go to Slice">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.8</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Slice(x <a href="/builtin#any">any</a>, less func(i, j <a href="/builtin#int">int</a>) <a href="/builtin#bool">bool</a>)</pre>
+    </div>
+  <p>Slice sorts the slice x given the provided less function.
+It panics if x is not a slice.
+</p><p>The sort is not guaranteed to be stable: equal elements
+may be reversed from their original order.
+For a stable sort, use <a href="#SliceStable">SliceStable</a>.
+</p><p>The less function must satisfy the same requirements as
+the Interface type&#39;s Less method.
+</p><p>Note: in many situations, the newer <a href="/slices#SortFunc">slices.SortFunc</a> function is more
+ergonomic and runs faster.
+</p>
+<details tabindex="-1" id="example-Slice" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-Slice" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;sort&#34;
+)
+
+func main() {
+	people := []struct {
+		Name string
+		Age  int
+	}{
+		{&#34;Gopher&#34;, 7},
+		{&#34;Alice&#34;, 55},
+		{&#34;Vera&#34;, 24},
+		{&#34;Bob&#34;, 75},
+	}
+	sort.Slice(people, func(i, j int) bool { return people[i].Name &lt; people[j].Name })
+	fmt.Println(&#34;By name:&#34;, people)
+
+	sort.Slice(people, func(i, j int) bool { return people[i].Age &lt; people[j].Age })
+	fmt.Println(&#34;By age:&#34;, people)
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">By name: [{Alice 55} {Bob 75} {Gopher 7} {Vera 24}]
+By age: [{Gopher 7} {Vera 24} {Alice 55} {Bob 75}]
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="SliceIsSorted" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sort/slice.go;l=52">SliceIsSorted</a> <a class="Documentation-idLink" href="#SliceIsSorted" title="Go to SliceIsSorted" aria-label="Go to SliceIsSorted">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.8</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func SliceIsSorted(x <a href="/builtin#any">any</a>, less func(i, j <a href="/builtin#int">int</a>) <a href="/builtin#bool">bool</a>) <a href="/builtin#bool">bool</a></pre>
+    </div>
+  <p>SliceIsSorted reports whether the slice x is sorted according to the provided less function.
+It panics if x is not a slice.
+</p><p>Note: in many situations, the newer <a href="/slices#IsSortedFunc">slices.IsSortedFunc</a> function is more
+ergonomic and runs faster.
+</p>
+<details tabindex="-1" id="example-SliceIsSorted" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-SliceIsSorted" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;sort&#34;
+)
+
+func main() {
+	numbers := []int{1, 2, 3, 4, 5, 6}
+
+	isSortedAsc := sort.SliceIsSorted(numbers, func(i, j int) bool {
+		return numbers[i] &lt; numbers[j]
+	})
+	fmt.Printf(&#34;%v sorted ascending: %t\n&#34;, numbers, isSortedAsc)
+
+	numbersDesc := []int{6, 5, 4, 3, 2, 1}
+
+	isSortedDesc := sort.SliceIsSorted(numbersDesc, func(i, j int) bool {
+		return numbersDesc[i] &gt; numbersDesc[j]
+	})
+	fmt.Printf(&#34;%v sorted descending: %t\n&#34;, numbers, isSortedDesc)
+
+	unsortedNumbers := []int{1, 3, 2, 4, 5}
+
+	isSortedUnsorted := sort.SliceIsSorted(unsortedNumbers, func(i, j int) bool {
+		return unsortedNumbers[i] &lt; unsortedNumbers[j]
+	})
+	fmt.Printf(&#34;%v unsorted slice sorted: %t\n&#34;, unsortedNumbers, isSortedUnsorted)
+
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">[1 2 3 4 5 6] sorted ascending: true
+[1 2 3 4 5 6] sorted descending: true
+[1 3 2 4 5] unsorted slice sorted: false
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="SliceStable" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sort/slice.go;l=41">SliceStable</a> <a class="Documentation-idLink" href="#SliceStable" title="Go to SliceStable" aria-label="Go to SliceStable">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.8</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func SliceStable(x <a href="/builtin#any">any</a>, less func(i, j <a href="/builtin#int">int</a>) <a href="/builtin#bool">bool</a>)</pre>
+    </div>
+  <p>SliceStable sorts the slice x using the provided less
+function, keeping equal elements in their original order.
+It panics if x is not a slice.
+</p><p>The less function must satisfy the same requirements as
+the Interface type&#39;s Less method.
+</p><p>Note: in many situations, the newer <a href="/slices#SortStableFunc">slices.SortStableFunc</a> function is more
+ergonomic and runs faster.
+</p>
+<details tabindex="-1" id="example-SliceStable" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-SliceStable" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;sort&#34;
+)
+
+func main() {
+
+	people := []struct {
+		Name string
+		Age  int
+	}{
+		{&#34;Alice&#34;, 25},
+		{&#34;Elizabeth&#34;, 75},
+		{&#34;Alice&#34;, 75},
+		{&#34;Bob&#34;, 75},
+		{&#34;Alice&#34;, 75},
+		{&#34;Bob&#34;, 25},
+		{&#34;Colin&#34;, 25},
+		{&#34;Elizabeth&#34;, 25},
+	}
+
+	// Sort by name, preserving original order
+	sort.SliceStable(people, func(i, j int) bool { return people[i].Name &lt; people[j].Name })
+	fmt.Println(&#34;By name:&#34;, people)
+
+	// Sort by age preserving name order
+	sort.SliceStable(people, func(i, j int) bool { return people[i].Age &lt; people[j].Age })
+	fmt.Println(&#34;By age,name:&#34;, people)
+
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">By name: [{Alice 25} {Alice 75} {Alice 75} {Bob 75} {Bob 25} {Colin 25} {Elizabeth 75} {Elizabeth 25}]
+By age,name: [{Alice 25} {Bob 25} {Colin 25} {Elizabeth 25} {Alice 75} {Alice 75} {Bob 75} {Elizabeth 75}]
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Sort" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sort/sort.go;l=50">Sort</a> <a class="Documentation-idLink" href="#Sort" title="Go to Sort" aria-label="Go to Sort">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Sort(data <a href="#Interface">Interface</a>)</pre>
+    </div>
+  <p>Sort sorts data in ascending order as determined by the Less method.
+It makes one call to data.Len to determine n and O(n*log(n)) calls to
+data.Less and data.Swap. The sort is not guaranteed to be stable.
+</p><p>Note: in many situations, the newer <a href="/slices#SortFunc">slices.SortFunc</a> function is more
+ergonomic and runs faster.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Stable" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sort/sort.go;l=233">Stable</a> <a class="Documentation-idLink" href="#Stable" title="Go to Stable" aria-label="Go to Stable">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.2</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Stable(data <a href="#Interface">Interface</a>)</pre>
+    </div>
+  <p>Stable sorts data in ascending order as determined by the Less method,
+while keeping the original order of equal elements.
+</p><p>It makes one call to data.Len to determine n, O(n*log(n)) calls to
+data.Less and O(n*log(n)*log(n)) calls to data.Swap.
+</p><p>Note: in many situations, the newer slices.SortStableFunc function is more
+ergonomic and runs faster.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Strings" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sort/sort.go;l=181">Strings</a> <a class="Documentation-idLink" href="#Strings" title="Go to Strings" aria-label="Go to Strings">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Strings(x []<a href="/builtin#string">string</a>)</pre>
+    </div>
+  <p>Strings sorts a slice of strings in increasing order.
+</p><p>Note: as of Go 1.22, this function simply calls <a href="/slices#Sort">slices.Sort</a>.
+</p>
+<details tabindex="-1" id="example-Strings" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-Strings" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;sort&#34;
+)
+
+func main() {
+	s := []string{&#34;Go&#34;, &#34;Bravo&#34;, &#34;Gopher&#34;, &#34;Alpha&#34;, &#34;Grin&#34;, &#34;Delta&#34;}
+	sort.Strings(s)
+	fmt.Println(s)
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">[Alpha Bravo Delta Go Gopher Grin]
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="StringsAreSorted" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sort/sort.go;l=197">StringsAreSorted</a> <a class="Documentation-idLink" href="#StringsAreSorted" title="Go to StringsAreSorted" aria-label="Go to StringsAreSorted">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func StringsAreSorted(x []<a href="/builtin#string">string</a>) <a href="/builtin#bool">bool</a></pre>
+    </div>
+  <p>StringsAreSorted reports whether the slice x is sorted in increasing order.
+</p><p>Note: as of Go 1.22, this function simply calls <a href="/slices#IsSorted">slices.IsSorted</a>.
+</p>
+
+  
+
+        </div></section>
+
+  <h3 tabindex="-1" id="pkg-types" class="Documentation-typesHeader">Types <a href="#pkg-types" title="Go to Types" aria-label="Go to Types">¶</a></h3>
+
+  <section class="Documentation-types"><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="Float64Slice" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sort/sort.go;l=134">Float64Slice</a> <a class="Documentation-idLink" href="#Float64Slice" title="Go to Float64Slice" aria-label="Go to Float64Slice">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type Float64Slice []<a href="/builtin#float64">float64</a></pre>
+    </div>
+  <p>Float64Slice implements Interface for a []float64, sorting in increasing order,
+with not-a-number (NaN) values ordered before other values.
+</p>
+<div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Float64Slice.Len" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (Float64Slice) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sort/sort.go;l=136">Len</a> <a class="Documentation-idLink" href="#Float64Slice.Len" title="Go to Float64Slice.Len" aria-label="Go to Float64Slice.Len">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x <a href="#Float64Slice">Float64Slice</a>) Len() <a href="/builtin#int">int</a></pre>
+    </div>
+  
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Float64Slice.Less" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (Float64Slice) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sort/sort.go;l=144">Less</a> <a class="Documentation-idLink" href="#Float64Slice.Less" title="Go to Float64Slice.Less" aria-label="Go to Float64Slice.Less">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x <a href="#Float64Slice">Float64Slice</a>) Less(i, j <a href="/builtin#int">int</a>) <a href="/builtin#bool">bool</a></pre>
+    </div>
+  <p>Less reports whether x[i] should be ordered before x[j], as required by the sort Interface.
+Note that floating-point comparison by itself is not a transitive relation: it does not
+report a consistent ordering for not-a-number (NaN) values.
+This implementation of Less places NaN values before any others, by using:
+</p><pre>x[i] &lt; x[j] || (math.IsNaN(x[i]) &amp;&amp; !math.IsNaN(x[j]))
+</pre>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Float64Slice.Search" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (Float64Slice) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sort/search.go;l=147">Search</a> <a class="Documentation-idLink" href="#Float64Slice.Search" title="Go to Float64Slice.Search" aria-label="Go to Float64Slice.Search">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (p <a href="#Float64Slice">Float64Slice</a>) Search(x <a href="/builtin#float64">float64</a>) <a href="/builtin#int">int</a></pre>
+    </div>
+  <p>Search returns the result of applying <a href="#SearchFloat64s">SearchFloat64s</a> to the receiver and x.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Float64Slice.Sort" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (Float64Slice) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sort/sort.go;l=153">Sort</a> <a class="Documentation-idLink" href="#Float64Slice.Sort" title="Go to Float64Slice.Sort" aria-label="Go to Float64Slice.Sort">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x <a href="#Float64Slice">Float64Slice</a>) Sort()</pre>
+    </div>
+  <p>Sort is a convenience method: x.Sort() calls Sort(x).
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Float64Slice.Swap" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (Float64Slice) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sort/sort.go;l=145">Swap</a> <a class="Documentation-idLink" href="#Float64Slice.Swap" title="Go to Float64Slice.Swap" aria-label="Go to Float64Slice.Swap">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x <a href="#Float64Slice">Float64Slice</a>) Swap(i, j <a href="/builtin#int">int</a>)</pre>
+    </div>
+  
+
+  
+
+  </div>
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="IntSlice" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sort/sort.go;l=123">IntSlice</a> <a class="Documentation-idLink" href="#IntSlice" title="Go to IntSlice" aria-label="Go to IntSlice">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type IntSlice []<a href="/builtin#int">int</a></pre>
+    </div>
+  <p>IntSlice attaches the methods of Interface to []int, sorting in increasing order.
+</p>
+<div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="IntSlice.Len" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (IntSlice) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sort/sort.go;l=125">Len</a> <a class="Documentation-idLink" href="#IntSlice.Len" title="Go to IntSlice.Len" aria-label="Go to IntSlice.Len">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x <a href="#IntSlice">IntSlice</a>) Len() <a href="/builtin#int">int</a></pre>
+    </div>
+  
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="IntSlice.Less" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (IntSlice) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sort/sort.go;l=126">Less</a> <a class="Documentation-idLink" href="#IntSlice.Less" title="Go to IntSlice.Less" aria-label="Go to IntSlice.Less">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x <a href="#IntSlice">IntSlice</a>) Less(i, j <a href="/builtin#int">int</a>) <a href="/builtin#bool">bool</a></pre>
+    </div>
+  
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="IntSlice.Search" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (IntSlice) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sort/search.go;l=144">Search</a> <a class="Documentation-idLink" href="#IntSlice.Search" title="Go to IntSlice.Search" aria-label="Go to IntSlice.Search">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (p <a href="#IntSlice">IntSlice</a>) Search(x <a href="/builtin#int">int</a>) <a href="/builtin#int">int</a></pre>
+    </div>
+  <p>Search returns the result of applying <a href="#SearchInts">SearchInts</a> to the receiver and x.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="IntSlice.Sort" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (IntSlice) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sort/sort.go;l=130">Sort</a> <a class="Documentation-idLink" href="#IntSlice.Sort" title="Go to IntSlice.Sort" aria-label="Go to IntSlice.Sort">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x <a href="#IntSlice">IntSlice</a>) Sort()</pre>
+    </div>
+  <p>Sort is a convenience method: x.Sort() calls Sort(x).
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="IntSlice.Swap" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (IntSlice) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sort/sort.go;l=127">Swap</a> <a class="Documentation-idLink" href="#IntSlice.Swap" title="Go to IntSlice.Swap" aria-label="Go to IntSlice.Swap">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x <a href="#IntSlice">IntSlice</a>) Swap(i, j <a href="/builtin#int">int</a>)</pre>
+    </div>
+  
+
+  
+
+  </div>
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="Interface" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sort/sort.go;l=17">Interface</a> <a class="Documentation-idLink" href="#Interface" title="Go to Interface" aria-label="Go to Interface">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type Interface interface {
+<span id="Interface.Len" data-kind="method">	<span class="comment">// Len is the number of elements in the collection.</span>
+</span>	Len() <a href="/builtin#int">int</a>
+
+<span id="Interface.Less" data-kind="method">	<span class="comment">// Less reports whether the element with index i</span>
+</span>	<span class="comment">// must sort before the element with index j.</span>
+	<span class="comment">//</span>
+	<span class="comment">// If both Less(i, j) and Less(j, i) are false,</span>
+	<span class="comment">// then the elements at index i and j are considered equal.</span>
+	<span class="comment">// Sort may place equal elements in any order in the final result,</span>
+	<span class="comment">// while Stable preserves the original input order of equal elements.</span>
+	<span class="comment">//</span>
+	<span class="comment">// Less must describe a [Strict Weak Ordering]. For example:</span>
+	<span class="comment">//  - if both Less(i, j) and Less(j, k) are true, then Less(i, k) must be true as well.</span>
+	<span class="comment">//  - if both Less(i, j) and Less(j, k) are false, then Less(i, k) must be false as well.</span>
+	<span class="comment">//</span>
+	<span class="comment">// Note that floating-point comparison (the &lt; operator on float32 or float64 values)</span>
+	<span class="comment">// is not a strict weak ordering when not-a-number (NaN) values are involved.</span>
+	<span class="comment">// See Float64Slice.Less for a correct implementation for floating-point values.</span>
+	<span class="comment">//</span>
+	<span class="comment">// [Strict Weak Ordering]: <a href="https://en.wikipedia.org/wiki/Weak_ordering#Strict_weak_orderings">https://en.wikipedia.org/wiki/Weak_ordering#Strict_weak_orderings</a></span>
+	Less(i, j <a href="/builtin#int">int</a>) <a href="/builtin#bool">bool</a>
+
+<span id="Interface.Swap" data-kind="method">	<span class="comment">// Swap swaps the elements with indexes i and j.</span>
+</span>	Swap(i, j <a href="/builtin#int">int</a>)
+}</pre>
+    </div>
+  <p>An implementation of Interface can be sorted by the routines in this package.
+The methods refer to elements of the underlying collection by integer index.
+</p>
+<div class="Documentation-typeFunc">
+    
+  
+  
+    <h4 tabindex="-1" id="Reverse" data-kind="function" class="Documentation-typeFuncHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sort/sort.go;l=102">Reverse</a> <a class="Documentation-idLink" href="#Reverse" title="Go to Reverse" aria-label="Go to Reverse">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.1</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Reverse(data <a href="#Interface">Interface</a>) <a href="#Interface">Interface</a></pre>
+    </div>
+  <p>Reverse returns the reverse order for data.
+</p>
+<details tabindex="-1" id="example-Reverse" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-Reverse" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;sort&#34;
+)
+
+func main() {
+	s := []int{5, 2, 6, 3, 1, 4} // unsorted
+	sort.Sort(sort.Reverse(sort.IntSlice(s)))
+	fmt.Println(s)
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">[6 5 4 3 2 1]
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+  </div>
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="StringSlice" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sort/sort.go;l=156">StringSlice</a> <a class="Documentation-idLink" href="#StringSlice" title="Go to StringSlice" aria-label="Go to StringSlice">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type StringSlice []<a href="/builtin#string">string</a></pre>
+    </div>
+  <p>StringSlice attaches the methods of Interface to []string, sorting in increasing order.
+</p>
+<div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="StringSlice.Len" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (StringSlice) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sort/sort.go;l=158">Len</a> <a class="Documentation-idLink" href="#StringSlice.Len" title="Go to StringSlice.Len" aria-label="Go to StringSlice.Len">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x <a href="#StringSlice">StringSlice</a>) Len() <a href="/builtin#int">int</a></pre>
+    </div>
+  
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="StringSlice.Less" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (StringSlice) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sort/sort.go;l=159">Less</a> <a class="Documentation-idLink" href="#StringSlice.Less" title="Go to StringSlice.Less" aria-label="Go to StringSlice.Less">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x <a href="#StringSlice">StringSlice</a>) Less(i, j <a href="/builtin#int">int</a>) <a href="/builtin#bool">bool</a></pre>
+    </div>
+  
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="StringSlice.Search" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (StringSlice) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sort/search.go;l=150">Search</a> <a class="Documentation-idLink" href="#StringSlice.Search" title="Go to StringSlice.Search" aria-label="Go to StringSlice.Search">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (p <a href="#StringSlice">StringSlice</a>) Search(x <a href="/builtin#string">string</a>) <a href="/builtin#int">int</a></pre>
+    </div>
+  <p>Search returns the result of applying <a href="#SearchStrings">SearchStrings</a> to the receiver and x.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="StringSlice.Sort" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (StringSlice) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sort/sort.go;l=163">Sort</a> <a class="Documentation-idLink" href="#StringSlice.Sort" title="Go to StringSlice.Sort" aria-label="Go to StringSlice.Sort">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x <a href="#StringSlice">StringSlice</a>) Sort()</pre>
+    </div>
+  <p>Sort is a convenience method: x.Sort() calls Sort(x).
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="StringSlice.Swap" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (StringSlice) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sort/sort.go;l=160">Swap</a> <a class="Documentation-idLink" href="#StringSlice.Swap" title="Go to StringSlice.Swap" aria-label="Go to StringSlice.Swap">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x <a href="#StringSlice">StringSlice</a>) Swap(i, j <a href="/builtin#int">int</a>)</pre>
+    </div>
+  
+
+  
+
+  </div>
+  
+
+    </div></section></div> 
+
+
+
+
+
+
+
+      
+    </div>
+  </div>
+
+        
+      
+      
+        
+  <div class="UnitFiles js-unitFiles">
+    <h2 class="UnitFiles-title" id="section-sourcefiles">
+      <img class="go-Icon" height="24" width="24" src="/static/shared/icon/insert_drive_file_gm_grey_24dp.svg" alt="">
+      Source Files
+      <a class="UnitFiles-idLink" href="#section-sourcefiles" title="Go to Source Files" aria-label="Go to Source Files">¶</a>
+    </h2><div class="UnitFiles-titleLink">
+      <a href="https://cs.opensource.google/go/go/+/go1.26.3:src/sort" target="_blank" rel="noopener">View all Source files</a>
+    </div><div>
+      <ul class="UnitFiles-fileList"><li><a href="https://cs.opensource.google/go/go/+/go1.26.3:src/sort/search.go" target="_blank" rel="noopener" title="search.go">search.go</a></li><li><a href="https://cs.opensource.google/go/go/+/go1.26.3:src/sort/slice.go" target="_blank" rel="noopener" title="slice.go">slice.go</a></li><li><a href="https://cs.opensource.google/go/go/+/go1.26.3:src/sort/sort.go" target="_blank" rel="noopener" title="sort.go">sort.go</a></li><li><a href="https://cs.opensource.google/go/go/+/go1.26.3:src/sort/zsortfunc.go" target="_blank" rel="noopener" title="zsortfunc.go">zsortfunc.go</a></li><li><a href="https://cs.opensource.google/go/go/+/go1.26.3:src/sort/zsortinterface.go" target="_blank" rel="noopener" title="zsortinterface.go">zsortinterface.go</a></li></ul>
+    </div>
+  </div>
+
+      
+      
+    </div>
+  </div>
+  <div id="showInternal-description" hidden> Click to show internal directories. </div>
+  <div id="hideInternal-description" hidden> Click to hide internal directories. </div>
+</article>
+    <footer class="go-Main-footer"></footer>
+  </main>
+
+    
+  <footer class="go-Footer">
+    
+    <div class="go-Footer-links">
+      <div class="go-Footer-linkColumn">
+        <a href="https://go.dev/solutions" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          Why Go
+        </a>
+        <a href="https://go.dev/solutions#use-cases" class="go-Footer-link"
+            data-gtmc="footer link">
+          Use Cases
+        </a>
+        <a href="https://go.dev/solutions#case-studies" class="go-Footer-link"
+            data-gtmc="footer link">
+          Case Studies
+        </a>
+      </div>
+      <div class="go-Footer-linkColumn">
+        <a href="https://learn.go.dev/" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          Get Started
+        </a>
+        <a href="https://play.golang.org" class="go-Footer-link" data-gtmc="footer link">
+          Playground
+        </a>
+        <a href="https://tour.golang.org" class="go-Footer-link" data-gtmc="footer link">
+          Tour
+        </a>
+        <a href="https://stackoverflow.com/questions/tagged/go?tab=Newest" class="go-Footer-link"
+            data-gtmc="footer link">
+          Stack Overflow
+        </a>
+        <a href="https://go.dev/help" class="go-Footer-link"
+            data-gtmc="footer link">
+          Help
+        </a>
+      </div>
+      <div class="go-Footer-linkColumn">
+        <a href="https://pkg.go.dev" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          Packages
+        </a>
+        <a href="/std" class="go-Footer-link" data-gtmc="footer link">
+          Standard Library
+        </a>
+        <a href="/golang.org/x" class="go-Footer-link" data-gtmc="footer link">
+          Sub-repositories
+        </a>
+        <a href="https://pkg.go.dev/about" class="go-Footer-link" data-gtmc="footer link">
+          About Go Packages
+        </a>
+      </div>
+      <div class="go-Footer-linkColumn">
+        <a href="https://go.dev/project" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          About
+        </a>
+        <a href="https://go.dev/dl/" class="go-Footer-link" data-gtmc="footer link">Download</a>
+        <a href="https://go.dev/blog" class="go-Footer-link" data-gtmc="footer link">Blog</a>
+        <a href="https://github.com/golang/go/issues" class="go-Footer-link" data-gtmc="footer link">
+          Issue Tracker
+        </a>
+        <a href="https://go.dev/doc/devel/release.html" class="go-Footer-link"
+            data-gtmc="footer link">
+          Release Notes
+        </a>
+        <a href="https://go.dev/brand" class="go-Footer-link" data-gtmc="footer link">
+          Brand Guidelines
+        </a>
+        <a href="https://go.dev/conduct" class="go-Footer-link" data-gtmc="footer link">
+          Code of Conduct
+        </a>
+      </div>
+      <div class="go-Footer-linkColumn">
+        <a href="https://www.twitter.com/golang" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          Connect
+        </a>
+        <a href="https://www.twitter.com/golang" class="go-Footer-link" data-gtmc="footer link">
+          Twitter
+        </a>
+        <a href="https://github.com/golang" class="go-Footer-link" data-gtmc="footer link">GitHub</a>
+        <a href="https://invite.slack.golangbridge.org/" class="go-Footer-link"
+            data-gtmc="footer link">
+          Slack
+        </a>
+        <a href="https://reddit.com/r/golang" class="go-Footer-link" data-gtmc="footer link">
+          r/golang
+        </a>
+        <a href="https://www.meetup.com/pro/go" class="go-Footer-link" data-gtmc="footer link">
+          Meetup
+        </a>
+        <a href="https://golangweekly.com/" class="go-Footer-link" data-gtmc="footer link">
+          Golang Weekly
+        </a>
+      </div>
+    </div>
+    <div class="go-Footer-bottom">
+      <img class="go-Footer-gopher"  width="1431" height="901"
+          src="/static/shared/gopher/pilot-bust-1431x901.svg" alt="Gopher in flight goggles">
+      <ul class="go-Footer-listRow">
+        <li class="go-Footer-listItem">
+          <a href="https://go.dev/copyright" data-gtmc="footer link">Copyright</a>
+        </li>
+        <li class="go-Footer-listItem">
+          <a href="https://go.dev/tos" data-gtmc="footer link">Terms of Service</a>
+        </li>
+        <li class="go-Footer-listItem">
+          <a href="http://www.google.com/intl/en/policies/privacy/" data-gtmc="footer link"
+              target="_blank" rel="noopener">
+            Privacy Policy
+          </a>
+        </li>
+        <li class="go-Footer-listItem">
+          <a href="https://go.dev/s/pkgsite-feedback" target="_blank" rel="noopener"
+              data-gtmc="footer link">
+            Report an Issue
+          </a>
+        </li>
+        <li class="go-Footer-listItem">
+          <button class="go-Button go-Button--text go-Footer-toggleTheme js-toggleTheme" aria-label="Theme Toggle">
+            <img data-value="auto" class="go-Icon go-Icon--inverted" height="24" width="24" src="/static/shared/icon/brightness_6_gm_grey_24dp.svg" alt="System theme">
+            <img data-value="dark" class="go-Icon go-Icon--inverted" height="24" width="24" src="/static/shared/icon/brightness_2_gm_grey_24dp.svg" alt="Dark theme">
+            <img data-value="light" class="go-Icon go-Icon--inverted" height="24" width="24" src="/static/shared/icon/light_mode_gm_grey_24dp.svg" alt="Light theme">
+            <p> Theme Toggle </p>
+          </button>
+        </li>
+        <li class="go-Footer-listItem">
+          <button class="go-Button go-Button--text go-Footer-keyboard js-openShortcuts" aria-label="Shorcuts Modal">
+            <img class="go-Icon go-Icon--inverted" height="24" width="24" src="/static/shared/icon/keyboard_grey_24dp.svg" alt="">
+            <p> Shortcuts Modal </p>
+          </button>
+        </li>
+      </ul>
+      <a class="go-Footer-googleLogo" href="https://google.com" target="_blank"rel="noopener"
+          data-gtmc="footer link">
+        <img class="go-Footer-googleLogoImg" height="24" width="72"
+            src="/static/shared/logo/google-white.svg" alt="Google logo">
+      </a>
+    </div>
+  </footer>
+
+    
+  <dialog id="jump-to-modal" class="JumpDialog go-Modal go-Modal--md js-modal">
+    <form method="dialog" data-gmtc="jump to form" aria-label="Jump to Identifier">
+      <div class="Dialog-title go-Modal-header">
+        <h2>Jump to</h2>
+        <button
+          class="go-Button go-Button--inline"
+          type="button"
+          data-modal-close
+          data-gtmc="modal button"
+          aria-label="Close"
+        >
+          <img
+            class="go-Icon"
+            height="24"
+            width="24"
+            src="/static/shared/icon/close_gm_grey_24dp.svg"
+            alt=""
+          />
+        </button>
+      </div>
+      <div class="JumpDialog-filter">
+        <input class="JumpDialog-input go-Input" autocomplete="off" type="text">
+      </div>
+      <div class="JumpDialog-body go-Modal-body">
+        <div class="JumpDialog-list"></div>
+      </div>
+      <div class="go-Modal-actions">
+        <button class="go-Button" data-test-id="close-dialog">Close</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog class="ShortcutsDialog go-Modal go-Modal--sm js-modal">
+    <form method="dialog">
+      <div class="go-Modal-header">
+        <h2>Keyboard shortcuts</h2>
+        <button
+          class="go-Button go-Button--inline"
+          type="button"
+          data-modal-close
+          data-gtmc="modal button"
+          aria-label="Close"
+        >
+          <img
+            class="go-Icon"
+            height="24"
+            width="24"
+            src="/static/shared/icon/close_gm_grey_24dp.svg"
+            alt=""
+          />
+        </button>
+      </div>
+      <div class="go-Modal-body">
+        <table>
+          <tbody>
+            <tr><td class="ShortcutsDialog-key">
+              <strong>?</strong></td><td> : This menu</td>
+            </tr>
+            <tr><td class="ShortcutsDialog-key">
+              <strong>/</strong></td><td> : Search site</td>
+            </tr>
+            <tr><td class="ShortcutsDialog-key">
+              <strong>f</strong> or <strong>F</strong></td><td> : Jump to</td>
+            </tr>
+            <tr>
+              <td class="ShortcutsDialog-key"><strong>y</strong> or <strong>Y</strong></td>
+              <td> : Canonical URL</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="go-Modal-actions">
+        <button class="go-Button" data-test-id="close-dialog">Close</button>
+      </div>
+    </form>
+  </dialog>
+
+    
+      <section class="Cookie-notice js-cookieNotice">
+        <div>go.dev uses cookies from Google to deliver and enhance the quality of its services and to
+        analyze traffic. <a target=_blank href="https://policies.google.com/technologies/cookies">Learn more.</a></div>
+        <div><button class="go-Button">Okay</button></div>
+      </section>
+    
+    
+      <script>
+        // this will throw if the querySelector can’t find the element
+        const gtmId = document.querySelector('.js-gtmID').dataset.gtmid;
+        if (!gtmId) {
+          throw new Error('Google Tag Manager ID not found');
+        }
+        loadScript(`https://www.googletagmanager.com/gtm.js?id=${gtmId}`);
+      </script>
+      <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W8MVQXG"
+                height="0" width="0" style="display:none;visibility:hidden">
+        </iframe>
+      </noscript>
+    
+    
+  
+  <div class="js-canonicalURLPath" data-canonical-url-path="/sort@go1.26.3" hidden></div>
+  <div class="js-playgroundVars" data-modulepath="std" data-version="v1.26.3" hidden></div>
+  <script>
+    loadScript('/static/frontend/unit/main/main.js')
+  </script>
+
+  <script>
+    loadScript('/static/frontend/unit/unit.js')
+  </script>
+
+  </body>
+</html>

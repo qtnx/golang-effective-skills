@@ -1,0 +1,1643 @@
+---
+source_name: "External Linked Documentation"
+source_url: "https://go.dev/blog/subtests"
+retrieved_at: "2026-06-02T06:41:45.620382+00:00"
+content_type: "text/html; charset=utf-8"
+truncated: false
+insecure_tls_fallback: true
+---
+
+<!DOCTYPE html>
+<html lang="en" data-theme="auto">
+<head>
+
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<script >(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-W8MVQXG');</script>
+  
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#00add8">
+<link rel="canonical" href="https://go.dev/blog/subtests">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Material+Icons">
+<link rel="stylesheet" href="/css/styles.css">
+<link rel="icon" href="/images/favicon-gopher.png" sizes="any">
+<link rel="apple-touch-icon" href="/images/favicon-gopher-plain.png"/>
+<link rel="icon" href="/images/favicon-gopher.svg" type="image/svg+xml">
+<link rel="me" href="https://hachyderm.io/@golang">
+
+<link rel="alternate" title="The Go Blog" type="application/atom+xml" href="/blog/feed.atom">
+
+  
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-W8MVQXG');</script>
+  
+<script src="/js/site.js"></script>
+<meta name="og:url" content="https://go.dev/blog/subtests">
+<meta name="og:title" content="Using Subtests and Sub-benchmarks - The Go Programming Language">
+<title>Using Subtests and Sub-benchmarks - The Go Programming Language</title>
+
+<meta name="og:description" content="How to use Go 1.7&#39;s new subtests and sub-benchmarks.">
+<meta name="description" content="How to use Go 1.7&#39;s new subtests and sub-benchmarks.">
+
+<meta name="og:image" content="https://go.dev/doc/gopher/gopher5logo.jpg">
+<meta name="twitter:image" content="https://go.dev/doc/gopher/runningsquare.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@golang">
+</head>
+<body class="Site">
+  
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W8MVQXG"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  
+
+
+<header class="Site-header js-siteHeader">
+  <div class="Header Header--dark">
+    <nav class="Header-nav">
+      <a href="/">
+        <img
+          class="js-headerLogo Header-logo"
+          src="/images/go-logo-white.svg"
+          alt="Go">
+      </a>
+      <div class="skip-navigation-wrapper">
+        <a class="skip-to-content-link" aria-label="Skip to main content" href="#main-content"> Skip to Main Content </a>
+      </div>
+      <div class="Header-rightContent">
+        <ul class="Header-menu">
+          <li class="Header-menuItem ">
+            <a href="#"  class="js-desktop-menu-hover" aria-label=Why&#32;Go aria-describedby="dropdown-description">
+              Why Go <i class="material-icons" aria-hidden="true">arrow_drop_down</i>
+            </a>
+            <div class="screen-reader-only" id="dropdown-description" hidden>
+              Press Enter to activate/deactivate dropdown
+            </div>
+              <ul class="Header-submenu js-desktop-submenu-hover" aria-label="submenu">
+                  <li class="Header-submenuItem">
+                    <div>
+                        <a href="/solutions/case-studies">
+                          Case Studies
+                          
+                        </a>
+                    </div>
+                    <p>Common problems companies solve with Go</p>
+                  </li>
+                  <li class="Header-submenuItem">
+                    <div>
+                        <a href="/solutions/use-cases">
+                          Use Cases
+                          
+                        </a>
+                    </div>
+                    <p>Stories about how and why companies use Go</p>
+                  </li>
+                  <li class="Header-submenuItem">
+                    <div>
+                        <a href="/security/">
+                          Security
+                          
+                        </a>
+                    </div>
+                    <p>How Go can help keep you secure by default</p>
+                  </li>
+              </ul>
+          </li>
+          <li class="Header-menuItem ">
+            <a href="/learn/"  aria-label=Learn aria-describedby="dropdown-description">
+              Learn 
+            </a>
+            <div class="screen-reader-only" id="dropdown-description" hidden>
+              Press Enter to activate/deactivate dropdown
+            </div>
+          </li>
+          <li class="Header-menuItem ">
+            <a href="#"  class="js-desktop-menu-hover" aria-label=Docs aria-describedby="dropdown-description">
+              Docs <i class="material-icons" aria-hidden="true">arrow_drop_down</i>
+            </a>
+            <div class="screen-reader-only" id="dropdown-description" hidden>
+              Press Enter to activate/deactivate dropdown
+            </div>
+              <ul class="Header-submenu js-desktop-submenu-hover" aria-label="submenu">
+                  <li class="Header-submenuItem">
+                    <div>
+                        <a href="/ref/spec">
+                          Go Spec
+                          
+                        </a>
+                    </div>
+                    <p>The official Go language specification</p>
+                  </li>
+                  <li class="Header-submenuItem">
+                    <div>
+                        <a href="/doc">
+                          Go User Manual
+                          
+                        </a>
+                    </div>
+                    <p>A complete introduction to building software with Go</p>
+                  </li>
+                  <li class="Header-submenuItem">
+                    <div>
+                        <a href="https://pkg.go.dev/std">
+                          Standard library
+                          
+                        </a>
+                    </div>
+                    <p>Reference documentation for Go&#39;s standard library</p>
+                  </li>
+                  <li class="Header-submenuItem">
+                    <div>
+                        <a href="/doc/devel/release">
+                          Release Notes
+                          
+                        </a>
+                    </div>
+                    <p>Learn what&#39;s new in each Go release</p>
+                  </li>
+                  <li class="Header-submenuItem">
+                    <div>
+                        <a href="/doc/effective_go">
+                          Effective Go
+                          
+                        </a>
+                    </div>
+                    <p>Tips for writing clear, performant, and idiomatic Go code</p>
+                  </li>
+              </ul>
+          </li>
+          <li class="Header-menuItem ">
+            <a href="https://pkg.go.dev"  aria-label=Packages aria-describedby="dropdown-description">
+              Packages 
+            </a>
+            <div class="screen-reader-only" id="dropdown-description" hidden>
+              Press Enter to activate/deactivate dropdown
+            </div>
+          </li>
+          <li class="Header-menuItem ">
+            <a href="#"  class="js-desktop-menu-hover" aria-label=Community aria-describedby="dropdown-description">
+              Community <i class="material-icons" aria-hidden="true">arrow_drop_down</i>
+            </a>
+            <div class="screen-reader-only" id="dropdown-description" hidden>
+              Press Enter to activate/deactivate dropdown
+            </div>
+              <ul class="Header-submenu js-desktop-submenu-hover" aria-label="submenu">
+                  <li class="Header-submenuItem">
+                    <div>
+                        <a href="/talks/">
+                          Recorded Talks
+                          
+                        </a>
+                    </div>
+                    <p>Videos from prior events</p>
+                  </li>
+                  <li class="Header-submenuItem">
+                    <div>
+                        <a href="https://www.meetup.com/pro/go">
+                          Meetups
+                           <i class="material-icons">open_in_new</i>
+                        </a>
+                    </div>
+                    <p>Meet other local Go developers</p>
+                  </li>
+                  <li class="Header-submenuItem">
+                    <div>
+                        <a href="/wiki/Conferences">
+                          Conferences
+                           <i class="material-icons">open_in_new</i>
+                        </a>
+                    </div>
+                    <p>Learn and network with Go developers from around the world</p>
+                  </li>
+                  <li class="Header-submenuItem">
+                    <div>
+                        <a href="/blog">
+                          Go blog
+                          
+                        </a>
+                    </div>
+                    <p>The Go project&#39;s official blog.</p>
+                  </li>
+                  <li class="Header-submenuItem">
+                    <div>
+                        <a href="/help">
+                          Go project
+                          
+                        </a>
+                    </div>
+                    <p>Get help and stay informed from Go</p>
+                  </li>
+                  <li class="Header-submenuItem">
+                    <div>
+                        Get connected
+                    </div>
+                    <p></p>
+                      <div class="Header-socialIcons">
+                        
+                        <a class="Header-socialIcon" aria-label="Get connected with google-groups (Opens in new window)" href="https://groups.google.com/g/golang-nuts"><img src="/images/logos/social/google-groups.svg" /></a>
+                        <a class="Header-socialIcon" aria-label="Get connected with github (Opens in new window)" href="https://github.com/golang"><img src="/images/logos/social/github.svg" /></a>
+                        <a class="Header-socialIcon" aria-label="Get connected with bluesky (Opens in new window)" href="https://bsky.app/profile/golang.org"><img src="/images/logos/social/bluesky.svg" /></a>
+                        <a class="Header-socialIcon" aria-label="Get connected with mastodon (Opens in new window)" href="https://hachyderm.io/@golang"><img src="/images/logos/social/mastodon.svg" /></a>
+                        <a class="Header-socialIcon" aria-label="Get connected with twitter (Opens in new window)" href="https://twitter.com/golang"><img src="/images/logos/social/twitter.svg" /></a>
+                        <a class="Header-socialIcon" aria-label="Get connected with reddit (Opens in new window)" href="https://www.reddit.com/r/golang/"><img src="/images/logos/social/reddit.svg" /></a>
+                        <a class="Header-socialIcon" aria-label="Get connected with slack (Opens in new window)" href="https://invite.slack.golangbridge.org/"><img src="/images/logos/social/slack.svg" /></a>
+                        <a class="Header-socialIcon" aria-label="Get connected with stack-overflow (Opens in new window)" href="https://stackoverflow.com/tags/go"><img src="/images/logos/social/stack-overflow.svg" /></a>
+                      </div>
+                  </li>
+              </ul>
+          </li>
+        </ul>
+        <button class="Header-navOpen js-headerMenuButton Header-navOpen--white" aria-label="Open navigation.">
+        </button>
+      </div>
+    </nav>
+    
+  </div>
+</header>
+<aside class="NavigationDrawer js-header">
+  <nav class="NavigationDrawer-nav">
+    <div class="NavigationDrawer-header">
+      <a href="/">
+        <img class="NavigationDrawer-logo" src="/images/go-logo-blue.svg" alt="Go.">
+      </a>
+    </div>
+    <ul class="NavigationDrawer-list">
+        
+          <li class="NavigationDrawer-listItem js-mobile-subnav-trigger  NavigationDrawer-hasSubnav">
+            <a href="#"><span>Why Go</span> <i class="material-icons">navigate_next</i></a>
+
+            <div class="NavigationDrawer NavigationDrawer-submenuItem">
+              <nav class="NavigationDrawer-nav">
+                <div class="NavigationDrawer-header">
+                  <a href="#"><i class="material-icons">navigate_before</i>Why Go</a>
+                </div>
+                <ul class="NavigationDrawer-list">
+                    <li class="NavigationDrawer-listItem">
+                        <a href="/solutions/case-studies">
+                          Case Studies
+                          
+                        </a>
+                      
+                    </li>
+                    <li class="NavigationDrawer-listItem">
+                        <a href="/solutions/use-cases">
+                          Use Cases
+                          
+                        </a>
+                      
+                    </li>
+                    <li class="NavigationDrawer-listItem">
+                        <a href="/security/">
+                          Security
+                          
+                        </a>
+                      
+                    </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+
+        
+        
+          <li class="NavigationDrawer-listItem ">
+            <a href="/learn/">Learn</a>
+          </li>
+        
+        
+          <li class="NavigationDrawer-listItem js-mobile-subnav-trigger  NavigationDrawer-hasSubnav">
+            <a href="#"><span>Docs</span> <i class="material-icons">navigate_next</i></a>
+
+            <div class="NavigationDrawer NavigationDrawer-submenuItem">
+              <nav class="NavigationDrawer-nav">
+                <div class="NavigationDrawer-header">
+                  <a href="#"><i class="material-icons">navigate_before</i>Docs</a>
+                </div>
+                <ul class="NavigationDrawer-list">
+                    <li class="NavigationDrawer-listItem">
+                        <a href="/ref/spec">
+                          Go Spec
+                          
+                        </a>
+                      
+                    </li>
+                    <li class="NavigationDrawer-listItem">
+                        <a href="/doc">
+                          Go User Manual
+                          
+                        </a>
+                      
+                    </li>
+                    <li class="NavigationDrawer-listItem">
+                        <a href="https://pkg.go.dev/std">
+                          Standard library
+                          
+                        </a>
+                      
+                    </li>
+                    <li class="NavigationDrawer-listItem">
+                        <a href="/doc/devel/release">
+                          Release Notes
+                          
+                        </a>
+                      
+                    </li>
+                    <li class="NavigationDrawer-listItem">
+                        <a href="/doc/effective_go">
+                          Effective Go
+                          
+                        </a>
+                      
+                    </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+
+        
+        
+          <li class="NavigationDrawer-listItem ">
+            <a href="https://pkg.go.dev">Packages</a>
+          </li>
+        
+        
+          <li class="NavigationDrawer-listItem js-mobile-subnav-trigger  NavigationDrawer-hasSubnav">
+            <a href="#"><span>Community</span> <i class="material-icons">navigate_next</i></a>
+
+            <div class="NavigationDrawer NavigationDrawer-submenuItem">
+              <nav class="NavigationDrawer-nav">
+                <div class="NavigationDrawer-header">
+                  <a href="#"><i class="material-icons">navigate_before</i>Community</a>
+                </div>
+                <ul class="NavigationDrawer-list">
+                    <li class="NavigationDrawer-listItem">
+                        <a href="/talks/">
+                          Recorded Talks
+                          
+                        </a>
+                      
+                    </li>
+                    <li class="NavigationDrawer-listItem">
+                        <a href="https://www.meetup.com/pro/go">
+                          Meetups
+                           <i class="material-icons">open_in_new</i>
+                        </a>
+                      
+                    </li>
+                    <li class="NavigationDrawer-listItem">
+                        <a href="/wiki/Conferences">
+                          Conferences
+                           <i class="material-icons">open_in_new</i>
+                        </a>
+                      
+                    </li>
+                    <li class="NavigationDrawer-listItem">
+                        <a href="/blog">
+                          Go blog
+                          
+                        </a>
+                      
+                    </li>
+                    <li class="NavigationDrawer-listItem">
+                        <a href="/help">
+                          Go project
+                          
+                        </a>
+                      
+                    </li>
+                    <li class="NavigationDrawer-listItem">
+                        <div>Get connected</div>
+                        <div class="Header-socialIcons">
+                          
+                            <a class="Header-socialIcon" href="https://groups.google.com/g/golang-nuts"><img src="/images/logos/social/google-groups.svg" /></a>
+                            <a class="Header-socialIcon" href="https://github.com/golang"><img src="/images/logos/social/github.svg" /></a>
+                            <a class="Header-socialIcon" href="https://bsky.app/profile/golang.org"><img src="/images/logos/social/bluesky.svg" /></a>
+                            <a class="Header-socialIcon" href="https://hachyderm.io/@golang"><img src="/images/logos/social/mastodon.svg" /></a>
+                            <a class="Header-socialIcon" href="https://twitter.com/golang"><img src="/images/logos/social/twitter.svg" /></a>
+                            <a class="Header-socialIcon" href="https://www.reddit.com/r/golang/"><img src="/images/logos/social/reddit.svg" /></a>
+                            <a class="Header-socialIcon" href="https://invite.slack.golangbridge.org/"><img src="/images/logos/social/slack.svg" /></a>
+                            <a class="Header-socialIcon" href="https://stackoverflow.com/tags/go"><img src="/images/logos/social/stack-overflow.svg" /></a>
+                        </div>
+                    </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+
+        
+    </ul>
+  </nav>
+</aside>
+<div class="NavigationDrawer-scrim js-scrim" role="presentation"></div>
+<main class="SiteContent SiteContent--default" id="main-content">
+  
+<div id="blog"><div id="content">
+  <div id="content">
+
+    <div class="Article" data-slug="/blog/subtests">
+    
+    <h1 class="small"><a href="/blog/">The Go Blog</a></h1>
+    
+
+    <h1>Using Subtests and Sub-benchmarks</h1>
+      
+      <p class="author">
+      Marcel van Lohuizen<br>
+      3 October 2016
+      </p>
+      
+      <div class='markdown'>
+<h2 id="introduction">Introduction</h2>
+<p>In Go 1.7, the <code>testing</code> package introduces a Run method on the
+<a href="/pkg/testing/#T.Run"><code>T</code></a> and
+<a href="/pkg/testing/#B.Run"><code>B</code></a> types
+that allows for the creation of subtests and sub-benchmarks.
+The introduction of subtests and sub-benchmarks enables better handling of
+failures, fine-grained control of which tests to run from the command line,
+control of parallelism, and often results in simpler and more maintainable code.</p>
+<h2 id="table-driven-tests-basics">Table-driven tests basics</h2>
+<p>Before digging into the details, let&rsquo;s first discuss a common
+way of writing tests in Go.
+A series of related checks can be implemented by looping over a slice of test
+cases:</p>
+<pre><code>func TestTime(t *testing.T) {
+    testCases := []struct {
+        gmt  string
+        loc  string
+        want string
+    }{
+        {&quot;12:31&quot;, &quot;Europe/Zuri&quot;, &quot;13:31&quot;},     // incorrect location name
+        {&quot;12:31&quot;, &quot;America/New_York&quot;, &quot;7:31&quot;}, // should be 07:31
+        {&quot;08:08&quot;, &quot;Australia/Sydney&quot;, &quot;18:08&quot;},
+    }
+    for _, tc := range testCases {
+        loc, err := time.LoadLocation(tc.loc)
+        if err != nil {
+            t.Fatalf(&quot;could not load location %q&quot;, tc.loc)
+        }
+        gmt, _ := time.Parse(&quot;15:04&quot;, tc.gmt)
+        if got := gmt.In(loc).Format(&quot;15:04&quot;); got != tc.want {
+            t.Errorf(&quot;In(%s, %s) = %s; want %s&quot;, tc.gmt, tc.loc, got, tc.want)
+        }
+    }
+}
+</code></pre>
+<p>This approach, commonly referred to as table-driven tests, reduces the amount
+of repetitive code compared to repeating the same code for each test
+and makes it straightforward to add more test cases.</p>
+<h2 id="table-driven-benchmarks">Table-driven benchmarks</h2>
+<p>Before Go 1.7 it was not possible to use the same table-driven approach for
+benchmarks.
+A benchmark tests the performance of an entire function, so iterating over
+benchmarks would just measure all of them as a single benchmark.</p>
+<p>A common workaround was to define separate top-level benchmarks
+that each call a common function with different parameters.
+For instance, before 1.7 the <code>strconv</code> package&rsquo;s benchmarks for <code>AppendFloat</code>
+looked something like this:</p>
+<pre><code>func benchmarkAppendFloat(b *testing.B, f float64, fmt byte, prec, bitSize int) {
+    dst := make([]byte, 30)
+    b.ResetTimer() // Overkill here, but for illustrative purposes.
+    for i := 0; i &lt; b.N; i++ {
+        AppendFloat(dst[:0], f, fmt, prec, bitSize)
+    }
+}
+
+func BenchmarkAppendFloatDecimal(b *testing.B) { benchmarkAppendFloat(b, 33909, 'g', -1, 64) }
+func BenchmarkAppendFloat(b *testing.B)        { benchmarkAppendFloat(b, 339.7784, 'g', -1, 64) }
+func BenchmarkAppendFloatExp(b *testing.B)     { benchmarkAppendFloat(b, -5.09e75, 'g', -1, 64) }
+func BenchmarkAppendFloatNegExp(b *testing.B)  { benchmarkAppendFloat(b, -5.11e-95, 'g', -1, 64) }
+func BenchmarkAppendFloatBig(b *testing.B)     { benchmarkAppendFloat(b, 123456789123456789123456789, 'g', -1, 64) }
+...
+</code></pre>
+<p>Using the <code>Run</code> method available in Go 1.7, the same set of benchmarks is now
+expressed as a single top-level benchmark:</p>
+<pre><code>func BenchmarkAppendFloat(b *testing.B) {
+    benchmarks := []struct{
+        name    string
+        float   float64
+        fmt     byte
+        prec    int
+        bitSize int
+    }{
+        {&quot;Decimal&quot;, 33909, 'g', -1, 64},
+        {&quot;Float&quot;, 339.7784, 'g', -1, 64},
+        {&quot;Exp&quot;, -5.09e75, 'g', -1, 64},
+        {&quot;NegExp&quot;, -5.11e-95, 'g', -1, 64},
+        {&quot;Big&quot;, 123456789123456789123456789, 'g', -1, 64},
+        ...
+    }
+    dst := make([]byte, 30)
+    for _, bm := range benchmarks {
+        b.Run(bm.name, func(b *testing.B) {
+            for i := 0; i &lt; b.N; i++ {
+                AppendFloat(dst[:0], bm.float, bm.fmt, bm.prec, bm.bitSize)
+            }
+        })
+    }
+}
+</code></pre>
+<p>Each invocation of the <code>Run</code> method creates a separate benchmark.
+An enclosing benchmark function that calls a <code>Run</code> method is only run once and
+is not measured.</p>
+<p>The new code has more lines of code, but is more maintainable, more readable,
+and consistent with the table-driven approach commonly used for testing.
+Moreover, common setup code is now shared between runs while eliminating the
+need to reset the timer.</p>
+<h2 id="table-driven-tests-using-subtests">Table-driven tests using subtests</h2>
+<p>Go 1.7 also introduces a <code>Run</code> method for creating subtests.
+This test is a rewritten version of our earlier example using subtests:</p>
+<pre><code>func TestTime(t *testing.T) {
+    testCases := []struct {
+        gmt  string
+        loc  string
+        want string
+    }{
+        {&quot;12:31&quot;, &quot;Europe/Zuri&quot;, &quot;13:31&quot;},
+        {&quot;12:31&quot;, &quot;America/New_York&quot;, &quot;7:31&quot;},
+        {&quot;08:08&quot;, &quot;Australia/Sydney&quot;, &quot;18:08&quot;},
+    }
+    for _, tc := range testCases {
+        t.Run(fmt.Sprintf(&quot;%s in %s&quot;, tc.gmt, tc.loc), func(t *testing.T) {
+            loc, err := time.LoadLocation(tc.loc)
+            if err != nil {
+                t.Fatal(&quot;could not load location&quot;)
+            }
+            gmt, _ := time.Parse(&quot;15:04&quot;, tc.gmt)
+            if got := gmt.In(loc).Format(&quot;15:04&quot;); got != tc.want {
+                t.Errorf(&quot;got %s; want %s&quot;, got, tc.want)
+            }
+        })
+    }
+}
+</code></pre>
+<p>The first thing to note is the difference in output from the two implementations.
+The original implementation prints:</p>
+<pre><code>--- FAIL: TestTime (0.00s)
+    time_test.go:62: could not load location &quot;Europe/Zuri&quot;
+</code></pre>
+<p>Even though there are two errors, execution of the test halts on the call to
+<code>Fatalf</code> and the second test never runs.</p>
+<p>The implementation using <code>Run</code> prints both:</p>
+<pre><code>--- FAIL: TestTime (0.00s)
+    --- FAIL: TestTime/12:31_in_Europe/Zuri (0.00s)
+        time_test.go:84: could not load location
+    --- FAIL: TestTime/12:31_in_America/New_York (0.00s)
+        time_test.go:88: got 07:31; want 7:31
+</code></pre>
+<p><code>Fatal</code> and its siblings causes a subtest to be skipped but not its parent or
+subsequent subtests.</p>
+<p>Another thing to note is the shorter error messages in the new implementation.
+Since the subtest name uniquely identifies the subtest there is no need to
+identify the test again within the error messages.</p>
+<p>There are several other benefits to using subtests or sub-benchmarks,
+as clarified by the following sections.</p>
+<h2 id="running-specific-tests-or-benchmarks">Running specific tests or benchmarks</h2>
+<p>Both subtests and sub-benchmarks can be singled out on the command line using
+the <a href="/cmd/go/#hdr-Description_of_testing_flags"><code>-run</code> or <code>-bench</code> flag</a>.
+Both flags take a slash-separated list of regular expressions that match the
+corresponding parts of the full name of the subtest or sub-benchmark.</p>
+<p>The full name of a subtest or sub-benchmark is a slash-separated list of
+its name and the names of all of its parents, starting with the top-level.
+The name is the corresponding function name for top-level tests and benchmarks,
+and the first argument to <code>Run</code> otherwise.
+To avoid display and parsing issues, a name is sanitized by replacing spaces
+with underscores and escaping non-printable characters.
+The same sanitizing is applied to the regular expressions passed to
+the <code>-run</code> or <code>-bench</code> flags.</p>
+<p>A few examples:</p>
+<p>Run tests that use a timezone in Europe:</p>
+<pre><code>$ go test -run=TestTime/&quot;in Europe&quot;
+--- FAIL: TestTime (0.00s)
+    --- FAIL: TestTime/12:31_in_Europe/Zuri (0.00s)
+        time_test.go:85: could not load location
+</code></pre>
+<p>Run only tests for times after noon:</p>
+<pre><code>$ go test -run=Time/12:[0-9] -v
+=== RUN   TestTime
+=== RUN   TestTime/12:31_in_Europe/Zuri
+=== RUN   TestTime/12:31_in_America/New_York
+--- FAIL: TestTime (0.00s)
+    --- FAIL: TestTime/12:31_in_Europe/Zuri (0.00s)
+        time_test.go:85: could not load location
+    --- FAIL: TestTime/12:31_in_America/New_York (0.00s)
+        time_test.go:89: got 07:31; want 7:31
+</code></pre>
+<p>Perhaps a bit surprising, using <code>-run=TestTime/New_York</code> won&rsquo;t match any tests.
+This is because the slash present in the location names is treated as
+a separator as well.
+Instead use:</p>
+<pre><code>$ go test -run=Time//New_York
+--- FAIL: TestTime (0.00s)
+    --- FAIL: TestTime/12:31_in_America/New_York (0.00s)
+        time_test.go:88: got 07:31; want 7:31
+</code></pre>
+<p>Note the <code>//</code> in the string passed to <code>-run</code>.
+The <code>/</code> in time zone name <code>America/New_York</code> is handled as if it were
+a separator resulting from a subtest.
+The first regular expression of the pattern (<code>TestTime</code>) matches the top-level
+test.
+The second regular expression (the empty string) matches anything, in this case
+the time and the continent part of the location.
+The third regular expression (<code>New_York</code>) matches the city part of the location.</p>
+<p>Treating slashes in names as separators allows the user to refactor
+hierarchies of tests without the need to change the naming.
+It also simplifies the escaping rules.
+The user should escape slashes in names, for instance by replacing them with
+backslashes, if this poses a problem.</p>
+<p>A unique sequence number is appended to test names that are not unique.
+So one could just pass an empty string to <code>Run</code>
+if there is no obvious naming scheme for subtests and the subtests
+can easily be identified by their sequence number.</p>
+<h2 id="setup-and-tear-down">Setup and Tear-down</h2>
+<p>Subtests and sub-benchmarks can be used to manage common setup and tear-down code:</p>
+<pre><code>func TestFoo(t *testing.T) {
+    // &lt;setup code&gt;
+    t.Run(&quot;A=1&quot;, func(t *testing.T) { ... })
+    t.Run(&quot;A=2&quot;, func(t *testing.T) { ... })
+    t.Run(&quot;B=1&quot;, func(t *testing.T) {
+        if !test(foo{B:1}) {
+            t.Fail()
+        }
+    })
+    // &lt;tear-down code&gt;
+}
+</code></pre>
+<p>The setup and tear-down code will run if any of the enclosed subtests are run
+and will run at most once.
+This applies even if any of the subtests calls <code>Skip</code>, <code>Fail</code>, or <code>Fatal</code>.</p>
+<h2 id="control-of-parallelism">Control of Parallelism</h2>
+<p>Subtests allow fine-grained control over parallelism.
+To understand how to use subtests in the way
+it is important to understand the semantics of parallel tests.</p>
+<p>Each test is associated with a test function.
+A test is called a parallel test if its test function calls the Parallel
+method on its instance of <code>testing.T</code>.
+A parallel test never runs concurrently with a sequential test and its execution
+is suspended until its calling test function, that of the parent test,
+has returned.
+The <code>-parallel</code> flag defines the maximum number of parallel tests that can run
+in parallel.</p>
+<p>A test blocks until its test function returns and all of its subtests
+have completed.
+This means that the parallel tests that are run by a sequential test will
+complete before any other consecutive sequential test is run.</p>
+<p>This behavior is identical for tests created by <code>Run</code> and top-level tests.
+In fact, under the hood top-level tests are implemented as subtests of
+a hidden master test.</p>
+<h3 id="run-a-group-of-tests-in-parallel">Run a group of tests in parallel</h3>
+<p>The above semantics allows for running a group of tests in parallel with
+each other but not with other parallel tests:</p>
+<pre><code>func TestGroupedParallel(t *testing.T) {
+    for _, tc := range testCases {
+        tc := tc // capture range variable
+        t.Run(tc.Name, func(t *testing.T) {
+            t.Parallel()
+            if got := foo(tc.in); got != tc.out {
+                t.Errorf(&quot;got %v; want %v&quot;, got, tc.out)
+            }
+            ...
+        })
+    }
+}
+</code></pre>
+<p>The outer test will not complete until all parallel tests started by <code>Run</code>
+have completed.
+As a result, no other parallel tests can run in parallel to these parallel tests.</p>
+<p>Note that we need to capture the range variable to ensure that <code>tc</code> gets bound to
+the correct instance.</p>
+<h3 id="cleaning-up-after-a-group-of-parallel-tests">Cleaning up after a group of parallel tests</h3>
+<p>In the previous example we used the semantics to wait on a group of parallel
+tests to complete before commencing other tests.
+The same technique can be used to clean up after a group of parallel tests
+that share common resources:</p>
+<pre><code>func TestTeardownParallel(t *testing.T) {
+    // &lt;setup code&gt;
+    // This Run will not return until its parallel subtests complete.
+    t.Run(&quot;group&quot;, func(t *testing.T) {
+        t.Run(&quot;Test1&quot;, parallelTest1)
+        t.Run(&quot;Test2&quot;, parallelTest2)
+        t.Run(&quot;Test3&quot;, parallelTest3)
+    })
+    // &lt;tear-down code&gt;
+}
+</code></pre>
+<p>The behavior of waiting on a group of parallel tests is identical to that
+of the previous example.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Go 1.7&rsquo;s addition of subtests and sub-benchmarks allows you to write structured
+tests and benchmarks in a natural way that blends nicely into the existing
+tools.
+One way to think about this is that earlier versions of the testing package had
+a 1-level hierarchy: the package-level test was structured as a set of
+individual tests and benchmarks.
+Now that structure has been extended to those individual tests and benchmarks,
+recursively.
+In fact, in the implementation, the top-level tests and benchmarks are tracked
+as if they were subtests and sub-benchmarks of an implicit master test and
+benchmark: the treatment really is the same at all levels.</p>
+<p>The ability for tests to define this structure enables fine-grained execution of
+specific test cases, shared setup and teardown, and better control over test
+parallelism.
+We are excited to see what other uses people find. Enjoy.</p>
+</div>
+
+    </div>
+
+    
+    <div class="Article prevnext">
+    
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+        <p>
+        
+          
+            <b>Next article: </b><a href="/blog/http-tracing">Introducing HTTP Tracing</a><br>
+          
+        
+        
+          
+            <b>Previous article: </b><a href="/blog/go1.7-binary-size">Smaller Go 1.7 binaries</a><br>
+          
+        
+        <b><a href="/blog/all">Blog Index</a></b>
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+    </div>
+    
+
+  </div>
+</div>
+
+<script src="/js/play.js"></script>
+
+</main>
+<footer class="Site-footer">
+  <div class="Footer">
+    <div class="Container">
+      <div class="Footer-links">
+          <div class="Footer-linkColumn">
+            <a href="/solutions/" class="Footer-link Footer-link--primary" aria-describedby="footer-description">
+              Why Go
+            </a>
+              <a href="/solutions/use-cases" class="Footer-link" aria-describedby="footer-description">
+                Use Cases
+              </a>
+              <a href="/solutions/case-studies" class="Footer-link" aria-describedby="footer-description">
+                Case Studies
+              </a>
+          </div>
+          <div class="Footer-linkColumn">
+            <a href="/learn/" class="Footer-link Footer-link--primary" aria-describedby="footer-description">
+              Get Started
+            </a>
+              <a href="/play" class="Footer-link" aria-describedby="footer-description">
+                Playground
+              </a>
+              <a href="/tour/" class="Footer-link" aria-describedby="footer-description">
+                Tour
+              </a>
+              <a href="https://stackoverflow.com/questions/tagged/go?tab=Newest" class="Footer-link" aria-describedby="footer-description">
+                Stack Overflow
+              </a>
+              <a href="/help/" class="Footer-link" aria-describedby="footer-description">
+                Help
+              </a>
+          </div>
+          <div class="Footer-linkColumn">
+            <a href="https://pkg.go.dev" class="Footer-link Footer-link--primary" aria-describedby="footer-description">
+              Packages
+            </a>
+              <a href="/pkg/" class="Footer-link" aria-describedby="footer-description">
+                Standard Library
+              </a>
+              <a href="https://pkg.go.dev/about" class="Footer-link" aria-describedby="footer-description">
+                About Go Packages
+              </a>
+          </div>
+          <div class="Footer-linkColumn">
+            <a href="/project" class="Footer-link Footer-link--primary" aria-describedby="footer-description">
+              About
+            </a>
+              <a href="/dl/" class="Footer-link" aria-describedby="footer-description">
+                Download
+              </a>
+              <a href="/blog/" class="Footer-link" aria-describedby="footer-description">
+                Blog
+              </a>
+              <a href="https://github.com/golang/go/issues" class="Footer-link" aria-describedby="footer-description">
+                Issue Tracker
+              </a>
+              <a href="/doc/devel/release" class="Footer-link" aria-describedby="footer-description">
+                Release Notes
+              </a>
+              <a href="/brand" class="Footer-link" aria-describedby="footer-description">
+                Brand Guidelines
+              </a>
+              <a href="/conduct" class="Footer-link" aria-describedby="footer-description">
+                Code of Conduct
+              </a>
+          </div>
+          <div class="Footer-linkColumn">
+            <a href="/wiki/#the-go-community" class="Footer-link Footer-link--primary" aria-describedby="footer-description">
+              Connect
+            </a>
+              <a href="https://bsky.app/profile/golang.org" class="Footer-link" aria-describedby="footer-description">
+                Bluesky
+              </a>
+              <a href="https://hachyderm.io/@golang" class="Footer-link" aria-describedby="footer-description">
+                Mastodon
+              </a>
+              <a href="https://www.twitter.com/golang" class="Footer-link" aria-describedby="footer-description">
+                Twitter
+              </a>
+              <a href="https://github.com/golang" class="Footer-link" aria-describedby="footer-description">
+                GitHub
+              </a>
+              <a href="https://invite.slack.golangbridge.org/" class="Footer-link" aria-describedby="footer-description">
+                Slack
+              </a>
+              <a href="https://reddit.com/r/golang" class="Footer-link" aria-describedby="footer-description">
+                r/golang
+              </a>
+              <a href="https://www.meetup.com/pro/go" class="Footer-link" aria-describedby="footer-description">
+                Meetup
+              </a>
+              <a href="https://golangweekly.com/" class="Footer-link" aria-describedby="footer-description">
+                Golang Weekly
+              </a>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="screen-reader-only" id="footer-description" hidden>
+          Opens in new window.
+  </div>
+  <div class="Footer">
+    <div class="Container Container--fullBleed">
+      <div class="Footer-bottom">
+        <img class="Footer-gopher" src="/images/gophers/pilot-bust.svg" alt="The Go Gopher">
+        <ul class="Footer-listRow">
+          <li class="Footer-listItem">
+            <a href="/copyright" aria-describedby="footer-description">Copyright</a>
+          </li>
+          <li class="Footer-listItem">
+            <a href="/tos" aria-describedby="footer-description">Terms of Service</a>
+          </li>
+          <li class="Footer-listItem">
+            <a href="http://www.google.com/intl/en/policies/privacy/" aria-describedby="footer-description"
+              target="_blank"
+              rel="noopener">
+              Privacy Policy
+            </a>
+            </li>
+          <li class="Footer-listItem">
+            <a
+              href="/s/website-issue" aria-describedby="footer-description"
+              target="_blank"
+              rel="noopener"
+              >
+              Report an Issue
+            </a>
+          </li>
+          <li class="Footer-listItem go-Footer-listItem">
+            <button class="go-Button go-Button--text go-Footer-toggleTheme js-toggleTheme" aria-label="Toggle theme">
+              <img
+                data-value="auto"
+                class="go-Icon go-Icon--inverted"
+                height="24"
+                width="24"
+                src="/images/icons/brightness_6_gm_grey_24dp.svg"
+                alt="System theme">
+              <img
+                data-value="dark"
+                class="go-Icon go-Icon--inverted"
+                height="24"
+                width="24"
+                src="/images/icons/brightness_2_gm_grey_24dp.svg"
+                alt="Dark theme">
+              <img
+                data-value="light"
+                class="go-Icon go-Icon--inverted"
+                height="24"
+                width="24"
+                src="/images/icons/light_mode_gm_grey_24dp.svg"
+                alt="Light theme">
+            </button>
+          </li>
+        </ul>
+        <a class="Footer-googleLogo" target="_blank" href="https://google.com" rel="noopener">
+          <img class="Footer-googleLogoImg" src="/images/google-white.png" alt="Google logo">
+        </a>
+      </div>
+    </div>
+  </div>
+  <script src="/js/jquery.js"></script>
+  <script src="/js/carousels.js"></script>
+  <script src="/js/searchBox.js"></script>
+  <script src="/js/misc.js"></script>
+  <script src="/js/hats.js"></script>
+  <script src="/js/playground.js"></script>
+  <script src="/js/godocs.js"></script>
+  <script async src="/js/copypaste.js"></script>
+</footer>
+<section class="Cookie-notice js-cookieNotice">
+  <div>go.dev uses cookies from Google to deliver and enhance the quality of its services and to
+  analyze traffic. <a target=_blank href="https://policies.google.com/technologies/cookies">Learn more.</a></div>
+  <div><button class="go-Button">Okay</button></div>
+</section>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

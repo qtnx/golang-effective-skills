@@ -1,0 +1,605 @@
+---
+source_name: "External Linked Documentation"
+source_url: "https://research.swtch.com/godata"
+retrieved_at: "2026-06-02T06:43:04.419365+00:00"
+content_type: "text/html; charset=utf-8"
+truncated: false
+insecure_tls_fallback: true
+---
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>research!rsc: Go Data Structures</title>
+    <link rel="alternate" type="application/atom+xml" title="research!rsc - Atom" href="https://research.swtch.com/feed.atom" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="fonts/minion3/fonts.css" rel="stylesheet">
+<link href="fonts/source-code-pro/source-code-pro.css" rel="stylesheet">
+
+<style>
+  body {
+    padding: 0;
+    margin: 0;
+    font-size: 100%;
+    font-family: 'Minion 3', serif;
+  }
+  @media print {
+    img {page-break-inside: avoid;}
+    div.nosplit {page-break-inside: avoid;}
+  }
+  img.center {
+    display: block;
+    margin: 0 auto;
+  }
+  img.resizable {
+    max-width: 100%;
+    height: auto;
+  }
+  .pad {
+    padding-top: 1em;
+    padding-bottom: 1em;
+  }
+  p img.pad {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  a.anchor, a.back, a.footnote, a.fnref, a.footref {
+    color: black !important;
+    text-decoration: none !important;
+  }
+  a.back, a.fnref {
+    font-size: 50%;
+  }
+  @media print {
+    a.back, a.fnref {display: none;}
+  }
+  .header {
+    height: 1.25em;
+    background-color: #dff;
+    margin: 0;
+    padding: 0.1em 0.1em 0.2em;
+    border-top: 1px solid black;
+    border-bottom: 1px solid #8ff;
+  }
+  .header h3 {
+    margin: 0;
+    padding: 0 2em;
+    display: inline-block;
+    padding-right: 2em;
+    font-style: italic;
+    font-size: 90%;
+  }
+  .rss {
+    float: right;
+    padding-top: 0.2em;
+    padding-right: 2em;
+    display: none;
+  }
+  .toc {
+    margin-top: 2em;
+  }
+  .toc-title {
+    font-family: cursive, serif;
+    font-style: italic;
+    font-size: 300%;
+    line-height: 83%;
+  }
+  .toc-subtitle {
+    display: block;
+    margin-bottom: 1em;
+    font-size: 83%;
+  }
+  @media only screen and (max-width: 550px) { .toc-subtitle { display: none; } }
+  .header h3 a {
+    color: black;
+  }
+  .header h4 {
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    font-weight: normal;
+    font-size: 83%;
+  }
+  @media only screen and (max-width: 550px) { .header h4 { display: none; } }
+  .main {
+    padding: 0 2em;
+  }
+  @media only screen and (max-width: 479px) { .article { font-size: 120%; } }
+  .article h1 {
+    text-align: center;
+    font-size: 200%;
+  }
+  @media print {
+    .article h1 {
+      margin-top: 0;
+      font-size: 150%;
+    }
+    .whenprint {
+      margin-top: 0.25in;
+    }
+  }
+  .copyright {
+    font-size: 83%;
+  }
+  .subtitle {
+      font-size: 83%;
+  }
+  @media print {
+    .subtitle {
+      font-size: 12pt;
+    }
+  }
+  .normal {
+    font-size: medium;
+    font-weight: normal;
+  }
+  .when {
+    text-align: center;
+    font-size: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .when p {
+    margin: 0;
+    padding: 0;
+  }
+  .article h2 {
+    font-size: 125%;
+    padding-top: 0.25em;
+  }
+  .article h3 {
+    font-size: 100%;
+  }
+  pre {
+    margin-left: 4em;
+    margin-right: 4em;
+  }
+  pre, code {
+    font-family: 'Source Code Pro', monospace;
+    font-size: 90%;
+  }
+  .showcode pre {
+    margin: 0;
+    font-family: 'Source Code Pro', monospace;
+  }
+  .showcode-src a {
+    color: black;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 90%;
+  }
+  .showcode-comment {
+    color: #666;
+  }
+  .showcode-src {
+    float: right;
+    margin-left: 2em;
+    margin-right: 2em;
+  }
+  .showcode {
+    margin-left: 2em;
+    margin-right: 2em;
+    background: #ffffe9;
+    padding: 0.5em;
+    border: 1px solid black;
+    font-weight: 500;
+    break-before: avoid;
+  }
+  @media print {
+    .showcode { font-weight: normal; }
+  }
+  .showcode-end {
+    clear: right;
+  }
+  @media print {
+    pre { font-size: 83%; }
+    .showcode-src { font-size: 83%; }
+  }
+  .footer {
+    margin-top: 10px;
+    font-size: 83%;
+    font-family: sans-serif;
+  }
+  .comments {
+    margin-top: 2em;
+    background-color: #ffe;
+    border-top: 1px solid #aa4;
+    border-left: 1px solid #aa4;
+    border-right: 1px solid #aa4;
+  }
+  .comments-header {
+    padding: 0 5px 0 5px;
+  }
+  .comments-header p {
+    padding: 0;
+    margin: 3px 0 0 0;
+  }
+  .comments-body {
+    padding: 5px 5px 5px 5px;
+  }
+  #plus-comments {
+    border-bottom: 1px dotted #ccc;
+  }
+  .plus-comment {
+    width: 100%;
+    font-size: 14px;
+    border-top: 1px dotted #ccc;
+  }
+  .me {
+    background-color: #eec;
+  }
+  .plus-comment ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    display: inline-block;
+  }
+  .comment-when {
+    color:#999;
+    width:auto;
+    padding:0 5px;
+  }
+  .old {
+    font-size: 83%;
+  }
+  .plus-comment ul li {
+    display: inline-block;
+    vertical-align: top;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    padding: 0;
+  }
+  .plus-icon {
+    width: 45px;
+  }
+  .plus-img {
+    float: left;
+    margin: 4px 4px 4px 4px;
+    width: 32px;
+    height: 32px;
+  }
+  .plus-comment p {
+    margin: 0;
+    padding: 0;
+  }
+  .plus-clear {
+    clear: left;
+  }
+  .toc-when {
+    font-size: 83%;
+    color: #999;
+  }
+  .toc {
+    list-style: none;
+  }
+  .toc li {
+    margin-bottom: 0.5em;
+  }
+  .toc-head {
+    margin-bottom: 1em !important;
+    font-size: 117%;
+  }
+  .toc-summary {
+    margin-left: 2em;
+  }
+  .favorite {
+    font-weight: bold;
+  }
+  .article p, .article ol {
+    line-height: 144%;
+  }
+  sup, sub {
+    vertical-align: baseline;
+    position: relative;
+    font-size: 83%;
+  }
+  sup {
+    bottom: 1ex;
+  }
+  sub {
+    top: 0.8ex;
+  }
+
+  .main {
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
+    width: 900px;
+  }
+  @media print {
+    .main {
+      width: 7in;
+    }
+  }
+  .main-wide {
+    margin: 0 auto;
+  }
+  @media only screen and (min-width: 768px) and (max-width: 959px) { .main { width: 708px; } }
+  @media only screen and (min-width: 640px) and (max-width: 767px) { .main { width: 580px; } }
+  @media only screen and (min-width: 480px) and (max-width: 639px) { .main { width: 420px; } }
+  @media only screen and (max-width: 479px) { .main { width: 300px; } }
+
+  div.center { margin: 0 auto; }
+  div.lemma > p:first-child { margin-top: 0.25em; }
+  div.lemma > p:last-child { margin-bottom: 0.25em; }
+  h2, h3 { break-after: avoid; }
+  div.math { break-before: avoid; }
+  div.ivyRun {
+    break-before: avoid;
+    break-inside: avoid;
+    line-height: 1.2;
+  }
+  .ivyRunIn {
+    line-height: 1.2;
+  }
+  ul { break-before: avoid; }
+  pre { before-before: avoid; break-inside: avoid; }
+  div.lemma{
+    border: 1px solid black;
+    padding: 0 0.5em 0 0.5em;
+    margin: 0.5em;
+  }
+  mtd { padding: 0.5ex 0.2em 0.5ex 0.2em; }
+  mi, mtext, mn { font-family: 'Minion 3'; }
+  mn.nbf { font-weight: bold; }
+  math[display="block"] { padding: 0.5em 0; }
+  pre code !important { word-spacing: normal; }
+  code { word-spacing: -0.25em; }
+  table.md {
+    border-top: 2px solid black;
+    margin: 0 auto;
+    border-bottom: 1px solid black;
+    break-before: avoid;
+    break-inside: avoid;
+    border-collapse: collapse;
+  }
+  table.md tr.th {
+    border-bottom: 1px solid black;
+  }
+  table.md td { padding-left: 1ex; padding-right: 1ex; }
+  table.md td:nth-child(1) { padding-left: 0 !important; }
+  table.md td:last-child { padding-right: 0 !important; }
+  p {
+    widows: 2;
+    orphans: 2;
+  }
+  pre.language-in {
+    background: #ffffe9;
+    margin-left: 2em;
+    margin-right: 2em;
+    padding: 0.5em;
+    border: 1px solid black;
+    margin-bottom: 0;
+    border-bottom: 0.5px solid black;
+  }
+  pre.language-out {
+    margin-top: 0;
+    background: #f8f8f8;
+    margin-left: 2em;
+    margin-right: 2em;
+    padding: 0.5em;
+    border: 1px solid black;
+    border-top: none;
+  }
+  .oldnum { font-variant-numeric: oldstyle-nums; }
+  .smallcaps { font-variant-caps: small-caps; }
+  .whenprint {
+    display: none;
+  }
+  @media print {
+    body {
+      font-size: 10pt;
+    }
+    a {
+      color: black;
+      text-decoration: none;
+    }
+    .header {
+      display: none;
+    }
+    .whenprint {
+      display: block;
+    }
+    .when {
+      display: none;
+    }
+    .main {
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .ivyRunIn, .ivyBottomRunIn {
+      border-bottom: 1px solid #ccc;
+    }
+    @page {
+      margin-top: 0.75in;
+      margin-bottom: 0.75in;
+      @top-center {
+        font-size: 10pt;
+        margin-top: 0.25in;
+        content: "Go Data Structures";
+        font-family: 'Minion Pro', 'Minion 3', serif;
+        font-style: italic;
+      }
+      @bottom-center {
+        content: counter(page);
+        font-size: 10pt;
+        margin-bottom: 0.25in;
+        font-variant-numeric: oldstyle-nums;
+        font-family: 'Minion Pro', 'Minion 3', serif;
+      }
+    }
+    @page :first {
+      margin-top: 0.5in !important;
+      @top-center {
+         content: "";
+      }
+      @bottom-center {
+         font-style: italic;
+         content: "";
+      }
+    }
+  }
+  ol.fn {
+    list-style: none;
+    counter-reset: footnote;
+    padding-left: 0;
+  }
+  ol.fn li {
+    counter-increment: footnote;
+    text-indent: -30px;
+    padding-left: 30px;
+  }
+  ol.fn li::before {
+    content: "[" counter(footnote) "] ";
+  }
+}
+</style>
+
+  </head>
+  <body>
+
+
+
+<div class="header">
+  <h3><a href="/">research!rsc</a></h3>
+  <h4>Thoughts and links about programming,
+    by <a href="https://swtch.com/~rsc/" rel="author">Russ Cox</a> </h4>
+  <a class="rss" href="/feed.atom">RSS</a>
+</div>
+
+    <div class="main">
+      <div class="article">
+        <h1>Go Data Structures
+
+        <div class="normal">
+        <div class="whenprint">
+Russ Cox<br>
+
+November 24, 2009
+
+<br>
+<i>research.swtch.com/godata</i>
+
+        </div>
+        <div class="when">
+
+            Posted on Tuesday, November 24, 2009.
+
+
+        </div>
+        </div>
+        </h1>
+       
+
+<p>
+<p class="lp">When explaining Go to new programmers, I've found that it often helps to explain what Go values look like in memory, to build the right intuition about which operations are expensive and which are not. This post is about basic types, structs, arrays, and slices.</p>
+<h2>Basic types</h2>
+<p class="pp">Let's start with some simple examples:</p><center><img src="https://research.swtch.com/godata1.png" /></center>
+<p class="lp">The variable <code>i</code> has type <code>int</code>, represented in memory as a single 32-bit word.  (All these pictures show a 32-bit memory layout; in the current implementations, only the pointer gets bigger on a 64-bit machine&#8212;<code>int</code> is still 32 bits&#8212;though an implementation could choose to use 64 bits instead.) </p>
+<p class="pp">The variable <code>j</code> has type <code>int32</code>, because of the explicit conversion.  Even though <code>i</code> and <code>j</code> have the same memory layout, they have different types: the assignment <code>i = j</code> is a type error and must be written with an explicit conversion: <code>i = int(j)</code>. </p>
+<p class="pp">The variable <code>f</code> has type <code>float</code>, which the current implementations represent as a 32-bit floating-point value. It has the same memory footprint as the <code>int32</code> but a different internal layout. </p>
+
+<h2>Structs and pointers</h2>
+<p class="pp">Now things start to pick up. The variable <code>bytes</code> has type <code>[5]byte</code>, an array of 5 <code>byte</code>s.  Its memory representation is just those 5 bytes, one after the other, like a C array. Similarly, <code>primes</code> is an array of 4 <code>int</code>s. </p>
+<p class="pp">Go, like C but unlike Java, gives the programmer control over what is and is not a pointer.  For example, this type definition: </p>
+<pre class="indent">type Point struct { X, Y int }
+</pre>
+<p class="lp"> defines a simple struct type named <code>Point</code>, represented as two adjacent <code>int</code>s in memory.</p><center><img src="https://research.swtch.com/godata1a.png" /></center>
+<p class="lp">The <a href="http://golang.org/doc/go_spec.html#Composite_literals">composite literal syntax</a> <code>Point{10, 20}</code> denotes an initialized <code>Point</code>. Taking the address of a composite literal  denotes a pointer to a freshly allocated and initialized <code>Point</code>. The former is two words in memory; the latter is a pointer to two words in memory. </p>
+<p class="pp">Fields in a struct are laid out side by side in memory.</p>
+<pre class="indent">type Rect1 struct { Min, Max Point }
+type Rect2 struct { Min, Max *Point }</pre><center><img src="https://research.swtch.com/godata1b.png" /></center>
+<p class="lp"><code>Rect1</code>, a struct with two <code>Point</code> fields, is represented by two <code>Point</code>s&#8212;four ints&#8212;in a row. <code>Rect2</code>, a struct with two <code>*Point</code> fields, is represented by two <code>*Point</code>s.</p>
+<p class="pp">Programmers who have used C probably won't be surprised by the distinction between <code>Point</code> fields and <code>*Point</code> fields, while programmers who have only used Java or Python (or ...) may be surprised by having to make the decision. By giving the programmer control over basic memory layout, Go provides the ability to control the total size of a given collection of data structures, the number of allocations, and the memory access patterns, all of which are important for building systems that perform well. </p>
+<h2>Strings</h2>
+<p class="pp">With those preliminaries, we can move on to more interesting data types.</p><center><img src="https://research.swtch.com/godata2.png" /></center>
+<p class="lp">(The gray arrows denote pointers that are present in the implementation but not directly visible in programs.)</p>
+<p class="pp">A <code>string</code> is represented in memory as a 2-word structure containing a pointer to the string data and a length. Because the <code>string</code> is immutable, it is safe for multiple strings to share the same storage, so <a href="http://www.blogger.com/post-edit.g?blogID=8082954141980125536&amp;postID=65253524121904390">slicing</a> <code>s</code> results in a new 2-word structure with a potentially different pointer and length that still refers to the same byte sequence.  This means that slicing can be done without allocation or copying, making string slices as efficient as passing around explicit indexes.</p>
+<p class="pp">(As an aside, there is a <a href="http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=4513622">well-known gotcha</a> in Java and other languages that when you slice a string to save a small piece, the reference to the original keeps the entire original string in memory even though only a small amount is still needed. Go has this gotcha too.  The alternative, which we tried <a href="http://code.google.com/p/go/source/detail?r=70fa38e5a5bb">and rejected</a>, is to make string slicing so expensive&#8212;an allocation and a copy&#8212;that most programs avoid it.)</p>
+<h2>Slices</h2><center><img src="https://research.swtch.com/godata3.png" /></center>
+<p class="pp">A <a href="http://golang.org/doc/effective_go.html#slices">slice</a> is a reference to a section of an array. In memory, it is a 3-word structure contaning a pointer to the first element, the length of the slice, and the capacity. The length is the upper bound for indexing operations like <code>x[i]</code> while the capacity is the upper bound for slice operations like <code>x[i:j]</code>. </p>
+<p class="pp">Like slicing a string, slicing an array does not make a copy: it only creates a new structure holding a different pointer, length, and capacity. In the example, evaluating the composite literal <code>[]int{2, 3, 5, 7, 11}</code>  creates a new array containing the five values and then sets the fields of the slice <code>x</code> to describe that array. The slice expression <code>x[1:3]</code> does not allocate more data: it just writes the fields of a new slice structure to refer to  the same backing store. In the example, the length is 2&#8212;<code>y[0]</code> and <code>y[1]</code> are the only valid indexes&#8212;but the capacity is 4&#8212;<code>y[0:4]</code> is a valid slice expression. (See <a href="http://golang.org/doc/effective_go.html#slices">Effective Go</a> for more about length and capacity and how slices are used.) </p>
+<p> Because slices are multiword structures, not pointers, the slicing operation does not need to allocate memory, not even for the slice header, which can usually be kept on the stack. This representation makes slices about as cheap to use as passing around explicit pointer and length pairs in C. Go originally represented a slice as a pointer to the structure shown above, but doing so meant that every slice operation allocated a new memory object.  Even with a fast allocator, that creates a lot of unnecessary work for the garbage collector, and we found that, as was the case with strings above, programs avoided slicing operations in favor of passing explicit indices.  Removing the indirection and the allocation made slices cheap enough to avoid passing explicit indices in most cases. </p>
+<h2>New and Make</h2>
+<p class="pp">Go has two data structure creation functions: <code>new</code> and <code>make</code>. The distinction is a common early point of confusion but seems to quickly become natural. The basic distinction is that <code>new(T)</code> returns a <code>*T</code>, a pointer that Go programs can dereference implicitly (the black pointers in the diagrams), while <code>make(T, </code><i>args</i><code>)</code> returns an ordinary <code>T</code>, not a pointer. Often that <code>T</code> has inside it some implicit pointers (the gray pointers in the diagrams). <code>New</code> returns a pointer to zeroed memory, while <code>make</code> returns a complex structure.</p><center><img src="https://research.swtch.com/godata4.png" /></center>
+<p>There is a way to unify these two, but it would be a significant break from the C and C++ tradition: define <code>make(*T)</code> to return a pointer to a newly allocated <code>T</code>, so that the current <code>new(Point)</code> would be written <code>make(*Point)</code>. We tried this for a few days but decided it was too different from what people expected of an allocation function.</p>
+<h2>Coming soon...</h2>
+<p class="pp">This has already gotten a bit long. Interface values, maps, and channels will have to wait for future posts.</p></p>
+
+
+
+
+
+<div class="comments">
+  <div class="comments-header old">
+
+<p>(Comments originally posted via Blogger.)</p>
+  </div>
+  <div class="comments-body">
+    <div id="plus-comments">
+ <div class="plus-comment"><ul><li class="plus-text">
+
+<p><a href='http://www.blogger.com/profile/03184942757622768273'>tivadj</a> <span class="comment-when">(November 24, 2009 12:57 PM)</span> So what about Go performance comparing to something from C,C++; Java or C#? Expected degrade about -5% ?</p>
+ </li></ul></div>
+ <div class="plus-comment"><ul><li class="plus-text">
+
+<p><a href='http://www.blogger.com/profile/06768222333602596397'>Dubhead</a> <span class="comment-when">(November 24, 2009 6:22 PM)</span> Thank you for the article, it re-arranged my understanding of the topic.<br /><br />Two possible corrections:<br /><br />In &#39;Slices&#39;, &#39;x[0:4] is a valid slice expression&#39; should be something like &#39;if y:=x[1:3], then y[0:4] is valid slice expression&#39;.<br /><br />In &#39;new and make&#39; diagram, new(Rect) should be new(Rect1).</p>
+ </li></ul></div>
+ <div class="plus-comment"><ul><li class="plus-text">
+
+<p><a href='http://www.blogger.com/profile/08658644954244073101'>Artyom Shalkhakov</a> <span class="comment-when">(November 24, 2009 7:28 PM)</span> You&#39;ve shown that types in Go prescribe memory layout of data.<br /><br />I wonder whether it&#39;s possible to describe certain invariants using the  type system of Go?</p>
+ </li></ul></div>
+ <div class="plus-comment"><ul><li class="plus-text">
+
+<p><a href='http://www.blogger.com/profile/08305590711045918911'>tav</a> <span class="comment-when">(November 24, 2009 7:49 PM)</span> <span class='deleted-comment'>This post has been removed by the author.</span></p>
+ </li></ul></div>
+ <div class="plus-comment"><ul><li class="plus-text">
+
+<p><a href='http://www.blogger.com/profile/08305590711045918911'>tav</a> <span class="comment-when">(November 24, 2009 7:51 PM)</span> Hey Russ,<br /><br />Thanks for such an informative article. As a Python coder coming to Go, I was wondering if you would consider a series of &quot;best Go patterns&quot; for future articles?<br /><br />I &#8212; and probably a good number of others &#8212; are fairly clueless when it comes to issues of memory allocation, optimisation, etc. So it would be super helpful to learn better ways of doing things by way of comparison of &quot;good&quot; and &quot;bad&quot; ways of solving the same problem in Go&#8230;<br /><br />In any case, I look forward to your follow-up post on maps, interfaces and channels. Thanks!<br /><br />-- tav@espians.com</p>
+ </li></ul></div>
+ <div class="plus-comment"><ul><li class="plus-text">
+
+<p><a href='http://www.blogger.com/profile/01115506275519545033'>Julian Morrison</a> <span class="comment-when">(November 25, 2009 2:07 AM)</span> What is the utility of disallowing an index beyond the slice, but allowing a new slice up to the capacity? Is it to give something approximating the fill pointer of Java&#39;s Buffer interface?</p>
+ </li></ul></div>
+ <div class="plus-comment me"><ul><li class="plus-text">
+
+<p><a href="http://swtch.com/~rsc/">Russ Cox</a> <span class="comment-when">(November 29, 2009 10:07 PM)</span> @tivadj: That&#39;s certainly the goal.  You can look at the shootout site to see real comparisons.  Note that what passes for C or C++ in those benchmarks typically has liberal amounts of asm sprinkled in.<br /><br />@Dubhead: Thanks; fixed.<br /><br />@Artyom: What kinds of invariants are you wondering about?<br /><br />@tav: There&#39;s already a document that tries to do that: http://golang.org/doc/effective_go.html.<br /><br />@Julian: see the slices section of http://golang.org/doc/effective_go.html.<br />It helps catch out-of-bounds errors to disallow<br />indexing past len, because in most usage, the<br />data past len does not contain anything useful.</p>
+ </li></ul></div>
+ <div class="plus-comment"><ul><li class="plus-text">
+
+<p><a href='http://www.blogger.com/profile/08658644954244073101'>Artyom Shalkhakov</a> <span class="comment-when">(December 3, 2009 11:35 PM)</span> @rsc: For instance, I&#39;d like my compiler to check an array out-of-bounds access for me. There are research prototypes (e.g., ATS), but it would be great to get this one in a practical programming language. :)</p>
+ </li></ul></div>
+ <div class="plus-comment"><ul><li class="plus-text">
+
+<p><a href='http://www.blogger.com/profile/07315908327101747020'>MikeZ</a> <span class="comment-when">(December 5, 2009 7:00 AM)</span> A question about garbage collection of strings.  Let&#39;s say we have a string and a slice of it:<br /><br />s := &quot;hello&quot; // ptr to &quot;hello&quot;<br />t := s[2:2]  // ptr to &quot;llo&quot;<br />s = &quot;goodbye&quot; // &quot;hello&quot; now garbage?<br /><br />What happens to t if the current garbage collector collects after the last assignment to s?  Is the current GC smart enough to recognize that t points to the interior of &quot;hello&quot;, so &quot;hello&quot; should not be collected?</p>
+ </li></ul></div>
+ <div class="plus-comment"><ul><li class="plus-text">
+
+<p><a href='http://www.blogger.com/profile/05386052998550318388'>Brian Bulkowski</a> <span class="comment-when">(December 6, 2009 4:06 PM)</span> I believe the &#39;shootout&#39; site is a poor measure for what I use languages for. I expect to use strings, hashes, and lists liberally; those tests avoid those structures and concentrate on loops and read and write.<br /><br />That having been said, shootout claims Go is on the same level as Erlang, and nowhere near C.<br /><br />I looked at a few of the C programs; none included asm() statements. The binary tree functionality is 20x slower in Go than C.<br /><br />I&#39;m willing to believe that Go is immature and needs work, but to hear people claim &quot;go is meeting its goals&quot; when it&#39;s 20x slower than C (instead of 20 percent slower) steams me.</p>
+ </li></ul></div>
+ <div class="plus-comment me"><ul><li class="plus-text">
+
+<p><a href="http://swtch.com/~rsc/">Russ Cox</a> <span class="comment-when">(December 6, 2009 4:51 PM)</span> @Brian:<br /><br />The binary tree shootout is not a binary tree benchmark.  It&#39;s a garbage collection benchmark, and Go&#39;s garbage collector is pretty slow.  On the other hand, it has one, unlike C, and it will get better.<br /><br />If you look at real computation, instead of libraries, Go is holding its own with equivalent C code.  reverse-complement is now pretty much tied with the equivalent C program (not yet on the site, but in the Go repository), mandelbrot is 10% slower, nbody is 50% slower only because it doesn&#39;t inline the call to sqrt.<br /><br />Also, who said Go was meeting its performance goas?  I think it&#39;s doing pretty well for a rough implementation, but there is plenty of room for improvement and lots of low-hanging fruit.</p>
+ </li></ul></div>
+ <div class="plus-comment"><ul><li class="plus-text">
+
+<p><a href='http://www.blogger.com/profile/00287001698993178575'>Greg</a> <span class="comment-when">(April 4, 2011 11:19 PM)</span> really excellent description, thanks Russ.</p>
+ </li></ul></div>
+    </div>
+  </div>
+</div>
+
+
+      </div>
+    </div>
+  </body>
+</html>
+
+
+
+
+
+
+

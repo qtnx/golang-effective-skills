@@ -1,0 +1,4474 @@
+---
+source_name: "External Linked Documentation"
+source_url: "https://pkg.go.dev/sync/atomic"
+retrieved_at: "2026-06-02T06:42:55.567773+00:00"
+content_type: "text/html; charset=utf-8"
+truncated: false
+insecure_tls_fallback: true
+---
+
+
+
+<!DOCTYPE html>
+<html lang="en" data-layout="responsive" data-local="">
+  <head>
+    
+    <script>
+      window.addEventListener('error', window.__err=function f(e){f.p=f.p||[];f.p.push(e)});
+    </script>
+    <script>
+      (function() {
+        const theme = document.cookie.match(/prefers-color-scheme=(light|dark|auto)/)?.[1]
+        if (theme) {
+          document.querySelector('html').setAttribute('data-theme', theme);
+        }
+      }())
+    </script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Package atomic provides low-level atomic memory primitives useful for implementing synchronization algorithms.">
+    
+    <meta class="js-gtmID" data-gtmid="GTM-W8MVQXG">
+    <link rel="shortcut icon" href="/static/shared/icon/favicon.ico">
+    
+  
+    <link rel="canonical" href="https://pkg.go.dev/sync/atomic">
+  
+
+    <link href="/static/frontend/frontend.min.css?version=prod-frontend-00193-fdr" rel="stylesheet">
+    
+    <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="Go Packages">
+    
+    
+  <title>atomic package - sync/atomic - Go Packages</title>
+
+    
+  <link href="/static/frontend/unit/unit.min.css?version=prod-frontend-00193-fdr" rel="stylesheet">
+  
+  <link href="/static/frontend/unit/main/main.min.css?version=prod-frontend-00193-fdr" rel="stylesheet">
+
+
+  </head>
+  <body>
+    
+    <script>
+      function loadScript(src, mod = true) {
+        let s = document.createElement('script');
+        s.src = src;
+        if (mod) {
+          s.type = 'module';
+          s.async = true;
+          s.defer = true
+        }
+        document.head.appendChild(s);
+      }
+      loadScript("/third_party/dialog-polyfill/dialog-polyfill.js", false)
+      loadScript("/static/frontend/frontend.js");
+    </script>
+    
+  <header class="go-Header go-Header--full js-siteHeader">
+    <div class="go-Header-inner go-Header-inner--dark">
+      <nav class="go-Header-nav">
+        <a href="https://go.dev/" class="js-headerLogo" data-gtmc="nav link"
+            data-test-id="go-header-logo-link" role="heading" aria-level="1">
+          <img class="go-Header-logo" src="/static/shared/logo/go-white.svg" alt="Go">
+        </a>
+         <div class="skip-navigation-wrapper">
+            <a class="skip-to-content-link" aria-label="Skip to main content" href="#main-content"> Skip to Main Content </a>
+          </div>
+        <div class="go-Header-rightContent">
+          
+<div class="go-SearchForm js-searchForm">
+  <form
+    class="go-InputGroup go-ShortcutKey go-SearchForm-form"
+    action="/search"
+    data-shortcut="/"
+    data-shortcut-alt="search"
+    data-gtmc="search form"
+    aria-label="Search for a package"
+    role="search"
+  >
+    <input name="q" class="go-Input js-searchFocus" aria-label="Search for a package" type="search"
+        autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false"
+        placeholder="Search packages or symbols"
+        value="" />
+    <input name="m" value="" hidden>
+    <button class="go-Button go-Button--inverted" aria-label="Submit search">
+      <img
+        class="go-Icon"
+        height="24"
+        width="24"
+        src="/static/shared/icon/search_gm_grey_24dp.svg"
+        alt=""
+      />
+    </button>
+  </form>
+  <button class="go-SearchForm-expandSearch js-expandSearch" data-gtmc="nav button"
+      aria-label="Open search" data-test-id="expand-search">
+    <img class="go-Icon go-Icon--inverted" height="24" width="24"
+        src="/static/shared/icon/search_gm_grey_24dp.svg" alt="">
+
+  </button>
+</div>
+
+          <ul class="go-Header-menu">
+            <li class="go-Header-menuItem">
+              <a class="js-desktop-menu-hover" href="#" data-gtmc="nav link">
+                Why Go
+                <img class="go-Icon" height="24" width="24" src="/static/shared/icon/arrow_drop_down_gm_grey_24dp.svg" alt="submenu dropdown icon">
+              </a>
+              <ul class="go-Header-submenu go-Header-submenu--why js-desktop-submenu-hover" aria-label="submenu">
+                  <li class="go-Header-submenuItem">
+                    <div>
+                      <a href="https://go.dev/solutions#case-studies">
+                        <span>Case Studies</span>
+                      </a>
+                    </div>
+                    <p>Common problems companies solve with Go</p>
+                  </li>
+                  <li class="go-Header-submenuItem">
+                    <div>
+                      <a href="https://go.dev/solutions#use-cases">
+                        <span>Use Cases</span>
+                      </a>
+                    </div>
+                    <p>Stories about how and why companies use Go</p>
+                  </li>
+                  <li class="go-Header-submenuItem">
+                    <div>
+                      <a href="https://go.dev/security/">
+                        <span>Security</span>
+                      </a>
+                    </div>
+                    <p>How Go can help keep you secure by default</p>
+                  </li>
+              </ul>
+            </li>
+            <li class="go-Header-menuItem">
+              <a href="https://go.dev/learn/" data-gtmc="nav link">Learn</a>
+            </li>
+            <li class="go-Header-menuItem">
+              <a class="js-desktop-menu-hover" href="#" data-gtmc="nav link">
+                Docs
+                <img class="go-Icon" height="24" width="24" src="/static/shared/icon/arrow_drop_down_gm_grey_24dp.svg" alt="submenu dropdown icon">
+              </a>
+              <ul class="go-Header-submenu go-Header-submenu--docs js-desktop-submenu-hover" aria-label="submenu">
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/doc/effective_go">
+                      <span>Effective Go</span>
+                    </a>
+                  </div>
+                  <p>Tips for writing clear, performant, and idiomatic Go code</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/doc/">
+                      <span>Go User Manual</span>
+                    </a>
+                  </div>
+                  <p>A complete introduction to building software with Go</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://pkg.go.dev/std">
+                      <span>Standard library</span>
+                    </a>
+                  </div>
+                  <p>Reference documentation for Go's standard library</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/doc/devel/release">
+                      <span>Release Notes</span>
+                    </a>
+                  </div>
+                  <p>Learn what's new in each Go release</p>
+                </li>
+              </ul>
+            </li>
+            <li class="go-Header-menuItem go-Header-menuItem--active">
+              <a href="/" data-gtmc="nav link">Packages</a>
+            </li>
+            <li class="go-Header-menuItem">
+              <a class="js-desktop-menu-hover" href="#" data-gtmc="nav link">
+                Community
+                <img class="go-Icon" height="24" width="24" src="/static/shared/icon/arrow_drop_down_gm_grey_24dp.svg" alt="submenu dropdown icon">
+              </a>
+              <ul class="go-Header-submenu go-Header-submenu--community js-desktop-submenu-hover" aria-label="submenu">
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/talks/">
+                      <span>Recorded Talks</span>
+                    </a>
+                  </div>
+                  <p>Videos from prior events</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://www.meetup.com/pro/go">
+                      <span>Meetups</span>
+                      <i class="material-icons">
+                        <img class="go-Icon" height="24" width="24"
+                            src="/static/shared/icon/launch_gm_grey_24dp.svg" alt="">
+                      </i>
+                    </a>
+                  </div>
+                  <p>Meet other local Go developers</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://github.com/golang/go/wiki/Conferences">
+                      <span>Conferences</span>
+                      <i class="material-icons">
+                        <img class="go-Icon" height="24" width="24"
+                            src="/static/shared/icon/launch_gm_grey_24dp.svg" alt="">
+                      </i>
+                    </a>
+                  </div>
+                  <p>Learn and network with Go developers from around the world</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/blog">
+                      <span>Go blog</span>
+                    </a>
+                  </div>
+                  <p>The Go project's official blog.</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/help">
+                      <span>Go project</span>
+                    </a>
+                  </div>
+                  <p>Get help and stay informed from Go</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    Get connected
+                  </div>
+                  <p></p>
+                  <div class="go-Header-socialIcons">
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with google-groups (Opens in new window)"
+                        title="Get connected with google-groups (Opens in new window)"
+                        href="https://groups.google.com/g/golang-nuts">
+                        <img src="/static/shared/logo/social/google-groups.svg" />
+                      </a>
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with github (Opens in new window)"
+                        title="Get connected with github (Opens in new window)"
+                        href="https://github.com/golang">
+                        <img src="/static/shared/logo/social/github.svg" />
+                      </a>
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with twitter (Opens in new window)"
+                        title="Get connected with twitter (Opens in new window)"
+                        href="https://twitter.com/golang">
+                        <img src="/static/shared/logo/social/twitter.svg" />
+                      </a>
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with reddit (Opens in new window)"
+                        title="Get connected with reddit (Opens in new window)"
+                        href="https://www.reddit.com/r/golang/">
+                        <img src="/static/shared/logo/social/reddit.svg" />
+                      </a>
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with slack (Opens in new window)"
+                        title="Get connected with slack (Opens in new window)"
+                        href="https://invite.slack.golangbridge.org/">
+                        <img src="/static/shared/logo/social/slack.svg" />
+                      </a>
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with stack-overflow (Opens in new window)"
+                        title=""
+                        href="https://stackoverflow.com/collectives/go">
+                        <img src="/static/shared/logo/social/stack-overflow.svg" />
+                      </a>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <button class="go-Header-navOpen js-headerMenuButton go-Header-navOpen--white" data-gtmc="nav button" aria-label="Open navigation">
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <aside class="go-NavigationDrawer js-header">
+    <nav class="go-NavigationDrawer-nav">
+      <div class="go-NavigationDrawer-header">
+        <a href="https://go.dev/">
+          <img class="go-NavigationDrawer-logo" src="/static/shared/logo/go-blue.svg" alt="Go.">
+        </a>
+      </div>
+      <ul class="go-NavigationDrawer-list">
+          <li class="go-NavigationDrawer-listItem js-mobile-subnav-trigger go-NavigationDrawer-hasSubnav">
+            <a href="#">
+              <span>Why Go</span>
+              <i class="material-icons">
+                <img class="go-Icon" height="24" width="24"
+                  src="/static/shared/icon/navigate_next_gm_grey_24dp.svg" alt="">
+              </i>
+            </a>
+
+            <div class="go-NavigationDrawer go-NavigationDrawer-submenuItem">
+              <div class="go-NavigationDrawer-nav">
+                <div class="go-NavigationDrawer-header">
+                  <a href="#">
+                    <i class="material-icons">
+                      <img class="go-Icon" height="24" width="24"
+                        src="/static/shared/icon/navigate_before_gm_grey_24dp.svg" alt="">
+                      </i>
+                      Why Go
+                  </a>
+                </div>
+                <ul class="go-NavigationDrawer-list">
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/solutions#case-studies">
+                      Case Studies
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/solutions#use-cases">
+                      Use Cases
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/security/">
+                      Security
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="go-NavigationDrawer-listItem">
+            <a href="https://go.dev/learn/">Learn</a>
+          </li>
+          <li class="go-NavigationDrawer-listItem js-mobile-subnav-trigger go-NavigationDrawer-hasSubnav">
+            <a href="#">
+              <span>Docs</span>
+              <i class="material-icons">
+                <img class="go-Icon" height="24" width="24"
+                  src="/static/shared/icon/navigate_next_gm_grey_24dp.svg" alt="">
+              </i>
+            </a>
+
+            <div class="go-NavigationDrawer go-NavigationDrawer-submenuItem">
+              <div class="go-NavigationDrawer-nav">
+                <div class="go-NavigationDrawer-header">
+                  <a href="#"><i class="material-icons">
+                    <img class="go-Icon" height="24" width="24"
+                      src="/static/shared/icon/navigate_before_gm_grey_24dp.svg" alt="">
+                    </i>
+                    Docs
+                  </a>
+                </div>
+                <ul class="go-NavigationDrawer-list">
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/doc/effective_go">
+                      Effective Go
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/doc/">
+                      Go User Manual
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://pkg.go.dev/std">
+                      Standard library
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/doc/devel/release">
+                      Release Notes
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="go-NavigationDrawer-listItem go-NavigationDrawer-listItem--active">
+            <a href="/">Packages</a>
+          </li>
+          <li class="go-NavigationDrawer-listItem js-mobile-subnav-trigger go-NavigationDrawer-hasSubnav">
+            <a href="#">
+              <span>Community</span>
+              <i class="material-icons">
+                <img class="go-Icon" height="24" width="24"
+                  src="/static/shared/icon/navigate_next_gm_grey_24dp.svg" alt="">
+              </i>
+            </a>
+            <div class="go-NavigationDrawer go-NavigationDrawer-submenuItem">
+              <div class="go-NavigationDrawer-nav">
+                <div class="go-NavigationDrawer-header">
+                  <a href="#">
+                    <i class="material-icons">
+                      <img class="go-Icon" height="24" width="24"
+                        src="/static/shared/icon/navigate_before_gm_grey_24dp.svg" alt="">
+                    </i>
+                    Community
+                  </a>
+                </div>
+                <ul class="go-NavigationDrawer-list">
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/talks/">
+                      Recorded Talks
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://www.meetup.com/pro/go">
+                      Meetups
+                      <i class="material-icons">
+                      <img class="go-Icon" height="24" width="24"
+                          src="/static/shared/icon/launch_gm_grey_24dp.svg" alt="">
+                      </i>
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://github.com/golang/go/wiki/Conferences">
+                      Conferences
+                      <i class="material-icons">
+                        <img class="go-Icon" height="24" width="24" src="/static/shared/icon/launch_gm_grey_24dp.svg" alt="">
+                      </i>
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/blog">
+                      Go blog
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/help">
+                      Go project
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <div>Get connected</div>
+                    <div class="go-Header-socialIcons">
+                        <a class="go-Header-socialIcon" href="https://groups.google.com/g/golang-nuts"><img src="/static/shared/logo/social/google-groups.svg" /></a>
+                        <a class="go-Header-socialIcon" href="https://github.com/golang"><img src="/static/shared/logo/social/github.svg" /></a>
+                        <a class="go-Header-socialIcon" href="https://twitter.com/golang"><img src="/static/shared/logo/social/twitter.svg" /></a>
+                        <a class="go-Header-socialIcon" href="https://www.reddit.com/r/golang/"><img src="/static/shared/logo/social/reddit.svg" /></a>
+                        <a class="go-Header-socialIcon" href="https://invite.slack.golangbridge.org/"><img src="/static/shared/logo/social/slack.svg" /></a>
+                        <a class="go-Header-socialIcon" href="https://stackoverflow.com/collectives/go"><img src="/static/shared/logo/social/stack-overflow.svg" /></a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+      </ul>
+    </nav>
+  </aside>
+  <div class="go-NavigationDrawer-scrim js-scrim" role="presentation"></div>
+
+    
+  <main class="go-Main" id="main-content">
+    <div class="go-Main-banner" role="alert"></div>
+    <header class="go-Main-header js-mainHeader">
+  
+  
+  <nav class="go-Main-headerBreadcrumb go-Breadcrumb" aria-label="Breadcrumb" data-test-id="UnitHeader-breadcrumb">
+    <ol>
+      
+        
+          <li data-test-id="UnitHeader-breadcrumbItem">
+            <a href="/" data-gtmc="breadcrumb link">Discover Packages</a>
+          </li>
+        
+          <li data-test-id="UnitHeader-breadcrumbItem">
+            <a href="/std" data-gtmc="breadcrumb link">Standard library</a>
+          </li>
+        
+          <li data-test-id="UnitHeader-breadcrumbItem">
+            <a href="/sync" data-gtmc="breadcrumb link">sync</a>
+          </li>
+        
+        <li>
+          <a href="/sync/atomic@go1.26.3" data-gtmc="breadcrumb link" aria-current="location"
+              data-test-id="UnitHeader-breadcrumbCurrent">
+            atomic
+          </a>
+          
+            <button
+              class="go-Button go-Button--inline go-Clipboard js-clipboard"
+              title="Copy path to clipboard.&#10;&#10;sync/atomic"
+              aria-label="Copy Path to Clipboard"
+              data-to-copy="sync/atomic"
+              data-gtmc="breadcrumbs button"
+            >
+              <img
+                class="go-Icon go-Icon--accented"
+                height="24"
+                width="24"
+                src="/static/shared/icon/content_copy_gm_grey_24dp.svg"
+                alt=""
+              >
+            </button>
+          
+        
+      </li>
+    </ol>
+  </nav>
+
+  <div class="go-Main-headerContent">
+    
+  <div class="go-Main-headerTitle js-stickyHeader">
+    <a class="go-Main-headerLogo" href="https://go.dev/" aria-hidden="true" tabindex="-1" data-gtmc="header link" aria-label="Link to Go Homepage">
+      <img height="78" width="207" src="/static/shared/logo/go-blue.svg" alt="Go">
+    </a>
+    <h1 class="UnitHeader-titleHeading" data-test-id="UnitHeader-title">atomic</h1>
+    
+      <span class="go-Chip go-Chip--inverted">package</span>
+    
+      <span class="go-Chip go-Chip--inverted">standard library</span>
+    
+    
+      
+        <button
+          class="go-Button go-Button--inline go-Clipboard js-clipboard"
+          title="Copy path to clipboard.&#10;&#10;sync/atomic"
+          aria-label="Copy Path to Clipboard"
+          data-to-copy="sync/atomic"
+          data-gtmc="title button"
+          tabindex="-1"
+        >
+          <img
+            class="go-Icon go-Icon--accented"
+            height="24"
+            width="24"
+            src="/static/shared/icon/content_copy_gm_grey_24dp.svg"
+            alt=""
+          />
+        </button>
+      
+    
+  </div>
+
+    
+      
+  <div class="go-Main-headerDetails">
+    
+      
+  <span class="go-Main-headerDetailItem" data-test-id="UnitHeader-version">
+    <a href="?tab=versions" aria-label="Version: go1.26.3" 
+    data-gtmc="header link" aria-describedby="version-description">
+      <span class="go-textSubtle" aria-hidden="true">Version: </span>
+        go1.26.3
+    </a>
+    <div class="screen-reader-only" id="version-description" hidden>
+      Opens a new window with list of versions in this module.
+    </div>
+    
+    <span class="DetailsHeader-badge--latest" data-test-id="UnitHeader-minorVersionBanner">
+      <span class="go-Chip DetailsHeader-span--latest">Latest</span>
+      <span class="go-Chip DetailsHeader-span--notAtLatest">
+        Latest
+        
+  <details class="go-Tooltip js-tooltip" data-gtmc="tooltip">
+    <summary>
+      <img class="go-Icon go-Icon--inverted" height="24" width="24" src="/static/shared/icon/alert_gm_grey_24dp.svg" alt="Warning">
+    </summary>
+    <p>This package is not in the latest version of its module.</p>
+  </details>
+
+      </span>
+      <a href="/sync/atomic" aria-label="Go to Latest Version" data-gtmc="header link">
+        <span class="go-Chip go-Chip--alert DetailsHeader-span--goToLatest">Go to latest</span>
+      </a>
+    </span>
+  </span>
+
+      
+  <span class="go-Main-headerDetailItem" data-test-id="UnitHeader-commitTime">
+    Published: May  7, 2026
+  </span>
+
+      
+  <span class="go-Main-headerDetailItem" data-test-id="UnitHeader-licenses">
+    License: <a href="/sync/atomic?tab=licenses" data-test-id="UnitHeader-license" 
+        data-gtmc="header link" aria-describedby="license-description">BSD-3-Clause</a>
+      
+    
+  </span>
+  <div class="screen-reader-only" id="license-description" hidden>
+    Opens a new window with license information.
+  </div>
+
+      
+        
+  <span class="go-Main-headerDetailItem" data-test-id="UnitHeader-imports">
+    <a href="/sync/atomic?tab=imports" aria-label="Imports: 1"
+        data-gtmc="header link" aria-describedby="imports-description">
+      <span class="go-textSubtle">Imports: </span>1
+    </a>
+  </span>
+  <div class="screen-reader-only" id="imports-description" hidden>
+    Opens a new window with list of imports.
+  </div>
+
+        
+  <span class="go-Main-headerDetailItem" data-test-id="UnitHeader-importedby">
+    <a href="/sync/atomic?tab=importedby" aria-label="Imported By: 240,865"
+        data-gtmc="header link" aria-describedby="importedby-description">
+       <span class="go-textSubtle">Imported by: </span>240,865
+    </a>
+  </span>
+  <div class="screen-reader-only" id="importedby-description" hidden>
+    Opens a new window with list of known importers.
+  </div>
+
+      
+    
+  </div>
+  
+  <div class="UnitHeader-overflowContainer">
+    <svg class="UnitHeader-overflowImage" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+      <path d="M0 0h24v24H0z" fill="none"/>
+      <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+    </svg>
+    <select class="UnitHeader-overflowSelect js-selectNav" tabindex="-1">
+      <option value="/">Main</option>
+      <option value="/sync/atomic?tab=versions">
+        Versions
+      </option>
+      <option value="/sync/atomic?tab=licenses">
+        Licenses
+      </option>
+      
+        <option value="/sync/atomic?tab=imports">
+          Imports
+        </option>
+        <option value="/sync/atomic?tab=importedby">
+          Imported By
+        </option>
+      
+    </select>
+  </div>
+
+
+    
+  </div>
+
+</header>
+    
+      <aside class="go-Main-aside  js-mainAside">
+  
+  <div class="UnitMeta">
+    <h2 class="go-textLabel">Details</h2>
+    
+  <ul class="UnitMeta-details">
+    <li>
+      <details class="go-Tooltip js-tooltip" data-gtmc="tooltip">
+        <summary class="go-textSubtle">
+          
+  <img class="go-Icon go-Icon--accented"
+    tabindex="0"
+    role="button"src="/static/shared/icon/check_circle_gm_grey_24dp.svg" alt="checked" aria-label="Valid file, toggle tooltip"height="24" width="24">
+
+          Valid <a href="https://cs.opensource.google/go/go/+/go1.26.3:src/go.mod" target="_blank" rel="noopener">go.mod</a> file
+          <img class="go-Icon" role="button" tabindex="0" src="/static/shared/icon/help_gm_grey_24dp.svg" alt="" aria-label="Toggle go.mod validity tooltip" height="24" width="24">
+        </summary>
+        <p aria-live="polite" role="tooltip">
+          The Go module system was introduced in Go 1.11 and is the official dependency management
+          solution for Go.
+        </p>
+      </details>
+    </li>
+    <li>
+      <details class="go-Tooltip js-tooltip" data-gtmc="tooltip">
+        <summary class="go-textSubtle">
+          
+  <img class="go-Icon go-Icon--accented"
+    tabindex="0"
+    role="button"src="/static/shared/icon/check_circle_gm_grey_24dp.svg" alt="checked" aria-label="Valid file, toggle tooltip"height="24" width="24">
+
+          Redistributable license
+          <img class="go-Icon" role="button" tabindex="0" src="/static/shared/icon/help_gm_grey_24dp.svg" alt="" aria-label="Toggle redistributable help tooltip" height="24" width="24">
+        </summary>
+        <p aria-live="polite" role="tooltip">
+          Redistributable licenses place minimal restrictions on how software can be used,
+          modified, and redistributed.
+        </p>
+      </details>
+    </li>
+    <li>
+      <details class="go-Tooltip js-tooltip" data-gtmc="tooltip">
+        <summary class="go-textSubtle">
+          
+  <img class="go-Icon go-Icon--accented"
+    tabindex="0"
+    role="button"src="/static/shared/icon/check_circle_gm_grey_24dp.svg" alt="checked" aria-label="Valid file, toggle tooltip"height="24" width="24">
+
+          Tagged version
+          <img class="go-Icon" role="button" tabindex="0" src="/static/shared/icon/help_gm_grey_24dp.svg" alt="" aria-label="Toggle tagged version tooltip" height="24" width="24">
+        </summary>
+        <p aria-live="polite" role="tooltip">Modules with tagged versions give importers more predictable builds.</p>
+      </details>
+    </li>
+    <li>
+      <details class="go-Tooltip js-tooltip" data-gtmc="tooltip">
+        <summary class="go-textSubtle">
+          
+  <img class="go-Icon go-Icon--accented"
+    tabindex="0"
+    role="button"src="/static/shared/icon/check_circle_gm_grey_24dp.svg" alt="checked" aria-label="Valid file, toggle tooltip"height="24" width="24">
+
+          Stable version
+          <img class="go-Icon" role="button" tabindex="0" aria-label="Toggle stable version tooltip" src="/static/shared/icon/help_gm_grey_24dp.svg" alt="" height="24" width="24">
+        </summary>
+        <p aria-live="polite" role="tooltip">When a project reaches major version v1 it is considered stable.</p>
+      </details>
+    </li>
+    <li class="UnitMeta-detailsLearn">
+      <a href="/about#best-practices" data-gtmc="meta link">Learn more about best practices</a>
+    </li>
+  </ul>
+
+    <h2 class="go-textLabel">Repository</h2>
+    <div class="UnitMeta-repo">
+      
+        <a href="https://cs.opensource.google/go/go" title="https://cs.opensource.google/go/go" target="_blank" rel="noopener">
+          cs.opensource.google/go/go
+        </a>
+      
+    </div>
+    
+      <h2 class="go-textLabel" data-test-id="links-heading">Links</h2>
+      <ul class="UnitMeta-links">
+        
+          <li>
+            <a href="https://go.dev/security/policy"
+                title="Report security issues in the Go standard library and sub-repositories">
+              <img class="go-Icon" height="24" width="24" src="/static/shared/icon/security_grey_24dp.svg" alt="">
+              Report a Vulnerability
+            </a>
+          </li>
+        
+        
+        
+        
+  
+
+        
+  
+
+        
+  
+
+      </ul>
+    
+  </div>
+
+</aside>
+    
+    <nav class="go-Main-nav go-Main-nav--sticky js-mainNav" aria-label="Outline">
+  <div class="go-Main-navDesktop">
+    
+  <div class="UnitOutline-jumpTo">
+    <button class="UnitOutline-jumpToInput go-ShortcutKey js-jumpToInput"
+        aria-controls="jump-to-modal"
+        aria-label="Open Jump to Identifier"
+        data-shortcut="f"
+        data-shortcut-alt="find"
+        data-test-id="jump-to-button" data-gtmc="outline button">
+      Jump to ...
+    </button>
+  </div>
+  <ul class="go-Tree js-tree" role="tree" aria-label="Outline">
+    
+    
+      <li>
+        <a href="#section-documentation" data-gtmc="outline link">
+          Documentation
+        </a>
+        
+<ul>
+  
+    <li>
+      <a href="#pkg-overview" data-gtmc="doc outline link">Overview</a>
+    </li>
+  <li class="DocNav-overview">
+      <a href="#pkg-index" data-gtmc="doc outline link">
+        Index
+      </a>
+    </li>
+      <li>
+        <a href="#pkg-examples" data-gtmc="doc outline link">
+          Examples
+        </a>
+        <ul>
+            <li>
+              <a href="#example-Value-Config" title="Value (Config)" data-gtmc="doc outline link">
+                Value (Config)
+              </a>
+            </li>
+            <li>
+              <a href="#example-Value-ReadMostly" title="Value (ReadMostly)" data-gtmc="doc outline link">
+                Value (ReadMostly)
+              </a>
+            </li>
+        </ul>
+      </li>
+    <li class="DocNav-constants">
+      <a href="#pkg-constants" data-gtmc="doc outline link">
+        Constants
+      </a>
+    </li>
+    <li class="DocNav-variables">
+      <a href="#pkg-variables" data-gtmc="doc outline link">
+        Variables
+      </a>
+    </li>
+    <li class="DocNav-functions">
+      <a href="#pkg-functions" data-gtmc="doc outline link">
+        Functions
+      </a>
+      
+        <ul>
+          
+            <li>
+              <a href="#AddInt32" title="AddInt32(addr, delta)" data-gtmc="doc outline link">
+                AddInt32(addr, delta)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#AddInt64" title="AddInt64(addr, delta)" data-gtmc="doc outline link">
+                AddInt64(addr, delta)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#AddUint32" title="AddUint32(addr, delta)" data-gtmc="doc outline link">
+                AddUint32(addr, delta)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#AddUint64" title="AddUint64(addr, delta)" data-gtmc="doc outline link">
+                AddUint64(addr, delta)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#AddUintptr" title="AddUintptr(addr, delta)" data-gtmc="doc outline link">
+                AddUintptr(addr, delta)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#AndInt32" title="AndInt32(addr, mask)" data-gtmc="doc outline link">
+                AndInt32(addr, mask)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#AndInt64" title="AndInt64(addr, mask)" data-gtmc="doc outline link">
+                AndInt64(addr, mask)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#AndUint32" title="AndUint32(addr, mask)" data-gtmc="doc outline link">
+                AndUint32(addr, mask)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#AndUint64" title="AndUint64(addr, mask)" data-gtmc="doc outline link">
+                AndUint64(addr, mask)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#AndUintptr" title="AndUintptr(addr, mask)" data-gtmc="doc outline link">
+                AndUintptr(addr, mask)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#CompareAndSwapInt32" title="CompareAndSwapInt32(addr, old, new)" data-gtmc="doc outline link">
+                CompareAndSwapInt32(addr, old, new)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#CompareAndSwapInt64" title="CompareAndSwapInt64(addr, old, new)" data-gtmc="doc outline link">
+                CompareAndSwapInt64(addr, old, new)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#CompareAndSwapPointer" title="CompareAndSwapPointer(addr, old, new)" data-gtmc="doc outline link">
+                CompareAndSwapPointer(addr, old, new)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#CompareAndSwapUint32" title="CompareAndSwapUint32(addr, old, new)" data-gtmc="doc outline link">
+                CompareAndSwapUint32(addr, old, new)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#CompareAndSwapUint64" title="CompareAndSwapUint64(addr, old, new)" data-gtmc="doc outline link">
+                CompareAndSwapUint64(addr, old, new)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#CompareAndSwapUintptr" title="CompareAndSwapUintptr(addr, old, new)" data-gtmc="doc outline link">
+                CompareAndSwapUintptr(addr, old, new)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#LoadInt32" title="LoadInt32(addr)" data-gtmc="doc outline link">
+                LoadInt32(addr)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#LoadInt64" title="LoadInt64(addr)" data-gtmc="doc outline link">
+                LoadInt64(addr)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#LoadPointer" title="LoadPointer(addr)" data-gtmc="doc outline link">
+                LoadPointer(addr)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#LoadUint32" title="LoadUint32(addr)" data-gtmc="doc outline link">
+                LoadUint32(addr)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#LoadUint64" title="LoadUint64(addr)" data-gtmc="doc outline link">
+                LoadUint64(addr)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#LoadUintptr" title="LoadUintptr(addr)" data-gtmc="doc outline link">
+                LoadUintptr(addr)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#OrInt32" title="OrInt32(addr, mask)" data-gtmc="doc outline link">
+                OrInt32(addr, mask)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#OrInt64" title="OrInt64(addr, mask)" data-gtmc="doc outline link">
+                OrInt64(addr, mask)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#OrUint32" title="OrUint32(addr, mask)" data-gtmc="doc outline link">
+                OrUint32(addr, mask)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#OrUint64" title="OrUint64(addr, mask)" data-gtmc="doc outline link">
+                OrUint64(addr, mask)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#OrUintptr" title="OrUintptr(addr, mask)" data-gtmc="doc outline link">
+                OrUintptr(addr, mask)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#StoreInt32" title="StoreInt32(addr, val)" data-gtmc="doc outline link">
+                StoreInt32(addr, val)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#StoreInt64" title="StoreInt64(addr, val)" data-gtmc="doc outline link">
+                StoreInt64(addr, val)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#StorePointer" title="StorePointer(addr, val)" data-gtmc="doc outline link">
+                StorePointer(addr, val)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#StoreUint32" title="StoreUint32(addr, val)" data-gtmc="doc outline link">
+                StoreUint32(addr, val)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#StoreUint64" title="StoreUint64(addr, val)" data-gtmc="doc outline link">
+                StoreUint64(addr, val)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#StoreUintptr" title="StoreUintptr(addr, val)" data-gtmc="doc outline link">
+                StoreUintptr(addr, val)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#SwapInt32" title="SwapInt32(addr, new)" data-gtmc="doc outline link">
+                SwapInt32(addr, new)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#SwapInt64" title="SwapInt64(addr, new)" data-gtmc="doc outline link">
+                SwapInt64(addr, new)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#SwapPointer" title="SwapPointer(addr, new)" data-gtmc="doc outline link">
+                SwapPointer(addr, new)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#SwapUint32" title="SwapUint32(addr, new)" data-gtmc="doc outline link">
+                SwapUint32(addr, new)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#SwapUint64" title="SwapUint64(addr, new)" data-gtmc="doc outline link">
+                SwapUint64(addr, new)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#SwapUintptr" title="SwapUintptr(addr, new)" data-gtmc="doc outline link">
+                SwapUintptr(addr, new)
+              </a>
+            </li>
+          
+        </ul>
+      
+    </li>
+    <li class="DocNav-types">
+      <a href="#pkg-types" data-gtmc="doc outline link">
+        Types
+      </a>
+      <ul>
+        
+          
+          <li>
+            <a href="#Bool" title="type Bool" data-gtmc="doc outline link">
+              type Bool
+            </a>
+            
+              <ul>
+                
+                
+                  <li>
+                    <a href="#Bool.CompareAndSwap" title="(x) CompareAndSwap(old, new)"
+                        data-gtmc="doc outline link">
+                      (x) CompareAndSwap(old, new)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Bool.Load" title="(x) Load()"
+                        data-gtmc="doc outline link">
+                      (x) Load()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Bool.Store" title="(x) Store(val)"
+                        data-gtmc="doc outline link">
+                      (x) Store(val)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Bool.Swap" title="(x) Swap(new)"
+                        data-gtmc="doc outline link">
+                      (x) Swap(new)
+                    </a>
+                  </li>
+                
+              </ul>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#Int32" title="type Int32" data-gtmc="doc outline link">
+              type Int32
+            </a>
+            
+              <ul>
+                
+                
+                  <li>
+                    <a href="#Int32.Add" title="(x) Add(delta)"
+                        data-gtmc="doc outline link">
+                      (x) Add(delta)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Int32.And" title="(x) And(mask)"
+                        data-gtmc="doc outline link">
+                      (x) And(mask)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Int32.CompareAndSwap" title="(x) CompareAndSwap(old, new)"
+                        data-gtmc="doc outline link">
+                      (x) CompareAndSwap(old, new)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Int32.Load" title="(x) Load()"
+                        data-gtmc="doc outline link">
+                      (x) Load()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Int32.Or" title="(x) Or(mask)"
+                        data-gtmc="doc outline link">
+                      (x) Or(mask)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Int32.Store" title="(x) Store(val)"
+                        data-gtmc="doc outline link">
+                      (x) Store(val)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Int32.Swap" title="(x) Swap(new)"
+                        data-gtmc="doc outline link">
+                      (x) Swap(new)
+                    </a>
+                  </li>
+                
+              </ul>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#Int64" title="type Int64" data-gtmc="doc outline link">
+              type Int64
+            </a>
+            
+              <ul>
+                
+                
+                  <li>
+                    <a href="#Int64.Add" title="(x) Add(delta)"
+                        data-gtmc="doc outline link">
+                      (x) Add(delta)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Int64.And" title="(x) And(mask)"
+                        data-gtmc="doc outline link">
+                      (x) And(mask)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Int64.CompareAndSwap" title="(x) CompareAndSwap(old, new)"
+                        data-gtmc="doc outline link">
+                      (x) CompareAndSwap(old, new)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Int64.Load" title="(x) Load()"
+                        data-gtmc="doc outline link">
+                      (x) Load()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Int64.Or" title="(x) Or(mask)"
+                        data-gtmc="doc outline link">
+                      (x) Or(mask)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Int64.Store" title="(x) Store(val)"
+                        data-gtmc="doc outline link">
+                      (x) Store(val)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Int64.Swap" title="(x) Swap(new)"
+                        data-gtmc="doc outline link">
+                      (x) Swap(new)
+                    </a>
+                  </li>
+                
+              </ul>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#Pointer" title="type Pointer" data-gtmc="doc outline link">
+              type Pointer
+            </a>
+            
+              <ul>
+                
+                
+                  <li>
+                    <a href="#Pointer.CompareAndSwap" title="(x) CompareAndSwap(old, new)"
+                        data-gtmc="doc outline link">
+                      (x) CompareAndSwap(old, new)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Pointer.Load" title="(x) Load()"
+                        data-gtmc="doc outline link">
+                      (x) Load()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Pointer.Store" title="(x) Store(val)"
+                        data-gtmc="doc outline link">
+                      (x) Store(val)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Pointer.Swap" title="(x) Swap(new)"
+                        data-gtmc="doc outline link">
+                      (x) Swap(new)
+                    </a>
+                  </li>
+                
+              </ul>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#Uint32" title="type Uint32" data-gtmc="doc outline link">
+              type Uint32
+            </a>
+            
+              <ul>
+                
+                
+                  <li>
+                    <a href="#Uint32.Add" title="(x) Add(delta)"
+                        data-gtmc="doc outline link">
+                      (x) Add(delta)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Uint32.And" title="(x) And(mask)"
+                        data-gtmc="doc outline link">
+                      (x) And(mask)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Uint32.CompareAndSwap" title="(x) CompareAndSwap(old, new)"
+                        data-gtmc="doc outline link">
+                      (x) CompareAndSwap(old, new)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Uint32.Load" title="(x) Load()"
+                        data-gtmc="doc outline link">
+                      (x) Load()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Uint32.Or" title="(x) Or(mask)"
+                        data-gtmc="doc outline link">
+                      (x) Or(mask)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Uint32.Store" title="(x) Store(val)"
+                        data-gtmc="doc outline link">
+                      (x) Store(val)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Uint32.Swap" title="(x) Swap(new)"
+                        data-gtmc="doc outline link">
+                      (x) Swap(new)
+                    </a>
+                  </li>
+                
+              </ul>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#Uint64" title="type Uint64" data-gtmc="doc outline link">
+              type Uint64
+            </a>
+            
+              <ul>
+                
+                
+                  <li>
+                    <a href="#Uint64.Add" title="(x) Add(delta)"
+                        data-gtmc="doc outline link">
+                      (x) Add(delta)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Uint64.And" title="(x) And(mask)"
+                        data-gtmc="doc outline link">
+                      (x) And(mask)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Uint64.CompareAndSwap" title="(x) CompareAndSwap(old, new)"
+                        data-gtmc="doc outline link">
+                      (x) CompareAndSwap(old, new)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Uint64.Load" title="(x) Load()"
+                        data-gtmc="doc outline link">
+                      (x) Load()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Uint64.Or" title="(x) Or(mask)"
+                        data-gtmc="doc outline link">
+                      (x) Or(mask)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Uint64.Store" title="(x) Store(val)"
+                        data-gtmc="doc outline link">
+                      (x) Store(val)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Uint64.Swap" title="(x) Swap(new)"
+                        data-gtmc="doc outline link">
+                      (x) Swap(new)
+                    </a>
+                  </li>
+                
+              </ul>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#Uintptr" title="type Uintptr" data-gtmc="doc outline link">
+              type Uintptr
+            </a>
+            
+              <ul>
+                
+                
+                  <li>
+                    <a href="#Uintptr.Add" title="(x) Add(delta)"
+                        data-gtmc="doc outline link">
+                      (x) Add(delta)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Uintptr.And" title="(x) And(mask)"
+                        data-gtmc="doc outline link">
+                      (x) And(mask)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Uintptr.CompareAndSwap" title="(x) CompareAndSwap(old, new)"
+                        data-gtmc="doc outline link">
+                      (x) CompareAndSwap(old, new)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Uintptr.Load" title="(x) Load()"
+                        data-gtmc="doc outline link">
+                      (x) Load()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Uintptr.Or" title="(x) Or(mask)"
+                        data-gtmc="doc outline link">
+                      (x) Or(mask)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Uintptr.Store" title="(x) Store(val)"
+                        data-gtmc="doc outline link">
+                      (x) Store(val)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Uintptr.Swap" title="(x) Swap(new)"
+                        data-gtmc="doc outline link">
+                      (x) Swap(new)
+                    </a>
+                  </li>
+                
+              </ul>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#Value" title="type Value" data-gtmc="doc outline link">
+              type Value
+            </a>
+            
+              <ul>
+                
+                
+                  <li>
+                    <a href="#Value.CompareAndSwap" title="(v) CompareAndSwap(old, new)"
+                        data-gtmc="doc outline link">
+                      (v) CompareAndSwap(old, new)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Value.Load" title="(v) Load()"
+                        data-gtmc="doc outline link">
+                      (v) Load()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Value.Store" title="(v) Store(val)"
+                        data-gtmc="doc outline link">
+                      (v) Store(val)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Value.Swap" title="(v) Swap(new)"
+                        data-gtmc="doc outline link">
+                      (v) Swap(new)
+                    </a>
+                  </li>
+                
+              </ul>
+             
+          </li>
+         
+      </ul>
+    </li>
+  
+  
+    <li class="DocNav-notes">
+      <a href="#pkg-notes" data-gtmc="doc outline link">
+        Notes
+      </a>
+      <ul>
+        
+          <li>
+            <a href="#pkg-note-BUG" data-gtmc="doc outline link">
+              Bugs
+            </a>
+          </li>
+        
+      </ul>
+    </li>
+  
+</ul>
+
+      </li>
+    
+    
+      <li>
+        <a href="#section-sourcefiles" data-gtmc="outline link">
+          Source Files
+        </a>
+      </li>
+    
+    
+  </ul>
+
+  </div>
+  <div class="go-Main-navMobile js-mainNavMobile">
+    <label class="go-Label">
+      <select class="go-Select">
+        
+          <option selected disabled>Documentation</option>
+        
+      </select>
+    </label>
+  </div>
+</nav>
+    <article class="go-Main-article js-mainContent">
+  <div class="UnitDetails" data-test-id="UnitDetails" style="display: block;">
+    <div class="UnitDetails-content js-unitDetailsContent" data-test-id="UnitDetails-content">
+      
+      
+        
+          
+  <div class="UnitDoc">
+    <h2 class="UnitDoc-title" id="section-documentation">
+      <img class="go-Icon" height="24" width="24" src="/static/shared/icon/code_gm_grey_24dp.svg" alt="">
+      Documentation
+      <a class="UnitDoc-idLink" href="#section-documentation" title="Go to Documentation" aria-label="Go to Documentation">¶</a>
+    </h2>
+    
+  
+    
+  
+
+    <div class="Documentation js-documentation">
+      
+        
+
+<div class="Documentation-content js-docContent"> <section class="Documentation-overview">
+    <h3 tabindex="-1" id="pkg-overview" class="Documentation-overviewHeader">Overview <a href="#pkg-overview" title="Go to Overview" aria-label="Go to Overview">¶</a></h3>
+
+<p>Package atomic provides low-level atomic memory primitives
+useful for implementing synchronization algorithms.
+</p><p>These functions require great care to be used correctly.
+Except for special, low-level applications, synchronization is better
+done with channels or the facilities of the <a href="/sync">sync</a> package.
+Share memory by communicating;
+don&#39;t communicate by sharing memory.
+</p><p>The swap operation, implemented by the SwapT functions, is the atomic
+equivalent of:
+</p><pre>old = *addr
+*addr = new
+return old
+</pre><p>The compare-and-swap operation, implemented by the CompareAndSwapT
+functions, is the atomic equivalent of:
+</p><pre>if *addr == old {
+	*addr = new
+	return true
+}
+return false
+</pre><p>The add operation, implemented by the AddT functions, is the atomic
+equivalent of:
+</p><pre>*addr += delta
+return *addr
+</pre><p>The load and store operations, implemented by the LoadT and StoreT
+functions, are the atomic equivalents of &#34;return *addr&#34; and
+&#34;*addr = val&#34;.
+</p><p>In the terminology of <a href="https://go.dev/ref/mem">the Go memory model</a>, if the effect of
+an atomic operation A is observed by atomic operation B,
+then A “synchronizes before” B.
+Additionally, all the atomic operations executed in a program
+behave as though executed in some sequentially consistent order.
+This definition provides the same semantics as
+C++&#39;s sequentially consistent atomics and Java&#39;s volatile variables.
+</p>
+</section><section class="Documentation-index">
+    <h3 id="pkg-index" class="Documentation-indexHeader">Index <a href="#pkg-index" title="Go to Index" aria-label="Go to Index">¶</a></h3>
+
+<ul class="Documentation-indexList">
+<li class="Documentation-indexFunction">
+        <a href="#AddInt32">func AddInt32(addr *int32, delta int32) (new int32)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#AddInt64">func AddInt64(addr *int64, delta int64) (new int64)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#AddUint32">func AddUint32(addr *uint32, delta uint32) (new uint32)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#AddUint64">func AddUint64(addr *uint64, delta uint64) (new uint64)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#AddUintptr">func AddUintptr(addr *uintptr, delta uintptr) (new uintptr)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#AndInt32">func AndInt32(addr *int32, mask int32) (old int32)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#AndInt64">func AndInt64(addr *int64, mask int64) (old int64)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#AndUint32">func AndUint32(addr *uint32, mask uint32) (old uint32)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#AndUint64">func AndUint64(addr *uint64, mask uint64) (old uint64)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#AndUintptr">func AndUintptr(addr *uintptr, mask uintptr) (old uintptr)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#CompareAndSwapInt32">func CompareAndSwapInt32(addr *int32, old, new int32) (swapped bool)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#CompareAndSwapInt64">func CompareAndSwapInt64(addr *int64, old, new int64) (swapped bool)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#CompareAndSwapPointer">func CompareAndSwapPointer(addr *unsafe.Pointer, old, new unsafe.Pointer) (swapped bool)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#CompareAndSwapUint32">func CompareAndSwapUint32(addr *uint32, old, new uint32) (swapped bool)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#CompareAndSwapUint64">func CompareAndSwapUint64(addr *uint64, old, new uint64) (swapped bool)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#CompareAndSwapUintptr">func CompareAndSwapUintptr(addr *uintptr, old, new uintptr) (swapped bool)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#LoadInt32">func LoadInt32(addr *int32) (val int32)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#LoadInt64">func LoadInt64(addr *int64) (val int64)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#LoadPointer">func LoadPointer(addr *unsafe.Pointer) (val unsafe.Pointer)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#LoadUint32">func LoadUint32(addr *uint32) (val uint32)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#LoadUint64">func LoadUint64(addr *uint64) (val uint64)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#LoadUintptr">func LoadUintptr(addr *uintptr) (val uintptr)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#OrInt32">func OrInt32(addr *int32, mask int32) (old int32)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#OrInt64">func OrInt64(addr *int64, mask int64) (old int64)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#OrUint32">func OrUint32(addr *uint32, mask uint32) (old uint32)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#OrUint64">func OrUint64(addr *uint64, mask uint64) (old uint64)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#OrUintptr">func OrUintptr(addr *uintptr, mask uintptr) (old uintptr)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#StoreInt32">func StoreInt32(addr *int32, val int32)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#StoreInt64">func StoreInt64(addr *int64, val int64)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#StorePointer">func StorePointer(addr *unsafe.Pointer, val unsafe.Pointer)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#StoreUint32">func StoreUint32(addr *uint32, val uint32)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#StoreUint64">func StoreUint64(addr *uint64, val uint64)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#StoreUintptr">func StoreUintptr(addr *uintptr, val uintptr)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#SwapInt32">func SwapInt32(addr *int32, new int32) (old int32)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#SwapInt64">func SwapInt64(addr *int64, new int64) (old int64)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#SwapPointer">func SwapPointer(addr *unsafe.Pointer, new unsafe.Pointer) (old unsafe.Pointer)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#SwapUint32">func SwapUint32(addr *uint32, new uint32) (old uint32)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#SwapUint64">func SwapUint64(addr *uint64, new uint64) (old uint64)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#SwapUintptr">func SwapUintptr(addr *uintptr, new uintptr) (old uintptr)</a></li>
+<li class="Documentation-indexType">
+          <a href="#Bool">type Bool</a></li>
+<li><ul class="Documentation-indexTypeMethods">
+<li>
+            <a href="#Bool.CompareAndSwap">func (x *Bool) CompareAndSwap(old, new bool) (swapped bool)</a></li>
+<li>
+            <a href="#Bool.Load">func (x *Bool) Load() bool</a></li>
+<li>
+            <a href="#Bool.Store">func (x *Bool) Store(val bool)</a></li>
+<li>
+            <a href="#Bool.Swap">func (x *Bool) Swap(new bool) (old bool)</a></li>
+</ul></li>
+<li class="Documentation-indexType">
+          <a href="#Int32">type Int32</a></li>
+<li><ul class="Documentation-indexTypeMethods">
+<li>
+            <a href="#Int32.Add">func (x *Int32) Add(delta int32) (new int32)</a></li>
+<li>
+            <a href="#Int32.And">func (x *Int32) And(mask int32) (old int32)</a></li>
+<li>
+            <a href="#Int32.CompareAndSwap">func (x *Int32) CompareAndSwap(old, new int32) (swapped bool)</a></li>
+<li>
+            <a href="#Int32.Load">func (x *Int32) Load() int32</a></li>
+<li>
+            <a href="#Int32.Or">func (x *Int32) Or(mask int32) (old int32)</a></li>
+<li>
+            <a href="#Int32.Store">func (x *Int32) Store(val int32)</a></li>
+<li>
+            <a href="#Int32.Swap">func (x *Int32) Swap(new int32) (old int32)</a></li>
+</ul></li>
+<li class="Documentation-indexType">
+          <a href="#Int64">type Int64</a></li>
+<li><ul class="Documentation-indexTypeMethods">
+<li>
+            <a href="#Int64.Add">func (x *Int64) Add(delta int64) (new int64)</a></li>
+<li>
+            <a href="#Int64.And">func (x *Int64) And(mask int64) (old int64)</a></li>
+<li>
+            <a href="#Int64.CompareAndSwap">func (x *Int64) CompareAndSwap(old, new int64) (swapped bool)</a></li>
+<li>
+            <a href="#Int64.Load">func (x *Int64) Load() int64</a></li>
+<li>
+            <a href="#Int64.Or">func (x *Int64) Or(mask int64) (old int64)</a></li>
+<li>
+            <a href="#Int64.Store">func (x *Int64) Store(val int64)</a></li>
+<li>
+            <a href="#Int64.Swap">func (x *Int64) Swap(new int64) (old int64)</a></li>
+</ul></li>
+<li class="Documentation-indexType">
+          <a href="#Pointer">type Pointer</a></li>
+<li><ul class="Documentation-indexTypeMethods">
+<li>
+            <a href="#Pointer.CompareAndSwap">func (x *Pointer[T]) CompareAndSwap(old, new *T) (swapped bool)</a></li>
+<li>
+            <a href="#Pointer.Load">func (x *Pointer[T]) Load() *T</a></li>
+<li>
+            <a href="#Pointer.Store">func (x *Pointer[T]) Store(val *T)</a></li>
+<li>
+            <a href="#Pointer.Swap">func (x *Pointer[T]) Swap(new *T) (old *T)</a></li>
+</ul></li>
+<li class="Documentation-indexType">
+          <a href="#Uint32">type Uint32</a></li>
+<li><ul class="Documentation-indexTypeMethods">
+<li>
+            <a href="#Uint32.Add">func (x *Uint32) Add(delta uint32) (new uint32)</a></li>
+<li>
+            <a href="#Uint32.And">func (x *Uint32) And(mask uint32) (old uint32)</a></li>
+<li>
+            <a href="#Uint32.CompareAndSwap">func (x *Uint32) CompareAndSwap(old, new uint32) (swapped bool)</a></li>
+<li>
+            <a href="#Uint32.Load">func (x *Uint32) Load() uint32</a></li>
+<li>
+            <a href="#Uint32.Or">func (x *Uint32) Or(mask uint32) (old uint32)</a></li>
+<li>
+            <a href="#Uint32.Store">func (x *Uint32) Store(val uint32)</a></li>
+<li>
+            <a href="#Uint32.Swap">func (x *Uint32) Swap(new uint32) (old uint32)</a></li>
+</ul></li>
+<li class="Documentation-indexType">
+          <a href="#Uint64">type Uint64</a></li>
+<li><ul class="Documentation-indexTypeMethods">
+<li>
+            <a href="#Uint64.Add">func (x *Uint64) Add(delta uint64) (new uint64)</a></li>
+<li>
+            <a href="#Uint64.And">func (x *Uint64) And(mask uint64) (old uint64)</a></li>
+<li>
+            <a href="#Uint64.CompareAndSwap">func (x *Uint64) CompareAndSwap(old, new uint64) (swapped bool)</a></li>
+<li>
+            <a href="#Uint64.Load">func (x *Uint64) Load() uint64</a></li>
+<li>
+            <a href="#Uint64.Or">func (x *Uint64) Or(mask uint64) (old uint64)</a></li>
+<li>
+            <a href="#Uint64.Store">func (x *Uint64) Store(val uint64)</a></li>
+<li>
+            <a href="#Uint64.Swap">func (x *Uint64) Swap(new uint64) (old uint64)</a></li>
+</ul></li>
+<li class="Documentation-indexType">
+          <a href="#Uintptr">type Uintptr</a></li>
+<li><ul class="Documentation-indexTypeMethods">
+<li>
+            <a href="#Uintptr.Add">func (x *Uintptr) Add(delta uintptr) (new uintptr)</a></li>
+<li>
+            <a href="#Uintptr.And">func (x *Uintptr) And(mask uintptr) (old uintptr)</a></li>
+<li>
+            <a href="#Uintptr.CompareAndSwap">func (x *Uintptr) CompareAndSwap(old, new uintptr) (swapped bool)</a></li>
+<li>
+            <a href="#Uintptr.Load">func (x *Uintptr) Load() uintptr</a></li>
+<li>
+            <a href="#Uintptr.Or">func (x *Uintptr) Or(mask uintptr) (old uintptr)</a></li>
+<li>
+            <a href="#Uintptr.Store">func (x *Uintptr) Store(val uintptr)</a></li>
+<li>
+            <a href="#Uintptr.Swap">func (x *Uintptr) Swap(new uintptr) (old uintptr)</a></li>
+</ul></li>
+<li class="Documentation-indexType">
+          <a href="#Value">type Value</a></li>
+<li><ul class="Documentation-indexTypeMethods">
+<li>
+            <a href="#Value.CompareAndSwap">func (v *Value) CompareAndSwap(old, new any) (swapped bool)</a></li>
+<li>
+            <a href="#Value.Load">func (v *Value) Load() (val any)</a></li>
+<li>
+            <a href="#Value.Store">func (v *Value) Store(val any)</a></li>
+<li>
+            <a href="#Value.Swap">func (v *Value) Swap(new any) (old any)</a></li>
+</ul></li>
+<li class="Documentation-indexNote"><a href="#pkg-note-BUG">Bugs</a></li></ul>
+</section><section class="Documentation-examples">
+    <h3 tabindex="-1" id="pkg-examples" class="Documentation-examplesHeader">Examples <a class="Documentation-idLink" href="#pkg-examples" title="Go to Examples" aria-label="Go to Examples">¶</a></h3>
+<ul class="Documentation-examplesList">
+<li><a href="#example-Value-Config" class="js-exampleHref">Value (Config)</a></li>
+<li><a href="#example-Value-ReadMostly" class="js-exampleHref">Value (ReadMostly)</a></li>
+</ul>
+</section><h3 tabindex="-1" id="pkg-constants" class="Documentation-constantsHeader">Constants <a href="#pkg-constants" title="Go to Constants" aria-label="Go to Constants">¶</a></h3>
+
+  <section class="Documentation-constants"><p class="Documentation-empty">This section is empty.</p></section>
+
+  <h3 tabindex="-1" id="pkg-variables" class="Documentation-variablesHeader">Variables <a href="#pkg-variables" title="Go to Variables" aria-label="Go to Variables">¶</a></h3>
+
+  <section class="Documentation-variables"><p class="Documentation-empty">This section is empty.</p></section>
+
+  <h3 tabindex="-1" id="pkg-functions" class="Documentation-functionsHeader">Functions <a href="#pkg-functions" title="Go to Functions" aria-label="Go to Functions">¶</a></h3>
+
+  <section class="Documentation-functions"><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="AddInt32" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/doc.go;l=115">AddInt32</a> <a class="Documentation-idLink" href="#AddInt32" title="Go to AddInt32" aria-label="Go to AddInt32">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func AddInt32(addr *<a href="/builtin#int32">int32</a>, delta <a href="/builtin#int32">int32</a>) (new <a href="/builtin#int32">int32</a>)</pre>
+    </div>
+  <p>AddInt32 atomically adds delta to *addr and returns the new value.
+Consider using the more ergonomic and less error-prone <a href="#Int32.Add">Int32.Add</a> instead.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="AddInt64" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/doc_64.go;l=42">AddInt64</a> <a class="Documentation-idLink" href="#AddInt64" title="Go to AddInt64" aria-label="Go to AddInt64">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func AddInt64(addr *<a href="/builtin#int64">int64</a>, delta <a href="/builtin#int64">int64</a>) (new <a href="/builtin#int64">int64</a>)</pre>
+    </div>
+  <p>AddInt64 atomically adds delta to *addr and returns the new value.
+Consider using the more ergonomic and less error-prone <a href="#Int64.Add">Int64.Add</a> instead
+(particularly if you target 32-bit platforms; see the bugs section).
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="AddUint32" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/doc.go;l=123">AddUint32</a> <a class="Documentation-idLink" href="#AddUint32" title="Go to AddUint32" aria-label="Go to AddUint32">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func AddUint32(addr *<a href="/builtin#uint32">uint32</a>, delta <a href="/builtin#uint32">uint32</a>) (new <a href="/builtin#uint32">uint32</a>)</pre>
+    </div>
+  <p>AddUint32 atomically adds delta to *addr and returns the new value.
+To subtract a signed positive constant value c from x, do AddUint32(&amp;x, ^uint32(c-1)).
+In particular, to decrement x, do AddUint32(&amp;x, ^uint32(0)).
+Consider using the more ergonomic and less error-prone <a href="#Uint32.Add">Uint32.Add</a> instead.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="AddUint64" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/doc_64.go;l=51">AddUint64</a> <a class="Documentation-idLink" href="#AddUint64" title="Go to AddUint64" aria-label="Go to AddUint64">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func AddUint64(addr *<a href="/builtin#uint64">uint64</a>, delta <a href="/builtin#uint64">uint64</a>) (new <a href="/builtin#uint64">uint64</a>)</pre>
+    </div>
+  <p>AddUint64 atomically adds delta to *addr and returns the new value.
+To subtract a signed positive constant value c from x, do AddUint64(&amp;x, ^uint64(c-1)).
+In particular, to decrement x, do AddUint64(&amp;x, ^uint64(0)).
+Consider using the more ergonomic and less error-prone <a href="#Uint64.Add">Uint64.Add</a> instead
+(particularly if you target 32-bit platforms; see the bugs section).
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="AddUintptr" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/doc.go;l=129">AddUintptr</a> <a class="Documentation-idLink" href="#AddUintptr" title="Go to AddUintptr" aria-label="Go to AddUintptr">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func AddUintptr(addr *<a href="/builtin#uintptr">uintptr</a>, delta <a href="/builtin#uintptr">uintptr</a>) (new <a href="/builtin#uintptr">uintptr</a>)</pre>
+    </div>
+  <p>AddUintptr atomically adds delta to *addr and returns the new value.
+Consider using the more ergonomic and less error-prone <a href="#Uintptr.Add">Uintptr.Add</a> instead.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="AndInt32" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/doc.go;l=136">AndInt32</a> <a class="Documentation-idLink" href="#AndInt32" title="Go to AndInt32" aria-label="Go to AndInt32">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.23.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func AndInt32(addr *<a href="/builtin#int32">int32</a>, mask <a href="/builtin#int32">int32</a>) (old <a href="/builtin#int32">int32</a>)</pre>
+    </div>
+  <p>AndInt32 atomically performs a bitwise AND operation on *addr using the bitmask provided as mask
+and returns the old value.
+Consider using the more ergonomic and less error-prone <a href="#Int32.And">Int32.And</a> instead.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="AndInt64" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/doc_64.go;l=58">AndInt64</a> <a class="Documentation-idLink" href="#AndInt64" title="Go to AndInt64" aria-label="Go to AndInt64">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.23.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func AndInt64(addr *<a href="/builtin#int64">int64</a>, mask <a href="/builtin#int64">int64</a>) (old <a href="/builtin#int64">int64</a>)</pre>
+    </div>
+  <p>AndInt64 atomically performs a bitwise AND operation on *addr using the bitmask provided as mask
+and returns the old value.
+Consider using the more ergonomic and less error-prone <a href="#Int64.And">Int64.And</a> instead.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="AndUint32" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/doc.go;l=143">AndUint32</a> <a class="Documentation-idLink" href="#AndUint32" title="Go to AndUint32" aria-label="Go to AndUint32">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.23.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func AndUint32(addr *<a href="/builtin#uint32">uint32</a>, mask <a href="/builtin#uint32">uint32</a>) (old <a href="/builtin#uint32">uint32</a>)</pre>
+    </div>
+  <p>AndUint32 atomically performs a bitwise AND operation on *addr using the bitmask provided as mask
+and returns the old value.
+Consider using the more ergonomic and less error-prone <a href="#Uint32.And">Uint32.And</a> instead.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="AndUint64" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/doc_64.go;l=65">AndUint64</a> <a class="Documentation-idLink" href="#AndUint64" title="Go to AndUint64" aria-label="Go to AndUint64">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.23.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func AndUint64(addr *<a href="/builtin#uint64">uint64</a>, mask <a href="/builtin#uint64">uint64</a>) (old <a href="/builtin#uint64">uint64</a>)</pre>
+    </div>
+  <p>AndUint64 atomically performs a bitwise AND operation on *addr using the bitmask provided as mask
+and returns the old.
+Consider using the more ergonomic and less error-prone <a href="#Uint64.And">Uint64.And</a> instead.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="AndUintptr" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/doc.go;l=150">AndUintptr</a> <a class="Documentation-idLink" href="#AndUintptr" title="Go to AndUintptr" aria-label="Go to AndUintptr">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.23.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func AndUintptr(addr *<a href="/builtin#uintptr">uintptr</a>, mask <a href="/builtin#uintptr">uintptr</a>) (old <a href="/builtin#uintptr">uintptr</a>)</pre>
+    </div>
+  <p>AndUintptr atomically performs a bitwise AND operation on *addr using the bitmask provided as mask
+and returns the old value.
+Consider using the more ergonomic and less error-prone <a href="#Uintptr.And">Uintptr.And</a> instead.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="CompareAndSwapInt32" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/doc.go;l=93">CompareAndSwapInt32</a> <a class="Documentation-idLink" href="#CompareAndSwapInt32" title="Go to CompareAndSwapInt32" aria-label="Go to CompareAndSwapInt32">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func CompareAndSwapInt32(addr *<a href="/builtin#int32">int32</a>, old, new <a href="/builtin#int32">int32</a>) (swapped <a href="/builtin#bool">bool</a>)</pre>
+    </div>
+  <p>CompareAndSwapInt32 executes the compare-and-swap operation for an int32 value.
+Consider using the more ergonomic and less error-prone <a href="#Int32.CompareAndSwap">Int32.CompareAndSwap</a> instead.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="CompareAndSwapInt64" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/doc_64.go;l=28">CompareAndSwapInt64</a> <a class="Documentation-idLink" href="#CompareAndSwapInt64" title="Go to CompareAndSwapInt64" aria-label="Go to CompareAndSwapInt64">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func CompareAndSwapInt64(addr *<a href="/builtin#int64">int64</a>, old, new <a href="/builtin#int64">int64</a>) (swapped <a href="/builtin#bool">bool</a>)</pre>
+    </div>
+  <p>CompareAndSwapInt64 executes the compare-and-swap operation for an int64 value.
+Consider using the more ergonomic and less error-prone <a href="#Int64.CompareAndSwap">Int64.CompareAndSwap</a> instead
+(particularly if you target 32-bit platforms; see the bugs section).
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="CompareAndSwapPointer" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/doc.go;l=109">CompareAndSwapPointer</a> <a class="Documentation-idLink" href="#CompareAndSwapPointer" title="Go to CompareAndSwapPointer" aria-label="Go to CompareAndSwapPointer">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func CompareAndSwapPointer(addr *<a href="/unsafe">unsafe</a>.<a href="/unsafe#Pointer">Pointer</a>, old, new <a href="/unsafe">unsafe</a>.<a href="/unsafe#Pointer">Pointer</a>) (swapped <a href="/builtin#bool">bool</a>)</pre>
+    </div>
+  <p>CompareAndSwapPointer executes the compare-and-swap operation for a unsafe.Pointer value.
+Consider using the more ergonomic and less error-prone <a href="#Pointer.CompareAndSwap">Pointer.CompareAndSwap</a> instead.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="CompareAndSwapUint32" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/doc.go;l=99">CompareAndSwapUint32</a> <a class="Documentation-idLink" href="#CompareAndSwapUint32" title="Go to CompareAndSwapUint32" aria-label="Go to CompareAndSwapUint32">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func CompareAndSwapUint32(addr *<a href="/builtin#uint32">uint32</a>, old, new <a href="/builtin#uint32">uint32</a>) (swapped <a href="/builtin#bool">bool</a>)</pre>
+    </div>
+  <p>CompareAndSwapUint32 executes the compare-and-swap operation for a uint32 value.
+Consider using the more ergonomic and less error-prone <a href="#Uint32.CompareAndSwap">Uint32.CompareAndSwap</a> instead.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="CompareAndSwapUint64" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/doc_64.go;l=35">CompareAndSwapUint64</a> <a class="Documentation-idLink" href="#CompareAndSwapUint64" title="Go to CompareAndSwapUint64" aria-label="Go to CompareAndSwapUint64">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func CompareAndSwapUint64(addr *<a href="/builtin#uint64">uint64</a>, old, new <a href="/builtin#uint64">uint64</a>) (swapped <a href="/builtin#bool">bool</a>)</pre>
+    </div>
+  <p>CompareAndSwapUint64 executes the compare-and-swap operation for a uint64 value.
+Consider using the more ergonomic and less error-prone <a href="#Uint64.CompareAndSwap">Uint64.CompareAndSwap</a> instead
+(particularly if you target 32-bit platforms; see the bugs section).
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="CompareAndSwapUintptr" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/doc.go;l=105">CompareAndSwapUintptr</a> <a class="Documentation-idLink" href="#CompareAndSwapUintptr" title="Go to CompareAndSwapUintptr" aria-label="Go to CompareAndSwapUintptr">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func CompareAndSwapUintptr(addr *<a href="/builtin#uintptr">uintptr</a>, old, new <a href="/builtin#uintptr">uintptr</a>) (swapped <a href="/builtin#bool">bool</a>)</pre>
+    </div>
+  <p>CompareAndSwapUintptr executes the compare-and-swap operation for a uintptr value.
+Consider using the more ergonomic and less error-prone <a href="#Uintptr.CompareAndSwap">Uintptr.CompareAndSwap</a> instead.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="LoadInt32" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/doc.go;l=177">LoadInt32</a> <a class="Documentation-idLink" href="#LoadInt32" title="Go to LoadInt32" aria-label="Go to LoadInt32">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func LoadInt32(addr *<a href="/builtin#int32">int32</a>) (val <a href="/builtin#int32">int32</a>)</pre>
+    </div>
+  <p>LoadInt32 atomically loads *addr.
+Consider using the more ergonomic and less error-prone <a href="#Int32.Load">Int32.Load</a> instead.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="LoadInt64" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/doc_64.go;l=86">LoadInt64</a> <a class="Documentation-idLink" href="#LoadInt64" title="Go to LoadInt64" aria-label="Go to LoadInt64">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func LoadInt64(addr *<a href="/builtin#int64">int64</a>) (val <a href="/builtin#int64">int64</a>)</pre>
+    </div>
+  <p>LoadInt64 atomically loads *addr.
+Consider using the more ergonomic and less error-prone <a href="#Int64.Load">Int64.Load</a> instead
+(particularly if you target 32-bit platforms; see the bugs section).
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="LoadPointer" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/doc.go;l=193">LoadPointer</a> <a class="Documentation-idLink" href="#LoadPointer" title="Go to LoadPointer" aria-label="Go to LoadPointer">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func LoadPointer(addr *<a href="/unsafe">unsafe</a>.<a href="/unsafe#Pointer">Pointer</a>) (val <a href="/unsafe">unsafe</a>.<a href="/unsafe#Pointer">Pointer</a>)</pre>
+    </div>
+  <p>LoadPointer atomically loads *addr.
+Consider using the more ergonomic and less error-prone <a href="#Pointer.Load">Pointer.Load</a> instead.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="LoadUint32" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/doc.go;l=183">LoadUint32</a> <a class="Documentation-idLink" href="#LoadUint32" title="Go to LoadUint32" aria-label="Go to LoadUint32">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func LoadUint32(addr *<a href="/builtin#uint32">uint32</a>) (val <a href="/builtin#uint32">uint32</a>)</pre>
+    </div>
+  <p>LoadUint32 atomically loads *addr.
+Consider using the more ergonomic and less error-prone <a href="#Uint32.Load">Uint32.Load</a> instead.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="LoadUint64" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/doc_64.go;l=93">LoadUint64</a> <a class="Documentation-idLink" href="#LoadUint64" title="Go to LoadUint64" aria-label="Go to LoadUint64">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func LoadUint64(addr *<a href="/builtin#uint64">uint64</a>) (val <a href="/builtin#uint64">uint64</a>)</pre>
+    </div>
+  <p>LoadUint64 atomically loads *addr.
+Consider using the more ergonomic and less error-prone <a href="#Uint64.Load">Uint64.Load</a> instead
+(particularly if you target 32-bit platforms; see the bugs section).
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="LoadUintptr" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/doc.go;l=189">LoadUintptr</a> <a class="Documentation-idLink" href="#LoadUintptr" title="Go to LoadUintptr" aria-label="Go to LoadUintptr">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func LoadUintptr(addr *<a href="/builtin#uintptr">uintptr</a>) (val <a href="/builtin#uintptr">uintptr</a>)</pre>
+    </div>
+  <p>LoadUintptr atomically loads *addr.
+Consider using the more ergonomic and less error-prone <a href="#Uintptr.Load">Uintptr.Load</a> instead.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="OrInt32" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/doc.go;l=157">OrInt32</a> <a class="Documentation-idLink" href="#OrInt32" title="Go to OrInt32" aria-label="Go to OrInt32">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.23.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func OrInt32(addr *<a href="/builtin#int32">int32</a>, mask <a href="/builtin#int32">int32</a>) (old <a href="/builtin#int32">int32</a>)</pre>
+    </div>
+  <p>OrInt32 atomically performs a bitwise OR operation on *addr using the bitmask provided as mask
+and returns the old value.
+Consider using the more ergonomic and less error-prone <a href="#Int32.Or">Int32.Or</a> instead.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="OrInt64" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/doc_64.go;l=72">OrInt64</a> <a class="Documentation-idLink" href="#OrInt64" title="Go to OrInt64" aria-label="Go to OrInt64">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.23.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func OrInt64(addr *<a href="/builtin#int64">int64</a>, mask <a href="/builtin#int64">int64</a>) (old <a href="/builtin#int64">int64</a>)</pre>
+    </div>
+  <p>OrInt64 atomically performs a bitwise OR operation on *addr using the bitmask provided as mask
+and returns the old value.
+Consider using the more ergonomic and less error-prone <a href="#Int64.Or">Int64.Or</a> instead.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="OrUint32" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/doc.go;l=164">OrUint32</a> <a class="Documentation-idLink" href="#OrUint32" title="Go to OrUint32" aria-label="Go to OrUint32">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.23.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func OrUint32(addr *<a href="/builtin#uint32">uint32</a>, mask <a href="/builtin#uint32">uint32</a>) (old <a href="/builtin#uint32">uint32</a>)</pre>
+    </div>
+  <p>OrUint32 atomically performs a bitwise OR operation on *addr using the bitmask provided as mask
+and returns the old value.
+Consider using the more ergonomic and less error-prone <a href="#Uint32.Or">Uint32.Or</a> instead.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="OrUint64" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/doc_64.go;l=79">OrUint64</a> <a class="Documentation-idLink" href="#OrUint64" title="Go to OrUint64" aria-label="Go to OrUint64">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.23.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func OrUint64(addr *<a href="/builtin#uint64">uint64</a>, mask <a href="/builtin#uint64">uint64</a>) (old <a href="/builtin#uint64">uint64</a>)</pre>
+    </div>
+  <p>OrUint64 atomically performs a bitwise OR operation on *addr using the bitmask provided as mask
+and returns the old value.
+Consider using the more ergonomic and less error-prone <a href="#Uint64.Or">Uint64.Or</a> instead.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="OrUintptr" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/doc.go;l=171">OrUintptr</a> <a class="Documentation-idLink" href="#OrUintptr" title="Go to OrUintptr" aria-label="Go to OrUintptr">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.23.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func OrUintptr(addr *<a href="/builtin#uintptr">uintptr</a>, mask <a href="/builtin#uintptr">uintptr</a>) (old <a href="/builtin#uintptr">uintptr</a>)</pre>
+    </div>
+  <p>OrUintptr atomically performs a bitwise OR operation on *addr using the bitmask provided as mask
+and returns the old value.
+Consider using the more ergonomic and less error-prone <a href="#Uintptr.Or">Uintptr.Or</a> instead.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="StoreInt32" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/doc.go;l=199">StoreInt32</a> <a class="Documentation-idLink" href="#StoreInt32" title="Go to StoreInt32" aria-label="Go to StoreInt32">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func StoreInt32(addr *<a href="/builtin#int32">int32</a>, val <a href="/builtin#int32">int32</a>)</pre>
+    </div>
+  <p>StoreInt32 atomically stores val into *addr.
+Consider using the more ergonomic and less error-prone <a href="#Int32.Store">Int32.Store</a> instead.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="StoreInt64" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/doc_64.go;l=100">StoreInt64</a> <a class="Documentation-idLink" href="#StoreInt64" title="Go to StoreInt64" aria-label="Go to StoreInt64">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func StoreInt64(addr *<a href="/builtin#int64">int64</a>, val <a href="/builtin#int64">int64</a>)</pre>
+    </div>
+  <p>StoreInt64 atomically stores val into *addr.
+Consider using the more ergonomic and less error-prone <a href="#Int64.Store">Int64.Store</a> instead
+(particularly if you target 32-bit platforms; see the bugs section).
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="StorePointer" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/doc.go;l=215">StorePointer</a> <a class="Documentation-idLink" href="#StorePointer" title="Go to StorePointer" aria-label="Go to StorePointer">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func StorePointer(addr *<a href="/unsafe">unsafe</a>.<a href="/unsafe#Pointer">Pointer</a>, val <a href="/unsafe">unsafe</a>.<a href="/unsafe#Pointer">Pointer</a>)</pre>
+    </div>
+  <p>StorePointer atomically stores val into *addr.
+Consider using the more ergonomic and less error-prone <a href="#Pointer.Store">Pointer.Store</a> instead.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="StoreUint32" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/doc.go;l=205">StoreUint32</a> <a class="Documentation-idLink" href="#StoreUint32" title="Go to StoreUint32" aria-label="Go to StoreUint32">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func StoreUint32(addr *<a href="/builtin#uint32">uint32</a>, val <a href="/builtin#uint32">uint32</a>)</pre>
+    </div>
+  <p>StoreUint32 atomically stores val into *addr.
+Consider using the more ergonomic and less error-prone <a href="#Uint32.Store">Uint32.Store</a> instead.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="StoreUint64" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/doc_64.go;l=107">StoreUint64</a> <a class="Documentation-idLink" href="#StoreUint64" title="Go to StoreUint64" aria-label="Go to StoreUint64">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func StoreUint64(addr *<a href="/builtin#uint64">uint64</a>, val <a href="/builtin#uint64">uint64</a>)</pre>
+    </div>
+  <p>StoreUint64 atomically stores val into *addr.
+Consider using the more ergonomic and less error-prone <a href="#Uint64.Store">Uint64.Store</a> instead
+(particularly if you target 32-bit platforms; see the bugs section).
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="StoreUintptr" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/doc.go;l=211">StoreUintptr</a> <a class="Documentation-idLink" href="#StoreUintptr" title="Go to StoreUintptr" aria-label="Go to StoreUintptr">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func StoreUintptr(addr *<a href="/builtin#uintptr">uintptr</a>, val <a href="/builtin#uintptr">uintptr</a>)</pre>
+    </div>
+  <p>StoreUintptr atomically stores val into *addr.
+Consider using the more ergonomic and less error-prone <a href="#Uintptr.Store">Uintptr.Store</a> instead.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="SwapInt32" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/doc.go;l=71">SwapInt32</a> <a class="Documentation-idLink" href="#SwapInt32" title="Go to SwapInt32" aria-label="Go to SwapInt32">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.2</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func SwapInt32(addr *<a href="/builtin#int32">int32</a>, new <a href="/builtin#int32">int32</a>) (old <a href="/builtin#int32">int32</a>)</pre>
+    </div>
+  <p>SwapInt32 atomically stores new into *addr and returns the previous *addr value.
+Consider using the more ergonomic and less error-prone <a href="#Int32.Swap">Int32.Swap</a> instead.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="SwapInt64" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/doc_64.go;l=14">SwapInt64</a> <a class="Documentation-idLink" href="#SwapInt64" title="Go to SwapInt64" aria-label="Go to SwapInt64">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.2</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func SwapInt64(addr *<a href="/builtin#int64">int64</a>, new <a href="/builtin#int64">int64</a>) (old <a href="/builtin#int64">int64</a>)</pre>
+    </div>
+  <p>SwapInt64 atomically stores new into *addr and returns the previous *addr value.
+Consider using the more ergonomic and less error-prone <a href="#Int64.Swap">Int64.Swap</a> instead
+(particularly if you target 32-bit platforms; see the bugs section).
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="SwapPointer" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/doc.go;l=87">SwapPointer</a> <a class="Documentation-idLink" href="#SwapPointer" title="Go to SwapPointer" aria-label="Go to SwapPointer">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.2</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func SwapPointer(addr *<a href="/unsafe">unsafe</a>.<a href="/unsafe#Pointer">Pointer</a>, new <a href="/unsafe">unsafe</a>.<a href="/unsafe#Pointer">Pointer</a>) (old <a href="/unsafe">unsafe</a>.<a href="/unsafe#Pointer">Pointer</a>)</pre>
+    </div>
+  <p>SwapPointer atomically stores new into *addr and returns the previous *addr value.
+Consider using the more ergonomic and less error-prone <a href="#Pointer.Swap">Pointer.Swap</a> instead.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="SwapUint32" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/doc.go;l=77">SwapUint32</a> <a class="Documentation-idLink" href="#SwapUint32" title="Go to SwapUint32" aria-label="Go to SwapUint32">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.2</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func SwapUint32(addr *<a href="/builtin#uint32">uint32</a>, new <a href="/builtin#uint32">uint32</a>) (old <a href="/builtin#uint32">uint32</a>)</pre>
+    </div>
+  <p>SwapUint32 atomically stores new into *addr and returns the previous *addr value.
+Consider using the more ergonomic and less error-prone <a href="#Uint32.Swap">Uint32.Swap</a> instead.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="SwapUint64" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/doc_64.go;l=21">SwapUint64</a> <a class="Documentation-idLink" href="#SwapUint64" title="Go to SwapUint64" aria-label="Go to SwapUint64">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.2</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func SwapUint64(addr *<a href="/builtin#uint64">uint64</a>, new <a href="/builtin#uint64">uint64</a>) (old <a href="/builtin#uint64">uint64</a>)</pre>
+    </div>
+  <p>SwapUint64 atomically stores new into *addr and returns the previous *addr value.
+Consider using the more ergonomic and less error-prone <a href="#Uint64.Swap">Uint64.Swap</a> instead
+(particularly if you target 32-bit platforms; see the bugs section).
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="SwapUintptr" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/doc.go;l=83">SwapUintptr</a> <a class="Documentation-idLink" href="#SwapUintptr" title="Go to SwapUintptr" aria-label="Go to SwapUintptr">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.2</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func SwapUintptr(addr *<a href="/builtin#uintptr">uintptr</a>, new <a href="/builtin#uintptr">uintptr</a>) (old <a href="/builtin#uintptr">uintptr</a>)</pre>
+    </div>
+  <p>SwapUintptr atomically stores new into *addr and returns the previous *addr value.
+Consider using the more ergonomic and less error-prone <a href="#Uintptr.Swap">Uintptr.Swap</a> instead.
+</p>
+
+  
+
+        </div></section>
+
+  <h3 tabindex="-1" id="pkg-types" class="Documentation-typesHeader">Types <a href="#pkg-types" title="Go to Types" aria-label="Go to Types">¶</a></h3>
+
+  <section class="Documentation-types"><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="Bool" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/type.go;l=13">Bool</a> <a class="Documentation-idLink" href="#Bool" title="Go to Bool" aria-label="Go to Bool">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.19</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type Bool struct {
+	<span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+    </div>
+  <p>A Bool is an atomic boolean value.
+The zero value is false.
+</p><p>Bool must not be copied after first use.
+</p>
+<div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Bool.CompareAndSwap" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Bool) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/type.go;l=28">CompareAndSwap</a> <a class="Documentation-idLink" href="#Bool.CompareAndSwap" title="Go to Bool.CompareAndSwap" aria-label="Go to Bool.CompareAndSwap">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.19</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x *<a href="#Bool">Bool</a>) CompareAndSwap(old, new <a href="/builtin#bool">bool</a>) (swapped <a href="/builtin#bool">bool</a>)</pre>
+    </div>
+  <p>CompareAndSwap executes the compare-and-swap operation for the boolean value x.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Bool.Load" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Bool) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/type.go;l=19">Load</a> <a class="Documentation-idLink" href="#Bool.Load" title="Go to Bool.Load" aria-label="Go to Bool.Load">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.19</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x *<a href="#Bool">Bool</a>) Load() <a href="/builtin#bool">bool</a></pre>
+    </div>
+  <p>Load atomically loads and returns the value stored in x.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Bool.Store" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Bool) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/type.go;l=22">Store</a> <a class="Documentation-idLink" href="#Bool.Store" title="Go to Bool.Store" aria-label="Go to Bool.Store">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.19</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x *<a href="#Bool">Bool</a>) Store(val <a href="/builtin#bool">bool</a>)</pre>
+    </div>
+  <p>Store atomically stores val into x.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Bool.Swap" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Bool) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/type.go;l=25">Swap</a> <a class="Documentation-idLink" href="#Bool.Swap" title="Go to Bool.Swap" aria-label="Go to Bool.Swap">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.19</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x *<a href="#Bool">Bool</a>) Swap(new <a href="/builtin#bool">bool</a>) (old <a href="/builtin#bool">bool</a>)</pre>
+    </div>
+  <p>Swap atomically stores new into x and returns the previous value.
+</p>
+
+  
+
+  </div>
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="Int32" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/type.go;l=74">Int32</a> <a class="Documentation-idLink" href="#Int32" title="Go to Int32" aria-label="Go to Int32">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.19</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type Int32 struct {
+	<span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+    </div>
+  <p>An Int32 is an atomic int32. The zero value is zero.
+</p><p>Int32 must not be copied after first use.
+</p>
+<div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Int32.Add" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Int32) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/type.go;l=94">Add</a> <a class="Documentation-idLink" href="#Int32.Add" title="Go to Int32.Add" aria-label="Go to Int32.Add">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.19</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x *<a href="#Int32">Int32</a>) Add(delta <a href="/builtin#int32">int32</a>) (new <a href="/builtin#int32">int32</a>)</pre>
+    </div>
+  <p>Add atomically adds delta to x and returns the new value.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Int32.And" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Int32) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/type.go;l=98">And</a> <a class="Documentation-idLink" href="#Int32.And" title="Go to Int32.And" aria-label="Go to Int32.And">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.23.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x *<a href="#Int32">Int32</a>) And(mask <a href="/builtin#int32">int32</a>) (old <a href="/builtin#int32">int32</a>)</pre>
+    </div>
+  <p>And atomically performs a bitwise AND operation on x using the bitmask
+provided as mask and returns the old value.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Int32.CompareAndSwap" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Int32) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/type.go;l=89">CompareAndSwap</a> <a class="Documentation-idLink" href="#Int32.CompareAndSwap" title="Go to Int32.CompareAndSwap" aria-label="Go to Int32.CompareAndSwap">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.19</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x *<a href="#Int32">Int32</a>) CompareAndSwap(old, new <a href="/builtin#int32">int32</a>) (swapped <a href="/builtin#bool">bool</a>)</pre>
+    </div>
+  <p>CompareAndSwap executes the compare-and-swap operation for x.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Int32.Load" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Int32) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/type.go;l=80">Load</a> <a class="Documentation-idLink" href="#Int32.Load" title="Go to Int32.Load" aria-label="Go to Int32.Load">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.19</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x *<a href="#Int32">Int32</a>) Load() <a href="/builtin#int32">int32</a></pre>
+    </div>
+  <p>Load atomically loads and returns the value stored in x.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Int32.Or" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Int32) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/type.go;l=102">Or</a> <a class="Documentation-idLink" href="#Int32.Or" title="Go to Int32.Or" aria-label="Go to Int32.Or">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.23.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x *<a href="#Int32">Int32</a>) Or(mask <a href="/builtin#int32">int32</a>) (old <a href="/builtin#int32">int32</a>)</pre>
+    </div>
+  <p>Or atomically performs a bitwise OR operation on x using the bitmask
+provided as mask and returns the old value.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Int32.Store" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Int32) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/type.go;l=83">Store</a> <a class="Documentation-idLink" href="#Int32.Store" title="Go to Int32.Store" aria-label="Go to Int32.Store">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.19</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x *<a href="#Int32">Int32</a>) Store(val <a href="/builtin#int32">int32</a>)</pre>
+    </div>
+  <p>Store atomically stores val into x.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Int32.Swap" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Int32) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/type.go;l=86">Swap</a> <a class="Documentation-idLink" href="#Int32.Swap" title="Go to Int32.Swap" aria-label="Go to Int32.Swap">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.19</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x *<a href="#Int32">Int32</a>) Swap(new <a href="/builtin#int32">int32</a>) (old <a href="/builtin#int32">int32</a>)</pre>
+    </div>
+  <p>Swap atomically stores new into x and returns the previous value.
+</p>
+
+  
+
+  </div>
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="Int64" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/type.go;l=107">Int64</a> <a class="Documentation-idLink" href="#Int64" title="Go to Int64" aria-label="Go to Int64">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.19</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type Int64 struct {
+	<span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+    </div>
+  <p>An Int64 is an atomic int64. The zero value is zero.
+</p><p>Int64 must not be copied after first use.
+</p>
+<div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Int64.Add" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Int64) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/type.go;l=128">Add</a> <a class="Documentation-idLink" href="#Int64.Add" title="Go to Int64.Add" aria-label="Go to Int64.Add">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.19</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x *<a href="#Int64">Int64</a>) Add(delta <a href="/builtin#int64">int64</a>) (new <a href="/builtin#int64">int64</a>)</pre>
+    </div>
+  <p>Add atomically adds delta to x and returns the new value.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Int64.And" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Int64) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/type.go;l=132">And</a> <a class="Documentation-idLink" href="#Int64.And" title="Go to Int64.And" aria-label="Go to Int64.And">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.23.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x *<a href="#Int64">Int64</a>) And(mask <a href="/builtin#int64">int64</a>) (old <a href="/builtin#int64">int64</a>)</pre>
+    </div>
+  <p>And atomically performs a bitwise AND operation on x using the bitmask
+provided as mask and returns the old value.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Int64.CompareAndSwap" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Int64) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/type.go;l=123">CompareAndSwap</a> <a class="Documentation-idLink" href="#Int64.CompareAndSwap" title="Go to Int64.CompareAndSwap" aria-label="Go to Int64.CompareAndSwap">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.19</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x *<a href="#Int64">Int64</a>) CompareAndSwap(old, new <a href="/builtin#int64">int64</a>) (swapped <a href="/builtin#bool">bool</a>)</pre>
+    </div>
+  <p>CompareAndSwap executes the compare-and-swap operation for x.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Int64.Load" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Int64) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/type.go;l=114">Load</a> <a class="Documentation-idLink" href="#Int64.Load" title="Go to Int64.Load" aria-label="Go to Int64.Load">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.19</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x *<a href="#Int64">Int64</a>) Load() <a href="/builtin#int64">int64</a></pre>
+    </div>
+  <p>Load atomically loads and returns the value stored in x.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Int64.Or" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Int64) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/type.go;l=136">Or</a> <a class="Documentation-idLink" href="#Int64.Or" title="Go to Int64.Or" aria-label="Go to Int64.Or">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.23.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x *<a href="#Int64">Int64</a>) Or(mask <a href="/builtin#int64">int64</a>) (old <a href="/builtin#int64">int64</a>)</pre>
+    </div>
+  <p>Or atomically performs a bitwise OR operation on x using the bitmask
+provided as mask and returns the old value.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Int64.Store" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Int64) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/type.go;l=117">Store</a> <a class="Documentation-idLink" href="#Int64.Store" title="Go to Int64.Store" aria-label="Go to Int64.Store">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.19</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x *<a href="#Int64">Int64</a>) Store(val <a href="/builtin#int64">int64</a>)</pre>
+    </div>
+  <p>Store atomically stores val into x.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Int64.Swap" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Int64) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/type.go;l=120">Swap</a> <a class="Documentation-idLink" href="#Int64.Swap" title="Go to Int64.Swap" aria-label="Go to Int64.Swap">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.19</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x *<a href="#Int64">Int64</a>) Swap(new <a href="/builtin#int64">int64</a>) (old <a href="/builtin#int64">int64</a>)</pre>
+    </div>
+  <p>Swap atomically stores new into x and returns the previous value.
+</p>
+
+  
+
+  </div>
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="Pointer" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/type.go;l=47">Pointer</a> <a class="Documentation-idLink" href="#Pointer" title="Go to Pointer" aria-label="Go to Pointer">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.19</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type Pointer[T <a href="/builtin#any">any</a>] struct {
+	<span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+    </div>
+  <p>A Pointer is an atomic pointer of type *T. The zero value is a nil *T.
+</p><p>Pointer must not be copied after first use.
+</p>
+<div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Pointer.CompareAndSwap" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Pointer[T]) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/type.go;l=67">CompareAndSwap</a> <a class="Documentation-idLink" href="#Pointer.CompareAndSwap" title="Go to Pointer.CompareAndSwap" aria-label="Go to Pointer.CompareAndSwap">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.19</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x *<a href="#Pointer">Pointer</a>[T]) CompareAndSwap(old, new *T) (swapped <a href="/builtin#bool">bool</a>)</pre>
+    </div>
+  <p>CompareAndSwap executes the compare-and-swap operation for x.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Pointer.Load" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Pointer[T]) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/type.go;l=58">Load</a> <a class="Documentation-idLink" href="#Pointer.Load" title="Go to Pointer.Load" aria-label="Go to Pointer.Load">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.19</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x *<a href="#Pointer">Pointer</a>[T]) Load() *T</pre>
+    </div>
+  <p>Load atomically loads and returns the value stored in x.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Pointer.Store" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Pointer[T]) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/type.go;l=61">Store</a> <a class="Documentation-idLink" href="#Pointer.Store" title="Go to Pointer.Store" aria-label="Go to Pointer.Store">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.19</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x *<a href="#Pointer">Pointer</a>[T]) Store(val *T)</pre>
+    </div>
+  <p>Store atomically stores val into x.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Pointer.Swap" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Pointer[T]) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/type.go;l=64">Swap</a> <a class="Documentation-idLink" href="#Pointer.Swap" title="Go to Pointer.Swap" aria-label="Go to Pointer.Swap">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.19</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x *<a href="#Pointer">Pointer</a>[T]) Swap(new *T) (old *T)</pre>
+    </div>
+  <p>Swap atomically stores new into x and returns the previous value.
+</p>
+
+  
+
+  </div>
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="Uint32" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/type.go;l=141">Uint32</a> <a class="Documentation-idLink" href="#Uint32" title="Go to Uint32" aria-label="Go to Uint32">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.19</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type Uint32 struct {
+	<span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+    </div>
+  <p>A Uint32 is an atomic uint32. The zero value is zero.
+</p><p>Uint32 must not be copied after first use.
+</p>
+<div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Uint32.Add" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Uint32) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/type.go;l=161">Add</a> <a class="Documentation-idLink" href="#Uint32.Add" title="Go to Uint32.Add" aria-label="Go to Uint32.Add">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.19</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x *<a href="#Uint32">Uint32</a>) Add(delta <a href="/builtin#uint32">uint32</a>) (new <a href="/builtin#uint32">uint32</a>)</pre>
+    </div>
+  <p>Add atomically adds delta to x and returns the new value.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Uint32.And" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Uint32) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/type.go;l=165">And</a> <a class="Documentation-idLink" href="#Uint32.And" title="Go to Uint32.And" aria-label="Go to Uint32.And">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.23.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x *<a href="#Uint32">Uint32</a>) And(mask <a href="/builtin#uint32">uint32</a>) (old <a href="/builtin#uint32">uint32</a>)</pre>
+    </div>
+  <p>And atomically performs a bitwise AND operation on x using the bitmask
+provided as mask and returns the old value.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Uint32.CompareAndSwap" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Uint32) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/type.go;l=156">CompareAndSwap</a> <a class="Documentation-idLink" href="#Uint32.CompareAndSwap" title="Go to Uint32.CompareAndSwap" aria-label="Go to Uint32.CompareAndSwap">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.19</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x *<a href="#Uint32">Uint32</a>) CompareAndSwap(old, new <a href="/builtin#uint32">uint32</a>) (swapped <a href="/builtin#bool">bool</a>)</pre>
+    </div>
+  <p>CompareAndSwap executes the compare-and-swap operation for x.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Uint32.Load" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Uint32) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/type.go;l=147">Load</a> <a class="Documentation-idLink" href="#Uint32.Load" title="Go to Uint32.Load" aria-label="Go to Uint32.Load">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.19</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x *<a href="#Uint32">Uint32</a>) Load() <a href="/builtin#uint32">uint32</a></pre>
+    </div>
+  <p>Load atomically loads and returns the value stored in x.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Uint32.Or" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Uint32) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/type.go;l=169">Or</a> <a class="Documentation-idLink" href="#Uint32.Or" title="Go to Uint32.Or" aria-label="Go to Uint32.Or">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.23.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x *<a href="#Uint32">Uint32</a>) Or(mask <a href="/builtin#uint32">uint32</a>) (old <a href="/builtin#uint32">uint32</a>)</pre>
+    </div>
+  <p>Or atomically performs a bitwise OR operation on x using the bitmask
+provided as mask and returns the old value.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Uint32.Store" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Uint32) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/type.go;l=150">Store</a> <a class="Documentation-idLink" href="#Uint32.Store" title="Go to Uint32.Store" aria-label="Go to Uint32.Store">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.19</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x *<a href="#Uint32">Uint32</a>) Store(val <a href="/builtin#uint32">uint32</a>)</pre>
+    </div>
+  <p>Store atomically stores val into x.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Uint32.Swap" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Uint32) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/type.go;l=153">Swap</a> <a class="Documentation-idLink" href="#Uint32.Swap" title="Go to Uint32.Swap" aria-label="Go to Uint32.Swap">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.19</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x *<a href="#Uint32">Uint32</a>) Swap(new <a href="/builtin#uint32">uint32</a>) (old <a href="/builtin#uint32">uint32</a>)</pre>
+    </div>
+  <p>Swap atomically stores new into x and returns the previous value.
+</p>
+
+  
+
+  </div>
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="Uint64" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/type.go;l=174">Uint64</a> <a class="Documentation-idLink" href="#Uint64" title="Go to Uint64" aria-label="Go to Uint64">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.19</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type Uint64 struct {
+	<span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+    </div>
+  <p>A Uint64 is an atomic uint64. The zero value is zero.
+</p><p>Uint64 must not be copied after first use.
+</p>
+<div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Uint64.Add" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Uint64) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/type.go;l=195">Add</a> <a class="Documentation-idLink" href="#Uint64.Add" title="Go to Uint64.Add" aria-label="Go to Uint64.Add">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.19</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x *<a href="#Uint64">Uint64</a>) Add(delta <a href="/builtin#uint64">uint64</a>) (new <a href="/builtin#uint64">uint64</a>)</pre>
+    </div>
+  <p>Add atomically adds delta to x and returns the new value.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Uint64.And" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Uint64) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/type.go;l=199">And</a> <a class="Documentation-idLink" href="#Uint64.And" title="Go to Uint64.And" aria-label="Go to Uint64.And">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.23.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x *<a href="#Uint64">Uint64</a>) And(mask <a href="/builtin#uint64">uint64</a>) (old <a href="/builtin#uint64">uint64</a>)</pre>
+    </div>
+  <p>And atomically performs a bitwise AND operation on x using the bitmask
+provided as mask and returns the old value.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Uint64.CompareAndSwap" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Uint64) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/type.go;l=190">CompareAndSwap</a> <a class="Documentation-idLink" href="#Uint64.CompareAndSwap" title="Go to Uint64.CompareAndSwap" aria-label="Go to Uint64.CompareAndSwap">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.19</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x *<a href="#Uint64">Uint64</a>) CompareAndSwap(old, new <a href="/builtin#uint64">uint64</a>) (swapped <a href="/builtin#bool">bool</a>)</pre>
+    </div>
+  <p>CompareAndSwap executes the compare-and-swap operation for x.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Uint64.Load" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Uint64) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/type.go;l=181">Load</a> <a class="Documentation-idLink" href="#Uint64.Load" title="Go to Uint64.Load" aria-label="Go to Uint64.Load">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.19</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x *<a href="#Uint64">Uint64</a>) Load() <a href="/builtin#uint64">uint64</a></pre>
+    </div>
+  <p>Load atomically loads and returns the value stored in x.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Uint64.Or" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Uint64) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/type.go;l=203">Or</a> <a class="Documentation-idLink" href="#Uint64.Or" title="Go to Uint64.Or" aria-label="Go to Uint64.Or">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.23.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x *<a href="#Uint64">Uint64</a>) Or(mask <a href="/builtin#uint64">uint64</a>) (old <a href="/builtin#uint64">uint64</a>)</pre>
+    </div>
+  <p>Or atomically performs a bitwise OR operation on x using the bitmask
+provided as mask and returns the old value.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Uint64.Store" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Uint64) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/type.go;l=184">Store</a> <a class="Documentation-idLink" href="#Uint64.Store" title="Go to Uint64.Store" aria-label="Go to Uint64.Store">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.19</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x *<a href="#Uint64">Uint64</a>) Store(val <a href="/builtin#uint64">uint64</a>)</pre>
+    </div>
+  <p>Store atomically stores val into x.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Uint64.Swap" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Uint64) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/type.go;l=187">Swap</a> <a class="Documentation-idLink" href="#Uint64.Swap" title="Go to Uint64.Swap" aria-label="Go to Uint64.Swap">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.19</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x *<a href="#Uint64">Uint64</a>) Swap(new <a href="/builtin#uint64">uint64</a>) (old <a href="/builtin#uint64">uint64</a>)</pre>
+    </div>
+  <p>Swap atomically stores new into x and returns the previous value.
+</p>
+
+  
+
+  </div>
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="Uintptr" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/type.go;l=208">Uintptr</a> <a class="Documentation-idLink" href="#Uintptr" title="Go to Uintptr" aria-label="Go to Uintptr">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.19</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type Uintptr struct {
+	<span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+    </div>
+  <p>A Uintptr is an atomic uintptr. The zero value is zero.
+</p><p>Uintptr must not be copied after first use.
+</p>
+<div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Uintptr.Add" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Uintptr) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/type.go;l=228">Add</a> <a class="Documentation-idLink" href="#Uintptr.Add" title="Go to Uintptr.Add" aria-label="Go to Uintptr.Add">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.19</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x *<a href="#Uintptr">Uintptr</a>) Add(delta <a href="/builtin#uintptr">uintptr</a>) (new <a href="/builtin#uintptr">uintptr</a>)</pre>
+    </div>
+  <p>Add atomically adds delta to x and returns the new value.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Uintptr.And" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Uintptr) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/type.go;l=232">And</a> <a class="Documentation-idLink" href="#Uintptr.And" title="Go to Uintptr.And" aria-label="Go to Uintptr.And">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.23.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x *<a href="#Uintptr">Uintptr</a>) And(mask <a href="/builtin#uintptr">uintptr</a>) (old <a href="/builtin#uintptr">uintptr</a>)</pre>
+    </div>
+  <p>And atomically performs a bitwise AND operation on x using the bitmask
+provided as mask and returns the old value.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Uintptr.CompareAndSwap" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Uintptr) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/type.go;l=223">CompareAndSwap</a> <a class="Documentation-idLink" href="#Uintptr.CompareAndSwap" title="Go to Uintptr.CompareAndSwap" aria-label="Go to Uintptr.CompareAndSwap">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.19</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x *<a href="#Uintptr">Uintptr</a>) CompareAndSwap(old, new <a href="/builtin#uintptr">uintptr</a>) (swapped <a href="/builtin#bool">bool</a>)</pre>
+    </div>
+  <p>CompareAndSwap executes the compare-and-swap operation for x.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Uintptr.Load" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Uintptr) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/type.go;l=214">Load</a> <a class="Documentation-idLink" href="#Uintptr.Load" title="Go to Uintptr.Load" aria-label="Go to Uintptr.Load">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.19</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x *<a href="#Uintptr">Uintptr</a>) Load() <a href="/builtin#uintptr">uintptr</a></pre>
+    </div>
+  <p>Load atomically loads and returns the value stored in x.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Uintptr.Or" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Uintptr) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/type.go;l=236">Or</a> <a class="Documentation-idLink" href="#Uintptr.Or" title="Go to Uintptr.Or" aria-label="Go to Uintptr.Or">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.23.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x *<a href="#Uintptr">Uintptr</a>) Or(mask <a href="/builtin#uintptr">uintptr</a>) (old <a href="/builtin#uintptr">uintptr</a>)</pre>
+    </div>
+  <p>Or atomically performs a bitwise OR operation on x using the bitmask
+provided as mask and returns the old value.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Uintptr.Store" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Uintptr) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/type.go;l=217">Store</a> <a class="Documentation-idLink" href="#Uintptr.Store" title="Go to Uintptr.Store" aria-label="Go to Uintptr.Store">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.19</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x *<a href="#Uintptr">Uintptr</a>) Store(val <a href="/builtin#uintptr">uintptr</a>)</pre>
+    </div>
+  <p>Store atomically stores val into x.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Uintptr.Swap" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Uintptr) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/type.go;l=220">Swap</a> <a class="Documentation-idLink" href="#Uintptr.Swap" title="Go to Uintptr.Swap" aria-label="Go to Uintptr.Swap">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.19</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (x *<a href="#Uintptr">Uintptr</a>) Swap(new <a href="/builtin#uintptr">uintptr</a>) (old <a href="/builtin#uintptr">uintptr</a>)</pre>
+    </div>
+  <p>Swap atomically stores new into x and returns the previous value.
+</p>
+
+  
+
+  </div>
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="Value" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/value.go;l=16">Value</a> <a class="Documentation-idLink" href="#Value" title="Go to Value" aria-label="Go to Value">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.4</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type Value struct {
+	<span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+    </div>
+  <p>A Value provides an atomic load and store of a consistently typed value.
+The zero value for a Value returns nil from <a href="#Value.Load">Value.Load</a>.
+Once <a href="#Value.Store">Value.Store</a> has been called, a Value must not be copied.
+</p><p>A Value must not be copied after first use.
+</p>
+<details tabindex="-1" id="example-Value-Config" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example (Config) <a href="#example-Value-Config" title="Go to Example (Config)" aria-label="Go to Example (Config)">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+<p>The following example shows how to use Value for periodic program config updates
+and propagation of the changes to worker goroutines.
+</p>
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;sync/atomic&#34;
+	&#34;time&#34;
+)
+
+func loadConfig() map[string]string {
+	return make(map[string]string)
+}
+
+func requests() chan int {
+	return make(chan int)
+}
+
+func main() {
+	var config atomic.Value // holds current server configuration
+	// Create initial config value and store into config.
+	config.Store(loadConfig())
+	go func() {
+		// Reload config every 10 seconds
+		// and update config value with the new version.
+		for {
+			time.Sleep(10 * time.Second)
+			config.Store(loadConfig())
+		}
+	}()
+	// Create worker goroutines that handle incoming requests
+	// using the latest config value.
+	for i := 0; i &lt; 10; i++ {
+		go func() {
+			for r := range requests() {
+				c := config.Load()
+				// Handle request r using config c.
+				_, _ = r, c
+			}
+		}()
+	}
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer" hidden><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput"></span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+<details tabindex="-1" id="example-Value-ReadMostly" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example (ReadMostly) <a href="#example-Value-ReadMostly" title="Go to Example (ReadMostly)" aria-label="Go to Example (ReadMostly)">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+<p>The following example shows how to maintain a scalable frequently read,
+but infrequently updated data structure using copy-on-write idiom.
+</p>
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;sync&#34;
+	&#34;sync/atomic&#34;
+)
+
+func main() {
+	type Map map[string]string
+	var m atomic.Value
+	m.Store(make(Map))
+	var mu sync.Mutex // used only by writers
+	// read function can be used to read the data without further synchronization
+	read := func(key string) (val string) {
+		m1 := m.Load().(Map)
+		return m1[key]
+	}
+	// insert function can be used to update the data without further synchronization
+	insert := func(key, val string) {
+		mu.Lock() // synchronize with other potential writers
+		defer mu.Unlock()
+		m1 := m.Load().(Map) // load current value of the data structure
+		m2 := make(Map)      // create a new value
+		for k, v := range m1 {
+			m2[k] = v // copy all data from the current object to the new one
+		}
+		m2[key] = val // do the update that we need
+		m.Store(m2)   // atomically replace the current object with the new one
+		// At this point all new readers start working with the new version.
+		// The old version will be garbage collected once the existing readers
+		// (if any) are done with it.
+	}
+	_, _ = read, insert
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer" hidden><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput"></span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+<div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Value.CompareAndSwap" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Value) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/value.go;l=134">CompareAndSwap</a> <a class="Documentation-idLink" href="#Value.CompareAndSwap" title="Go to Value.CompareAndSwap" aria-label="Go to Value.CompareAndSwap">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.17</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (v *<a href="#Value">Value</a>) CompareAndSwap(old, new <a href="/builtin#any">any</a>) (swapped <a href="/builtin#bool">bool</a>)</pre>
+    </div>
+  <p>CompareAndSwap executes the compare-and-swap operation for the <a href="#Value">Value</a>.
+</p><p>All calls to CompareAndSwap for a given Value must use values of the same
+concrete type. CompareAndSwap of an inconsistent type panics, as does
+CompareAndSwap(old, nil).
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Value.Load" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Value) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/value.go;l=28">Load</a> <a class="Documentation-idLink" href="#Value.Load" title="Go to Value.Load" aria-label="Go to Value.Load">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.4</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (v *<a href="#Value">Value</a>) Load() (val <a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>Load returns the value set by the most recent Store.
+It returns nil if there has been no call to Store for this Value.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Value.Store" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Value) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/value.go;l=47">Store</a> <a class="Documentation-idLink" href="#Value.Store" title="Go to Value.Store" aria-label="Go to Value.Store">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.4</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (v *<a href="#Value">Value</a>) Store(val <a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>Store sets the value of the <a href="#Value">Value</a> v to val.
+All calls to Store for a given Value must use values of the same concrete type.
+Store of an inconsistent type panics, as does Store(nil).
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Value.Swap" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Value) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/value.go;l=90">Swap</a> <a class="Documentation-idLink" href="#Value.Swap" title="Go to Value.Swap" aria-label="Go to Value.Swap">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.17</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (v *<a href="#Value">Value</a>) Swap(new <a href="/builtin#any">any</a>) (old <a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>Swap stores new into Value and returns the previous value. It returns nil if
+the Value is empty.
+</p><p>All calls to Swap for a given Value must use values of the same concrete
+type. Swap of an inconsistent type panics, as does Swap(nil).
+</p>
+
+  
+
+  </div>
+  
+
+    </div></section><h3 tabindex="-1" id="pkg-notes" class="Documentation-notesHeader">Notes <a href="#pkg-notes" title="Go to Notes" aria-label="Go to Notes">¶</a></h3>
+
+  <section class="Documentation-notes"><div class="Documentation-note">
+      <h3 tabindex="-1" id="pkg-note-BUG" class="Documentation-noteHeader">Bugs <a href="#pkg-note-BUG" title="Go to Bugs" aria-label="Go to Bugs">¶</a></h3>
+      <ul class="Documentation-noteList" style="padding-left: 20px; list-style: initial;">
+<li style="margin: 6px 0 6px 0;"><p>On 386, the 64-bit functions use instructions unavailable before the Pentium MMX.
+</p><p>On non-Linux ARM, the 64-bit functions use instructions unavailable before the ARMv6k core.
+</p><p>On ARM, 386, and 32-bit MIPS, it is the caller&#39;s responsibility to arrange
+for 64-bit alignment of 64-bit words accessed atomically via the primitive
+atomic functions (types <a href="#Int64">Int64</a> and <a href="#Uint64">Uint64</a> are automatically aligned).
+The first word in an allocated struct, array, or slice; in a global
+variable; or in a local variable (because on 32-bit architectures, the
+subject of 64-bit atomic operations will escape to the heap) can be
+relied upon to be 64-bit aligned.
+</p></li></ul>
+</div></section></div> 
+
+
+
+
+
+
+
+      
+    </div>
+  </div>
+
+        
+      
+      
+        
+  <div class="UnitFiles js-unitFiles">
+    <h2 class="UnitFiles-title" id="section-sourcefiles">
+      <img class="go-Icon" height="24" width="24" src="/static/shared/icon/insert_drive_file_gm_grey_24dp.svg" alt="">
+      Source Files
+      <a class="UnitFiles-idLink" href="#section-sourcefiles" title="Go to Source Files" aria-label="Go to Source Files">¶</a>
+    </h2><div class="UnitFiles-titleLink">
+      <a href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic" target="_blank" rel="noopener">View all Source files</a>
+    </div><div>
+      <ul class="UnitFiles-fileList"><li><a href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/doc.go" target="_blank" rel="noopener" title="doc.go">doc.go</a></li><li><a href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/doc_64.go" target="_blank" rel="noopener" title="doc_64.go">doc_64.go</a></li><li><a href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/type.go" target="_blank" rel="noopener" title="type.go">type.go</a></li><li><a href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/atomic/value.go" target="_blank" rel="noopener" title="value.go">value.go</a></li></ul>
+    </div>
+  </div>
+
+      
+      
+    </div>
+  </div>
+  <div id="showInternal-description" hidden> Click to show internal directories. </div>
+  <div id="hideInternal-description" hidden> Click to hide internal directories. </div>
+</article>
+    <footer class="go-Main-footer"></footer>
+  </main>
+
+    
+  <footer class="go-Footer">
+    
+    <div class="go-Footer-links">
+      <div class="go-Footer-linkColumn">
+        <a href="https://go.dev/solutions" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          Why Go
+        </a>
+        <a href="https://go.dev/solutions#use-cases" class="go-Footer-link"
+            data-gtmc="footer link">
+          Use Cases
+        </a>
+        <a href="https://go.dev/solutions#case-studies" class="go-Footer-link"
+            data-gtmc="footer link">
+          Case Studies
+        </a>
+      </div>
+      <div class="go-Footer-linkColumn">
+        <a href="https://learn.go.dev/" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          Get Started
+        </a>
+        <a href="https://play.golang.org" class="go-Footer-link" data-gtmc="footer link">
+          Playground
+        </a>
+        <a href="https://tour.golang.org" class="go-Footer-link" data-gtmc="footer link">
+          Tour
+        </a>
+        <a href="https://stackoverflow.com/questions/tagged/go?tab=Newest" class="go-Footer-link"
+            data-gtmc="footer link">
+          Stack Overflow
+        </a>
+        <a href="https://go.dev/help" class="go-Footer-link"
+            data-gtmc="footer link">
+          Help
+        </a>
+      </div>
+      <div class="go-Footer-linkColumn">
+        <a href="https://pkg.go.dev" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          Packages
+        </a>
+        <a href="/std" class="go-Footer-link" data-gtmc="footer link">
+          Standard Library
+        </a>
+        <a href="/golang.org/x" class="go-Footer-link" data-gtmc="footer link">
+          Sub-repositories
+        </a>
+        <a href="https://pkg.go.dev/about" class="go-Footer-link" data-gtmc="footer link">
+          About Go Packages
+        </a>
+      </div>
+      <div class="go-Footer-linkColumn">
+        <a href="https://go.dev/project" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          About
+        </a>
+        <a href="https://go.dev/dl/" class="go-Footer-link" data-gtmc="footer link">Download</a>
+        <a href="https://go.dev/blog" class="go-Footer-link" data-gtmc="footer link">Blog</a>
+        <a href="https://github.com/golang/go/issues" class="go-Footer-link" data-gtmc="footer link">
+          Issue Tracker
+        </a>
+        <a href="https://go.dev/doc/devel/release.html" class="go-Footer-link"
+            data-gtmc="footer link">
+          Release Notes
+        </a>
+        <a href="https://go.dev/brand" class="go-Footer-link" data-gtmc="footer link">
+          Brand Guidelines
+        </a>
+        <a href="https://go.dev/conduct" class="go-Footer-link" data-gtmc="footer link">
+          Code of Conduct
+        </a>
+      </div>
+      <div class="go-Footer-linkColumn">
+        <a href="https://www.twitter.com/golang" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          Connect
+        </a>
+        <a href="https://www.twitter.com/golang" class="go-Footer-link" data-gtmc="footer link">
+          Twitter
+        </a>
+        <a href="https://github.com/golang" class="go-Footer-link" data-gtmc="footer link">GitHub</a>
+        <a href="https://invite.slack.golangbridge.org/" class="go-Footer-link"
+            data-gtmc="footer link">
+          Slack
+        </a>
+        <a href="https://reddit.com/r/golang" class="go-Footer-link" data-gtmc="footer link">
+          r/golang
+        </a>
+        <a href="https://www.meetup.com/pro/go" class="go-Footer-link" data-gtmc="footer link">
+          Meetup
+        </a>
+        <a href="https://golangweekly.com/" class="go-Footer-link" data-gtmc="footer link">
+          Golang Weekly
+        </a>
+      </div>
+    </div>
+    <div class="go-Footer-bottom">
+      <img class="go-Footer-gopher"  width="1431" height="901"
+          src="/static/shared/gopher/pilot-bust-1431x901.svg" alt="Gopher in flight goggles">
+      <ul class="go-Footer-listRow">
+        <li class="go-Footer-listItem">
+          <a href="https://go.dev/copyright" data-gtmc="footer link">Copyright</a>
+        </li>
+        <li class="go-Footer-listItem">
+          <a href="https://go.dev/tos" data-gtmc="footer link">Terms of Service</a>
+        </li>
+        <li class="go-Footer-listItem">
+          <a href="http://www.google.com/intl/en/policies/privacy/" data-gtmc="footer link"
+              target="_blank" rel="noopener">
+            Privacy Policy
+          </a>
+        </li>
+        <li class="go-Footer-listItem">
+          <a href="https://go.dev/s/pkgsite-feedback" target="_blank" rel="noopener"
+              data-gtmc="footer link">
+            Report an Issue
+          </a>
+        </li>
+        <li class="go-Footer-listItem">
+          <button class="go-Button go-Button--text go-Footer-toggleTheme js-toggleTheme" aria-label="Theme Toggle">
+            <img data-value="auto" class="go-Icon go-Icon--inverted" height="24" width="24" src="/static/shared/icon/brightness_6_gm_grey_24dp.svg" alt="System theme">
+            <img data-value="dark" class="go-Icon go-Icon--inverted" height="24" width="24" src="/static/shared/icon/brightness_2_gm_grey_24dp.svg" alt="Dark theme">
+            <img data-value="light" class="go-Icon go-Icon--inverted" height="24" width="24" src="/static/shared/icon/light_mode_gm_grey_24dp.svg" alt="Light theme">
+            <p> Theme Toggle </p>
+          </button>
+        </li>
+        <li class="go-Footer-listItem">
+          <button class="go-Button go-Button--text go-Footer-keyboard js-openShortcuts" aria-label="Shorcuts Modal">
+            <img class="go-Icon go-Icon--inverted" height="24" width="24" src="/static/shared/icon/keyboard_grey_24dp.svg" alt="">
+            <p> Shortcuts Modal </p>
+          </button>
+        </li>
+      </ul>
+      <a class="go-Footer-googleLogo" href="https://google.com" target="_blank"rel="noopener"
+          data-gtmc="footer link">
+        <img class="go-Footer-googleLogoImg" height="24" width="72"
+            src="/static/shared/logo/google-white.svg" alt="Google logo">
+      </a>
+    </div>
+  </footer>
+
+    
+  <dialog id="jump-to-modal" class="JumpDialog go-Modal go-Modal--md js-modal">
+    <form method="dialog" data-gmtc="jump to form" aria-label="Jump to Identifier">
+      <div class="Dialog-title go-Modal-header">
+        <h2>Jump to</h2>
+        <button
+          class="go-Button go-Button--inline"
+          type="button"
+          data-modal-close
+          data-gtmc="modal button"
+          aria-label="Close"
+        >
+          <img
+            class="go-Icon"
+            height="24"
+            width="24"
+            src="/static/shared/icon/close_gm_grey_24dp.svg"
+            alt=""
+          />
+        </button>
+      </div>
+      <div class="JumpDialog-filter">
+        <input class="JumpDialog-input go-Input" autocomplete="off" type="text">
+      </div>
+      <div class="JumpDialog-body go-Modal-body">
+        <div class="JumpDialog-list"></div>
+      </div>
+      <div class="go-Modal-actions">
+        <button class="go-Button" data-test-id="close-dialog">Close</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog class="ShortcutsDialog go-Modal go-Modal--sm js-modal">
+    <form method="dialog">
+      <div class="go-Modal-header">
+        <h2>Keyboard shortcuts</h2>
+        <button
+          class="go-Button go-Button--inline"
+          type="button"
+          data-modal-close
+          data-gtmc="modal button"
+          aria-label="Close"
+        >
+          <img
+            class="go-Icon"
+            height="24"
+            width="24"
+            src="/static/shared/icon/close_gm_grey_24dp.svg"
+            alt=""
+          />
+        </button>
+      </div>
+      <div class="go-Modal-body">
+        <table>
+          <tbody>
+            <tr><td class="ShortcutsDialog-key">
+              <strong>?</strong></td><td> : This menu</td>
+            </tr>
+            <tr><td class="ShortcutsDialog-key">
+              <strong>/</strong></td><td> : Search site</td>
+            </tr>
+            <tr><td class="ShortcutsDialog-key">
+              <strong>f</strong> or <strong>F</strong></td><td> : Jump to</td>
+            </tr>
+            <tr>
+              <td class="ShortcutsDialog-key"><strong>y</strong> or <strong>Y</strong></td>
+              <td> : Canonical URL</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="go-Modal-actions">
+        <button class="go-Button" data-test-id="close-dialog">Close</button>
+      </div>
+    </form>
+  </dialog>
+
+    
+      <section class="Cookie-notice js-cookieNotice">
+        <div>go.dev uses cookies from Google to deliver and enhance the quality of its services and to
+        analyze traffic. <a target=_blank href="https://policies.google.com/technologies/cookies">Learn more.</a></div>
+        <div><button class="go-Button">Okay</button></div>
+      </section>
+    
+    
+      <script>
+        // this will throw if the querySelector can’t find the element
+        const gtmId = document.querySelector('.js-gtmID').dataset.gtmid;
+        if (!gtmId) {
+          throw new Error('Google Tag Manager ID not found');
+        }
+        loadScript(`https://www.googletagmanager.com/gtm.js?id=${gtmId}`);
+      </script>
+      <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W8MVQXG"
+                height="0" width="0" style="display:none;visibility:hidden">
+        </iframe>
+      </noscript>
+    
+    
+  
+  <div class="js-canonicalURLPath" data-canonical-url-path="/sync/atomic@go1.26.3" hidden></div>
+  <div class="js-playgroundVars" data-modulepath="std" data-version="v1.26.3" hidden></div>
+  <script>
+    loadScript('/static/frontend/unit/main/main.js')
+  </script>
+
+  <script>
+    loadScript('/static/frontend/unit/unit.js')
+  </script>
+
+  </body>
+</html>

@@ -87,3 +87,31 @@ License:
 Notes:
 
 - The raw Markdown file is preferred over GitHub-rendered HTML.
+
+## External Linked Documentation
+
+The source chunk pipeline scans generated chunks for absolute documentation
+links and fetches a conservative allowlist of linked docs into
+`sources/raw/external/`.
+
+Local files:
+
+- `sources/raw/external/`
+- `sources/raw/external-docs-manifest.json`
+
+Current manifest:
+
+- Fetched docs: 121
+- Skipped URLs: 70
+- Failed URLs: 0
+
+Notes:
+
+- `scripts/fetch_external_docs.py` normalizes duplicate Go domains such as
+  `blog.golang.org` to `go.dev/blog`.
+- Source-code viewers such as `go.googlesource.com/go/.../src/...` and
+  `go.dev/src/...` are skipped because they are not documentation chunks.
+- The generated manifest records every fetched, skipped, and failed URL plus
+  the chunk paths that referenced it.
+- External linked docs retain their original site licenses. This repository
+  does not assign a single license to those cached documents.

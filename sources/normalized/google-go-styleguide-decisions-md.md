@@ -1,17 +1,6 @@
-<!--* toc_depth: 3 *-->
-
 # Go Style Decisions
 
-https://google.github.io/styleguide/go/decisions
-
-[Overview](index) | [Guide](guide) | [Decisions](decisions) |
 [Best practices](best-practices)
-
-<!--
-
--->
-
-{% raw %}
 
 **Note:** This is part of a series of documents that outline [Go Style](index)
 at Google. This document is **[normative](index#normative) but not
@@ -129,8 +118,6 @@ referenced in the file. If a given import is renamed in multiple files,
 particularly in the same or nearby packages, the same local name should be used
 wherever possible for consistency.
 
-<!--#include file="/go/g3doc/style/includes/special-name-exception.md"-->
-
 See also: [Go blog post about package names](https://go.dev/blog/package-names).
 
 <a id="receiver-names"></a>
@@ -202,8 +189,6 @@ const (
 )
 ```
 
-<!--#include file="/go/g3doc/style/includes/special-name-exception.md"-->
-
 <a id="initialisms"></a>
 
 ### Initialisms
@@ -226,8 +211,6 @@ should also be capitalized similar to their usage in English prose.
 
 [exportedness]: https://golang.org/ref/spec#Exported_identifiers
 
-<!-- Keep this table narrow. If it must grow wider, replace with a list. -->
-
 English Usage | Scope      | Correct  | Incorrect
 ------------- | ---------- | -------- | --------------------------------------
 XML API       | Exported   | `XMLAPI` | `XmlApi`, `XMLApi`, `XmlAPI`, `XMLapi`
@@ -244,8 +227,6 @@ DB            | Exported   | `DB`     | `Db`
 DB            | Unexported | `db`     | `dB`
 Txn           | Exported   | `Txn`    | `TXN`
 
-<!--#include file="/go/g3doc/style/includes/special-name-exception.md"-->
-
 <a id="getters"></a>
 
 ### Getters
@@ -260,8 +241,6 @@ If the function involves performing a complex computation or executing a remote
 call, a different word like `Compute` or `Fetch` can be used in place of `Get`,
 to make it clear to a reader that the function call may take time and could
 block or fail.
-
-<!--#include file="/go/g3doc/style/includes/special-name-exception.md"-->
 
 <a id="variable-names"></a>
 
@@ -356,12 +335,6 @@ In general:
 <a id="repetition"></a>
 
 ### Repetition
-
-<!--
-Note to future editors:
-
-Do not use the term "stutter" to refer to cases when a name is repetitive.
--->
 
 A piece of Go source code should avoid unnecessary repetition. One common source
 of this is repetitive names, which often include unnecessary words or repeat
@@ -1288,7 +1261,7 @@ current package.
     very common to do so. For example, a struct with a large number of fields
     should almost always be initialized with field names.
 
-    <!-- TODO: Maybe a better example here that doesn't have many fields. -->
+    
 
     ```go
     // Good:
@@ -1988,7 +1961,6 @@ type Record struct {
   buf bytes.Buffer
   // other fields omitted
 }
-
 
 func (r Record) Process(...) {...} // Makes a copy of r.buf
 
@@ -3147,8 +3119,6 @@ As a general-purpose comparison library, `cmp` may not know how to compare
 certain types. For example, it can only compare protocol buffer messages if
 passed the [`protocmp.Transform`] option.
 
-<!-- The order of want and got here is deliberate. See comment in #print-diffs. -->
-
 ```go
 // Good:
 if diff := cmp.Diff(want, got, protocmp.Transform()); diff != "" {
@@ -3255,15 +3225,6 @@ strings. You can use this as a building block for other kinds of diffs.
 [`pretty.Compare`]: https://pkg.go.dev/github.com/kylelemons/godebug/pretty#Compare
 
 Add some text to your failure message explaining the direction of the diff.
-
-<!--
-The reversed order of want and got in these examples is intentional, as this is
-the prevailing order across the Google codebase. The lack of a stance on which
-order to use is also intentional, as there is no consensus which is
-"most readable."
-
-
--->
 
 *   Something like `diff (-want +got)` is good when you're using the `cmp`,
     `pretty`, and `diff` packages (if you pass `(want, got)` to the function),
@@ -3875,9 +3836,3 @@ message boards.
 
 [composite declaration best practices]: https://google.github.io/styleguide/go/best-practices#vardeclcomposite
 [initialization best practices]: https://google.github.io/styleguide/go/best-practices#vardeclinitialization
-
-<!--
-
--->
-
-{% endraw %}

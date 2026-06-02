@@ -1,0 +1,3587 @@
+---
+source_name: "External Linked Documentation"
+source_url: "https://pkg.go.dev/github.com/golang/glog"
+retrieved_at: "2026-06-02T06:42:23.187962+00:00"
+content_type: "text/html; charset=utf-8"
+truncated: false
+insecure_tls_fallback: true
+---
+
+
+
+<!DOCTYPE html>
+<html lang="en" data-layout="responsive" data-local="">
+  <head>
+    
+    <script>
+      window.addEventListener('error', window.__err=function f(e){f.p=f.p||[];f.p.push(e)});
+    </script>
+    <script>
+      (function() {
+        const theme = document.cookie.match(/prefers-color-scheme=(light|dark|auto)/)?.[1]
+        if (theme) {
+          document.querySelector('html').setAttribute('data-theme', theme);
+        }
+      }())
+    </script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Package glog implements logging analogous to the Google-internal C++ INFO/ERROR/V setup.">
+    
+    <meta class="js-gtmID" data-gtmid="GTM-W8MVQXG">
+    <link rel="shortcut icon" href="/static/shared/icon/favicon.ico">
+    
+  
+    <link rel="canonical" href="https://pkg.go.dev/github.com/golang/glog">
+  
+
+    <link href="/static/frontend/frontend.min.css?version=prod-frontend-00193-fdr" rel="stylesheet">
+    
+    <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="Go Packages">
+    
+    
+  <title>glog package - github.com/golang/glog - Go Packages</title>
+
+    
+  <link href="/static/frontend/unit/unit.min.css?version=prod-frontend-00193-fdr" rel="stylesheet">
+  
+  <link href="/static/frontend/unit/main/main.min.css?version=prod-frontend-00193-fdr" rel="stylesheet">
+
+
+  </head>
+  <body>
+    
+    <script>
+      function loadScript(src, mod = true) {
+        let s = document.createElement('script');
+        s.src = src;
+        if (mod) {
+          s.type = 'module';
+          s.async = true;
+          s.defer = true
+        }
+        document.head.appendChild(s);
+      }
+      loadScript("/third_party/dialog-polyfill/dialog-polyfill.js", false)
+      loadScript("/static/frontend/frontend.js");
+    </script>
+    
+  <header class="go-Header go-Header--full js-siteHeader">
+    <div class="go-Header-inner go-Header-inner--dark">
+      <nav class="go-Header-nav">
+        <a href="https://go.dev/" class="js-headerLogo" data-gtmc="nav link"
+            data-test-id="go-header-logo-link" role="heading" aria-level="1">
+          <img class="go-Header-logo" src="/static/shared/logo/go-white.svg" alt="Go">
+        </a>
+         <div class="skip-navigation-wrapper">
+            <a class="skip-to-content-link" aria-label="Skip to main content" href="#main-content"> Skip to Main Content </a>
+          </div>
+        <div class="go-Header-rightContent">
+          
+<div class="go-SearchForm js-searchForm">
+  <form
+    class="go-InputGroup go-ShortcutKey go-SearchForm-form"
+    action="/search"
+    data-shortcut="/"
+    data-shortcut-alt="search"
+    data-gtmc="search form"
+    aria-label="Search for a package"
+    role="search"
+  >
+    <input name="q" class="go-Input js-searchFocus" aria-label="Search for a package" type="search"
+        autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false"
+        placeholder="Search packages or symbols"
+        value="" />
+    <input name="m" value="" hidden>
+    <button class="go-Button go-Button--inverted" aria-label="Submit search">
+      <img
+        class="go-Icon"
+        height="24"
+        width="24"
+        src="/static/shared/icon/search_gm_grey_24dp.svg"
+        alt=""
+      />
+    </button>
+  </form>
+  <button class="go-SearchForm-expandSearch js-expandSearch" data-gtmc="nav button"
+      aria-label="Open search" data-test-id="expand-search">
+    <img class="go-Icon go-Icon--inverted" height="24" width="24"
+        src="/static/shared/icon/search_gm_grey_24dp.svg" alt="">
+
+  </button>
+</div>
+
+          <ul class="go-Header-menu">
+            <li class="go-Header-menuItem">
+              <a class="js-desktop-menu-hover" href="#" data-gtmc="nav link">
+                Why Go
+                <img class="go-Icon" height="24" width="24" src="/static/shared/icon/arrow_drop_down_gm_grey_24dp.svg" alt="submenu dropdown icon">
+              </a>
+              <ul class="go-Header-submenu go-Header-submenu--why js-desktop-submenu-hover" aria-label="submenu">
+                  <li class="go-Header-submenuItem">
+                    <div>
+                      <a href="https://go.dev/solutions#case-studies">
+                        <span>Case Studies</span>
+                      </a>
+                    </div>
+                    <p>Common problems companies solve with Go</p>
+                  </li>
+                  <li class="go-Header-submenuItem">
+                    <div>
+                      <a href="https://go.dev/solutions#use-cases">
+                        <span>Use Cases</span>
+                      </a>
+                    </div>
+                    <p>Stories about how and why companies use Go</p>
+                  </li>
+                  <li class="go-Header-submenuItem">
+                    <div>
+                      <a href="https://go.dev/security/">
+                        <span>Security</span>
+                      </a>
+                    </div>
+                    <p>How Go can help keep you secure by default</p>
+                  </li>
+              </ul>
+            </li>
+            <li class="go-Header-menuItem">
+              <a href="https://go.dev/learn/" data-gtmc="nav link">Learn</a>
+            </li>
+            <li class="go-Header-menuItem">
+              <a class="js-desktop-menu-hover" href="#" data-gtmc="nav link">
+                Docs
+                <img class="go-Icon" height="24" width="24" src="/static/shared/icon/arrow_drop_down_gm_grey_24dp.svg" alt="submenu dropdown icon">
+              </a>
+              <ul class="go-Header-submenu go-Header-submenu--docs js-desktop-submenu-hover" aria-label="submenu">
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/doc/effective_go">
+                      <span>Effective Go</span>
+                    </a>
+                  </div>
+                  <p>Tips for writing clear, performant, and idiomatic Go code</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/doc/">
+                      <span>Go User Manual</span>
+                    </a>
+                  </div>
+                  <p>A complete introduction to building software with Go</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://pkg.go.dev/std">
+                      <span>Standard library</span>
+                    </a>
+                  </div>
+                  <p>Reference documentation for Go's standard library</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/doc/devel/release">
+                      <span>Release Notes</span>
+                    </a>
+                  </div>
+                  <p>Learn what's new in each Go release</p>
+                </li>
+              </ul>
+            </li>
+            <li class="go-Header-menuItem go-Header-menuItem--active">
+              <a href="/" data-gtmc="nav link">Packages</a>
+            </li>
+            <li class="go-Header-menuItem">
+              <a class="js-desktop-menu-hover" href="#" data-gtmc="nav link">
+                Community
+                <img class="go-Icon" height="24" width="24" src="/static/shared/icon/arrow_drop_down_gm_grey_24dp.svg" alt="submenu dropdown icon">
+              </a>
+              <ul class="go-Header-submenu go-Header-submenu--community js-desktop-submenu-hover" aria-label="submenu">
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/talks/">
+                      <span>Recorded Talks</span>
+                    </a>
+                  </div>
+                  <p>Videos from prior events</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://www.meetup.com/pro/go">
+                      <span>Meetups</span>
+                      <i class="material-icons">
+                        <img class="go-Icon" height="24" width="24"
+                            src="/static/shared/icon/launch_gm_grey_24dp.svg" alt="">
+                      </i>
+                    </a>
+                  </div>
+                  <p>Meet other local Go developers</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://github.com/golang/go/wiki/Conferences">
+                      <span>Conferences</span>
+                      <i class="material-icons">
+                        <img class="go-Icon" height="24" width="24"
+                            src="/static/shared/icon/launch_gm_grey_24dp.svg" alt="">
+                      </i>
+                    </a>
+                  </div>
+                  <p>Learn and network with Go developers from around the world</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/blog">
+                      <span>Go blog</span>
+                    </a>
+                  </div>
+                  <p>The Go project's official blog.</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/help">
+                      <span>Go project</span>
+                    </a>
+                  </div>
+                  <p>Get help and stay informed from Go</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    Get connected
+                  </div>
+                  <p></p>
+                  <div class="go-Header-socialIcons">
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with google-groups (Opens in new window)"
+                        title="Get connected with google-groups (Opens in new window)"
+                        href="https://groups.google.com/g/golang-nuts">
+                        <img src="/static/shared/logo/social/google-groups.svg" />
+                      </a>
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with github (Opens in new window)"
+                        title="Get connected with github (Opens in new window)"
+                        href="https://github.com/golang">
+                        <img src="/static/shared/logo/social/github.svg" />
+                      </a>
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with twitter (Opens in new window)"
+                        title="Get connected with twitter (Opens in new window)"
+                        href="https://twitter.com/golang">
+                        <img src="/static/shared/logo/social/twitter.svg" />
+                      </a>
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with reddit (Opens in new window)"
+                        title="Get connected with reddit (Opens in new window)"
+                        href="https://www.reddit.com/r/golang/">
+                        <img src="/static/shared/logo/social/reddit.svg" />
+                      </a>
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with slack (Opens in new window)"
+                        title="Get connected with slack (Opens in new window)"
+                        href="https://invite.slack.golangbridge.org/">
+                        <img src="/static/shared/logo/social/slack.svg" />
+                      </a>
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with stack-overflow (Opens in new window)"
+                        title=""
+                        href="https://stackoverflow.com/collectives/go">
+                        <img src="/static/shared/logo/social/stack-overflow.svg" />
+                      </a>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <button class="go-Header-navOpen js-headerMenuButton go-Header-navOpen--white" data-gtmc="nav button" aria-label="Open navigation">
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <aside class="go-NavigationDrawer js-header">
+    <nav class="go-NavigationDrawer-nav">
+      <div class="go-NavigationDrawer-header">
+        <a href="https://go.dev/">
+          <img class="go-NavigationDrawer-logo" src="/static/shared/logo/go-blue.svg" alt="Go.">
+        </a>
+      </div>
+      <ul class="go-NavigationDrawer-list">
+          <li class="go-NavigationDrawer-listItem js-mobile-subnav-trigger go-NavigationDrawer-hasSubnav">
+            <a href="#">
+              <span>Why Go</span>
+              <i class="material-icons">
+                <img class="go-Icon" height="24" width="24"
+                  src="/static/shared/icon/navigate_next_gm_grey_24dp.svg" alt="">
+              </i>
+            </a>
+
+            <div class="go-NavigationDrawer go-NavigationDrawer-submenuItem">
+              <div class="go-NavigationDrawer-nav">
+                <div class="go-NavigationDrawer-header">
+                  <a href="#">
+                    <i class="material-icons">
+                      <img class="go-Icon" height="24" width="24"
+                        src="/static/shared/icon/navigate_before_gm_grey_24dp.svg" alt="">
+                      </i>
+                      Why Go
+                  </a>
+                </div>
+                <ul class="go-NavigationDrawer-list">
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/solutions#case-studies">
+                      Case Studies
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/solutions#use-cases">
+                      Use Cases
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/security/">
+                      Security
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="go-NavigationDrawer-listItem">
+            <a href="https://go.dev/learn/">Learn</a>
+          </li>
+          <li class="go-NavigationDrawer-listItem js-mobile-subnav-trigger go-NavigationDrawer-hasSubnav">
+            <a href="#">
+              <span>Docs</span>
+              <i class="material-icons">
+                <img class="go-Icon" height="24" width="24"
+                  src="/static/shared/icon/navigate_next_gm_grey_24dp.svg" alt="">
+              </i>
+            </a>
+
+            <div class="go-NavigationDrawer go-NavigationDrawer-submenuItem">
+              <div class="go-NavigationDrawer-nav">
+                <div class="go-NavigationDrawer-header">
+                  <a href="#"><i class="material-icons">
+                    <img class="go-Icon" height="24" width="24"
+                      src="/static/shared/icon/navigate_before_gm_grey_24dp.svg" alt="">
+                    </i>
+                    Docs
+                  </a>
+                </div>
+                <ul class="go-NavigationDrawer-list">
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/doc/effective_go">
+                      Effective Go
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/doc/">
+                      Go User Manual
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://pkg.go.dev/std">
+                      Standard library
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/doc/devel/release">
+                      Release Notes
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="go-NavigationDrawer-listItem go-NavigationDrawer-listItem--active">
+            <a href="/">Packages</a>
+          </li>
+          <li class="go-NavigationDrawer-listItem js-mobile-subnav-trigger go-NavigationDrawer-hasSubnav">
+            <a href="#">
+              <span>Community</span>
+              <i class="material-icons">
+                <img class="go-Icon" height="24" width="24"
+                  src="/static/shared/icon/navigate_next_gm_grey_24dp.svg" alt="">
+              </i>
+            </a>
+            <div class="go-NavigationDrawer go-NavigationDrawer-submenuItem">
+              <div class="go-NavigationDrawer-nav">
+                <div class="go-NavigationDrawer-header">
+                  <a href="#">
+                    <i class="material-icons">
+                      <img class="go-Icon" height="24" width="24"
+                        src="/static/shared/icon/navigate_before_gm_grey_24dp.svg" alt="">
+                    </i>
+                    Community
+                  </a>
+                </div>
+                <ul class="go-NavigationDrawer-list">
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/talks/">
+                      Recorded Talks
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://www.meetup.com/pro/go">
+                      Meetups
+                      <i class="material-icons">
+                      <img class="go-Icon" height="24" width="24"
+                          src="/static/shared/icon/launch_gm_grey_24dp.svg" alt="">
+                      </i>
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://github.com/golang/go/wiki/Conferences">
+                      Conferences
+                      <i class="material-icons">
+                        <img class="go-Icon" height="24" width="24" src="/static/shared/icon/launch_gm_grey_24dp.svg" alt="">
+                      </i>
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/blog">
+                      Go blog
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/help">
+                      Go project
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <div>Get connected</div>
+                    <div class="go-Header-socialIcons">
+                        <a class="go-Header-socialIcon" href="https://groups.google.com/g/golang-nuts"><img src="/static/shared/logo/social/google-groups.svg" /></a>
+                        <a class="go-Header-socialIcon" href="https://github.com/golang"><img src="/static/shared/logo/social/github.svg" /></a>
+                        <a class="go-Header-socialIcon" href="https://twitter.com/golang"><img src="/static/shared/logo/social/twitter.svg" /></a>
+                        <a class="go-Header-socialIcon" href="https://www.reddit.com/r/golang/"><img src="/static/shared/logo/social/reddit.svg" /></a>
+                        <a class="go-Header-socialIcon" href="https://invite.slack.golangbridge.org/"><img src="/static/shared/logo/social/slack.svg" /></a>
+                        <a class="go-Header-socialIcon" href="https://stackoverflow.com/collectives/go"><img src="/static/shared/logo/social/stack-overflow.svg" /></a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+      </ul>
+    </nav>
+  </aside>
+  <div class="go-NavigationDrawer-scrim js-scrim" role="presentation"></div>
+
+    
+  <main class="go-Main" id="main-content">
+    <div class="go-Main-banner" role="alert"></div>
+    <header class="go-Main-header js-mainHeader">
+  
+  
+  <nav class="go-Main-headerBreadcrumb go-Breadcrumb" aria-label="Breadcrumb" data-test-id="UnitHeader-breadcrumb">
+    <ol>
+      
+        
+          <li data-test-id="UnitHeader-breadcrumbItem">
+            <a href="/" data-gtmc="breadcrumb link">Discover Packages</a>
+          </li>
+        
+        <li>
+          <a href="/github.com/golang/glog@v1.2.5" data-gtmc="breadcrumb link" aria-current="location"
+              data-test-id="UnitHeader-breadcrumbCurrent">
+            github.com/golang/glog
+          </a>
+          
+            <button
+              class="go-Button go-Button--inline go-Clipboard js-clipboard"
+              title="Copy path to clipboard.&#10;&#10;github.com/golang/glog"
+              aria-label="Copy Path to Clipboard"
+              data-to-copy="github.com/golang/glog"
+              data-gtmc="breadcrumbs button"
+            >
+              <img
+                class="go-Icon go-Icon--accented"
+                height="24"
+                width="24"
+                src="/static/shared/icon/content_copy_gm_grey_24dp.svg"
+                alt=""
+              >
+            </button>
+          
+        
+      </li>
+    </ol>
+  </nav>
+
+  <div class="go-Main-headerContent">
+    
+  <div class="go-Main-headerTitle js-stickyHeader">
+    <a class="go-Main-headerLogo" href="https://go.dev/" aria-hidden="true" tabindex="-1" data-gtmc="header link" aria-label="Link to Go Homepage">
+      <img height="78" width="207" src="/static/shared/logo/go-blue.svg" alt="Go">
+    </a>
+    <h1 class="UnitHeader-titleHeading" data-test-id="UnitHeader-title">glog</h1>
+    
+      <span class="go-Chip go-Chip--inverted">package</span>
+    
+      <span class="go-Chip go-Chip--inverted">module</span>
+    
+    
+      
+        <button
+          class="go-Button go-Button--inline go-Clipboard js-clipboard"
+          title="Copy path to clipboard.&#10;&#10;github.com/golang/glog"
+          aria-label="Copy Path to Clipboard"
+          data-to-copy="github.com/golang/glog"
+          data-gtmc="title button"
+          tabindex="-1"
+        >
+          <img
+            class="go-Icon go-Icon--accented"
+            height="24"
+            width="24"
+            src="/static/shared/icon/content_copy_gm_grey_24dp.svg"
+            alt=""
+          />
+        </button>
+      
+    
+  </div>
+
+    
+      
+  <div class="go-Main-headerDetails">
+    
+      
+  <span class="go-Main-headerDetailItem" data-test-id="UnitHeader-version">
+    <a href="?tab=versions" aria-label="Version: v1.2.5" 
+    data-gtmc="header link" aria-describedby="version-description">
+      <span class="go-textSubtle" aria-hidden="true">Version: </span>
+        v1.2.5
+    </a>
+    <div class="screen-reader-only" id="version-description" hidden>
+      Opens a new window with list of versions in this module.
+    </div>
+    
+    <span class="DetailsHeader-badge--latest" data-test-id="UnitHeader-minorVersionBanner">
+      <span class="go-Chip DetailsHeader-span--latest">Latest</span>
+      <span class="go-Chip DetailsHeader-span--notAtLatest">
+        Latest
+        
+  <details class="go-Tooltip js-tooltip" data-gtmc="tooltip">
+    <summary>
+      <img class="go-Icon go-Icon--inverted" height="24" width="24" src="/static/shared/icon/alert_gm_grey_24dp.svg" alt="Warning">
+    </summary>
+    <p>This package is not in the latest version of its module.</p>
+  </details>
+
+      </span>
+      <a href="/github.com/golang/glog" aria-label="Go to Latest Version" data-gtmc="header link">
+        <span class="go-Chip go-Chip--alert DetailsHeader-span--goToLatest">Go to latest</span>
+      </a>
+    </span>
+  </span>
+
+      
+  <span class="go-Main-headerDetailItem" data-test-id="UnitHeader-commitTime">
+    Published: Apr 29, 2025
+  </span>
+
+      
+  <span class="go-Main-headerDetailItem" data-test-id="UnitHeader-licenses">
+    License: <a href="/github.com/golang/glog?tab=licenses" data-test-id="UnitHeader-license" 
+        data-gtmc="header link" aria-describedby="license-description">Apache-2.0</a>
+      
+    
+  </span>
+  <div class="screen-reader-only" id="license-description" hidden>
+    Opens a new window with license information.
+  </div>
+
+      
+        
+  <span class="go-Main-headerDetailItem" data-test-id="UnitHeader-imports">
+    <a href="/github.com/golang/glog?tab=imports" aria-label="Imports: 22"
+        data-gtmc="header link" aria-describedby="imports-description">
+      <span class="go-textSubtle">Imports: </span>22
+    </a>
+  </span>
+  <div class="screen-reader-only" id="imports-description" hidden>
+    Opens a new window with list of imports.
+  </div>
+
+        
+  <span class="go-Main-headerDetailItem" data-test-id="UnitHeader-importedby">
+    <a href="/github.com/golang/glog?tab=importedby" aria-label="Imported By: 104,302"
+        data-gtmc="header link" aria-describedby="importedby-description">
+       <span class="go-textSubtle">Imported by: </span>104,302
+    </a>
+  </span>
+  <div class="screen-reader-only" id="importedby-description" hidden>
+    Opens a new window with list of known importers.
+  </div>
+
+      
+    
+  </div>
+  
+  <div class="UnitHeader-overflowContainer">
+    <svg class="UnitHeader-overflowImage" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+      <path d="M0 0h24v24H0z" fill="none"/>
+      <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+    </svg>
+    <select class="UnitHeader-overflowSelect js-selectNav" tabindex="-1">
+      <option value="/">Main</option>
+      <option value="/github.com/golang/glog?tab=versions">
+        Versions
+      </option>
+      <option value="/github.com/golang/glog?tab=licenses">
+        Licenses
+      </option>
+      
+        <option value="/github.com/golang/glog?tab=imports">
+          Imports
+        </option>
+        <option value="/github.com/golang/glog?tab=importedby">
+          Imported By
+        </option>
+      
+    </select>
+  </div>
+
+
+    
+  </div>
+
+</header>
+    
+      <aside class="go-Main-aside  js-mainAside">
+  
+  <div class="UnitMeta">
+    <h2 class="go-textLabel">Details</h2>
+    
+  <ul class="UnitMeta-details">
+    <li>
+      <details class="go-Tooltip js-tooltip" data-gtmc="tooltip">
+        <summary class="go-textSubtle">
+          
+  <img class="go-Icon go-Icon--accented"
+    tabindex="0"
+    role="button"src="/static/shared/icon/check_circle_gm_grey_24dp.svg" alt="checked" aria-label="Valid file, toggle tooltip"height="24" width="24">
+
+          Valid <a href="https://github.com/golang/glog/tree/v1.2.5/go.mod" target="_blank" rel="noopener">go.mod</a> file
+          <img class="go-Icon" role="button" tabindex="0" src="/static/shared/icon/help_gm_grey_24dp.svg" alt="" aria-label="Toggle go.mod validity tooltip" height="24" width="24">
+        </summary>
+        <p aria-live="polite" role="tooltip">
+          The Go module system was introduced in Go 1.11 and is the official dependency management
+          solution for Go.
+        </p>
+      </details>
+    </li>
+    <li>
+      <details class="go-Tooltip js-tooltip" data-gtmc="tooltip">
+        <summary class="go-textSubtle">
+          
+  <img class="go-Icon go-Icon--accented"
+    tabindex="0"
+    role="button"src="/static/shared/icon/check_circle_gm_grey_24dp.svg" alt="checked" aria-label="Valid file, toggle tooltip"height="24" width="24">
+
+          Redistributable license
+          <img class="go-Icon" role="button" tabindex="0" src="/static/shared/icon/help_gm_grey_24dp.svg" alt="" aria-label="Toggle redistributable help tooltip" height="24" width="24">
+        </summary>
+        <p aria-live="polite" role="tooltip">
+          Redistributable licenses place minimal restrictions on how software can be used,
+          modified, and redistributed.
+        </p>
+      </details>
+    </li>
+    <li>
+      <details class="go-Tooltip js-tooltip" data-gtmc="tooltip">
+        <summary class="go-textSubtle">
+          
+  <img class="go-Icon go-Icon--accented"
+    tabindex="0"
+    role="button"src="/static/shared/icon/check_circle_gm_grey_24dp.svg" alt="checked" aria-label="Valid file, toggle tooltip"height="24" width="24">
+
+          Tagged version
+          <img class="go-Icon" role="button" tabindex="0" src="/static/shared/icon/help_gm_grey_24dp.svg" alt="" aria-label="Toggle tagged version tooltip" height="24" width="24">
+        </summary>
+        <p aria-live="polite" role="tooltip">Modules with tagged versions give importers more predictable builds.</p>
+      </details>
+    </li>
+    <li>
+      <details class="go-Tooltip js-tooltip" data-gtmc="tooltip">
+        <summary class="go-textSubtle">
+          
+  <img class="go-Icon go-Icon--accented"
+    tabindex="0"
+    role="button"src="/static/shared/icon/check_circle_gm_grey_24dp.svg" alt="checked" aria-label="Valid file, toggle tooltip"height="24" width="24">
+
+          Stable version
+          <img class="go-Icon" role="button" tabindex="0" aria-label="Toggle stable version tooltip" src="/static/shared/icon/help_gm_grey_24dp.svg" alt="" height="24" width="24">
+        </summary>
+        <p aria-live="polite" role="tooltip">When a project reaches major version v1 it is considered stable.</p>
+      </details>
+    </li>
+    <li class="UnitMeta-detailsLearn">
+      <a href="/about#best-practices" data-gtmc="meta link">Learn more about best practices</a>
+    </li>
+  </ul>
+
+    <h2 class="go-textLabel">Repository</h2>
+    <div class="UnitMeta-repo">
+      
+        <a href="https://github.com/golang/glog" title="https://github.com/golang/glog" target="_blank" rel="noopener">
+          github.com/golang/glog
+        </a>
+      
+    </div>
+    
+      <h2 class="go-textLabel" data-test-id="links-heading">Links</h2>
+      <ul class="UnitMeta-links">
+        
+        
+          <li>
+            <a href="https://deps.dev/go/github.com%2Fgolang%2Fglog/v1.2.5" title="View this module on Open Source Insights"
+              target="_blank" rel="noopener" data-test-id="meta-link-depsdev">
+              <img class="link-Icon" src="/static/shared/icon/depsdev-logo.svg"
+                alt="Open Source Insights Logo" />
+              Open Source Insights
+            </a>
+          </li>
+        
+        
+          <li>
+            <a href="/codewiki?module=github.com%2Fgolang%2Fglog&amp;package=github.com%2Fgolang%2Fglog&amp;url=https%3A%2F%2Fcodewiki.google%2Fgithub.com%2Fgolang%2Fglog%3Futm_source%3Dfirst_party_link%26utm_medium%3Dgo_pkg_web%26utm_campaign%3Dgithub.com%2Fgolang%2Fglog" title="View this repo on Code Wiki"
+              target="_blank" rel="noopener" data-test-id="meta-link-codewiki">
+              <img class="link-Icon" src="/static/shared/icon/codewiki-logo.svg"
+                alt="Code Wiki Logo" />
+              Code Wiki
+            </a>
+          </li>
+        
+        
+  
+
+        
+  
+
+        
+  
+
+      </ul>
+    
+  </div>
+
+</aside>
+    
+    <nav class="go-Main-nav go-Main-nav--sticky js-mainNav" aria-label="Outline">
+  <div class="go-Main-navDesktop">
+    
+  <div class="UnitOutline-jumpTo">
+    <button class="UnitOutline-jumpToInput go-ShortcutKey js-jumpToInput"
+        aria-controls="jump-to-modal"
+        aria-label="Open Jump to Identifier"
+        data-shortcut="f"
+        data-shortcut-alt="find"
+        data-test-id="jump-to-button" data-gtmc="outline button">
+      Jump to ...
+    </button>
+  </div>
+  <ul class="go-Tree js-tree" role="tree" aria-label="Outline">
+    
+      <li class="js-readmeOutline">
+        <a href="#section-readme" data-gtmc="outline link">
+          README
+        </a>
+        
+  <ul id="readme-outline">
+    
+      <li>
+        <a href="#readme-glog" data-gtmc="readme outline link">
+          glog
+        </a>
+         
+      </li>
+     
+  </ul>
+
+      </li>
+    
+    
+      <li>
+        <a href="#section-documentation" data-gtmc="outline link">
+          Documentation
+        </a>
+        
+<ul>
+  
+    <li>
+      <a href="#pkg-overview" data-gtmc="doc outline link">Overview</a>
+    </li>
+  <li class="DocNav-overview">
+      <a href="#pkg-index" data-gtmc="doc outline link">
+        Index
+      </a>
+    </li>
+    <li class="DocNav-constants">
+      <a href="#pkg-constants" data-gtmc="doc outline link">
+        Constants
+      </a>
+    </li>
+    <li class="DocNav-variables">
+      <a href="#pkg-variables" data-gtmc="doc outline link">
+        Variables
+      </a>
+    </li>
+    <li class="DocNav-functions">
+      <a href="#pkg-functions" data-gtmc="doc outline link">
+        Functions
+      </a>
+      
+        <ul>
+          
+            <li>
+              <a href="#CopyStandardLogTo" title="CopyStandardLogTo(name)" data-gtmc="doc outline link">
+                CopyStandardLogTo(name)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Error" title="Error(args)" data-gtmc="doc outline link">
+                Error(args)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#ErrorContext" title="ErrorContext(ctx, args)" data-gtmc="doc outline link">
+                ErrorContext(ctx, args)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#ErrorContextDepth" title="ErrorContextDepth(ctx, depth, args)" data-gtmc="doc outline link">
+                ErrorContextDepth(ctx, depth, args)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#ErrorContextDepthf" title="ErrorContextDepthf(ctx, depth, format, args)" data-gtmc="doc outline link">
+                ErrorContextDepthf(ctx, depth, format, args)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#ErrorContextf" title="ErrorContextf(ctx, format, args)" data-gtmc="doc outline link">
+                ErrorContextf(ctx, format, args)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#ErrorDepth" title="ErrorDepth(depth, args)" data-gtmc="doc outline link">
+                ErrorDepth(depth, args)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#ErrorDepthf" title="ErrorDepthf(depth, format, args)" data-gtmc="doc outline link">
+                ErrorDepthf(depth, format, args)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Errorf" title="Errorf(format, args)" data-gtmc="doc outline link">
+                Errorf(format, args)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Errorln" title="Errorln(args)" data-gtmc="doc outline link">
+                Errorln(args)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Exit" title="Exit(args)" data-gtmc="doc outline link">
+                Exit(args)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#ExitContext" title="ExitContext(ctx, args)" data-gtmc="doc outline link">
+                ExitContext(ctx, args)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#ExitContextDepth" title="ExitContextDepth(ctx, depth, args)" data-gtmc="doc outline link">
+                ExitContextDepth(ctx, depth, args)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#ExitContextDepthf" title="ExitContextDepthf(ctx, depth, format, args)" data-gtmc="doc outline link">
+                ExitContextDepthf(ctx, depth, format, args)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#ExitContextf" title="ExitContextf(ctx, format, args)" data-gtmc="doc outline link">
+                ExitContextf(ctx, format, args)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#ExitDepth" title="ExitDepth(depth, args)" data-gtmc="doc outline link">
+                ExitDepth(depth, args)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#ExitDepthf" title="ExitDepthf(depth, format, args)" data-gtmc="doc outline link">
+                ExitDepthf(depth, format, args)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Exitf" title="Exitf(format, args)" data-gtmc="doc outline link">
+                Exitf(format, args)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Exitln" title="Exitln(args)" data-gtmc="doc outline link">
+                Exitln(args)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Fatal" title="Fatal(args)" data-gtmc="doc outline link">
+                Fatal(args)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#FatalContext" title="FatalContext(ctx, args)" data-gtmc="doc outline link">
+                FatalContext(ctx, args)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#FatalContextDepth" title="FatalContextDepth(ctx, depth, args)" data-gtmc="doc outline link">
+                FatalContextDepth(ctx, depth, args)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#FatalContextDepthf" title="FatalContextDepthf(ctx, depth, format, args)" data-gtmc="doc outline link">
+                FatalContextDepthf(ctx, depth, format, args)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#FatalContextf" title="FatalContextf(ctx, format, args)" data-gtmc="doc outline link">
+                FatalContextf(ctx, format, args)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#FatalDepth" title="FatalDepth(depth, args)" data-gtmc="doc outline link">
+                FatalDepth(depth, args)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#FatalDepthf" title="FatalDepthf(depth, format, args)" data-gtmc="doc outline link">
+                FatalDepthf(depth, format, args)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Fatalf" title="Fatalf(format, args)" data-gtmc="doc outline link">
+                Fatalf(format, args)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Fatalln" title="Fatalln(args)" data-gtmc="doc outline link">
+                Fatalln(args)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Flush" title="Flush()" data-gtmc="doc outline link">
+                Flush()
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Info" title="Info(args)" data-gtmc="doc outline link">
+                Info(args)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#InfoContext" title="InfoContext(ctx, args)" data-gtmc="doc outline link">
+                InfoContext(ctx, args)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#InfoContextDepth" title="InfoContextDepth(ctx, depth, args)" data-gtmc="doc outline link">
+                InfoContextDepth(ctx, depth, args)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#InfoContextDepthf" title="InfoContextDepthf(ctx, depth, format, args)" data-gtmc="doc outline link">
+                InfoContextDepthf(ctx, depth, format, args)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#InfoContextf" title="InfoContextf(ctx, format, args)" data-gtmc="doc outline link">
+                InfoContextf(ctx, format, args)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#InfoDepth" title="InfoDepth(depth, args)" data-gtmc="doc outline link">
+                InfoDepth(depth, args)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#InfoDepthf" title="InfoDepthf(depth, format, args)" data-gtmc="doc outline link">
+                InfoDepthf(depth, format, args)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Infof" title="Infof(format, args)" data-gtmc="doc outline link">
+                Infof(format, args)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Infoln" title="Infoln(args)" data-gtmc="doc outline link">
+                Infoln(args)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Names" title="Names(s)" data-gtmc="doc outline link">
+                Names(s)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#NewStandardLogger" title="NewStandardLogger(name)" data-gtmc="doc outline link">
+                NewStandardLogger(name)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Warning" title="Warning(args)" data-gtmc="doc outline link">
+                Warning(args)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#WarningContext" title="WarningContext(ctx, args)" data-gtmc="doc outline link">
+                WarningContext(ctx, args)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#WarningContextDepth" title="WarningContextDepth(ctx, depth, args)" data-gtmc="doc outline link">
+                WarningContextDepth(ctx, depth, args)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#WarningContextDepthf" title="WarningContextDepthf(ctx, depth, format, args)" data-gtmc="doc outline link">
+                WarningContextDepthf(ctx, depth, format, args)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#WarningContextf" title="WarningContextf(ctx, format, args)" data-gtmc="doc outline link">
+                WarningContextf(ctx, format, args)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#WarningDepth" title="WarningDepth(depth, args)" data-gtmc="doc outline link">
+                WarningDepth(depth, args)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#WarningDepthf" title="WarningDepthf(depth, format, args)" data-gtmc="doc outline link">
+                WarningDepthf(depth, format, args)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Warningf" title="Warningf(format, args)" data-gtmc="doc outline link">
+                Warningf(format, args)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#Warningln" title="Warningln(args)" data-gtmc="doc outline link">
+                Warningln(args)
+              </a>
+            </li>
+          
+        </ul>
+      
+    </li>
+    <li class="DocNav-types">
+      <a href="#pkg-types" data-gtmc="doc outline link">
+        Types
+      </a>
+      <ul>
+        
+          
+          <li>
+            <a href="#Level" title="type Level" data-gtmc="doc outline link">
+              type Level
+            </a>
+            
+              <ul>
+                
+                
+                  <li>
+                    <a href="#Level.Get" title="(l) Get()"
+                        data-gtmc="doc outline link">
+                      (l) Get()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Level.Set" title="(l) Set(value)"
+                        data-gtmc="doc outline link">
+                      (l) Set(value)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Level.String" title="(l) String()"
+                        data-gtmc="doc outline link">
+                      (l) String()
+                    </a>
+                  </li>
+                
+              </ul>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#OutputStats" title="type OutputStats" data-gtmc="doc outline link">
+              type OutputStats
+            </a>
+            
+              <ul>
+                
+                
+                  <li>
+                    <a href="#OutputStats.Bytes" title="(s) Bytes()"
+                        data-gtmc="doc outline link">
+                      (s) Bytes()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#OutputStats.Lines" title="(s) Lines()"
+                        data-gtmc="doc outline link">
+                      (s) Lines()
+                    </a>
+                  </li>
+                
+              </ul>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#Verbose" title="type Verbose" data-gtmc="doc outline link">
+              type Verbose
+            </a>
+            
+              <ul>
+                
+                  <li>
+                    <a href="#V" title="V(level)"
+                        data-gtmc="doc outline link">
+                      V(level)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#VDepth" title="VDepth(depth, level)"
+                        data-gtmc="doc outline link">
+                      VDepth(depth, level)
+                    </a>
+                  </li>
+                
+                
+                  <li>
+                    <a href="#Verbose.Info" title="(v) Info(args)"
+                        data-gtmc="doc outline link">
+                      (v) Info(args)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Verbose.InfoContext" title="(v) InfoContext(ctx, args)"
+                        data-gtmc="doc outline link">
+                      (v) InfoContext(ctx, args)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Verbose.InfoContextDepth" title="(v) InfoContextDepth(ctx, depth, args)"
+                        data-gtmc="doc outline link">
+                      (v) InfoContextDepth(ctx, depth, args)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Verbose.InfoContextDepthf" title="(v) InfoContextDepthf(ctx, depth, format, args)"
+                        data-gtmc="doc outline link">
+                      (v) InfoContextDepthf(ctx, depth, format, args)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Verbose.InfoContextf" title="(v) InfoContextf(ctx, format, args)"
+                        data-gtmc="doc outline link">
+                      (v) InfoContextf(ctx, format, args)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Verbose.InfoDepth" title="(v) InfoDepth(depth, args)"
+                        data-gtmc="doc outline link">
+                      (v) InfoDepth(depth, args)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Verbose.InfoDepthf" title="(v) InfoDepthf(depth, format, args)"
+                        data-gtmc="doc outline link">
+                      (v) InfoDepthf(depth, format, args)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Verbose.Infof" title="(v) Infof(format, args)"
+                        data-gtmc="doc outline link">
+                      (v) Infof(format, args)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Verbose.Infoln" title="(v) Infoln(args)"
+                        data-gtmc="doc outline link">
+                      (v) Infoln(args)
+                    </a>
+                  </li>
+                
+              </ul>
+             
+          </li>
+         
+      </ul>
+    </li>
+  
+  
+</ul>
+
+      </li>
+    
+    
+      <li>
+        <a href="#section-sourcefiles" data-gtmc="outline link">
+          Source Files
+        </a>
+      </li>
+    
+    
+      <li>
+        <a href="#section-directories" data-gtmc="outline link">
+          Directories
+        </a>
+      </li>
+    
+  </ul>
+
+  </div>
+  <div class="go-Main-navMobile js-mainNavMobile">
+    <label class="go-Label">
+      <select class="go-Select">
+        
+          <option selected disabled>README</option>
+        
+      </select>
+    </label>
+  </div>
+</nav>
+    <article class="go-Main-article js-mainContent">
+  <div class="UnitDetails" data-test-id="UnitDetails" style="display: block;">
+    <div class="UnitDetails-content js-unitDetailsContent" data-test-id="UnitDetails-content">
+      
+        
+  <div class="UnitReadme UnitReadme--expanded js-readme">
+    <h2 class="UnitReadme-title" id="section-readme">
+      <img class="go-Icon" height="24" width="24" src="/static/shared/icon/chrome_reader_mode_gm_grey_24dp.svg" alt="">
+      README
+      <a class="UnitReadme-idLink" href="#section-readme" title="Go to Readme" aria-label="Go to Readme">¶</a>
+    </h2>
+    
+      <div class="UnitReadme-content" data-test-id="Unit-readmeContent">
+        <div class="Overview-readmeContent js-readmeContent"><h3 class="h1" id="readme-glog">glog</h3>
+<p><a href="https://pkg.go.dev/github.com/golang/glog" rel="nofollow"><img src="https://pkg.go.dev/badge/github.com/golang/glog" alt="PkgGoDev"/></a></p>
+<p>Leveled execution logs for Go.</p>
+<p>This is an efficient pure Go implementation of leveled logs in the
+manner of the open source C++ package <a href="https://github.com/google/glog" rel="nofollow"><em>glog</em></a>.</p>
+<p>By binding methods to booleans it is possible to use the log package without paying the expense of evaluating the arguments to the log. Through the <code>-vmodule</code> flag, the package also provides fine-grained
+control over logging at the file level.</p>
+<p>The comment from <code>glog.go</code> introduces the ideas:</p>
+<p>Package <em>glog</em> implements logging analogous to the Google-internal C++ INFO/ERROR/V setup.  It provides the functions Info, Warning, Error, Fatal, plus formatting variants such as Infof. It also provides V-style loggingcontrolled by the <code>-v</code> and <code>-vmodule=file=2</code> flags.</p>
+<p>Basic examples:</p>
+<pre><code>glog.Info(&#34;Prepare to repel boarders&#34;)
+	
+glog.Fatalf(&#34;Initialization failed: %s&#34;, err)
+</code></pre>
+<p>See the documentation for the V function for an explanation of these examples:</p>
+<pre><code>if glog.V(2) {
+	glog.Info(&#34;Starting transaction...&#34;)
+}
+glog.V(2).Infoln(&#34;Processed&#34;, nItems, &#34;elements&#34;)
+</code></pre>
+<p>The repository contains an open source version of the log package used inside Google. The master copy of the source lives inside Google, not here. The code in this repo is for export only and is not itself under development. Feature requests will be ignored.</p>
+<p>Send bug reports to <a href="mailto:golang-nuts@googlegroups.com" rel="nofollow">golang-nuts@googlegroups.com</a>.</p>
+</div>
+      </div>
+      <button class="UnitReadme-expandLink js-readmeExpand"
+          data-test-id="readme-expand" data-gtmc="readme button"
+          aria-label="Expand Readme">Expand ▾</button>
+      <button class="UnitReadme-collapseLink js-readmeCollapse"
+          data-test-id="readme-collapse" data-gtmc="readme button"
+          aria-label="Expand Readme">Collapse ▴</button>
+    
+  </div>
+
+      
+      
+        
+          
+  <div class="UnitDoc">
+    <h2 class="UnitDoc-title" id="section-documentation">
+      <img class="go-Icon" height="24" width="24" src="/static/shared/icon/code_gm_grey_24dp.svg" alt="">
+      Documentation
+      <a class="UnitDoc-idLink" href="#section-documentation" title="Go to Documentation" aria-label="Go to Documentation">¶</a>
+    </h2>
+    
+  
+    
+      <div class="UnitBuildContext-titleContext">
+        <label>
+          <a href="https://go.dev/about#build-context" class="UnitBuildContext-link">Rendered for</a>
+          <select class="go-Select js-buildContextSelect">
+            
+              <option value="linux">linux/amd64</option>
+            
+              <option value="windows">windows/amd64</option>
+            
+              <option value="darwin">darwin/amd64</option>
+            
+              <option value="js">js/wasm</option>
+            
+          </select>
+        </label>
+      </div>
+    
+  
+
+    <div class="Documentation js-documentation">
+      
+        
+
+<div class="Documentation-content js-docContent"> <section class="Documentation-overview">
+    <h3 tabindex="-1" id="pkg-overview" class="Documentation-overviewHeader">Overview <a href="#pkg-overview" title="Go to Overview" aria-label="Go to Overview">¶</a></h3>
+
+<p>Package glog implements logging analogous to the Google-internal C++ INFO/ERROR/V setup.
+It provides functions that have a name matched by regex:
+</p><pre>(Info|Warning|Error|Fatal)(Context)?(Depth)?(f)?
+</pre><p>If Context is present, function takes context.Context argument. The
+context is used to pass through the Trace Context to log sinks that can make use
+of it.
+It is recommended to use the context variant of the functions over the non-context
+variants if a context is available to make sure the Trace Contexts are present
+in logs.
+</p><p>If Depth is present, this function calls log from a different depth in the call stack.
+This enables a callee to emit logs that use the callsite information of its caller
+or any other callers in the stack. When depth == 0, the original callee&#39;s line
+information is emitted. When depth &gt; 0, depth frames are skipped in the call stack
+and the final frame is treated like the original callee to Info.
+</p><p>If &#39;f&#39; is present, function formats according to a format specifier.
+</p><p>This package also provides V-style logging controlled by the -v and -vmodule=file=2 flags.
+</p><p>Basic examples:
+</p><pre>glog.Info(&#34;Prepare to repel boarders&#34;)
+
+glog.Fatalf(&#34;Initialization failed: %s&#34;, err)
+</pre><p>See the documentation for the V function for an explanation of these examples:
+</p><pre>if glog.V(2) {
+	glog.Info(&#34;Starting transaction...&#34;)
+}
+
+glog.V(2).Infoln(&#34;Processed&#34;, nItems, &#34;elements&#34;)
+</pre><p>Log output is buffered and written periodically using Flush. Programs
+should call Flush before exiting to guarantee all log output is written.
+</p><p>By default, all log statements write to files in a temporary directory.
+This package provides several flags that modify this behavior.
+As a result, flag.Parse must be called before any logging is done.
+</p><pre>-logtostderr=false
+	Logs are written to standard error instead of to files.
+-alsologtostderr=false
+	Logs are written to standard error as well as to files.
+-stderrthreshold=ERROR
+	Log events at or above this severity are logged to standard
+	error as well as to files.
+-log_dir=&#34;&#34;
+	Log files will be written to this directory instead of the
+	default temporary directory.
+</pre><p>Other flags provide aids to debugging.
+</p><pre>-log_backtrace_at=&#34;&#34;
+	A comma-separated list of file and line numbers holding a logging
+	statement, such as
+		-log_backtrace_at=gopherflakes.go:234
+	A stack trace will be written to the Info log whenever execution
+	hits one of these statements. (Unlike with -vmodule, the &#34;.go&#34;
+	must be present.)
+-v=0
+	Enable V-leveled logging at the specified level.
+-vmodule=&#34;&#34;
+	The syntax of the argument is a comma-separated list of pattern=N,
+	where pattern is a literal file name (minus the &#34;.go&#34; suffix) or
+	&#34;glob&#34; pattern and N is a V level. For instance,
+		-vmodule=gopher*=3
+	sets the V level to 3 in all Go files whose names begin with &#34;gopher&#34;,
+	and
+		-vmodule=/path/to/glog/glog_test=1
+	sets the V level to 1 in the Go file /path/to/glog/glog_test.go.
+	If a glob pattern contains a slash, it is matched against the full path,
+	and the file name. Otherwise, the pattern is
+	matched only against the file&#39;s basename.  When both -vmodule and -v
+	are specified, the -vmodule values take precedence for the specified
+	modules.
+</pre>
+</section><section class="Documentation-index">
+    <h3 id="pkg-index" class="Documentation-indexHeader">Index <a href="#pkg-index" title="Go to Index" aria-label="Go to Index">¶</a></h3>
+
+<ul class="Documentation-indexList">
+<li class="Documentation-indexVariables"><a href="#pkg-variables">Variables</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#CopyStandardLogTo">func CopyStandardLogTo(name string)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Error">func Error(args ...any)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#ErrorContext">func ErrorContext(ctx context.Context, args ...any)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#ErrorContextDepth">func ErrorContextDepth(ctx context.Context, depth int, args ...any)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#ErrorContextDepthf">func ErrorContextDepthf(ctx context.Context, depth int, format string, args ...any)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#ErrorContextf">func ErrorContextf(ctx context.Context, format string, args ...any)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#ErrorDepth">func ErrorDepth(depth int, args ...any)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#ErrorDepthf">func ErrorDepthf(depth int, format string, args ...any)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Errorf">func Errorf(format string, args ...any)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Errorln">func Errorln(args ...any)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Exit">func Exit(args ...any)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#ExitContext">func ExitContext(ctx context.Context, args ...any)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#ExitContextDepth">func ExitContextDepth(ctx context.Context, depth int, args ...any)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#ExitContextDepthf">func ExitContextDepthf(ctx context.Context, depth int, format string, args ...any)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#ExitContextf">func ExitContextf(ctx context.Context, format string, args ...any)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#ExitDepth">func ExitDepth(depth int, args ...any)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#ExitDepthf">func ExitDepthf(depth int, format string, args ...any)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Exitf">func Exitf(format string, args ...any)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Exitln">func Exitln(args ...any)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Fatal">func Fatal(args ...any)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#FatalContext">func FatalContext(ctx context.Context, args ...any)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#FatalContextDepth">func FatalContextDepth(ctx context.Context, depth int, args ...any)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#FatalContextDepthf">func FatalContextDepthf(ctx context.Context, depth int, format string, args ...any)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#FatalContextf">func FatalContextf(ctx context.Context, format string, args ...any)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#FatalDepth">func FatalDepth(depth int, args ...any)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#FatalDepthf">func FatalDepthf(depth int, format string, args ...any)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Fatalf">func Fatalf(format string, args ...any)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Fatalln">func Fatalln(args ...any)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Flush">func Flush()</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Info">func Info(args ...any)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#InfoContext">func InfoContext(ctx context.Context, args ...any)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#InfoContextDepth">func InfoContextDepth(ctx context.Context, depth int, args ...any)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#InfoContextDepthf">func InfoContextDepthf(ctx context.Context, depth int, format string, args ...any)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#InfoContextf">func InfoContextf(ctx context.Context, format string, args ...any)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#InfoDepth">func InfoDepth(depth int, args ...any)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#InfoDepthf">func InfoDepthf(depth int, format string, args ...any)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Infof">func Infof(format string, args ...any)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Infoln">func Infoln(args ...any)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Names">func Names(s string) ([]string, error)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#NewStandardLogger">func NewStandardLogger(name string) *stdLog.Logger</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Warning">func Warning(args ...any)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#WarningContext">func WarningContext(ctx context.Context, args ...any)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#WarningContextDepth">func WarningContextDepth(ctx context.Context, depth int, args ...any)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#WarningContextDepthf">func WarningContextDepthf(ctx context.Context, depth int, format string, args ...any)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#WarningContextf">func WarningContextf(ctx context.Context, format string, args ...any)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#WarningDepth">func WarningDepth(depth int, args ...any)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#WarningDepthf">func WarningDepthf(depth int, format string, args ...any)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Warningf">func Warningf(format string, args ...any)</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#Warningln">func Warningln(args ...any)</a></li>
+<li class="Documentation-indexType">
+          <a href="#Level">type Level</a></li>
+<li><ul class="Documentation-indexTypeMethods">
+<li>
+            <a href="#Level.Get">func (l *Level) Get() any</a></li>
+<li>
+            <a href="#Level.Set">func (l *Level) Set(value string) error</a></li>
+<li>
+            <a href="#Level.String">func (l *Level) String() string</a></li>
+</ul></li>
+<li class="Documentation-indexType">
+          <a href="#OutputStats">type OutputStats</a></li>
+<li><ul class="Documentation-indexTypeMethods">
+<li>
+            <a href="#OutputStats.Bytes">func (s *OutputStats) Bytes() int64</a></li>
+<li>
+            <a href="#OutputStats.Lines">func (s *OutputStats) Lines() int64</a></li>
+</ul></li>
+<li class="Documentation-indexType">
+          <a href="#Verbose">type Verbose</a></li>
+<li><ul class="Documentation-indexTypeFunctions">
+<li>
+            <a href="#V">func V(level Level) Verbose</a></li>
+<li>
+            <a href="#VDepth">func VDepth(depth int, level Level) Verbose</a></li>
+</ul></li>
+<li><ul class="Documentation-indexTypeMethods">
+<li>
+            <a href="#Verbose.Info">func (v Verbose) Info(args ...any)</a></li>
+<li>
+            <a href="#Verbose.InfoContext">func (v Verbose) InfoContext(ctx context.Context, args ...any)</a></li>
+<li>
+            <a href="#Verbose.InfoContextDepth">func (v Verbose) InfoContextDepth(ctx context.Context, depth int, args ...any)</a></li>
+<li>
+            <a href="#Verbose.InfoContextDepthf">func (v Verbose) InfoContextDepthf(ctx context.Context, depth int, format string, args ...any)</a></li>
+<li>
+            <a href="#Verbose.InfoContextf">func (v Verbose) InfoContextf(ctx context.Context, format string, args ...any)</a></li>
+<li>
+            <a href="#Verbose.InfoDepth">func (v Verbose) InfoDepth(depth int, args ...any)</a></li>
+<li>
+            <a href="#Verbose.InfoDepthf">func (v Verbose) InfoDepthf(depth int, format string, args ...any)</a></li>
+<li>
+            <a href="#Verbose.Infof">func (v Verbose) Infof(format string, args ...any)</a></li>
+<li>
+            <a href="#Verbose.Infoln">func (v Verbose) Infoln(args ...any)</a></li>
+</ul></li>
+</ul>
+</section><h3 tabindex="-1" id="pkg-constants" class="Documentation-constantsHeader">Constants <a href="#pkg-constants" title="Go to Constants" aria-label="Go to Constants">¶</a></h3>
+
+  <section class="Documentation-constants"><p class="Documentation-empty">This section is empty.</p></section>
+
+  <h3 tabindex="-1" id="pkg-variables" class="Documentation-variablesHeader">Variables <a href="#pkg-variables" title="Go to Variables" aria-label="Go to Variables">¶</a></h3>
+
+  <section class="Documentation-variables">
+    <div class="Documentation-declaration">
+      <span class="Documentation-declarationLink"><a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L127">View Source</a></span>
+      <pre><span id="ErrNoLog" data-kind="variable">var ErrNoLog = <a href="/errors">errors</a>.<a href="/errors#New">New</a>(&#34;log file not yet created&#34;)</span></pre>
+    </div>
+  <p>ErrNoLog is the error we return if no log file has yet been created
+for the specified log type.
+</p>
+
+    <div class="Documentation-declaration">
+      <span class="Documentation-declarationLink"><a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L123">View Source</a></span>
+      <pre><span id="MaxSize" data-kind="variable">var MaxSize <a href="/builtin#uint64">uint64</a> = 1024 * 1024 * 1800</span></pre>
+    </div>
+  <p>MaxSize is the maximum size of a log file in bytes.
+</p>
+
+    <div class="Documentation-declaration">
+      <span class="Documentation-declarationLink"><a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L147">View Source</a></span>
+      <pre><span id="Stats" data-kind="variable">var Stats struct {
+</span>	Info, Warning, Error <a href="#OutputStats">OutputStats</a>
+}</pre>
+    </div>
+  <p>Stats tracks the number of lines of output and number of bytes
+per severity level. Values must be read with atomic.LoadInt64.
+</p>
+</section>
+
+  <h3 tabindex="-1" id="pkg-functions" class="Documentation-functionsHeader">Functions <a href="#pkg-functions" title="Go to Functions" aria-label="Go to Functions">¶</a></h3>
+
+  <section class="Documentation-functions"><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="CopyStandardLogTo" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L276">CopyStandardLogTo</a> <a class="Documentation-idLink" href="#CopyStandardLogTo" title="Go to CopyStandardLogTo" aria-label="Go to CopyStandardLogTo">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func CopyStandardLogTo(name <a href="/builtin#string">string</a>)</pre>
+    </div>
+  <p>CopyStandardLogTo arranges for messages written to the Go &#34;log&#34; package&#39;s
+default logs to also appear in the Google logs for the named and lower
+severities.  Subsequent changes to the standard log&#39;s default output location
+or format may break this behavior.
+</p><p>Valid names are &#34;INFO&#34;, &#34;WARNING&#34;, &#34;ERROR&#34;, and &#34;FATAL&#34;.  If the name is not
+recognized, CopyStandardLogTo panics.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Error" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L604">Error</a> <a class="Documentation-idLink" href="#Error" title="Go to Error" aria-label="Go to Error">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Error(args ...<a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>Error logs to the ERROR, WARNING, and INFO logs.
+Arguments are handled in the manner of fmt.Print; a newline is appended if missing.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="ErrorContext" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L634">ErrorContext</a> <a class="Documentation-idLink" href="#ErrorContext" title="Go to ErrorContext" aria-label="Go to ErrorContext">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">v1.2.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func ErrorContext(ctx <a href="/context">context</a>.<a href="/context#Context">Context</a>, args ...<a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>ErrorContext is like <a href="#Error">Error</a>, but with an extra <a href="/context#Context">context.Context</a> parameter. The
+context is used to pass the Trace Context to log sinks.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="ErrorContextDepth" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L646">ErrorContextDepth</a> <a class="Documentation-idLink" href="#ErrorContextDepth" title="Go to ErrorContextDepth" aria-label="Go to ErrorContextDepth">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">v1.2.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func ErrorContextDepth(ctx <a href="/context">context</a>.<a href="/context#Context">Context</a>, depth <a href="/builtin#int">int</a>, args ...<a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>ErrorContextDepth is like <a href="#ErrorDepth">ErrorDepth</a>, but with an extra <a href="/context#Context">context.Context</a> parameter. The
+context is used to pass the Trace Context to log sinks.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="ErrorContextDepthf" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L652">ErrorContextDepthf</a> <a class="Documentation-idLink" href="#ErrorContextDepthf" title="Go to ErrorContextDepthf" aria-label="Go to ErrorContextDepthf">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">v1.2.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func ErrorContextDepthf(ctx <a href="/context">context</a>.<a href="/context#Context">Context</a>, depth <a href="/builtin#int">int</a>, format <a href="/builtin#string">string</a>, args ...<a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>ErrorContextDepthf is like <a href="#ErrorDepthf">ErrorDepthf</a>, but with an extra <a href="/context#Context">context.Context</a> parameter. The
+context is used to pass the Trace Context to log sinks.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="ErrorContextf" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L640">ErrorContextf</a> <a class="Documentation-idLink" href="#ErrorContextf" title="Go to ErrorContextf" aria-label="Go to ErrorContextf">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">v1.2.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func ErrorContextf(ctx <a href="/context">context</a>.<a href="/context#Context">Context</a>, format <a href="/builtin#string">string</a>, args ...<a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>ErrorContextf is like <a href="#Errorf">Errorf</a>, but with an extra <a href="/context#Context">context.Context</a> parameter. The
+context is used to pass the Trace Context to log sinks.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="ErrorDepth" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L610">ErrorDepth</a> <a class="Documentation-idLink" href="#ErrorDepth" title="Go to ErrorDepth" aria-label="Go to ErrorDepth">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func ErrorDepth(depth <a href="/builtin#int">int</a>, args ...<a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>ErrorDepth acts as Error but uses depth to determine which call frame to log.
+ErrorDepth(0, &#34;msg&#34;) is the same as Error(&#34;msg&#34;).
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="ErrorDepthf" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L616">ErrorDepthf</a> <a class="Documentation-idLink" href="#ErrorDepthf" title="Go to ErrorDepthf" aria-label="Go to ErrorDepthf">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">v1.1.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func ErrorDepthf(depth <a href="/builtin#int">int</a>, format <a href="/builtin#string">string</a>, args ...<a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>ErrorDepthf acts as Errorf but uses depth to determine which call frame to log.
+ErrorDepthf(0, &#34;msg&#34;) is the same as Errorf(&#34;msg&#34;).
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Errorf" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L628">Errorf</a> <a class="Documentation-idLink" href="#Errorf" title="Go to Errorf" aria-label="Go to Errorf">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Errorf(format <a href="/builtin#string">string</a>, args ...<a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>Errorf logs to the ERROR, WARNING, and INFO logs.
+Arguments are handled in the manner of fmt.Printf; a newline is appended if missing.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Errorln" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L622">Errorln</a> <a class="Documentation-idLink" href="#Errorln" title="Go to Errorln" aria-label="Go to Errorln">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Errorln(args ...<a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>Errorln logs to the ERROR, WARNING, and INFO logs.
+Arguments are handled in the manner of fmt.Println; a newline is appended if missing.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Exit" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L745">Exit</a> <a class="Documentation-idLink" href="#Exit" title="Go to Exit" aria-label="Go to Exit">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Exit(args ...<a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>Exit logs to the FATAL, ERROR, WARNING, and INFO logs, then calls os.Exit(1).
+Arguments are handled in the manner of fmt.Print; a newline is appended if missing.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="ExitContext" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L774">ExitContext</a> <a class="Documentation-idLink" href="#ExitContext" title="Go to ExitContext" aria-label="Go to ExitContext">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">v1.2.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func ExitContext(ctx <a href="/context">context</a>.<a href="/context#Context">Context</a>, args ...<a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>ExitContext is like <a href="#Exit">Exit</a>, but with an extra <a href="/context#Context">context.Context</a> parameter. The
+context is used to pass the Trace Context to log sinks.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="ExitContextDepth" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L786">ExitContextDepth</a> <a class="Documentation-idLink" href="#ExitContextDepth" title="Go to ExitContextDepth" aria-label="Go to ExitContextDepth">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">v1.2.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func ExitContextDepth(ctx <a href="/context">context</a>.<a href="/context#Context">Context</a>, depth <a href="/builtin#int">int</a>, args ...<a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>ExitContextDepth is like <a href="#ExitDepth">ExitDepth</a>, but with an extra <a href="/context#Context">context.Context</a> parameter. The
+context is used to pass the Trace Context to log sinks.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="ExitContextDepthf" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L792">ExitContextDepthf</a> <a class="Documentation-idLink" href="#ExitContextDepthf" title="Go to ExitContextDepthf" aria-label="Go to ExitContextDepthf">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">v1.2.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func ExitContextDepthf(ctx <a href="/context">context</a>.<a href="/context#Context">Context</a>, depth <a href="/builtin#int">int</a>, format <a href="/builtin#string">string</a>, args ...<a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>ExitContextDepthf is like <a href="#ExitDepthf">ExitDepthf</a>, but with an extra <a href="/context#Context">context.Context</a> parameter. The
+context is used to pass the Trace Context to log sinks.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="ExitContextf" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L780">ExitContextf</a> <a class="Documentation-idLink" href="#ExitContextf" title="Go to ExitContextf" aria-label="Go to ExitContextf">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">v1.2.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func ExitContextf(ctx <a href="/context">context</a>.<a href="/context#Context">Context</a>, format <a href="/builtin#string">string</a>, args ...<a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>ExitContextf is like <a href="#Exitf">Exitf</a>, but with an extra <a href="/context#Context">context.Context</a> parameter. The
+context is used to pass the Trace Context to log sinks.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="ExitDepth" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L751">ExitDepth</a> <a class="Documentation-idLink" href="#ExitDepth" title="Go to ExitDepth" aria-label="Go to ExitDepth">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func ExitDepth(depth <a href="/builtin#int">int</a>, args ...<a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>ExitDepth acts as Exit but uses depth to determine which call frame to log.
+ExitDepth(0, &#34;msg&#34;) is the same as Exit(&#34;msg&#34;).
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="ExitDepthf" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L757">ExitDepthf</a> <a class="Documentation-idLink" href="#ExitDepthf" title="Go to ExitDepthf" aria-label="Go to ExitDepthf">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">v1.1.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func ExitDepthf(depth <a href="/builtin#int">int</a>, format <a href="/builtin#string">string</a>, args ...<a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>ExitDepthf acts as Exitf but uses depth to determine which call frame to log.
+ExitDepthf(0, &#34;msg&#34;) is the same as Exitf(&#34;msg&#34;).
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Exitf" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L768">Exitf</a> <a class="Documentation-idLink" href="#Exitf" title="Go to Exitf" aria-label="Go to Exitf">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Exitf(format <a href="/builtin#string">string</a>, args ...<a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>Exitf logs to the FATAL, ERROR, WARNING, and INFO logs, then calls os.Exit(1).
+Arguments are handled in the manner of fmt.Printf; a newline is appended if missing.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Exitln" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L762">Exitln</a> <a class="Documentation-idLink" href="#Exitln" title="Go to Exitln" aria-label="Go to Exitln">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Exitln(args ...<a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>Exitln logs to the FATAL, ERROR, WARNING, and INFO logs, then calls os.Exit(1).
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Fatal" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L680">Fatal</a> <a class="Documentation-idLink" href="#Fatal" title="Go to Fatal" aria-label="Go to Fatal">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Fatal(args ...<a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>Fatal logs to the FATAL, ERROR, WARNING, and INFO logs,
+including a stack trace of all running goroutines, then calls os.Exit(2).
+Arguments are handled in the manner of fmt.Print; a newline is appended if missing.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="FatalContext" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L712">FatalContext</a> <a class="Documentation-idLink" href="#FatalContext" title="Go to FatalContext" aria-label="Go to FatalContext">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">v1.2.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func FatalContext(ctx <a href="/context">context</a>.<a href="/context#Context">Context</a>, args ...<a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>FatalContext is like <a href="#Fatal">Fatal</a>, but with an extra <a href="/context#Context">context.Context</a> parameter. The
+context is used to pass the Trace Context to log sinks.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="FatalContextDepth" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L724">FatalContextDepth</a> <a class="Documentation-idLink" href="#FatalContextDepth" title="Go to FatalContextDepth" aria-label="Go to FatalContextDepth">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">v1.2.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func FatalContextDepth(ctx <a href="/context">context</a>.<a href="/context#Context">Context</a>, depth <a href="/builtin#int">int</a>, args ...<a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>FatalContextDepth is like <a href="#FatalDepth">FatalDepth</a>, but with an extra <a href="/context#Context">context.Context</a> parameter. The
+context is used to pass the Trace Context to log sinks.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="FatalContextDepthf" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L729">FatalContextDepthf</a> <a class="Documentation-idLink" href="#FatalContextDepthf" title="Go to FatalContextDepthf" aria-label="Go to FatalContextDepthf">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">v1.2.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func FatalContextDepthf(ctx <a href="/context">context</a>.<a href="/context#Context">Context</a>, depth <a href="/builtin#int">int</a>, format <a href="/builtin#string">string</a>, args ...<a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>FatalContextDepthf is like <a href="#FatalDepthf">FatalDepthf</a>, but with an extra <a href="/context#Context">context.Context</a> parameter.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="FatalContextf" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L718">FatalContextf</a> <a class="Documentation-idLink" href="#FatalContextf" title="Go to FatalContextf" aria-label="Go to FatalContextf">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">v1.2.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func FatalContextf(ctx <a href="/context">context</a>.<a href="/context#Context">Context</a>, format <a href="/builtin#string">string</a>, args ...<a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>FatalContextf is like <a href="#Fatalf">Fatalf</a>, but with an extra <a href="/context#Context">context.Context</a> parameter. The
+context is used to pass the Trace Context to log sinks.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="FatalDepth" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L686">FatalDepth</a> <a class="Documentation-idLink" href="#FatalDepth" title="Go to FatalDepth" aria-label="Go to FatalDepth">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func FatalDepth(depth <a href="/builtin#int">int</a>, args ...<a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>FatalDepth acts as Fatal but uses depth to determine which call frame to log.
+FatalDepth(0, &#34;msg&#34;) is the same as Fatal(&#34;msg&#34;).
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="FatalDepthf" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L692">FatalDepthf</a> <a class="Documentation-idLink" href="#FatalDepthf" title="Go to FatalDepthf" aria-label="Go to FatalDepthf">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">v1.1.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func FatalDepthf(depth <a href="/builtin#int">int</a>, format <a href="/builtin#string">string</a>, args ...<a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>FatalDepthf acts as Fatalf but uses depth to determine which call frame to log.
+FatalDepthf(0, &#34;msg&#34;) is the same as Fatalf(&#34;msg&#34;).
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Fatalf" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L706">Fatalf</a> <a class="Documentation-idLink" href="#Fatalf" title="Go to Fatalf" aria-label="Go to Fatalf">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Fatalf(format <a href="/builtin#string">string</a>, args ...<a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>Fatalf logs to the FATAL, ERROR, WARNING, and INFO logs,
+including a stack trace of all running goroutines, then calls os.Exit(2).
+Arguments are handled in the manner of fmt.Printf; a newline is appended if missing.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Fatalln" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L699">Fatalln</a> <a class="Documentation-idLink" href="#Fatalln" title="Go to Fatalln" aria-label="Go to Fatalln">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Fatalln(args ...<a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>Fatalln logs to the FATAL, ERROR, WARNING, and INFO logs,
+including a stack trace of all running goroutines, then calls os.Exit(2).
+Arguments are handled in the manner of fmt.Println; a newline is appended if missing.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Flush" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog_file.go#L390">Flush</a> <a class="Documentation-idLink" href="#Flush" title="Go to Flush" aria-label="Go to Flush">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Flush()</pre>
+    </div>
+  <p>Flush flushes all pending log I/O.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Info" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L494">Info</a> <a class="Documentation-idLink" href="#Info" title="Go to Info" aria-label="Go to Info">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Info(args ...<a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>Info logs to the INFO log.
+Arguments are handled in the manner of fmt.Print; a newline is appended if missing.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="InfoContext" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L526">InfoContext</a> <a class="Documentation-idLink" href="#InfoContext" title="Go to InfoContext" aria-label="Go to InfoContext">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">v1.2.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func InfoContext(ctx <a href="/context">context</a>.<a href="/context#Context">Context</a>, args ...<a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>InfoContext is like <a href="#Info">Info</a>, but with an extra <a href="/context#Context">context.Context</a> parameter. The
+context is used to pass the Trace Context to log sinks.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="InfoContextDepth" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L538">InfoContextDepth</a> <a class="Documentation-idLink" href="#InfoContextDepth" title="Go to InfoContextDepth" aria-label="Go to InfoContextDepth">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">v1.2.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func InfoContextDepth(ctx <a href="/context">context</a>.<a href="/context#Context">Context</a>, depth <a href="/builtin#int">int</a>, args ...<a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>InfoContextDepth is like <a href="#InfoDepth">InfoDepth</a>, but with an extra <a href="/context#Context">context.Context</a> parameter. The
+context is used to pass the Trace Context to log sinks.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="InfoContextDepthf" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L544">InfoContextDepthf</a> <a class="Documentation-idLink" href="#InfoContextDepthf" title="Go to InfoContextDepthf" aria-label="Go to InfoContextDepthf">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">v1.2.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func InfoContextDepthf(ctx <a href="/context">context</a>.<a href="/context#Context">Context</a>, depth <a href="/builtin#int">int</a>, format <a href="/builtin#string">string</a>, args ...<a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>InfoContextDepthf is like <a href="#InfoDepthf">InfoDepthf</a>, but with an extra <a href="/context#Context">context.Context</a> parameter. The
+context is used to pass the Trace Context to log sinks.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="InfoContextf" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L532">InfoContextf</a> <a class="Documentation-idLink" href="#InfoContextf" title="Go to InfoContextf" aria-label="Go to InfoContextf">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">v1.2.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func InfoContextf(ctx <a href="/context">context</a>.<a href="/context#Context">Context</a>, format <a href="/builtin#string">string</a>, args ...<a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>InfoContextf is like <a href="#Infof">Infof</a>, but with an extra <a href="/context#Context">context.Context</a> parameter. The
+context is used to pass the Trace Context to log sinks.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="InfoDepth" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L503">InfoDepth</a> <a class="Documentation-idLink" href="#InfoDepth" title="Go to InfoDepth" aria-label="Go to InfoDepth">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func InfoDepth(depth <a href="/builtin#int">int</a>, args ...<a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>InfoDepth calls Info from a different depth in the call stack.
+This enables a callee to emit logs that use the callsite information of its caller
+or any other callers in the stack. When depth == 0, the original callee&#39;s line
+information is emitted. When depth &gt; 0, depth frames are skipped in the call stack
+and the final frame is treated like the original callee to Info.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="InfoDepthf" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L508">InfoDepthf</a> <a class="Documentation-idLink" href="#InfoDepthf" title="Go to InfoDepthf" aria-label="Go to InfoDepthf">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">v1.1.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func InfoDepthf(depth <a href="/builtin#int">int</a>, format <a href="/builtin#string">string</a>, args ...<a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>InfoDepthf acts as InfoDepth but with format string.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Infof" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L520">Infof</a> <a class="Documentation-idLink" href="#Infof" title="Go to Infof" aria-label="Go to Infof">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Infof(format <a href="/builtin#string">string</a>, args ...<a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>Infof logs to the INFO log.
+Arguments are handled in the manner of fmt.Printf; a newline is appended if missing.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Infoln" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L514">Infoln</a> <a class="Documentation-idLink" href="#Infoln" title="Go to Infoln" aria-label="Go to Infoln">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Infoln(args ...<a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>Infoln logs to the INFO log.
+Arguments are handled in the manner of fmt.Println; a newline is appended if missing.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Names" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog_file.go#L435">Names</a> <a class="Documentation-idLink" href="#Names" title="Go to Names" aria-label="Go to Names">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">v1.1.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Names(s <a href="/builtin#string">string</a>) ([]<a href="/builtin#string">string</a>, <a href="/builtin#error">error</a>)</pre>
+    </div>
+  <p>Names returns the names of the log files holding the FATAL, ERROR,
+WARNING, or INFO logs. Returns ErrNoLog if the log for the given
+level doesn&#39;t exist (e.g. because no messages of that level have been
+written). This may return multiple names if the log type requested
+has rolled over.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="NewStandardLogger" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L292">NewStandardLogger</a> <a class="Documentation-idLink" href="#NewStandardLogger" title="Go to NewStandardLogger" aria-label="Go to NewStandardLogger">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">v1.1.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func NewStandardLogger(name <a href="/builtin#string">string</a>) *<a href="/log">stdLog</a>.<a href="/log#Logger">Logger</a></pre>
+    </div>
+  <p>NewStandardLogger returns a Logger that writes to the Google logs for the
+named and lower severities.
+</p><p>Valid names are &#34;INFO&#34;, &#34;WARNING&#34;, &#34;ERROR&#34;, and &#34;FATAL&#34;. If the name is not
+recognized, NewStandardLogger panics.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Warning" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L550">Warning</a> <a class="Documentation-idLink" href="#Warning" title="Go to Warning" aria-label="Go to Warning">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Warning(args ...<a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>Warning logs to the WARNING and INFO logs.
+Arguments are handled in the manner of fmt.Print; a newline is appended if missing.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="WarningContext" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L580">WarningContext</a> <a class="Documentation-idLink" href="#WarningContext" title="Go to WarningContext" aria-label="Go to WarningContext">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">v1.2.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func WarningContext(ctx <a href="/context">context</a>.<a href="/context#Context">Context</a>, args ...<a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>WarningContext is like <a href="#Warning">Warning</a>, but with an extra <a href="/context#Context">context.Context</a> parameter. The
+context is used to pass the Trace Context to log sinks.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="WarningContextDepth" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L592">WarningContextDepth</a> <a class="Documentation-idLink" href="#WarningContextDepth" title="Go to WarningContextDepth" aria-label="Go to WarningContextDepth">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">v1.2.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func WarningContextDepth(ctx <a href="/context">context</a>.<a href="/context#Context">Context</a>, depth <a href="/builtin#int">int</a>, args ...<a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>WarningContextDepth is like <a href="#WarningDepth">WarningDepth</a>, but with an extra <a href="/context#Context">context.Context</a> parameter. The
+context is used to pass the Trace Context to log sinks.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="WarningContextDepthf" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L598">WarningContextDepthf</a> <a class="Documentation-idLink" href="#WarningContextDepthf" title="Go to WarningContextDepthf" aria-label="Go to WarningContextDepthf">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">v1.2.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func WarningContextDepthf(ctx <a href="/context">context</a>.<a href="/context#Context">Context</a>, depth <a href="/builtin#int">int</a>, format <a href="/builtin#string">string</a>, args ...<a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>WarningContextDepthf is like <a href="#WarningDepthf">WarningDepthf</a>, but with an extra <a href="/context#Context">context.Context</a> parameter. The
+context is used to pass the Trace Context to log sinks.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="WarningContextf" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L586">WarningContextf</a> <a class="Documentation-idLink" href="#WarningContextf" title="Go to WarningContextf" aria-label="Go to WarningContextf">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">v1.2.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func WarningContextf(ctx <a href="/context">context</a>.<a href="/context#Context">Context</a>, format <a href="/builtin#string">string</a>, args ...<a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>WarningContextf is like <a href="#Warningf">Warningf</a>, but with an extra <a href="/context#Context">context.Context</a> parameter. The
+context is used to pass the Trace Context to log sinks.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="WarningDepth" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L556">WarningDepth</a> <a class="Documentation-idLink" href="#WarningDepth" title="Go to WarningDepth" aria-label="Go to WarningDepth">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func WarningDepth(depth <a href="/builtin#int">int</a>, args ...<a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>WarningDepth acts as Warning but uses depth to determine which call frame to log.
+WarningDepth(0, &#34;msg&#34;) is the same as Warning(&#34;msg&#34;).
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="WarningDepthf" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L562">WarningDepthf</a> <a class="Documentation-idLink" href="#WarningDepthf" title="Go to WarningDepthf" aria-label="Go to WarningDepthf">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">v1.1.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func WarningDepthf(depth <a href="/builtin#int">int</a>, format <a href="/builtin#string">string</a>, args ...<a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>WarningDepthf acts as Warningf but uses depth to determine which call frame to log.
+WarningDepthf(0, &#34;msg&#34;) is the same as Warningf(&#34;msg&#34;).
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Warningf" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L574">Warningf</a> <a class="Documentation-idLink" href="#Warningf" title="Go to Warningf" aria-label="Go to Warningf">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Warningf(format <a href="/builtin#string">string</a>, args ...<a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>Warningf logs to the WARNING and INFO logs.
+Arguments are handled in the manner of fmt.Printf; a newline is appended if missing.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="Warningln" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L568">Warningln</a> <a class="Documentation-idLink" href="#Warningln" title="Go to Warningln" aria-label="Go to Warningln">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func Warningln(args ...<a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>Warningln logs to the WARNING and INFO logs.
+Arguments are handled in the manner of fmt.Println; a newline is appended if missing.
+</p>
+
+  
+
+        </div></section>
+
+  <h3 tabindex="-1" id="pkg-types" class="Documentation-typesHeader">Types <a href="#pkg-types" title="Go to Types" aria-label="Go to Types">¶</a></h3>
+
+  <section class="Documentation-types"><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="Level" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L160">Level</a> <a class="Documentation-idLink" href="#Level" title="Go to Level" aria-label="Go to Level">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type Level <a href="/builtin#int32">int32</a></pre>
+    </div>
+  <p>Level specifies a level of verbosity for V logs.  The -v flag is of type
+Level and should be modified only through the flag.Value interface.
+</p>
+<div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Level.Get" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Level) <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog_flags.go#L106">Get</a> <a class="Documentation-idLink" href="#Level.Get" title="Go to Level.Get" aria-label="Go to Level.Get">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (l *<a href="#Level">Level</a>) Get() <a href="/builtin#any">any</a></pre>
+    </div>
+  <p>Get is part of the flag.Value interface.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Level.Set" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Level) <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog_flags.go#L115">Set</a> <a class="Documentation-idLink" href="#Level.Set" title="Go to Level.Set" aria-label="Go to Level.Set">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (l *<a href="#Level">Level</a>) Set(value <a href="/builtin#string">string</a>) <a href="/builtin#error">error</a></pre>
+    </div>
+  <p>Set is part of the flag.Value interface.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Level.String" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Level) <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog_flags.go#L101">String</a> <a class="Documentation-idLink" href="#Level.String" title="Go to Level.String" aria-label="Go to Level.String">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (l *<a href="#Level">Level</a>) String() <a href="/builtin#string">string</a></pre>
+    </div>
+  <p>String is part of the flag.Value interface.
+</p>
+
+  
+
+  </div>
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="OutputStats" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L130">OutputStats</a> <a class="Documentation-idLink" href="#OutputStats" title="Go to OutputStats" aria-label="Go to OutputStats">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type OutputStats struct {
+	<span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+    </div>
+  <p>OutputStats tracks the number of output lines and bytes written.
+</p>
+<div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="OutputStats.Bytes" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*OutputStats) <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L141">Bytes</a> <a class="Documentation-idLink" href="#OutputStats.Bytes" title="Go to OutputStats.Bytes" aria-label="Go to OutputStats.Bytes">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (s *<a href="#OutputStats">OutputStats</a>) Bytes() <a href="/builtin#int64">int64</a></pre>
+    </div>
+  <p>Bytes returns the number of bytes written.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="OutputStats.Lines" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*OutputStats) <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L136">Lines</a> <a class="Documentation-idLink" href="#OutputStats.Lines" title="Go to OutputStats.Lines" aria-label="Go to OutputStats.Lines">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (s *<a href="#OutputStats">OutputStats</a>) Lines() <a href="/builtin#int64">int64</a></pre>
+    </div>
+  <p>Lines returns the number of lines written.
+</p>
+
+  
+
+  </div>
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="Verbose" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L394">Verbose</a> <a class="Documentation-idLink" href="#Verbose" title="Go to Verbose" aria-label="Go to Verbose">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type Verbose <a href="/builtin#bool">bool</a></pre>
+    </div>
+  <p>Verbose is a boolean type that implements Infof (like Printf) etc.
+See the documentation of V for more information.
+</p>
+<div class="Documentation-typeFunc">
+    
+  
+  
+    <h4 tabindex="-1" id="V" data-kind="function" class="Documentation-typeFuncHeader">
+      <span>func <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L414">V</a> <a class="Documentation-idLink" href="#V" title="Go to V" aria-label="Go to V">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func V(level <a href="#Level">Level</a>) <a href="#Verbose">Verbose</a></pre>
+    </div>
+  <p>V reports whether verbosity at the call site is at least the requested level.
+The returned value is a boolean of type Verbose, which implements Info, Infoln
+and Infof. These methods will write to the Info log if called.
+Thus, one may write either
+</p><pre>if glog.V(2) { glog.Info(&#34;log this&#34;) }
+</pre><p>or
+</p><pre>glog.V(2).Info(&#34;log this&#34;)
+</pre><p>The second form is shorter but the first is cheaper if logging is off because it does
+not evaluate its arguments.
+</p><p>Whether an individual call to V generates a log record depends on the setting of
+the -v and --vmodule flags; both are off by default. If the level in the call to
+V is at most the value of -v, or of -vmodule for the source file containing the
+call, the V call will log.
+</p>
+
+  
+
+  </div><div class="Documentation-typeFunc">
+    
+  
+  
+    <h4 tabindex="-1" id="VDepth" data-kind="function" class="Documentation-typeFuncHeader">
+      <span>func <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L420">VDepth</a> <a class="Documentation-idLink" href="#VDepth" title="Go to VDepth" aria-label="Go to VDepth">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">v1.1.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func VDepth(depth <a href="/builtin#int">int</a>, level <a href="#Level">Level</a>) <a href="#Verbose">Verbose</a></pre>
+    </div>
+  <p>VDepth acts as V but uses depth to determine which call frame to check vmodule for.
+VDepth(0, level) is the same as V(level).
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Verbose.Info" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (Verbose) <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L426">Info</a> <a class="Documentation-idLink" href="#Verbose.Info" title="Go to Verbose.Info" aria-label="Go to Verbose.Info">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (v <a href="#Verbose">Verbose</a>) Info(args ...<a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>Info is equivalent to the global Info function, guarded by the value of v.
+See the documentation of V for usage.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Verbose.InfoContext" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (Verbose) <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L464">InfoContext</a> <a class="Documentation-idLink" href="#Verbose.InfoContext" title="Go to Verbose.InfoContext" aria-label="Go to Verbose.InfoContext">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">v1.2.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (v <a href="#Verbose">Verbose</a>) InfoContext(ctx <a href="/context">context</a>.<a href="/context#Context">Context</a>, args ...<a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>InfoContext is equivalent to the global InfoContext function, guarded by the value of v.
+See the documentation of V for usage.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Verbose.InfoContextDepth" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (Verbose) <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L478">InfoContextDepth</a> <a class="Documentation-idLink" href="#Verbose.InfoContextDepth" title="Go to Verbose.InfoContextDepth" aria-label="Go to Verbose.InfoContextDepth">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">v1.2.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (v <a href="#Verbose">Verbose</a>) InfoContextDepth(ctx <a href="/context">context</a>.<a href="/context#Context">Context</a>, depth <a href="/builtin#int">int</a>, args ...<a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>InfoContextDepth is equivalent to the global InfoContextDepth function, guarded by the value of v.
+See the documentation of V for usage.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Verbose.InfoContextDepthf" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (Verbose) <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L486">InfoContextDepthf</a> <a class="Documentation-idLink" href="#Verbose.InfoContextDepthf" title="Go to Verbose.InfoContextDepthf" aria-label="Go to Verbose.InfoContextDepthf">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">v1.2.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (v <a href="#Verbose">Verbose</a>) InfoContextDepthf(ctx <a href="/context">context</a>.<a href="/context#Context">Context</a>, depth <a href="/builtin#int">int</a>, format <a href="/builtin#string">string</a>, args ...<a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>InfoContextDepthf is equivalent to the global InfoContextDepthf function, guarded by the value of v.
+See the documentation of V for usage.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Verbose.InfoContextf" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (Verbose) <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L470">InfoContextf</a> <a class="Documentation-idLink" href="#Verbose.InfoContextf" title="Go to Verbose.InfoContextf" aria-label="Go to Verbose.InfoContextf">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">v1.2.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (v <a href="#Verbose">Verbose</a>) InfoContextf(ctx <a href="/context">context</a>.<a href="/context#Context">Context</a>, format <a href="/builtin#string">string</a>, args ...<a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>InfoContextf is equivalent to the global InfoContextf function, guarded by the value of v.
+See the documentation of V for usage.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Verbose.InfoDepth" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (Verbose) <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L432">InfoDepth</a> <a class="Documentation-idLink" href="#Verbose.InfoDepth" title="Go to Verbose.InfoDepth" aria-label="Go to Verbose.InfoDepth">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">v1.1.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (v <a href="#Verbose">Verbose</a>) InfoDepth(depth <a href="/builtin#int">int</a>, args ...<a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>InfoDepth is equivalent to the global InfoDepth function, guarded by the value of v.
+See the documentation of V for usage.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Verbose.InfoDepthf" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (Verbose) <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L440">InfoDepthf</a> <a class="Documentation-idLink" href="#Verbose.InfoDepthf" title="Go to Verbose.InfoDepthf" aria-label="Go to Verbose.InfoDepthf">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">v1.1.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (v <a href="#Verbose">Verbose</a>) InfoDepthf(depth <a href="/builtin#int">int</a>, format <a href="/builtin#string">string</a>, args ...<a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>InfoDepthf is equivalent to the global InfoDepthf function, guarded by the value of v.
+See the documentation of V for usage.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Verbose.Infof" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (Verbose) <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L456">Infof</a> <a class="Documentation-idLink" href="#Verbose.Infof" title="Go to Verbose.Infof" aria-label="Go to Verbose.Infof">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (v <a href="#Verbose">Verbose</a>) Infof(format <a href="/builtin#string">string</a>, args ...<a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>Infof is equivalent to the global Infof function, guarded by the value of v.
+See the documentation of V for usage.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Verbose.Infoln" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (Verbose) <a class="Documentation-source" href="https://github.com/golang/glog/blob/v1.2.5/glog.go#L448">Infoln</a> <a class="Documentation-idLink" href="#Verbose.Infoln" title="Go to Verbose.Infoln" aria-label="Go to Verbose.Infoln">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (v <a href="#Verbose">Verbose</a>) Infoln(args ...<a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>Infoln is equivalent to the global Infoln function, guarded by the value of v.
+See the documentation of V for usage.
+</p>
+
+  
+
+  </div>
+  
+
+    </div></section></div> 
+
+
+
+
+
+
+
+      
+    </div>
+  </div>
+
+        
+      
+      
+        
+  <div class="UnitFiles js-unitFiles">
+    <h2 class="UnitFiles-title" id="section-sourcefiles">
+      <img class="go-Icon" height="24" width="24" src="/static/shared/icon/insert_drive_file_gm_grey_24dp.svg" alt="">
+      Source Files
+      <a class="UnitFiles-idLink" href="#section-sourcefiles" title="Go to Source Files" aria-label="Go to Source Files">¶</a>
+    </h2><div class="UnitFiles-titleLink">
+      <a href="https://github.com/golang/glog/tree/v1.2.5" target="_blank" rel="noopener">View all Source files</a>
+    </div><div>
+      <ul class="UnitFiles-fileList"><li><a href="https://github.com/golang/glog/blob/v1.2.5/glog.go" target="_blank" rel="noopener" title="glog.go">glog.go</a></li><li><a href="https://github.com/golang/glog/blob/v1.2.5/glog_file.go" target="_blank" rel="noopener" title="glog_file.go">glog_file.go</a></li><li><a href="https://github.com/golang/glog/blob/v1.2.5/glog_file_linux.go" target="_blank" rel="noopener" title="glog_file_linux.go">glog_file_linux.go</a></li><li><a href="https://github.com/golang/glog/blob/v1.2.5/glog_file_nonwindows.go" target="_blank" rel="noopener" title="glog_file_nonwindows.go">glog_file_nonwindows.go</a></li><li><a href="https://github.com/golang/glog/blob/v1.2.5/glog_flags.go" target="_blank" rel="noopener" title="glog_flags.go">glog_flags.go</a></li></ul>
+    </div>
+  </div>
+
+      
+      
+        
+  <div class="UnitDirectories js-unitDirectories">
+    <h2 class="UnitDirectories-title" id="section-directories">
+      <img class="go-Icon" height="24" width="24" src="/static/shared/icon/folder_gm_grey_24dp.svg" alt="">
+      Directories
+      <a class="UnitDirectories-idLink" href="#section-directories" title="Go to Directories" aria-label="Go to Directories">¶</a>
+    </h2>
+    <div class="UnitDirectories-toggles">
+      <div class="UnitDirectories-toggleButtons">
+        <button class="js-showInternalDirectories" data-test-id="internal-directories-toggle"
+            data-gtmc="directories button" aria-label="Show Internal Directories">
+          Show internal
+        </button>
+        <button class="js-expandAllDirectories" data-test-id="directories-toggle"
+            data-gtmc="directories button" aria-label="Expand All Directories">
+          Expand all
+        </button>
+      </div>
+    </div>
+    <table class="UnitDirectories-table UnitDirectories-table--tree js-expandableTable"
+          data-test-id="UnitDirectories-table">
+      <tr class="UnitDirectories-tableHeader UnitDirectories-tableHeader--tree">
+        <th>Path</th>
+        <th class="UnitDirectories-desktopSynopsis">Synopsis</th>
+      </tr>
+      
+          
+  
+  <tr data-aria-controls="internal-logsink internal-stackdump "
+      class="UnitDirectories-internal">
+    <td data-id="internal" data-aria-owns="internal-logsink internal-stackdump ">
+      <div class="UnitDirectories-pathCell">
+        <div><button type="button" class="go-Button go-Button--inline UnitDirectories-toggleButton UnitDirectories-internal"
+                aria-expanded="false"
+                aria-label="2 more from"
+                data-aria-controls="internal-logsink internal-stackdump "
+                data-aria-labelledby="internal-button internal"
+                data-id="internal-button">
+              <img class="go-Icon" height="24" width="24" src="/static/shared/icon/arrow_right_gm_grey_24dp.svg"
+                  alt="">
+            </button><span>internal</span>
+      </td>
+      <td class="UnitDirectories-desktopSynopsis"></td></tr><tr data-id="internal-logsink" class="UnitDirectories-internal">
+      <td>
+        <div class="UnitDirectories-subdirectory">
+          <span>
+            <a href="/github.com/golang/glog@v1.2.5/internal/logsink">logsink</a>
+            
+            
+          </span>
+          <div class="UnitDirectories-mobileSynopsis"></div>
+        </div>
+      </td>
+      <td class="UnitDirectories-desktopSynopsis"></td><tr data-id="internal-stackdump" class="UnitDirectories-internal">
+      <td>
+        <div class="UnitDirectories-subdirectory">
+          <span>
+            <a href="/github.com/golang/glog@v1.2.5/internal/stackdump">stackdump</a>
+            
+            
+          </span>
+          <div class="UnitDirectories-mobileSynopsis">Package stackdump provides wrappers for runtime.Stack and runtime.Callers with uniform support for skipping caller frames.</div>
+        </div>
+      </td>
+      <td class="UnitDirectories-desktopSynopsis">Package stackdump provides wrappers for runtime.Stack and runtime.Callers with uniform support for skipping caller frames.</td></tr>
+
+      
+    </table>
+  </div>
+
+      
+    </div>
+  </div>
+  <div id="showInternal-description" hidden> Click to show internal directories. </div>
+  <div id="hideInternal-description" hidden> Click to hide internal directories. </div>
+</article>
+    <footer class="go-Main-footer"></footer>
+  </main>
+
+    
+  <footer class="go-Footer">
+    
+    <div class="go-Footer-links">
+      <div class="go-Footer-linkColumn">
+        <a href="https://go.dev/solutions" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          Why Go
+        </a>
+        <a href="https://go.dev/solutions#use-cases" class="go-Footer-link"
+            data-gtmc="footer link">
+          Use Cases
+        </a>
+        <a href="https://go.dev/solutions#case-studies" class="go-Footer-link"
+            data-gtmc="footer link">
+          Case Studies
+        </a>
+      </div>
+      <div class="go-Footer-linkColumn">
+        <a href="https://learn.go.dev/" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          Get Started
+        </a>
+        <a href="https://play.golang.org" class="go-Footer-link" data-gtmc="footer link">
+          Playground
+        </a>
+        <a href="https://tour.golang.org" class="go-Footer-link" data-gtmc="footer link">
+          Tour
+        </a>
+        <a href="https://stackoverflow.com/questions/tagged/go?tab=Newest" class="go-Footer-link"
+            data-gtmc="footer link">
+          Stack Overflow
+        </a>
+        <a href="https://go.dev/help" class="go-Footer-link"
+            data-gtmc="footer link">
+          Help
+        </a>
+      </div>
+      <div class="go-Footer-linkColumn">
+        <a href="https://pkg.go.dev" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          Packages
+        </a>
+        <a href="/std" class="go-Footer-link" data-gtmc="footer link">
+          Standard Library
+        </a>
+        <a href="/golang.org/x" class="go-Footer-link" data-gtmc="footer link">
+          Sub-repositories
+        </a>
+        <a href="https://pkg.go.dev/about" class="go-Footer-link" data-gtmc="footer link">
+          About Go Packages
+        </a>
+      </div>
+      <div class="go-Footer-linkColumn">
+        <a href="https://go.dev/project" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          About
+        </a>
+        <a href="https://go.dev/dl/" class="go-Footer-link" data-gtmc="footer link">Download</a>
+        <a href="https://go.dev/blog" class="go-Footer-link" data-gtmc="footer link">Blog</a>
+        <a href="https://github.com/golang/go/issues" class="go-Footer-link" data-gtmc="footer link">
+          Issue Tracker
+        </a>
+        <a href="https://go.dev/doc/devel/release.html" class="go-Footer-link"
+            data-gtmc="footer link">
+          Release Notes
+        </a>
+        <a href="https://go.dev/brand" class="go-Footer-link" data-gtmc="footer link">
+          Brand Guidelines
+        </a>
+        <a href="https://go.dev/conduct" class="go-Footer-link" data-gtmc="footer link">
+          Code of Conduct
+        </a>
+      </div>
+      <div class="go-Footer-linkColumn">
+        <a href="https://www.twitter.com/golang" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          Connect
+        </a>
+        <a href="https://www.twitter.com/golang" class="go-Footer-link" data-gtmc="footer link">
+          Twitter
+        </a>
+        <a href="https://github.com/golang" class="go-Footer-link" data-gtmc="footer link">GitHub</a>
+        <a href="https://invite.slack.golangbridge.org/" class="go-Footer-link"
+            data-gtmc="footer link">
+          Slack
+        </a>
+        <a href="https://reddit.com/r/golang" class="go-Footer-link" data-gtmc="footer link">
+          r/golang
+        </a>
+        <a href="https://www.meetup.com/pro/go" class="go-Footer-link" data-gtmc="footer link">
+          Meetup
+        </a>
+        <a href="https://golangweekly.com/" class="go-Footer-link" data-gtmc="footer link">
+          Golang Weekly
+        </a>
+      </div>
+    </div>
+    <div class="go-Footer-bottom">
+      <img class="go-Footer-gopher"  width="1431" height="901"
+          src="/static/shared/gopher/pilot-bust-1431x901.svg" alt="Gopher in flight goggles">
+      <ul class="go-Footer-listRow">
+        <li class="go-Footer-listItem">
+          <a href="https://go.dev/copyright" data-gtmc="footer link">Copyright</a>
+        </li>
+        <li class="go-Footer-listItem">
+          <a href="https://go.dev/tos" data-gtmc="footer link">Terms of Service</a>
+        </li>
+        <li class="go-Footer-listItem">
+          <a href="http://www.google.com/intl/en/policies/privacy/" data-gtmc="footer link"
+              target="_blank" rel="noopener">
+            Privacy Policy
+          </a>
+        </li>
+        <li class="go-Footer-listItem">
+          <a href="https://go.dev/s/pkgsite-feedback" target="_blank" rel="noopener"
+              data-gtmc="footer link">
+            Report an Issue
+          </a>
+        </li>
+        <li class="go-Footer-listItem">
+          <button class="go-Button go-Button--text go-Footer-toggleTheme js-toggleTheme" aria-label="Theme Toggle">
+            <img data-value="auto" class="go-Icon go-Icon--inverted" height="24" width="24" src="/static/shared/icon/brightness_6_gm_grey_24dp.svg" alt="System theme">
+            <img data-value="dark" class="go-Icon go-Icon--inverted" height="24" width="24" src="/static/shared/icon/brightness_2_gm_grey_24dp.svg" alt="Dark theme">
+            <img data-value="light" class="go-Icon go-Icon--inverted" height="24" width="24" src="/static/shared/icon/light_mode_gm_grey_24dp.svg" alt="Light theme">
+            <p> Theme Toggle </p>
+          </button>
+        </li>
+        <li class="go-Footer-listItem">
+          <button class="go-Button go-Button--text go-Footer-keyboard js-openShortcuts" aria-label="Shorcuts Modal">
+            <img class="go-Icon go-Icon--inverted" height="24" width="24" src="/static/shared/icon/keyboard_grey_24dp.svg" alt="">
+            <p> Shortcuts Modal </p>
+          </button>
+        </li>
+      </ul>
+      <a class="go-Footer-googleLogo" href="https://google.com" target="_blank"rel="noopener"
+          data-gtmc="footer link">
+        <img class="go-Footer-googleLogoImg" height="24" width="72"
+            src="/static/shared/logo/google-white.svg" alt="Google logo">
+      </a>
+    </div>
+  </footer>
+
+    
+  <dialog id="jump-to-modal" class="JumpDialog go-Modal go-Modal--md js-modal">
+    <form method="dialog" data-gmtc="jump to form" aria-label="Jump to Identifier">
+      <div class="Dialog-title go-Modal-header">
+        <h2>Jump to</h2>
+        <button
+          class="go-Button go-Button--inline"
+          type="button"
+          data-modal-close
+          data-gtmc="modal button"
+          aria-label="Close"
+        >
+          <img
+            class="go-Icon"
+            height="24"
+            width="24"
+            src="/static/shared/icon/close_gm_grey_24dp.svg"
+            alt=""
+          />
+        </button>
+      </div>
+      <div class="JumpDialog-filter">
+        <input class="JumpDialog-input go-Input" autocomplete="off" type="text">
+      </div>
+      <div class="JumpDialog-body go-Modal-body">
+        <div class="JumpDialog-list"></div>
+      </div>
+      <div class="go-Modal-actions">
+        <button class="go-Button" data-test-id="close-dialog">Close</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog class="ShortcutsDialog go-Modal go-Modal--sm js-modal">
+    <form method="dialog">
+      <div class="go-Modal-header">
+        <h2>Keyboard shortcuts</h2>
+        <button
+          class="go-Button go-Button--inline"
+          type="button"
+          data-modal-close
+          data-gtmc="modal button"
+          aria-label="Close"
+        >
+          <img
+            class="go-Icon"
+            height="24"
+            width="24"
+            src="/static/shared/icon/close_gm_grey_24dp.svg"
+            alt=""
+          />
+        </button>
+      </div>
+      <div class="go-Modal-body">
+        <table>
+          <tbody>
+            <tr><td class="ShortcutsDialog-key">
+              <strong>?</strong></td><td> : This menu</td>
+            </tr>
+            <tr><td class="ShortcutsDialog-key">
+              <strong>/</strong></td><td> : Search site</td>
+            </tr>
+            <tr><td class="ShortcutsDialog-key">
+              <strong>f</strong> or <strong>F</strong></td><td> : Jump to</td>
+            </tr>
+            <tr>
+              <td class="ShortcutsDialog-key"><strong>y</strong> or <strong>Y</strong></td>
+              <td> : Canonical URL</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="go-Modal-actions">
+        <button class="go-Button" data-test-id="close-dialog">Close</button>
+      </div>
+    </form>
+  </dialog>
+
+    
+      <section class="Cookie-notice js-cookieNotice">
+        <div>go.dev uses cookies from Google to deliver and enhance the quality of its services and to
+        analyze traffic. <a target=_blank href="https://policies.google.com/technologies/cookies">Learn more.</a></div>
+        <div><button class="go-Button">Okay</button></div>
+      </section>
+    
+    
+      <script>
+        // this will throw if the querySelector can’t find the element
+        const gtmId = document.querySelector('.js-gtmID').dataset.gtmid;
+        if (!gtmId) {
+          throw new Error('Google Tag Manager ID not found');
+        }
+        loadScript(`https://www.googletagmanager.com/gtm.js?id=${gtmId}`);
+      </script>
+      <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W8MVQXG"
+                height="0" width="0" style="display:none;visibility:hidden">
+        </iframe>
+      </noscript>
+    
+    
+  
+  <div class="js-canonicalURLPath" data-canonical-url-path="/github.com/golang/glog@v1.2.5" hidden></div>
+  <div class="js-playgroundVars" data-modulepath="github.com/golang/glog" data-version="v1.2.5" hidden></div>
+  <script>
+    loadScript('/static/frontend/unit/main/main.js')
+  </script>
+
+  <script>
+    loadScript('/static/frontend/unit/unit.js')
+  </script>
+
+  </body>
+</html>

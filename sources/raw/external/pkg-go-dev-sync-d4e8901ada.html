@@ -1,0 +1,3197 @@
+---
+source_name: "External Linked Documentation"
+source_url: "https://pkg.go.dev/sync"
+retrieved_at: "2026-06-02T06:43:57.148907+00:00"
+content_type: "text/html; charset=utf-8"
+truncated: false
+insecure_tls_fallback: true
+---
+
+
+
+<!DOCTYPE html>
+<html lang="en" data-layout="responsive" data-local="">
+  <head>
+    
+    <script>
+      window.addEventListener('error', window.__err=function f(e){f.p=f.p||[];f.p.push(e)});
+    </script>
+    <script>
+      (function() {
+        const theme = document.cookie.match(/prefers-color-scheme=(light|dark|auto)/)?.[1]
+        if (theme) {
+          document.querySelector('html').setAttribute('data-theme', theme);
+        }
+      }())
+    </script>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="Description" content="Package sync provides basic synchronization primitives such as mutual exclusion locks.">
+    
+    <meta class="js-gtmID" data-gtmid="GTM-W8MVQXG">
+    <link rel="shortcut icon" href="/static/shared/icon/favicon.ico">
+    
+  
+    <link rel="canonical" href="https://pkg.go.dev/sync">
+  
+
+    <link href="/static/frontend/frontend.min.css?version=prod-frontend-00193-fdr" rel="stylesheet">
+    
+    <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="Go Packages">
+    
+    
+  <title>sync package - sync - Go Packages</title>
+
+    
+  <link href="/static/frontend/unit/unit.min.css?version=prod-frontend-00193-fdr" rel="stylesheet">
+  
+  <link href="/static/frontend/unit/main/main.min.css?version=prod-frontend-00193-fdr" rel="stylesheet">
+
+
+  </head>
+  <body>
+    
+    <script>
+      function loadScript(src, mod = true) {
+        let s = document.createElement('script');
+        s.src = src;
+        if (mod) {
+          s.type = 'module';
+          s.async = true;
+          s.defer = true
+        }
+        document.head.appendChild(s);
+      }
+      loadScript("/third_party/dialog-polyfill/dialog-polyfill.js", false)
+      loadScript("/static/frontend/frontend.js");
+    </script>
+    
+  <header class="go-Header go-Header--full js-siteHeader">
+    <div class="go-Header-inner go-Header-inner--dark">
+      <nav class="go-Header-nav">
+        <a href="https://go.dev/" class="js-headerLogo" data-gtmc="nav link"
+            data-test-id="go-header-logo-link" role="heading" aria-level="1">
+          <img class="go-Header-logo" src="/static/shared/logo/go-white.svg" alt="Go">
+        </a>
+         <div class="skip-navigation-wrapper">
+            <a class="skip-to-content-link" aria-label="Skip to main content" href="#main-content"> Skip to Main Content </a>
+          </div>
+        <div class="go-Header-rightContent">
+          
+<div class="go-SearchForm js-searchForm">
+  <form
+    class="go-InputGroup go-ShortcutKey go-SearchForm-form"
+    action="/search"
+    data-shortcut="/"
+    data-shortcut-alt="search"
+    data-gtmc="search form"
+    aria-label="Search for a package"
+    role="search"
+  >
+    <input name="q" class="go-Input js-searchFocus" aria-label="Search for a package" type="search"
+        autocapitalize="off" autocomplete="off" autocorrect="off" spellcheck="false"
+        placeholder="Search packages or symbols"
+        value="" />
+    <input name="m" value="" hidden>
+    <button class="go-Button go-Button--inverted" aria-label="Submit search">
+      <img
+        class="go-Icon"
+        height="24"
+        width="24"
+        src="/static/shared/icon/search_gm_grey_24dp.svg"
+        alt=""
+      />
+    </button>
+  </form>
+  <button class="go-SearchForm-expandSearch js-expandSearch" data-gtmc="nav button"
+      aria-label="Open search" data-test-id="expand-search">
+    <img class="go-Icon go-Icon--inverted" height="24" width="24"
+        src="/static/shared/icon/search_gm_grey_24dp.svg" alt="">
+
+  </button>
+</div>
+
+          <ul class="go-Header-menu">
+            <li class="go-Header-menuItem">
+              <a class="js-desktop-menu-hover" href="#" data-gtmc="nav link">
+                Why Go
+                <img class="go-Icon" height="24" width="24" src="/static/shared/icon/arrow_drop_down_gm_grey_24dp.svg" alt="submenu dropdown icon">
+              </a>
+              <ul class="go-Header-submenu go-Header-submenu--why js-desktop-submenu-hover" aria-label="submenu">
+                  <li class="go-Header-submenuItem">
+                    <div>
+                      <a href="https://go.dev/solutions#case-studies">
+                        <span>Case Studies</span>
+                      </a>
+                    </div>
+                    <p>Common problems companies solve with Go</p>
+                  </li>
+                  <li class="go-Header-submenuItem">
+                    <div>
+                      <a href="https://go.dev/solutions#use-cases">
+                        <span>Use Cases</span>
+                      </a>
+                    </div>
+                    <p>Stories about how and why companies use Go</p>
+                  </li>
+                  <li class="go-Header-submenuItem">
+                    <div>
+                      <a href="https://go.dev/security/">
+                        <span>Security</span>
+                      </a>
+                    </div>
+                    <p>How Go can help keep you secure by default</p>
+                  </li>
+              </ul>
+            </li>
+            <li class="go-Header-menuItem">
+              <a href="https://go.dev/learn/" data-gtmc="nav link">Learn</a>
+            </li>
+            <li class="go-Header-menuItem">
+              <a class="js-desktop-menu-hover" href="#" data-gtmc="nav link">
+                Docs
+                <img class="go-Icon" height="24" width="24" src="/static/shared/icon/arrow_drop_down_gm_grey_24dp.svg" alt="submenu dropdown icon">
+              </a>
+              <ul class="go-Header-submenu go-Header-submenu--docs js-desktop-submenu-hover" aria-label="submenu">
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/doc/effective_go">
+                      <span>Effective Go</span>
+                    </a>
+                  </div>
+                  <p>Tips for writing clear, performant, and idiomatic Go code</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/doc/">
+                      <span>Go User Manual</span>
+                    </a>
+                  </div>
+                  <p>A complete introduction to building software with Go</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://pkg.go.dev/std">
+                      <span>Standard library</span>
+                    </a>
+                  </div>
+                  <p>Reference documentation for Go's standard library</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/doc/devel/release">
+                      <span>Release Notes</span>
+                    </a>
+                  </div>
+                  <p>Learn what's new in each Go release</p>
+                </li>
+              </ul>
+            </li>
+            <li class="go-Header-menuItem go-Header-menuItem--active">
+              <a href="/" data-gtmc="nav link">Packages</a>
+            </li>
+            <li class="go-Header-menuItem">
+              <a class="js-desktop-menu-hover" href="#" data-gtmc="nav link">
+                Community
+                <img class="go-Icon" height="24" width="24" src="/static/shared/icon/arrow_drop_down_gm_grey_24dp.svg" alt="submenu dropdown icon">
+              </a>
+              <ul class="go-Header-submenu go-Header-submenu--community js-desktop-submenu-hover" aria-label="submenu">
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/talks/">
+                      <span>Recorded Talks</span>
+                    </a>
+                  </div>
+                  <p>Videos from prior events</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://www.meetup.com/pro/go">
+                      <span>Meetups</span>
+                      <i class="material-icons">
+                        <img class="go-Icon" height="24" width="24"
+                            src="/static/shared/icon/launch_gm_grey_24dp.svg" alt="">
+                      </i>
+                    </a>
+                  </div>
+                  <p>Meet other local Go developers</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://github.com/golang/go/wiki/Conferences">
+                      <span>Conferences</span>
+                      <i class="material-icons">
+                        <img class="go-Icon" height="24" width="24"
+                            src="/static/shared/icon/launch_gm_grey_24dp.svg" alt="">
+                      </i>
+                    </a>
+                  </div>
+                  <p>Learn and network with Go developers from around the world</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/blog">
+                      <span>Go blog</span>
+                    </a>
+                  </div>
+                  <p>The Go project's official blog.</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    <a href="https://go.dev/help">
+                      <span>Go project</span>
+                    </a>
+                  </div>
+                  <p>Get help and stay informed from Go</p>
+                </li>
+                <li class="go-Header-submenuItem">
+                  <div>
+                    Get connected
+                  </div>
+                  <p></p>
+                  <div class="go-Header-socialIcons">
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with google-groups (Opens in new window)"
+                        title="Get connected with google-groups (Opens in new window)"
+                        href="https://groups.google.com/g/golang-nuts">
+                        <img src="/static/shared/logo/social/google-groups.svg" />
+                      </a>
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with github (Opens in new window)"
+                        title="Get connected with github (Opens in new window)"
+                        href="https://github.com/golang">
+                        <img src="/static/shared/logo/social/github.svg" />
+                      </a>
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with twitter (Opens in new window)"
+                        title="Get connected with twitter (Opens in new window)"
+                        href="https://twitter.com/golang">
+                        <img src="/static/shared/logo/social/twitter.svg" />
+                      </a>
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with reddit (Opens in new window)"
+                        title="Get connected with reddit (Opens in new window)"
+                        href="https://www.reddit.com/r/golang/">
+                        <img src="/static/shared/logo/social/reddit.svg" />
+                      </a>
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with slack (Opens in new window)"
+                        title="Get connected with slack (Opens in new window)"
+                        href="https://invite.slack.golangbridge.org/">
+                        <img src="/static/shared/logo/social/slack.svg" />
+                      </a>
+                      <a
+                        class="go-Header-socialIcon"
+                        aria-label="Get connected with stack-overflow (Opens in new window)"
+                        title=""
+                        href="https://stackoverflow.com/collectives/go">
+                        <img src="/static/shared/logo/social/stack-overflow.svg" />
+                      </a>
+                  </div>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <button class="go-Header-navOpen js-headerMenuButton go-Header-navOpen--white" data-gtmc="nav button" aria-label="Open navigation">
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <aside class="go-NavigationDrawer js-header">
+    <nav class="go-NavigationDrawer-nav">
+      <div class="go-NavigationDrawer-header">
+        <a href="https://go.dev/">
+          <img class="go-NavigationDrawer-logo" src="/static/shared/logo/go-blue.svg" alt="Go.">
+        </a>
+      </div>
+      <ul class="go-NavigationDrawer-list">
+          <li class="go-NavigationDrawer-listItem js-mobile-subnav-trigger go-NavigationDrawer-hasSubnav">
+            <a href="#">
+              <span>Why Go</span>
+              <i class="material-icons">
+                <img class="go-Icon" height="24" width="24"
+                  src="/static/shared/icon/navigate_next_gm_grey_24dp.svg" alt="">
+              </i>
+            </a>
+
+            <div class="go-NavigationDrawer go-NavigationDrawer-submenuItem">
+              <div class="go-NavigationDrawer-nav">
+                <div class="go-NavigationDrawer-header">
+                  <a href="#">
+                    <i class="material-icons">
+                      <img class="go-Icon" height="24" width="24"
+                        src="/static/shared/icon/navigate_before_gm_grey_24dp.svg" alt="">
+                      </i>
+                      Why Go
+                  </a>
+                </div>
+                <ul class="go-NavigationDrawer-list">
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/solutions#case-studies">
+                      Case Studies
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/solutions#use-cases">
+                      Use Cases
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/security/">
+                      Security
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="go-NavigationDrawer-listItem">
+            <a href="https://go.dev/learn/">Learn</a>
+          </li>
+          <li class="go-NavigationDrawer-listItem js-mobile-subnav-trigger go-NavigationDrawer-hasSubnav">
+            <a href="#">
+              <span>Docs</span>
+              <i class="material-icons">
+                <img class="go-Icon" height="24" width="24"
+                  src="/static/shared/icon/navigate_next_gm_grey_24dp.svg" alt="">
+              </i>
+            </a>
+
+            <div class="go-NavigationDrawer go-NavigationDrawer-submenuItem">
+              <div class="go-NavigationDrawer-nav">
+                <div class="go-NavigationDrawer-header">
+                  <a href="#"><i class="material-icons">
+                    <img class="go-Icon" height="24" width="24"
+                      src="/static/shared/icon/navigate_before_gm_grey_24dp.svg" alt="">
+                    </i>
+                    Docs
+                  </a>
+                </div>
+                <ul class="go-NavigationDrawer-list">
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/doc/effective_go">
+                      Effective Go
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/doc/">
+                      Go User Manual
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://pkg.go.dev/std">
+                      Standard library
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/doc/devel/release">
+                      Release Notes
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+          <li class="go-NavigationDrawer-listItem go-NavigationDrawer-listItem--active">
+            <a href="/">Packages</a>
+          </li>
+          <li class="go-NavigationDrawer-listItem js-mobile-subnav-trigger go-NavigationDrawer-hasSubnav">
+            <a href="#">
+              <span>Community</span>
+              <i class="material-icons">
+                <img class="go-Icon" height="24" width="24"
+                  src="/static/shared/icon/navigate_next_gm_grey_24dp.svg" alt="">
+              </i>
+            </a>
+            <div class="go-NavigationDrawer go-NavigationDrawer-submenuItem">
+              <div class="go-NavigationDrawer-nav">
+                <div class="go-NavigationDrawer-header">
+                  <a href="#">
+                    <i class="material-icons">
+                      <img class="go-Icon" height="24" width="24"
+                        src="/static/shared/icon/navigate_before_gm_grey_24dp.svg" alt="">
+                    </i>
+                    Community
+                  </a>
+                </div>
+                <ul class="go-NavigationDrawer-list">
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/talks/">
+                      Recorded Talks
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://www.meetup.com/pro/go">
+                      Meetups
+                      <i class="material-icons">
+                      <img class="go-Icon" height="24" width="24"
+                          src="/static/shared/icon/launch_gm_grey_24dp.svg" alt="">
+                      </i>
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://github.com/golang/go/wiki/Conferences">
+                      Conferences
+                      <i class="material-icons">
+                        <img class="go-Icon" height="24" width="24" src="/static/shared/icon/launch_gm_grey_24dp.svg" alt="">
+                      </i>
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/blog">
+                      Go blog
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <a href="https://go.dev/help">
+                      Go project
+                    </a>
+                  </li>
+                  <li class="go-NavigationDrawer-listItem">
+                    <div>Get connected</div>
+                    <div class="go-Header-socialIcons">
+                        <a class="go-Header-socialIcon" href="https://groups.google.com/g/golang-nuts"><img src="/static/shared/logo/social/google-groups.svg" /></a>
+                        <a class="go-Header-socialIcon" href="https://github.com/golang"><img src="/static/shared/logo/social/github.svg" /></a>
+                        <a class="go-Header-socialIcon" href="https://twitter.com/golang"><img src="/static/shared/logo/social/twitter.svg" /></a>
+                        <a class="go-Header-socialIcon" href="https://www.reddit.com/r/golang/"><img src="/static/shared/logo/social/reddit.svg" /></a>
+                        <a class="go-Header-socialIcon" href="https://invite.slack.golangbridge.org/"><img src="/static/shared/logo/social/slack.svg" /></a>
+                        <a class="go-Header-socialIcon" href="https://stackoverflow.com/collectives/go"><img src="/static/shared/logo/social/stack-overflow.svg" /></a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </li>
+      </ul>
+    </nav>
+  </aside>
+  <div class="go-NavigationDrawer-scrim js-scrim" role="presentation"></div>
+
+    
+  <main class="go-Main" id="main-content">
+    <div class="go-Main-banner" role="alert"></div>
+    <header class="go-Main-header js-mainHeader">
+  
+  
+  <nav class="go-Main-headerBreadcrumb go-Breadcrumb" aria-label="Breadcrumb" data-test-id="UnitHeader-breadcrumb">
+    <ol>
+      
+        
+          <li data-test-id="UnitHeader-breadcrumbItem">
+            <a href="/" data-gtmc="breadcrumb link">Discover Packages</a>
+          </li>
+        
+          <li data-test-id="UnitHeader-breadcrumbItem">
+            <a href="/std" data-gtmc="breadcrumb link">Standard library</a>
+          </li>
+        
+        <li>
+          <a href="/sync@go1.26.3" data-gtmc="breadcrumb link" aria-current="location"
+              data-test-id="UnitHeader-breadcrumbCurrent">
+            sync
+          </a>
+          
+            <button
+              class="go-Button go-Button--inline go-Clipboard js-clipboard"
+              title="Copy path to clipboard.&#10;&#10;sync"
+              aria-label="Copy Path to Clipboard"
+              data-to-copy="sync"
+              data-gtmc="breadcrumbs button"
+            >
+              <img
+                class="go-Icon go-Icon--accented"
+                height="24"
+                width="24"
+                src="/static/shared/icon/content_copy_gm_grey_24dp.svg"
+                alt=""
+              >
+            </button>
+          
+        
+      </li>
+    </ol>
+  </nav>
+
+  <div class="go-Main-headerContent">
+    
+  <div class="go-Main-headerTitle js-stickyHeader">
+    <a class="go-Main-headerLogo" href="https://go.dev/" aria-hidden="true" tabindex="-1" data-gtmc="header link" aria-label="Link to Go Homepage">
+      <img height="78" width="207" src="/static/shared/logo/go-blue.svg" alt="Go">
+    </a>
+    <h1 class="UnitHeader-titleHeading" data-test-id="UnitHeader-title">sync</h1>
+    
+      <span class="go-Chip go-Chip--inverted">package</span>
+    
+      <span class="go-Chip go-Chip--inverted">standard library</span>
+    
+    
+      
+        <button
+          class="go-Button go-Button--inline go-Clipboard js-clipboard"
+          title="Copy path to clipboard.&#10;&#10;sync"
+          aria-label="Copy Path to Clipboard"
+          data-to-copy="sync"
+          data-gtmc="title button"
+          tabindex="-1"
+        >
+          <img
+            class="go-Icon go-Icon--accented"
+            height="24"
+            width="24"
+            src="/static/shared/icon/content_copy_gm_grey_24dp.svg"
+            alt=""
+          />
+        </button>
+      
+    
+  </div>
+
+    
+      
+  <div class="go-Main-headerDetails">
+    
+      
+  <span class="go-Main-headerDetailItem" data-test-id="UnitHeader-version">
+    <a href="?tab=versions" aria-label="Version: go1.26.3" 
+    data-gtmc="header link" aria-describedby="version-description">
+      <span class="go-textSubtle" aria-hidden="true">Version: </span>
+        go1.26.3
+    </a>
+    <div class="screen-reader-only" id="version-description" hidden>
+      Opens a new window with list of versions in this module.
+    </div>
+    
+    <span class="DetailsHeader-badge--latest" data-test-id="UnitHeader-minorVersionBanner">
+      <span class="go-Chip DetailsHeader-span--latest">Latest</span>
+      <span class="go-Chip DetailsHeader-span--notAtLatest">
+        Latest
+        
+  <details class="go-Tooltip js-tooltip" data-gtmc="tooltip">
+    <summary>
+      <img class="go-Icon go-Icon--inverted" height="24" width="24" src="/static/shared/icon/alert_gm_grey_24dp.svg" alt="Warning">
+    </summary>
+    <p>This package is not in the latest version of its module.</p>
+  </details>
+
+      </span>
+      <a href="/sync" aria-label="Go to Latest Version" data-gtmc="header link">
+        <span class="go-Chip go-Chip--alert DetailsHeader-span--goToLatest">Go to latest</span>
+      </a>
+    </span>
+  </span>
+
+      
+  <span class="go-Main-headerDetailItem" data-test-id="UnitHeader-commitTime">
+    Published: May  7, 2026
+  </span>
+
+      
+  <span class="go-Main-headerDetailItem" data-test-id="UnitHeader-licenses">
+    License: <a href="/sync?tab=licenses" data-test-id="UnitHeader-license" 
+        data-gtmc="header link" aria-describedby="license-description">BSD-3-Clause</a>
+      
+    
+  </span>
+  <div class="screen-reader-only" id="license-description" hidden>
+    Opens a new window with license information.
+  </div>
+
+      
+        
+  <span class="go-Main-headerDetailItem" data-test-id="UnitHeader-imports">
+    <a href="/sync?tab=imports" aria-label="Imports: 6"
+        data-gtmc="header link" aria-describedby="imports-description">
+      <span class="go-textSubtle">Imports: </span>6
+    </a>
+  </span>
+  <div class="screen-reader-only" id="imports-description" hidden>
+    Opens a new window with list of imports.
+  </div>
+
+        
+  <span class="go-Main-headerDetailItem" data-test-id="UnitHeader-importedby">
+    <a href="/sync?tab=importedby" aria-label="Imported By: 1,373,422"
+        data-gtmc="header link" aria-describedby="importedby-description">
+       <span class="go-textSubtle">Imported by: </span>1,373,422
+    </a>
+  </span>
+  <div class="screen-reader-only" id="importedby-description" hidden>
+    Opens a new window with list of known importers.
+  </div>
+
+      
+    
+  </div>
+  
+  <div class="UnitHeader-overflowContainer">
+    <svg class="UnitHeader-overflowImage" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+      <path d="M0 0h24v24H0z" fill="none"/>
+      <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
+    </svg>
+    <select class="UnitHeader-overflowSelect js-selectNav" tabindex="-1">
+      <option value="/">Main</option>
+      <option value="/sync?tab=versions">
+        Versions
+      </option>
+      <option value="/sync?tab=licenses">
+        Licenses
+      </option>
+      
+        <option value="/sync?tab=imports">
+          Imports
+        </option>
+        <option value="/sync?tab=importedby">
+          Imported By
+        </option>
+      
+    </select>
+  </div>
+
+
+    
+  </div>
+
+</header>
+    
+      <aside class="go-Main-aside  js-mainAside">
+  
+  <div class="UnitMeta">
+    <h2 class="go-textLabel">Details</h2>
+    
+  <ul class="UnitMeta-details">
+    <li>
+      <details class="go-Tooltip js-tooltip" data-gtmc="tooltip">
+        <summary class="go-textSubtle">
+          
+  <img class="go-Icon go-Icon--accented"
+    tabindex="0"
+    role="button"src="/static/shared/icon/check_circle_gm_grey_24dp.svg" alt="checked" aria-label="Valid file, toggle tooltip"height="24" width="24">
+
+          Valid <a href="https://cs.opensource.google/go/go/+/go1.26.3:src/go.mod" target="_blank" rel="noopener">go.mod</a> file
+          <img class="go-Icon" role="button" tabindex="0" src="/static/shared/icon/help_gm_grey_24dp.svg" alt="" aria-label="Toggle go.mod validity tooltip" height="24" width="24">
+        </summary>
+        <p aria-live="polite" role="tooltip">
+          The Go module system was introduced in Go 1.11 and is the official dependency management
+          solution for Go.
+        </p>
+      </details>
+    </li>
+    <li>
+      <details class="go-Tooltip js-tooltip" data-gtmc="tooltip">
+        <summary class="go-textSubtle">
+          
+  <img class="go-Icon go-Icon--accented"
+    tabindex="0"
+    role="button"src="/static/shared/icon/check_circle_gm_grey_24dp.svg" alt="checked" aria-label="Valid file, toggle tooltip"height="24" width="24">
+
+          Redistributable license
+          <img class="go-Icon" role="button" tabindex="0" src="/static/shared/icon/help_gm_grey_24dp.svg" alt="" aria-label="Toggle redistributable help tooltip" height="24" width="24">
+        </summary>
+        <p aria-live="polite" role="tooltip">
+          Redistributable licenses place minimal restrictions on how software can be used,
+          modified, and redistributed.
+        </p>
+      </details>
+    </li>
+    <li>
+      <details class="go-Tooltip js-tooltip" data-gtmc="tooltip">
+        <summary class="go-textSubtle">
+          
+  <img class="go-Icon go-Icon--accented"
+    tabindex="0"
+    role="button"src="/static/shared/icon/check_circle_gm_grey_24dp.svg" alt="checked" aria-label="Valid file, toggle tooltip"height="24" width="24">
+
+          Tagged version
+          <img class="go-Icon" role="button" tabindex="0" src="/static/shared/icon/help_gm_grey_24dp.svg" alt="" aria-label="Toggle tagged version tooltip" height="24" width="24">
+        </summary>
+        <p aria-live="polite" role="tooltip">Modules with tagged versions give importers more predictable builds.</p>
+      </details>
+    </li>
+    <li>
+      <details class="go-Tooltip js-tooltip" data-gtmc="tooltip">
+        <summary class="go-textSubtle">
+          
+  <img class="go-Icon go-Icon--accented"
+    tabindex="0"
+    role="button"src="/static/shared/icon/check_circle_gm_grey_24dp.svg" alt="checked" aria-label="Valid file, toggle tooltip"height="24" width="24">
+
+          Stable version
+          <img class="go-Icon" role="button" tabindex="0" aria-label="Toggle stable version tooltip" src="/static/shared/icon/help_gm_grey_24dp.svg" alt="" height="24" width="24">
+        </summary>
+        <p aria-live="polite" role="tooltip">When a project reaches major version v1 it is considered stable.</p>
+      </details>
+    </li>
+    <li class="UnitMeta-detailsLearn">
+      <a href="/about#best-practices" data-gtmc="meta link">Learn more about best practices</a>
+    </li>
+  </ul>
+
+    <h2 class="go-textLabel">Repository</h2>
+    <div class="UnitMeta-repo">
+      
+        <a href="https://cs.opensource.google/go/go" title="https://cs.opensource.google/go/go" target="_blank" rel="noopener">
+          cs.opensource.google/go/go
+        </a>
+      
+    </div>
+    
+      <h2 class="go-textLabel" data-test-id="links-heading">Links</h2>
+      <ul class="UnitMeta-links">
+        
+          <li>
+            <a href="https://go.dev/security/policy"
+                title="Report security issues in the Go standard library and sub-repositories">
+              <img class="go-Icon" height="24" width="24" src="/static/shared/icon/security_grey_24dp.svg" alt="">
+              Report a Vulnerability
+            </a>
+          </li>
+        
+        
+        
+        
+  
+
+        
+  
+
+        
+  
+
+      </ul>
+    
+  </div>
+
+</aside>
+    
+    <nav class="go-Main-nav go-Main-nav--sticky js-mainNav" aria-label="Outline">
+  <div class="go-Main-navDesktop">
+    
+  <div class="UnitOutline-jumpTo">
+    <button class="UnitOutline-jumpToInput go-ShortcutKey js-jumpToInput"
+        aria-controls="jump-to-modal"
+        aria-label="Open Jump to Identifier"
+        data-shortcut="f"
+        data-shortcut-alt="find"
+        data-test-id="jump-to-button" data-gtmc="outline button">
+      Jump to ...
+    </button>
+  </div>
+  <ul class="go-Tree js-tree" role="tree" aria-label="Outline">
+    
+    
+      <li>
+        <a href="#section-documentation" data-gtmc="outline link">
+          Documentation
+        </a>
+        
+<ul>
+  
+    <li>
+      <a href="#pkg-overview" data-gtmc="doc outline link">Overview</a>
+    </li>
+  <li class="DocNav-overview">
+      <a href="#pkg-index" data-gtmc="doc outline link">
+        Index
+      </a>
+    </li>
+      <li>
+        <a href="#pkg-examples" data-gtmc="doc outline link">
+          Examples
+        </a>
+        <ul>
+            <li>
+              <a href="#example-Once" title="Once" data-gtmc="doc outline link">
+                Once
+              </a>
+            </li>
+            <li>
+              <a href="#example-OnceValue" title="OnceValue" data-gtmc="doc outline link">
+                OnceValue
+              </a>
+            </li>
+            <li>
+              <a href="#example-OnceValues" title="OnceValues" data-gtmc="doc outline link">
+                OnceValues
+              </a>
+            </li>
+            <li>
+              <a href="#example-Pool" title="Pool" data-gtmc="doc outline link">
+                Pool
+              </a>
+            </li>
+            <li>
+              <a href="#example-WaitGroup" title="WaitGroup" data-gtmc="doc outline link">
+                WaitGroup
+              </a>
+            </li>
+            <li>
+              <a href="#example-WaitGroup-AddAndDone" title="WaitGroup (AddAndDone)" data-gtmc="doc outline link">
+                WaitGroup (AddAndDone)
+              </a>
+            </li>
+        </ul>
+      </li>
+    <li class="DocNav-constants">
+      <a href="#pkg-constants" data-gtmc="doc outline link">
+        Constants
+      </a>
+    </li>
+    <li class="DocNav-variables">
+      <a href="#pkg-variables" data-gtmc="doc outline link">
+        Variables
+      </a>
+    </li>
+    <li class="DocNav-functions">
+      <a href="#pkg-functions" data-gtmc="doc outline link">
+        Functions
+      </a>
+      
+        <ul>
+          
+            <li>
+              <a href="#OnceFunc" title="OnceFunc(f)" data-gtmc="doc outline link">
+                OnceFunc(f)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#OnceValue" title="OnceValue(f)" data-gtmc="doc outline link">
+                OnceValue(f)
+              </a>
+            </li>
+          
+            <li>
+              <a href="#OnceValues" title="OnceValues(f)" data-gtmc="doc outline link">
+                OnceValues(f)
+              </a>
+            </li>
+          
+        </ul>
+      
+    </li>
+    <li class="DocNav-types">
+      <a href="#pkg-types" data-gtmc="doc outline link">
+        Types
+      </a>
+      <ul>
+        
+          
+          <li>
+            <a href="#Cond" title="type Cond" data-gtmc="doc outline link">
+              type Cond
+            </a>
+            
+              <ul>
+                
+                  <li>
+                    <a href="#NewCond" title="NewCond(l)"
+                        data-gtmc="doc outline link">
+                      NewCond(l)
+                    </a>
+                  </li>
+                
+                
+                  <li>
+                    <a href="#Cond.Broadcast" title="(c) Broadcast()"
+                        data-gtmc="doc outline link">
+                      (c) Broadcast()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Cond.Signal" title="(c) Signal()"
+                        data-gtmc="doc outline link">
+                      (c) Signal()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Cond.Wait" title="(c) Wait()"
+                        data-gtmc="doc outline link">
+                      (c) Wait()
+                    </a>
+                  </li>
+                
+              </ul>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#Locker" title="type Locker" data-gtmc="doc outline link">
+              type Locker
+            </a>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#Map" title="type Map" data-gtmc="doc outline link">
+              type Map
+            </a>
+            
+              <ul>
+                
+                
+                  <li>
+                    <a href="#Map.Clear" title="(m) Clear()"
+                        data-gtmc="doc outline link">
+                      (m) Clear()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Map.CompareAndDelete" title="(m) CompareAndDelete(key, old)"
+                        data-gtmc="doc outline link">
+                      (m) CompareAndDelete(key, old)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Map.CompareAndSwap" title="(m) CompareAndSwap(key, old, new)"
+                        data-gtmc="doc outline link">
+                      (m) CompareAndSwap(key, old, new)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Map.Delete" title="(m) Delete(key)"
+                        data-gtmc="doc outline link">
+                      (m) Delete(key)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Map.Load" title="(m) Load(key)"
+                        data-gtmc="doc outline link">
+                      (m) Load(key)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Map.LoadAndDelete" title="(m) LoadAndDelete(key)"
+                        data-gtmc="doc outline link">
+                      (m) LoadAndDelete(key)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Map.LoadOrStore" title="(m) LoadOrStore(key, value)"
+                        data-gtmc="doc outline link">
+                      (m) LoadOrStore(key, value)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Map.Range" title="(m) Range(f)"
+                        data-gtmc="doc outline link">
+                      (m) Range(f)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Map.Store" title="(m) Store(key, value)"
+                        data-gtmc="doc outline link">
+                      (m) Store(key, value)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Map.Swap" title="(m) Swap(key, value)"
+                        data-gtmc="doc outline link">
+                      (m) Swap(key, value)
+                    </a>
+                  </li>
+                
+              </ul>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#Mutex" title="type Mutex" data-gtmc="doc outline link">
+              type Mutex
+            </a>
+            
+              <ul>
+                
+                
+                  <li>
+                    <a href="#Mutex.Lock" title="(m) Lock()"
+                        data-gtmc="doc outline link">
+                      (m) Lock()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Mutex.TryLock" title="(m) TryLock()"
+                        data-gtmc="doc outline link">
+                      (m) TryLock()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Mutex.Unlock" title="(m) Unlock()"
+                        data-gtmc="doc outline link">
+                      (m) Unlock()
+                    </a>
+                  </li>
+                
+              </ul>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#Once" title="type Once" data-gtmc="doc outline link">
+              type Once
+            </a>
+            
+              <ul>
+                
+                
+                  <li>
+                    <a href="#Once.Do" title="(o) Do(f)"
+                        data-gtmc="doc outline link">
+                      (o) Do(f)
+                    </a>
+                  </li>
+                
+              </ul>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#Pool" title="type Pool" data-gtmc="doc outline link">
+              type Pool
+            </a>
+            
+              <ul>
+                
+                
+                  <li>
+                    <a href="#Pool.Get" title="(p) Get()"
+                        data-gtmc="doc outline link">
+                      (p) Get()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#Pool.Put" title="(p) Put(x)"
+                        data-gtmc="doc outline link">
+                      (p) Put(x)
+                    </a>
+                  </li>
+                
+              </ul>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#RWMutex" title="type RWMutex" data-gtmc="doc outline link">
+              type RWMutex
+            </a>
+            
+              <ul>
+                
+                
+                  <li>
+                    <a href="#RWMutex.Lock" title="(rw) Lock()"
+                        data-gtmc="doc outline link">
+                      (rw) Lock()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#RWMutex.RLock" title="(rw) RLock()"
+                        data-gtmc="doc outline link">
+                      (rw) RLock()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#RWMutex.RLocker" title="(rw) RLocker()"
+                        data-gtmc="doc outline link">
+                      (rw) RLocker()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#RWMutex.RUnlock" title="(rw) RUnlock()"
+                        data-gtmc="doc outline link">
+                      (rw) RUnlock()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#RWMutex.TryLock" title="(rw) TryLock()"
+                        data-gtmc="doc outline link">
+                      (rw) TryLock()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#RWMutex.TryRLock" title="(rw) TryRLock()"
+                        data-gtmc="doc outline link">
+                      (rw) TryRLock()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#RWMutex.Unlock" title="(rw) Unlock()"
+                        data-gtmc="doc outline link">
+                      (rw) Unlock()
+                    </a>
+                  </li>
+                
+              </ul>
+             
+          </li>
+        
+          
+          <li>
+            <a href="#WaitGroup" title="type WaitGroup" data-gtmc="doc outline link">
+              type WaitGroup
+            </a>
+            
+              <ul>
+                
+                
+                  <li>
+                    <a href="#WaitGroup.Add" title="(wg) Add(delta)"
+                        data-gtmc="doc outline link">
+                      (wg) Add(delta)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#WaitGroup.Done" title="(wg) Done()"
+                        data-gtmc="doc outline link">
+                      (wg) Done()
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#WaitGroup.Go" title="(wg) Go(f)"
+                        data-gtmc="doc outline link">
+                      (wg) Go(f)
+                    </a>
+                  </li>
+                
+                  <li>
+                    <a href="#WaitGroup.Wait" title="(wg) Wait()"
+                        data-gtmc="doc outline link">
+                      (wg) Wait()
+                    </a>
+                  </li>
+                
+              </ul>
+             
+          </li>
+         
+      </ul>
+    </li>
+  
+  
+</ul>
+
+      </li>
+    
+    
+      <li>
+        <a href="#section-sourcefiles" data-gtmc="outline link">
+          Source Files
+        </a>
+      </li>
+    
+    
+      <li>
+        <a href="#section-directories" data-gtmc="outline link">
+          Directories
+        </a>
+      </li>
+    
+  </ul>
+
+  </div>
+  <div class="go-Main-navMobile js-mainNavMobile">
+    <label class="go-Label">
+      <select class="go-Select">
+        
+          <option selected disabled>Documentation</option>
+        
+      </select>
+    </label>
+  </div>
+</nav>
+    <article class="go-Main-article js-mainContent">
+  <div class="UnitDetails" data-test-id="UnitDetails" style="display: block;">
+    <div class="UnitDetails-content js-unitDetailsContent" data-test-id="UnitDetails-content">
+      
+      
+        
+          
+  <div class="UnitDoc">
+    <h2 class="UnitDoc-title" id="section-documentation">
+      <img class="go-Icon" height="24" width="24" src="/static/shared/icon/code_gm_grey_24dp.svg" alt="">
+      Documentation
+      <a class="UnitDoc-idLink" href="#section-documentation" title="Go to Documentation" aria-label="Go to Documentation">¶</a>
+    </h2>
+    
+  
+    
+  
+
+    <div class="Documentation js-documentation">
+      
+        
+
+<div class="Documentation-content js-docContent"> <section class="Documentation-overview">
+    <h3 tabindex="-1" id="pkg-overview" class="Documentation-overviewHeader">Overview <a href="#pkg-overview" title="Go to Overview" aria-label="Go to Overview">¶</a></h3>
+
+<p>Package sync provides basic synchronization primitives such as mutual
+exclusion locks. Other than the <a href="#Once">Once</a> and <a href="#WaitGroup">WaitGroup</a> types, most are intended
+for use by low-level library routines. Higher-level synchronization is
+better done via channels and communication.
+</p><p>Values containing the types defined in this package should not be copied.
+</p>
+</section><section class="Documentation-index">
+    <h3 id="pkg-index" class="Documentation-indexHeader">Index <a href="#pkg-index" title="Go to Index" aria-label="Go to Index">¶</a></h3>
+
+<ul class="Documentation-indexList">
+<li class="Documentation-indexFunction">
+        <a href="#OnceFunc">func OnceFunc(f func()) func()</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#OnceValue">func OnceValue[T any](f func() T) func() T</a></li>
+<li class="Documentation-indexFunction">
+        <a href="#OnceValues">func OnceValues[T1, T2 any](f func() (T1, T2)) func() (T1, T2)</a></li>
+<li class="Documentation-indexType">
+          <a href="#Cond">type Cond</a></li>
+<li><ul class="Documentation-indexTypeFunctions">
+<li>
+            <a href="#NewCond">func NewCond(l Locker) *Cond</a></li>
+</ul></li>
+<li><ul class="Documentation-indexTypeMethods">
+<li>
+            <a href="#Cond.Broadcast">func (c *Cond) Broadcast()</a></li>
+<li>
+            <a href="#Cond.Signal">func (c *Cond) Signal()</a></li>
+<li>
+            <a href="#Cond.Wait">func (c *Cond) Wait()</a></li>
+</ul></li>
+<li class="Documentation-indexType">
+          <a href="#Locker">type Locker</a></li>
+<li class="Documentation-indexType">
+          <a href="#Map">type Map</a></li>
+<li><ul class="Documentation-indexTypeMethods">
+<li>
+            <a href="#Map.Clear">func (m *Map) Clear()</a></li>
+<li>
+            <a href="#Map.CompareAndDelete">func (m *Map) CompareAndDelete(key, old any) (deleted bool)</a></li>
+<li>
+            <a href="#Map.CompareAndSwap">func (m *Map) CompareAndSwap(key, old, new any) (swapped bool)</a></li>
+<li>
+            <a href="#Map.Delete">func (m *Map) Delete(key any)</a></li>
+<li>
+            <a href="#Map.Load">func (m *Map) Load(key any) (value any, ok bool)</a></li>
+<li>
+            <a href="#Map.LoadAndDelete">func (m *Map) LoadAndDelete(key any) (value any, loaded bool)</a></li>
+<li>
+            <a href="#Map.LoadOrStore">func (m *Map) LoadOrStore(key, value any) (actual any, loaded bool)</a></li>
+<li>
+            <a href="#Map.Range">func (m *Map) Range(f func(key, value any) bool)</a></li>
+<li>
+            <a href="#Map.Store">func (m *Map) Store(key, value any)</a></li>
+<li>
+            <a href="#Map.Swap">func (m *Map) Swap(key, value any) (previous any, loaded bool)</a></li>
+</ul></li>
+<li class="Documentation-indexType">
+          <a href="#Mutex">type Mutex</a></li>
+<li><ul class="Documentation-indexTypeMethods">
+<li>
+            <a href="#Mutex.Lock">func (m *Mutex) Lock()</a></li>
+<li>
+            <a href="#Mutex.TryLock">func (m *Mutex) TryLock() bool</a></li>
+<li>
+            <a href="#Mutex.Unlock">func (m *Mutex) Unlock()</a></li>
+</ul></li>
+<li class="Documentation-indexType">
+          <a href="#Once">type Once</a></li>
+<li><ul class="Documentation-indexTypeMethods">
+<li>
+            <a href="#Once.Do">func (o *Once) Do(f func())</a></li>
+</ul></li>
+<li class="Documentation-indexType">
+          <a href="#Pool">type Pool</a></li>
+<li><ul class="Documentation-indexTypeMethods">
+<li>
+            <a href="#Pool.Get">func (p *Pool) Get() any</a></li>
+<li>
+            <a href="#Pool.Put">func (p *Pool) Put(x any)</a></li>
+</ul></li>
+<li class="Documentation-indexType">
+          <a href="#RWMutex">type RWMutex</a></li>
+<li><ul class="Documentation-indexTypeMethods">
+<li>
+            <a href="#RWMutex.Lock">func (rw *RWMutex) Lock()</a></li>
+<li>
+            <a href="#RWMutex.RLock">func (rw *RWMutex) RLock()</a></li>
+<li>
+            <a href="#RWMutex.RLocker">func (rw *RWMutex) RLocker() Locker</a></li>
+<li>
+            <a href="#RWMutex.RUnlock">func (rw *RWMutex) RUnlock()</a></li>
+<li>
+            <a href="#RWMutex.TryLock">func (rw *RWMutex) TryLock() bool</a></li>
+<li>
+            <a href="#RWMutex.TryRLock">func (rw *RWMutex) TryRLock() bool</a></li>
+<li>
+            <a href="#RWMutex.Unlock">func (rw *RWMutex) Unlock()</a></li>
+</ul></li>
+<li class="Documentation-indexType">
+          <a href="#WaitGroup">type WaitGroup</a></li>
+<li><ul class="Documentation-indexTypeMethods">
+<li>
+            <a href="#WaitGroup.Add">func (wg *WaitGroup) Add(delta int)</a></li>
+<li>
+            <a href="#WaitGroup.Done">func (wg *WaitGroup) Done()</a></li>
+<li>
+            <a href="#WaitGroup.Go">func (wg *WaitGroup) Go(f func())</a></li>
+<li>
+            <a href="#WaitGroup.Wait">func (wg *WaitGroup) Wait()</a></li>
+</ul></li>
+</ul>
+</section><section class="Documentation-examples">
+    <h3 tabindex="-1" id="pkg-examples" class="Documentation-examplesHeader">Examples <a class="Documentation-idLink" href="#pkg-examples" title="Go to Examples" aria-label="Go to Examples">¶</a></h3>
+<ul class="Documentation-examplesList">
+<li><a href="#example-Once" class="js-exampleHref">Once</a></li>
+<li><a href="#example-OnceValue" class="js-exampleHref">OnceValue</a></li>
+<li><a href="#example-OnceValues" class="js-exampleHref">OnceValues</a></li>
+<li><a href="#example-Pool" class="js-exampleHref">Pool</a></li>
+<li><a href="#example-WaitGroup" class="js-exampleHref">WaitGroup</a></li>
+<li><a href="#example-WaitGroup-AddAndDone" class="js-exampleHref">WaitGroup (AddAndDone)</a></li>
+</ul>
+</section><h3 tabindex="-1" id="pkg-constants" class="Documentation-constantsHeader">Constants <a href="#pkg-constants" title="Go to Constants" aria-label="Go to Constants">¶</a></h3>
+
+  <section class="Documentation-constants"><p class="Documentation-empty">This section is empty.</p></section>
+
+  <h3 tabindex="-1" id="pkg-variables" class="Documentation-variablesHeader">Variables <a href="#pkg-variables" title="Go to Variables" aria-label="Go to Variables">¶</a></h3>
+
+  <section class="Documentation-variables"><p class="Documentation-empty">This section is empty.</p></section>
+
+  <h3 tabindex="-1" id="pkg-functions" class="Documentation-functionsHeader">Functions <a href="#pkg-functions" title="Go to Functions" aria-label="Go to Functions">¶</a></h3>
+
+  <section class="Documentation-functions"><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="OnceFunc" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/oncefunc.go;l=11">OnceFunc</a> <a class="Documentation-idLink" href="#OnceFunc" title="Go to OnceFunc" aria-label="Go to OnceFunc">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.21.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func OnceFunc(f func()) func()</pre>
+    </div>
+  <p>OnceFunc returns a function that invokes f only once. The returned function
+may be called concurrently.
+</p><p>If f panics, the returned function will panic with the same value on every call.
+</p>
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="OnceValue" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/oncefunc.go;l=46">OnceValue</a> <a class="Documentation-idLink" href="#OnceValue" title="Go to OnceValue" aria-label="Go to OnceValue">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.21.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func OnceValue[T <a href="/builtin#any">any</a>](f func() T) func() T</pre>
+    </div>
+  <p>OnceValue returns a function that invokes f only once and returns the value
+returned by f. The returned function may be called concurrently.
+</p><p>If f panics, the returned function will panic with the same value on every call.
+</p>
+<details tabindex="-1" id="example-OnceValue" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-OnceValue" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+<p>This example uses OnceValue to perform an &#34;expensive&#34; computation just once,
+even when used concurrently.
+</p>
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;sync&#34;
+)
+
+func main() {
+	once := sync.OnceValue(func() int {
+		sum := 0
+		for i := 0; i &lt; 1000; i++ {
+			sum += i
+		}
+		fmt.Println(&#34;Computed once:&#34;, sum)
+		return sum
+	})
+	done := make(chan bool)
+	for i := 0; i &lt; 10; i++ {
+		go func() {
+			const want = 499500
+			got := once()
+			if got != want {
+				fmt.Println(&#34;want&#34;, want, &#34;got&#34;, got)
+			}
+			done &lt;- true
+		}()
+	}
+	for i := 0; i &lt; 10; i++ {
+		&lt;-done
+	}
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">Computed once: 499500
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+        </div><div class="Documentation-function">
+	  
+  
+  
+    <h4 tabindex="-1" id="OnceValues" data-kind="function" class="Documentation-functionHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/oncefunc.go;l=80">OnceValues</a> <a class="Documentation-idLink" href="#OnceValues" title="Go to OnceValues" aria-label="Go to OnceValues">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.21.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func OnceValues[T1, T2 <a href="/builtin#any">any</a>](f func() (T1, T2)) func() (T1, T2)</pre>
+    </div>
+  <p>OnceValues returns a function that invokes f only once and returns the values
+returned by f. The returned function may be called concurrently.
+</p><p>If f panics, the returned function will panic with the same value on every call.
+</p>
+<details tabindex="-1" id="example-OnceValues" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-OnceValues" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+<p>This example uses OnceValues to read a file just once.
+</p>
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;os&#34;
+	&#34;sync&#34;
+)
+
+func main() {
+	once := sync.OnceValues(func() ([]byte, error) {
+		fmt.Println(&#34;Reading file once&#34;)
+		return os.ReadFile(&#34;example_test.go&#34;)
+	})
+	done := make(chan bool)
+	for i := 0; i &lt; 10; i++ {
+		go func() {
+			data, err := once()
+			if err != nil {
+				fmt.Println(&#34;error:&#34;, err)
+			}
+			_ = data // Ignore the data for this example
+			done &lt;- true
+		}()
+	}
+	for i := 0; i &lt; 10; i++ {
+		&lt;-done
+	}
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">Reading file once
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+
+  
+
+        </div></section>
+
+  <h3 tabindex="-1" id="pkg-types" class="Documentation-typesHeader">Types <a href="#pkg-types" title="Go to Types" aria-label="Go to Types">¶</a></h3>
+
+  <section class="Documentation-types"><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="Cond" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/cond.go;l=37">Cond</a> <a class="Documentation-idLink" href="#Cond" title="Go to Cond" aria-label="Go to Cond">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type Cond struct {
+
+<span id="Cond.L" data-kind="field">	<span class="comment">// L is held while observing or changing the condition</span>
+</span>	L <a href="#Locker">Locker</a>
+	<span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+    </div>
+  <p>Cond implements a condition variable, a rendezvous point
+for goroutines waiting for or announcing the occurrence
+of an event.
+</p><p>Each Cond has an associated Locker L (often a <a href="#Mutex">*Mutex</a> or <a href="#RWMutex">*RWMutex</a>),
+which must be held when changing the condition and
+when calling the <a href="#Cond.Wait">Cond.Wait</a> method.
+</p><p>A Cond must not be copied after first use.
+</p><p>In the terminology of <a href="https://go.dev/ref/mem">the Go memory model</a>, Cond arranges that
+a call to <a href="#Cond.Broadcast">Cond.Broadcast</a> or <a href="#Cond.Signal">Cond.Signal</a> “synchronizes before” any Wait call
+that it unblocks.
+</p><p>For many simple use cases, users will be better off using channels than a
+Cond (Broadcast corresponds to closing a channel, and Signal corresponds to
+sending on a channel).
+</p><p>For more on replacements for <a href="#Cond">sync.Cond</a>, see <a href="https://blogtitle.github.io/categories/concurrency/">Roberto Clapis&#39;s series on
+advanced concurrency patterns</a>, as well as <a href="https://drive.google.com/file/d/1nPdvhB0PutEJzdCq5ms6UI58dp50fcAN/view">Bryan Mills&#39;s talk on concurrency
+patterns</a>.
+</p>
+<div class="Documentation-typeFunc">
+    
+  
+  
+    <h4 tabindex="-1" id="NewCond" data-kind="function" class="Documentation-typeFuncHeader">
+      <span>func <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/cond.go;l=48">NewCond</a> <a class="Documentation-idLink" href="#NewCond" title="Go to NewCond" aria-label="Go to NewCond">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func NewCond(l <a href="#Locker">Locker</a>) *<a href="#Cond">Cond</a></pre>
+    </div>
+  <p>NewCond returns a new Cond with Locker l.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Cond.Broadcast" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Cond) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/cond.go;l=91">Broadcast</a> <a class="Documentation-idLink" href="#Cond.Broadcast" title="Go to Cond.Broadcast" aria-label="Go to Cond.Broadcast">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (c *<a href="#Cond">Cond</a>) Broadcast()</pre>
+    </div>
+  <p>Broadcast wakes all goroutines waiting on c.
+</p><p>It is allowed but not required for the caller to hold c.L
+during the call.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Cond.Signal" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Cond) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/cond.go;l=82">Signal</a> <a class="Documentation-idLink" href="#Cond.Signal" title="Go to Cond.Signal" aria-label="Go to Cond.Signal">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (c *<a href="#Cond">Cond</a>) Signal()</pre>
+    </div>
+  <p>Signal wakes one goroutine waiting on c, if there is any.
+</p><p>It is allowed but not required for the caller to hold c.L
+during the call.
+</p><p>Signal() does not affect goroutine scheduling priority; if other goroutines
+are attempting to lock c.L, they may be awoken before a &#34;waiting&#34; goroutine.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Cond.Wait" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Cond) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/cond.go;l=67">Wait</a> <a class="Documentation-idLink" href="#Cond.Wait" title="Go to Cond.Wait" aria-label="Go to Cond.Wait">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (c *<a href="#Cond">Cond</a>) Wait()</pre>
+    </div>
+  <p>Wait atomically unlocks c.L and suspends execution
+of the calling goroutine. After later resuming execution,
+Wait locks c.L before returning. Unlike in other systems,
+Wait cannot return unless awoken by <a href="#Cond.Broadcast">Cond.Broadcast</a> or <a href="#Cond.Signal">Cond.Signal</a>.
+</p><p>Because c.L is not locked while Wait is waiting, the caller
+typically cannot assume that the condition is true when
+Wait returns. Instead, the caller should Wait in a loop:
+</p><pre>c.L.Lock()
+for !condition() {
+    c.Wait()
+}
+... make use of condition ...
+c.L.Unlock()
+</pre>
+
+  
+
+  </div>
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="Locker" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/mutex.go;l=37">Locker</a> <a class="Documentation-idLink" href="#Locker" title="Go to Locker" aria-label="Go to Locker">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type Locker interface {
+<span id="Locker.Lock" data-kind="method">	Lock()
+</span><span id="Locker.Unlock" data-kind="method">	Unlock()
+</span>}</pre>
+    </div>
+  <p>A Locker represents an object that can be locked and unlocked.
+</p>
+
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="Map" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/map.go;l=38">Map</a> <a class="Documentation-idLink" href="#Map" title="Go to Map" aria-label="Go to Map">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.9</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type Map struct {
+	<span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+    </div>
+  <p>Map is like a Go map[any]any but is safe for concurrent use
+by multiple goroutines without additional locking or coordination.
+Loads, stores, and deletes run in amortized constant time.
+</p><p>The Map type is specialized. Most code should use a plain Go map instead,
+with separate locking or coordination, for better type safety and to make it
+easier to maintain other invariants along with the map content.
+</p><p>The Map type is optimized for two common use cases: (1) when the entry for a given
+key is only ever written once but read many times, as in caches that only grow,
+or (2) when multiple goroutines read, write, and overwrite entries for disjoint
+sets of keys. In these two cases, use of a Map may significantly reduce lock
+contention compared to a Go map paired with a separate <a href="#Mutex">Mutex</a> or <a href="#RWMutex">RWMutex</a>.
+</p><p>The zero Map is empty and ready for use. A Map must not be copied after first use.
+</p><p>In the terminology of <a href="https://go.dev/ref/mem">the Go memory model</a>, Map arranges that a write operation
+“synchronizes before” any read operation that observes the effect of the write, where
+read and write operations are defined as follows.
+<a href="#Map.Load">Map.Load</a>, <a href="#Map.LoadAndDelete">Map.LoadAndDelete</a>, <a href="#Map.LoadOrStore">Map.LoadOrStore</a>, <a href="#Map.Swap">Map.Swap</a>, <a href="#Map.CompareAndSwap">Map.CompareAndSwap</a>,
+and <a href="#Map.CompareAndDelete">Map.CompareAndDelete</a> are read operations;
+<a href="#Map.Delete">Map.Delete</a>, <a href="#Map.LoadAndDelete">Map.LoadAndDelete</a>, <a href="#Map.Store">Map.Store</a>, and <a href="#Map.Swap">Map.Swap</a> are write operations;
+<a href="#Map.LoadOrStore">Map.LoadOrStore</a> is a write operation when it returns loaded set to false;
+<a href="#Map.CompareAndSwap">Map.CompareAndSwap</a> is a write operation when it returns swapped set to true;
+and <a href="#Map.CompareAndDelete">Map.CompareAndDelete</a> is a write operation when it returns deleted set to true.
+</p>
+<div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Map.Clear" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Map) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/map.go;l=57">Clear</a> <a class="Documentation-idLink" href="#Map.Clear" title="Go to Map.Clear" aria-label="Go to Map.Clear">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.23.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (m *<a href="#Map">Map</a>) Clear()</pre>
+    </div>
+  <p>Clear deletes all the entries, resulting in an empty Map.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Map.CompareAndDelete" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Map) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/map.go;l=98">CompareAndDelete</a> <a class="Documentation-idLink" href="#Map.CompareAndDelete" title="Go to Map.CompareAndDelete" aria-label="Go to Map.CompareAndDelete">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.20</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (m *<a href="#Map">Map</a>) CompareAndDelete(key, old <a href="/builtin#any">any</a>) (deleted <a href="/builtin#bool">bool</a>)</pre>
+    </div>
+  <p>CompareAndDelete deletes the entry for key if its value is equal to old.
+The old value must be of a comparable type.
+</p><p>If there is no current value for key in the map, CompareAndDelete
+returns false (even if the old value is the nil interface value).
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Map.CompareAndSwap" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Map) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/map.go;l=89">CompareAndSwap</a> <a class="Documentation-idLink" href="#Map.CompareAndSwap" title="Go to Map.CompareAndSwap" aria-label="Go to Map.CompareAndSwap">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.20</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (m *<a href="#Map">Map</a>) CompareAndSwap(key, old, new <a href="/builtin#any">any</a>) (swapped <a href="/builtin#bool">bool</a>)</pre>
+    </div>
+  <p>CompareAndSwap swaps the old and new values for key
+if the value stored in the map is equal to old.
+The old value must be of a comparable type.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Map.Delete" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Map) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/map.go;l=76">Delete</a> <a class="Documentation-idLink" href="#Map.Delete" title="Go to Map.Delete" aria-label="Go to Map.Delete">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.9</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (m *<a href="#Map">Map</a>) Delete(key <a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>Delete deletes the value for a key.
+If the key is not in the map, Delete does nothing.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Map.Load" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Map) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/map.go;l=47">Load</a> <a class="Documentation-idLink" href="#Map.Load" title="Go to Map.Load" aria-label="Go to Map.Load">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.9</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (m *<a href="#Map">Map</a>) Load(key <a href="/builtin#any">any</a>) (value <a href="/builtin#any">any</a>, ok <a href="/builtin#bool">bool</a>)</pre>
+    </div>
+  <p>Load returns the value stored in the map for a key, or nil if no
+value is present.
+The ok result indicates whether value was found in the map.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Map.LoadAndDelete" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Map) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/map.go;l=70">LoadAndDelete</a> <a class="Documentation-idLink" href="#Map.LoadAndDelete" title="Go to Map.LoadAndDelete" aria-label="Go to Map.LoadAndDelete">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.15</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (m *<a href="#Map">Map</a>) LoadAndDelete(key <a href="/builtin#any">any</a>) (value <a href="/builtin#any">any</a>, loaded <a href="/builtin#bool">bool</a>)</pre>
+    </div>
+  <p>LoadAndDelete deletes the value for a key, returning the previous value if any.
+The loaded result reports whether the key was present.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Map.LoadOrStore" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Map) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/map.go;l=64">LoadOrStore</a> <a class="Documentation-idLink" href="#Map.LoadOrStore" title="Go to Map.LoadOrStore" aria-label="Go to Map.LoadOrStore">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.9</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (m *<a href="#Map">Map</a>) LoadOrStore(key, value <a href="/builtin#any">any</a>) (actual <a href="/builtin#any">any</a>, loaded <a href="/builtin#bool">bool</a>)</pre>
+    </div>
+  <p>LoadOrStore returns the existing value for the key if present.
+Otherwise, it stores and returns the given value.
+The loaded result is true if the value was loaded, false if stored.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Map.Range" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Map) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/map.go;l=113">Range</a> <a class="Documentation-idLink" href="#Map.Range" title="Go to Map.Range" aria-label="Go to Map.Range">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.9</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (m *<a href="#Map">Map</a>) Range(f func(key, value <a href="/builtin#any">any</a>) <a href="/builtin#bool">bool</a>)</pre>
+    </div>
+  <p>Range calls f sequentially for each key and value present in the map.
+If f returns false, range stops the iteration.
+</p><p>Range does not necessarily correspond to any consistent snapshot of the Map&#39;s
+contents: no key will be visited more than once, but if the value for any key
+is stored or deleted concurrently (including by f), Range may reflect any
+mapping for that key from any point during the Range call. Range does not
+block other methods on the receiver; even f itself may call any method on m.
+</p><p>Range may be O(N) with the number of elements in the map even if f returns
+false after a constant number of calls.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Map.Store" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Map) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/map.go;l=52">Store</a> <a class="Documentation-idLink" href="#Map.Store" title="Go to Map.Store" aria-label="Go to Map.Store">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.9</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (m *<a href="#Map">Map</a>) Store(key, value <a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>Store sets the value for a key.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Map.Swap" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Map) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/map.go;l=82">Swap</a> <a class="Documentation-idLink" href="#Map.Swap" title="Go to Map.Swap" aria-label="Go to Map.Swap">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.20</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (m *<a href="#Map">Map</a>) Swap(key, value <a href="/builtin#any">any</a>) (previous <a href="/builtin#any">any</a>, loaded <a href="/builtin#bool">bool</a>)</pre>
+    </div>
+  <p>Swap swaps the value for a key and returns the previous value if any.
+The loaded result reports whether the key was present.
+</p>
+
+  
+
+  </div>
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="Mutex" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/mutex.go;l=30">Mutex</a> <a class="Documentation-idLink" href="#Mutex" title="Go to Mutex" aria-label="Go to Mutex">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type Mutex struct {
+	<span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+    </div>
+  <p>A Mutex is a mutual exclusion lock.
+The zero value for a Mutex is an unlocked mutex.
+</p><p>A Mutex must not be copied after first use.
+</p><p>In the terminology of <a href="https://go.dev/ref/mem">the Go memory model</a>,
+the n&#39;th call to <a href="#Mutex.Unlock">Mutex.Unlock</a> “synchronizes before” the m&#39;th call to <a href="#Mutex.Lock">Mutex.Lock</a>
+for any n &lt; m.
+A successful call to <a href="#Mutex.TryLock">Mutex.TryLock</a> is equivalent to a call to Lock.
+A failed call to TryLock does not establish any “synchronizes before”
+relation at all.
+</p>
+<div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Mutex.Lock" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Mutex) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/mutex.go;l=45">Lock</a> <a class="Documentation-idLink" href="#Mutex.Lock" title="Go to Mutex.Lock" aria-label="Go to Mutex.Lock">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (m *<a href="#Mutex">Mutex</a>) Lock()</pre>
+    </div>
+  <p>Lock locks m.
+If the lock is already in use, the calling goroutine
+blocks until the mutex is available.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Mutex.TryLock" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Mutex) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/mutex.go;l=54">TryLock</a> <a class="Documentation-idLink" href="#Mutex.TryLock" title="Go to Mutex.TryLock" aria-label="Go to Mutex.TryLock">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.18</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (m *<a href="#Mutex">Mutex</a>) TryLock() <a href="/builtin#bool">bool</a></pre>
+    </div>
+  <p>TryLock tries to lock m and reports whether it succeeded.
+</p><p>Note that while correct uses of TryLock do exist, they are rare,
+and use of TryLock is often a sign of a deeper problem
+in a particular use of mutexes.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Mutex.Unlock" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Mutex) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/mutex.go;l=64">Unlock</a> <a class="Documentation-idLink" href="#Mutex.Unlock" title="Go to Mutex.Unlock" aria-label="Go to Mutex.Unlock">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (m *<a href="#Mutex">Mutex</a>) Unlock()</pre>
+    </div>
+  <p>Unlock unlocks m.
+It is a run-time error if m is not locked on entry to Unlock.
+</p><p>A locked <a href="#Mutex">Mutex</a> is not associated with a particular goroutine.
+It is allowed for one goroutine to lock a Mutex and then
+arrange for another goroutine to unlock it.
+</p>
+
+  
+
+  </div>
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="Once" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/once.go;l=20">Once</a> <a class="Documentation-idLink" href="#Once" title="Go to Once" aria-label="Go to Once">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type Once struct {
+	<span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+    </div>
+  <p>Once is an object that will perform exactly one action.
+</p><p>A Once must not be copied after first use.
+</p><p>In the terminology of <a href="https://go.dev/ref/mem">the Go memory model</a>,
+the return from f “synchronizes before”
+the return from any call of once.Do(f).
+</p>
+<details tabindex="-1" id="example-Once" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-Once" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;fmt&#34;
+	&#34;sync&#34;
+)
+
+func main() {
+	var once sync.Once
+	onceBody := func() {
+		fmt.Println(&#34;Only once&#34;)
+	}
+	done := make(chan bool)
+	for i := 0; i &lt; 10; i++ {
+		go func() {
+			once.Do(onceBody)
+			done &lt;- true
+		}()
+	}
+	for i := 0; i &lt; 10; i++ {
+		&lt;-done
+	}
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">Only once
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+<div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Once.Do" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Once) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/once.go;l=52">Do</a> <a class="Documentation-idLink" href="#Once.Do" title="Go to Once.Do" aria-label="Go to Once.Do">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (o *<a href="#Once">Once</a>) Do(f func())</pre>
+    </div>
+  <p>Do calls the function f if and only if Do is being called for the
+first time for this instance of <a href="#Once">Once</a>. In other words, given
+</p><pre>var once Once
+</pre><p>if once.Do(f) is called multiple times, only the first call will invoke f,
+even if f has a different value in each invocation. A new instance of
+Once is required for each function to execute.
+</p><p>Do is intended for initialization that must be run exactly once. Since f
+is niladic, it may be necessary to use a function literal to capture the
+arguments to a function to be invoked by Do:
+</p><pre>config.once.Do(func() { config.init(filename) })
+</pre><p>Because no call to Do returns until the one call to f returns, if f causes
+Do to be called, it will deadlock.
+</p><p>If f panics, Do considers it to have returned; future calls of Do return
+without calling f.
+</p>
+
+  
+
+  </div>
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="Pool" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/pool.go;l=51">Pool</a> <a class="Documentation-idLink" href="#Pool" title="Go to Pool" aria-label="Go to Pool">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.3</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type Pool struct {
+
+<span id="Pool.New" data-kind="field">	<span class="comment">// New optionally specifies a function to generate</span>
+</span>	<span class="comment">// a value when Get would otherwise return nil.</span>
+	<span class="comment">// It may not be changed concurrently with calls to Get.</span>
+	New func() <a href="/builtin#any">any</a>
+	<span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+    </div>
+  <p>A Pool is a set of temporary objects that may be individually saved and
+retrieved.
+</p><p>Any item stored in the Pool may be removed automatically at any time without
+notification. If the Pool holds the only reference when this happens, the
+item might be deallocated.
+</p><p>A Pool is safe for use by multiple goroutines simultaneously.
+</p><p>Pool&#39;s purpose is to cache allocated but unused items for later reuse,
+relieving pressure on the garbage collector. That is, it makes it easy to
+build efficient, thread-safe free lists. However, it is not suitable for all
+free lists.
+</p><p>An appropriate use of a Pool is to manage a group of temporary items
+silently shared among and potentially reused by concurrent independent
+clients of a package. Pool provides a way to amortize allocation overhead
+across many clients.
+</p><p>An example of good use of a Pool is in the fmt package, which maintains a
+dynamically-sized store of temporary output buffers. The store scales under
+load (when many goroutines are actively printing) and shrinks when
+quiescent.
+</p><p>On the other hand, a free list maintained as part of a short-lived object is
+not a suitable use for a Pool, since the overhead does not amortize well in
+that scenario. It is more efficient to have such objects implement their own
+free list.
+</p><p>A Pool must not be copied after first use.
+</p><p>In the terminology of <a href="https://go.dev/ref/mem">the Go memory model</a>, a call to Put(x) “synchronizes before”
+a call to <a href="#Pool.Get">Pool.Get</a> returning that same value x.
+Similarly, a call to New returning x “synchronizes before”
+a call to Get returning that same value x.
+</p>
+<details tabindex="-1" id="example-Pool" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-Pool" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;bytes&#34;
+	&#34;io&#34;
+	&#34;os&#34;
+	&#34;sync&#34;
+	&#34;time&#34;
+)
+
+var bufPool = sync.Pool{
+	New: func() any {
+		// The Pool&#39;s New function should generally only return pointer
+		// types, since a pointer can be put into the return interface
+		// value without an allocation:
+		return new(bytes.Buffer)
+	},
+}
+
+// timeNow is a fake version of time.Now for tests.
+func timeNow() time.Time {
+	return time.Unix(1136214245, 0)
+}
+
+func Log(w io.Writer, key, val string) {
+	b := bufPool.Get().(*bytes.Buffer)
+	b.Reset()
+	// Replace this with time.Now() in a real logger.
+	b.WriteString(timeNow().UTC().Format(time.RFC3339))
+	b.WriteByte(&#39; &#39;)
+	b.WriteString(key)
+	b.WriteByte(&#39;=&#39;)
+	b.WriteString(val)
+	w.Write(b.Bytes())
+	bufPool.Put(b)
+}
+
+func main() {
+	Log(os.Stdout, &#34;path&#34;, &#34;/search?q=flowers&#34;)
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer"><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput">2006-01-02T15:04:05Z path=/search?q=flowers
+</span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+<div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Pool.Get" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Pool) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/pool.go;l=131">Get</a> <a class="Documentation-idLink" href="#Pool.Get" title="Go to Pool.Get" aria-label="Go to Pool.Get">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.3</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (p *<a href="#Pool">Pool</a>) Get() <a href="/builtin#any">any</a></pre>
+    </div>
+  <p>Get selects an arbitrary item from the <a href="#Pool">Pool</a>, removes it from the
+Pool, and returns it to the caller.
+Get may choose to ignore the pool and treat it as empty.
+Callers should not assume any relation between values passed to <a href="#Pool.Put">Pool.Put</a> and
+the values returned by Get.
+</p><p>If Get would otherwise return nil and p.New is non-nil, Get returns
+the result of calling p.New.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="Pool.Put" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*Pool) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/pool.go;l=99">Put</a> <a class="Documentation-idLink" href="#Pool.Put" title="Go to Pool.Put" aria-label="Go to Pool.Put">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.3</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (p *<a href="#Pool">Pool</a>) Put(x <a href="/builtin#any">any</a>)</pre>
+    </div>
+  <p>Put adds x to the pool.
+</p>
+
+  
+
+  </div>
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="RWMutex" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/rwmutex.go;l=39">RWMutex</a> <a class="Documentation-idLink" href="#RWMutex" title="Go to RWMutex" aria-label="Go to RWMutex">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type RWMutex struct {
+	<span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+    </div>
+  <p>A RWMutex is a reader/writer mutual exclusion lock.
+The lock can be held by an arbitrary number of readers or a single writer.
+The zero value for a RWMutex is an unlocked mutex.
+</p><p>A RWMutex must not be copied after first use.
+</p><p>If any goroutine calls <a href="#RWMutex.Lock">RWMutex.Lock</a> while the lock is already held by
+one or more readers, concurrent calls to <a href="#RWMutex.RLock">RWMutex.RLock</a> will block until
+the writer has acquired (and released) the lock, to ensure that
+the lock eventually becomes available to the writer.
+Note that this prohibits recursive read-locking.
+A <a href="#RWMutex.RLock">RWMutex.RLock</a> cannot be upgraded into a <a href="#RWMutex.Lock">RWMutex.Lock</a>,
+nor can a <a href="#RWMutex.Lock">RWMutex.Lock</a> be downgraded into a <a href="#RWMutex.RLock">RWMutex.RLock</a>.
+</p><p>In the terminology of <a href="https://go.dev/ref/mem">the Go memory model</a>,
+the n&#39;th call to <a href="#RWMutex.Unlock">RWMutex.Unlock</a> “synchronizes before” the m&#39;th call to Lock
+for any n &lt; m, just as for <a href="#Mutex">Mutex</a>.
+For any call to RLock, there exists an n such that
+the n&#39;th call to Unlock “synchronizes before” that call to RLock,
+and the corresponding call to <a href="#RWMutex.RUnlock">RWMutex.RUnlock</a> “synchronizes before”
+the n+1&#39;th call to Lock.
+</p>
+<div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="RWMutex.Lock" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*RWMutex) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/rwmutex.go;l=144">Lock</a> <a class="Documentation-idLink" href="#RWMutex.Lock" title="Go to RWMutex.Lock" aria-label="Go to RWMutex.Lock">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (rw *<a href="#RWMutex">RWMutex</a>) Lock()</pre>
+    </div>
+  <p>Lock locks rw for writing.
+If the lock is already locked for reading or writing,
+Lock blocks until the lock is available.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="RWMutex.RLock" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*RWMutex) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/rwmutex.go;l=67">RLock</a> <a class="Documentation-idLink" href="#RWMutex.RLock" title="Go to RWMutex.RLock" aria-label="Go to RWMutex.RLock">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (rw *<a href="#RWMutex">RWMutex</a>) RLock()</pre>
+    </div>
+  <p>RLock locks rw for reading.
+</p><p>It should not be used for recursive read locking; a blocked Lock
+call excludes new readers from acquiring the lock. See the
+documentation on the <a href="#RWMutex">RWMutex</a> type.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="RWMutex.RLocker" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*RWMutex) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/rwmutex.go;l=240">RLocker</a> <a class="Documentation-idLink" href="#RWMutex.RLocker" title="Go to RWMutex.RLocker" aria-label="Go to RWMutex.RLocker">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (rw *<a href="#RWMutex">RWMutex</a>) RLocker() <a href="#Locker">Locker</a></pre>
+    </div>
+  <p>RLocker returns a <a href="#Locker">Locker</a> interface that implements
+the [Locker.Lock] and [Locker.Unlock] methods by calling rw.RLock and rw.RUnlock.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="RWMutex.RUnlock" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*RWMutex) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/rwmutex.go;l=114">RUnlock</a> <a class="Documentation-idLink" href="#RWMutex.RUnlock" title="Go to RWMutex.RUnlock" aria-label="Go to RWMutex.RUnlock">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (rw *<a href="#RWMutex">RWMutex</a>) RUnlock()</pre>
+    </div>
+  <p>RUnlock undoes a single <a href="#RWMutex.RLock">RWMutex.RLock</a> call;
+it does not affect other simultaneous readers.
+It is a run-time error if rw is not locked for reading
+on entry to RUnlock.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="RWMutex.TryLock" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*RWMutex) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/rwmutex.go;l=169">TryLock</a> <a class="Documentation-idLink" href="#RWMutex.TryLock" title="Go to RWMutex.TryLock" aria-label="Go to RWMutex.TryLock">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.18</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (rw *<a href="#RWMutex">RWMutex</a>) TryLock() <a href="/builtin#bool">bool</a></pre>
+    </div>
+  <p>TryLock tries to lock rw for writing and reports whether it succeeded.
+</p><p>Note that while correct uses of TryLock do exist, they are rare,
+and use of TryLock is often a sign of a deeper problem
+in a particular use of mutexes.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="RWMutex.TryRLock" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*RWMutex) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/rwmutex.go;l=87">TryRLock</a> <a class="Documentation-idLink" href="#RWMutex.TryRLock" title="Go to RWMutex.TryRLock" aria-label="Go to RWMutex.TryRLock">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.18</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (rw *<a href="#RWMutex">RWMutex</a>) TryRLock() <a href="/builtin#bool">bool</a></pre>
+    </div>
+  <p>TryRLock tries to lock rw for reading and reports whether it succeeded.
+</p><p>Note that while correct uses of TryRLock do exist, they are rare,
+and use of TryRLock is often a sign of a deeper problem
+in a particular use of mutexes.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="RWMutex.Unlock" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*RWMutex) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/rwmutex.go;l=201">Unlock</a> <a class="Documentation-idLink" href="#RWMutex.Unlock" title="Go to RWMutex.Unlock" aria-label="Go to RWMutex.Unlock">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (rw *<a href="#RWMutex">RWMutex</a>) Unlock()</pre>
+    </div>
+  <p>Unlock unlocks rw for writing. It is a run-time error if rw is
+not locked for writing on entry to Unlock.
+</p><p>As with Mutexes, a locked <a href="#RWMutex">RWMutex</a> is not associated with a particular
+goroutine. One goroutine may <a href="#RWMutex.RLock">RWMutex.RLock</a> (<a href="#RWMutex.Lock">RWMutex.Lock</a>) a RWMutex and then
+arrange for another goroutine to <a href="#RWMutex.RUnlock">RWMutex.RUnlock</a> (<a href="#RWMutex.Unlock">RWMutex.Unlock</a>) it.
+</p>
+
+  
+
+  </div>
+  
+
+    </div><div class="Documentation-type">
+      
+  
+  
+    <h4 tabindex="-1" id="WaitGroup" data-kind="type" class="Documentation-typeHeader">
+      <span>type <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/waitgroup.go;l=48">WaitGroup</a> <a class="Documentation-idLink" href="#WaitGroup" title="Go to WaitGroup" aria-label="Go to WaitGroup">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>type WaitGroup struct {
+	<span class="comment">// contains filtered or unexported fields</span>
+}</pre>
+    </div>
+  <p>A WaitGroup is a counting semaphore typically used to wait
+for a group of goroutines or tasks to finish.
+</p><p>Typically, a main goroutine will start tasks, each in a new
+goroutine, by calling <a href="#WaitGroup.Go">WaitGroup.Go</a> and then wait for all tasks to
+complete by calling <a href="#WaitGroup.Wait">WaitGroup.Wait</a>. For example:
+</p><pre>var wg sync.WaitGroup
+wg.Go(task1)
+wg.Go(task2)
+wg.Wait()
+</pre><p>A WaitGroup may also be used for tracking tasks without using Go to
+start new goroutines by using <a href="#WaitGroup.Add">WaitGroup.Add</a> and <a href="#WaitGroup.Done">WaitGroup.Done</a>.
+</p><p>The previous example can be rewritten using explicitly created
+goroutines along with Add and Done:
+</p><pre>var wg sync.WaitGroup
+wg.Add(1)
+go func() {
+	defer wg.Done()
+	task1()
+}()
+wg.Add(1)
+go func() {
+	defer wg.Done()
+	task2()
+}()
+wg.Wait()
+</pre><p>This pattern is common in code that predates <a href="#WaitGroup.Go">WaitGroup.Go</a>.
+</p><p>A WaitGroup must not be copied after first use.
+</p>
+<details tabindex="-1" id="example-WaitGroup" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example <a href="#example-WaitGroup" title="Go to Example" aria-label="Go to Example">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+<p>This example fetches several URLs concurrently,
+using a WaitGroup to block until all the fetches are complete.
+</p>
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;sync&#34;
+)
+
+type httpPkg struct{}
+
+func (httpPkg) Get(url string) {}
+
+var http httpPkg
+
+func main() {
+	var wg sync.WaitGroup
+	var urls = []string{
+		&#34;http://www.golang.org/&#34;,
+		&#34;http://www.google.com/&#34;,
+		&#34;http://www.example.com/&#34;,
+	}
+	for _, url := range urls {
+		// Launch a goroutine to fetch the URL.
+		wg.Go(func() {
+			// Fetch the URL.
+			http.Get(url)
+		})
+	}
+	// Wait for all HTTP fetches to complete.
+	wg.Wait()
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer" hidden><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput"></span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+<details tabindex="-1" id="example-WaitGroup-AddAndDone" class="Documentation-exampleDetails js-exampleContainer">
+<summary class="Documentation-exampleDetailsHeader">Example (AddAndDone) <a href="#example-WaitGroup-AddAndDone" title="Go to Example (AddAndDone)" aria-label="Go to Example (AddAndDone)">¶</a></summary>
+<div class="Documentation-exampleDetailsBody">
+<p>This example is equivalent to the main example, but uses Add/Done
+instead of Go.
+</p>
+
+<pre class="Documentation-exampleCode">
+package main
+
+import (
+	&#34;sync&#34;
+)
+
+type httpPkg struct{}
+
+func (httpPkg) Get(url string) {}
+
+var http httpPkg
+
+func main() {
+	var wg sync.WaitGroup
+	var urls = []string{
+		&#34;http://www.golang.org/&#34;,
+		&#34;http://www.google.com/&#34;,
+		&#34;http://www.example.com/&#34;,
+	}
+	for _, url := range urls {
+		// Increment the WaitGroup counter.
+		wg.Add(1)
+		// Launch a goroutine to fetch the URL.
+		go func(url string) {
+			// Decrement the counter when the goroutine completes.
+			defer wg.Done()
+			// Fetch the URL.
+			http.Get(url)
+		}(url)
+	}
+	// Wait for all HTTP fetches to complete.
+	wg.Wait()
+}
+</pre>
+
+<pre class="Documentation-exampleOutputContainer js-exampleOutputContainer" hidden><span class="Documentation-exampleOutputLabel">Output:</span>
+<span class="Documentation-exampleOutput"></span></pre>
+</div>
+<div class="Documentation-exampleButtonsContainer">
+        <p class="Documentation-exampleError" role="alert" aria-atomic="true"></p>
+        <button class="Documentation-exampleShareButton" aria-label="Share Code">Share</button>
+        <button class="Documentation-exampleFormatButton" aria-label="Format Code">Format</button>
+        <button class="Documentation-exampleRunButton" aria-label="Run Code">Run</button>
+      </div></details>
+
+<div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="WaitGroup.Add" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*WaitGroup) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/waitgroup.go;l=77">Add</a> <a class="Documentation-idLink" href="#WaitGroup.Add" title="Go to WaitGroup.Add" aria-label="Go to WaitGroup.Add">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (wg *<a href="#WaitGroup">WaitGroup</a>) Add(delta <a href="/builtin#int">int</a>)</pre>
+    </div>
+  <p>Add adds delta, which may be negative, to the <a href="#WaitGroup">WaitGroup</a> task counter.
+If the counter becomes zero, all goroutines blocked on <a href="#WaitGroup.Wait">WaitGroup.Wait</a> are released.
+If the counter goes negative, Add panics.
+</p><p>Callers should prefer <a href="#WaitGroup.Go">WaitGroup.Go</a>.
+</p><p>Note that calls with a positive delta that occur when the counter is zero
+must happen before a Wait. Calls with a negative delta, or calls with a
+positive delta that start when the counter is greater than zero, may happen
+at any time.
+Typically this means the calls to Add should execute before the statement
+creating the goroutine or other event to be waited for.
+If a WaitGroup is reused to wait for several independent sets of events,
+new Add calls must happen after all previous Wait calls have returned.
+See the WaitGroup example.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="WaitGroup.Done" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*WaitGroup) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/waitgroup.go;l=155">Done</a> <a class="Documentation-idLink" href="#WaitGroup.Done" title="Go to WaitGroup.Done" aria-label="Go to WaitGroup.Done">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (wg *<a href="#WaitGroup">WaitGroup</a>) Done()</pre>
+    </div>
+  <p>Done decrements the <a href="#WaitGroup">WaitGroup</a> task counter by one.
+It is equivalent to Add(-1).
+</p><p>Callers should prefer <a href="#WaitGroup.Go">WaitGroup.Go</a>.
+</p><p>In the terminology of <a href="https://go.dev/ref/mem">the Go memory model</a>, a call to Done
+&#34;synchronizes before&#34; the return of any Wait call that it unblocks.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="WaitGroup.Go" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*WaitGroup) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/waitgroup.go;l=236">Go</a> <a class="Documentation-idLink" href="#WaitGroup.Go" title="Go to WaitGroup.Go" aria-label="Go to WaitGroup.Go">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+      <span class="Documentation-sinceVersionLabel">added in</span>
+      <span class="Documentation-sinceVersionVersion">go1.25.0</span>
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (wg *<a href="#WaitGroup">WaitGroup</a>) Go(f func())</pre>
+    </div>
+  <p>Go calls f in a new goroutine and adds that task to the <a href="#WaitGroup">WaitGroup</a>.
+When f returns, the task is removed from the WaitGroup.
+</p><p>The function f must not panic.
+</p><p>If the WaitGroup is empty, Go must happen before a <a href="#WaitGroup.Wait">WaitGroup.Wait</a>.
+Typically, this simply means Go is called to start tasks before Wait is called.
+If the WaitGroup is not empty, Go may happen at any time.
+This means a goroutine started by Go may itself call Go.
+If a WaitGroup is reused to wait for several independent sets of tasks,
+new Go calls must happen after all previous Wait calls have returned.
+</p><p>In the terminology of <a href="https://go.dev/ref/mem">the Go memory model</a>, the return from f
+&#34;synchronizes before&#34; the return of any Wait call that it unblocks.
+</p>
+
+  
+
+  </div><div class="Documentation-typeMethod">
+    
+  
+  
+    <h4 tabindex="-1" id="WaitGroup.Wait" data-kind="method" class="Documentation-typeMethodHeader">
+      <span>func (*WaitGroup) <a class="Documentation-source" href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/waitgroup.go;l=160">Wait</a> <a class="Documentation-idLink" href="#WaitGroup.Wait" title="Go to WaitGroup.Wait" aria-label="Go to WaitGroup.Wait">¶</a></span>
+  <span class="Documentation-sinceVersion">
+    
+  </span>
+</h4>
+
+    
+    <div class="Documentation-declaration">
+      <pre>func (wg *<a href="#WaitGroup">WaitGroup</a>) Wait()</pre>
+    </div>
+  <p>Wait blocks until the <a href="#WaitGroup">WaitGroup</a> task counter is zero.
+</p>
+
+  
+
+  </div>
+  
+
+    </div></section></div> 
+
+
+
+
+
+
+
+      
+    </div>
+  </div>
+
+        
+      
+      
+        
+  <div class="UnitFiles js-unitFiles">
+    <h2 class="UnitFiles-title" id="section-sourcefiles">
+      <img class="go-Icon" height="24" width="24" src="/static/shared/icon/insert_drive_file_gm_grey_24dp.svg" alt="">
+      Source Files
+      <a class="UnitFiles-idLink" href="#section-sourcefiles" title="Go to Source Files" aria-label="Go to Source Files">¶</a>
+    </h2><div class="UnitFiles-titleLink">
+      <a href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync" target="_blank" rel="noopener">View all Source files</a>
+    </div><div>
+      <ul class="UnitFiles-fileList"><li><a href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/cond.go" target="_blank" rel="noopener" title="cond.go">cond.go</a></li><li><a href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/map.go" target="_blank" rel="noopener" title="map.go">map.go</a></li><li><a href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/mutex.go" target="_blank" rel="noopener" title="mutex.go">mutex.go</a></li><li><a href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/once.go" target="_blank" rel="noopener" title="once.go">once.go</a></li><li><a href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/oncefunc.go" target="_blank" rel="noopener" title="oncefunc.go">oncefunc.go</a></li><li><a href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/pool.go" target="_blank" rel="noopener" title="pool.go">pool.go</a></li><li><a href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/poolqueue.go" target="_blank" rel="noopener" title="poolqueue.go">poolqueue.go</a></li><li><a href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/runtime.go" target="_blank" rel="noopener" title="runtime.go">runtime.go</a></li><li><a href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/runtime2.go" target="_blank" rel="noopener" title="runtime2.go">runtime2.go</a></li><li><a href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/rwmutex.go" target="_blank" rel="noopener" title="rwmutex.go">rwmutex.go</a></li><li><a href="https://cs.opensource.google/go/go/+/go1.26.3:src/sync/waitgroup.go" target="_blank" rel="noopener" title="waitgroup.go">waitgroup.go</a></li></ul>
+    </div>
+  </div>
+
+      
+      
+        
+  <div class="UnitDirectories js-unitDirectories">
+    <h2 class="UnitDirectories-title" id="section-directories">
+      <img class="go-Icon" height="24" width="24" src="/static/shared/icon/folder_gm_grey_24dp.svg" alt="">
+      Directories
+      <a class="UnitDirectories-idLink" href="#section-directories" title="Go to Directories" aria-label="Go to Directories">¶</a>
+    </h2>
+    <div class="UnitDirectories-toggles">
+      <div class="UnitDirectories-toggleButtons">
+        <button class="js-showInternalDirectories" data-test-id="internal-directories-toggle"
+            data-gtmc="directories button" aria-label="Show Internal Directories">
+          Show internal
+        </button>
+        <button class="js-expandAllDirectories" data-test-id="directories-toggle"
+            data-gtmc="directories button" aria-label="Expand All Directories">
+          Expand all
+        </button>
+      </div>
+    </div>
+    <table class="UnitDirectories-table UnitDirectories-table--tree js-expandableTable"
+          data-test-id="UnitDirectories-table">
+      <tr class="UnitDirectories-tableHeader UnitDirectories-tableHeader--tree">
+        <th>Path</th>
+        <th class="UnitDirectories-desktopSynopsis">Synopsis</th>
+      </tr>
+      
+          
+  
+  <tr
+      class="">
+    <td data-id="atomic" data-aria-owns="">
+      <div class="UnitDirectories-pathCell">
+        <div><a href="/sync/atomic@go1.26.3">atomic</a>
+            
+          </div>
+          <div class="UnitDirectories-mobileSynopsis">Package atomic provides low-level atomic memory primitives useful for implementing synchronization algorithms.</div>
+        </div>
+      </td>
+      <td class="UnitDirectories-desktopSynopsis">Package atomic provides low-level atomic memory primitives useful for implementing synchronization algorithms.</td></tr></tr>
+
+      
+    </table>
+  </div>
+
+      
+    </div>
+  </div>
+  <div id="showInternal-description" hidden> Click to show internal directories. </div>
+  <div id="hideInternal-description" hidden> Click to hide internal directories. </div>
+</article>
+    <footer class="go-Main-footer"></footer>
+  </main>
+
+    
+  <footer class="go-Footer">
+    
+    <div class="go-Footer-links">
+      <div class="go-Footer-linkColumn">
+        <a href="https://go.dev/solutions" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          Why Go
+        </a>
+        <a href="https://go.dev/solutions#use-cases" class="go-Footer-link"
+            data-gtmc="footer link">
+          Use Cases
+        </a>
+        <a href="https://go.dev/solutions#case-studies" class="go-Footer-link"
+            data-gtmc="footer link">
+          Case Studies
+        </a>
+      </div>
+      <div class="go-Footer-linkColumn">
+        <a href="https://learn.go.dev/" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          Get Started
+        </a>
+        <a href="https://play.golang.org" class="go-Footer-link" data-gtmc="footer link">
+          Playground
+        </a>
+        <a href="https://tour.golang.org" class="go-Footer-link" data-gtmc="footer link">
+          Tour
+        </a>
+        <a href="https://stackoverflow.com/questions/tagged/go?tab=Newest" class="go-Footer-link"
+            data-gtmc="footer link">
+          Stack Overflow
+        </a>
+        <a href="https://go.dev/help" class="go-Footer-link"
+            data-gtmc="footer link">
+          Help
+        </a>
+      </div>
+      <div class="go-Footer-linkColumn">
+        <a href="https://pkg.go.dev" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          Packages
+        </a>
+        <a href="/std" class="go-Footer-link" data-gtmc="footer link">
+          Standard Library
+        </a>
+        <a href="/golang.org/x" class="go-Footer-link" data-gtmc="footer link">
+          Sub-repositories
+        </a>
+        <a href="https://pkg.go.dev/about" class="go-Footer-link" data-gtmc="footer link">
+          About Go Packages
+        </a>
+      </div>
+      <div class="go-Footer-linkColumn">
+        <a href="https://go.dev/project" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          About
+        </a>
+        <a href="https://go.dev/dl/" class="go-Footer-link" data-gtmc="footer link">Download</a>
+        <a href="https://go.dev/blog" class="go-Footer-link" data-gtmc="footer link">Blog</a>
+        <a href="https://github.com/golang/go/issues" class="go-Footer-link" data-gtmc="footer link">
+          Issue Tracker
+        </a>
+        <a href="https://go.dev/doc/devel/release.html" class="go-Footer-link"
+            data-gtmc="footer link">
+          Release Notes
+        </a>
+        <a href="https://go.dev/brand" class="go-Footer-link" data-gtmc="footer link">
+          Brand Guidelines
+        </a>
+        <a href="https://go.dev/conduct" class="go-Footer-link" data-gtmc="footer link">
+          Code of Conduct
+        </a>
+      </div>
+      <div class="go-Footer-linkColumn">
+        <a href="https://www.twitter.com/golang" class="go-Footer-link go-Footer-link--primary"
+            data-gtmc="footer link">
+          Connect
+        </a>
+        <a href="https://www.twitter.com/golang" class="go-Footer-link" data-gtmc="footer link">
+          Twitter
+        </a>
+        <a href="https://github.com/golang" class="go-Footer-link" data-gtmc="footer link">GitHub</a>
+        <a href="https://invite.slack.golangbridge.org/" class="go-Footer-link"
+            data-gtmc="footer link">
+          Slack
+        </a>
+        <a href="https://reddit.com/r/golang" class="go-Footer-link" data-gtmc="footer link">
+          r/golang
+        </a>
+        <a href="https://www.meetup.com/pro/go" class="go-Footer-link" data-gtmc="footer link">
+          Meetup
+        </a>
+        <a href="https://golangweekly.com/" class="go-Footer-link" data-gtmc="footer link">
+          Golang Weekly
+        </a>
+      </div>
+    </div>
+    <div class="go-Footer-bottom">
+      <img class="go-Footer-gopher"  width="1431" height="901"
+          src="/static/shared/gopher/pilot-bust-1431x901.svg" alt="Gopher in flight goggles">
+      <ul class="go-Footer-listRow">
+        <li class="go-Footer-listItem">
+          <a href="https://go.dev/copyright" data-gtmc="footer link">Copyright</a>
+        </li>
+        <li class="go-Footer-listItem">
+          <a href="https://go.dev/tos" data-gtmc="footer link">Terms of Service</a>
+        </li>
+        <li class="go-Footer-listItem">
+          <a href="http://www.google.com/intl/en/policies/privacy/" data-gtmc="footer link"
+              target="_blank" rel="noopener">
+            Privacy Policy
+          </a>
+        </li>
+        <li class="go-Footer-listItem">
+          <a href="https://go.dev/s/pkgsite-feedback" target="_blank" rel="noopener"
+              data-gtmc="footer link">
+            Report an Issue
+          </a>
+        </li>
+        <li class="go-Footer-listItem">
+          <button class="go-Button go-Button--text go-Footer-toggleTheme js-toggleTheme" aria-label="Theme Toggle">
+            <img data-value="auto" class="go-Icon go-Icon--inverted" height="24" width="24" src="/static/shared/icon/brightness_6_gm_grey_24dp.svg" alt="System theme">
+            <img data-value="dark" class="go-Icon go-Icon--inverted" height="24" width="24" src="/static/shared/icon/brightness_2_gm_grey_24dp.svg" alt="Dark theme">
+            <img data-value="light" class="go-Icon go-Icon--inverted" height="24" width="24" src="/static/shared/icon/light_mode_gm_grey_24dp.svg" alt="Light theme">
+            <p> Theme Toggle </p>
+          </button>
+        </li>
+        <li class="go-Footer-listItem">
+          <button class="go-Button go-Button--text go-Footer-keyboard js-openShortcuts" aria-label="Shorcuts Modal">
+            <img class="go-Icon go-Icon--inverted" height="24" width="24" src="/static/shared/icon/keyboard_grey_24dp.svg" alt="">
+            <p> Shortcuts Modal </p>
+          </button>
+        </li>
+      </ul>
+      <a class="go-Footer-googleLogo" href="https://google.com" target="_blank"rel="noopener"
+          data-gtmc="footer link">
+        <img class="go-Footer-googleLogoImg" height="24" width="72"
+            src="/static/shared/logo/google-white.svg" alt="Google logo">
+      </a>
+    </div>
+  </footer>
+
+    
+  <dialog id="jump-to-modal" class="JumpDialog go-Modal go-Modal--md js-modal">
+    <form method="dialog" data-gmtc="jump to form" aria-label="Jump to Identifier">
+      <div class="Dialog-title go-Modal-header">
+        <h2>Jump to</h2>
+        <button
+          class="go-Button go-Button--inline"
+          type="button"
+          data-modal-close
+          data-gtmc="modal button"
+          aria-label="Close"
+        >
+          <img
+            class="go-Icon"
+            height="24"
+            width="24"
+            src="/static/shared/icon/close_gm_grey_24dp.svg"
+            alt=""
+          />
+        </button>
+      </div>
+      <div class="JumpDialog-filter">
+        <input class="JumpDialog-input go-Input" autocomplete="off" type="text">
+      </div>
+      <div class="JumpDialog-body go-Modal-body">
+        <div class="JumpDialog-list"></div>
+      </div>
+      <div class="go-Modal-actions">
+        <button class="go-Button" data-test-id="close-dialog">Close</button>
+      </div>
+    </form>
+  </dialog>
+
+  <dialog class="ShortcutsDialog go-Modal go-Modal--sm js-modal">
+    <form method="dialog">
+      <div class="go-Modal-header">
+        <h2>Keyboard shortcuts</h2>
+        <button
+          class="go-Button go-Button--inline"
+          type="button"
+          data-modal-close
+          data-gtmc="modal button"
+          aria-label="Close"
+        >
+          <img
+            class="go-Icon"
+            height="24"
+            width="24"
+            src="/static/shared/icon/close_gm_grey_24dp.svg"
+            alt=""
+          />
+        </button>
+      </div>
+      <div class="go-Modal-body">
+        <table>
+          <tbody>
+            <tr><td class="ShortcutsDialog-key">
+              <strong>?</strong></td><td> : This menu</td>
+            </tr>
+            <tr><td class="ShortcutsDialog-key">
+              <strong>/</strong></td><td> : Search site</td>
+            </tr>
+            <tr><td class="ShortcutsDialog-key">
+              <strong>f</strong> or <strong>F</strong></td><td> : Jump to</td>
+            </tr>
+            <tr>
+              <td class="ShortcutsDialog-key"><strong>y</strong> or <strong>Y</strong></td>
+              <td> : Canonical URL</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="go-Modal-actions">
+        <button class="go-Button" data-test-id="close-dialog">Close</button>
+      </div>
+    </form>
+  </dialog>
+
+    
+      <section class="Cookie-notice js-cookieNotice">
+        <div>go.dev uses cookies from Google to deliver and enhance the quality of its services and to
+        analyze traffic. <a target=_blank href="https://policies.google.com/technologies/cookies">Learn more.</a></div>
+        <div><button class="go-Button">Okay</button></div>
+      </section>
+    
+    
+      <script>
+        // this will throw if the querySelector can’t find the element
+        const gtmId = document.querySelector('.js-gtmID').dataset.gtmid;
+        if (!gtmId) {
+          throw new Error('Google Tag Manager ID not found');
+        }
+        loadScript(`https://www.googletagmanager.com/gtm.js?id=${gtmId}`);
+      </script>
+      <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W8MVQXG"
+                height="0" width="0" style="display:none;visibility:hidden">
+        </iframe>
+      </noscript>
+    
+    
+  
+  <div class="js-canonicalURLPath" data-canonical-url-path="/sync@go1.26.3" hidden></div>
+  <div class="js-playgroundVars" data-modulepath="std" data-version="v1.26.3" hidden></div>
+  <script>
+    loadScript('/static/frontend/unit/main/main.js')
+  </script>
+
+  <script>
+    loadScript('/static/frontend/unit/unit.js')
+  </script>
+
+  </body>
+</html>
